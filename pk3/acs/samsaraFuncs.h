@@ -77,3 +77,13 @@ function int itemToSlot(int i)
     if (i < 0 || i > 6) { return -1; }
     return ItoSArray[i];
 }
+
+function int SamsaraClientVars(void)
+{
+    int ballgag         = !!GetCVar("cl_ballgag");
+    int classicAnims    = !!GetCVar("cl_vanilladoom");
+    int wolfmove        = !!GetCVar("cl_wolfmove");
+
+    return (ballgag << 2) + (classicAnims << 1) + wolfmove;
+}
+
