@@ -9,6 +9,9 @@
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
+int array_weaponBar[PLAYERMAX];
+
+int SamsaraWepType;
 
 global int 0:CommandBitchingDone;
 
@@ -65,14 +68,19 @@ script SAMSARA_OPEN open
 }
 
 
-script SAMSARA_ENTER enter { ACS_ExecuteAlways(SAMSARA_SPAWN, 0, 0,0,0); }
-script SAMSARA_RESPAWN respawn { ACS_ExecuteAlways(SAMSARA_SPAWN, 0, 1,0,0); }
+script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0, 0,0,0); }
+script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0, 1,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
 
     if (isLMS()) { ApplyLMS(); }
+
+    if (GameType() == GAME_SINGLE_PLAYER)
+    {
+        SamsaraWepType = samsaraClassNum()+1;
+    }
 
     SetInventory("CoopModeOn", isCoop());
 
@@ -91,6 +99,10 @@ script SAMSARA_SPAWN (int respawning)
     {
         SetInventory("SynthFireLeft", keyDown(BT_ATTACK));
         SetInventory("SynthFireRight", keyDown(BT_ALTATTACK));
+        SetInventory("WolfenMovement", array_wolfmove[pln]);
+        SetInventory("DukeBallgag",    array_ballgag[pln]);
+        SetInventory("VanillaDoom",    array_vanillaAnim[pln]);
+        SetInventory("ExpandedHud",    array_weaponBar[pln]);
 
         if (CheckInventory("MarathonClass"))
         {
@@ -106,13 +118,13 @@ script SAMSARA_SPAWN (int respawning)
             }
         }
 
-        Print(d:array_wolfmove[pln], s:" ", d:array_vanillaAnim[pln], s:" ", d:array_ballgag[pln]);
-
         Delay(1);
 
         if (isDead(0)) { break; }
     }
 }
+
+script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
 
 script SAMSARA_WOLFMOVE enter
 { 
@@ -179,10 +191,12 @@ script SAMSARA_PUKE (int values, int pln) net
     int wolfmove = values & 1;
     int vanilla  = values & 2;
     int ballgag  = values & 4;
+    int wepbar   = values & 8;
 
     array_wolfmove[pln]     = wolfmove;
     array_vanillaAnim[pln]  = vanilla;
     array_ballgag[pln]      = ballgag;
+    array_weaponBar[pln]    = wepbar;
 }
 
 
@@ -201,6 +215,10 @@ script SAMSARA_ENTER_CLIENT enter clientside
     {   ConsoleCommand("set cl_vanilladoom 0");
         ConsoleCommand("archivecvar cl_vanilladoom"); }
     
+    if (!GetCvar("cl_weaponhud"))
+    {   ConsoleCommand("set cl_weaponhud 1");
+        ConsoleCommand("archivecvar cl_weaponhud"); }
+    
     if (!GetCvar("cl_ballgag"))
     {   ConsoleCommand("set cl_ballgag 0");
         ConsoleCommand("archivecvar cl_ballgag"); }
@@ -212,6 +230,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             array_wolfmove[pln]     = !!GetCvar("cl_wolfmove");
             array_vanillaAnim[pln]  = !!GetCvar("cl_vanilladoom");
             array_ballgag[pln]      = !!GetCvar("cl_ballgag");
+            array_weaponBar[pln]    = !!GetCvar("cl_weaponhud");
         }
         else
         {

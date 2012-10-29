@@ -37,24 +37,17 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //203: Take away all the shit on level ending!
 //204: Boss monologues.
 //205: Cooldown for Duke's taunts.
-//206: Singleplayer class-based weapon drop checks for the Weapon Spawners' A_JumpIfACSExecuteResult.
 //207: Flechette cooldown.
 //208: Buddha mode for B.J.'s Extra Life.
 //209: Activate Send Full Button Info and activate sv_banjetpack/sv_lmslife/sv_lmsult.
-//210: Smooth Doom animations toggle.
 //211: Coop/SP mode on, as well as singleplayer "what class is playing this game" determines.
 //212: Displaying text.
-//213: LMS/Team LMS entering weapon gets.
 //214: Duke Jetpack/Visor fuel draining.
 //215: Turn on and off Retro Movement.
 //216: Turn on and off Ballgag.
 //217: Weapon bar.
-//218: LMS/Team LMS respawning weapon gets. (Piggybacking the Vanilla Doom/Expanded Hud scripts)
 //219: Weapon VII co-op perma-spawn check.
 //220: Denying Duke his jetpack if the server has that option.
-//221: Vanilla Doom/Expanded HUD respawning gets.
-//222: Vanilla Doom/Expanded HUD enter gets.
-//223: Let people know what the cvars are on server hosting.
 //273-275: Ijon Tichy's wizardry for B.J.'s retro movement.
 //901-902: I'm pretty sure Synert is a wizard, too.
 //224: Doomguy's vanilla animations. By Ijon Tichy, transcribed by Llewellyn.
@@ -148,68 +141,6 @@ script 224 (int Cvar) NET
     Print(s:"Only Doomguy can use this.");
 }
 
-script 210 (void) NET CLIENTSIDE
-{
-    ConsoleCommand(StrParam(s:"puke 224 ",d:GetCvar("cl_vanilladoom")));
-    if (GetCvar("cl_vanilladoom"))
-    {
-        ConsoleCommand("set cl_vanilladoom 0;");
-    }
-    else
-    {
-        ConsoleCommand("set cl_vanilladoom 1");
-        ConsoleCommand("archivecvar cl_vanilladoom");
-    }
-}
-
-script 215 (void) NET
-u{
-    if (CheckInventory("WolfenClass") == 1)
-    {
-        if (CheckInventory("WolfenMovement") == 1)
-        {
-            //ConsoleCommand("set cl_wolfmove 0");
-            //ConsoleCommand("archivecvar cl_wolfmove");
-            TakeInventory("WolfenMovement",1);
-            Print(s:"Retro movement off.");
-            ACS_ExecuteAlways(275,0,0);
-        }
-        else
-        {
-            //ConsoleCommand("set cl_wolfmove 1");
-            //ConsoleCommand("archivecvar cl_wolfmove");
-            GiveInventory("WolfenMovement",1);
-            Print(s:"Retro movement on.");
-            ACS_ExecuteAlways(273,0,0);
-        }
-    }
-    else
-    {
-        Print(s:"Only B.J. Blazkowicz can use this.");
-    }
-}
-
-script 216 (void) NET
-{
-    if (CheckInventory("DukeClass") == 1)
-    {
-        if (CheckInventory("DukeBallgag") == 1)
-        {
-            TakeInventory("DukeBallgag",1);
-            Print(s:"Ballgag off.");
-        }
-        else
-        {
-            GiveInventory("DukeBallgag",1);
-            Print(s:"Ballgag on.");
-        }
-    }
-    else
-    {
-        Print(s:"Only Duke Nukem can use this.");
-    }
-}
-
 script 225 (int Cvar) NET
 {
     if (CVar)
@@ -257,88 +188,6 @@ script 211 ENTER
     }
 }
 
-script 222 ENTER CLIENTSIDE
-{
-    if (GetCvar("cl_weaponhud") == 1)
-    {
-        GiveInventory("ExpandedHud",1);
-    }
-    if (CheckInventory("DoomguyClass") == 1)
-    {		
-        if (GetCvar("cl_vanilladoom") == 1)
-        {
-            GiveInventory("VanillaDoom",1);
-        }
-    }
-}
-
-script 221 RESPAWN CLIENTSIDE
-{		
-    if (GetCvar("cl_weaponhud") == 1)
-    {
-        GiveInventory("ExpandedHud",1);
-    }
-    if (CheckInventory("DoomguyClass") == 1)
-    {		
-        if (GetCvar("cl_vanilladoom") == 1)
-        {
-            GiveInventory("VanillaDoom",1);
-        }
-    }
-    if (CheckInventory("MarathonClass") == 1)
-    {
-        if (GetCvar("cl_marathonshootan") == 1)
-        {
-            GiveInventory("MarathonShootan",1);
-        }
-    }
-}
-
-script 206 (int class)
-{
-    if(class==1)
-    {
-        if(DoomguyGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==2)
-    {
-        if(ChexterGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==3)
-    {
-        if(CorvusGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==4)
-    {
-        if(WolfenGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==5)
-    {
-        if(HexenGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==6)
-    {
-        if(DukeGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-    if(class==7)
-    {
-        if(MarathonGame==1)
-        setresultvalue(1);
-        else setresultvalue(0);
-    }
-}
 
 ///////////////
 // ITEM STUFF

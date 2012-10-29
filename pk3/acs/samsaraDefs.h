@@ -4,6 +4,8 @@
 #define SAMSARA_SPAWN           224
 #define SAMSARA_WOLFMOVE        273
 
+#define SAMSARA_CONFIRMCLASS    206
+
 #define SAMSARA_PUKE            226
 #define SAMSARA_ENTER_CLIENT    222
 
