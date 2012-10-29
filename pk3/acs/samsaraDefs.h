@@ -1,19 +1,29 @@
-#define SAMSARA_ENTER           213
-#define SAMSARA_RESPAWN         218
-#define SAMSARA_OPEN            223
-#define SAMSARA_SPAWN           224
-#define SAMSARA_WOLFMOVE        273
+#define SAMSARA_ENTER               213
+#define SAMSARA_RESPAWN             218
+#define SAMSARA_OPEN                223
+#define SAMSARA_SPAWN               224
+#define SAMSARA_WOLFMOVE            273
 
-#define SAMSARA_CONFIRMCLASS    206
+#define SAMSARA_CONFIRMCLASS        206
 
-#define SAMSARA_PUKE            226
-#define SAMSARA_ENTER_CLIENT    222
+#define SAMSARA_PUKE                226
+#define SAMSARA_ENTER_CLIENT        221
+#define SAMSARA_DISCONNECT_CLIENT   222
+#define SAMSARA_CLIENT_CLASS        228
 
 #define LMSMODES            6
 
 #define CLASSCOUNT          7
 #define SLOTCOUNT           9
 #define CHOICECOUNT         4
+
+#define CLASS_DOOMGUY   0
+#define CLASS_CHEX      1
+#define CLASS_CORVUS    2
+#define CLASS_WOLFEN    3
+#define CLASS_HEXEN     4
+#define CLASS_DUKE      5
+#define CLASS_MARATHON  6
 
 #define S_WEP               0
 #define S_AMMO1             1
@@ -30,8 +40,6 @@ sv_sogravity 0/1: Toggles whether the Security Officer operates off Marathon or 
 sv_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
 sv_lmslife 0/1/2/3/4/5: Affects how much health/armor people have on LMS spawn/respawn.\n\
 sv_lmsult 0/1: Toggles whether or not players get their VII in LMS mode.";
- 
-int IsServer = 0;
 
 int LMSArmors[LMSMODES] = 
 {
@@ -54,13 +62,16 @@ int ClassItems[CLASSCOUNT] =
     "MarathonClass",
 };
 
-#define CLASS_DOOMGUY   0
-#define CLASS_CHEX      1
-#define CLASS_CORVUS    2
-#define CLASS_WOLFEN    3
-#define CLASS_HEXEN     4
-#define CLASS_DUKE      5
-#define CLASS_MARATHON  6
+int PickupStates[CLASSCOUNT] = 
+{
+    "Doomguy",
+    "Chexguy",
+    "Heretic",
+    "Wolfguy",
+    "Hexen",
+    "Dukeguy",
+    "Marathon",
+};
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
 

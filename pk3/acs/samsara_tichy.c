@@ -11,7 +11,8 @@ int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
 int array_weaponBar[PLAYERMAX];
 
-int SamsaraWepType;
+int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash = -140;
+int IsServer = 0;
 
 global int 0:CommandBitchingDone;
 
@@ -40,25 +41,25 @@ script SAMSARA_OPEN open
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
 
-        if (!GetCvar("sv_banjetpack"))
-        {   ConsoleCommand("set sv_banjetpack 0");
-            ConsoleCommand("archivecvar sv_banjetpack"); }
+        if (!GetCVar("samsara_banjetpack"))
+        {   ConsoleCommand("set samsara_banjetpack 0");
+            ConsoleCommand("archivecvar samsara_banjetpack"); }
         
-        if (!GetCvar("sv_lmslife"))
-        {   ConsoleCommand("set sv_lmslife 0");
-            ConsoleCommand("archivecvar sv_lmslife"); }
+        if (!GetCVar("samsara_lmslife"))
+        {   ConsoleCommand("set samsara_lmslife 0");
+            ConsoleCommand("archivecvar samsara_lmslife"); }
         
-        if (!GetCvar("sv_lmsult"))
-        {   ConsoleCommand("set sv_lmsult 0");
-            ConsoleCommand("archivecvar sv_lmsult"); }
+        if (!GetCVar("samsara_lmsult"))
+        {   ConsoleCommand("set samsara_lmsult 0");
+            ConsoleCommand("archivecvar samsara_lmsult"); }
         
-        if (!GetCvar("sv_sogravity"))
-        {   ConsoleCommand("set sv_sogravity 0");
-            ConsoleCommand("archivecvar sv_sogravity"); }
+        if (!GetCVar("samsara_sogravity"))
+        {   ConsoleCommand("set samsara_sogravity 0");
+            ConsoleCommand("archivecvar samsara_sogravity"); }
         
-        if (!GetCvar("sv_permault"))
-        {   ConsoleCommand("set sv_permault 0");
-            ConsoleCommand("archivecvar sv_permault"); }
+        if (!GetCVar("samsara_permault"))
+        {   ConsoleCommand("set samsara_permault 0");
+            ConsoleCommand("archivecvar samsara_permault"); }
 
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("compat_clientssendfullbuttoninfo 1"); }
@@ -106,7 +107,7 @@ script SAMSARA_SPAWN (int respawning)
 
         if (CheckInventory("MarathonClass"))
         {
-            if (GetCVar("sv_sogravity"))
+            if (GetCVar("samsara_sogravity"))
             {
                 SetActorProperty(0, APROP_Gravity, 1.0);
                 SetActorProperty(0, APROP_JumpZ,   9.0);
@@ -203,34 +204,55 @@ script SAMSARA_PUKE (int values, int pln) net
 script SAMSARA_ENTER_CLIENT enter clientside
 {
     int execInt, oExecInt, execStr;
+    int class, oClass;
     int pln = PlayerNumber();
+
+    // Comment out these lines for zdoom
+    int cpln = ConsolePlayerNumber();
+    if (cpln != pln) { terminate; }
 
     execInt = 0; oExecInt = 0;
     
-    if (!GetCvar("cl_wolfmove"))
-    {   ConsoleCommand("set cl_wolfmove 0");
-        ConsoleCommand("archivecvar cl_wolfmove"); }
+    if (!GetCVar("samsara_cl_wolfmove"))
+    {   ConsoleCommand("set samsara_cl_wolfmove 0");
+        ConsoleCommand("archivecvar samsara_cl_wolfmove"); }
     
-    if (!GetCvar("cl_vanilladoom"))
-    {   ConsoleCommand("set cl_vanilladoom 0");
-        ConsoleCommand("archivecvar cl_vanilladoom"); }
+    if (!GetCVar("samsara_cl_vanilladoom"))
+    {   ConsoleCommand("set samsara_cl_vanilladoom 0");
+        ConsoleCommand("archivecvar samsara_cl_vanilladoom"); }
     
-    if (!GetCvar("cl_weaponhud"))
-    {   ConsoleCommand("set cl_weaponhud 1");
-        ConsoleCommand("archivecvar cl_weaponhud"); }
+    if (!GetCVar("samsara_cl_weaponhud"))
+    {   ConsoleCommand("set samsara_cl_weaponhud 1");
+        ConsoleCommand("archivecvar samsara_cl_weaponhud"); }
     
-    if (!GetCvar("cl_ballgag"))
-    {   ConsoleCommand("set cl_ballgag 0");
-        ConsoleCommand("archivecvar cl_ballgag"); }
+    if (!GetCVar("samsara_cl_ballgag"))
+    {   ConsoleCommand("set samsara_cl_ballgag 0");
+        ConsoleCommand("archivecvar samsara_cl_ballgag"); }
+    
+    if (!GetCVar("samsara_cl_pickupmode"))
+    {   ConsoleCommand("set samsara_cl_pickupmode 1");
+        ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
+
+    class = samsaraClassNum() + 1;
 
     while (PlayerInGame(pln))
     {
+        oClass = class;
+        class  = samsaraClassNum() + 1;
+
+        SamsaraClientClass = class;
+
+        if (oClass != class)
+        {
+            SamsaraItemFlash = Timer();
+        }
+
         if (GameType() == GAME_SINGLE_PLAYER)
         {
-            array_wolfmove[pln]     = !!GetCvar("cl_wolfmove");
-            array_vanillaAnim[pln]  = !!GetCvar("cl_vanilladoom");
-            array_ballgag[pln]      = !!GetCvar("cl_ballgag");
-            array_weaponBar[pln]    = !!GetCvar("cl_weaponhud");
+            array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
+            array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
+            array_ballgag[pln]      = !!GetCVar("samsara_cl_ballgag");
+            array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
         }
         else
         {
@@ -245,5 +267,44 @@ script SAMSARA_ENTER_CLIENT enter clientside
         }
 
         Delay(1);
+    }
+}
+
+script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
+{
+    // Comment out these lines for zdoom
+    int cpln = ConsolePlayerNumber();
+    if (cpln != pln) { terminate; }
+
+    SamsaraClientClass  = 0;
+    SamsaraItemFlash    = Timer();
+}
+
+script SAMSARA_CLIENT_CLASS (void) clientside
+{
+    int toClass = SamsaraClientClass;
+    int displaymode = GetCVar("samsara_cl_pickupmode");
+
+    //PrintBold(d:IsServer, s:"   ", d:toClass);
+    
+    switch (displaymode)
+    {
+      case 0:
+        SetActorState(0, "NoGuy");
+        break;
+
+      case 1:
+      case 2:
+        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 18))
+        {
+            Spawn("SamsaraChangeFlash", GetActorX(0), GetActorY(0), GetActorZ(0));
+        }
+
+        if (toClass == 0) { SetActorState(0, "NoGuy"); }
+        else
+        {
+            SetActorState(0, PickupStates[toClass-1]);
+        }
+        break;
     }
 }

@@ -1,0 +1,91 @@
+actor Herpaderp
+{
+    States
+    {
+      Spawn:
+        WEPG A 0
+        goto SpawnLoop
+
+      SpawnLoop:      
+        "----" A 35 ACS_ExecuteAlways(228)
+        loop
+
+      Doomguy:
+        WSAW A 35
+        goto SpawnLoop
+
+      Chexguy:
+        CSPR A 35
+        goto SpawnLoop
+      
+      Heretic:
+        WGNT A 35
+        goto SpawnLoop
+
+      Wolfguy:
+        WKNP A 35
+        goto SpawnLoop
+
+      Hexen:
+        PSBG A 35
+        goto SpawnLoop
+
+      Dukeguy:
+        WPBM A 35
+        goto SpawnLoop
+      
+      Marathon:
+        FSMG A 35
+        goto SpawnLoop
+      
+      NoGuy:
+        WEPG A 35
+        goto SpawnLoop
+    }
+}
+
+actor SamsaraChangeFlash
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Height 0
+    Radius 0
+
+    ReactionTime 35
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 AAAAAA 0 A_SpawnItemEx("ChangeSparkle", random(-240, 240)/10.0,0,random(-40, 40)/10.0, random(-10, 10)/40.0, 0, random(20, 40)/40.0, random(0, 360))
+        TNT1 A 1 A_Countdown
+        loop
+
+      Death:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ChangeSparkle
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+
+    RenderStyle Add
+
+    Scale 0.3
+    Alpha 0.1
+
+    States
+    {
+      Spawn:
+        WPFG AB 3 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG C 4 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG D 6 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG E 6 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG F 4 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG GH 3 bright
+        stop
+    }
+}
