@@ -74,8 +74,8 @@ int PickupStates[CLASSCOUNT][3] =
     {"Chexguy", "ChexFull",     "ChexEmpty"},
     {"Heretic", "HereticFull",  "HereticEmpty"},
     {"Wolfguy", "WolfFull",     "WolfEmpty"},
-    {"Hexen",   "HexenFull",    "HexenFull"},
-    {"Dukeguy", "DukeFull",     "DukeFull"},
+    {"Hexen",   "HexenFull",    "HexenEmpty"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty"},
     {"Marathon","MarathonFull", "MarathonEmpty"},
 };
 
@@ -238,10 +238,10 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
     },
     {
         "duke/weaponget",
+        "duke/itemget",
         "duke/weaponget",
-        "duke/weaponget",
-        "duke/weaponget",
-        "duke/weaponget",
+        "duke/mosspump2",
+        "duke/xshotgunpump",
         "duke/weaponget",
         "duke/weaponget",
         "duke/weaponget",

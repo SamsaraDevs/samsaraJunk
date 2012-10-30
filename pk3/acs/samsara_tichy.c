@@ -298,6 +298,8 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int oldslot = slot;
     slot = itemToSlot(slot);
     int hasSlot = SamsaraClientWeps[slot];
+
+    //PrintBold(s:"Has weapon \"", s:ClassWeapons[toClass][slot][S_WEP], s:"\": ", d:hasSlot);
     
     if (displaymode != 0)
     {
@@ -359,6 +361,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     int pclass = samsaraClassNum();
     int hasWep = HasClassWeapon(pclass, slot);
 
+    if (slot == SLOTCOUNT-1) { weaponStay &= !!GetCVar("samsara_permault"); }
 
     int a1cnt  = 0, a2cnt = 0;
     int a1max  = 0, a2max = 0;
@@ -441,4 +444,10 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot) clientside
     LocalAmbientSound(ClassPickupSounds[pclass][slot], 127);
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
               ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, 5.0/35);
+
+    if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag"))
+    {
+        Delay(8);
+        LocalAmbientSound("duke/weapontaunt", 127);
+    }
 }

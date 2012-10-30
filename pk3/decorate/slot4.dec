@@ -1,4 +1,4 @@
-actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Shotgun
+actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
 {
     States
     {
@@ -23,7 +23,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Shotgun
       DoomFull:      PDCH A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       ChexFull:      PRPZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       HereticFull:   PDRG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      WolfFull:      PWCG C 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfFull:      PWCG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       HexenFull:     PSST A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       DukeFull:      PRPR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       MarathonFull:  PARF A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -31,7 +31,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Shotgun
       DoomEmpty:     PDCH B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       ChexEmpty:     PRPZ B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       HereticEmpty:  PDRG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      WolfEmpty:     PWCG D 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfEmpty:     PWCG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       HexenEmpty:    PSST B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       DukeEmpty:     PRPR B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       MarathonEmpty: PARF B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
