@@ -68,15 +68,15 @@ int ClassItems[CLASSCOUNT] =
     "MarathonClass",
 };
 
-int PickupStates[CLASSCOUNT] = 
+int PickupStates[CLASSCOUNT][3] = 
 {
-    "Doomguy",
-    "Chexguy",
-    "Heretic",
-    "Wolfguy",
-    "Hexen",
-    "Dukeguy",
-    "Marathon",
+    {"Doomguy", "DoomFull",     "DoomEmpty"},
+    {"Chexguy", "ChexFull",     "ChexEmpty"},
+    {"Heretic", "HereticFull",  "HereticEmpty"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty"},
+    {"Hexen",   "HexenFull",    "HexenFull"},
+    {"Dukeguy", "DukeFull",     "DukeFull"},
+    {"Marathon","MarathonFull", "MarathonEmpty"},
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
@@ -144,7 +144,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Parias
         {"Mace of Contrition",              "",             "",             "I WAK YOO"},
-        {"",                                "",             "",             "A nothing! Find some nothings!"},
+        {"PortFlechette",                   "",             "",             "Flechettes! Find some centaurs!"},
         {"Sapphire Wand",                   "",             "",             "Picked up a sapphire wand."},
         {"Frost Shards",                    "AmmoShell",    "",             "You got the frost shards!"},
         {"Timon's Axe",                     "AmmoShell",    "",             "You got Timon's axe!"},
