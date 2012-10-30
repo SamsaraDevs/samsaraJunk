@@ -1,0 +1,57 @@
+actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Shotgun
+{
+    States
+    {
+      IWasDropped:
+        TNT1 A 0 A_SpawnItemEx("SamsaraSlotFourDrop", 0,0,0, momx,momy,momz, 0, SXF_ABSOLUTEMOMENTUM)
+        stop
+
+      SpawnLoop:      
+        "----" A 35 ACS_ExecuteAlways(228, 0, 4)
+        loop
+
+      NoGuy:    WEPG D 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+
+      Doomguy:  WCGN A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Chexguy:  MGUC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Heretic:  WBLS A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Wolfguy:  WCHP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Hexen:    WCSS A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Dukeguy:  CHGP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Marathon: RIFL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+
+      DoomFull:      PDCH A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      ChexFull:      PRPZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HereticFull:   PDRG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfFull:      PWCG C 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HexenFull:     PSST A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DukeFull:      PRPR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      MarathonFull:  PARF A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+
+      DoomEmpty:     PDCH B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      ChexEmpty:     PRPZ B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HereticEmpty:  PDRG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfEmpty:     PWCG D 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HexenEmpty:    PSST B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DukeEmpty:     PRPR B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      MarathonEmpty: PARF B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 4) & 3) == 1, "PickupSuccess")
+        goto PickupFailure
+    }
+}
+
+actor SamsaraSlotFourDrop: SamsaraSlotFourPickup
+{
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        goto SpawnLoop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 4, 1) & 1) == 1, "PickupSuccess")
+        goto PickupFailure
+    }
+}
