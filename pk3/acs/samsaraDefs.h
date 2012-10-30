@@ -5,6 +5,9 @@
 #define SAMSARA_WOLFMOVE            273
 
 #define SAMSARA_CONFIRMCLASS        206
+#define SAMSARA_DECORATE            215
+#define SAMSARA_GIVEWEAPON          229
+#define SAMSARA_CLIENT_WEAPONPICKUP 216
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_ENTER_CLIENT        221
@@ -32,6 +35,9 @@
 
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
+
+#define WEPFLAGS_GOTWEAPON  1
+#define WEPFLAGS_WEAPONSTAY 2
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -75,6 +81,17 @@ int PickupStates[CLASSCOUNT] =
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
 
+int ClassFades[CLASSCOUNT][4] =
+{
+    {1.0, 1.0, 0.0, 0.1},
+    {1.0, 1.0, 0.0, 0.1},
+    {1.0, 1.0, 0.0, 0.1},
+    {1.0, 1.0, 0.0, 0.1},
+    {1.0, 1.0, 0.0, 0.1},
+    {1.0, 1.0, 0.0, 0.1},
+    {0.0, 1.0, 0.0, 0.4},
+};
+
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {
     {   // Doomguy
@@ -91,7 +108,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Chexguy
         {" Bootspoon ",                     "",             "",             "I SCOOP YOO"},
-        {"Super Bootspork",                 "",             "",             "You got the Super Bootspork!"},
+        {"Super Bootspork",                 "",             "",             "Super Bootspork! Find some slime!"},
         {"Mini-Zorcher",                    "",             "",             "Picked up a Mini Zorcher."},
         {"Large Zorcher",                   "AmmoShell",    "",             "You got the Large Zorcher!"},
         {"Super Large Zorcher",             "AmmoShell",    "",             "You got the Mega Zorcher!"},
@@ -103,7 +120,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Corvus
         {" Staff ",                         "",             "",             "I JAB YOO"},
-        {"Gauntlets of the Necromancer",    "",             "",             "Gauntlets of the Necromancer! Find some meat!"},
+        {"Gauntlets of the Necromancer",    "",             "",             "Gauntlets of the Necromancer! Find some disciples!"},
         {"Gold Wand",                       "",             "",             "Picked up a gold wand."},
         {" Firemace ",                      "AmmoShell",    "",             "You got the firemace!"},
         {"Ethereal Crossbow",               "AmmoShell",    "",             "You got the ethereal crossbow!"},
@@ -115,7 +132,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // B.J.
         {"Knife",                           "",             "",             "I STAB YOO"},
-        {"",                                "",             "",             ""},
+        {"GotWeapon0",                      "",             "",             "Your knife developed teeth! Find some Nazis!"},
         {"Luger",                           "",             "",             "Picked up a Luger."},
         {"Machine Gun",                     "Clip",         "",             "You got the machine gun!"},
         {"Machine Gun",                     "Clip",         "",             "You got the machine gun!"},
@@ -127,7 +144,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Parias
         {"Mace of Contrition",              "",             "",             "I WAK YOO"},
-        {"",                                "",             "",             ""},
+        {"",                                "",             "",             "A nothing! Find some nothings!"},
         {"Sapphire Wand",                   "",             "",             "Picked up a sapphire wand."},
         {"Frost Shards",                    "AmmoShell",    "",             "You got the frost shards!"},
         {"Timon's Axe",                     "AmmoShell",    "",             "You got Timon's axe!"},
@@ -139,7 +156,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Duke
         {"Mighty Boot",                     "",             "",             "I KICK YOO"},
-        {"Pipebombs",                       "RocketAmmo",   "",             "Pipe bombs! Find some unsuspecting saps."},
+        {"Pipebombs",                       "RocketAmmo",   "",             "Pipe bombs! Find some unsuspecting saps!"},
         {"M1911",                           "",             "",             "Picked up an M1911."},
         {"  Shotgun  ",                     "AmmoShell",    "",             "You got the shotgun!"},  // rename this to something like pump-shotty
         {"Explosive Shotgun",               "RocketAmmo",   "",             "You got the explosive shotgun!"},
@@ -151,7 +168,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Security Officer
         {"Steel Knuckles",                  "",             "",             "I PUNCH YOO TOO"},
-        {"SOMagnumSMGGiver",                "",             "",             "You got the KKV-7 SMG and an extra magnum!"},
+        {"SOMagnumSMGGiver",                "",             "",             "A KKV-7 SMG and an extra magnum! Find some aliens!"},
         {".44 Magnum Mega-Class A1",        "",             "",             "Picked up a magnum."},
         {"WSTE-M5 Combat Shotgun",          "AmmoShell",    "",             "You got the WSTE-M5 combat shotgun!"},
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "You got the Zeus-class fusion pistol!"},
@@ -160,4 +177,85 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "You got the TOZT-7 napalm unit!"},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "You got the wave motion cannon! Blast 'em in half."},
     }
+};
+
+int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] = 
+{
+    {
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+        "doomguy/weaponget",
+    },
+    {
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+        "chex/weaponget",
+    },
+    {
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+        "heretic/weaponget",
+    },
+    {
+        "wolfen/knifeget",
+        "wolfen/knifeget",
+        "wolfen/itemget",
+        "wolfen/mgunget",
+        "wolfen/mgunget",
+        "wolfen/weaponget",
+        "wolfen/rocketget",
+        "wolfen/flameget",
+        "wolfen/spearget",
+    },
+    {
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+        "hexen/weaponget",
+    },
+    {
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+        "duke/weaponget",
+    },
+    {
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/itemget",
+        "marathon/bigitemget",
+    },
 };

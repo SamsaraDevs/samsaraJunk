@@ -9,6 +9,8 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
     int hasAmmo = 0;
     int giveWep = 0;
 
+    if (!StrLen(weapon)) { return 0; }
+
     if (!CheckInventory(weapon)) { giveWep = 1; }
 
     if (StrLen(ammo1)) { hasAmmo |= 1; }
@@ -24,19 +26,34 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
     {
         GiveInventory(weapon, 1);
 
-        if (ammoMode == 1)
+        switch (ammoMode)
         {
-            TakeInventory(ammo1, CheckInventory(ammo1) - a1count);
-            TakeInventory(ammo2, CheckInventory(ammo2) - a2count);
-        }
-        if (ammoMode == 2)
-        {
-            GiveInventory(ammo1, GetAmmoCapacity(ammo1));
-            GiveInventory(ammo2, GetAmmoCapacity(ammo2));
+          case 0:
+            if (hasAmmo & 1) { TakeInventory(ammo1, CheckInventory(ammo1) - a1count); }
+            if (hasAmmo & 2) { TakeInventory(ammo2, CheckInventory(ammo2) - a2count); }
+            break;
+
+          case 1:
+            if (hasAmmo & 1) { GiveInventory(ammo1, GetAmmoCapacity(ammo1)); }
+            if (hasAmmo & 2) { GiveInventory(ammo2, GetAmmoCapacity(ammo2)); }
+            break;
+          
+          case 2:
+            if (hasAmmo & 1) { TakeInventory(ammo1, (CheckInventory(ammo1) - a1count) / 2); }
+            if (hasAmmo & 2) { TakeInventory(ammo2, (CheckInventory(ammo2) - a2count) / 2); }
+            break;
         }
     }
 
     return !giveWep;
+}
+
+function int HasClassWeapon(int class, int slot)
+{
+    int weapon = ClassWeapons[class][slot][0];
+    if (!StrLen(weapon)) { return 0; }
+
+    return CheckInventory(weapon);
 }
 
 function void ApplyLMS(void)
@@ -80,10 +97,10 @@ function int itemToSlot(int i)
 
 function int SamsaraClientVars(void)
 {
-    int weaponBar       = !!GetCVar("cl_weaponhud");
-    int ballgag         = !!GetCVar("cl_ballgag");
-    int classicAnims    = !!GetCVar("cl_vanilladoom");
-    int wolfmove        = !!GetCVar("cl_wolfmove");
+    int weaponBar       = !!GetCVar("samsara_cl_weaponhud");
+    int ballgag         = !!GetCVar("samsara_cl_ballgag");
+    int classicAnims    = !!GetCVar("samsara_cl_vanilladoom");
+    int wolfmove        = !!GetCVar("samsara_cl_wolfmove");
 
     return (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
 }

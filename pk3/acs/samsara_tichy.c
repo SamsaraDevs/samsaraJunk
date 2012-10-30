@@ -11,7 +11,8 @@ int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
 int array_weaponBar[PLAYERMAX];
 
-int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash = -140;
+int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash;
+int SamsaraClientWeps[SLOTCOUNT] = {0};
 int IsServer = 0;
 
 global int 0:CommandBitchingDone;
@@ -98,7 +99,7 @@ script SAMSARA_SPAWN (int respawning)
 
     while (1)
     {
-        SetInventory("SynthFireLeft", keyDown(BT_ATTACK));
+        SetInventory("SynthFireLeft",  keyDown(BT_ATTACK));
         SetInventory("SynthFireRight", keyDown(BT_ALTATTACK));
         SetInventory("WolfenMovement", array_wolfmove[pln]);
         SetInventory("DukeBallgag",    array_ballgag[pln]);
@@ -206,6 +207,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
     int execInt, oExecInt, execStr;
     int class, oClass;
     int pln = PlayerNumber();
+    int i;
 
     // Comment out these lines for zdoom
     int cpln = ConsolePlayerNumber();
@@ -238,14 +240,29 @@ script SAMSARA_ENTER_CLIENT enter clientside
     while (PlayerInGame(pln))
     {
         oClass = class;
-        class  = samsaraClassNum() + 1;
+        class  = samsaraClassNum();
 
-        SamsaraClientClass = class;
+        SamsaraClientClass = class+1;
 
         if (oClass != class)
         {
             SamsaraItemFlash = Timer();
         }
+
+        /*
+        execStr = "{";
+        for (i = 0; i < SLOTCOUNT; i++)
+        {
+            SamsaraClientWeps[i] = HasClassWeapon(class, i);
+
+            execStr = StrParam(s:execStr, d:SamsaraClientWeps[i]);
+
+            if (i != SLOTCOUNT-1) { execStr = StrParam(s:execStr, s:", "); }
+            else { execStr = StrParam(s:execStr, s:"}"); }
+        }
+
+        Print(s:execStr);
+        */
 
         if (GameType() == GAME_SINGLE_PLAYER)
         {
@@ -280,10 +297,11 @@ script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
     SamsaraItemFlash    = Timer();
 }
 
-script SAMSARA_CLIENT_CLASS (void) clientside
+script SAMSARA_CLIENT_CLASS (int slot) clientside
 {
     int toClass = SamsaraClientClass;
     int displaymode = GetCVar("samsara_cl_pickupmode");
+    slot = itemToSlot(slot);
 
     //PrintBold(d:IsServer, s:"   ", d:toClass);
     
@@ -295,7 +313,7 @@ script SAMSARA_CLIENT_CLASS (void) clientside
 
       case 1:
       case 2:
-        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 18))
+        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 35))
         {
             Spawn("SamsaraChangeFlash", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
@@ -307,4 +325,83 @@ script SAMSARA_CLIENT_CLASS (void) clientside
         }
         break;
     }
+}
+
+script SAMSARA_GIVEWEAPON (int slot, int dropped)
+{
+    int weaponStay = !!GetCVar("sv_weaponstay");
+    int weaponGet  = 0;
+    int pclass = samsaraClassNum();
+    int hasWep = HasClassWeapon(pclass, slot);
+
+
+    int a1max  = 0, a2max = 0;
+    int a1max2 = 0, a2max2 = 0;
+    int a1Full = 0, a2Full = 0;
+    int a1diff = 0, a2diff = 0;
+
+    int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
+    int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
+    int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
+
+    if (!wepbool)
+    {
+        SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
+        terminate;
+    }
+
+    if (a1bool)
+    {
+        a1max   = GetAmmoCapacity(ammo1);
+        a1max2  = a1max * 4; // ya never know
+    }
+
+    if (a2bool)
+    {
+        a2max   = GetAmmoCapacity(ammo1);
+        a2max2  = a1max * 4;
+    }
+
+    if (a1Bool) { a1Full = (CheckInventory(ammo1) == a1max); }
+    if (a2Bool) { a2Full = (CheckInventory(ammo2) == a2max); }
+
+    if (dropped)
+    {
+        if (a1bool) { SetAmmoCapacity(ammo1, a1max2); }
+        if (a2bool) { SetAmmoCapacity(ammo2, a2max2); }
+    }
+
+    if (!hasWep) { weaponGet = 1; }      // do we even have this?
+    else if (!weaponStay || dropped)     // does this not stay on the ground?
+    {
+        if (!(a1Full && a2Full)) { weaponGet = 1; }        // can we get ammo from this?
+    }
+
+    if (weaponGet)
+    {
+        GiveInventory(weapon, 1);
+        ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,0,0);
+    }
+
+    if (dropped)
+    {
+        if (a1bool) { SetAmmoCapacity(ammo1, a1max); }
+        if (a2bool) { SetAmmoCapacity(ammo2, a2max); }
+    }
+
+    
+    SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
+}
+
+script SAMSARA_CLIENT_WEAPONPICKUP (int slot) clientside
+{
+    int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
+    int pclass = samsaraClassNum();
+
+    if (cpln != pln) { terminate; }
+
+    Log(s:ClassWeapons[pclass][slot][S_PICKUPMESSAGE]);
+    LocalAmbientSound(ClassPickupSounds[pclass][slot], 127);
+    FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
+              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, 5.0/35);
 }
