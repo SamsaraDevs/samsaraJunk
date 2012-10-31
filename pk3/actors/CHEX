@@ -496,8 +496,8 @@ Actor "Super Large Zorcher" : Weapon
     TNT1 A 0 A_FireCustomMissile("SLZorcherBoltDM",0,0,-4,4)
     TNT1 A 0 A_PlayWeaponSound ("chex/slzorcher")
 	TNT1 A 0 A_GunFlash
-    CSLZ F 3 A_FireCustomMissile("SLZorcherBoltDM",0,1,-4,-4) // 6
-    CSLZ GH 3 // 12
+    CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBoltDM",0,1,-4,-4) // 6
+    CSLZ GH 3 BRIGHT // 12
     CSLZ IJJ 3 // 21
     CSLR ABCD 2// 29
 	CSLR E 6 // 35
@@ -515,8 +515,8 @@ Actor "Super Large Zorcher" : Weapon
     TNT1 A 0 A_FireCustomMissile("SLZorcherBolt",0,0,-4,4)
     TNT1 A 0 A_PlayWeaponSound ("chex/slzorcher")
 	TNT1 A 0 A_GunFlash
-    CSLZ F 3 A_FireCustomMissile("SLZorcherBolt",0,1,-4,-4)
-    CSLZ GH 3
+    CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBolt",0,1,-4,-4)
+    CSLZ GH 3 BRIGHT
     CSLZ IJJ 3
     CSLR ABCD 2//KLMM 3
 	CSLR E 6
@@ -534,8 +534,8 @@ Actor "Super Large Zorcher" : Weapon
     TNT1 A 0 A_FireCustomMissile("SLZorcherBoltCoop",0,0,-4,4)
     TNT1 A 0 A_PlayWeaponSound ("chex/slzorcher")
 	TNT1 A 0 A_GunFlash
-    CSLZ F 3 A_FireCustomMissile("SLZorcherBoltCoop",0,1,-4,-4) // 6
-    CSLZ GH 3
+    CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBoltCoop",0,1,-4,-4) // 6
+    CSLZ GH 3 BRIGHT
     CSLZ IJJ 3
     CSLR ABCD 2
 	CSLR E 6
