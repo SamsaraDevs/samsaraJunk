@@ -441,7 +441,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);
-        ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,0,0);
+        ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
     }
 
     if (dropped)
@@ -458,14 +458,16 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
 }
 
-script SAMSARA_CLIENT_WEAPONPICKUP (int slot) clientside
+script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
 
     if (cpln == pln) { Log(s:ClassWeapons[pclass][slot][S_PICKUPMESSAGE]); }
 
-    LocalAmbientSound(ClassPickupSounds[pclass][slot], 127);
+    if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
+    else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
+
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
               ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, 5.0/35);
 
