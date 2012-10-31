@@ -6,6 +6,8 @@
 #include "samsaraDefs.h"
 #include "samsaraFuncs.h"
 
+#define DEBUG 0
+
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
@@ -65,8 +67,7 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_permault 0");
             ConsoleCommand("archivecvar samsara_permault"); }
 
-        if (!GetCVar("compat_clientssendfullbuttoninfo"))
-        {   ConsoleCommand("compat_clientssendfullbuttoninfo 1"); }
+        ConsoleCommand("compat_clientssendfullbuttoninfo 1");
 
         Delay(1);
     }
@@ -260,10 +261,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
 
         SamsaraClientClass = class+1;
 
-        if (oClass != class)
-        {
-            SamsaraItemFlash = Timer();
-        }
+        if (oClass != class) { SamsaraItemFlash = Timer(); }
 
         for (i = 0; i < SLOTCOUNT; i++)
         {
@@ -439,8 +437,8 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
             SetWeapon(ClassWeapons[pclass][slot][S_WEP]);
         }
 
-        Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);
-        Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);
+        Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
+        Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
         ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
     }
 
@@ -463,6 +461,8 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
 
+    if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
+
     if (cpln == pln) { Log(s:ClassWeapons[pclass][slot][S_PICKUPMESSAGE]); }
 
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
@@ -477,7 +477,8 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
 
         if (!DukeQuoteCooldown[pln])
         {
-            LocalAmbientSound("duke/weapontaunt", 127);
+            if (soundmode == 1) { LocalAmbientSound("duke/weapontaunt", 127); }
+            else { ActivatorSound("duke/weapontaunt", 127); }
             DukeQuoteCooldown[pln] = 140;
         }
     }
@@ -489,9 +490,6 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
  * This is still to be converted.
  *
  */
-
-
-#define DEBUG 0
 
 int DoomguyGame;
 int ChexterGame;
