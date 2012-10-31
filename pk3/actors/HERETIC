@@ -1819,6 +1819,7 @@ ACTOR "Phoenix Rod" : Weapon
 	PHNX C 0 A_FireCustomMissile("PhoenixFX2",random(-2,2),0,0,0,2,2)//,26,2,2)
     PHNX C 1 BRIGHT //A_FirePhoenixPL2
     PHNX B 4 BRIGHT A_ReFire
+	TNT1 A 0 A_TakeInventory("RocketAmmo",1)
 	TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
 	TNT1 A 0 A_StopSoundEx("Weapon")
 	goto Ready
@@ -1831,6 +1832,7 @@ ACTOR "Phoenix Rod" : Weapon
 	PHNX C 0 A_FireCustomMissile("PhoenixFX2A",random(-2,2),0,0,0,2,2)//,26,2,2)
     PHNX C 1 BRIGHT //A_FirePhoenixPL2
     PHNX B 4 BRIGHT A_ReFire
+	TNT1 A 0 A_TakeInventory("RocketAmmo",1)
 	TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
 	TNT1 A 0 A_StopSoundEx("Weapon")
 	goto Ready
