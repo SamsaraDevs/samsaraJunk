@@ -1,0 +1,120 @@
+[enu default]
+
+//Buddha
+QUITMSG = "Neither fire nor wind,\nbirth nor death,\ncan erase our good deeds.";
+//Doom
+QUITMSG1 = "hey, ron!\ncan we say 'fuck' in the game?";
+QUITMSG2 = "i'd leave:\nthis is just more monsters and levels.\nwhat a load.";
+//Chex Quest
+QUITMSG3 = "I hope you're just taking a\nbreak for Chex(R) party mix.";
+QUITMSG4 = "The only people who don't run\nare either fools or heroes.\nLet's hope you're the latter.";
+//Heretic
+QUITMSG5 = "...the world is surely damned.";
+QUITMSG6 = "It is not my destiny to be a hero.";
+//HeXen
+QUITMSG7 = "Worship me, and I may yet be merciful.\nThen again, maybe not.";
+QUITMSG8 = "My servants can smell your blood, human.";
+//Wolfenstein
+QUITMSG9 = "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one.";
+QUITMSG10 = "Sieg heil...huh.\nSieg hell.";
+//Duke Nukem
+QUITMSG11 = "After a few days of R&R,\nI'll be ready for more action!";
+QUITMSG12 = "I guess I'll lean against this oozing,\nbulbous wall and wait for death.";
+//Marathon
+QUITMSG13 = "Do you know what kind of hat I'm wearing?\nA party hat. You don't get one.";
+QUITMSG14 = "P.S.: If things around here aren't working,\nit's because I'm laughing so hard.";
+
+// Zandronum cuts off here. The ZDoom-specific messages are as follows:
+//Doom
+QUITMSG15 = "look, bud. you leave now and\nyou forfeit your body count!";
+QUITMSG16 = "get outta here and go back\nto your boring programs.";
+QUITMSG17 = "go ahead and leave. see if i care.";
+QUITMSG18 = "let's beat it -- this is turning\ninto a bloodbath!";
+//Chex Quest
+QUITMSG19 = "The real Chex(R) Warrior\nwouldn't give up so fast!";
+QUITMSG20 = "Don't abandon the\nIntergalactic Federation of Cereals!";
+QUITMSG21 = "Don't quit now! We need your help!";
+QUITMSG22 = "The mission continues...";
+//Heretic
+QUITMSG23 = "But what else can you do,\nif the will to fight is gone?";
+QUITMSG24 = "You find, in the end,\nthat it is not within you\nto surrender without a fight.";
+QUITMSG25 = "No one ever said being a Heretic was easy!";
+QUITMSG26 = "Your fight has been in vain.";
+//HeXen
+QUITMSG27 = "Regardless of the path you choose,\nDeath awaits you.";
+QUITMSG28 = "Follow the light, for while the path\nis wrought with danger, your destiny lies below.";
+QUITMSG29 = "Your meddling will only result in your death.\nLeave while you can.";
+QUITMSG30 = "You've made it to your final goal,\nto turn back would be cowardice.";
+//Wolfenstein
+QUITMSG31 = "We owe you a great debt, Mr. Blazkowicz.\nYou have served your country well.";
+QUITMSG32 = "For guns and glory, press N.\nFor work and worry, press Y.";
+QUITMSG33 = "The next adventure awaits!\nSo don't wait...start the next adventure!";
+QUITMSG34 = "But the adventure is just beginning!";
+//Duke Nukem
+QUITMSG35 = "I need a stiff drink... a shower...\nand a soft-skinned belly to lie my head on.";
+QUITMSG36 = "The last thing that's gonna go thru your mind before you die... is my size 13 boot!";
+QUITMSG37 = "I always said if there's a way to go,\nit would have something to do with\nwomen, whips and oil.";
+QUITMSG38 = "I should probably kill everything,\nthen watch a movie.";
+//Marathon
+QUITMSG39 = "If I had a rocket launcher, I'd make somebody pay.";
+QUITMSG40 = "The candles burn out for you; I am free.";
+QUITMSG41 = "T-Minus 15.193792102158E+9 years\nuntil the universe closes!";
+QUITMSG42 = "You can stay behind to work on your tan,\nif you'd like, but I'm leaving.";
+
+/*
+DOOM:
+1: "hey, ron! can we say 'fuck' in the game?" // Unused Doom message
+2: "i'd leave: this is just more monsters and levels. what a load." // Unused Doom message
+3: "look, bud. you leave now and you forfeit your body count!" // Doom II message
+4: "get outta here and go back to your boring programs." // Doom II message
+5: "go ahead and leave. see if i care." // Doom message
+6: "let's beat it -- this is turning into a bloodbath!" // Doom message
+
+CHEX QUEST:
+1: "I hope you're just taking a\nbreak for Chex(R) party mix." // Chex Quest 1
+2: "The real Chex(R) Warrior\nwouldn't give up so fast!" // Chex Quest 1
+3: "Don't abandon the\nIntergalactic Federation of Cereals!" // Chex Quest 1
+4: "Don't quit now! We need your help!" // Chex Quest 1
+5: "The mission continues..." // Various Chex Quest promos
+6: "The only people who don't run are either fools or heroes.\nLet's hope you're the latter." // Chex Quest 2
+
+HERETIC:
+1: "...the world is surely damned." // From the manual.
+2: "No one ever said being a Heretic was easy!" // E1 end text.
+3: "But what else can you do, if the will to fight is gone?" // E5 end text.
+4: "You find, in the end, that it is not within you to surrender without a fight." // E5 end text.
+5: "It is not my destiny to be a hero." // Heretic II
+6: "Your fight has been in vain." // Heretic II
+
+HEXEN:
+1: "My servants can smell your blood, human." // Hub 2
+2: "Worship me, and I may yet be merciful. Then again, maybe not." // Hub 3
+3: "Regardless of the path you choose, Death awaits you." // HeXen II, Hub 1
+4: "Follow the light, for while the path is wrought with danger, your destiny lies below." // HeXen II, Hub 2
+5: "Your meddling will only result in your death.\nLeave while you can." // HeXen II; Portal of Praevus
+6: "You've made it to your final goal, to turn back would be cowardice." // HeXen II: Portal of Praevus
+
+WOLFENSTEIN 3D:
+1: "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one." // Wolfenstein 3D
+2: "We owe you a great debt, Mr. Blazkowicz.\nYou have served your country well." // Spear of Destiny
+3: "For guns and glory, press N.\nFor work and worry, press Y." // Wolfenstein 3D
+4: "Sieg heil...huh. Sieg hell." // Wolfenstein 3D
+5: "The next adventure awaits! So don't wait...start the next adventure!" // Wolfenstein 3D: The Nocturnal Missions
+6: "But the adventure is just beginning!" //  Wolfenstein 3D: The Nocturnal Missions
+
+DUKE NUKEM:
+1: "I need a stiff drink... a shower... and a soft-skinned belly to lie my head on." // End of Episode 2 of Duke Nukem 3D.
+2: "The last thing that's gonna go thru your mind before you die... is my size 13 boot!" // End of Episode 2 of Duke Nukem 3D.
+3: "After a few days of R&R, I'll be ready for more action!" // Last line before credits in Duke Nukem 3D.
+4: "I guess I'll lean against this oozing, bulbous wall and wait for death." // Duke Nukem II
+5: "I always said if there's a way to go, it would have something to do with women, whips and oil." // Duke Nukem: Manhattan Project
+6: "I should probably kill everything, then watch a movie." // Duke Nukem: Land of the Babes
+
+MARATHON:
+1: "You can stay behind to work on your tan, if you'd like, but I'm leaving." // Marathon 2
+2: "If I had a rocket launcher, I'd make somebody pay." // Marathon 2
+3: "P.S.: If things around here aren't working, it's because I'm laughing so hard." // Marathon
+4: "The candles burn out for you; I am free." // Marathon
+5: "T-Minus 15.193792102158E+9 years until the universe closes!" // Marathon
+6: "Do you know what kind of hat I'm wearing?\nA party hat. You don't get one." // Marathon: Infinity
+*/

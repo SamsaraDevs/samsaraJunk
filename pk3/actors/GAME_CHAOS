@@ -1,0 +1,96 @@
+// For the crossover-mashup mods Hordes of Chaos and Resurrection of Chaos, by Udderdude, Vermil, and Hobomaster.
+
+// Hordes of Chaos
+ACTOR DoomImpHOC : RandomSpawner 7001
+{ 
+Game Heretic
+DropItem "DoomImp2" }
+
+ACTOR LostSoulHOC : RandomSpawner 7002
+{
+Game Heretic
+DropItem "LostSoul2" }
+
+ACTOR PainElementalHOC : RandomSpawner 7003 
+{
+Game Heretic
+DropItem "PainElemental2" }
+
+ACTOR CacodemonHOC : RandomSpawner 7004 
+{
+Game Heretic
+DropItem "Cacodemon2" }
+
+ACTOR BaronOfHellHOC : RandomSpawner 7005 
+{
+Game Heretic
+DropItem "BaronOfHell2" }
+
+ACTOR CentaurHOC : RandomSpawner 7006 
+{
+Game Heretic
+DropItem "Centaur2" }
+
+ACTOR CentaurLeaderHOC : RandomSpawner 7007 
+{
+Game Heretic
+DropItem "CentaurLeader2" }
+
+ACTOR BishopHOC : RandomSpawner 7008 
+{
+Game Heretic
+DropItem "Bishop2" }
+
+ACTOR ArchvileHOC : RandomSpawner 7009 
+{
+Game Heretic
+DropItem "Archvile2" }
+
+ACTOR SerpentHOC : RandomSpawner 7010 
+{
+Game Heretic
+DropItem "Serpent2" }
+
+ACTOR SerpentLeaderHOC : RandomSpawner 7011 
+{
+Game Heretic
+DropItem "SerpentLeader2" }
+
+ACTOR WendigoHOC : RandomSpawner 7020 
+{
+Game Heretic
+DropItem "IceGuy2" }
+
+ACTOR HeresiarchHOC : RandomSpawner 7030 
+{
+Game Heretic
+DropItem "Heresiarch2" }
+
+
+// Resurrection of Chaos
+
+ACTOR MancubusHOC : RandomSpawner 7005 {
+Game Hexen
+DropItem "Fatso2" } // May appear in RoC as a Baron of Hell.
+
+ACTOR RevenantHOC : RandomSpawner 7006 {
+Game Hexen
+DropItem "Cacodemon2" } // May appear in RoC as a Centaur.
+
+ACTOR SnakeHOC : RandomSpawner 7008 {
+Game Hexen
+DropItem "Snake2" } // May appear in RoC as a Bishop.
+
+ACTOR CyberdemonHOC : RandomSpawner 7009 {
+Game Hexen
+DropItem "Cyberdemon2" } // May appear in RoC as an Archvile.
+
+ACTOR DemonHOC : RandomSpawner 7010 {
+Game Hexen
+DropItem "DoomDemon2" } // May appear in RoC as a Stalker.
+
+ACTOR SpectreHOC : RandomSpawner 7000 {
+Game Hexen
+DropItem "Spectre2" }
+
+// None of the original monsters are here because I don't feel right nicking other people's Decorate.

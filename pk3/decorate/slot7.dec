@@ -1,4 +1,4 @@
-actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces Chaingun
+actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
 {
     States
     {

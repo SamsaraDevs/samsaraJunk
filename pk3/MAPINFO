@@ -1,0 +1,88 @@
+gameinfo
+{
+	quitmessages = "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+				   "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14",
+				   "$QUITMSG15", "$QUITMSG16", "$QUITMSG17", "$QUITMSG18", "$QUITMSG19", "$QUITMSG20", "$QUITMSG21",
+				   "$QUITMSG22", "$QUITMSG23", "$QUITMSG24", "$QUITMSG25", "$QUITMSG26", "$QUITMSG27", "$QUITMSG28",
+				   "$QUITMSG29", "$QUITMSG30", "$QUITMSG31", "$QUITMSG32", "$QUITMSG33", "$QUITMSG34", "$QUITMSG35",
+				   "$QUITMSG36", "$QUITMSG37", "$QUITMSG38", "$QUITMSG39", "$QUITMSG40", "$QUITMSG41", "$QUITMSG42", "$QUITMSG"
+}
+
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DamageFactor = 0.5
+	EasyBossBrain
+	SpawnFilter = Baby
+	Name = "Jani"
+    PlayerClassName = "Doomguy", "I'm too young to die!"
+    PlayerClassName = "ChexWarrior", "Easy Does It"
+    PlayerClassName = "Corvus", "Thou Needeth a Wet-Nurse"
+    PlayerClassName = "Blazkowicz", "Can I Play, Daddy?"
+    PlayerClassName = "Parias", "Altar Boy"
+    PlayerClassName = "Duke", "Piece of Cake"
+	PlayerClassName = "SecurityOfficer", "Kindergarten"
+}
+
+skill easy
+{
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "Srotapanna"
+    PlayerClassName = "Doomguy", "Hey, not too rough"
+    PlayerClassName = "ChexWarrior", "Not So Sticky"
+    PlayerClassName = "Corvus", "Yellowbellies-R-Us"
+    PlayerClassName = "Blazkowicz", "Don't Hurt Me."
+    PlayerClassName = "Parias", "Acolyte"
+    PlayerClassName = "Duke", "Let's Rock"
+	PlayerClassName = "SecurityOfficer", "Easy"
+}
+
+skill normal
+{
+	SpawnFilter = Normal
+	Name = "Sakridagami"
+    PlayerClassName = "Doomguy", "Hurt Me Plenty"
+    PlayerClassName = "ChexWarrior", "Gobs of Goo"
+    PlayerClassName = "Corvus", "Bringest Them Oneth"
+    PlayerClassName = "Blazkowicz", "Bring 'em On!"
+    PlayerClassName = "Parias", "Priest"
+    PlayerClassName = "Duke", "Come Get Some"
+	PlayerClassName = "SecurityOfficer", "Normal"
+	//DefaultSkill
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "Anagamin"
+    PlayerClassName = "Doomguy", "Ultra-Violence"
+    PlayerClassName = "ChexWarrior", "Extreme Ooze"
+    PlayerClassName = "Corvus", "Thou Art a Smite-Meister"
+    PlayerClassName = "Blazkowicz", "I Am Death Incarnate!"
+    PlayerClassName = "Parias", "Cardinal"
+    PlayerClassName = "Duke", "Damn I'm Good"
+	PlayerClassName = "SecurityOfficer", "Major Damage"
+}
+
+skill nightmare
+{
+	//AmmoFactor = 2
+	FastMonsters
+	//DisableCheats
+	//RespawnTime = 12
+	SpawnFilter = Nightmare
+	Name = "Arahant"
+    PlayerClassName = "Doomguy", "NIGHTMARE!"
+    PlayerClassName = "ChexWarrior", "Super Slimey!"
+    PlayerClassName = "Corvus", "Black Plague Possesses Thee"
+    PlayerClassName = "Blazkowicz", "Destiny Yields to Me!"
+    PlayerClassName = "Parias", "Pope"
+    PlayerClassName = "Duke", "Hail to the King"
+	PlayerClassName = "SecurityOfficer", "Total Carnage"
+	MustConfirm = "Heedfulness is the Deathless path; heedlessness, the path to death."
+	
+	DamageFactor = 1.5
+	Aggressiveness = 0.55
+}

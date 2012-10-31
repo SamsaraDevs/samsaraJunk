@@ -1,4 +1,4 @@
-actor SamsaraSlotSixPickup: SamsaraSlotPickup replaces Chaingun
+actor SamsaraSlotSixPickup: SamsaraSlotPickup replaces PlasmaRifle
 {
     States
     {

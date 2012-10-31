@@ -1,0 +1,107 @@
+[IntroStrings]
+"Agent Blazkowicz here. Beginning the operation."
+"Once more into the breach. Let's go."
+"Another group of fresh recruits. Let me show you how it's done."
+"The things I do for my country."
+"Obviously this mission calls for a professional."
+"Time to raise some hell, men."
+
+[FragStrings]
+"I only regret that you have but one life to give."
+"Didn't sign up for wetwork, but I'm not complaining."
+"Clean shot, clean kill."
+"Shame your fancy gun doesn't fire worth a damn."
+"One less hostile to account for."
+"I can't tell if you were trying to fight back or not."
+"They sure don't make solders here like they do back home."
+"No time for your excuses, I've got more work to do."
+"I don't know what game you're playing, but this is war."
+"You're not the biggest coward I've killed, but you're skirting the line."
+
+[KilledStrings]
+"You've officially done what the Reich couldn't."
+"Congratulations, you shoot better than a Nazi."
+"Reporting casualties. Ow."
+"Give a boy a weapon and he thinks he's a soldier."
+"You call that a kill? I've been tortured worse!"
+"You realize of course that this means war."
+"I've got a surplus GI beating put aside just for you."
+"Next time it'll be my foot versus your throat."
+"You should feel honored, getting to kill a real American hero."
+
+[RoamingStrings]
+"Unfamiliar territory. Better fan out and explore."
+"Nothing like pounding pavement. Now, where are those hostiles..."
+"Don't worry, I'm coming to get you. I just have to find you first."
+"Ugh, here comes the boring part. C'mon, show yourselves already."
+"I think I hear footsteps...who's that I spy?"
+"Figures, you can't fight worth a damn but you sure can hide."
+"You're lucky I can't stab you in the back right now."
+"I hate it when they run. Come on and fight like a soldier."
+"I've got a history of hunting and killing. You don't have the advantage."
+"Guerilla warfare? You're fighting the wrong man, pal."
+"Nothing like a little cardio to pump me up before a fight."
+"I can go for miles, buddy. I've got time to find you."
+"That's right, keep running. I want to see if I can hit you across the room."
+"I don't expect insults to draw you out. I'd rather do that to your face. C'mere."
+"That gun of yours better be ready to fire. I'm gonna shoot first."
+"Going AWOL ain't any way to win a fight, soldier. Take your punishment."
+"You know all this effort to catch you means I'm gonna drop the hammer harder."
+"I like the thrill of the chase. It's just icing on the cake, you know?"
+"I spy with my little eye...nothing. Yet. Show yourself."
+"Stop dragging out the war, buddy. Let's get this over with."
+"You think you know the battlefield better than me? We'll see about that."
+"You'd better not be huddling in a corner, hiding. That's what the Nazis did."
+"Running for reinforcements isn't going to help. I'll take them on, too."
+"Time for a little in-field recon. Ready and loaded."
+"Not sure if you're neutralized or not...let's take a look around."
+"Anyone still breathing? C'mere, I can fix that."
+"I'll go over every foot with a fine-toothed comb until I found you."
+
+[RareRoamingStrings]
+"You're damned lucky I can't read my map and shoot you at the same time."
+"It'd be nice if the Wheel would turn back. I want to shoot Hitler again."
+"Why the hell does everything have to be a maze around here?"
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"Agent Blazkowicz reporting in. Mission accomplished."
+"Nothing more than another completed mission. Time for the next one."
+"There are two elements to a good victory: Careful planning and solid execution."
+"Time to reap the spoils of war."
+"Don't worry, I don't shoot POWs. Your cell is gonna be tiny though."
+"The only thing that would make this better is a Dutch cigar."
+
+[LoseStrings]
+"This is not an acceptable outcome."
+"You may have won the battle, but I can still win the war."
+"Damn it to hell. Retreat! Fall back!"
+"Should've bought more war bonds."
+"Where's that lousy cyanide pill..."
+"If you think we're done here, you're dead wrong."
+
+[FrustratedStrings] // Spammer!
+"Enough already, air strikes aren't fair!"
+"You missin' a leg, relying so hard on that crutch?!"
+"Overkill? Real original, let's see you use a real weapon."
+"Yeah, laugh now, wait until it's my turn."
+"Why the hell are you wasting this on me? There's other jerks to kill!"
+
+[EnragedStrings] // You fail it!
+"That's it! The gloves are off! Time for a war crime."
+"I hope you're prepared for a slow death, scumbag."
+"You're gonna get a taste of what I gave der Fuhrer!"
+"Hope you're still feeling cocky after I snap your neck."
+"I am gonna whup your ass like it's Eva Braun's!"
+
+[DemoralizedStrings] // Your skill is not enough!
+"Jesus, I feel like a French beach."
+"Ugh...did anyone get that tank's serial number?"
+"Okay, I give up, you've got what it takes to serve with me."
+"Come on, at least the Nazis would take breaks while beating me!"
+"I haven't been beaten this bad since boot camp."
+
+[PissedStrings] // Llama!
+"Figures that the only language you understand is violence. Let's chat."
+"Now that's just disrespectful, interrupting a superior officer like that."

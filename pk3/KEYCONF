@@ -1,0 +1,93 @@
+clearplayerclasses
+addplayerclass "DoomguyPlayer"
+addplayerclass "ChexWarrior"
+addplayerclass "CorvusPlayer"
+addplayerclass "WolfenPlayer"
+addplayerclass "HexenPlayer"
+addplayerclass "DukePlayer"
+addplayerclass "MarathonPlayer"
+
+addkeysection "Samsara" samsarakeys
+
+addmenukey "Doomguy: Toggle Animations" samsara_vanilladoomanims
+addmenukey "BJ: Toggle Retro Movement" samsara_bjwalk
+addmenukey "Duke: Toggle Ballgag" samsara_dukestfu
+//addmenukey "S.O.: Toggle Firing Modes" samsara_marathonshootan
+addmenukey "Global: Toggle Weapon Bar" samsara_wephud
+
+alias samsara_vanilladoomanims "puke 210"
+alias samsara_bjwalk "puke 215"
+alias samsara_dukestfu "puke 216"
+alias samsara_wephud "puke 217"
+//alias samsara_marathonshootan "puke 223"
+
+addslotdefault 0 " Fist "
+addslotdefault 0 " Staff "
+addslotdefault 0 "Mace of Contrition"
+addslotdefault 0 " Bootspoon "
+addslotdefault 0 "Knife"
+addslotdefault 0 "Mighty Boot"
+addslotdefault 0 "Steel Knuckles"
+
+addslotdefault 1 " Chainsaw "
+addslotdefault 1 "Gauntlets of the Necromancer"
+addslotdefault 1 "Super Bootspork"
+addslotdefault 1 "Pipebombs"
+addslotdefault 1 "KKV-7 SMG Flechette"
+
+addslotdefault 1 " Pistol "
+addslotdefault 1 "Elven Wand"
+addslotdefault 1 "Sapphire Wand"
+addslotdefault 1 "Mini-Zorcher"
+addslotdefault 1 "Luger"
+addslotdefault 1 "M1911"
+addslotdefault 1 ".44 Magnum Mega Class A1"
+
+addslotdefault 2 " Shotgun "
+addslotdefault 2 " Firemace "
+addslotdefault 2 "Frost Shards"
+addslotdefault 2 "Large Zorcher"
+addslotdefault 2 "Machine Gun"
+addslotdefault 2 "  Shotgun  "
+addslotdefault 2 "WSTE-M5 Combat Shotgun"
+
+addslotdefault 3 "Super Shotgun"
+addslotdefault 3 "Ethereal Crossbow"
+addslotdefault 3 "Timon's Axe"
+addslotdefault 3 "Super Large Zorcher"
+addslotdefault 3 "Explosive Shotgun"
+addslotdefault 3 "Fusion Pistol"
+
+addslotdefault 4 " Chaingun "
+addslotdefault 4 "Dragon Claw"
+addslotdefault 4 "Serpent Staff"
+addslotdefault 4 "Rapid Zorcher"
+addslotdefault 4 "  Chaingun  "
+addslotdefault 4 "Chaingun Cannon"
+addslotdefault 4 "MA-75B Assault Rifle"
+
+addslotdefault 5 "Rocket Launcher"
+addslotdefault 5 "Phoenix Rod"
+addslotdefault 5 "Hammer of Retribution"
+addslotdefault 5 "Zorch Propulsor"
+addslotdefault 5 " Rocket Launcher "
+addslotdefault 5 RPG
+addslotdefault 5 "SPNKR-XP SSM Launcher"
+
+addslotdefault 6 "Plasma Rifle"
+addslotdefault 6 "Hellstaff"
+addslotdefault 6 "Firestorm"
+addslotdefault 6 "Phasing Zorcher"
+addslotdefault 6 " Flamethrower "
+addslotdefault 6 "Freezethrower"
+addslotdefault 6 "TOZT-7 Napalm Unit"
+
+addslotdefault 7 "B.F.G. 9000"
+addslotdefault 7 "Wraithverge"
+addslotdefault 7 "LAZ Device"
+addslotdefault 7 "Spear of Destiny"
+addslotdefault 7 "Devastator"
+addslotdefault 7 "ONI-71 Wave Motion Cannon"
+
+addslotdefault 8 "Alien Weapon"
+addslotdefault 8 " Alien Weapon "

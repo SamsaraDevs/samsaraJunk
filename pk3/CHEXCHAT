@@ -1,0 +1,81 @@
+[IntroStrings]
+"All right! Good luck, everyone."
+"Hello, folks, how's it going?"
+"This'll be fun."
+"Everyone ready for a fair and friendly match?"
+"May the best man, woman, or thing from beyond win."
+"I'm from Chex Squadron, and I volunteer for battle!"
+
+[FragStrings]
+"Don't worry, just relax. You'll respawn shortly."
+"Don't give up yet!"
+"I'm sure you can do better than that."
+"Oh, don't take it personally. Not everyone wins."
+"You'll be fine. I didn't even hurt you."
+"Zorched!"
+"I wonder where you'll end up?"
+"Have a nice trip."
+"Don't get lost wandering back, now."
+
+[KilledStrings]
+"Hold the party mix! I'm not finished yet!"
+"Oh, wow, great shot."
+"You would do well in the IFC."
+"Nice. I'll have to do better next time."
+"It's not over yet."
+"I still have plenty of fight left in me!"
+"You'll go from cadet to sergeant in no time."
+"Oof. I don't often feel that."
+"Eeehhh, give me a bit. I'll be back soon."
+
+[RoamingStrings]
+"This arena looks pretty nice. Some good architecture."
+"Aah, one second. Gotta clean slime off my boot."
+"Gonna have to try some of those other weapons sometime."
+"From the Halls of Montezuma...hmm hmm hmm..."
+"Haven't seen environments this bloody in a long, long time."
+"I wonder how Chex Squadron is doing."
+"The mission continues..."
+"I wonder if I'll get called back into action again."
+"Hah, if only General Mills could see me now."
+"So, you guys ready for another round?"
+"Come on, hide and seek is over. Olly olly oxen free."
+"Let's get out and get the guns blazing again."
+"This is a great subsitute for target practice."
+"Surrender is not an option. There's no exit before it's over!"
+"Gonna need to log this area down..."
+"This is going to go well. I can feel it."
+"Most don't last this long. You're doing great so far."
+"Hmm. I think I can turn up the heat now."
+"I'm going to have to restock on supplies after this."
+
+[RareRoamingStrings]
+"Hey, you guys wanna head to the Chex Diner after this? My treat."
+"Aahhh, a Golden Reggie Award is nice, but here in the field is where I belong!"
+"It's been a long time since I last wielded any ballistic weapons. I've gotten fond of the zorchers."
+"I wonder if the Wheel turns for the villains as well as for us?"
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"All right, good game, everybody."
+"Everyone up for another match?"
+"The best man won."
+"Maybe next time, guys. You can't win 'em all."
+"All right, keep the language clean, guys. You can try next time."
+
+[LoseStrings]
+"All right, good game, everybody."
+"Everyone up for another match?"
+"The best man won."
+"I don't mind losing. Sometimes the fun is just in fighting, not in winning."
+"Not bad, not bad. A good trigger finger means a long life."
+
+//[FrustratedStrings] // Spammer!
+
+//[EnragedStrings] // You fail it!
+
+//[DemoralizedStrings] // Your skill is not enough!
+
+[PissedStrings] // Llama!
+"Okay, not cool."

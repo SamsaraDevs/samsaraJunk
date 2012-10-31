@@ -1,4 +1,4 @@
-actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces Chaingun
+actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
 {
     States
     {

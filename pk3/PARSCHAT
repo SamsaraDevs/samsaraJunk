@@ -1,0 +1,88 @@
+[IntroStrings]
+"...and give me the strength to overcome every challenge. Amen."
+"...and may all I do in this arena bring glory to you. Amen."
+"...and have mercy on every soul I bring to the afterlife. Amen."
+"...and allow me your wisdom and power in this battle. Amen."
+
+[FragStrings]
+"That is the first of the seven rites to suffer through. Six more to go."
+"Now, your soul is free."
+"Rise again. As many times as you want, I will strike you down again."
+"Requiescat in pace."
+"Your flesh offered little resistance. I believe it invited me to cleave through."
+"The flesh gives, the bones break, the heart stops. You are left with nothing."
+"Be proud of your new scars. I will give you more, if you'd like."
+"There is honor in dying for a good cause. My cause is quite worthy, I assure you."
+"The spirit is willing, but the flesh is weak."
+"I cast you to the afterlife. Be wary of that first step."
+"You may give up, if you'd like. It would be easier on you."
+"I have brought the fire and brimstone to this world myself."
+
+[KilledStrings]
+"Even in the chill clutch of death, I gain ever more strength."
+"I will rise again, and again, and again. My work will not stop, even after death."
+"There are many more lessons I have yet to learn."
+"I cannot win them all."
+"You have no need to teach me of the afterlife."
+"I err. A rare experience."
+"My armor may falter, but my soul will match your blows."
+"I cast aside my old flesh, and rise again with a new life."
+"You cannot stop my work. It is a physical impossibility."
+"A thousand times, a thousand deaths will not slay me. I will always return for you."
+
+[RoamingStrings]
+"These halls are stained with the life of thousands. What were their lives like?"
+"There are many thoughts to contemplate with this lull in battle."
+"The path boasts many thorns and thistles. I have the patience to go through."
+"Come. I grow weary of this quiet."
+"The Lord's patience is infinite. Mine is not."
+"I am here to fight you, not to wander like a lost child."
+"Delay all you want. My weapon's edges will not dull."
+"The true warrior is a shadow within the darkness, a whisper among shouts."
+"Run as you'd like. I am all about you, waiting for you to trip."
+"There are those who say there is honor in retreat. Do not believe them."
+"I take all challenges by charging forward. I see you prefer charging backwards. Pity."
+"Avoiding death by my hands is like avoiding fate itself."
+"I am the darkness around you, the stone under you, and the sky above you. You cannot run."
+"The environs all blend together again."
+"You think yourself worthy? Prove it."
+"What made you choose this path of utter annihilation?"
+"Is this the life you willingly chose?"
+"Sometimes it is preferable not to hear the serpent's rattle."
+
+[RareRoamingStrings]
+"Tell me of your master. Was he a good man?"
+"What words would you prefer on your requiem? I am writing it now, while we wait."
+"Every time the Wheel spins, I find myself with more to marvel."
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"The universal truths apply to all. The sun rises. The sun sets. I win."
+"I was ordained to win this battle. Who were you to defy it?"
+"You were not worthy. I was. I say this as fact, not with arrogance."
+"And now, I ascend to even greater challenges."
+"I must remember, to be victor in a competition like this is no cause for pride."
+"And so it ends. Rejoice, for I was merciful."
+"The fire of my soul carresses my enemies. You have withstood the fire well."
+"'...and I have created the waster, to destroy.'"
+"You were a good opponent. Unfortunately, great is better than good."
+
+[LoseStrings]
+"I bear no ill will. Not every victory can be within my grasp."
+"I have misjudged you. I am pleased that true heroes still exist."
+"You show great promise. I will match you on a higher level."
+"You have taken a great step towards providence."
+"The fire of my soul carresses my enemies. You have withstood the fire well."
+"Take heart. Only those who fight true are those who win."
+"Do remember, to be victor in a competition like this is no cause for pride."
+"Champion your people with honor and dignity."
+
+//[FrustratedStrings] // Spammer!
+
+//[EnragedStrings] // You fail it!
+
+//[DemoralizedStrings] // Your skill is not enough!
+
+[PissedStrings] // Llama!
+"I have no words adequate for a child like you."

@@ -1,0 +1,1910 @@
+// Chex Quest spawners for compatibility. Wahey!
+
+Actor ChexSSGAndChaingunSpawner replaces RapidZorcher
+{
+	DropItem SuperShotgun
+	DropItem Chaingun
+	States
+	{
+	Spawn:
+		PUFF A 1
+		TNTA A 0 A_NoBlocking
+		stop
+	}
+}
+
+Actor ChexWeapon0Spawner : Weapon0Spawner replaces SuperBootspork { }
+Actor ChexWeapon2Spawner : Weapon2Spawner replaces LargeZorcher { }
+Actor ChexWeapon3Spawner : Weapon3Spawner replaces SuperLargeZorcher { }
+// There isn't a Super Large Zorcher in any of the Chex games, but just in case.
+Actor ChexWeapon5Spawner : Weapon5Spawner replaces ZorchPropulsor { }
+Actor ChexWeapon6Spawner : Weapon6Spawner replaces PhasingZorcher { }
+Actor ChexWeapon7Spawner : Weapon7Spawner replaces LAZDevice { }
+
+Actor ChexAmmo1Small : Ammo1Small replaces MiniZorchRecharge { }
+Actor ChexAmmo1Big : Ammo1Big replaces MiniZorchPack { }
+Actor ChexAmmo2Small : Ammo2Small replaces LargeZorchRecharge { }
+Actor ChexAmmo2Big : Ammo2Big replaces LargeZorchPack { }
+Actor ChexAmmo3Small : Ammo3Small replaces PropulsorZorch { }
+Actor ChexAmmo3Big : Ammo3Big replaces PropulsorZorchPack { }
+Actor ChexAmmo4Small : Ammo4Small replaces PhasingZorch { }
+Actor ChexAmmo4Big : Ammo4Big replaces PhasingZorchPack { }
+Actor ChexAmmoBackpack : AmmoBackpack replaces Zorchpack { }
+
+Actor ChexHealPack0 : HealPack0 replaces GlassOfWater { }
+Actor ChexHealPack1 : HealPack1 replaces BowlOfFruit { }
+Actor ChexHealPack2 : HealPack2 replaces BowlOfVegetables { }
+Actor ChexSuperHealth : SuperHealth replaces SuperchargeBreakfast { }
+Actor ChexArmorScrap : ArmorScrap replaces SlimeRepellent { }
+Actor ChexArmorPack1 : ArmorPack1 replaces ChexArmor { }
+Actor ChexArmorPack2 : ArmorPack2 replaces SuperChexArmor { }
+
+Actor ChexBioSuit : BioSuit replaces SlimeProofSuit { }
+Actor ChexVisor : Visor 2045//replaces UltraGoggles { }
+{
+	Game Chex
+	SpawnID 138
+}
+// Actor ChexAutomap : Automap replaces ComputerAreaMap	// Can't be done until the automap gets a replacement!
+
+// Right. Now for the enemies. First, the flemoid gibs--modified from Nash's Nashgore.
+
+ACTOR FlemoidGib
+{
+ scale 0.95
+ health 1
+ radius 8
+ height 1
+ mass 1
+ +CORPSE
+ +NOTELEPORT
+ -SOLID
+ +NOBLOCKMAP
+ +CLIENTSIDEONLY
+ states
+ {
+ Spawn:
+  TNT1 A 0
+  FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD A 1 
+  FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD A 1
+  FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD B 1
+  FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD B 1
+  FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD C 1
+  FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD C 1
+  FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD D 1
+  FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+  FBLD D 1
+  loop
+ Crash:
+  TNT1 A 1 A_SpawnItem("FlemoidSplatSpot",0,0,0,1)
+  stop
+ }
+}
+
+actor FlemoidSplatSpot
+{
+ Scale 1.1
+ radius 12
+ height 2
+ mass 1
+ -SOLID
+ +NOTELEPORT
+ -NOBLOCKMAP
+ +CLIENTSIDEONLY
+ states
+ {
+ Spawn:
+  TNT1 A 0
+  TNT1 A 0 A_PlaySound("flemsplat")
+  TNT1 A 0 A_Jump(256,"DeathA","DeathB","DeathC","DeathD")
+ DeathA:
+  BSPT A 1500
+  BSPT AAAAAAAAAA 15 A_FadeOut(0.1)
+  stop
+ DeathB:
+  BSPT B 1500
+  BSPT BBBBBBBBBB 15 A_FadeOut(0.1)
+  stop
+ DeathC:
+  BSPT C 1500
+  BSPT CCCCCCCCCC 15 A_FadeOut(0.1)
+  stop
+ DeathD:
+  BSPT D 1500
+  BSPT DDDDDDDDDD 15 A_FadeOut(0.1)
+  stop
+ }
+}
+
+// Blood trails spawned by FlyingBlood
+actor FlemoidGibTrail
+{
+ scale 0.8//0.70
+ mass 1
+ +LOWGRAVITY
+ +NOTELEPORT
+ +NOBLOCKMAP
+ states
+ {
+  Spawn:
+  BTRL A 4
+  BTRL B 4
+  BTRL C 4
+  BTRL D 4
+  stop
+ }
+}
+
+// Now the actual enemies...
+
+ACTOR FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
+{
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++DONTGIB
++NOTDMATCH
++NOICEDEATH
+States
+{
+Pain:
+	POSS A 3 A_SpawnDebris("FlemoidGib",1)
+	POSS A 3 A_Pain
+	Goto See
+Pain.ZorchPistol:
+Pain.Zorch:
+	POSS G 3
+	POSS G 3 A_Pain
+	Goto See
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+XDeath:
+Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	TNT1 A 0 A_PlaySound("flemdie")
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+	POSD A 10
+	POSD ABC 7
+	POSD D -1
+	stop
+Death.ZorchPistol:
+Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	POSS H 5
+	POSS I 5 A_Scream
+	POSS J 5 A_NoBlocking
+	POSS K 5
+	POSS L -1
+	Stop
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	POSS A 0 A_UnsetSolid
+    POSS A 70 A_GenericFreezeDeath
+    POSS A 0 A_IceGuyDie
+    POSS A 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	POSS A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	POSS A 16 A_Pain
+	Goto See
+  Melee:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Melee"
+}
+}
+
+ACTOR FlemoidusBipedicus2 : FlemoidusBipedicus replaces FlemoidusBipedicus
+{
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++DONTGIB
++NOTDMATCH
++NOICEDEATH
+States
+{
+Pain:
+	SPOS A 3 A_SpawnDebris("FlemoidGib",1)
+	SPOS A 3 A_Pain
+	Goto See
+Pain.ZorchPistol:
+Pain.Zorch:
+	SPOS G 3
+	SPOS G 3 A_Pain
+	Goto See
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+XDeath:
+Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	TNT1 A 0 A_PlaySound("flemdie")
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+	SPOD A 10
+	SPOD ABC 7
+	SPOD D -1
+	stop
+Death.ZorchPistol:
+Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	SPOS H 5
+	SPOS I 5 A_Scream
+	SPOS J 5 A_NoBlocking
+	SPOS K 5
+	SPOS L -1
+	Stop
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	SPOS A 0 A_UnsetSolid
+    SPOS A 70 A_GenericFreezeDeath
+    SPOS A 0 A_IceGuyDie
+    SPOS A 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	SPOS A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	SPOS A 16 A_Pain
+	Goto See
+  Melee:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Melee"
+}
+}
+
+ACTOR ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
+{
+	Game Chex
+	SpawnID 5
+	Health 125 // Previously 100
+	Radius 20
+	Height 56
+	Mass 100
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+DamageFactor "MarathonFusion", 2.0
+PainChance "MightyBoot", 255
+	Speed 8
+	PainChance 200
+	Monster
+	+FLOORCLIP
+	+DONTGIB
+	+NOTDMATCH
+	+NOICEDEATH
+	//+NOBLOODDECALS
+	SeeSound "imp/sight"
+	PainSound "imp/pain"
+	DeathSound "imp/death"
+	ActiveSound "imp/active"
+	Obituary "$OB_BIPEDICUS2"
+	States
+	{
+	Spawn:
+		TROO AB 10 A_Look
+		Loop
+	See:
+		TROO AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		TROO EF 6 A_FaceTarget // Previously 8 each
+		TROO G 6 A_CustomComboAttack("BipedicusBallV3", 32, random[troopattack](1,8)*3, "imp/melee", "flem")
+		Goto See
+	Pain:
+		TROO A 2 A_SpawnDebris("FlemoidGib",1)
+		TROO A 2 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		TROO H 2
+		TROO H 2 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+  Death.DukePistol:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TROO I 8
+		TROO J 8 A_Scream
+		TROO K 6
+		TROO L 6 A_NoBlocking
+		TROO M -1
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+		TNT1 A 0 A_SpawnItem("ArmoredBipedicusBody")
+		SPOD A 10
+		SPOD ABC 7
+		SPOD D -1
+		stop
+	Raise:
+		TROO MLKJI 8
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TROO A 0 A_UnsetSolid
+		TROO A 70 A_GenericFreezeDeath
+		TROO A 0 A_IceGuyDie
+		TROO A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	TROO A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	TROO A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR ArmoredBipedicusBody
+{
+ radius 16
+ height 16
+ BounceFactor 0.46
+ BounceCount 3
+ Mass 50
+ Speed 1
+ SeeSound "flem/cyclopsbody"
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TROD A 10
+   loop
+ Death:
+   TROD A -1
+   stop
+ }
+}
+
+ACTOR Quadrumpus 9057
+{
+	Game Chex
+	SpawnID 122
+	Health 150 // Previously 60
+	Radius 20
+	Height 56
+	Mass 100
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0 //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+	Speed 8
+	PainChance 200
+	Monster
+	+FLOORCLIP
+	+DONTGIB
+	+NOTDMATCH
+	+NOICEDEATH
+	//+NOBLOODDECALS
+	SeeSound "imp/sight"
+	PainSound "imp/pain"
+	DeathSound "imp/death"
+	ActiveSound "imp/active"
+	Obituary "$OB_QUADRUMPUS"
+	States
+	{
+	Spawn:
+		QUAD AB 10 A_Look
+		Loop
+	See:
+		QUAD AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		QUAD EF 6 A_FaceTarget // Previously 8 each
+		QUAD G 6 A_CustomMeleeAttack(random[troopattack](1,8)*3, "imp/melee", "imp/melee", "flem")
+		Goto See
+	Missile:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		QUAD EF 8 A_FaceTarget
+		QUAD G 0 A_CustomMissile("QuadrumpusBall", 27, -16)
+		QUAD G 0 A_CustomMissile("QuadrumpusBall", 37, -16)
+		QUAD G 0 A_CustomMissile("QuadrumpusBall", 37, 16)
+		QUAD G 6 A_CustomMissile("QuadrumpusBall", 27, 16)
+		Goto See
+	Pain:
+		QUAD A 2 A_SpawnDebris("FlemoidGib",1)
+		QUAD A 2 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		QUAD H 2
+		QUAD H 2 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		QUAD I 8
+		QUAD J 8 A_Scream
+		QUAD K 6
+		QUAD L 6 A_NoBlocking
+		QUAD M -1
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie2")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(-1,1),random(26,56),random(-2,2),random(-2,2),random(5,15))
+		TNT1 AA 0 A_CustomMissile("QuadrumpusArm1",32,0,random(-45,-135),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("QuadrumpusArm2",32,0,random(45,135),2,random(0,90))
+		QUDD A 10
+		QUDD ABC 7
+		QUDD D -1
+		stop
+	Raise:
+		QUAD MLKJI 8
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		QUAD A 0 A_UnsetSolid
+		QUAD A 70 A_GenericFreezeDeath
+		QUAD A 0 A_IceGuyDie
+		QUAD A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	QUAD A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	QUAD A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR QuadrumpusBall
+{
+	Game Chex
+	Radius 6
+	Height 8
+	Speed 15
+	FastSpeed 25
+	Damage 1
+	Projectile
+	DamageType Flem
+	+RANDOMIZE
+	SeeSound "imp/attack"
+	DeathSound "imp/shotx"
+	States
+	{
+	Spawn:
+		BAL1 AB 4
+		Loop
+	Death:
+		BAL1 CDE 6
+		Stop
+	}
+}
+
+ACTOR QuadrumpusArm1
+{
+ radius 2
+ height 2
+ BounceFactor 0.55
+ BounceCount 2
+ Mass 10
+ Speed 8
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ -SKYEXPLODE
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   QDRM ABCDEFGH 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2")
+ Death1:
+   QDRM C -1
+   stop
+ Death2:
+   QDRM G -1
+   stop
+ }
+}
+
+ACTOR QuadrumpusArm2
+{
+ radius 2
+ height 2
+ BounceFactor 0.55
+ BounceCount 2
+ Mass 10
+ Speed 8
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ -SKYEXPLODE
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   QDR2 ABCDEFGH 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2")
+ Death1:
+   QDR2 C -1
+   stop
+ Death2:
+   QDR2 G -1
+   stop
+ }
+}
+
+ACTOR FlemoidusStridicus replaces FlemoidusCycloptisCommonus
+{
+	Game Chex
+	SpawnID 8
+	Health 300 // Previously 225
+	PainChance 100
+	Speed 18 // Previously 16
+	Radius 30
+	Height 56
+	Mass 400
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+	Monster
+	+FLOORCLIP +FASTER +FASTMELEE
+	+DONTGIB
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "demon/sight"
+	AttackSound "demon/melee"
+	PainSound "demon/pain"
+	DeathSound "demon/death"
+	ActiveSound "demon/active"
+	Obituary "$OB_STRIDICUS"
+	States
+	{
+	Spawn:
+		SARG AB 10 A_Look
+		Loop
+	See:
+		SARG AABBCCDD 2 A_Chase
+		Loop
+	Melee: // Previously 8 frames each.
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		SARG EF 6 A_FaceTarget
+		SARG G 6 A_CustomMeleeAttack(random[sargattack](1,10)*4, "", "", "Flem")
+		Goto See
+	Pain:
+		SARG A 2 A_SpawnDebris("FlemoidGib",1)
+		SARG A 2 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		SARG H 2
+		SARG H 2 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		SARG I 8
+		SARG J 8 A_Scream
+		SARG K 4
+		SARG L 4 A_NoBlocking
+		SARG M 4
+		SARG N -1
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie2")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(-1,1),random(46,56),random(-2,2),random(-2,2),random(5,15))
+		STRD A 14
+		STRD ABCDEF 7
+		STRD G -1
+		stop
+	Raise:
+		SARG N 5
+		SARG MLKJI 5
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		SARG A 0 A_UnsetSolid
+		SARG A 70 A_GenericFreezeDeath
+		SARG A 0 A_IceGuyDie
+		SARG A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	SARG A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	SARG A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
+{
+	Game Chex
+	SpawnID 9
+	Health 200 // Previously 150
+	PainChance 180
+	Speed 10
+	Radius 30
+	Height 56
+	Mass 400
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+DamageFactor "MarathonFusion", 2.0
+PainChance "MightyBoot", 255
+	Monster
+	+FLOORCLIP +FASTER +FASTMELEE
+	+DONTGIB
+	+NOTDMATCH
+	+FLOAT
+	+NOGRAVITY
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "spectre/sight"
+	AttackSound "spectre/melee"
+	PainSound "spectre/pain"
+	DeathSound "spectre/death"
+	ActiveSound "spectre/active"
+	Obituary "$OB_CYCLOPTIS"
+	States
+	{
+	Spawn:
+		CYCL AB 10 A_Look
+		Loop
+	See:
+		CYCL AABBCCDD 2 A_Chase
+		Loop
+	Melee: // Previously all 8 frames each
+		CYCL EF 6 A_FaceTarget
+		CYCL G 6 A_CustomMeleeAttack(random[sargattack](1,10)*4, "", "", "Flem")
+		Goto See
+	Pain:
+		CYCL A 2 A_SpawnDebris("FlemoidGib",1)
+		CYCL A 2 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		CYCL H 2
+		CYCL H 2 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		CYCL I 8
+		CYCL J 8 A_Scream
+		CYCL K 4
+		CYCL L 4 A_NoBlocking
+		CYCL M 4
+		CYCL N -1
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+		TNT1 A 0 A_SpawnItemEx("CyclopsBody",0,0,25,random(-1,1),random(-1,1),random(-1,4))//A_CustomMissile("CyclopsBody",15,0,random(-180,180))//A_SpawnItem("CyclopsBody")
+		TNT1 AAA 0 A_CustomMissile("CyclopsArm",0,0,random(-180,180),2,random(0,90))//A_SpawnDebris("CyclopsArm",1)
+		TNT1 A -1
+		stop
+	Raise:
+		CYCL N 5
+		CYCL MLKJI 5
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		CYCL A 0 A_UnsetSolid
+		CYCL A 70 A_GenericFreezeDeath
+		CYCL A 0 A_IceGuyDie
+		CYCL A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	CYCL A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	CYCL A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR CyclopsBody
+{
+ radius 16
+ height 16
+ BounceFactor 0.46
+ BounceCount 5
+ Mass 50
+ Speed 1
+ SeeSound "flem/cyclopsbody"
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ +SKYEXPLODE
+ States
+ {
+ Spawn:
+   CYCD A 10
+   loop
+ Death:
+   CYCD A -1
+   stop
+ }
+}
+
+ACTOR CyclopsArm
+{
+ radius 2
+ height 2
+ BounceFactor 0.65
+ BounceCount 7
+ Mass 50
+ Speed 4
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +SKYEXPLODE
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   CYRM ABCDEFGH 5
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2","Death3","Death4")
+ Death1:
+   CYRM C -1
+   stop
+ Death2:
+   CYRM G -1
+   stop
+ Death3:
+   CYRM I -1
+   stop
+ Death4:
+   CYRM J -1
+   stop
+ }
+}
+
+ACTOR SuperCycloptis 3005
+{
+	Game Chex
+	SpawnID 19
+	Health 400
+	Radius 31
+	Height 56
+	Mass 400
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+DamageFactor "MarathonFusion", 2.0
+PainChance "MightyBoot", 255
+	Speed 8
+	PainChance 128
+	Monster
+	+FLOAT +NOGRAVITY +DONTFALL
+	+DONTGIB
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "caco/sight"
+	PainSound "caco/pain"
+	DeathSound "caco/death"
+	ActiveSound "caco/active"
+	Obituary "$OB_SUPERCYCLOPTIS"
+	States
+	{
+	Spawn:
+		HEAD A 10 A_Look
+		Loop
+	See:
+		HEAD A 3 A_Chase
+		Loop
+	Missile:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		HEAD B 5 A_FaceTarget
+		HEAD C 5 A_FaceTarget
+		HEAD D 5 A_CustomComboAttack("CycloptisBall", 32, random[headattack](1,6)*10, "", "flem")
+		Goto See
+	Pain:
+		HEAD A 3 A_SpawnDebris("FlemoidGib",1)
+		HEAD A 3 A_Pain
+		HEAD A 6
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		HEAD E 3
+		HEAD E 3 A_Pain
+		HEAD F 6
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		HEAD G 8
+		HEAD H 8 A_Scream
+		HEAD I 8
+		HEAD J 8
+		HEAD K 8 A_NoBlocking
+		HEAD L -1 A_SetFloorClip
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+		TNT1 A 0 A_CustomMissile("SuperCyclopsBody",0,0,random(-180,180))
+		TNT1 A 0 A_CustomMissile("SuperCyclopsArm1",0,0,random(-45,-135),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("SuperCyclopsArm2",0,0,random(45,135),2,random(0,90))
+		TNT1 A -1 A_SetFloorClip
+		stop
+	Raise:
+		HEAD L 8 A_UnSetFloorClip
+		HEAD KJIHG 8
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		HEAD A 0 A_UnsetSolid
+		HEAD A 70 A_GenericFreezeDeath
+		HEAD A 0 A_IceGuyDie
+		HEAD A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	HEAD A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	HEAD A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR SuperCyclopsBody
+{
+ radius 16
+ height 16
+ BounceFactor 0.26
+ BounceCount 3
+ Mass 50
+ Speed 1
+ SeeSound "flem/cyclopsbody"
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +SKYEXPLODE
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   CYBD A 10
+   loop
+ Death:
+   CYBD A -1
+   stop
+ }
+}
+
+ACTOR SuperCyclopsArm1
+{
+ radius 2
+ height 2
+ BounceFactor 0.55
+ BounceCount 7
+ Mass 10
+ Speed 8
+ SeeSound "flem/cyclopsbody"
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +SKYEXPLODE
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   CYTB ABCDEFGH 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2","Death3","Death4")
+ Death1:
+   CYTB C -1
+   stop
+ Death2:
+   CYTB D -1
+   stop
+ Death3:
+   CYTB G -1
+   stop
+ Death4:
+   CYTB H -1
+   stop
+ }
+}
+
+ACTOR SuperCyclopsArm2
+{
+ radius 2
+ height 2
+ BounceFactor 0.55
+ BounceCount 7
+ Mass 10
+ Speed 8
+ SeeSound "flem/cyclopsbody"
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ -NOGRAVITY
+ -SOLID
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +SKYEXPLODE
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   CYT2 ABCDEFGH 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2","Death3","Death4")
+ Death1:
+   CYT2 B -1
+   stop
+ Death2:
+   CYT2 C -1
+   stop
+ Death3:
+   CYT2 F -1
+   stop
+ Death4:
+   CYT2 G -1
+   stop
+ }
+}
+
+ACTOR Larva 9050
+{
+	Game Chex
+	SpawnID 117
+	Health 150 // Previously 100
+	PainChance 180
+	Speed 7
+	Radius 30
+	Height 56
+	Mass 400
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	DamageFactor "Mace", 1.1
+	DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+	Monster
+	+FLOORCLIP +FASTER +FASTMELEE
+	+DONTGIB
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "spectre/sight"
+	AttackSound "spectre/melee"
+	PainSound "spectre/pain"
+	DeathSound "spectre/death"
+	ActiveSound "spectre/active"
+	Obituary "$OB_LARVA"
+	States
+	{
+	Spawn:
+		LRVA AB 10 A_Look
+		Loop
+	See:
+		LRVA AABBAABB 2 A_Chase
+		Loop
+	Melee: // Previously 8 frames each
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		LRVA CD 6 A_FaceTarget
+		LRVA E 6 A_CustomMeleeAttack(random[sargattack](1,10)*4, "", "", "Flem")
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		LRVA F 2
+		LRVA F 2 A_Pain
+		Goto See
+	Pain:
+		LRVA A 2 A_SpawnDebris("FlemoidGib",1)
+		LRVA A 2 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		LRVA G 8
+		LRVA H 8 A_Scream
+		LRVA I 4
+		LRVA J 4 A_NoBlocking
+		LRVA K 4
+		LRVA L -1
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+		LRVD A 10
+		LRVD ABC 7
+		LRVD D -1
+		stop
+	Raise:
+		LRVA L 5
+		LRVA KJIHG 5
+		Goto See
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		//TNT1 A 0 A_SpawnItem("LarvaFrozen")
+		LRVA A 0 A_UnsetSolid
+		LRVA A 70 A_GenericFreezeDeath
+		LRVA A 0 A_IceGuyDie
+		LRVA A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	LRVA A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	LRVA A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR FlemMine replaces ChexSoul
+{
+	Game Chex
+	SpawnID 110
+	Health 100
+	Radius 16
+	Height 56
+	Mass 50
+	damagefactor "Flem", 0.0  //flem damage doesn't hurt flemoids
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+DamageFactor "MarathonFusion", 2.0
+PainChance "MightyBoot", 255
+	Speed 8
+	Damage 3
+	PainChance 256
+	Monster
+	+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL
+	+DONTGIB
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "skull/sight"
+	AttackSound "skull/melee"
+	PainSound "skull/pain"
+	DeathSound "skull/death"
+	ActiveSound "skull/active"
+	Obituary "$OB_FLEMMINE"
+	States
+	{
+	Spawn:
+		SKUL AB 10 A_Look
+		Loop
+	See:
+		SKUL AB 6 A_Chase
+		Loop
+	Missile:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		SKUL C 10 A_FaceTarget
+		SKUL D 4 A_SkullAttack
+		SKUL CD 4 
+		Goto Missile+2
+	Pain:
+		SKUL A 3 A_SpawnDebris("FlemoidGib") 
+		SKUL A 3 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+		SKUL E 3 
+		SKUL E 3 A_Pain
+		Goto See
+	Death.ZorchPistol:
+	Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		SKUL F 6 
+		SKUL G 6 A_Scream
+		SKUL H 6 
+		SKUL I 6 A_NoBlocking
+		SKUL J 6
+		SKUL K 6
+		Stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+	XDeath:
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_PlaySound("flemdie")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnDebris("FlemoidGib",1)
+		TNT1 A 0 A_SpawnDebris("FlemMineGib1",1)
+		TNT1 A 0 A_SpawnDebris("FlemMineGib2",1)
+		TNT1 A -1
+		stop
+Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
+	Ice:
+	Death.HexenIce:
+	Death.Ice:
+		TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_NoBlocking
+		//TNT1 A 0 A_SpawnItem("FlemMineFrozen")
+		SKUL A 0 A_UnsetSolid
+		SKUL A 70 A_GenericFreezeDeath
+		SKUL A 0 A_IceGuyDie
+		SKUL A 1 A_IceGuyDie
+		TNT1 A -1
+		stop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	SKUL A 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	TNT1 A 0 A_SpawnDebris("FlemoidGib",1)
+	SKUL A 16 A_Pain
+	Goto See
+	}
+}
+
+ACTOR FlemMineGib1
+{
+ health 8
+ radius 2
+ height 2
+ BounceFactor 0.75
+ BounceCount 8
+ Mass 10
+ Speed 8
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ +RANDOMIZE
+ -NOGRAVITY
+ -SOLID
+ -SKYEXPLODE
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   FLGB ABCD 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2","Death3","Death4")
+   goto Death1
+ Death1:
+   FLGB A 2000
+   stop
+ Death2:
+   FLGB B 2000
+   stop
+ Death3:
+   FLGB C 2000
+   stop
+ Death4:
+   FLGB D 2000
+   stop
+ }
+}
+
+ACTOR FlemMineGib2
+{
+ health 1
+ radius 2
+ height 2
+ BounceFactor 0.75
+ BounceCount 8
+ Mass 10
+ Speed 8
+ +DOOMBOUNCE
+ PROJECTILE
+ +NOTELEPORT
+ +RANDOMIZE
+ -NOGRAVITY
+ -SOLID
+ -SKYEXPLODE
+ +NOBLOCKMAP
+ +MOVEWITHSECTOR
+ +CLIENTSIDEONLY
+ States
+ {
+ Spawn:
+   TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+ Spawn2:
+   FLGB EFGH 6
+   loop
+ Death:
+   TNT1 A 0 A_Jump(256,"Death1","Death2","Death3","Death4")
+   goto Death1
+ Death1:
+   FLGB E 2000
+   stop
+ Death2:
+   FLGB F 2000
+   stop
+ Death3:
+   FLGB G 2000
+   stop
+ Death4:
+   FLGB H 2000
+   stop
+ }
+}
+
+
+
+
+ACTOR Snotfolus 16
+{
+	Game Chex
+	SpawnID 114
+	Health 8000
+	Radius 40
+	Height 110
+	Mass 1000
+	damagefactor "BFG", 0.75
+	damagefactor "BFGSpray", 0.75
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+	PainChance "MarathonFusion", 0
+	Speed 16
+	PainChance 10
+	Monster
+	MinMissileChance 160
+	+BOSS 
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	+DONTGIB
+	+INVULNERABLE
+	+NOTARGET
+	+NOINFIGHTING
+	+BOSSDEATH
+	+NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "cyber/sight"
+	PainSound "cyber/pain"
+	DeathSound "cyber/death"
+	ActiveSound "cyber/active"
+	Obituary "$OB_SNOTFOLUS"
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_SetTranslucent(0,0)
+		TNT1 A 80
+		TNT1 A 0 A_PlaySoundEx("cyber/sight","SoundSlot5",0,2)
+		TNT1 A 0 ACS_ExecuteAlways(204,0,2)
+		CYBR A 0 A_SetTranslucent(0.1,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.2,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.3,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.4,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.5,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.6,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.7,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.8,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		CYBR A 0 A_SetTranslucent(0.9,0)
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+		TNT1 A 0 A_PlaySoundEx("cyber/active","SoundSlot5",0,2)
+		CYBR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+		CYBR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+		CYBR A 100 A_SetTranslucent(1,0)
+		TNT1 A 0 A_PlaySoundEx("cyber/sight","SoundSlot5",0,2)
+		CYBR A 100
+		TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
+		CYBR A 1 A_Look
+		wait
+	Idle:
+		CYBR AB 10 A_Look
+		Loop
+See:
+TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+See2:
+		CYBR A 3 A_Hoof
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR ABBCC 3 A_Chase
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR D 3 A_Metal
+		CYBR D 3 A_Chase
+		Loop
+	Missile:
+		CYBR E 0 A_Jump(64,"Missile2")
+		CYBR E 6 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		CYBR E 6 A_FaceTarget
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		CYBR E 6 A_FaceTarget
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR E 6 A_FaceTarget
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		CYBR E 6 A_FaceTarget
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		CYBR E 6 A_FaceTarget
+		CYBR F 6 A_CustomMissile("SnotfolusBall", 85)
+		Goto See
+	Missile2:
+		CYBR E 6 A_FaceTarget
+		CYBR E 6 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR E 0 A_FaceTarget
+		CYBR F 3 A_CustomMissile("SnotfolusBall", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		CYBR F 3 A_CustomMissile("SnotfolusBall2", 85, 0, random(-15,15))
+		goto See
+	Pain:
+		TNT1 AAAA 0 A_SpawnDebris("FlemoidGib",1)
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR A 10 A_Pain
+		Goto See
+	Pain.ZorchPistol:
+	Pain.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		TNT1 A 0 A_CustomMissile("FlemSporeSummonball",0,0,0)
+		CYBR G 10 A_Pain
+		Goto See
+Death.DukeDamage:
+Death.MightyBoot:
+Death.DukeExplosive:
+Death.DukeIce:
+  Death.DukePistol:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+	Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+		CYBR H 10
+		CYBR I 10 A_Scream
+		CYBR JKL 10
+		CYBR M 10 A_NoBlocking
+		CYBR NO 10
+		CYBR P 30
+		CYBR P -1 A_BossDeath
+		Stop
+	}
+}
+
+ACTOR SnotfolusBall
+{
+	Game Chex
+	SpawnID 154
+	Radius 6
+	Height 16
+	Speed 25
+	FastSpeed 30
+	Damage 10
+	Projectile
+	DamageType Flem
+	+STRIFEDAMAGE
+	+RANDOMIZE
+	SeeSound "baron/attack"
+	DeathSound "baron/shotx"
+	States
+	{
+	Spawn:
+		BAL7 AB 4
+		Loop
+	Death:
+		BAL7 CDE 6
+		Stop
+	}
+}
+
+ACTOR SnotfolusBall2
+{
+	Radius 6
+	Height 16
+	Speed 30
+	FastSpeed 35
+	Damage 5
+	Projectile
+	DamageType Flem 
+	+RANDOMIZE
+	+THRUGHOST
+	SeeSound "baron/attack"
+	DeathSound "baron/shotx"
+	States
+	{
+	Spawn:
+		BAL1 AB 4
+		Loop
+	Death:
+		BAL1 CDE 6
+		Stop
+	}
+}
+
+ACTOR FlemsporeSummonball
+{
+   Radius 20
+   Height 3
+   Speed 32
+   Damage 0
+   PROJECTILE
+   +SKYEXPLODE
+   -SOLID
+   +DONTREFLECT
+   RENDERSTYLE Normal
+   Alpha 1.0
+   States
+   {
+   Spawn:
+     TNT1 A 1
+     TNT1 A 1 A_Gravity
+	 loop
+   Death:
+     TNT1 A 1 A_SpawnItemEx(Flemspore, 0, 0, 0, 0, 0, 0, 0, SXF_SETMASTER,0)
+     stop
+   }
+}
+
+ACTOR FlemSpore
+{
+  Health 25
+  Radius 20
+  Height 5
+  Mass 5
+  Speed 10
+  PainChance 0
+  Bloodcolor "Green"
+  RenderStyle Translucent
+  MONSTER
+  +FLOORCLIP
+  +DONTMORPH
+  +FRIGHTENED
+  -COUNTKILL
+  -DROPOFF
+  states
+  {
+  Spawn:
+    SLPU A 4 A_Look
+  See:
+  	SLPU AAAAAAAAAAAAAAAAAAAAAAAA 10 A_Chase
+	Goto Death
+  Death:
+  	TNT1 A 0 A_Jump(98, 4)
+  	TNT1 A 0 A_NoBlocking
+  	TNT1 A 1 A_SpawnItemEx("FlemoidusCommonus",0,0,0,0,0,0,0,SXF_SETMASTER)
+	TNT1 A 0 A_AlertMonsters
+	Stop
+  	TNT1 A 0 A_NoBlocking
+  	TNT1 A 1 A_SpawnItemEx("FlemoidusBipedicus",0,0,0,0,0,0,0,SXF_SETMASTER)
+	TNT1 A 0 A_AlertMonsters
+	Stop
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ACTOR BipedicusBallV3
+{
+	Game Chex
+	SpawnID 10
+	SpawnID 10
+	Radius 6
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 3
+	Projectile
+	DamageType Flem
+	+RANDOMIZE
+	SeeSound "imp/attack"
+	DeathSound "imp/shotx"
+	States
+	{
+	Spawn:
+		BAL1 AB 4
+		Loop
+	Death:
+		BAL1 CDE 6
+		Stop
+	}
+}
+
+ACTOR CycloptisBall
+{
+	Game Chex
+	SpawnID 126
+	Radius 6
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 5
+	Projectile 
+	DamageType Flem
+	+RANDOMIZE
+	SeeSound "caco/attack"
+	DeathSound "caco/shotx"
+	States
+	{
+	Spawn:
+		BAL2 AB 4
+		Loop
+	Death:
+		BAL2 CDE 6
+		Stop
+	}
+}

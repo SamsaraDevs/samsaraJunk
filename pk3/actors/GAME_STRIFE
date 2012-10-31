@@ -1,0 +1,1270 @@
+// Item replacements.
+
+// Weapon replacements.
+
+actor StrifeCrossbowSpawner : Weapon2Spawner replaces StrifeCrossbow { }
+actor StrifeAssaultGunSpawner : Weapon4Spawner replaces AssaultGun { }
+actor StrifeAssaultGunSpawner2 : Weapon4Spawner replaces AssaultGunStanding { }
+
+actor StrifeCrossbowGetter : CustomInventory
+{
+-INVBAR
++INVENTORY.UNDROPPABLE
++INVENTORY.AUTOACTIVATE
+Inventory.maxamount 1
+ConversationID 194, 188, 192
+States
+{
+Pickup:
+Use:
+	   TNT1 A 0 A_JumpIfInventory(" Shotgun ",1,"PickupDoom2")
+       TNT1 A 0 A_JumpIfInventory("Large Zorcher",1,"PickupChex2")
+       TNT1 A 0 A_JumpIfInventory(" Firemace ",1,"PickupHeretic2")
+       TNT1 A 0 A_JumpIfInventory("Machine Gun",1,"PickupWolfen2")
+       TNT1 A 0 A_JumpIfInventory("Frost Shards",1,"PickupHexen2")
+	   TNT1 A 0 A_JumpIfInventory("  Shotgun  ",1,"PickupDuke3")
+	   TNT1 A 0 A_JumpIfInventory("WSTE-M5 Combat Shotgun",1,"PickupMarathon2")
+       TNT1 A 0 A_JumpIfInventory("DoomguyClass",1,"PickupDoom")
+       TNT1 A 0 A_JumpIfInventory("ChexClass",1,"PickupChex")
+       TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+       TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+       TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+	   TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+	   TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+    PickupHeretic:
+	   TNT1 A 0 A_PlaySound("heretic/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 1 A_GiveInventory(" Firemace ")
+	   TNT1 A 0 A_TakeInventory("Mace",1)
+	   TNT1 A 0 A_TakeInventory("MacePowered",1)
+	   TNT1 A 0 A_TakeInventory("MaceAmmo",300)
+	   TNT1 A 1 A_SelectWeapon(" Firemace ")
+	   stop
+	PickupChex:
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 1 A_GiveInventory("Large Zorcher")
+	   TNT1 A 1 A_SelectWeapon("Large Zorcher")
+	   stop
+	PickupDoom:
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 1 A_GiveInventory(" Shotgun ")
+	   TNT1 A 1 A_SelectWeapon(" Shotgun ")
+	   stop
+	PickupWolfen:
+	   TNT1 A 0 A_PlaySound("wolfen/mgunget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   WEPG A 1 A_GiveInventory("Machine Gun")
+	   WEPG A 1 A_SelectWeapon("Machine Gun")
+	   stop
+	PickupHexen:
+	   TNT1 A 0 A_PlaySound("hexen/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 1 A_GiveInventory("Frost Shards")
+	   TNT1 A 1 A_SelectWeapon("Frost Shards")
+	   stop
+	PickupDuke:
+	   TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"PickupDuke2")
+	   TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"PickupDuke2")
+	   TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
+	   TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+	   TNT1 A 0 ACS_ExecuteAlways(205)
+	PickupDuke2:
+	   TNT1 A 0 A_PlaySound("duke/mosspump2")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 1 A_GiveInventory("  Shotgun  ")
+	   TNT1 A 1 A_SelectWeapon("  Shotgun  ")
+	   stop
+	PickupMarathon:
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
+	   TNT1 A 1 A_SelectWeapon("WSTE-M5 Combat Shotgun")
+	   stop
+    PickupHeretic2:
+	   TNT1 A 0 A_PlaySound("heretic/ammoget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupChex2:
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupDoom2:
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+    PickupWolfen2:
+	   TNT1 A 0 A_PlaySound("wolfen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupHexen2:
+	   TNT1 A 0 A_PlaySound("hexen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",4)
+	   stop
+	PickupDuke3:
+	   TNT1 A 0 A_PlaySound("duke/itemget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupMarathon2:
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",8)
+	   stop
+}
+}
+
+actor StrifeAssaultRifleGetter : CustomInventory
+{
+-INVBAR
++INVENTORY.UNDROPPABLE
++INVENTORY.AUTOACTIVATE
+Inventory.maxamount 1
+ConversationID 188, 182, 186
+States
+{
+Pickup:
+Use:
+       TNT1 A 0 A_JumpIfInventory(" Chaingun ",1,"PickupDoom2")
+       TNT1 A 0 A_JumpIfInventory("Rapid Zorcher",1,"PickupChex2")
+       TNT1 A 0 A_JumpIfInventory("Dragon Claw",1,"PickupHeretic2")
+       TNT1 A 0 A_JumpIfInventory("  Chaingun  ",1,"PickupWolfen2")
+       TNT1 A 0 A_JumpIfInventory("Serpent Staff",1,"PickupHexen2")
+	   TNT1 A 0 A_JumpIfInventory("Chaingun Cannon",1,"PickupDuke3")
+	   TNT1 A 0 A_JumpIfInventory("MA-75B Assault Rifle",1,"PickupMarathon2")
+       TNT1 A 0 A_JumpIfInventory("DoomguyClass",1,"PickupDoom")
+       TNT1 A 0 A_JumpIfInventory("ChexClass",1,"PickupChex")
+       TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+       TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+       TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+	   TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+	   TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+    PickupHeretic:
+	   TNT1 A 0 A_PlaySound("heretic/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 1 A_GiveInventory("Dragon Claw")
+	   TNT1 A 1 A_SelectWeapon("Dragon Claw")
+	   stop
+	PickupChex:
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 1 A_GiveInventory("Rapid Zorcher")
+	   TNT1 A 1 A_SelectWeapon("Rapid Zorcher")
+	   stop
+	PickupDoom:
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 1 A_GiveInventory(" Chaingun ")
+	   stop
+	PickupWolfen:
+	   TNT1 A 0 A_PlaySound("wolfen/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 1 A_GiveInventory("  Chaingun  ")
+	   TNT1 A 1 A_SelectWeapon("  Chaingun  ")
+	   stop
+	PickupHexen:
+	   TNT1 A 0 A_PlaySound("hexen/weaponget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 1 A_GiveInventory("Serpent Staff")
+	   TNT1 A 1 A_SelectWeapon("Serpent Staff")
+	   stop
+    PickupHeretic2:
+	   TNT1 A 0 A_PlaySound("heretic/ammoget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupChex2:
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupDoom2:
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+    PickupWolfen2:
+	   TNT1 A 0 A_PlaySound("wolfen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupHexen2:
+	   TNT1 A 0 A_PlaySound("hexen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupDuke:
+		TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"PickupDuke2")
+		TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"PickupDuke2")
+		TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
+		TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+		TNT1 A 0 ACS_ExecuteAlways(205)
+	PickupDuke2:
+	   TNT1 A 0 A_PlaySound("duke/weaponget")
+		TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+		TNT1 A 1 A_GiveInventory("Chaingun Cannon")
+		TNT1 A 1 A_SelectWeapon("Chaingun Cannon")
+		stop
+	PickupMarathon:
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 0 A_GiveInventory("GotWeapon4",1)
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 1 A_GiveInventory("MA-75B Assault Rifle")
+	   TNT1 A 1 A_SelectWeapon("MA-75B Assault Rifle")
+	   stop
+	PickupDuke3:
+	   TNT1 A 0 A_PlaySound("duke/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupMarathon2:
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",20)
+	   stop
+	}
+}
+
+// Ammo replacements.
+
+actor StrifeBackpackSpawner : Backpack replaces AmmoSatchel
+{
+  ConversationID 187, 181, 184
+}
+
+Actor StrifeAmmo2 : Ammo2Big replaces ElectricBolts
+{
+  ConversationID 186, 180, 184
+}
+
+Actor ClipOfBullets2 : CustomInventory replaces ClipOfBullets
+{
+  //+INVENTORY.AUTOACTIVATE
+  ConversationID 179, 173, 177
+  Inventory.PickupMessage "Picked up 10 rounds of Ammo 1."
+  Inventory.PickupSound "ammo/bulletsmall"
+  States
+  {
+  Spawn:
+     BLIT A -1
+     stop
+  Pickup:
+     TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",10)
+	 stop
+  PickupFail:
+	 BLIT A 1
+	 fail
+  PickupMarathon:
+	 TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+	 TNT1 A 1 A_GiveInventory("Clip",10)
+	 stop
+  }
+}
+
+Actor BoxOfBullets2 : CustomInventory replaces BoxOfBullets
+{
+  //+INVENTORY.AUTOACTIVATE
+  ConversationID 180, 174, 178
+  Inventory.PickupMessage "Picked up 50 rounds of Ammo 1."
+  Inventory.PickupSound "ammo/bulletbig"
+  States
+  {
+  Spawn:
+     BBOX A -1
+     stop
+  Pickup:
+     TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",50)
+	 stop
+  PickupFail:
+	 BBOX A 1
+	 fail
+  PickupMarathon:
+	 TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+	 TNT1 A 1 A_GiveInventory("Clip",50)
+	 stop
+  }
+}
+
+// Enemy replacements.
+
+// Acolytes
+
+ACTOR Acolyte2 : Acolyte replaces Acolyte
+{
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+//DropItem "ClipOfBullets2"
++THRUGHOST
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    AGRD E 8 A_FaceTarget
+    AGRD FE 4 A_ShootGun
+    AGRD F 6 A_ShootGun
+    Goto See
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	AGRD O 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	AGRD O 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	AGRD O 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	AGRD O 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    AGRD O 3 A_SetTranslucent(0.9,0)
+	AGRD O 0 A_Scream
+    AGRD O 3 A_SetTranslucent(0.8,0)
+    AGRD O 0 A_NoBlocking
+    AGRD O 3 A_SetTranslucent(0.7,0)
+    AGRD O 3 A_SetTranslucent(0.6,0)
+    AGRD O 3 A_SetTranslucent(0.5,0)
+    AGRD O 3 A_SetTranslucent(0.4,0)
+    AGRD O 3 A_SetTranslucent(0.3,0)
+    AGRD O 3 A_SetTranslucent(0.2,0)
+    AGRD O 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	AGRD O 0 A_GenericFreezeDeath
+    AGRD O 70 A_UnsetSolid
+    AGRD O 0 A_IceGuyDie
+    AGRD O 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR AcolyteTan2 : Acolyte2 replaces AcolyteTan
+{
+  ConversationID 53, 52, 53
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  DropItem "ClipOfBullets2"
+}
+
+ACTOR AcolyteRed2 : Acolyte2 replaces AcolyteRed
+{
+  ConversationID 54, 53, 54
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  Translation "128:143=64:79"
+  DropItem "ClipOfBullets2"
+}
+
+ACTOR AcolyteGold2 : Acolyte2 replaces AcolyteGold
+{
+  ConversationID 58, 57, 58
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  Translation "128:143=80:95"
+}
+
+ACTOR AcolyteGray2 : Acolyte2 replaces AcolyteGray
+{
+  ConversationID 56, 55, 56
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  Translation "128:143=16:31"
+}
+
+ACTOR AcolyteDGreen2 : Acolyte2 replaces AcolyteDGreen
+{
+  ConversationID 57, 56, 57
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  Translation "128:143=53:63"
+}
+
+ACTOR AcolyteLGreen2 : Acolyte2 replaces AcolyteLGreen
+{
+  Health 60
+  ConversationID 59, -1, -1
+  Translation "128:143=96:111"
+}
+
+ACTOR AcolyteRust2 : Acolyte2 replaces AcolyteRust
+{
+  ConversationID 55, 54, 55
+  +MISSILEMORE
+  +MISSILEEVENMORE
+  Translation "128:143=176:191"
+}
+
+ACTOR AcolyteShadow2 : Acolyte2 replaces AcolyteShadow
+{
+  ConversationID 61, 58, 59
+  +MISSILEMORE
+  DropItem "ClipOfBullets2"
+  States
+  {
+  See:
+    AGRD A 6 A_BeShadowyFoe
+    Goto Super::See+1
+  Pain:
+    AGRD O 0 A_SetShadow
+    AGRD O 8 A_Pain
+    Goto See
+  }
+}
+
+ACTOR AcolyteToBe2 : Acolyte2 replaces AcolyteToBe
+{
+  ConversationID 29, -1, -1
+  Health 61
+  Radius 20
+  Height 56
+  DeathSound "becoming/death"
+  -COUNTKILL
+  -ISMONSTER
+  States
+  {
+  Spawn:
+    ARMR A -1
+    Stop
+  Pain:
+    ARMR A -1 //A_HideDecepticon // Only inherits from AcolyteToBe. Interesting.
+    Stop
+  Death:
+    Goto XDeath
+  }
+}
+
+ACTOR AcolyteBlue2 : AcolyteBlue replaces AcolyteBlue// - Gives a quest-related item dependant on whether it's a Blue acolyte or not. Interesting.
+{
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+Translation "128:143=144:159"
++THRUGHOST
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+    AGRD G 4
+    AGRD H 4 A_Scream
+    AGRD I 4
+    AGRD J 3
+    AGRD K 3 A_NoBlocking
+    AGRD L 3
+    AGRD M 3 A_AcolyteDie
+    AGRD N -1
+    Stop
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+   XDeath:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+    GIBS A 5 A_NoBlocking
+    GIBS BC 5 A_TossGib
+    GIBS D 4 A_TossGib
+    GIBS E 4 A_XScream
+    GIBS F 4 A_TossGib
+    GIBS GH 4
+    GIBS I 5
+    GIBS J 5 A_AcolyteDie
+    GIBS K 5
+    GIBS L 1400
+    Stop
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    AGRD E 8 A_FaceTarget
+    AGRD FE 4 A_ShootGun
+    AGRD F 6 A_ShootGun
+    Goto See
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	AGRD O 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	AGRD O 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	AGRD O 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	AGRD O 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    AGRD O 3 A_SetTranslucent(0.9,0)
+	AGRD O 0 A_Scream
+    AGRD O 3 A_SetTranslucent(0.8,0)
+    AGRD O 0 A_NoBlocking
+    AGRD O 3 A_SetTranslucent(0.7,0)
+    AGRD O 3 A_SetTranslucent(0.6,0)
+    AGRD O 3 A_SetTranslucent(0.5,0)
+    AGRD O 3 A_SetTranslucent(0.4,0)
+    AGRD O 3 A_SetTranslucent(0.3,0)
+    AGRD O 3 A_SetTranslucent(0.2,0)
+    AGRD O 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	AGRD O 0 A_GenericFreezeDeath
+    AGRD O 70 A_UnsetSolid
+    AGRD O 0 A_IceGuyDie
+    AGRD O 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+// Rebels
+
+// Macil1B : Macil1 replaces Macil1 - Actually, probably not needed. Since he's effectively invulnerable and all.
+
+Actor RebelB : Rebel replaces Rebel
+{
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+//DropItem "ClipOfBullets2"
++THRUGHOST
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    HMN1 E 10 A_FaceTarget
+    HMN1 F 10 BRIGHT A_ShootGun
+    HMN1 E 10 A_ShootGun
+    Goto See
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	HMN1 O 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	HMN1 O 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	HMN1 O 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	HMN1 O 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    HMN1 O 3 A_SetTranslucent(0.9,0)
+	HMN1 O 0 A_Scream
+    HMN1 O 3 A_SetTranslucent(0.8,0)
+    HMN1 O 0 A_NoBlocking
+    HMN1 O 3 A_SetTranslucent(0.7,0)
+    HMN1 O 3 A_SetTranslucent(0.6,0)
+    HMN1 O 3 A_SetTranslucent(0.5,0)
+    HMN1 O 3 A_SetTranslucent(0.4,0)
+    HMN1 O 3 A_SetTranslucent(0.3,0)
+    HMN1 O 3 A_SetTranslucent(0.2,0)
+    HMN1 O 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	HMN1 O 0 A_GenericFreezeDeath
+    HMN1 O 70 A_UnsetSolid
+    HMN1 O 0 A_IceGuyDie
+    HMN1 O 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR Rebel1B : RebelB replaces Rebel1
+{
+  ConversationID 43, 42, 43
+  DropItem "ClipOfBullets"
+}
+
+ACTOR Rebel2B : RebelB replaces Rebel2
+{
+  ConversationID 44, 43, 44
+}
+
+ACTOR Rebel3B : RebelB replaces Rebel3
+{
+  ConversationID 45, 44, 45
+}
+
+ACTOR Rebel4B : RebelB replaces Rebel4
+{
+  ConversationID 46, 45, 56
+}
+
+ACTOR Rebel5B : RebelB replaces Rebel5
+{
+  ConversationID 47, 46, 47
+}
+
+ACTOR Rebel6B : RebelB replaces Rebel6
+{
+  ConversationID 48, 47, 48
+}
+
+// ROYBUTS
+
+Actor Sentinel2 : Sentinel replaces Sentinel
+{
+  ConversationID 91,-1,-1
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    SEWR B 4 A_FaceTarget
+    SEWR C 8 Bright A_SentinelAttack
+    SEWR C 4 Bright A_SentinelRefire
+    Goto Missile+1
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	SEWR D 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	SEWR D 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	SEWR D 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    SEWR D 3 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_Scream
+    SEWR D 3 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    SEWR D 3 A_SetTranslucent(0.7,0)
+    SEWR D 3 A_SetTranslucent(0.6,0)
+    SEWR D 3 A_SetTranslucent(0.5,0)
+    SEWR D 3 A_SetTranslucent(0.4,0)
+    SEWR D 3 A_SetTranslucent(0.3,0)
+    SEWR D 3 A_SetTranslucent(0.2,0)
+    SEWR D 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	SEWR D 0 A_GenericFreezeDeath
+    SEWR D 70 A_UnsetSolid
+    SEWR D 0 A_IceGuyDie
+    SEWR D 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR SentinelFX3 : SentinelFX2 replaces SentinelFX2
+{
++THRUGHOST
+}
+
+ACTOR Stalker2 : Stalker replaces Stalker
+{
+  ConversationID 92,-1,-1
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+  Melee:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    STLK J 3 A_FaceTarget
+    STLK K 3 A_StalkerAttack
+	goto SeeFloor
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	STLK L 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	STLK L 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	STLK L 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    STLK L 3 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_Scream
+    STLK L 3 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    STLK L 3 A_SetTranslucent(0.7,0)
+    STLK L 3 A_SetTranslucent(0.6,0)
+    STLK L 3 A_SetTranslucent(0.5,0)
+    STLK L 3 A_SetTranslucent(0.4,0)
+    STLK L 3 A_SetTranslucent(0.3,0)
+    STLK L 3 A_SetTranslucent(0.2,0)
+    STLK L 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	STLK L 0 A_GenericFreezeDeath
+    STLK L 70 A_UnsetSolid
+    STLK L 0 A_IceGuyDie
+    STLK L 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR CeilingTurret2 : CeilingTurret replaces CeilingTurret
+{
+  ConversationID 92,-1,-1
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
+	TURT A 2 A_SpawnItem("ZorchEffectTiny")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    TURT A 2 A_SetTranslucent(0.9,0)
+	//TNT1 A 0 A_Scream
+    TURT A 2 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    TURT A 2 A_SetTranslucent(0.7,0)
+    TURT A 2 A_SetTranslucent(0.6,0)
+    TURT A 2 A_SetTranslucent(0.5,0)
+    TURT A 2 A_SetTranslucent(0.4,0)
+    TURT A 2 A_SetTranslucent(0.3,0)
+    TURT A 2 A_SetTranslucent(0.2,0)
+    TURT A 2 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	TURT A 0 A_GenericFreezeDeath
+    TURT A 70 A_UnsetSolid
+    TURT A 0 A_IceGuyDie
+    TURT A 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR Reaver2 : Reaver replaces Reaver
+{
+  ConversationID 52, -1, -1
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_TossGib
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    ROB1 F 8 A_FaceTarget
+    ROB1 G 11 BRIGHT A_ReaverRanged
+    Goto See
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	ROB1 H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	ROB1 H 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	ROB1 H 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    ROB1 H 3 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySound("reaver/sight")
+    ROB1 H 3 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    ROB1 H 3 A_SetTranslucent(0.7,0)
+    ROB1 H 3 A_SetTranslucent(0.6,0)
+    ROB1 H 3 A_SetTranslucent(0.5,0)
+    ROB1 H 3 A_SetTranslucent(0.4,0)
+    ROB1 H 3 A_SetTranslucent(0.3,0)
+    ROB1 H 3 A_SetTranslucent(0.2,0)
+    ROB1 H 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	ROB1 H 0 A_GenericFreezeDeath
+    ROB1 H 70 A_UnsetSolid
+    ROB1 H 0 A_IceGuyDie
+    ROB1 H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR Templar2 : Templar replaces Templar
+{
+  ConversationID 62, 61, 62
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    PGRD G 8 BRIGHT A_FaceTarget
+    PGRD H 8 BRIGHT A_TemplarAttack
+    Goto See
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	PGRD H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	PGRD H 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	PGRD H 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    PGRD H 3 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_Scream
+    PGRD H 3 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    PGRD H 3 A_SetTranslucent(0.7,0)
+    PGRD H 3 A_SetTranslucent(0.6,0)
+    PGRD H 3 A_SetTranslucent(0.5,0)
+    PGRD H 3 A_SetTranslucent(0.4,0)
+    PGRD H 3 A_SetTranslucent(0.3,0)
+    PGRD H 3 A_SetTranslucent(0.2,0)
+    PGRD H 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	PGRD H 0 A_GenericFreezeDeath
+    PGRD H 70 A_UnsetSolid
+    PGRD H 0 A_IceGuyDie
+    PGRD H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+ACTOR Crusader2 : Crusader replaces Crusader
+{
+  ConversationID 63,-1,-1
+DamageFactor "MarathonFusion", 2.0
+DamageFactor "Mace", 1.1
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
++NOTDMATCH
++NOICEDEATH
+states
+{
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+  Missile:
+    TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+    ROB2 E 3 A_FaceTarget
+    ROB2 F 2 Bright A_CrusaderChoose
+    ROB2 E 2 Bright A_CrusaderSweepLeft
+    ROB2 F 3 Bright A_CrusaderSweepLeft
+    ROB2 E 2 Bright A_CrusaderSweepLeft
+    ROB2 F 2 Bright A_CrusaderSweepLeft
+    ROB2 E 2 Bright A_CrusaderSweepRight
+    ROB2 F 2 Bright A_CrusaderSweepRight
+    ROB2 E 2 Bright A_CrusaderSweepRight
+    ROB2 F 2 A_CrusaderRefire
+    Loop
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	ROB2 E 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(10)
+	ROB2 E 16 A_Pain
+	Goto See
+Death.ZorchPistol:
+  Death.Zorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	ROB2 E 4 A_SpawnItem("ZorchEffectWide")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    ROB2 E 4 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_Scream
+    ROB2 E 4 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    ROB2 E 4 A_SetTranslucent(0.7,0)
+    ROB2 E 4 A_SetTranslucent(0.6,0)
+    ROB2 E 4 A_SetTranslucent(0.5,0)
+    ROB2 E 4 A_SetTranslucent(0.4,0)
+    ROB2 E 4 A_SetTranslucent(0.3,0)
+    ROB2 E 4 A_SetTranslucent(0.2,0)
+    ROB2 E 4 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+  Ice:
+  Death.HexenIce:
+  Death.Ice:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	//TNT1 A 0 A_NoBlocking
+	//TNT1 A 0 A_SpawnItem("NaziFrozen")
+	TNT1 A 0 A_Gravity
+	ROB2 E 0 A_GenericFreezeDeath
+    ROB2 E 70 A_UnsetSolid
+    ROB2 E 0 A_IceGuyDie
+    ROB2 E 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+}
+}
+
+//ACTOR Inquisitor2 : Inquisitor replaces Inquisitor
+
+// Peasants
+
+//ACTOR PeasantB : Peasant replaces Peasant
+
+//ACTOR Peasant5B : PeasantB replaces Peasant5 // Derwin. Tear his ear off for the Gubnuh.
+
+//ACTOR Peasant8B : PeasantB replaces Peasant8 // Da Judge. Kill him to free prisoners.
+
+//ACTOR Peasant9B : PeasantB replaces Peasant9 // Beldin. Kill him, take his ring to be a part of the Rebellion.
+
+// Other enemies
+
+//ACTOR Macil2B : Macil2 replaces Macil2
+
+//ACTOR StrifeBishop2 : StrifeBishop replaces StrifeBishop
+//ACTOR Loremaster2 : Loremaster replaces Loremaster
+//ACTOR Programmer2 : Programmer replaces Programmer
+
+//ACTOR KneelingGuy2 : KneelingGuy replaces KneelingGuy
+//ACTOR Oracle2 : Oracle replaces Oracle
+
+//ACTOR AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
+//ACTOR AlienSpectre2B : AlienSpectre2 replaces AlienSpectre2
+//ACTOR AlienSpectre3B : AlienSpectre3 replaces AlienSpectre3
+//ACTOR AlienSpectre4B : AlienSpectre4 replaces AlienSpectre4
+//ACTOR AlienSpectre5B : AlienSpectre5 replaces AlienSpectre5
+
+//ACTOR EntityBoss2 : EntityBoss replaces EntityBoss
+//ACTOR EntitySecond2 : EntitySecond replaces EntitySecond

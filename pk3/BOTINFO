@@ -1,0 +1,125 @@
+{
+name = "\cdDoomguy"
+script = DFULTBOT
+chatlump = DOOMCHAT
+gender = male
+revealed = true
+class = "Doomguy"
+color = "00 F0 00"
+accuracy = 3
+intellect = 3
+evade = 2
+anticipation = 4
+reactiontime = 1
+perception = 4
+chatfrequency = 10
+favoriteweapon = "Super Shotgun"
+}
+
+{
+name = "\cqCorvus"
+script = DFULTBOT
+chatlump = CORVCHAT
+gender = male
+revealed = true
+class = "Corvus"
+color = "771100"
+accuracy = 2
+intellect = 4
+evade = 2
+anticipation = 1
+reactiontime = 1
+perception = 4
+chatfrequency = 30
+favoriteweapon = "Dragon Claw"
+}
+
+{
+name = "\clParias"
+script = DFULTBOT
+chatlump = PARSCHAT
+gender = male
+revealed = true
+class = "Parias"
+color = "FF0000"
+accuracy = 2
+intellect = 4
+evade = 3
+anticipation = 2
+reactiontime = 2
+perception = 3
+chatfrequency = 25
+favoriteweapon = "Firestorm"
+}
+
+{
+name = "\chFred Chexter"
+script = DFULTBOT
+chatlump = CHEXCHAT
+gender = male
+revealed = true
+class = "ChexWarrior"
+color = "0000FF"
+accuracy = 2
+intellect = 3
+evade = 2
+anticipation = 3
+reactiontime = 4
+perception = 2
+chatfrequency = 25
+favoriteweapon = "Zorch Propulsor"
+}
+
+{
+name = "\cjB.J. Blazkowicz"
+script = DFULTBOT
+chatlump = BJCHAT
+gender = male
+revealed = true
+class = "Blazkowicz"
+color = "737373"
+accuracy = 3
+intellect = 1
+evade = 4
+anticipation = 2
+reactiontime = 3
+perception = 3
+chatfrequency = 30
+favoriteweapon = "  Chaingun  "
+}
+
+{
+name = "\cfDuke Nukem"
+script = DFULTBOT
+chatlump = DUKECHAT
+gender = male
+revealed = true
+class = "Duke"
+color = "FF 00 00"
+accuracy = 3
+intellect = 0
+evade = 3
+anticipation = 3
+reactiontime = 2
+perception = 4
+chatfrequency = 50
+favoriteweapon = "  Shotgun  "
+}
+
+{
+name = "\cnSecurity Officer"
+script = DFULTBOT
+chatlump = SOCHAT
+gender = male
+revealed = true
+class = "SecurityOfficer"
+color = "007FFF"
+accuracy = 4
+intellect = 0
+evade = 4
+anticipation = 1
+reactiontime = 2
+perception = 2
+chatfrequency = 30
+favoriteweapon = "MA-75B Assault Rifle"
+}

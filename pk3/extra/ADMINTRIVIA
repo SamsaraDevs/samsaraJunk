@@ -1,0 +1,45 @@
+COMPETITIVE SHIT:
+
+- In Last Man Standing, you can adjust the amount of life/armor people start with
+  by using the sv_lmslife cvar. sv_lmslife 0 starts with just 100 life, using
+  sv_lmslife 1 starts with 100 life and 100 armor, sv_lmslife 2 starts with 200
+  life/armor, sv_lmslife 3 starts 300 life/armor, sv_lmslife 4 starts with 400,
+  and sv_lmslife 5 starts with 500.
+  
+- In Last Man Standing, to have characters spawn with Ultimate weapons as well,
+  use the sv_lmsult cvar. sv_lmsult 1 enables Ultimates, sv_lmsult 0 disables.
+
+
+
+COOPERATIVE SHIT:
+
+- If players aren't being challenged with UV-Fast, please consider using the new
+  Skill 4. If you would like to use the old Skill 4, it can be replicated with the
+  command lines "skill 3", "sv_monsterrespawn 1", and "sv_fastmonsters 1".
+
+- In co-op, characters can shoot through each other.
+
+- In co-op, characters picking up keys will share it with everyone--you can see
+  who got what key in the RCon log.
+
+
+
+UNIVERSAL SHIT:
+
+- Please consider disabling Weapon Drop On Death, as with it players will be able
+  to pick up and use other characters' weapons.
+
+- You can disable Duke's jetpack with sv_banjetpack 1.
+
+- You can tweak whether the Security Officer has Marathon-esque gravity or normal
+  gravity with sv_sogravity 1 (Doom gravity) or 0 (Marathon gravity).
+  
+- Weapon VII can be toggled to be persistent or vanish on pickup by sv_permault
+  1 or 0. 0 has it vanish on pickup, 1 has it stay persistent. Note that it acts
+  as a big powerup, so its respawn timer is much longer than others.
+
+- Heretic and HeXen's palettes are different from Doom's, and thus use different
+  color ranges, and thus put color splotches in odd places.
+  
+- Samsara makes use of Scripts 200-225. Levelsets using these script ranges make
+  create odd behavior.

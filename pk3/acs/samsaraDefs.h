@@ -10,6 +10,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
 
 #define SAMSARA_PUKE                226
+#define SAMSARA_OPEN_CLIENT         205
 #define SAMSARA_ENTER_CLIENT        221
 #define SAMSARA_DISCONNECT_CLIENT   222
 #define SAMSARA_CLIENT_CLASS        228
@@ -41,11 +42,11 @@
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
-sv_banjetpack 0/1: Toggles whether Duke is allowed to pick up his jetpack or not.\n\
-sv_sogravity 0/1: Toggles whether the Security Officer operates off Marathon or Doom gravity.\n\
-sv_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
-sv_lmslife 0/1/2/3/4/5: Affects how much health/armor people have on LMS spawn/respawn.\n\
-sv_lmsult 0/1: Toggles whether or not players get their VII in LMS mode.";
+samsara_banjetpack 0/1: Toggles whether Duke is allowed to pick up his jetpack or not.\n\
+samsara_sogravity 0/1: Toggles whether the Security Officer operates off Marathon or Doom gravity.\n\
+samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
+samsara_lmslife 0/1/2/3/4/5: Affects how much health/armor people have on LMS spawn/respawn.\n\
+samsara_lmsult 0/1: Toggles whether or not players get their VII in LMS mode.";
 
 int LMSArmors[LMSMODES] = 
 {

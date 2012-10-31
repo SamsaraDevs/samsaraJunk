@@ -1,0 +1,289 @@
+// Weapon/item spawners for Skulltag-specific maps. Wahey!
+
+ACTOR RedArmor : BasicArmorPickup 5040 // Now gold!
+{
+	Game Doom
+	SpawnID 168
+	Radius 20
+	Height 16
+	Armor.Savepercent 66.66666
+	Armor.Saveamount 250
+	Inventory.Icon "ARM3A0"
+	RenderStyle Add
+	Alpha 0.95
+	Inventory.Pickupmessage "Picked up 250 explosive/fire-tempered armor."
+	Inventory.PickupSound "armor3get"
+	DamageFactor "Fire", 0.125
+	DamageFactor "Explosive", 0.125
+	DamageFactor "DoomTheseGuysAreTheBest", 0.125
+	DamageFactor "DoomHellNoble", 0.125
+	DamageFactor "DukeExplosive", 0.125
+	States
+	{
+	Spawn:
+		ARM3 A 6
+		ARM3 A 6 bright
+		goto Spawn
+	}
+}
+
+Actor Minigun : Chaingun 5014
+{
+Weapon.SlotNumber 8
+Game Doom
+SpawnID 214
+}
+
+Actor STMinigunReplace : Weapon4Spawner replaces Minigun { }
+
+Actor GrenadeLauncher : RocketLauncher 5011
+{
+Weapon.SlotNumber 8
+Game Doom
+SpawnID 163
+}
+
+Actor STGrenadeLauncherReplace : Weapon5Spawner replaces GrenadeLauncher { }
+
+Actor Railgun : PlasmaRifle 5012
+{
+Weapon.SlotNumber 8
+Game Doom
+SpawnID 164
+}
+
+Actor STRailgunReplace : Weapon6Spawner replaces Railgun { }
+
+Actor BFG10k : BFG9000 5013
+{
+Weapon.SlotNumber 8
+Game Doom
+SpawnID 165
+}
+
+Actor STBFG10kreplace : Weapon7Spawner replaces BFG10k { }
+
+//Actor InvisibilitySphere : PartialInvisibility { }
+Actor MaxArmorBonus : ArmorScrap 5091
+{
+Game Doom
+SpawnID 167
+}
+Actor MaxHealthBonus : HealPack0 5090
+{
+Game Doom
+SpawnID 166
+}
+
+// Monster spawners
+
+Actor Abaddon : Cacodemon2 5015
+{
+  Game Doom
+  Health 1200
+  SpawnID 220
+  Speed 12
+  PainChance 40
+  Translation "173:191=5:8", "16:47=96:111", "166:167=108:108", "223:223=0:0"
+  Obituary "%o was smitten by an Abaddon."
+  HitObituary "%o became food for an Abaddon."
+}
+  
+Actor Belphegor : BaronOfHell2 5008
+{
+  Game Doom
+  SpawnID 215
+  Health 1500
+  PainChance 25
+  Obituary "%o was slain by a Belphegor."
+  HitObituary "%o was slain by a Belphegor."
+  Translation "16:47=176:191", "48:79=80:111"
+}
+
+Actor BloodDemon : DoomDemon2 5004
+{
+  Game Doom
+  SpawnID 156
+  Health 300
+  Obituary "%o was chomped on by a Blood Demon."
+  Translation "16:31=176:183", "32:47=184:191", "79:79=191:191"
+}
+
+Actor Cacolantern : Cacodemon2 5006
+{
+  Game Doom
+  SpawnID 159
+  Health 800
+  Obituary "%o was smitten by a Cacolantern."
+  HitObituary "%o got too close to a Cacolantern."
+  Translation "173:191=208:223", "16:47=209:223", "112:127=176:191"
+}
+
+Actor DarkImp : DoomImp2 5003
+{
+  Game Doom
+  SpawnID 155
+  Health 120
+  Obituary "%o was burned by a Dark Imp."
+  HitObituary "%o was slashed by a Dark Imp."
+  Translation"64:72=104:111", "73:79=5:8"
+}
+
+Actor Hectebus : Fatso2 5007
+{
+  Game Doom
+  SpawnID 158
+  Health 1200
+  PainChance 20
+  Obituary "%o was cremated by a Hectebus."
+  Translation "48:79=96:111", "1:2=5:6", "236:239=108:111", "13:15=109:111", "144:151=105:111", "112:127=176:191"
+}
+
+Actor SuperShotgunGuy : ChaingunGuy2 5005
+{
+  Game Doom
+  SpawnID 157
+  Health 120
+  AttackSound "doomguy/sshotf"
+  DropItem "SuperShotgunPickup"
+  Obituary "%o was pounded by a Riot Shotgun Guy."
+  Translation "32:47=9:12"
+  States
+  {
+    Missile:
+      CPOS E 9 A_FaceTarget
+      CPOS F 6 Bright A_CustomBulletAttack(8, 7, 7, 5, "BulletPuff")
+      CPOS E 6
+      Goto See
+  }
+}
+
+actor SuperShotgunPickup : CustomInventory
+{
+	+COUNTITEM
+	+BRIGHT
+	Inventory.PickupMessage "Picked up Weapon 3."
+	Inventory.PickupSound "nosoundforyoubitch"
+	states
+	{
+	Spawn:
+	   SGN2 A -1
+	   Stop
+    Pickup:
+       TNT1 A 0 A_JumpIfInventory("Super Shotgun",1,"PickupDoom2")
+       TNT1 A 0 A_JumpIfInventory("Super Large Zorcher",1,"PickupChex2")
+       TNT1 A 0 A_JumpIfInventory("Ethereal Crossbow",1,"PickupHeretic2")
+       TNT1 A 0 A_JumpIfInventory("Machine Gun",1,"PickupWolfen2")
+       TNT1 A 0 A_JumpIfInventory("Timon's Axe",1,"PickupHexen2")
+	   TNT1 A 0 A_JumpIfInventory("Explosive Shotgun",1,"PickupDuke3")
+       TNT1 A 0 A_JumpIfInventory("Fusion Pistol",1,"PickupMarathon2")
+       TNT1 A 0 A_JumpIfInventory("DoomguyClass",1,"PickupDoom")
+       TNT1 A 0 A_JumpIfInventory("ChexClass",1,"PickupChex")
+       TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+       TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+       TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+	   TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+       TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	PickupFail:
+	   SHOT A 1
+	   fail
+    PickupHeretic:
+	   TNT1 A 0 A_PlaySound("heretic/weaponget")
+	   TNT1 A 0 A_Print("You got the Ethereal Crossbow!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   TNT1 A 1 A_GiveInventory("Ethereal Crossbow")
+	   stop
+	PickupChex:
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 0 A_Print("You got the Super Large Zorcher!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   TNT1 A 1 A_GiveInventory("Super Large Zorcher")
+	   stop
+	PickupDoom:
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 0 A_Print("You got the Super Shotgun!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   TNT1 A 1 A_GiveInventory("Super Shotgun")
+	   stop
+	PickupWolfen:
+	   TNT1 A 0 A_PlaySound("wolfen/mgunget")
+	   TNT1 A 0 A_Print("You got the Machine Gun!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   WEPG A 1 A_GiveInventory("Machine Gun")
+	   stop
+	PickupHexen:
+	   TNT1 A 0 A_PlaySound("hexen/weaponget")
+	   TNT1 A 0 A_Print("You got Timon's Axe!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   TNT1 A 1 A_GiveInventory("Timon's Axe")
+	   stop
+	PickupDuke:
+	   TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"PickupDuke2")
+	   TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"PickupDuke2")
+	   TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
+	   TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+	   TNT1 A 0 ACS_ExecuteAlways(205)
+	PickupDuke2:
+	   TNT1 A 0 A_Print("You got the Explosive Shotgun!")
+	   TNT1 A 0 A_PlaySound("duke/xshotgunpump")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 1 A_GiveInventory("Explosive Shotgun")
+	   stop
+	PickupMarathon:
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 0 A_Print("You got the Zeus Class Fusion Pistol!")
+	   TNT1 A 0 A_GiveInventory("GotWeapon3",1)
+	   TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+	   TNT1 A 0 A_SpawnItem("WeaponGetYaaaay")
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 1 A_GiveInventory("Fusion Pistol")
+	   stop
+    PickupHeretic2:
+	   TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("heretic/ammoget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupChex2:
+	   TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("chex/weaponget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupDoom2:
+	   TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("doomguy/weaponget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+    PickupWolfen2:
+	   TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("wolfen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",10)
+	   stop
+	PickupHexen2:
+	   TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("hexen/itemget")
+	   TNT1 A 1 A_GiveInventory("Clip",4)
+	   stop
+	PickupDuke3:
+	   TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	   TNT1 A 0 A_PlaySound("duke/itemget")
+	   TNT1 A 1 A_GiveInventory("AmmoShell",4)
+	   stop
+	PickupMarathon2:
+	   TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+	   TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 1 A_GiveInventory("Cell",20)
+	   stop
+	}
+}

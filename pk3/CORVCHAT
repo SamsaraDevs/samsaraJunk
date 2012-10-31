@@ -1,0 +1,97 @@
+[IntroStrings]
+"I have slain demons, zombies, and beasts. You will be next."
+"Beg for a quick death. Maybe I shall oblige."
+"The last thing you will hear will be my laughter."
+"I will personally turn this arena into a graveyard."
+"Tremble, humans. Tremble more if you survive."
+"I will face you with honor."
+
+[FragStrings]
+"I've paved the way to the Hells for you."
+"Your body is but one of many."
+"Struggle all you want. I will slay you anyway."
+"You lived and died as a true coward."
+"And the ground is stained yet again."
+"Rise again. I haven't killed you enough yet."
+"You fought with honor. It was a pleasure killing you."
+"Only a child should cry like that."
+
+[KilledStrings]
+"By the gods."
+"I end in fire. As it should be."
+"My enemies would honor you for this achievement."
+"For a brief moment, you were a true fighter."
+"For just a moment, I felt something like peace."
+"I cannot rest. Not while there is more to slay."
+"I fell with honor. I will rest satisfied in that."
+"Do not rejoice. I am not downed forever."
+"Forward, I march towards oblivion. ...No, not yet."
+
+[RoamingStrings]
+"Make it challenging."
+"I grow weary of waiting."
+"If you had any honor, you would face me as a man."
+"Any time not spent fighting is time I care little for."
+"My people will not be avenged with wandering around hallways."
+"I have just enough ammo remaining to kill the rest of you."
+"There is no shame with retreating. Run and hide from me."
+"I deliberately take my time, to give you time to cower."
+"This is intoxicating, seeing people hide as I approach."
+"Never give up, always continue to try. I will be there to stomp each attempt."
+"There is no hole deep enough for you to hide in."
+"My lust for battle has made me immortal. Come test me."
+"Perhaps I should turn my weapons on the walls, so as to sate my boredom."
+"Cry little about your fate. I will bring you to meet it."
+"When will you learn to give up when I approach?"
+"Facing death, your retreat is understandable."
+"I ache to fire at more things. My finger twitches."
+"Is there enough room for gravestones here?"
+"This arena would be prettier bathed in red."
+"I am eager to demonstrate my furor."
+"Ten more seconds, and you will set a new survival record."
+"Can anyone offer me a challenge?"
+"Come forth and meet your destiny."
+"Worthy, unworthy, I slay whatever is in my path."
+"There is no turning away from my path."
+"Patience is what separates the good from the great. I can wait."
+"In one encounter, or piece by piece...I can slay either way."
+"I have no need for tracking or hunting. I simply find and fight."
+"Ashes to ashes, dust to dust."
+
+[RareRoamingStrings]
+"Beasts, undead, demons, enemies...they all bleed the same, in the end."
+"My weapons are starting to wear and fray. Soon, I will need to kill with my hands alone."
+"The Wheel must turn more. This lull in action bores me."
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"It was best to call it now, rather than let the massacre continue."
+"This is my one mercy to you."
+"Weigh your worth carefully in my shadow."
+"This is how a true warrior does battle."
+"There are yet many more steps I must scale."
+"Over so soon? How tragic."
+"Call the chambermaid. I have left an unfortunate mess for her."
+
+[LoseStrings]
+"What? No! The match is not over yet!"
+"I have wasted too much time sating the lessers' egos."
+"Your deceptions of grandeur will not elevate you."
+"Alas, if you only understood the truth: I fell asleep at the weapon."
+"One victory does not make a hero."
+"You are not a warrior. You are merely lucky, and luck does not hold."
+"What have you truly won?"
+"If this battle was of life or death, then the outcome would be very different."
+
+//[FrustratedStrings] // Spammer!
+
+
+//[EnragedStrings] // You fail it!
+
+
+//[DemoralizedStrings] // Your skill is not enough!
+
+
+[PissedStrings] // Llama!
+"I will teach you manners, even if I must do so over your cold body."

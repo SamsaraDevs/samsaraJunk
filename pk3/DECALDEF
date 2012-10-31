@@ -1,0 +1,75 @@
+// Doom plasma rifle
+
+decal DoomPlasmaScorchLower1
+{
+	pic PLASMA1
+	shade "00 00 00"
+	x-scale 0.3
+	y-scale 0.3
+	randomflipx
+	randomflipy
+}
+
+decal DoomPlasmaScorch1
+{
+	pic DPLMA0
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal DoomPlasmaScorchLower1
+}
+
+decal DoomPlasmaScorchLower2
+{
+	pic PLASMA2
+	shade "00 00 00"
+	x-scale 0.3
+	y-scale 0.3
+	randomflipx
+	randomflipy
+}
+
+decal DoomPlasmaScorch2
+{
+	pic DPLMB0
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal DoomPlasmaScorchLower2
+}
+
+decalgroup DoomPlasmaScorchLower
+{
+	DoomPlasmaScorchLower1	1
+	DoomPlasmaScorchLower2	1
+}
+
+decalgroup DoomPlasmaScorch
+{
+	DoomPlasmaScorch1	1
+	DoomPlasmaScorch2	1
+}
+
+// Chex plasma rifle
+
+decal ChexPlasmaScorch1
+{
+	pic CLSSA0
+	add 0.5
+	fullbright
+	animator GoAway
+}
+
+decal ChexPlasmaScorch2
+{
+	pic CLSSB0
+	add 0.5
+	fullbright
+	animator GoAway
+}
+
+decalgroup ChexPlasmaScorch
+{
+	ChexPlasmaScorch1	1
+	ChexPlasmaScorch2	1
+}

@@ -1,0 +1,107 @@
+[IntroStrings]
+"The king has entered the building."
+"I'm Duke Nukem. Nothing more needs to be said!"
+"Always bet on Duke. Always."
+"That's right, boys and girls, the Duke is here to win another round!"
+"You can start quakin' in your boots now, kids. I'm here."
+"I win. Let's get to the next map already."
+"The Wheel turns again, but every turn has to have me."
+
+[FragStrings]
+"Tough break, kid, but this is what I do."
+"Stop screamin', it doesn't make you look good."
+"Let me wipe my boots on your ass real quick."
+"Right in the dick. You weren't usin' it anyway."
+"Go on. Cry. Cry and ragequit. Go on, do it."
+"I win. I always win."
+"It was funny watchin' you scramble away!"
+"I love the smell of fried assholes in the morning."
+"If you can't take it, why'd you sign up?"
+"This is my job, bitch, so sit down and take it."
+"Out of all the death screams I've heard, that was one of the worst."
+
+[KilledStrings]
+"Take a moment to reflect on your achievement, kid."
+"Awww, did I hurt your feelings?"
+"Well, that's one way to open up to someone."
+"You know, you've got a real attitude problem."
+"Fancy seeing you here. Small world."
+"Feel better now, kid?"
+"Shut up, punk. I won't hear your gloating."
+"Brag all you want. Go on, you've earned it."
+"Take every cheap shot you want, punk. It won't be enough."
+"Get your slimy hands off me!"
+"I'm not impressed."
+
+[RoamingStrings]
+"You're just stallin' the inevitable, kid."
+"You're runnin' like you drank straight from the tap!"
+"Come on, come on, I'm ready to go!"
+"I'd kill you fast, boys, if I wasn't laughin' so hard at your asses!"
+"Point your gun the other way, punk, maybe you'll start shootin' better."
+"Don't make me come find you, kid."
+"You useless shits. Gonna make me come find you, huh?"
+"You're hidin' 'cause you know you can't fight me. Smart."
+"Go run and patch up your boo-boos, baby boy. I'll wait."
+"What, are you waiting for the planets to align or something?"
+"You can't beat me. Get it through your head, little shit."
+"This is a waste of time. Let's get going already!"
+"Time to stop pissin' around and get this big guy back into action!"
+"I can see you flailing around, desperately aiming."
+"You're hilarious when you think you've got a chance."
+"You might think I'm just talkin' shit, but I'm preaching the truth."
+"Your bones'll make great gravel once I'm through with you."
+"All the sex appeal of a dog's shrivelled dick."
+"I could be gettin' laid now, instead I'm beatin' bitches!"
+"Don't worry, I'm not shooting at you. You can breathe easy."
+"You made a bad decision, wanting a piece of me."
+"Get back here, I wanna finish what I've started."
+"I'm not paid enough to put up with this kinda shit."
+"I'll be done with you and still be back in time for Oprah!"
+"I wonder if my shows recorded properly."
+"Pay attention, kids. I'm about to make this shit look good."
+"Got any ammo left after that, kid? You're gonna need it."
+"Let's speed this up. I've got shit to do."
+"When I get in this field, I play to for the top. Who's my next stepping stone?"
+"Go on, bastards, try and take me. I'll drag you to hell."
+"There's a reason nobody's survived tangling with me."
+"I've got a lot of love to spread around. C'mere and get some."
+"Can't help wallowing around in the pit of shit, someone's gotta shine."
+"Clowns to the left, jokers to the right..."
+
+[RareRoamingStrings]
+"Hah hah, and here I thought I'd never get back in action again. Then comes the Wheel."
+"I waited forever before, and look how that turned out."
+"Get out in the open! This ain't some Call of Duty cover-based shit!"
+"Your health isn't gonna regenerate, no matter how long you hide."
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"It's good to be the king."
+"This is my natural position...on top!"
+"The difference between me and everyone else is that I win."
+"This was determined from the outset! Only Duke wins!"
+"I win. Get used to hearing that. That's the only thing you'll hear."
+"The moment you think you can beat Duke is the moment you lose."
+"I could've won long ago, I just wanted to draw it out."
+"Everyone lined up for a free bitch-slapping. I just obliged."
+"Hail to the king, baby!"
+
+[LoseStrings]
+"Bullshit!"
+"Next time, scum."
+"The king needs his throne, but you can keep it warm for me."
+"I don't care what the scoreboard says! Duke doesn't lose!"
+"Man, and here I thought I'd go easy on you."
+"Looks like my ammo had an expiration date."
+"Don't push me, punk. I'm well and ready to go another round."
+"Come on, pussy, try me again. I'll take you on as many times as I need to."
+
+//[FrustratedStrings] // Spammer!
+
+//[EnragedStrings] // You fail it!
+
+//[DemoralizedStrings] // Your skill is not enough!
+
+//[PissedStrings] // Llama!

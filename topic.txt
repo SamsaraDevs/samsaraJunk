@@ -1,0 +1,1 @@
+In which someone makes a class-based mod by copy/pasting the ZDoom Wiki into a single .pk3 and people seem to like it. || ijontichy's changes to Samsara: https://github.com/IjonTichy/samsaraJunk || Latest commit summary: All the slot pickups are added, all that's needed now is a merge

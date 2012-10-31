@@ -1,0 +1,515 @@
+// The actual Chex Quest 3 flemkeys. Have to add these, or else there'll be unknown actors or something like that.
+
+actor BlueFlemKey : BlueSkull 40
+{
+	Game Chex
+	inventory.pickupmessage "$GOTBLUEFLEM"
+}
+
+actor YellowFlemKey : YellowSkull 39
+{
+	Game Chex
+	inventory.pickupmessage "$GOTYELLOWFLEM"
+}
+
+actor RedFlemKey : RedSkull 38
+{
+	Game Chex
+	inventory.pickupmessage "$GOTREDFLEM"
+}
+
+
+// Now for the replacers.
+// Doom
+
+ACTOR RedCard2 : CustomInventory replaces RedCard
+{
+   inventory.pickupmessage "$GOTREDCARD" // "Picked up a red keycard."
+   //inventory.icon "STKEYS2"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      RKEY A 10
+      RKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,0)
+	  TNT1 A 1 A_GiveInventory("RedCard")
+	  stop
+   }
+}
+
+ACTOR YellowCard2 : CustomInventory replaces YellowCard
+{
+   inventory.pickupmessage "$GOTYELWCARD" // "Picked up a yellow keycard."
+   //inventory.icon "STKEYS1"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      YKEY A 10
+      YKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,1)
+	  TNT1 A 1 A_GiveInventory("YellowCard")
+	  stop
+   }
+}
+
+ACTOR BlueCard2 : CustomInventory replaces BlueCard
+{
+   inventory.pickupmessage "$GOTBLUECARD" // "Picked up a blue keycard."
+   //inventory.icon "STKEYS0"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      BKEY A 10
+      BKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,2)
+	  TNT1 A 1 A_GiveInventory("BlueCard")
+	  stop
+   }
+}
+
+ACTOR RedSkull2 : CustomInventory replaces RedSkull
+{
+   inventory.pickupmessage "$GOTREDSKUL" // "Picked up a red skull key."
+   //inventory.icon "STKEYS5"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      RSKU A 10
+      RSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,3)
+	  TNT1 A 1 A_GiveInventory("RedSkull")
+	  stop
+   }
+}
+
+ACTOR YellowSkull2 : CustomInventory replaces YellowSkull
+{
+   inventory.pickupmessage "$GOTYELWSKUL" // "Picked up a yellow skull key."
+   //inventory.icon "STKEYS4"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      YSKU A 10
+      YSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,4)
+	  TNT1 A 1 A_GiveInventory("YellowSkull")
+	  stop
+   }
+}
+
+ACTOR BlueSkull2 : CustomInventory replaces BlueSkull
+{
+   inventory.pickupmessage "$GOTBLUESKUL" // "Picked up a blue skull key."
+   //inventory.icon "STKEYS3"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      BSKU A 10
+      BSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,5)
+	  TNT1 A 1 A_GiveInventory("BlueSkull")
+	  stop
+   }
+}
+
+
+
+// Heretic
+
+ACTOR KeyBlue2 : CustomInventory replaces KeyBlue
+{
+   inventory.pickupmessage "$TXT_GOTBLUEKEY"
+  //Inventory.Icon "BKEYICON"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+	  BKYY ABCDEFGHIJ 3 Bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,6)
+	  TNT1 A 1 A_GiveInventory("KeyBlue")
+	  stop
+   }
+}
+
+ACTOR KeyGreen2 : CustomInventory replaces KeyGreen
+{
+   inventory.pickupmessage "$TXT_GOTGREENKEY"
+  //Inventory.Icon "GKEYICON"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      AKYY ABCDEFGHIJ 3 Bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,7)
+	  TNT1 A 1 A_GiveInventory("KeyGreen")
+	  stop
+   }
+}
+
+ACTOR KeyYellow2 : CustomInventory replaces KeyYellow
+{
+   inventory.pickupmessage "$TXT_GOTYELLOWKEY"
+  //Inventory.Icon "YKEYICON"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      CKYY ABCDEFGHI 3 Bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,8)
+	  TNT1 A 1 A_GiveInventory("KeyYellow")
+	  stop
+   }
+}
+
+
+
+// Chex Quest
+
+ACTOR ChexRedCard2 : CustomInventory replaces ChexRedCard
+{
+   inventory.pickupmessage "$GOTCREDKEY"
+   //inventory.icon "STKEYS2"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      RKEY A 10
+      RKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,9)
+	  TNT1 A 1 A_GiveInventory("ChexRedCard")
+	  stop
+   }
+}
+
+ACTOR ChexYellowCard2 : CustomInventory replaces ChexYellowCard
+{
+   inventory.pickupmessage "$GOTCYELLOWKEY"
+   //inventory.icon "STKEYS1"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      YKEY A 10
+      YKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,10)
+	  TNT1 A 1 A_GiveInventory("ChexYellowCard")
+	  stop
+   }
+}
+
+ACTOR ChexBlueCard2 : CustomInventory replaces ChexBlueCard
+{
+   inventory.pickupmessage "$GOTCBLUEKEY"
+   //inventory.icon "STKEYS0"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      BKEY A 10
+      BKEY B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,11)
+	  TNT1 A 1 A_GiveInventory("ChexBlueCard")
+	  stop
+   }
+}
+
+ACTOR RedFlemKey2 : CustomInventory replaces RedFlemKey
+{
+   inventory.pickupmessage "$GOTREDFLEM"
+   //inventory.icon "STKEYS5"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      RSKU A 10
+      RSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,12)
+	  TNT1 A 1 A_GiveInventory("RedFlemKey")
+	  stop
+   }
+}
+
+ACTOR YellowFlemKey2 : CustomInventory replaces YellowFlemKey
+{
+   inventory.pickupmessage "$GOTYELLOWFLEM"
+   //inventory.icon "STKEYS4"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      YSKU A 10
+      YSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,13)
+	  TNT1 A 1 A_GiveInventory("YellowFlemKey")
+	  stop
+   }
+}
+
+ACTOR BlueFlemKey2 : CustomInventory replaces BlueFlemKey
+{
+   inventory.pickupmessage "$GOTBLUEFLEM"
+   //inventory.icon "STKEYS3"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      BSKU A 10
+      BSKU B 10 bright
+      loop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,14)
+	  TNT1 A 1 A_GiveInventory("BlueFlemKey")
+	  stop
+   }
+}
+
+
+
+// HeXen
+
+ACTOR KeyAxe2 : CustomInventory replaces KeyAxe
+{
+   inventory.pickupmessage "$TXT_KEY_AXE"
+   //inventory.icon "KEYSLOT3"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY3 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,15)
+	  TNT1 A 1 A_GiveInventory("KeyAxe")
+	  stop
+   }
+}
+
+ACTOR KeyCastle2 : CustomInventory replaces KeyCastle
+{
+   inventory.pickupmessage "$TXT_KEY_CASTLE"
+   //inventory.icon "KEYSLOTB"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEYB A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,16)
+	  TNT1 A 1 A_GiveInventory("KeyCastle")
+	  stop
+   }
+}
+
+ACTOR KeyCave2 : CustomInventory replaces KeyCave
+{
+   inventory.pickupmessage "$TXT_KEY_CAVE"
+   //inventory.icon "KEYSLOT2"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY2 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,17)
+	  TNT1 A 1 A_GiveInventory("KeyCave")
+	  stop
+   }
+}
+
+ACTOR KeyDungeon2 : CustomInventory replaces KeyDungeon
+{
+   inventory.pickupmessage "$TXT_KEY_DUNGEON"
+   //inventory.icon "KEYSLOT6"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY6 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,18)
+	  TNT1 A 1 A_GiveInventory("KeyDungeon")
+	  stop
+   }
+}
+
+ACTOR KeyEmerald2 : CustomInventory replaces KeyEmerald
+{
+   inventory.pickupmessage "$TXT_KEY_EMERALD"
+   //inventory.icon "KEYSLOT5"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY5 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,19)
+	  TNT1 A 1 A_GiveInventory("KeyEmerald")
+	  stop
+   }
+}
+
+ACTOR KeyFire2 : CustomInventory replaces KeyFire
+{
+   inventory.pickupmessage "$TXT_KEY_FIRE"
+   //inventory.icon "KEYSLOT4"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY4 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,20)
+	  TNT1 A 1 A_GiveInventory("KeyFire")
+	  stop
+   }
+}
+
+ACTOR KeyHorn2 : CustomInventory replaces KeyHorn
+{
+   inventory.pickupmessage "$TXT_KEY_HORN"
+   //inventory.icon "KEYSLOT9"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY9 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,21)
+	  TNT1 A 1 A_GiveInventory("KeyHorn")
+	  stop
+   }
+}
+
+ACTOR KeyRusted2 : CustomInventory replaces KeyRusted
+{
+   inventory.pickupmessage "$TXT_KEY_RUSTED"
+   //inventory.icon "KEYSLOT8"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY8 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,22)
+	  TNT1 A 1 A_GiveInventory("KeyRusted")
+	  stop
+   }
+}
+
+ACTOR KeySilver2 : CustomInventory replaces KeySilver
+{
+   inventory.pickupmessage "$TXT_KEY_SILVER"
+   //inventory.icon "KEYSLOT7"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY7 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,23)
+	  TNT1 A 1 A_GiveInventory("KeySilver")
+	  stop
+   }
+}
+
+ACTOR KeySteel2 : CustomInventory replaces KeySteel
+{
+   inventory.pickupmessage "$TXT_KEY_STEEL"
+   //inventory.icon "KEYSLOT1"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEY1 A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,24)
+	  TNT1 A 1 A_GiveInventory("KeySteel")
+	  stop
+   }
+}
+
+ACTOR KeySwamp2 : CustomInventory replaces KeySwamp
+{
+   inventory.pickupmessage "$TXT_KEY_SWAMP"
+   //inventory.icon "KEYSLOTA"
+   inventory.pickupsound "misc/k_pkup"
+   +NOTDMATCH
+   States
+   {
+    Spawn:
+      KEYA A -1
+      Stop
+    Pickup:
+      TNT1 A 0 ACS_ExecuteAlways(902,0,25)
+	  TNT1 A 1 A_GiveInventory("KeySwamp")
+	  stop
+   }
+}
