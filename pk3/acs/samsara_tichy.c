@@ -409,7 +409,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     if (a2bool)
     {
         a2cnt   = CheckInventory(ammo2);
-        a2max   = GetAmmoCapacity(ammo1);
+        a2max   = GetAmmoCapacity(ammo2);
         a2max2  = a1max * 4;
     }
 
