@@ -88,6 +88,13 @@ function int samsaraClassNum(void)
     return -1;
 }
 
+function int slotToItem(int i)
+{
+    i--;
+    if (i < 0 || i >= SLOTCOUNT) { return -1; }
+    return StoIArray[i];
+}
+
 function int itemToSlot(int i)
 {
     i--;
@@ -97,11 +104,27 @@ function int itemToSlot(int i)
 
 function int SamsaraClientVars(void)
 {
+    int switchOnPickup  = !!GetCVar("switchonpickup");
     int weaponBar       = !!GetCVar("samsara_cl_weaponhud");
     int ballgag         = !!GetCVar("samsara_cl_ballgag");
     int classicAnims    = !!GetCVar("samsara_cl_vanilladoom");
     int wolfmove        = !!GetCVar("samsara_cl_wolfmove");
 
-    return (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
+    return (switchOnPickup << 4) + (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
 }
 
+
+function int ClassWeaponSlot(void)
+{
+    int pclass = samsaraClassNum();
+    int weapon, i;
+
+    for (i = 0; i < SLOTCOUNT; i++)
+    {
+        weapon = ClassWeapons[pclass][i][S_WEP];
+
+        if (CheckWeapon(weapon)) { return i; }
+    }
+
+    return -1;
+}

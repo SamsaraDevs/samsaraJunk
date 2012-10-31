@@ -80,6 +80,7 @@ int PickupStates[CLASSCOUNT][3] =
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
+int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7};
 
 int ClassFades[CLASSCOUNT][4] =
 {
@@ -90,6 +91,19 @@ int ClassFades[CLASSCOUNT][4] =
     {1.0, 1.0, 0.0, 0.1},
     {1.0, 1.0, 0.0, 0.1},
     {0.0, 1.0, 0.0, 0.4},
+};
+
+int SlotItems[SLOTCOUNT] = 
+{
+    "",
+    "GotWeapon0",
+    "",
+    "GotWeapon2",
+    "GotWeapon3",
+    "GotWeapon4",
+    "GotWeapon5",
+    "GotWeapon6",
+    "GotWeapon7",
 };
 
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 

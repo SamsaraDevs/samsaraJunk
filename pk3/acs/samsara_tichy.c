@@ -10,6 +10,7 @@ int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
 int array_ballgag[PLAYERMAX];
 int array_weaponBar[PLAYERMAX];
+int array_pickupswitch[PLAYERMAX];
 
 int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash;
 int SamsaraClientWeps[SLOTCOUNT] = {0};
@@ -107,6 +108,9 @@ script SAMSARA_SPAWN (int respawning)
         SetInventory("VanillaDoom",    array_vanillaAnim[pln]);
         SetInventory("ExpandedHud",    array_weaponBar[pln]);
 
+        TakeInventory("WeaponGetYaaaay",  1);
+        TakeInventory("WeaponGetYaaaay2", 1);
+
         if (CheckInventory("MarathonClass"))
         {
             if (GetCVar("samsara_sogravity"))
@@ -191,15 +195,11 @@ script SAMSARA_WOLFMOVE enter
 
 script SAMSARA_PUKE (int values, int pln) net
 {
-    int wolfmove = values & 1;
-    int vanilla  = values & 2;
-    int ballgag  = values & 4;
-    int wepbar   = values & 8;
-
-    array_wolfmove[pln]     = wolfmove;
-    array_vanillaAnim[pln]  = vanilla;
-    array_ballgag[pln]      = ballgag;
-    array_weaponBar[pln]    = wepbar;
+    array_wolfmove[pln]     = values & 1;
+    array_vanillaAnim[pln]  = values & 2;
+    array_ballgag[pln]      = values & 4;
+    array_weaponBar[pln]    = values & 8;
+    array_pickupswitch[pln] = values & 16;
 }
 
 
@@ -264,6 +264,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
             array_ballgag[pln]      = !!GetCVar("samsara_cl_ballgag");
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
+            array_pickupswitch[pln] = !!GetCVar("switchonpickup");
         }
         else
         {
@@ -411,8 +412,13 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     if (weaponGet)
     {
         GiveInventory(weapon, 1);
-        TakeInventory("WeaponGetYaaaay",  1);
-        TakeInventory("WeaponGetYaaaay2", 1);
+        GiveInventory(SlotItems[slot], 1);
+
+        if (array_pickupswitch[PlayerNumber()] &&
+                (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
+        {
+            SetWeapon(ClassWeapons[pclass][slot][S_WEP]);
+        }
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0) + 4);

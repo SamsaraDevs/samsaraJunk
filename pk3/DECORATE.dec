@@ -94,3 +94,6 @@ actor SamsaraSlotPickup: CustomInventory
 #include "decorate/slot2.dec"
 #include "decorate/slot3.dec"
 #include "decorate/slot4.dec"
+#include "decorate/slot5.dec"
+#include "decorate/slot6.dec"
+#include "decorate/slot7.dec"
