@@ -1299,11 +1299,19 @@ Actor "Mighty Boot" : Weapon
 		TNT1 A 0 A_Lower
 		loop
 	Ready:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("SynthFireActive",1)
+		TNT1 A 0 ACS_ExecuteAlways(791,0,0,0,0) //act.synth-fire LEFT(pri)
+		TNT1 A 0 ACS_ExecuteAlways(792,0,0,0,0) //act.synth-fire RIGHT(sec)
+	// Left Boot
+	LIdle:
 		TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
 		TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
-		TNT1 A 1 A_WeaponReady
-		loop
-	Fire:
+		TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+		TNT1 A 1 A_WeaponReady(12)
+		TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+    	Loop
+	LFire:
 		TNT1 A 0 A_GiveInventory("DukeKicking",1)
 		DKBT A 5 A_WeaponReady(14)
 		TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
@@ -1312,8 +1320,17 @@ Actor "Mighty Boot" : Weapon
 		TNT1 A 0 A_Refire
 		TNT1 A 0 A_TakeInventory("DukeKicking",9)
 		DKBT A 1 A_WeaponReady(14)
-		goto Ready
-	AltFire:
+		TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+		Goto LIdle
+	// Right Boot
+	Flash:
+		TNT1 A 1
+	RIdle:
+		TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+		TNT1 A 1
+		TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+    	Loop
+	RFire:
 		TNT1 A 0 A_GiveInventory("DukeKicking",1)
 		TNT1 A 0 ACS_ExecuteAlways(212,0,3)
 		DKBT C 6 A_WeaponReady(14)
@@ -1323,7 +1340,8 @@ Actor "Mighty Boot" : Weapon
 		TNT1 A 0 A_Refire
 		TNT1 A 0 A_TakeInventory("DukeKicking",9)
 		DKBT C 1 A_WeaponReady(14)
-		goto Ready
+		TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+		Goto RIdle
 		
 	IntroTaunt:
 	IntroTaunt1:
@@ -1380,6 +1398,13 @@ Actor "Mighty Boot" : Weapon
 		KNUX A 3 A_TakeInventory("DukeWaiting",15)
 		//KNUX AAAAAAAAAAAAAA 0 A_Lower
 		goto Select
+	
+	Fire:
+		TNT1 A 0
+		goto Ready
+	AltFire:
+		TNT1 A 0
+		goto Ready
   }
 }
 
