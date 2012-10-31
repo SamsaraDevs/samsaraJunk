@@ -451,6 +451,7 @@ ACTOR " Shotgun " : Shotgun
   Weapon.SlotNumber 2
   +THRUGHOST
   +INVENTORY.UNDROPPABLE
+  AttackSound "silence"
   Obituary "%k showed %o his boomstick."
   States
   {
@@ -545,6 +546,7 @@ ACTOR "Super Shotgun" : SuperShotgun
   Weapon.SlotNumber 3
   +THRUGHOST
   +INVENTORY.UNDROPPABLE
+  AttackSound "silence"
   Obituary "%k smeared %o across the wall with the SSG."
   States
   {
