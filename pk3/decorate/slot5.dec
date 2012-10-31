@@ -20,21 +20,21 @@ actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
       Dukeguy:  DRPG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: RCKL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
-      DoomFull:      PDRK A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      ChexFull:      PZRP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HereticFull:   PPNX A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      WolfFull:      PWRL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HexenFull:     PHAM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      DukeFull:      PRPG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      MarathonFull:  PSPN A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DoomFull:      PDRK B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      ChexFull:      PZRP B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HereticFull:   PPNX B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfFull:      PWRL B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HexenFull:     PHAM B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DukeFull:      PRPG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      MarathonFull:  PSPN B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
-      DoomEmpty:     PDRK B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      ChexEmpty:     PZRP B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HereticEmpty:  PPNX B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      WolfEmpty:     PWRL B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HexenEmpty:    PHAM B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      DukeEmpty:     PRPG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      MarathonEmpty: PSPN B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DoomEmpty:     PDRK A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      ChexEmpty:     PZRP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HereticEmpty:  PPNX A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfEmpty:     PWRL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HexenEmpty:    PHAM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DukeEmpty:     PRPG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      MarathonEmpty: PSPN A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 5) & 3) == 1, "PickupSuccess")
