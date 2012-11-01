@@ -16,6 +16,7 @@
 #define SAMSARA_DISCONNECT_CLIENT   222
 #define SAMSARA_CLIENT_CLASS        228
 
+#define PLAYERMAX 64
 #define LMSMODES            6
 
 #define CLASSCOUNT          7
