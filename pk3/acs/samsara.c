@@ -577,8 +577,11 @@ script 901 ENTER { // Give keys as needed, for people joining the game.
 
 script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
     if(keys[0][a] == 0) {
+        if (GameType () != GAME_SINGLE_PLAYER)
+        {
         Log(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*."); // Let the server admins know.
         HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
+	}
     }
     keys[0][a] = 1;
 }
