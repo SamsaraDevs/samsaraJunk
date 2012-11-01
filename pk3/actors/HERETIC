@@ -1136,7 +1136,7 @@ ACTOR GoldWandFX4 : FastProjectile
 
 ACTOR GoldWandFX42 : GoldWandFX4 { +THRUSPECIES Species "Player" }
 
-ACTOR " Firemace " : Mace
+ACTOR " Firemace " : Weapon
 {
   Weapon.SelectionOrder 1400
   Inventory.PickUpSound "heretic/weaponget"
