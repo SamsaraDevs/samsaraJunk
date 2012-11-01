@@ -66,11 +66,15 @@ States
 {
 Pickup:
 Use:
-       TNT1 A 0 A_PlaySound("marathon/itemget")
+	   TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"PickupNothing")
+	   TNT1 A 0 A_PlaySound("marathon/itemget")
 	   TNT1 A 0 A_GiveInventory("GotWeapon0",1)
 	   TNT1 A 0 A_SetBlend("Green",0.4,4)
 	   TNT1 A 1 A_GiveInventory("CanDualPistols",1)
 	   TNT1 A 1 A_GiveInventory("KKV-7 SMG Flechette",1)
 	   stop
+PickupNothing:
+		TNT1 A 1
+		stop
 }
 }

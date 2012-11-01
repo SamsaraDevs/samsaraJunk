@@ -934,8 +934,6 @@ ACTOR ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 	Ready2:
 		PIS1 A 1 A_GunFlash
 		TNT1 A 0 A_GiveInventory("SynthFireActive",1)
-		TNT1 A 0 ACS_ExecuteAlways(791,0,0,0,0) //act.synth-fire LEFT(pri)
-		TNT1 A 0 ACS_ExecuteAlways(792,0,0,0,0) //act.synth-fire RIGHT(sec)
 	// Left Magnum
 	LIdle:
 		TNT1 A 0 A_JumpIfInventory("RightReload",1,"LInvisible")
@@ -1349,8 +1347,6 @@ ACTOR "WSTE-M5 Combat Shotgun" : Weapon
 	Ready2:
 		SHT1 A 1 A_GunFlash
 		TNT1 A 0 A_GiveInventory("SynthFireActive",1)
-		TNT1 A 0 ACS_ExecuteAlways(791,0,0,0,0) //act.synth-fire LEFT(pri)
-		TNT1 A 0 ACS_ExecuteAlways(792,0,0,0,0) //act.synth-fire RIGHT(sec)
 	// Left Shotgun
 	LIdle:
 		SHT1 A 1 A_WeaponReady(12)
