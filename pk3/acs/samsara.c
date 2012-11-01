@@ -1,92 +1,12 @@
 #include "zcommon.acs"
 #library "samsara"
 
-// because fuck strings I guess?
-//#include "commonFuncs.h"
+#include "commonFuncs.h"
 
 #include "samsaraDefs.h"
 #include "samsaraFuncs.h"
 
 #define DEBUG 1
-
-/*
- * Functions
- */
-
-function int isInvasion(void) { return GetCVar("invasion"); }
-function int isLMS(void) { return GetCVar("lastmanstanding") || GetCVar("teamlms"); }
-function int isDead(int tid) { return GetActorProperty(tid, APROP_Health) <= 0; }
-
-function int isCoop(void)
-{
-    int check1 = GameType() == GAME_NET_COOPERATIVE;
-    int check2 = GetCVar("cooperative") || GetCVar("invasion") || GetCVar("survival");
-
-    return check1 || check2;
-}
-
-function void GiveAmmo(int type, int amount)
-{
-    if (GetCVar("sv_doubleammo"))
-    {
-        int m = GetAmmoCapacity(type);
-        int expected = min(m, CheckInventory(type) + amount);
-
-        GiveInventory(type, amount);
-        TakeInventory(type, CheckInventory(type) - expected);
-    }
-    else
-    {  
-        GiveInventory(type, amount);
-    }
-}
-
-function void SetInventory(int item, int amount)
-{
-    int count = CheckInventory(item);
-
-    if (count == amount) { return; }
-    
-    if (count > amount)
-    {
-        TakeInventory(item, count - amount);
-        return;
-    }
-
-    GiveAmmo(item, amount - count);
-    return;
-}
-
-function int min(int x, int y)
-{
-    if (x < y) { return x; }
-    return y;
-}
-
-function int max (int x, int y)
-{
-    if (x > y) { return x; }
-    return y;
-}
-
-function int middle(int x, int y, int z)
-{
-    if ((x < z) && (y < z)) { return max(x, y); }
-    return max(min(x, y), z);
-}
-
-function int keyDown(int key)
-{
-    int buttons = GetPlayerInput(-1, INPUT_BUTTONS);
-
-    if ((buttons & key) == key) { return 1; }
-    return 0;
-}
-
-
-/*
- * End functions
- */
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -185,12 +105,23 @@ script SAMSARA_SPAWN (int respawning)
 
     while (1)
     {
-        SetInventory("SynthFireLeft",  keyDown(BT_ATTACK));
-        SetInventory("SynthFireRight", keyDown(BT_ALTATTACK));
-        SetInventory("WolfenMovement", array_wolfmove[pln]);
-        SetInventory("DukeBallgag",    array_ballgag[pln]);
-        SetInventory("VanillaDoom",    array_vanillaAnim[pln]);
-        SetInventory("ExpandedHud",    array_weaponBar[pln]);
+        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
+        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
+        
+        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
+        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+        
+        if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
+        else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
+        
+        if (array_ballgag[pln]) { GiveInventory("DukeBallgag", 1); }
+        else { TakeInventory("DukeBallgag", 0x7FFFFFFF); }
+        
+        if (array_vanillaAnim[pln]) { GiveInventory("VanillaDoom", 1); }
+        else { TakeInventory("VanillaDoom", 0x7FFFFFFF); }
+        
+        if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
+        else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
 
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
