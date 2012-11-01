@@ -55,3 +55,52 @@ actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
         goto PickupFailure
     }
 }
+
+
+actor SOShotgunGiver : CustomInventory
+{
+-INVBAR
++INVENTORY.UNDROPPABLE
++INVENTORY.AUTOACTIVATE
+Inventory.maxamount 1
+States
+{
+Pickup:
+Use:
+		TNT1 A 0 A_JumpIfInventory("LevelLimiter",1,"PickupFail")
+		TNT1 A 0 A_JumpIfInventory("WSTE-M5 Combat Shotgun",1,"PickupMarathon2")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"PickupMarathonCoop")
+		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"PickupMarathonCoop") // Will need to change this with an SP specific mode.
+																	// In co-op, you can easily wait for this to respawn or run over a persistent one twice.
+																	// In SP, you can't, and so should be able to pick up from two separate spawns.
+      PickupInvasionOrDM:
+        TNT1 A 0 A_PlaySound("marathon/itemget")
+        TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("AmmoShell",8)
+        TNT1 A 0 A_GiveInventory("CanDualShotties",1)
+        TNT1 A 0 A_GiveInventory("LevelLimiter",1) // Might as well, since there's no way DM's gonna swap levels and keep weapons.
+        TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
+        stop
+
+      PickupMarathonCoop:
+        TNT1 A 0 A_PlaySound("marathon/itemget")
+        TNT1 A 0 A_GiveInventory("GotWeapon2",1)
+        TNT1 A 0 A_GiveInventory("LevelLimiter",1) // Removed on level Unloading, which keeps co-op players from picking up two at once.
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("AmmoShell",8)
+        TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
+        stop
+
+      PickupMarathon2:
+        TNT1 A 0 A_PlaySound("marathon/itemget")
+        TNT1 A 0 A_GiveInventory("CanDualShotties",1)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("AmmoShell",8)
+        stop
+		
+	  PickupFail:
+		TNT1 A 1
+		stop
+}
+}
