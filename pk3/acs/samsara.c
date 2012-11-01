@@ -1,5 +1,5 @@
 #include "zcommon.acs"
-#library "samsara_tichy"
+#library "samsara"
 
 #include "commonFuncs.h"
 
@@ -114,6 +114,9 @@ script SAMSARA_SPAWN (int respawning)
 
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
+
+        TakeInventory("Mace", 1);
+        TakeInventory("MacePowered", 1);
 
         if (CheckInventory("MarathonClass"))
         {
@@ -289,6 +292,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             if (execInt != oExecInt)
             {
                 execStr = StrParam(s:"puke -", d:SAMSARA_PUKE, s:" ", d:execInt, s:" ", d:pln);
+                if (DEBUG) { Print(s:execStr); }
                 ConsoleCommand(execStr);
             }
         }
@@ -503,15 +507,6 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
  *
  */
 
-int DoomguyGame;
-int ChexterGame;
-int CorvusGame;
-int WolfenGame;
-int HexenGame;
-int DukeGame;
-int MarathonGame;
-Global int 0 : FlagsSet;
-
 int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {"RedCard", "YellowCard", "BlueCard", "RedSkull", "YellowSkull", "BlueSkull", "KeyBlue", "KeyGreen", "KeyYellow", "ChexRedCard", "ChexYellowCard", "ChexBlueCard", "RedFlemKey", "YellowFlemKey", "BlueFlemKey", "KeyAxe", "KeyCastle", "KeyCave", "KeyDungeon", "KeyEmerald", "KeyFire", "KeyHorn", "KeyRusted", "KeySilver", "KeySteel", "KeySwamp"},
 {"\cgRed Keycard", "\ckYellow Keycard", "\chBlue Keycard", "\cgRed Skull", "\ckYellow Skull", "\chBlue Skull", "\chBlue Prism Key", "\cqGreen Prism Key", "\ckYellow Prism Key", "\cgRed Card", "\ckYellow Card", "\chBlue Card", "\cgRed Flem Key", "\ckYellow Flem Key", "\chBlue Flem Key", "\cuAxe Key", "\cfCastle Key", "\csCave Key", "\cuDungeon Key", "\cdEmerald Key", "\cgFire Key", "\ceHorn Key", "\cbRusted Key", "\cuSilver Key", "\cmSteel Key", "\cpSwamp Key"}};
@@ -598,12 +593,6 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
 //if (GameType () == GAME_NET_TEAMGAME)
 //if (GameType () == GAME_NET_DEATHMATCH)
 //if (GameType () == GAME_SINGLE_PLAYER)
-script 219 (void)
-{
-    if(GetCvar("sv_permault") == 1)//if(GameType () == GAME_NET_COOPERATIVE)
-    setresultvalue(1);
-    else setresultvalue(0);
-}
 
 script 211 ENTER
 {
@@ -611,20 +600,6 @@ script 211 ENTER
     {
         GiveInventory("CoopModeOn", 1);
         SetActorState(0,"CoOpModeOn");
-    }
-    else
-    {
-        if (GameType () == GAME_SINGLE_PLAYER)
-        {
-            GiveInventory("SPModeOn", 1);
-            if(checkInventory("DoomguyClass")) DoomguyGame = 1;
-            if(checkInventory("ChexClass")) ChexterGame = 1;
-            if(checkInventory("CorvusClass")) CorvusGame = 1;
-            if(checkInventory("WolfenClass")) WolfenGame = 1;
-            if(checkInventory("HexenClass")) HexenGame = 1;
-            if(checkInventory("DukeClass")) DukeGame = 1;
-            if(checkInventory("MarathonClass")) MarathonGame = 1;
-        }
     }
 }
 
@@ -635,7 +610,7 @@ script 211 ENTER
 
 script 220 (void)
 {
-    if (GetCvar("sv_banjetpack") == 1)
+    if (GetCvar("samsara_banjetpack"))
     {
         Print(s:"The server has forbidden the jetpack. Sorry.");
     }

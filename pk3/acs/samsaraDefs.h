@@ -1,5 +1,6 @@
 #define SAMSARA_ENTER               213
 #define SAMSARA_RESPAWN             218
+#define SAMSARA_DEATH               219
 #define SAMSARA_OPEN                223
 #define SAMSARA_SPAWN               224
 #define SAMSARA_WOLFMOVE            273

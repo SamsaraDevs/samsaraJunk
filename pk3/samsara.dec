@@ -1654,8 +1654,10 @@ Actor WeaponGetYaaaay : Ammo
     inventory.maxamount 999
     ammo.backpackamount 0
     ammo.backpackmaxamount 999
-    Inventory.PickupMessage ""
-    Inventory.PickupSound ""
+
+    Inventory.PickupMessage "\0"
+    +QUIET
+
     states
     {
       Spawn:
@@ -1669,9 +1671,11 @@ Actor WeaponGetYaaaay2 : Weapon
     Weapon.SelectionOrder 99999999999999999999999999999999
     Weapon.AmmoUse 0
     Weapon.AmmoType "Clip"
-    Inventory.PickupMessage ""
-    Inventory.PickupSound ""
+
+    Inventory.PickupMessage "\0"
     +WEAPON.NO_AUTO_SWITCH
+    +QUIET
+
     states
     {
       Spawn:
