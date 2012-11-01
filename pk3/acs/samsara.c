@@ -202,6 +202,7 @@ script SAMSARA_WOLFMOVE enter
 
 script SAMSARA_PUKE (int values, int pln) net
 {
+    PrintBold(s:"Player \"", n:pln+1, s:"\c-\" puked script ", d:SAMSARA_PUKE, s:" (", d:values, s:", ", d:pln, s:")");
     array_wolfmove[pln]     = values & 1;
     array_vanillaAnim[pln]  = values & 2;
     array_ballgag[pln]      = values & 4;
@@ -448,10 +449,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
-    }
-
-    if (weaponGet && ConsolePlayerNumber() != -1)
-    {
         ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
     }
 
