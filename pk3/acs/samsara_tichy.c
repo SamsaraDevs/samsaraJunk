@@ -6,7 +6,7 @@
 #include "samsaraDefs.h"
 #include "samsaraFuncs.h"
 
-#define DEBUG 0
+#define DEBUG 1
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -66,8 +66,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_permault"))
         {   ConsoleCommand("set samsara_permault 0");
             ConsoleCommand("archivecvar samsara_permault"); }
-
-        ConsoleCommand("compat_clientssendfullbuttoninfo 1");
+        
+        if (!GetCVar("compat_clientssendfullbuttoninfo"))
+        {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
+            ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
 
         Delay(1);
     }
@@ -368,11 +370,14 @@ script SAMSARA_DECORATE (int choice)
 /*
  *      WARNING
  *  This script is over 20 variables. Check here first for segfaults.
+ *  Also, keep an eye on this script for potential desync issues.
  */
 
 script SAMSARA_GIVEWEAPON (int slot, int dropped)
 {
     slot = itemToSlot(slot);
+
+    if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
 
     int weaponStay = !!GetCVar("sv_weaponstay");
     int weaponGet  = 0;
@@ -414,7 +419,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     if (a1Bool) { a1Full = (CheckInventory(ammo1) == a1max); }
     if (a2Bool) { a2Full = (CheckInventory(ammo2) == a2max); }
 
-    if (dropped)
+    if (dropped && IsServer)
     {
         if (a1bool) { SetAmmoCapacity(ammo1, a1max2); }
         if (a2bool) { SetAmmoCapacity(ammo2, a2max2); }
@@ -426,7 +431,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
         if (!(a1Full && a2Full)) { weaponGet = 1; }        // can we get ammo from this?
     }
 
-    if (weaponGet)
+    if (weaponGet && IsServer)
     {
         GiveInventory(weapon, 1);
         GiveInventory(SlotItems[slot], 1);
@@ -439,10 +444,14 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
+    }
+
+    if (weaponGet && ConsolePlayerNumber() != -1)
+    {
         ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
     }
 
-    if (dropped)
+    if (dropped && IsServer)
     {
         TakeInventory(ammo1, (CheckInventory(ammo1) - a1cnt) / 2);
         TakeInventory(ammo2, (CheckInventory(ammo2) - a2cnt) / 2);
@@ -450,8 +459,11 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
         if (a2bool) { SetAmmoCapacity(ammo2, a2max); }
     }
 
-    TakeInventory(ammo1, CheckInventory(ammo1) - a1max);
-    TakeInventory(ammo2, CheckInventory(ammo2) - a2max);
+    if (IsServer)
+    {
+        TakeInventory(ammo1, CheckInventory(ammo1) - a1max);
+        TakeInventory(ammo2, CheckInventory(ammo2) - a2max);
+    }
     
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
 }
