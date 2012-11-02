@@ -16,7 +16,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
       Chexguy:  MGUC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Heretic:  WBLS A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Wolfguy:  WCHP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Hexen:    WCSS A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Hexen:    WCSS A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Dukeguy:  CHGP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: RIFL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 

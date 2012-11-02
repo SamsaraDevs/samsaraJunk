@@ -16,7 +16,7 @@ actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
       Chexguy:  LAUC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Heretic:  WPHX A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Wolfguy:  WRLP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Hexen:    WFHM A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Hexen:    WFHM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Dukeguy:  DRPG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: RCKL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 

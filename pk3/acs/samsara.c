@@ -444,7 +444,10 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     if (!hasWep) { weaponGet = 1; }      // do we even have this?
     else if (!weaponStay || dropped)     // does this not stay on the ground?
     {
-        if (!(a1Full && a2Full)) { weaponGet = 1; }        // can we get ammo from this?
+        if ((a1bool && !a1Full) || (a2Bool && !a2Full))
+        {
+            weaponGet = 1;
+        }
     }
 
     if (weaponGet && IsServer)

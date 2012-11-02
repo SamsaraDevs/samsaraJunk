@@ -14,9 +14,9 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
 
       Doomguy:  WBFG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Chexguy:  CFUG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Heretic:  PWBK A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Wolfguy:  WSPR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Hexen:    WWRT A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Heretic:  PWBK A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Wolfguy:  WSPR E 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      Hexen:    WWRT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Dukeguy:  DEVP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: WMCP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 

@@ -16,7 +16,7 @@ actor SamsaraSlotSixPickup: SamsaraSlotPickup replaces PlasmaRifle
       Chexguy:  PLAC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Heretic:  WSKL A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Wolfguy:  WFLP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      Hexen:    WCFM ABCDEFGH 4 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Hexen:    WCFM ABCDEFGH 4 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Dukeguy:  FRZP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: THRW A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
