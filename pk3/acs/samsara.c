@@ -28,7 +28,7 @@ script SAMSARA_OPEN open
 
     if (CommandBitchingDone == 0)
     {
-        if (GameType() == GAME_SINGLE_PLAYER)
+        if (isSinglePlayer())
         {
             HudMessage(s:HELPSTR;
                     HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
@@ -85,7 +85,7 @@ script SAMSARA_SPAWN (int respawning)
 
     if (isLMS()) { ApplyLMS(); }
 
-    if (GameType() == GAME_SINGLE_PLAYER)
+    if (isSinglePlayer())
     {
         SamsaraWepType = samsaraClassNum()+1;
     }
@@ -288,7 +288,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
 
-        if (GameType() == GAME_SINGLE_PLAYER)
+        if (isSinglePlayer())
         {
             array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
             array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
@@ -574,7 +574,7 @@ script 901 ENTER { // Give keys as needed, for people joining the game.
 }
 
 script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
-    if(keys[0][a] == 0) {
+    if(keys[0][a] == 0 && !isSinglePlayer()) {
         Log(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*."); // Let the server admins know.
         HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
     }
@@ -591,7 +591,7 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
 
 script 211 ENTER
 {
-    if (GameType () == GAME_NET_COOPERATIVE)
+    if (!isSinglePlayer())
     {
         GiveInventory("CoopModeOn", 1);
         SetActorState(0,"CoOpModeOn");

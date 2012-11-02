@@ -434,6 +434,11 @@ function int isDead(int tid)
     return GetActorProperty(tid, APROP_Health) <= 0;
 }
 
+function int isSinglePlayer(void)
+{
+    return GameMode() == GAME_SINGLE_PLAYER;
+}
+
 function int isLMS(void)
 {
     return GetCVar("lastmanstanding") || GetCVar("teamlms");
