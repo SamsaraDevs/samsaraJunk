@@ -591,7 +591,7 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
 
 script 211 ENTER
 {
-    if (!isSinglePlayer())
+    if (isCoop())
     {
         GiveInventory("CoopModeOn", 1);
         SetActorState(0,"CoOpModeOn");

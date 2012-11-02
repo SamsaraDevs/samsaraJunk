@@ -436,7 +436,7 @@ function int isDead(int tid)
 
 function int isSinglePlayer(void)
 {
-    return GameMode() == GAME_SINGLE_PLAYER;
+    return GameType() == GAME_SINGLE_PLAYER;
 }
 
 function int isLMS(void)
