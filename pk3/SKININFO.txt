@@ -1,0 +1,45 @@
+{
+name = SOPistolSkin
+class = MarathonPlayer
+sprite = SOPS
+}
+{
+name = SOFistSkin
+class = MarathonPlayer
+sprite = SOFS
+}
+{
+name = SOSMGSkin
+class = MarathonPlayer
+sprite = SOMG
+}
+{
+name = SOShotgunSkin
+class = MarathonPlayer
+sprite = SOSG
+}
+{
+name = SOFusionSkin
+class = MarathonPlayer
+sprite = SOFP
+}
+{
+name = SOSpankerSkin
+class = MarathonPlayer
+sprite = SOSP
+}
+{
+name = SOFlamerSkin // Heh.
+class = MarathonPlayer
+sprite = SOFL
+}
+{
+name = SOM2AWSkin
+class = MarathonPlayer
+sprite = SOAW
+}
+{
+name = SOM1AWSkin
+class = MarathonPlayer
+sprite = SOA2
+}

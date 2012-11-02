@@ -641,6 +641,8 @@ ACTOR BlankPuffMarathon : BulletPuff
 actor "Steel Knuckles" : Weapon replaces Fist
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOFistSkin"
 	Weapon.SlotNumber 0
 	Weapon.SelectionOrder 3700
 	Obituary "%k snapped %o with a nasty hook."
@@ -823,6 +825,8 @@ ACTOR MagnumBulletRight : Ammo
 ACTOR ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOPistolSkin"
 	Weapon.SlotNumber 1
 	Weapon.SelectionOrder 1900
 	Decal BulletChip
@@ -1117,6 +1121,8 @@ ACTOR SmgBullet : Ammo
 ACTOR "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOSMGSkin"
 	Weapon.SelectionOrder 2200
 	Weapon.SlotNumber 1
 	Decal BulletChip
@@ -1237,6 +1243,8 @@ ACTOR "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 ACTOR "WSTE-M5 Combat Shotgun" : Weapon
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOShotgunSkin"
 	Weapon.SelectionOrder 400
 	Weapon.SlotNumber 2
 	Decal BulletChip
@@ -1602,6 +1610,8 @@ ACTOR FusionShotWater2
 ACTOR "Fusion Pistol" : Weapon// replaces PlasmaRifle
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOFusionSkin"
 	Weapon.SelectionOrder 1300
 	Weapon.SlotNumber 3
 	Inventory.PickupMessage "You picked up a Zeus Class Fusion Pistol!"
@@ -2169,6 +2179,8 @@ ACTOR MarathonRocketSmoke
 ACTOR "SPNKR-XP SSM Launcher" : Weapon// replaces RocketLauncher
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOSpankerSkin"
 	Weapon.SelectionOrder 2500
 	Weapon.SlotNumber 5
 	Inventory.PickupMessage "You picked up a SPNKR-XP SSM Launcher!"
@@ -2605,6 +2617,8 @@ ACTOR FlameShot
 ACTOR "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOFlamerSkin"
 	Weapon.SelectionOrder 700
 	Weapon.SlotNumber 6
 	Inventory.PickupMessage "You picked up a TOZT-7 Backpack Napalm Unit!"
@@ -2744,6 +2758,8 @@ ACTOR UnknownAmmo2 : Ammo
 ACTOR "Alien Weapon" : Weapon
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOM2AWSkin"
 	Weapon.SelectionOrder 500
 	Weapon.SlotNumber 8
 	Inventory.PickupMessage "system error 0xfded"
@@ -2950,6 +2966,8 @@ Species "Player"
 actor " Alien Weapon " : Weapon
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOM1AWSkin"
 	Weapon.SelectionOrder 500
 	Weapon.SlotNumber 8
 	Inventory.PickupMessage "system error 0xfded"
@@ -3049,6 +3067,8 @@ ACTOR WMCAmmo : Ammo
 ACTOR "ONI-71 Wave Motion Cannon" : Weapon// replaces RocketLauncher
 {
 //Weapon.BobRangeX 0
+//Weapon.BobStyle Smooth
+Weapon.PreferredSkin "SOSpankerSkin" // I should probably make new sprites for this someday.
 	Weapon.SelectionOrder 2800
 	Weapon.SlotNumber 7
 	Inventory.PickupMessage "You picked up the ONI-71 Wave Motion Cannon!"
