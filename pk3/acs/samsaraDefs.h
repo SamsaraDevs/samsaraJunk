@@ -184,7 +184,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // Security Officer
         {"Steel Knuckles",                  "",             "",             "I PUNCH YOO TOO"},
-        {"SOMagnumSMGGiver",                "",             "",             "A KKV-7 SMG and an extra .44 Magnum! Find some aliens!"},
+        {"SOMagnumSMGGiver",                "Clip",         "",             "A KKV-7 SMG and an extra .44 Magnum! Find some aliens!"},
         {".44 Magnum Mega-Class A1",        "",             "",             "Picked up a magnum."},
         {"SOShotgunGiver",                  "AmmoShell",    "",             "You got the WSTE-M5 Combat Shotgun!"},
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "You got the Zeus Class Fusion Pistol!"},
