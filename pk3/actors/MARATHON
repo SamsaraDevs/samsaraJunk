@@ -211,8 +211,8 @@ ACTOR MarathonPlayer : PlayerPawn
     SOPL Y 3 A_SetTranslucent(0.3,0)
     SOPL Y 3 A_SetTranslucent(0.2,0)
     SOPL Y 3 A_SetTranslucent(0.1,0)
-	ACLO E 1 A_SetTranslucent(1,0)
-    ACLO E -1
+	SOPL Y 1 A_SetTranslucent(0,0)
+    SOPL Y -1
     stop
   ZorchFusionShot:
 	TNT1 A 0 A_CustomMissile("FusionSuper",25,0,random(-15,15),2,random(-10,10))
