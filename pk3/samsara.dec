@@ -213,6 +213,7 @@ Actor Ammo2Small : CustomInventory replaces Shell
         TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
         TNT1 A 0 A_GiveInventory("AmmoShell",4)
+        TNT1 A 1 A_GiveInventory("Shell",4)
         stop
 
       PickupWolfen:
@@ -228,6 +229,7 @@ Actor Ammo2Small : CustomInventory replaces Shell
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Shell",4)
         TNT1 A 1 A_GiveInventory("AmmoShell",4)
         stop
 
@@ -254,6 +256,7 @@ Actor Ammo2Big : CustomInventory replaces ShellBox
         TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
         TNT1 A 0 A_GiveInventory("AmmoShell",20)
+        TNT1 A 1 A_GiveInventory("Shell",20)
         stop
 
       PickupWolfen:
@@ -269,6 +272,7 @@ Actor Ammo2Big : CustomInventory replaces ShellBox
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Shell",20)
         TNT1 A 1 A_GiveInventory("AmmoShell",20)
         stop
 
