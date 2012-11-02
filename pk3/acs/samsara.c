@@ -76,12 +76,14 @@ script SAMSARA_OPEN open
 }
 
 
-script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0, 0,0,0); }
-script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0, 1,0,0); }
+script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
+script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
+
+    if (DEBUG) { Print(s:"respawning is ", d:respawning); }
 
     if (isLMS()) { ApplyLMS(); }
 
