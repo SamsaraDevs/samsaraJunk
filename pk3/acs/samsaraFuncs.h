@@ -59,7 +59,7 @@ function int HasClassWeapon(int class, int slot)
 function void ApplyLMS(void)
 {
     int classNum = samsaraClassNum();
-    int lmsLevel = middle(0, GetCVar("sv_lmslife"), LMSMODES-1);
+    int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
 
     for (i = 0; i < SLOTCOUNT-1; i++)
@@ -67,7 +67,7 @@ function void ApplyLMS(void)
         GiveClassWeapon(classNum, i, 2);
     }
 
-    if (GetCVar("sv_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
+    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
     
     if (lmsLevel)
     {
