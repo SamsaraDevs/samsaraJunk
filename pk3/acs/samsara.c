@@ -95,7 +95,7 @@ script SAMSARA_SPAWN (int respawning)
     switch (samsaraClassNum())
     {
       case CLASS_DUKE:
-        GiveInventory("DukeReady", 1);
+        if (!respawning) { GiveInventory("DukeReady", 1); }
         break;
 
       case CLASS_MARATHON:
