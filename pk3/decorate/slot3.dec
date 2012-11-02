@@ -10,7 +10,7 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         "----" A 35 ACS_ExecuteAlways(228, 0, 3)
         loop
 
-      NoGuy:    WEPG C 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      NoGuy:    WEPG C 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
       Doomguy:  WSSG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Chexguy:  WSLZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -20,13 +20,13 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
       Dukeguy:  DXSP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       Marathon: FUSP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
-      DoomFull:      PSSG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      ChexFull:      PSLZ B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HereticFull:   PBOW B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      WolfFull:      PWMG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      HexenFull:     PAXE B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      DukeFull:      PXSG B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-      MarathonFull:  PFSP B 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DoomFull:      PSSG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      ChexFull:      PSLZ B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HereticFull:   PBOW B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      WolfFull:      PWMG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      HexenFull:     PAXE B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      DukeFull:      PXSG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+      MarathonFull:  PFSP B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
 
       DoomEmpty:     PSSG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
       ChexEmpty:     PSLZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
