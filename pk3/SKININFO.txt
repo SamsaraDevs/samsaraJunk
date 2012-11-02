@@ -1,45 +1,45 @@
 {
 name = SOPistolSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOPS
 }
 {
 name = SOFistSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOFS
 }
 {
 name = SOSMGSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOMG
 }
 {
 name = SOShotgunSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOSG
 }
 {
 name = SOFusionSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOFP
 }
 {
 name = SOSpankerSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOSP
 }
 {
 name = SOFlamerSkin // Heh.
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOFL
 }
 {
 name = SOM2AWSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOAW
 }
 {
 name = SOM1AWSkin
-class = MarathonPlayer
+class = SecurityOfficer
 sprite = SOA2
 }

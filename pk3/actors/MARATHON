@@ -83,11 +83,10 @@ ACTOR MarathonPlayer : PlayerPawn
 	SOPL U 5 Bright A_CheckFloor("Burn3")
 	loop
   Burn3:
-	SOPL V 6 Bright
-	SOPL W 6 Bright
-	SOPL X 6 Bright
-	SOPL Y 6
-	SOPL Y -1
+	SOPL V 7 Bright
+	SOPL W 7 Bright
+	SOPL X 7 Bright
+	SOPL X -1
 	stop
   BurnFusionShot:
 	TNT1 A 0 A_CustomMissile("FusionSuper",25,0,random(-15,15),2,random(-10,10))
@@ -198,20 +197,20 @@ ACTOR MarathonPlayer : PlayerPawn
 	TNT1 A 0 A_TakeInventory("ChargeLevel2",99)
 	TNT1 A 0 A_TakeInventory("ChargeLevel",99)
 	TNT1 A 0 A_TakeInventory("WMCCharge",99)
-	SOPL Z 0 A_Stop
+	SOPL Y 0 A_Stop
 	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-	SOPL Z 3 A_SpawnItem("ZorchEffectSmall")
-    SOPL Z 3 A_SetTranslucent(0.9,0)
-	SOPL Z 0 A_PlayerScream
-    SOPL Z 3 A_SetTranslucent(0.8,0)
-    SOPL Z 0 A_NoBlocking
-    SOPL Z 3 A_SetTranslucent(0.7,0)
-    SOPL Z 3 A_SetTranslucent(0.6,0)
-    SOPL Z 3 A_SetTranslucent(0.5,0)
-    SOPL Z 3 A_SetTranslucent(0.4,0)
-    SOPL Z 3 A_SetTranslucent(0.3,0)
-    SOPL Z 3 A_SetTranslucent(0.2,0)
-    SOPL Z 3 A_SetTranslucent(0.1,0)
+	SOPL Y 3 A_SpawnItem("ZorchEffectSmall")
+    SOPL Y 3 A_SetTranslucent(0.9,0)
+	SOPL Y 0 A_PlayerScream
+    SOPL Y 3 A_SetTranslucent(0.8,0)
+    SOPL Y 0 A_NoBlocking
+    SOPL Y 3 A_SetTranslucent(0.7,0)
+    SOPL Y 3 A_SetTranslucent(0.6,0)
+    SOPL Y 3 A_SetTranslucent(0.5,0)
+    SOPL Y 3 A_SetTranslucent(0.4,0)
+    SOPL Y 3 A_SetTranslucent(0.3,0)
+    SOPL Y 3 A_SetTranslucent(0.2,0)
+    SOPL Y 3 A_SetTranslucent(0.1,0)
 	ACLO E 1 A_SetTranslucent(1,0)
     ACLO E -1
     stop
@@ -251,29 +250,32 @@ ACTOR MarathonPlayer : PlayerPawn
 	TNT1 A 0 A_TakeInventory("ChargeLevel2",99)
 	TNT1 A 0 A_TakeInventory("ChargeLevel",99)
 	TNT1 A 0 A_TakeInventory("WMCCharge",99)
-    SOFR Z 5 A_GenericFreezeDeath // I'm...really not sure why this isn't automatically applying the palette.
-    SOFR Z 1 A_FreezeDeathChunks // So I had to make new sprites for him. Oh well!
-    Wait
+    SOPL Z 50 A_GenericFreezeDeath // I'm...really not sure why this isn't automatically applying the palette.
+	SOPL Z 0 A_SetTranslucent(0,0)
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
+    SOPL Z 1 A_FreezeDeathChunks // So I had to make new sprites and do all sorts of super-hacky shit. Damn.
+	SOPL Z -1
+    stop
   IceFusionShot:
 	TNT1 A 0 A_CustomMissile("FusionSuper",25,0,random(-15,15),2,random(-10,10))
 	goto IceFusionContinue
 	
   Pain.DoomCacodemon:
   Pain.HexSlaughtaur:
-    SOPL Z 4 A_SetBlend("0EBFE9",0.8,8) // Diamond blue
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("0EBFE9",0.8,8) // Diamond blue
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.HereWizard:
   Pain.HexHeresiarchPurple:
-    SOPL Z 4 A_SetBlend("5C246E",0.8,8) // Ultramarine violet
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("5C246E",0.8,8) // Ultramarine violet
+    SOPL Y 4 A_Pain
     Goto Spawn
 
   Pain.HexBishop:
   Pain.DoomSpiderPlasma:
-    SOPL Z 4 A_SetBlend("00FF66",0.8,8) // Neon avacado
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("00FF66",0.8,8) // Neon avacado
+    SOPL Y 4 A_Pain
     Goto Spawn
 
   Pain.HexGreenFire:
@@ -281,43 +283,43 @@ ACTOR MarathonPlayer : PlayerPawn
   Pain.DoomHellNoble:
   Pain.CorvusCrossbow:
   Pain.HereAxeGreen:
-    SOPL Z 4 A_SetBlend("49E20E",0.8,8) // Nerf green
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("49E20E",0.8,8) // Nerf green
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.HereNitrogolem:
-    SOPL Z 4 A_SetBlend("E6B426",0.8,8) // Yellow chocolate
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("E6B426",0.8,8) // Yellow chocolate
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.BJSpear:
-    SOPL Z 4 A_SetBlend("FFEC8B",0.8,8) // Light goldenrod
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("FFEC8B",0.8,8) // Light goldenrod
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.HereLichWind:
-    SOPL Z 4 A_SetBlend("CDC9A5",0.8,8) // Lemon chiffon
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("CDC9A5",0.8,8) // Lemon chiffon
+    SOPL Y 4 A_Pain
     Goto Spawn
   
   Pain.HereDsparil:
   Pain.MarathonFusion:
   Pain.DoomPlasma:
-    SOPL Z 4 A_SetBlend("0FDDAF",0.8,8) // Turquoise
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("0FDDAF",0.8,8) // Turquoise
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.DoomTheseGuysAreTheBest:
   Pain.Explosive:
   Pain.DukeExplosive:
-    SOPL Z 4 A_SetBlend("Yellow",0.8,8)
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("Yellow",0.8,8)
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.CorvusHellstaff:
   Pain.HereAxeRed:
-    SOPL Z 4 A_SetBlend("8B0000",0.8,8) // Dark red
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.MightyBoot:
@@ -326,54 +328,54 @@ ACTOR MarathonPlayer : PlayerPawn
   Pain.DukePistol:
   Pain.Pistol:
   Pain:
-    SOPL Z 4 A_SetBlend("E3170D",0.8,8) // Cadmium red
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("E3170D",0.8,8) // Cadmium red
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.TimonsAxe:
   Pain.DragonClaw:
-    SOPL Z 4 A_SetBlend("Blue",0.8,8)
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("Blue",0.8,8)
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.BFG:
   Pain.BFGspray:
   Pain.BFGsplash:
-    SOPL Z 4 A_SetBlend("7FFF00",0.8,8) // Chartreuse
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("7FFF00",0.8,8) // Chartreuse
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.ZorchPistol:
   Pain.Zorch:
-    SOPL Z 4 A_SetBlend("Red",0.8,8)
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("Red",0.8,8)
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.WolfenFlamethrower:
   Pain.MarathonPlasma:
   Pain.Fire:
-    SOPL Z 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.Drowning:
-    SOPL Z 4 A_SetBlend("White",0.8,8)
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("White",0.8,8)
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.HexenIce:
   Pain.DukeIce:
   Pain.Ice:
-    SOPL Z 4 A_SetBlend("00FFFF",0.8,8) // Aqua
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("00FFFF",0.8,8) // Aqua
+    SOPL Y 4 A_Pain
     Goto Spawn
 	
   Pain.Poison:
   Pain.PoisonCloud:
   Pain.Flem:
   Pain.Slime:
-    SOPL Z 4 A_SetBlend("228B22",0.8,8) // Muck green
-    SOPL Z 4 A_Pain
+    SOPL Y 4 A_SetBlend("228B22",0.8,8) // Muck green
+    SOPL Y 4 A_Pain
     Goto Spawn
 	}
 }
