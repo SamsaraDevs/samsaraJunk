@@ -200,7 +200,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     {   // Security Officer
         {"Steel Knuckles",                  "",             "",             "",                 ""},
         {"KKV-7 SMG Flechette",             "Clip",         "",             "CanDualPistols",   ""},
-        {".44 Magnum Mega-Class A1",        "",             "",             "",                 ""},
+        {".44 Magnum Mega Class A1",        "",             "",             "",                 ""},
         {"WSTE-M5 Combat Shotgun",          "AmmoShell",    "",             "CanDualShotties",  "LevelLimiter"},
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 ""},
         {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 ""},
