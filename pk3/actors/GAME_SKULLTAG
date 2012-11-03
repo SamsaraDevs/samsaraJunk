@@ -281,9 +281,9 @@ actor SuperShotgunPickup : CustomInventory
         stop
         
       PickupDuke3:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
         TNT1 A 0 A_PlaySound("duke/itemget")
-        TNT1 A 1 A_GiveInventory("AmmoShell",4)
+        TNT1 A 1 A_GiveInventory("RocketAmmo",4)
         stop
         
       PickupMarathon2:
