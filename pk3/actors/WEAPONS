@@ -1,1791 +1,222 @@
-
-////////////////////
-// Weapon I slots.
-//////////////////
-
-actor DoomguyWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Chainsaw! Find some meat!"
-  States
-  {
-  Spawn:
-    WSAW A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Chainsaw ",1,"PickupFail")
-    TNT1 A 0 A_Print("You got the Chainsaw! Find some meat!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Chainsaw ")
-    stop
-  PickupFail:
-	TNT1 A 0 // I can get away with this since it's not online! Whoo!
-	fail
-  }
-}
-
-actor ChexterWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Super Bootspork! Find some milk!"
-  States
-  {
-  Spawn:
-    CSPR A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Super Bootspork",1,"PickupFail")
-    TNT1 A 0 A_Print("You got the Super Bootspork! Find some milk!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Super Bootspork")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Gauntlets of the Necromancer!"
-  States
-  {
-  Spawn:
-    WGNT A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Gauntlets of the Necromancer",1,"PickupFail")
-    TNT1 A 0 A_Print("You got the Gauntlets of the Necromancer!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Gauntlets of the Necromancer")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor WolfenWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/knifeget"
-  Inventory.PickupMessage "You got the Knife!"
-  States
-  {
-  Spawn:
-    WKNP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"PickupFail")
-    TNT1 A 0 A_Print("That's not a knife. THIS is a knife!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +FLOATBOB
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Flechette!"
-  States
-  {
-  Spawn:
-    PSBG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("PortFlechette",1,"PickupFail")
-    TNT1 A 0 A_Print("You got the Flechette!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 0 A_SpawnItem("WeaponGetYaaaay2")
-    TNT1 A 1 A_GiveInventory("PortFlechette")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/itemget"
-  Inventory.PickupMessage "You got the Pipebombs!"
-  Scale 0.5
-  States
-  {
-  Spawn:
-    WPBM A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Pipebombs",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Pipebombs!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Pipebombs")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon0Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the KKV-7 SMG Flechette!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    FSMG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("KKV-7 SMG Flechette",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the KKV-7 SMG Flechette!")
-    TNT1 A 0 A_GiveInventory("GotWeapon0",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 0 A_GiveInventory("Clip",20)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("KKV-7 SMG Flechette")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Clip",10)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon0Spawner2 : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got a second .44 Magnum Mega Class A1!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    PSTL A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("CanDualPistols",0,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got a second .44 Magnum Mega Class A1!")
-    TNT1 A 0 A_GiveInventory("CanDualPistols",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 0 A_GiveInventory("Clip",10)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Clip",10)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-
-///////////////////
-// Weapon II slot
-/////////////////
-
-actor DoomguyWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Shotgun!"
-  States
-  {
-  Spawn:
-    WSHT A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Shotgun ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Shotgun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Shotgun ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Shotgun ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Large Zorcher!"
-  States
-  {
-  Spawn:
-    SHOC A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Large Zorcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Large Zorcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Large Zorcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Large Zorcher")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Firemace!"
-  States
-  {
-  Spawn:
-    WMCE A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Firemace ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Firemace!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Firemace ")
-	TNT1 A 0 A_TakeInventory("Mace",1)
-	TNT1 A 0 A_TakeInventory("MacePowered",1)
-	TNT1 A 0 A_TakeInventory("MaceAmmo",300)
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Firemace ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor WolfenWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/mgunget"
-  Inventory.PickupMessage "You got the Machine Gun!"
-  States
-  {
-  Spawn:
-    WMGP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Machine Gun",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Machine Gun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Machine Gun")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Machine Gun")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Frost Shards!"
-  States
-  {
-  Spawn:
-    WFRS ABC 8 Bright
-    Loop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Frost Shards",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Frost Shards!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Frost Shards")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Frost Shards")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon2Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/mosspump2"
-  Inventory.PickupMessage "You got the Shotgun!"
-  Scale 0.5
-  States
-  {
-  Spawn:
-    SHTP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("  Shotgun  ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Shotgun!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("  Shotgun  ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon2Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the WSTE-M5 Combat Shotgun!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    SHTY A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("WSTE-M5 Combat Shotgun",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the WSTE-M5 Combat Shotgun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon2",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 0 A_GiveInventory("AmmoShell",8)
-    TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("CanDualShotties",1,"PickupFailCheck2")
-	TNT1 A 0 A_Print("You got a second WSTE-M5 Combat Shotgun!")
-	TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 0 A_GiveInventory("CanDualShotties",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-	WEPG B 1 A_GiveInventory("AmmoShell",8)
-    stop
-  PickupFailCheck2:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("AmmoShell",8)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-
-///////////////////
-// Weapon III slot
-/////////////////
-
-actor DoomguyWeapon3Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Super Shotgun!"
-  States
-  {
-  Spawn:
-    WSSG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Super Shotgun",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Super Shotgun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Super Shotgun")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Super Shotgun")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon3Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Super Large Zorcher!"
-  States
-  {
-  Spawn:
-    WSLZ A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Super Large Zorcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Super Large Zorcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Super Large Zorcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Super Large Zorcher")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon3Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Ethereal Crossbow!"
-  States
-  {
-  Spawn:
-    WCBW A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Ethereal Crossbow",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Ethereal Crossbow!")
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Ethereal Crossbow")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Ethereal Crossbow")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon3Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got Timon's Axe!"
-  States
-  {
-  Spawn:
-    WFAX A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Timon's Axe",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got Timon's Axe!")
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Timon's Axe")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Timon's Axe")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon3Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/xshotgunpump"
-  Inventory.PickupMessage "You got the Explosive Shotgun!"
-  Scale 0.4
-  States
-  {
-  Spawn:
-    DXSP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Explosive Shotgun",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Explosive Shotgun!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Explosive Shotgun")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon3Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the Zeus Class Fusion Pistol!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    FUSP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Fusion Pistol",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Zeus Class Fusion Pistol!")
-    TNT1 A 0 A_GiveInventory("GotWeapon3",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 0 A_GiveInventory("Cell",20)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Fusion Pistol")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Cell",50)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-///////////////////
-// Weapon IV slot
-/////////////////
-
-actor DoomguyWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Chaingun!"
-  States
-  {
-  Spawn:
-    WCGN A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Chaingun ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Chaingun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Chaingun ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Chaingun ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Rapid Zorcher!"
-  States
-  {
-  Spawn:
-    MGUC A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Rapid Zorcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Rapid Zorcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Rapid Zorcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Rapid Zorcher")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Dragon Claw!"
-  States
-  {
-  Spawn:
-    WBLS A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Dragon Claw",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Dragon Claw!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Dragon Claw")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Dragon Claw")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor WolfenWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/weaponget"
-  Inventory.PickupMessage "You got the Chaingun!"
-  States
-  {
-  Spawn:
-    WCHP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("  Chaingun  ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Chaingun!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("  Chaingun  ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("  Chaingun  ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Serpent Staff!"
-  States
-  {
-  Spawn:
-    WCSS A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Serpent Staff",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Serpent Staff!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Serpent Staff")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Serpent Staff")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon4Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/weaponget"
-  Inventory.PickupMessage "You got the Ripper Chaingun Cannon!"
-  Scale 0.7
-  States
-  {
-  Spawn:
-    CHGP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Chaingun Cannon",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Ripper Chaingun Cannon!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Chaingun Cannon")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon4Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the MA-75B Assault Rifle!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    RIFL A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("MA-75B Assault Rifle",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the MA-75B Assault Rifle!")
-    TNT1 A 0 A_GiveInventory("GotWeapon4",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 0 A_GiveInventory("Clip",20)
-    TNT1 A 0 A_GiveInventory("RocketAmmo",10)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("MA-75B Assault Rifle")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Clip",20)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-
-///////////////////
-// Weapon V slot
-/////////////////
-
-actor DoomguyWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Rocket Launcher!"
-  States
-  {
-  Spawn:
-    WDRL A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Rocket Launcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Rocket Launcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Rocket Launcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Rocket Launcher")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Zorch Propulsor!"
-  States
-  {
-  Spawn:
-    LAUC A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Zorch Propulsor",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Zorch Propulsor!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Zorch Propulsor")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Zorch Propulsor")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Phoenix Rod!"
-  States
-  {
-  Spawn:
-    WPHX A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Phoenix Rod",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Phoenix Rod!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Phoenix Rod")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Phoenix Rod")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor WolfenWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/rocketget"
-  Inventory.PickupMessage "You got the Rocket Launcher!"
-  States
-  {
-  Spawn:
-    WRLP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Rocket Launcher ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Rocket Launcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Rocket Launcher ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Rocket Launcher ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Hammer of Retribution!"
-  States
-  {
-  Spawn:
-    WFHM A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Hammer of Retribution",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Hammer of Retribution!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Hammer of Retribution")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Hammer of Retribution")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon5Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/weaponget"
-  Inventory.PickupMessage "You got the RPG!"
-  Scale 0.75
-  States
-  {
-  Spawn:
-    DRPG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("RPG",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the RPG!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("RPG")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon5Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the SPNKR-XP SSM Launcher!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    RCKL A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("SPNKR-XP SSM Launcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the SPNKR-XP SSM Launcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon5",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 0 A_GiveInventory("RocketAmmo",5)
-    TNT1 A 1 A_GiveInventory("SPNKR-XP SSM Launcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("RocketAmmo",5)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-
-///////////////////
-// Weapon VI slot
-/////////////////
-
-actor DoomguyWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the Plasma Rifle!"
-  States
-  {
-  Spawn:
-    WPLS A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Plasma Rifle",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Plasma Rifle!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Plasma Rifle")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Plasma Rifle")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Phasing Zorcher!"
-  States
-  {
-  Spawn:
-    PLAC A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Phasing Zorcher",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Phasing Zorcher!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Phasing Zorcher")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Phasing Zorcher")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Hellstaff!"
-  States
-  {
-  Spawn:
-    WSKL A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Hellstaff",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Hellstaff!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Hellstaff")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Hellstaff")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor WolfenWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/flameget"
-  Inventory.PickupMessage "You got the Flamethrower!"
-  States
-  {
-  Spawn:
-    WFLP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Flamethrower ",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Flamethrower!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Flamethrower ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory(" Flamethrower ")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Firestorm!"
-  States
-  {
-  Spawn:
-    WCFM ABCDEFGH 4 Bright
-    Loop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Firestorm",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Firestorm!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Firestorm")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Firestorm")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon6Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/weaponget"
-  Inventory.PickupMessage "You got the Freezethrower!"
-  Scale 0.75
-  States
-  {
-  Spawn:
-    FRZP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Freezethrower",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Freezethrower!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Freezethrower")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon6Spawner : CustomInventory
-{
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got the TOZT-7 Backpack Napalm Unit!"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    THRW A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("TOZT-7 Napalm Unit",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the TOZT-7 Backpack Napalm Unit!")
-    TNT1 A 0 A_GiveInventory("GotWeapon6",1)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 0 A_GiveInventory("Cell",50)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("TOZT-7 Napalm Unit")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Cell",50)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-
-// DANGER! DANGER!
-///////////////////
-// ULTIMATE WEAPONS
-/////////////////
-// DANGER! DANGER!
-
-actor DoomguyWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/weaponget"
-  Inventory.PickupMessage "You got the B.F.G. 9000! Oh, yes."
-  States
-  {
-  Spawn:
-    WBFG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("B.F.G. 9000",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the B.F.G. 9000! Oh, yes.")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("B.F.G. 9000")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("B.F.G. 9000")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor ChexterWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the LAZ Device! Woot!"
-  States
-  {
-  Spawn:
-    CFUG A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("LAZ Device",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the LAZ Device! Woot!")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("LAZ Device")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("LAZ Device")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor CorvusWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +FLOATBOB
-  +DONTGIB
-  Inventory.PickUpSound "heretic/weaponget"
-  Inventory.PickupMessage "You got the Tome of Power! Oh, yes."
-  States
-  {
-  Spawn:
-    PWBK A -1 BRIGHT
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("PortTomeCoop",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Tome of Power! Oh, yes.")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 0 A_SpawnItem("WeaponGetYaaaay2")
-    TNT1 A 1 A_GiveInventory("PortTomeCoOp")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("TomeOfPowerCooldown",1,"PickupSuccess")
-    TNT1 A 1
-    fail
-  PickupSuccess:
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 0 A_TakeInventory("TomeOfPowerCooldown",300)
-	stop
-  }
-}
-
-actor WolfenWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/spearget"
-  Inventory.PickupMessage "You got the Spear of Destiny!"
-  States
-  {
-  Spawn:
-    WSPR E -1 BRIGHT
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Spear of Destiny",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Spear of Destiny!")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Spear of Destiny")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Spear of Destiny")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor PariasWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "hexen/weaponget"
-  Inventory.PickupMessage "You got the Wraithverge! Scream for me!"
-  States
-  {
-  Spawn:
-    WWRT A -1 BRIGHT
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Wraithverge",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Wraithverge! Scream for me!")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Wraithverge")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Wraithverge")
-    stop
-  PickupFailCheck2:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Wraithverge")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor DukeWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/weaponget"
-  Inventory.PickupMessage "You got the Devastator!"
-  Scale 0.9
-  States
-  {
-  Spawn:
-    DEVP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Devastator",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the Devastator!")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-  Pickup2:
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Devastator")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-	TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"Pickup2")
-    TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"Pickup2")
-	TNT1 AA 0
-    TNT1 A 0 A_PlaySoundEx("duke/weapontaunt","soundslot7",0,0)
-	TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
-	TNT1 A 0 ACS_ExecuteAlways(205)
-	goto Pickup2
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
-actor MarathonWeapon7Spawner : CustomInventory
-{
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/bigitemget"
-  Inventory.PickupMessage "You got the ONI-71 Wave Motion Cannon!"
-  Scale 0.5
-  States
-  {
-  Spawn:
-    WMCP A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("ONI-71 Wave Motion Cannon",1,"PickupFailCheck")
-    TNT1 A 0 A_Print("You got the ONI-71 Wave Motion Cannon!")
-    TNT1 A 0 A_GiveInventory("GotWeapon7",1)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle2",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 0 A_GiveInventory("Cell",40)
-    TNT1 A 0 A_GiveInventory("RocketAmmo",10)
-    TNT1 A 1 A_GiveInventory("ONI-71 Wave Motion Cannon")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFailCheck2")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Cell",40)
-    TNT1 A 1 A_GiveInventory("RocketAmmo",10)
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-    TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("WeaponSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("RocketAmmo",10)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
-}
-
 /////////////////
 // Unique items
 ////////////////
 
 actor DoomguyUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "doomguy/itemget"
-  Inventory.PickupMessage "You got the Berserk!"
-  States
-  {
-  Spawn:
-    DSTR A -1
-    stop
-  Pickup:
-    TNT1 A 0 A_Print("You got the Berserk! Rip and tear!")
-	TNT1 A 0 HealThing(100, 0)
-	TNT1 A 0 A_GiveInventory("PowerChainsawBerserk")
-	TNT1 A 0 A_GiveInventory("PowerStrength")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 1 A_SelectWeapon(" Fist ")
-    stop
-  }
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "doomguy/itemget"
+    Inventory.PickupMessage "You got the Berserk!"
+    States
+    {
+      Spawn:
+        DSTR A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_Print("You got the Berserk! Rip and tear!")
+        TNT1 A 0 HealThing(100, 0)
+        TNT1 A 0 A_GiveInventory("PowerChainsawBerserk")
+        TNT1 A 0 A_GiveInventory("PowerStrength")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 A_SelectWeapon(" Fist ")
+        stop
+    }
 }
 
 actor ChexterUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "chex/weaponget"
-  Inventory.PickupMessage "You got the Supercharge Breakfast!"
-  States
-  {
-  Spawn:
-    CBRK A 30
-	CBRK BCD 4
-    loop
-  Pickup:
-    TNT1 A 0 A_Print("You got the Supercharge Breakfast!")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("Soulsphere")
-    stop
-  }
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "chex/weaponget"
+    Inventory.PickupMessage "You got the Supercharge Breakfast!"
+    States
+    {
+      Spawn:
+        CBRK A 30
+        CBRK BCD 4
+        loop
+
+      Pickup:
+        TNT1 A 0 A_Print("You got the Supercharge Breakfast!")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 A_GiveInventory("Soulsphere")
+        stop
+    }
 }
 
 actor CorvusUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +FLOATBOB
-  +DONTGIB
-  Inventory.PickUpSound "heretic/itemget"
-  Inventory.PickupMessage "You got the Morph Ovum!"
-  States
-  {
-  Spawn:
-    EGGC ABCB 6
-    Loop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("ArtiEgg3",0,"PickupFail")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 ACS_ExecuteAlways(201,0,2)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
+    -COUNTITEM
+    +FLOATBOB
+    +DONTGIB
+    Inventory.PickUpSound "heretic/itemget"
+    Inventory.PickupMessage "You got the Morph Ovum!"
+    States
+    {
+      Spawn:
+        EGGC ABCB 6
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("ArtiEgg3",0,"PickupFail")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 ACS_ExecuteAlways(201,0,2)
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor WolfenUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "wolfen/lifeget"
-  Inventory.PickupMessage "You got an Extra Life!"
-  States
-  {
-  Spawn:
-    WFLF A -1 BRIGHT
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("WolfExtraLife",0,"PickupFail")
-    TNT1 A 0 A_Print("You got an Extra Life!")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 0 ACS_ExecuteAlways(208)
-    TNT1 A 1 A_GiveInventory("WolfExtraLife")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "wolfen/lifeget"
+    Inventory.PickupMessage "You got an Extra Life!"
+    States
+    {
+      Spawn:
+        WFLF A -1 BRIGHT
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfExtraLife",0,"PickupFail")
+        TNT1 A 0 A_Print("You got an Extra Life!")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 0 ACS_ExecuteAlways(208)
+        TNT1 A 1 A_GiveInventory("WolfExtraLife")
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor PariasUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +FLOATBOB
-  +DONTGIB
-  Inventory.PickUpSound "hexen/artiget"
-  Inventory.PickupMessage "You got the Mystic Ambit Incant!"
-  States
-  {
-  Spawn:
-    HRAD ABCDEFGHIJKLMNOP 4 Bright
-    Loop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("PortMysticAmbit",0,"PickupFail")
-    TNT1 A 0 A_Print("You got the Mystic Ambit Incant!")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("PortMysticAmbit")
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
+    -COUNTITEM
+    +FLOATBOB
+    +DONTGIB
+    Inventory.PickUpSound "hexen/artiget"
+    Inventory.PickupMessage "You got the Mystic Ambit Incant!"
+    States
+    {
+      Spawn:
+        HRAD ABCDEFGHIJKLMNOP 4 Bright
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("PortMysticAmbit",0,"PickupFail")
+        TNT1 A 0 A_Print("You got the Mystic Ambit Incant!")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 A_GiveInventory("PortMysticAmbit")
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor DukeUniqueSpawner : CustomInventory
 {
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "duke/itemget"
-  Inventory.PickupMessage "You got the Jetpack!"
-  States
-  {
-  Spawn:
-      DKJT A -1
-      stop
-  Pickup:
-	  TNT1 A 0 A_JumpIfInventory("DukeJetpackFuel",100,"PickupFail")
-      TNT1 A 0 A_Print("You got the Jetpack!")
-	  TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	  TNT1 A 0 A_GiveInventory("DukeJetpackFuel",100)
-	  TNT1 A 1 A_GiveInventory("DukePortJetpack",1)
-	  stop
-  PickupFail:
-	TNT1 A 0
-	fail
-	}
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "duke/itemget"
+    Inventory.PickupMessage "You got the Jetpack!"
+    States
+    {
+      Spawn:
+        DKJT A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("DukeJetpackFuel",100,"PickupFail")
+        TNT1 A 0 A_Print("You got the Jetpack!")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 0 A_GiveInventory("DukeJetpackFuel",100)
+        TNT1 A 1 A_GiveInventory("DukePortJetpack",1)
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor MarathonUniqueSpawner : CustomInventory
 {
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got theeeeeeee the the th"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    AWPN A -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory("Alien Weapon",1,"PickupFailCheck")
-	TNT1 A 0 ACS_ExecuteAlways(212,0,78)//A_Print("You got annaaNNAaN SYSTEM ERROR 0xfded")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 1 A_GiveInventory("UnknownAmmo",100)
-    TNT1 A 1 A_GiveInventory("Alien Weapon")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("UnknownAmmo",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("UnknownAmmo",100)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
+    -INVENTORY.ALWAYSPICKUP
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "marathon/itemget"
+    Inventory.PickupMessage "You got theeeeeeee the the th"
+    Scale 0.35
+    States
+    {
+      Spawn:
+        AWPN A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("Alien Weapon",1,"PickupFailCheck")
+        TNT1 A 0 ACS_ExecuteAlways(212,0,78)//A_Print("You got annaaNNAaN SYSTEM ERROR 0xfded")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("UnknownAmmo",100)
+        TNT1 A 1 A_GiveInventory("Alien Weapon")
+        stop
+
+      PickupFailCheck:
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 A_GiveInventory("UnknownAmmo",100)
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
 
 actor MarathonUniqueSpawner2 : CustomInventory
 {
-  -INVENTORY.ALWAYSPICKUP
-  -COUNTITEM
-  +DONTGIB
-  Inventory.PickUpSound "marathon/itemget"
-  Inventory.PickupMessage "You got theeeeeeee the the th"
-  Scale 0.35
-  States
-  {
-  Spawn:
-    AWPN B -1
-    stop
-  Pickup:
-	TNT1 A 0 A_JumpIfInventory(" Alien Weapon ",1,"PickupFailCheck")
-	TNT1 A 0 ACS_ExecuteAlways(212,0,78)//A_Print("You got annaaNNAaN SYSTEM ERROR 0xfded")
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-    TNT1 A 1 A_GiveInventory("UnknownAmmo2",100)
-    TNT1 A 1 A_GiveInventory(" Alien Weapon ")
-    stop
-  PickupFailCheck:
-	TNT1 A 0 A_JumpIfInventory("UnknownAmmo2",0,"PickupFail")
-	TNT1 A 0 A_SetBlend("Green",0.4,4)
-	TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
-    TNT1 A 1 A_GiveInventory("UnknownAmmo2",100)
-    stop
-  PickupFail:
-	TNT1 A 0
-	fail
-  }
+    -INVENTORY.ALWAYSPICKUP
+    -COUNTITEM
+    +DONTGIB
+    Inventory.PickUpSound "marathon/itemget"
+    Inventory.PickupMessage "You got theeeeeeee the the th"
+    Scale 0.35
+    States
+    {
+      Spawn:
+        AWPN B -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory(" Alien Weapon ",1,"PickupFailCheck")
+        TNT1 A 0 ACS_ExecuteAlways(212,0,78)//A_Print("You got annaaNNAaN SYSTEM ERROR 0xfded")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("UnknownAmmo2",100)
+        TNT1 A 1 A_GiveInventory(" Alien Weapon ")
+        stop
+
+      PickupFailCheck:
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo2",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("StarSparkle",0,0,random(4,52),random(-2,2),random(-2,2),random(1,3),48,128)
+        TNT1 A 1 A_GiveInventory("UnknownAmmo2",100)
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
+    }
 }
