@@ -1,11 +1,13 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 1
+#define DEBUG 0
 
 #include "commonFuncs.h"
 
 #include "samsaraDefs.h"
+#include "samsaraWeps.h"
+#include "samsaraMsgs.h"
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -256,29 +258,35 @@ script SAMSARA_ENTER_CLIENT enter clientside
 
     execInt = 0; oExecInt = 0;
     
-    if (!GetCVar("samsara_cl_wolfmove"))
-    {   ConsoleCommand("set samsara_cl_wolfmove 0");
-        ConsoleCommand("archivecvar samsara_cl_wolfmove"); }
-    
-    if (!GetCVar("samsara_cl_vanilladoom"))
-    {   ConsoleCommand("set samsara_cl_vanilladoom 0");
-        ConsoleCommand("archivecvar samsara_cl_vanilladoom"); }
-    
-    if (!GetCVar("samsara_cl_weaponhud"))
-    {   ConsoleCommand("set samsara_cl_weaponhud 1");
-        ConsoleCommand("archivecvar samsara_cl_weaponhud"); }
-    
-    if (!GetCVar("samsara_cl_ballgag"))
-    {   ConsoleCommand("set samsara_cl_ballgag 0");
-        ConsoleCommand("archivecvar samsara_cl_ballgag"); }
-    
-    if (!GetCVar("samsara_cl_moremessages"))
-    {   ConsoleCommand("set samsara_cl_moremessages 0");
-        ConsoleCommand("archivecvar samsara_cl_moremessages"); }
-    
-    if (!GetCVar("samsara_cl_pickupmode"))
-    {   ConsoleCommand("set samsara_cl_pickupmode 1");
-        ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
+    if (GetCVar("samsare_cl_exists") != SAMSARA_CL_VERSION)
+    {
+        ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
+        ConsoleCommand("archivecvar samsara_cl_exists");
+
+        if (!GetCVar("samsara_cl_wolfmove"))
+        {   ConsoleCommand("set samsara_cl_wolfmove 0");
+            ConsoleCommand("archivecvar samsara_cl_wolfmove"); }
+        
+        if (!GetCVar("samsara_cl_vanilladoom"))
+        {   ConsoleCommand("set samsara_cl_vanilladoom 0");
+            ConsoleCommand("archivecvar samsara_cl_vanilladoom"); }
+        
+        if (!GetCVar("samsara_cl_weaponhud"))
+        {   ConsoleCommand("set samsara_cl_weaponhud 1");
+            ConsoleCommand("archivecvar samsara_cl_weaponhud"); }
+        
+        if (!GetCVar("samsara_cl_ballgag"))
+        {   ConsoleCommand("set samsara_cl_ballgag 0");
+            ConsoleCommand("archivecvar samsara_cl_ballgag"); }
+        
+        if (!GetCVar("samsara_cl_moremessages"))
+        {   ConsoleCommand("set samsara_cl_moremessages 0");
+            ConsoleCommand("archivecvar samsara_cl_moremessages"); }
+        
+        if (!GetCVar("samsara_cl_pickupmode"))
+        {   ConsoleCommand("set samsara_cl_pickupmode 1");
+            ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
+    }
 
     class = samsaraClassNum() + 1;
 
@@ -503,10 +511,14 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
 }
 
+
+int QuoteStorage[MSGCOUNT];
+
 script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
+    int i, j, quoteCount = 0;
 
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
 
@@ -514,11 +526,23 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     {
         if (GetCVar("samsara_cl_moremessages"))
         {
-            Log(s:ClassPickupMessages[pclass][slot][random(0, MSGCOUNT-1)]);
+            for (i = 0; i < MSGCOUNT; i++)
+            {
+                j = ClassPickupMessages[pclass][slot][i];
+                if (!StrLen(j)) { continue; }
+                
+                QuoteStorage[quoteCount++] = j;
+            }
+
+            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
+            else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
         }
         else
         {
-            Log(s:ClassPickupMessages[pclass][slot][0]);
+            i = ClassPickupMessages[pclass][slot][0];
+
+            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
+            else { Log(s:i); }
         }
     }
 
