@@ -112,6 +112,17 @@ int SlotItems[SLOTCOUNT] =
     "GotWeapon7",
 };
 
+int LMSItems[CLASSCOUNT] =
+{
+    "",
+    "",
+    "PortGhostly",
+    "WolfenAmmoCrate",
+    "",
+    "",
+    "",
+};
+
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {
     {   // Doomguy
@@ -141,7 +152,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     {   // Corvus
         {" Staff ",                         "",             "",             "", ""},
         {"Gauntlets of the Necromancer",    "",             "",             "", ""},
-        {"Gold Wand",                       "",             "",             "", ""},
+        {"Elven Wand",                      "",             "",             "", ""},
         {" Firemace ",                      "AmmoShell",    "",             "", ""},
         {"Ethereal Crossbow",               "AmmoShell",    "",             "", ""},
         {"Dragon Claw",                     "Clip",         "",             "", ""},

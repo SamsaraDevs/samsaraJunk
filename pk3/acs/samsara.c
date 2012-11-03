@@ -6,7 +6,6 @@
 #include "commonFuncs.h"
 
 #include "samsaraDefs.h"
-#include "samsaraFuncs.h"
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -21,6 +20,8 @@ int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 
 global int 0:CommandBitchingDone;
+
+#include "samsaraFuncs.h"
 
 script SAMSARA_OPEN open
 {
@@ -429,7 +430,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     int a1Full = 0, a2Full = 0;
     int a1diff = 0, a2diff = 0;
 
-    int giveScript = ClassScripts[pclass][slot];
     int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
     int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
@@ -475,24 +475,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
 
     if (weaponGet && IsServer)
     {
-        GiveInventory(SlotItems[slot], 1);
-
-        if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
-
-        if (giveScript > 0)
-        {
-            ACS_ExecuteWithResult(giveScript, pclass, slot,0);
-        }
-        else
-        {
-            GiveInventory(weapon, 1);
-
-            if (array_pickupswitch[PlayerNumber()] &&
-                    (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
-            {
-                SetWeapon(ClassWeapons[pclass][slot][S_WEP]);
-            }
-        }
+        GiveClassWeapon(pclass, slot, 3);
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));

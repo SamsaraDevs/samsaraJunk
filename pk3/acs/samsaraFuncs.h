@@ -6,6 +6,7 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
     int a1count = CheckInventory(ammo1);
     int a2count = CheckInventory(ammo2);
 
+    int giveScript = ClassScripts[class][slot];
     int hasAmmo = 0;
     int giveWep = 0;
 
@@ -24,7 +25,24 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
     if (giveWep)
     {
-        GiveInventory(weapon, 1);
+        GiveInventory(SlotItems[slot], 1);
+
+        if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
+
+        if (giveScript > 0)
+        {
+            ACS_ExecuteWithResult(giveScript, class, slot,0);
+        }
+        else
+        {
+            GiveInventory(weapon, 1);
+
+            if (array_pickupswitch[PlayerNumber()] &&
+                    (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
+            {
+                SetWeapon(ClassWeapons[class][slot][S_WEP]);
+            }
+        }
 
         switch (ammoMode)
         {
@@ -41,6 +59,9 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
           case 2:
             if (hasAmmo & 1) { TakeInventory(ammo1, (CheckInventory(ammo1) - a1count) / 2); }
             if (hasAmmo & 2) { TakeInventory(ammo2, (CheckInventory(ammo2) - a2count) / 2); }
+            break;
+
+          case 3:
             break;
         }
     }
@@ -71,9 +92,10 @@ function void ApplyLMS(void)
 
     for (i = 0; i < SLOTCOUNT-1; i++)
     {
-        GiveClassWeapon(classNum, i, 2);
+        GiveClassWeapon(classNum, i, 1);
     }
 
+    if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
     
     if (lmsLevel)
