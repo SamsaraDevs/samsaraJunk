@@ -563,7 +563,7 @@ script SAMSARA_MARATHON (int class, int slot)
         GiveInventory("KKV-7 SMG Flechette", 1);
         break;
         
-      case 2:
+      case 3:
         if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
 
         GiveInventory("Shell", 8);
