@@ -55,3 +55,8 @@ actor SamsaraSlotSevenDrop: SamsaraSlotSevenPickup
         goto PickupFailure
     }
 }
+
+actor SamsaraBFG10kReplace: RandomSpawner replaces BFG10k
+{
+    dropitem "SamsaraSlotSevenPickup"
+}

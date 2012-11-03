@@ -429,7 +429,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     int a1Full = 0, a2Full = 0;
     int a1diff = 0, a2diff = 0;
 
-    int giveScript = ClassWeapons[pclass][slot][S_GIVESCRIPT];
+    int giveScript = ClassScripts[pclass][slot];
     int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
     int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
@@ -476,6 +476,8 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     if (weaponGet && IsServer)
     {
         GiveInventory(SlotItems[slot], 1);
+
+        if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
 
         if (giveScript > 0)
         {

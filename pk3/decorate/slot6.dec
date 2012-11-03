@@ -55,3 +55,8 @@ actor SamsaraSlotSixDrop: SamsaraSlotSixPickup
         goto PickupFailure
     }
 }
+
+actor SamsaraRailgunReplace: RandomSpawner replaces Railgun
+{
+    dropitem "SamsaraSlotSixPickup"
+}

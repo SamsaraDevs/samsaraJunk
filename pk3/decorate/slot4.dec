@@ -55,3 +55,8 @@ actor SamsaraSlotFourDrop: SamsaraSlotFourPickup
         goto PickupFailure
     }
 }
+
+actor SamsaraMinigunReplace: RandomSpawner replaces Minigun
+{
+    dropitem "SamsaraSlotFourPickup"
+}

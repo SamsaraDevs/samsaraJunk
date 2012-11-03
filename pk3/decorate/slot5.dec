@@ -55,3 +55,8 @@ actor SamsaraSlotFiveDrop: SamsaraSlotFivePickup
         goto PickupFailure
     }
 }
+
+actor SamsaraGLReplace: RandomSpawner replaces GrenadeLauncher
+{
+    dropitem "SamsaraSlotFivePickup"
+}
