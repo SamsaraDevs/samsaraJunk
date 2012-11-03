@@ -26,7 +26,7 @@ alias samsara_cmd_weppickups "eval % + $samsara_cl_pickupmode 1 3 samsara_cl_pic
 
 alias showmode "test != 0 %2 \"set truth True\" \"set truth False\"; echo %1 is\\cf $truth; unset truth"
 
-alias showpickupmode "test == $samsara_cl_pickupmode 2 \"echo \\\\cdClass-specifc\\\\c- weapon mode set\" \"showpickup2\""
+alias showpickupmode "test == $samsara_cl_pickupmode 2 \"echo \\\\cdClass-specific\\\\c- weapon mode set\" \"showpickup2\""
 alias showpickup2    "test == $samsara_cl_pickupmode 1 \"echo \\\\cdHybrid\\\\c- weapon mode set\" \"echo \\\\cdOld-style\\\\c- weapon mode set\""
 
 addslotdefault 0 " Fist "
