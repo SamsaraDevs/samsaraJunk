@@ -50,10 +50,18 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int HasClassWeapon(int class, int slot)
 {
-    int weapon = ClassWeapons[class][slot][0];
+    int weapon = ClassWeapons[class][slot][S_WEP];
+    int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
+
+    if (StrLen(checkitem) && CheckInventory(checkitem))
+    {
+        if (DEBUG) { Print(s:"checkitem (", s:checkitem, s:") found"); }
+        return 1;
+    }
+
     if (!StrLen(weapon)) { return 0; }
 
-    return CheckInventory(weapon);
+    return !!CheckInventory(weapon);
 }
 
 function void ApplyLMS(void)

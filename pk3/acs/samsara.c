@@ -289,7 +289,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
         for (i = 0; i < SLOTCOUNT; i++)
         {
             j = SamsaraClientWeps[i];
-            SamsaraClientWeps[i] = HasClassWeapon(class, i);
+            SamsaraClientWeps[i] = HasClassWeapon(class, i) || CheckInventory(ClassWeapons[class][i][S_CHECKFAILITEM]);
 
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
@@ -377,16 +377,31 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
 
 script SAMSARA_DECORATE (int choice)
 {
+    int result;
+
     switch (choice)
     {
       case 1:
-        SetResultValue(GetActorProperty(0, APROP_Dropped));
+        result = GetActorProperty(0, APROP_Dropped);
         break;
       
       case 2:
         if (CheckInventory("WolfenMovement") == 1) { SetActorState(0, "Spawn"); }
         break;
+
+      case 3:
+        result = !(GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay"));
+        break;
+
+      case 4:
+        Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
+        result = isInvasion() || !(isCoop() || isSinglePlayer());
+
+        Log(d:result);
+        break;
     }
+
+    SetResultValue(result);
 }
 
 /*
@@ -414,15 +429,17 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     int a1Full = 0, a2Full = 0;
     int a1diff = 0, a2diff = 0;
 
+    int giveScript = ClassWeapons[pclass][slot][S_GIVESCRIPT];
     int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
     int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
 
-    if (!wepbool)
+    if (!wepbool || CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]))
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
     }
+
 
     if (a1bool)
     {
@@ -458,13 +475,21 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
 
     if (weaponGet && IsServer)
     {
-        GiveInventory(weapon, 1);
         GiveInventory(SlotItems[slot], 1);
 
-        if (array_pickupswitch[PlayerNumber()] &&
-                (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
+        if (giveScript > 0)
         {
-            SetWeapon(ClassWeapons[pclass][slot][S_WEP]);
+            ACS_ExecuteWithResult(giveScript, pclass, slot,0);
+        }
+        else
+        {
+            GiveInventory(weapon, 1);
+
+            if (array_pickupswitch[PlayerNumber()] &&
+                    (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
+            {
+                SetWeapon(ClassWeapons[pclass][slot][S_WEP]);
+            }
         }
 
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
@@ -496,13 +521,19 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
 
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
 
-    if (cpln == pln) { Log(s:ClassWeapons[pclass][slot][S_PICKUPMESSAGE]); }
+    if (cpln == pln) { Log(s:ClassPickupMessages[pclass][slot][0]); }
 
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
     else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
 
+    if (DEBUG)
+    {
+        Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
+                s:" for ", d:ClassFades[pclass][4], s:" tics");
+    }
+
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
-              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, 5.0/35);
+              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 
     if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag"))
     {
@@ -517,6 +548,29 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     }
 }
 
+script SAMSARA_MARATHON_SHOTGUN (void)
+{
+    int giveboth    = isInvasion() || !isCoop();
+    int shottyCount = cond(CheckInventory("CanDualShotties"), 2, CheckInventory("WSTE-M5 Combat Shotgun"));
+    int limited     = !CheckInventory("LevelLimiter");
+    int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
+
+    if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
+
+    GiveInventory("Shell", 8);
+    GiveInventory("AmmoShell", 8);
+    GiveInventory("WSTE-M5 Combat Shotgun", 1);
+
+    if (giveboth || shottyCount == 1)
+    {
+        GiveInventory("CanDualShotties", 1);
+    }
+
+    if (limit)
+    {
+        GiveInventory("LevelLimiter", 1);
+    }
+}
 
 /*
  *
