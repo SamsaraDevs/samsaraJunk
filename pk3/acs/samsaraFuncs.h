@@ -53,15 +53,14 @@ function int HasClassWeapon(int class, int slot)
     int weapon = ClassWeapons[class][slot][S_WEP];
     int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
 
-    if (StrLen(checkitem) && CheckInventory(checkitem))
-    {
-        if (DEBUG) { Print(s:"checkitem (", s:checkitem, s:") found"); }
-        return 1;
-    }
+    int hasWep, hasItem;
 
     if (!StrLen(weapon)) { return 0; }
 
-    return !!CheckInventory(weapon);
+    hasWep  = CheckInventory(weapon);
+    hasItem = !StrLen(checkitem) || CheckInventory(checkitem);
+
+    return hasWep && hasItem;
 }
 
 function void ApplyLMS(void)

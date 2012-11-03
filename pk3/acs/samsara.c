@@ -1,12 +1,12 @@
 #include "zcommon.acs"
 #library "samsara"
 
+#define DEBUG 1
+
 #include "commonFuncs.h"
 
 #include "samsaraDefs.h"
 #include "samsaraFuncs.h"
-
-#define DEBUG 1
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -548,27 +548,38 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     }
 }
 
-script SAMSARA_MARATHON_SHOTGUN (void)
+script SAMSARA_MARATHON (int class, int slot)
 {
     int giveboth    = isInvasion() || !isCoop();
     int shottyCount = cond(CheckInventory("CanDualShotties"), 2, CheckInventory("WSTE-M5 Combat Shotgun"));
     int limited     = !CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
 
-    if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
 
-    GiveInventory("Shell", 8);
-    GiveInventory("AmmoShell", 8);
-    GiveInventory("WSTE-M5 Combat Shotgun", 1);
-
-    if (giveboth || shottyCount == 1)
+    switch (slot)
     {
-        GiveInventory("CanDualShotties", 1);
-    }
+      case 1:
+        GiveInventory("CanDualPistols", 1);
+        GiveInventory("KKV-7 SMG Flechette", 1);
+        break;
+        
+      case 2:
+        if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
 
-    if (limit)
-    {
-        GiveInventory("LevelLimiter", 1);
+        GiveInventory("Shell", 8);
+        GiveInventory("AmmoShell", 8);
+        GiveInventory("WSTE-M5 Combat Shotgun", 1);
+
+        if (giveboth || shottyCount == 1)
+        {
+            GiveInventory("CanDualShotties", 1);
+        }
+
+        if (limit)
+        {
+            GiveInventory("LevelLimiter", 1);
+        }
+        break;
     }
 }
 

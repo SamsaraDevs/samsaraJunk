@@ -10,7 +10,7 @@
 #define SAMSARA_DECORATE            215
 #define SAMSARA_GIVEWEAPON          229
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
-#define SAMSARA_MARATHON_SHOTGUN    209
+#define SAMSARA_MARATHON            209
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_OPEN_CLIENT         205
@@ -188,15 +188,15 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     },
 
     {   // Security Officer
-        {"Steel Knuckles",                  "",             "",             "",                     "", 0},
-        {"SOMagnumSMGGiver",                "Clip",         "",             "KKV-7 SMG Flechette",  "", 0},
-        {".44 Magnum Mega-Class A1",        "",             "",             "",                     "", 0},
-        {"SOShotgunGiver",                  "AmmoShell",    "",             "CanDualShotties",      "LevelLimiter", SAMSARA_MARATHON_SHOTGUN},
-        {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                     "", 0},
-        {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                     "", 0},
-        {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                     "", 0},
-        {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                     "", 0},
-        {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                     "", 0},
+        {"Steel Knuckles",                  "",             "",             "",                 "",             0},
+        {"KKV-7 SMG Flechette",             "Clip",         "",             "CanDualPistols",   "",             SAMSARA_MARATHON},
+        {".44 Magnum Mega-Class A1",        "",             "",             "",                 "",             0},
+        {"WSTE-M5 Combat Shotgun",          "AmmoShell",    "",             "CanDualShotties",  "LevelLimiter", SAMSARA_MARATHON},
+        {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 "",             0},
+        {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 "",             0},
+        {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 "",             0},
+        {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 "",             0},
+        {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 "",             0},
     }
 };
 
