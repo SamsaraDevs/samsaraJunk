@@ -272,6 +272,10 @@ script SAMSARA_ENTER_CLIENT enter clientside
     {   ConsoleCommand("set samsara_cl_ballgag 0");
         ConsoleCommand("archivecvar samsara_cl_ballgag"); }
     
+    if (!GetCVar("samsara_cl_moremessages"))
+    {   ConsoleCommand("set samsara_cl_moremessages 0");
+        ConsoleCommand("archivecvar samsara_cl_moremessages"); }
+    
     if (!GetCVar("samsara_cl_pickupmode"))
     {   ConsoleCommand("set samsara_cl_pickupmode 1");
         ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
@@ -506,7 +510,17 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
 
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
 
-    if (cpln == pln) { Log(s:ClassPickupMessages[pclass][slot][0]); }
+    if (cpln == pln)
+    {
+        if (GetCVar("samsara_cl_moremessages"))
+        {
+            Log(s:ClassPickupMessages[pclass][slot][random(0, MSGCOUNT-1)]);
+        }
+        else
+        {
+            Log(s:ClassPickupMessages[pclass][slot][0]);
+        }
+    }
 
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
     else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
