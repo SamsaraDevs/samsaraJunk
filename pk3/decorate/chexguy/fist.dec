@@ -1,0 +1,59 @@
+actor " Bootspoon " : Weapon
+{
+    Weapon.SlotNumber 0
+    Weapon.SelectionOrder 3700
+    Weapon.Kickback 100
+    +WEAPON.WIMPY_WEAPON
+    +WEAPON.MELEEWEAPON
+    +WEAPON.NOALERT
+    +BLOODLESSIMPACT
+    +INVENTORY.UNDROPPABLE
+    Obituary "%k spooned %o back to home."
+    States
+    {
+      Ready:
+        CPUN A 1 A_WeaponReady
+        loop
+
+      Deselect:
+        CPUN A 1 A_Lower
+        loop
+
+      Select: 
+        CPUN A 1 A_Raise
+        loop
+
+      Fire:
+        CPUN B 4
+        CPUN C 4 A_CustomPunch(random(1,10)*2,1,0,"ChexSpoonPuff")
+        CPUN D 5
+        CPUN C 4
+        CPUN B 5 A_ReFire
+        goto Ready
+    }
+}
+
+actor ChexSpoonPuff : BulletPuff
+{
+    DamageType "ZorchPistol"
+    RenderStyle Add
+    -BLOODSPLATTER
+    +BLOODLESSIMPACT
+    +PUFFONACTORS
+    Alpha 0.4
+    Scale 0.22
+    VSpeed 0
+    States
+    {
+      Spawn:
+      Melee:
+        TNT1 A 0 A_PlaySound("chex/spoon")
+        CMIS DCB 4 bright
+        stop
+
+      Crash:
+        TNT1 A 0 A_PlaySound("chex/wallspoon")
+        CMIS DCB 4 bright
+        Stop
+    }
+}
