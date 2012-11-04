@@ -1,0 +1,102 @@
+actor " Shotgun " : Shotgun
+{
+    Weapon.AmmoType "AmmoShell"
+    Decal BulletChip
+    Weapon.SlotNumber 2
+    +THRUGHOST
+    +INVENTORY.UNDROPPABLE
+    AttackSound "silence"
+    Obituary "%k showed %o his boomstick."
+    States
+    {
+      Ready:
+        DSHT A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        DSHT A 1 A_Lower
+        Loop
+
+      Select:
+        DSHT A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        DSHT A 3
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaFire")
+        TNT1 A 0 A_ZoomFactor(0.995,ZOOM_INSTANT)
+        TNT1 A 0 A_FireBullets (5.6, 0, 7, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/shotgf")
+        DSHT A 2 BRIGHT A_GunFlash
+        DSHT A 5 BRIGHT A_ZoomFactor(1,ZOOM_INSTANT)
+        DSHT BCDEE 1
+        DSHT F 3
+        DSHT G 3
+        DSHT H 4
+        DSHT G 3
+        DSHT F 3
+        DSHT EEDDCC 1
+        DSHT B 3 A_Refire
+        DSHT A 4 A_ReFire
+        Goto Ready
+
+      CoopFire:
+        DSHT A 3
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCoopFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCoopFire")
+        TNT1 A 0 A_ZoomFactor(0.995,ZOOM_INSTANT)
+        TNT1 AAAAAA 0 A_FireCustomMissile("DoomBullet",random(-5.6,5.6),0,0,1,0)
+        TNT1 A 0 A_FireCustomMissile("DoomBullet",random(-5.6,5.6),1,0,1,0)
+        TNT1 A 0 A_PlayWeaponSound("doomguy/shotgf")
+        DSHT A 2 BRIGHT A_GunFlash
+        DSHT A 5 BRIGHT A_ZoomFactor(1,ZOOM_INSTANT)
+        DSHT BCDEE 1
+        DSHT F 3
+        DSHT G 3
+        DSHT H 4
+        DSHT G 4
+        DSHT F 3
+        DSHT EEDDC 1
+        DSHT B 3 A_Refire
+        DSHT A 4 A_ReFire
+        Goto Ready
+
+      VanillaFire:
+        //DSHT A 3
+        TNT1 A 0 //A_ZoomFactor(0.995,ZOOM_INSTANT)
+        TNT1 A 0 A_FireBullets (5.6, 0, 7, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/shotgf")
+        DSHT A 2 BRIGHT A_GunFlash
+        DSHT A 5 //BRIGHT A_ZoomFactor(1,ZOOM_INSTANT)
+        DSHT IJ 5
+        DSHT K 4
+        DSHT JI 5
+        DSHT A 3
+        DSHT A 7 A_ReFire
+        Goto Ready
+
+      VanillaCoopFire:
+        //DSHT A 3
+        //TNT1 A 0 A_ZoomFactor(0.995,ZOOM_INSTANT)
+        TNT1 AAAAAA 0 A_FireCustomMissile("DoomBullet",random(-5.6,5.6),0,0,1,0)
+        TNT1 A 0 A_FireCustomMissile("DoomBullet",random(-5.6,5.6),1,0,1,0)
+        TNT1 A 0 A_PlayWeaponSound("doomguy/shotgf")
+        DSHT A 2 BRIGHT A_GunFlash
+        DSHT A 5 BRIGHT //A_ZoomFactor(1,ZOOM_INSTANT)
+        DSHT IJ 5
+        DSHT K 4
+        DSHT JI 5
+        DSHT A 3
+        DSHT A 7 A_ReFire
+        Goto Ready
+
+      Flash:
+        DSHF A 3 Bright A_Light1
+        DSHF B 4 Bright A_Light2
+        Goto LightDone
+
+      Spawn:
+        WSHT A -1
+        Stop
+    }
+}

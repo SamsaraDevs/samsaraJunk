@@ -1,0 +1,127 @@
+actor "Super Shotgun" : SuperShotgun
+{
+    Weapon.AmmoType "AmmoShell"
+    Decal BulletChip
+    Weapon.SlotNumber 3
+    +THRUGHOST
+    +INVENTORY.UNDROPPABLE
+    AttackSound "silence"
+    Obituary "%k smeared %o across the wall with the SSG."
+    States
+    {
+      Ready:
+        DSSG A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        DSSG A 1 A_Lower
+        Loop
+
+      Select:
+        DSSG A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        DSSG A 2
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaFire")
+        DSSG A 1
+        TNT1 A 0 A_ZoomFactor(0.985,ZOOM_INSTANT)
+        TNT1 A 0 A_FireBullets (11.2, 7.1, 20, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound ("doomguy/sshotf")
+        DSSG A 2 BRIGHT A_GunFlash
+        DSSG A 4 BRIGHT A_ZoomFactor(1,ZOOM_INSTANT)
+        DSSG A 3
+        DSSG B 2
+        DSSG C 3
+        DSSG DE 4 A_CheckReload
+        DSSG F 2 A_PlayWeaponSound("doomguy/sshoto")
+        DSSG GHIJ 2
+        DSSG K 3
+        DSSG L 3 A_PlayWeaponSound("doomguy/sshotl")
+        DSSG MNOP 2
+        DSSG Q 1
+        DSSG Q 1 A_PlayWeaponSound("doomguy/sshotc")
+        DSSG RST 3 A_ReFire
+        DSSG A 2 A_Refire
+        goto Ready
+
+      CoopFire:
+        DSSG A 2
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCoopFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCoopFire")
+        DSSG A 1
+        TNT1 A 0 A_ZoomFactor(0.985,ZOOM_INSTANT)
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("DoomBullet",random(-11.2,11.2),0,0,1,0,random(-7.1,7.1))//DSSG A 0 A_FireBullets (11.2, 7.1, 20, 5, "DoomBulletPuff")
+        TNT1 A 0 A_FireCustomMissile("DoomBullet",random(-11.2,11.2),1,0,1,0,random(-7.1,7.1))//DSSG A 0 A_FireBullets (11.2, 7.1, 20, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound ("doomguy/sshotf")
+        DSSG A 2 BRIGHT A_GunFlash
+        DSSG A 4 BRIGHT A_ZoomFactor(1,ZOOM_INSTANT)
+        DSSG A 3
+        DSSG B 2
+        DSSG C 3
+        DSSG D 4 A_CheckReload
+        DSSG E 4
+        DSSG F 2 A_PlayWeaponSound("doomguy/sshoto")
+        DSSG GHIJ 2
+        DSSG K 3
+        DSSG L 3 A_PlayWeaponSound("doomguy/sshotl")
+        DSSG M 2 
+        DSSG NOP 2
+        DSSG Q 1
+        DSSG Q 1 A_PlayWeaponSound("doomguy/sshotc")
+        DSSG R 3 A_ReFire
+        DSSG S 3 A_ReFire
+        DSSG T 3 A_ReFire
+        DSSG A 5 A_Refire
+        goto Ready
+        
+        
+      VanillaFire:
+        DSSG A 1
+        TNT1 A 0 //A_ZoomFactor(0.985,ZOOM_INSTANT)
+        TNT1 A 0 A_FireBullets (11.2, 7.1, 20, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound ("doomguy/sshotf")
+        DSSG A 2 BRIGHT A_GunFlash
+        DSSG A 4 BRIGHT //A_ZoomFactor(1,ZOOM_INSTANT)
+        DSSG A 1
+        DSG2 B 7
+        DSG2 C 7 A_CheckReload
+        DSG2 D 7 A_PlayWeaponSound("doomguy/sshoto")
+        DSG2 E 7
+        DSG2 F 7 A_PlayWeaponSound("doomguy/sshotl")
+        DSG2 G 6
+        TNT1 A 0 A_PlayWeaponSound("doomguy/sshotc")
+        DSG2 H 6 A_Refire
+        DSSG A 5 A_ReFire
+        Goto Ready
+
+      VanillaCoopFire:
+        DSSG A 1
+        TNT1 A 0 //A_ZoomFactor(0.985,ZOOM_INSTANT)
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("DoomBullet",random(-11.2,11.2),0,0,1,0,random(-7.1,7.1))
+        TNT1 A 0 A_FireCustomMissile("DoomBullet",random(-11.2,11.2),1,0,1,0,random(-7.1,7.1))
+        TNT1 A 0 A_PlayWeaponSound ("doomguy/sshotf")
+        DSSG A 2 BRIGHT A_GunFlash
+        DSSG A 4 BRIGHT //A_ZoomFactor(1,ZOOM_INSTANT)
+        DSSG A 1
+        DSG2 B 7
+        DSG2 C 7 A_CheckReload
+        DSG2 D 7 A_PlayWeaponSound("doomguy/sshoto")
+        DSG2 E 7
+        DSG2 F 7 A_PlayWeaponSound("doomguy/sshotl")
+        DSG2 G 6
+        TNT1 A 0 A_PlayWeaponSound("doomguy/sshotc")
+        DSG2 H 6 A_Refire
+        DSSG A 5 A_ReFire
+        Goto Ready
+
+      Flash:
+        DSSF A 3 Bright A_Light1
+        DSSF B 3 Bright A_Light2
+        Goto LightDone
+
+      Spawn:
+        WSSG A -1
+        Stop
+    }
+}
