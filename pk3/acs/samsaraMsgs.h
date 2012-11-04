@@ -1,4 +1,4 @@
-#define MSGCOUNT 7
+#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
@@ -11,6 +11,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Rule #1 - do not talk about Fight Club.",
 	    "You got a pair of hands!",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "A chainsaw! Find some meat!",
@@ -20,6 +23,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Tearfully, you realize you can finally enact your secret lumberjack fantasies.",
 	    "Go ahead, chuckles, charge those gunmen.",
 	    "Well, normally I would rip and tear, but that just seems so barbaric.",
+	    "",
+	    "",
+	    "",
         },
         {
             "Picked up a pistol.",
@@ -28,6 +34,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Wait, how are you even seeing this?",
             "Picked up two clips... wait.",
 	    "Sounds like a bag popping.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -38,6 +47,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Good, bad. I'm the guy with the gun.",
 	    "Clearly this solves all your problems.",
 	    "Duck season! Fire!",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Super Shotgun!",
@@ -47,6 +59,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The souls of a million DWANGO5 marines resonate from within...",
 	    "Clearly this solves even more problems.",
 	    "Time to ignore your normal shotgun now.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Chaingun!",
@@ -56,6 +71,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Real men use handheld gatling guns.",
 	    "Spingun acquired.",
 	    "No speed debuff needed.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Rocket Launcher!",
@@ -65,6 +83,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "\cfRAWKET LAWNCHAIR!",
 	    "FOONT! noise sold seperately.",
 	    "Gonna tell 'em with this, soldier boy?",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Plasma Rifle!",
@@ -74,6 +95,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "John gotted his palsma rifle.",
 	    "What're you gonna do, give them high definition TVs?",
 	    "Hit 1.21 gigawatts and you're gonna see some serious shit.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the BFG9000! Oh, yes.",
@@ -83,6 +107,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "omg op hax gay nerf ban",
 	    "Ukraine called, they want their fuel rods back.",
 	    "What is this sublety you speak of?",
+	    "",
+	    "",
+	    "",
         },
     },
     {   // yeah I really didn't have ideas for this one
@@ -94,6 +121,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Zorch his heart out with a spoon!",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "A Super Bootspork! Find some milk!",
@@ -103,6 +133,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Makes a mess out of soups.",
 	    "Protip: goes in your hand, genius.",
 	    "Horribly slow murderer, meet extremely inefficient weapon.",
+	    "",
+	    "",
+	    "",
         },
         {
             "Picked up a Mini Zorcher.",
@@ -110,6 +143,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I think this is broken. It doesn't change the channel.",
             "The only way you'd see this message is by being a dirty cheater.",
             "How come Chex squadron never let any of the Kix guys in? That's racist.",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -121,6 +157,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Poor thing never gets any use later on.",
 	    "Great for raves and children's parties!",
 	    "I lost my flashlight, can I borrow yours?",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Super Large Zorcher!",
@@ -130,6 +169,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No longer a HacX taser rip.",
 	    "Comes with three-patty burger and an assload of fries.",
 	    "ORIGINAL CHARACTER DO NOT STEAL",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Rapid Zorcher!",
@@ -138,6 +180,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The NES controller of doo--uh, zorch.",
             "Spinning nodes do not contribute well to hypnotism.",
 	    "Rapid is a fancy word for goodbye ammo.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -148,6 +193,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I'm sure the DONTHURTSHOOTER flag will have no negative repurcussions.",
 	    "A farewell to harms.",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Phasing Zorcher!",
@@ -157,6 +205,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I hear the balls taste like candy if you eat them. Best to try it on incoming idiots first.",
 	    "I dunno, those guys don't seem to phased by it.",
 	    "You're like a futuristic pitching machine.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the LAZ Device! Woot!",
@@ -165,6 +216,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The IFOC don't believe in overzorch.",
             "It zorches people into other people.",
 	    "Add a Y to the acronym, won't you?",
+	    "",
+	    "",
+	    "",
 	    "",
         },
     },
@@ -177,6 +231,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Whap whap whap.",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "Gauntlets of the Necromancer! Find some disciples!",
@@ -186,6 +243,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Force lightning on command.",
 	    "Quit touching dead people, that's not what they do!",
 	    "Great for riding motorcyles too!",
+	    "",
+	    "",
+	    "",
         },
         {
             "Picked up a gold wand.",
@@ -193,6 +253,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Pew pew pew.",
             "The elven community frowns upon your cheating shenanigans.",
             "SPARKLIES!",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -204,6 +267,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The most useless ultimate in all of idtech1.",
 	    "Fun fact: skeeball is Corvus' favorite game.",
 	    "Just go ahead and start swinging. Damn thing won't break.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Ethereal Crossbow!",
@@ -213,6 +279,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Only partly ethereal energy hits ghosts. What?",
 	    "Iiiii aaaam the ghoooost boooolt! WHOOOO!",
 	    "So haunted it belongs on eBay.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Dragon Claw!",
@@ -222,6 +291,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "DRAGON CLAW: Now $8.99 at Jade King's Palace!",
 	    "Now you can finally reach that itch.",
 	    "Dungeons not included.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Phoenix Rod!",
@@ -231,6 +303,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Bring your enemies back from the ashes.",
 	    "Polly wanna toast bad guys? Yes you do!",
 	    "You could put a soul out with that thing.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Hellstaff!",
@@ -239,6 +314,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Time to rain on someone's parade.",
             "omg satan gun",
 	    "Turn PG mode on and it's the Heckstick.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -249,6 +327,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Only actually seven of these things? Tyketto was a dick for a Seraph.",
 	    "I didn't play a damn FPS to read!",
 	    "Death of a thousand papercuts!",
+	    "",
+	    "",
+	    "",
         },
     },
     {
@@ -260,6 +341,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Pew pew pew.",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "Your knife got thicker! Find some Nazis!",
@@ -267,6 +351,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You can bring this one to a gun fight.",
             "Knoife!",
             "A certain Sniper would want his knife back.",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -278,6 +365,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No, seriously, why are you such a cheating hack?",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Machine Gun!",
@@ -286,6 +376,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Actually more of an assault rifle, but...",
             "It's better than the Doomguy's chaingun. How does that even work.",
 	    "Hold it properly like real gangsters do.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -296,6 +389,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "And now for something completely the same.",
 	    "It's also licensed for weight loss.",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Chaingun!",
@@ -305,6 +401,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Why is it turquoise?!",
 	    "Hope you like ammo scrounging!",
 	    "The as-salt to the machine gun's pepper.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Rocket Launcher!",
@@ -314,6 +413,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Yes, it explodes. A little bit. Shut up.",
 	    "The tube is clogged. Is that a bad thing?",
 	    "It's like a launchable wood chipper.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Flamethrower!",
@@ -323,6 +425,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You got a lifetime supply of Viagra! Wait, what?!",
 	    "Yes indeed, it werfs flammens.",
 	    "God damn this stupid thing is so heavy.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Spear of Destiny! Heaven awaits.",
@@ -332,6 +437,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "\cfYOU MAY WIELD THE SPEAR...",
 	    "Poke Of Kill Everything.",
 	    "You know you're supposed to throw it, right?",
+	    "",
+	    "",
+	    "",
         },
     },
     {
@@ -343,6 +451,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Not too hot for flagellation, turns out.",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "Flechettes! Find some centaurs!",
@@ -352,6 +463,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Do you want to know how long this has been fermenting?",
 	    "Brought to you by Mace Cologne-inna-bottle for Gents!",
 	    "Don't yell 'Fire in the Hole'. Too cliche.",
+	    "I'm pretty sure this isn't a healing potion.",
+	    "",
+	    "",
         },
         {
             "Picked up a sapphire wand.",
@@ -359,6 +473,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "This is all you need to slaughter Korax.",
             "BEEMS",
             "I'm going to call your mother and tell her what you've been doing.",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -370,6 +487,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Popsicles. Now in \cgDEATH\c- flavor.",
 	    "Melts in your hand, not in your enemy.",
 	    "Sno-Cones to go, just add corpse.",
+	    "I'll literally crack your brain.",  // Holy Diver - Gypsy
+	    "",
+	    "",
         },
         {
             "You got Timon's Axe!",
@@ -379,6 +499,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "'Dat lightning ain't a special effect, kiddo!",
 	    "Bow, sword and One Ring quest sold seperately.",
 	    "It means no worries.",
+	    "You are evil, I am divine.",
+	    "",
+	    "",
         },
         {
             "You got the Serpent Staff!",
@@ -388,15 +511,21 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The eye... it stares into my soul...",
 	    "Had to paralyze this damn thing to stop it from wiggling.",
 	    "I put a spell on you, 'cuz you're miiiine.",
+	    "I only need one evil eye.",  // The Last in Line - Evil Eyes
+	    "",
+	    "",
         },
         {
             "You got the Hammer of Retribution!",
             "Infinite amounts of exploding hammers. Okay then.",
             "I think this weapon breaks the law of conservation of mass.",
             "You can't get more metal than a flaming hammer.",
-            "\\m/         \\m/",
+            "\\\\m/         \\\\m/",
 	    "Feeling Thor? Get thome athprin.",
 	    "Careful, you'll give Games Workshop some ideas.",
+	    "Strength in numbers? Ha! Your number is \canone\c-.",  // Dehumaniser - I
+	    "",
+	    "",
         },
         {
             "You got the Firestorm!",
@@ -406,6 +535,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Most unnecessarily roundabout damage method in the game.",
 	    "Inflammable means flammable? What a country!",
 	    "Stop your enemy, drop them, roll on their graves.",
+	    "You can release yourself, but the only way is \cadown under\c-.",  // The Last in Line
+	    "",
+	    "",
         },
         {
             "You got the Wraithverge! Scream for me!",
@@ -415,6 +547,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "The ultimate in pope-based weaponry. You know you're holy when the tortured spirits of hell bow to your will.",
 	    "Don't look at the Ark, Marion! Close your eyes!",
 	    "Ten seconds ago it was the Wraithalmostthereholdon.",
+	    "Will you forget me for living? Probably not.",  // Dehumaniser - After All
+	    "",
+	    "",
         },
     },
     {
@@ -426,6 +561,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Liu Kang called, he wants his feet back.",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "Pipe bombs! Find some unsuspecting saps!",
@@ -435,6 +573,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I'll make the Unabomber look like a pussy.",
 	    "No givesies no backsies for life!",
 	    "And boom goes the dynamite.",
+	    "",
+	    "",
+	    "",
         },
         {
             "Picked up an M1911.",
@@ -442,6 +583,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Looks like more of a Glock to me.",
             "Did you think I was \cagone\c- forever?",
             "STOP HACKING.",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -453,6 +597,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "FUCK DA POLICE",
 	    "Why have a battering ram when you can have a gun?",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Explosive Shotgun!",
@@ -462,6 +609,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Play dead, doggy. Good boy!",
 	    "Shoot with one hand, plug ears with the other.",
 	    "For the man with trouble expressing his emotions.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Chaingun Cannon!",
@@ -470,6 +620,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Gonna rip 'em a new one.",
             "I got 99 problems, and you just stopped being one.",
 	    "This is why the janitors hate you, Duke.",
+	    "You need six barrels to kick less ass than me?",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -480,6 +633,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Can you help me with a mural? It's titled, \"The Very End of You\".",
 	    "It's turn-based. You go first.",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Freezethrower!",
@@ -488,6 +644,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It's like a ice machine. With an automatic firing setting.",
             "It's all right, I needed some ice for my drink anyway.",
 	    "You don't get to keep it if your puns are terrible.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -498,6 +657,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I never did play fair.",
 	    "You should just duct tape the triggers down.",
 	    "Michael Bay called, he wants to do a Presidential documentary.",
+	    "",
+	    "",
+	    "",
         },
     },
     {
@@ -509,6 +671,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Can gib zombiemen. Yes, please.",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "A KKV-7 SMG and an extra .44 Magnum! Find some aliens!",
@@ -516,6 +681,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You thought one magnum was bad, huh?",
             "Bigger guns nearby.",
             "Everyone else gets melee weapons from this. I'm the only smart one here.",
+	    "",
+	    "",
+	    "",
 	    "",
 	    "",
         },
@@ -527,6 +695,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No, you can't actually use the scope. What, you think this is Halo?",
 	    "",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the WSTE-M5 Combat Shotgun!",
@@ -536,6 +707,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "One-handed? That's right.",
 	    "In the future, shotguns will still have bullets.",
 	    "Is there such thing as a non-combat shotgun?",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the Zeus Class Fusion Pistol!",
@@ -545,6 +719,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "And they said this was useless.",
 	    "Looks like a taser, but ha ha no it's not.",
 	    "What's that? Stop shooting? Why?",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the MA-75B Assault Rifle!",
@@ -554,6 +731,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "I'm a bit full on bullets. Want some?",
 	    "Standard issue for every single space marine ever.",
 	    "Accuracy is compensated for with more shooting.",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
@@ -562,6 +742,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Charon doesn't make change.",
             "There is no \"almost\" with dodging this.",
 	    "Can someone give me a boost, I can't see over this thing.",
+	    "",
+	    "",
+	    "",
 	    "",
         },
         {
@@ -572,6 +755,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "You cold? I'll warm you up.",
 	    "Despite all your fancy future tech, fire's still pretty good.",
 	    "",
+	    "",
+	    "",
+	    "",
         },
         {
             "You got the ONI-71 Wave Motion Cannon! What's that spell? Trouble.", // since apparently this quote ain't good enuf
@@ -581,6 +767,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "It makes a \caterrible\c- melee weapon.",
 	    "I could aim. But with this thing, I don't have to.",
 	    "Your brand new favorite ONI-chan.",
+	    "",
+	    "",
+	    "",
         },
     },
 };
