@@ -1,0 +1,137 @@
+actor ArtiEgg2 : ArtiEgg
+{
+    //tag "Morph Ovum"
+    +INVENTORY.UNDROPPABLE
+    Inventory.MaxAmount 16
+    States
+    {
+      Use:
+        TNT1 A 0 A_FireCustomMissile("EggFX2", -15, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", -7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 0, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 15, 0, 0, 0, 1)
+        Stop
+    }
+}
+
+actor ArtiEgg3 : ArtiEgg
+{
+    //tag "Morph Ovum"
+    +INVENTORY.UNDROPPABLE
+    Inventory.MaxAmount 16
+    States
+    {
+      Use:
+        TNT1 A 0 A_FireCustomMissile("EggFX3", -15, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX3", -7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX3", 0, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX3", 7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX3", 15, 0, 0, 0, 1)
+        Stop
+    }
+}
+
+actor EggFX2 : MorphProjectile // Yeah, no more griefing co-op allies.
+{
+    Radius 8
+    Height 8
+    Speed 18
+    Damage (1)
+    DamageType "Chickenator"
+    MorphProjectile.MonsterClass "Chicken2"
+    MorphProjectile.MorphStyle MRF_FULLHEALTH
+    States
+    {
+      Spawn:
+        EGGM ABCDE 4
+        Loop
+
+      Death:
+        FX01 FFGH 3 Bright
+        Stop
+    }
+}
+
+actor EggFX3 : MorphProjectile // This, however, still works funderfully in DM.
+{
+    Radius 8
+    Height 8
+    Speed 18
+    Damage (1)
+    MorphProjectile.Duration 350 // 35 * 10 = 350
+    DamageType "Chickenator"
+    MorphProjectile.PlayerClass "ChickenPlayer2"
+    MorphProjectile.MonsterClass "Chicken2"
+    //MorphProjectile.MorphStyle MRF_FULLHEALTH
+    States
+    {
+      Spawn:
+        EGGM ABCDE 4
+        Loop
+
+      Death:
+        FX01 FFGH 3 Bright
+        Stop
+    }
+}
+
+actor Chicken2 : Chicken replaces Chicken
+{
+    States
+    {
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        CHKN D 0 A_Stop
+        TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
+        CHKN D 3 A_SpawnItem("ZorchEffectSuperTiny")
+        CHKN D 3 A_SetTranslucent(0.9,0)
+        CHKN DD 0 A_Feathers
+        CHKN D 0 A_Scream
+        CHKN D 3 A_SetTranslucent(0.8,0)
+        TNT1 D 0 A_NoBlocking
+        CHKN D 3 A_SetTranslucent(0.7,0)
+        CHKN D 3 A_SetTranslucent(0.6,0)
+        CHKN D 3 A_SetTranslucent(0.5,0)
+        CHKN D 3 A_SetTranslucent(0.4,0)
+        CHKN D 3 A_SetTranslucent(0.3,0)
+        CHKN D 3 A_SetTranslucent(0.2,0)
+        CHKN D 3 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Ice:
+      Freeze:
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_NoBlocking
+        CHKN D 0 A_UnsetSolid
+        CHKN D 70 A_GenericFreezeDeath
+        CHKN D 0 A_IceGuyDie
+        CHKN D 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+
+      Death.WolfenFlamethrower:
+        CHKN E 0 A_Scream
+        CHKN E 0 A_GiveToTarget("KillCount",1)
+        CHKN EEEEEEE 0 A_Feathers
+        CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
+        ACLO E -1
+        stop
+    }
+}
+
+actor PowerHereticTomeCoOp : Powerup//PowerWeaponLevel2
+{
+    Powerup.Duration -120
+    Inventory.Icon "SPINBK0"
+    Powerup.Color Red, 0.1
+}

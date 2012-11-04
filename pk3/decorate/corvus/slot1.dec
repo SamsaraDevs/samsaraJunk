@@ -1,0 +1,73 @@
+actor "Gauntlets of the Necromancer" : Gauntlets
+{
+    Weapon.SlotNumber 1
+    Weapon.SlotPriority 0
+    +BLOODSPLATTER
+    Weapon.SelectionOrder 2300
+    +WEAPON.WIMPY_WEAPON
+    +WEAPON.MELEEWEAPON
+    +INVENTORY.UNDROPPABLE
+    Weapon.Kickback 0
+    Weapon.YAdjust 16
+    Inventory.PickUpSound "heretic/weaponget"
+    Weapon.UpSound "weapons/gauntletsactivate"
+    Inventory.PickupMessage "You got the Gauntlets of the Necromancer!"
+    Obituary "%k seized %o's soul in %p very body."
+    
+    States
+    {
+      Spawn:
+        WGNT A -1
+        Stop
+
+      Ready:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"ReadyTome")
+        GAUN A 1 A_WeaponReady
+        Loop
+
+      ReadyTome:
+        GAUN GHI 4 A_WeaponReady
+        goto Ready
+
+      Deselect:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"DeselectTome")
+        GAUN A 1 A_Lower
+        Loop
+
+      DeselectTome:
+        GAUN G 1 A_Lower
+        Loop
+
+      Select:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"SelectTome")
+        GAUN A 1 A_Raise
+        Loop
+
+      SelectTome:
+        GAUN G 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTome")
+        GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse")
+        GAUN C 4
+
+      Hold:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"HoldTome")
+        GAUN DEF 4 BRIGHT A_GauntletAttack(0)
+        GAUN C 4 A_ReFire
+        GAUN B 4 A_Light0
+        Goto Ready
+
+      FireTome:
+        GAUN J 4 A_PlayWeaponSound("weapons/gauntletsuse")
+        GAUN K 4
+
+      HoldTome:
+        GAUN LMN 4 BRIGHT A_GauntletAttack(1)
+        GAUN K 4 A_ReFire
+        GAUN J 4 A_Light0
+        Goto Ready
+    }
+}
+

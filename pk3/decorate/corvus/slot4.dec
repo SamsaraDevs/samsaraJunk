@@ -1,0 +1,185 @@
+actor "Dragon Claw" : Weapon
+{
+    +BLOODSPLATTER
+    +PUFFONactorS
+    //+AMMO_OPTIONAL
+    +INVENTORY.UNDROPPABLE
+    Weapon.SelectionOrder 500
+    Inventory.PickUpSound "heretic/weaponget"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 30
+    Weapon.YAdjust 16
+    Weapon.SlotNumber 4
+    Weapon.AmmoType "Clip"
+    DamageType "DragonClaw"
+    Decal RailScorchLower
+    Obituary "%k clawed %o wide open."
+    Inventory.PickupMessage "You got the Dragon Claw!"
+    
+    States
+    {
+      Spawn:
+        WBLS A -1
+        Stop
+
+      Ready:
+        BLSR A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        BLSR A 1 A_Lower
+        Loop
+
+      Select:
+        BLSR A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        BLSR BC 3
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 0 A_FireBullets(0,0,1,random(3,9),"BlasterPuff2") // Damage is 4d8. Previously 4-32, which is too flat a probability. Gonna have to think about this.
+        BLSR D 2
+        BLSR CB 2
+        BLSR A 0 A_ReFire
+        BLSR A 1 A_ClearRefire
+        Goto Ready
+
+      Hold:
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopHold")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
+        TNT1 A 0 A_JumpIfNoAmmo("Finish")
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 0 A_FireBullets(5.6,0,-1,random(3,9),"BlasterPuff2")
+        BLSR D 2
+        BLSR CB 2
+        BLSR A 0 A_ReFire
+        BLSR A 1 A_ClearRefire
+        Goto Ready
+
+      CoopFire:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"CoopFireTomed")
+        BLSR BC 3
+        TNT1 A 0 A_JumpIfNoAmmo("Finish")
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 0 A_FireCustomMissile("DragonBullet",0,1,0,1)
+        BLSR D 2
+        BLSR CB 2
+        BLSR A 0 A_ReFire
+        BLSR A 1 A_ClearRefire
+        Goto Ready
+
+      CoopHold:
+        TNT1 A 0 A_JumpIfNoAmmo("Finish")
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"CoopFireTomed")
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 0 A_FireCustomMissile("DragonBullet",random(-5.6,5.6),1,0,1)
+        BLSR D 2
+        BLSR CB 2
+        BLSR A 0 A_ReFire
+        BLSR A 1 A_ClearRefire
+        Goto Ready
+
+      Finish:
+        BLSR A 1 A_ClearRefire
+        goto Ready
+
+      FireTomed:
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 3 A_FireCustomMissile("BlasterFX1B")
+        BLSR CB 4 A_ClearRefire
+        Goto Ready
+
+      CoopFireTomed:
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+        BLSR D 3 A_FireCustomMissile("BlasterFX1C")
+        BLSR CB 4 A_ClearRefire
+        Goto Ready
+    }
+}
+
+actor DragonBullet : FastProjectile
+{
+    Damage (Random(1,8)*4)
+    Radius 1
+    Height 1
+    Speed 300
+    Projectile
+    Renderstyle "Add"
+    Species "Player"
+    DamageType "DragonClaw"
+    +BLOODSPLATTER
+    +THRUSPECIES
+    +NOTIMEFREEZE
+    Decal RailScorchLower
+    Alpha 1.0
+    States
+    {
+      Spawn:
+        TNT1 A 1
+        loop
+
+      Death:
+        FX17 ABCDE 4 BRIGHT
+        stop
+
+      XDeath:
+      Crash:
+        FX17 FGHIJKL 4 BRIGHT
+        stop
+    }
+}
+
+actor BlasterPuff2 : BlasterPuff
+{
+    DamageType "DragonClaw"
+    +CLIENTSIDEONLY
+}
+
+actor BlasterFX1B : FastProjectile
+{
+    Radius 12
+    Height 8
+    Speed 300
+    Damage 2
+    SeeSound "weapons/blastershoot"
+    DeathSound "weapons/blasterhit"
+    Decal HImpScorch
+    +SPAWNSOUNDSOURCE
+    +NOTIMEFREEZE
+    DONTHURTSHOOTER
+    States
+    {
+      Spawn:
+        ACLO E 200
+        Loop
+
+      Death:
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,0,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,45,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,90,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,135,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,180,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,225,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,270,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper2",0,0,315,2,0)
+        FX18 A 3 BRIGHT
+        FX18 B 3 BRIGHT
+        FX18 CDEFG 4 BRIGHT
+        Stop
+    }
+}
+
+actor BlasterFX1C : BlasterFX1B { +THRUSPECIES Species "Player" }
+
+actor Ripper2 : Ripper
+{
+    +MISSILE
+    -NOCLIP
+    +NOBOSSRIP
+    DONTHURTSHOOTER
+    Decal HImpScorch
+}
