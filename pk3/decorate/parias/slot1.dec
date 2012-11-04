@@ -1,0 +1,77 @@
+actor DiscOfRepulsionCooldown : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 15 }
+
+actor PortFlechette : CustomInventory
+{
+    //tag "Poison Cloud Flechette"
+    +FLOATBOB
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.PickupFlash "PickupFlash"
+    +INVBAR
+    +INVENTORY.UNDROPPABLE
+    Inventory.Icon "ARTIPSBG"
+    Inventory.PickupSound "hexen/weaponget"
+    Inventory.UseSound "hexen/artiuse"
+    Inventory.PickupMessage "You picked up the Flechette!"
+    States
+    {
+      Spawn:
+        PSBG A 1 Bright
+        Loop
+
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DiscOfRepulsionCooldown",1,"UseFail")
+        TNT1 A 0 A_SpawnItemEx("PoisonBagCoop",0,0,0,0,0,0,0,28,0)
+        TNT1 A 1 ACS_ExecuteAlways(207)
+        TNT1 A 0 A_GiveInventory("DiscOfRepulsionCooldown",15)
+        fail
+
+      UseFail:
+        TNT1 A 1 A_Print("The Flechette has not cooled down yet.")
+        fail
+    }
+}
+
+actor PoisonBagCoop
+{
+    Speed 1
+    Radius 20
+    Height 30
+    Mass 0x7fffffff
+    DeathSound "PoisonShroomDeath"
+    DamageType "PoisonCloud"
+    +NOBLOCKMAP
+    +NOGRAVITY
+    +DROPOFF
+    +NODAMAGETHRUST
+    +DONTSPLASH
+    +FOILINVUL
+    +FORCERADIUSDMG
+    +BLOODLESSIMPACT
+    Obituary "%k put %o under the gas."
+    States
+    {
+      Spawn:
+        PSBG A 20 Bright // Previously 18
+        PSBG B 4 Bright
+        PSBG C 4 BRIGHT
+        TNT1 A 0 A_SetTranslucent(0.7,1)
+        PSBG D 1 BRIGHT A_Scream
+        PSBG D 1 BRIGHT A_Explode(4,128,0)
+
+      Poison:
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+
+      Death:
+        PSBG HG 7 BRIGHT
+        PSBG FD 6 BRIGHT
+        Stop
+    }
+}
+

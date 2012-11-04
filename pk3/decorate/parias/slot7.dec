@@ -1,0 +1,58 @@
+actor Wraithverge : CWeapWraithverge
+{
+    Weapon.SelectionOrder 3000
+    Weapon.SlotNumber 7
+    +WEAPON.PRIMARY_USES_BOTH
+    +INVENTORY.UNDROPPABLE
+    Weapon.AmmoUse1 25
+    Weapon.AmmoUse2 25
+    Weapon.AmmoGive1 25
+    Weapon.AmmoGive2 25
+    Weapon.KickBack 150
+    Weapon.AmmoType1 "Clip"
+    Weapon.AmmoType2 "Cell"
+    Obituary "%k added %o's soul to the Wraithverge."
+    Inventory.PickupMessage "You picked up the Wraithverge!"
+    Inventory.PickupSound "hexen/weaponget"
+    States
+    {
+      Spawn:
+        WWRT A -1
+        Stop
+
+      Ready:
+        CHLY A 1 A_WeaponReady
+        Loop
+
+      Select:
+        CHLY A 1 A_Raise
+        Loop
+
+      Deselect:
+        CHLY A 1 A_Lower
+        Loop
+
+      Fire:
+        CHLY AB 1 Bright Offset (0, 40)
+        CHLY CD 2 Bright Offset (0, 43)
+        CHLY E 2 Bright Offset (0, 45)
+        CHLY F 6 Bright Offset (0, 48) A_CHolyAttack
+        CHLY GG 2 Bright Offset (0, 40) A_CHolyPalette
+        CHLY G 2 Offset (0, 36) A_CHolyPalette
+        CHLY A 20
+        CHLY A 5 A_Refire
+        Goto Ready
+    }
+}
+
+actor HolySpirit2 : HolySpirit replaces HolySpirit
+{
+    Obituary "%k added %o's soul to the Wraithverge."
+    Renderstyle Add
+    Speed 10
+    Alpha 0.7
+    +STRIFEDAMAGE
+    +BRIGHT
+    DamageType "TimonsAxe"
+}
+

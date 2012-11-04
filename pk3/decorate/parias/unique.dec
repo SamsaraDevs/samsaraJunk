@@ -1,0 +1,47 @@
+actor PortMysticAmbit : CustomInventory
+{
+    //tag "Mystic Ambit Incant"
+    +FLOATBOB
+    Inventory.MaxAmount 16
+    +INVENTORY.INVBAR
+    +INVENTORY.PICKUPFLASH
+    +INVENTORY.FANCYPICKUPSOUND
+    +INVENTORY.UNDROPPABLE
+    Inventory.Icon "ARTIHRAD"
+    Inventory.PickupSound "hexen/artiget"
+    //Inventory.UseSound "hexen/ambituse"
+    Inventory.PickupMessage "You got the Mystic Ambit Incant!"
+    States
+    {
+      Spawn:
+        HRAD ABCDEFGHIJKLMNOP 4 Bright
+        Loop
+
+      Use:
+        TNT1 A 0 A_JumpIfHealthLower(100,"UseSuccess")
+        TNT1 A 1 ACS_ExecuteAlways(212,0,1)//A_Print("You cannot use this unless injured.")
+        fail
+
+      UseSuccess:
+        TNT1 A 1 ACS_ExecuteAlways(212,0,2)//A_Print(" ")
+        TNT1 A 0 A_GiveInventory("PortMysticAmbit2")
+        TNT1 A 0 A_GiveInventory("MysticAmbitArmor")
+        TNT1 A 0 A_PlaySoundEx("hexen/ambituse","body",0,0)
+        TNT1 AAAAAAAAAAAAAAA 1 A_SpawnItemEx("ArmorScrap",0,0,random(60,90),random(-4,4),random(-4,4),random(1,7),48,0)
+        stop
+    }
+}
+
+actor PortMysticAmbit2 : ArtiHealingRadius
+{
+    //tag "Mystic Ambit Incant"
+    +INVENTORY.AUTOACTIVATE
+}
+
+actor MysticAmbitArmor : BasicArmorBonus
+{
+    Armor.Savepercent 33.33333
+    Armor.MaxSaveAmount 300
+    Armor.Saveamount 50
+}
+

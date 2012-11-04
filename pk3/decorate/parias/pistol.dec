@@ -1,0 +1,41 @@
+actor "Sapphire Wand" : MWeapWand
+{
+    Weapon.SelectionOrder 3600
+    Weapon.SlotNumber 1
+    +INVENTORY.UNDROPPABLE
+    Weapon.KickBack 0
+    Weapon.YAdjust 9
+    States
+    {
+      Select:
+        MWND A 1 A_Raise
+        Loop
+
+      Deselect:
+        MWND A 1 A_Lower
+        Loop
+
+      Ready:
+        MWND A 1 A_WeaponReady
+        Loop
+
+      Fire:
+        MWND A 6
+        MWND B 6 Bright Offset (0, 48) A_FireCustomMissile("MageWandMissile2")
+        MWND A 3 Offset (0, 40)
+        MWND A 3 Offset (0, 36) A_ReFire
+        Goto Ready
+    }
+}
+
+actor MageWandMissile2 : MageWandMissile replaces MageWandMissile
+{
+    Radius 3
+    Height 2
+    Obituary "%k unwove %o's life force with the Sapphire Wand."
+    Decal RailScorchLower
+    Damage 1
+    +STRIFEDAMAGE
+    +SPAWNSOUNDSOURCE
+    DamageType "Pistol"
+}
