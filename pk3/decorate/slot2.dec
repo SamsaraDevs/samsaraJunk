@@ -10,7 +10,7 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
         "----" A 35 ACS_ExecuteAlways(228, 0, 2)
         loop
         
-        NoGuy:    WEPG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        NoGuy:    WEPG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         Doomguy:  WSHT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  SHOC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -20,21 +20,21 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
         Dukeguy:  SHTP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: SHTY A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        DoomFull:      PDST B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        ChexFull:      PLRZ B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        HereticFull:   PFMC B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        WolfFull:      PWMG D 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        HexenFull:     PFRS B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        DukeFull:      PRSG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        MarathonFull:  PCSG B 35 BRIGHT A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DoomFull:      PDST B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        ChexFull:      PLRZ B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HereticFull:   PFMC B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        WolfFull:      PWMG D 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HexenFull:     PFRS B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DukeFull:      PRSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        MarathonFull:  PCSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        DoomEmpty:     PDST A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        ChexEmpty:     PLRZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        HereticEmpty:  PFMC A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        WolfEmpty:     PWMG C 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        HexenEmpty:    PFRS A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        DukeEmpty:     PRSG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        MarathonEmpty: PCSG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DoomEmpty:     PDST A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        ChexEmpty:     PLRZ A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HereticEmpty:  PFMC A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        WolfEmpty:     PWMG C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HexenEmpty:    PFRS A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DukeEmpty:     PRSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        MarathonEmpty: PCSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 2) & 3) == 1, "PickupSuccess")
@@ -59,11 +59,11 @@ actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
 actor SOShotgunGiver: CustomInventory
 {
     -INVBAR
-
+    
     +AUTOACTIVATE
-
+    
     Inventory.maxamount 1
-
+    
     States
     {
       Pickup:
@@ -73,14 +73,14 @@ actor SOShotgunGiver: CustomInventory
         TNT1 A 0 A_JumpIfInventory("WSTE-M5 Combat Shotgun", 1, "PickupSecond")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 3) == 1, "PickupNorm")  // !(sv_weaponstay || sv_itemrespawn)
         goto PickupLimit
-
+        
       PickupBoth:
         TNT1 A 0 A_GiveInventory("CanDualShotties",1)
-
+        
         TNT1 A 0 A_GiveInventory("AmmoShell",8)
         TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
         stop
-
+        
       PickupLimit:
         TNT1 A 0 A_GiveInventory("LevelLimiter", 1) // Removed on level Unloading, which keeps co-op players from picking up two at once.
         goto PickupNorm

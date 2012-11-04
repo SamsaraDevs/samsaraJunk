@@ -233,13 +233,19 @@ script SAMSARA_PUKE (int values, int pln) net
 script SAMSARA_OPEN_CLIENT open clientside
 {
     int i;
+    if (!DEBUG) { terminate; }
+
+    SetHudSize(1280, 1024, 1);
+    PrintBold(s:"OPEN CLIENTSIDE running now");
 
     while (1)
     {
         for (i = 0; i < PLAYERMAX; i++)
         {
-            DukeQuoteCooldown[i] = max(0, DukeQuoteCooldown[i]-1);
+            HudMessageBold(s:"Cooldown (\cd", d:i, s:"\c-): \ck", d:DukeQuoteCooldown[i];
+                        HUDMSG_FADEOUT, 8271+i, CR_LIGHTBLUE, 40.1, 20.0 + (8.0 * i), 2.0, 0.5);
         }
+
         Delay(1);
     }
 }
@@ -290,10 +296,13 @@ script SAMSARA_ENTER_CLIENT enter clientside
 
     class = samsaraClassNum() + 1;
 
+    DukeQuoteCooldown[pln] = 0; 
+
     while (PlayerInGame(pln))
     {
         oClass = class;
         class  = samsaraClassNum();
+        DukeQuoteCooldown[pln] = max(0, DukeQuoteCooldown[pln]-1); 
 
         SamsaraClientClass = class+1;
 
@@ -561,6 +570,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag"))
     {
         Delay(8);
+        Print(s:"cooldown is ", d:DukeQuoteCooldown[pln]);
 
         if (!DukeQuoteCooldown[pln])
         {
