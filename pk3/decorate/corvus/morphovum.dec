@@ -128,10 +128,3 @@ actor Chicken2 : Chicken replaces Chicken
         stop
     }
 }
-
-actor PowerHereticTomeCoOp : Powerup//PowerWeaponLevel2
-{
-    Powerup.Duration -120
-    Inventory.Icon "SPINBK0"
-    Powerup.Color Red, 0.1
-}

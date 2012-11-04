@@ -69,6 +69,13 @@ actor PowerHereticTome : Powerup//PowerWeaponLevel2
     Powerup.Color Red, 0.1
 }
 
+actor PowerHereticTomeCoOp : Powerup//PowerWeaponLevel2
+{
+    Powerup.Duration -120
+    Inventory.Icon "SPINBK0"
+    Powerup.Color Red, 0.1
+}
+
 actor PowerHereticTomeDM : PowerHereticTome
 {
     Powerup.Duration -60
