@@ -1,0 +1,252 @@
+actor "Spear of Destiny" : Weapon
+{
+    Weapon.SelectionOrder 2900
+    Weapon.SlotNumber 7
+    Inventory.PickUpSound "wolfen/spearget"
+    Weapon.AmmoUse 40
+    Weapon.AmmoGive 40
+    Weapon.AmmoType "Cell"
+    +DONTBOB
+    +INVENTORY.UNDROPPABLE
+    +WEAPON.NOAUTOFIRE
+    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Inventory.PickupMessage "You got the Spear of Destiny!"
+    States
+    {
+      Spawn:
+        WSPR E -1
+        Stop
+
+      Ready:
+        TNT1 A 0 SetPlayerProperty(0,1,2)
+        WSPR A 1 A_WeaponReady
+        goto Ready+1
+
+      Deselect:
+        WSPR A 1 A_Lower
+        Loop
+
+      Select:
+        WSPR A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"SPFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
+        WSPR C 15 BRIGHT
+        WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBoltDM",0,1,0,0)
+        WSPR C 15 BRIGHT
+        WSPR B 15
+        WSPR A 5 A_Refire
+        goto Ready
+
+      SPFire:
+        WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
+        WSPR C 15 BRIGHT
+        WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt",0,1,0,0)
+        WSPR C 15 BRIGHT
+        WSPR B 15
+        WSPR A 5 A_Refire
+        goto Ready
+
+      CoopFire:
+        WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
+        WSPR C 15 BRIGHT
+        WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt2",0,1,0,0)
+        WSPR C 15 BRIGHT
+        WSPR B 15
+        WSPR A 5 A_Refire
+        goto Ready
+    }
+}
+
+actor SpearBolt
+{
+    Speed 15
+    Height 2
+    Radius 4
+    Mass 9
+    Damage 55
+    SeeSound ""
+    DeathSound "wolfen/spearexplode1"
+    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    PROJECTILE
+    +DONTREFLECT
+    DamageType "BJSpear"
+    Scale 0.80
+    RENDERSTYLE ADD
+    States
+    {
+      Spawn:
+        SPB1 ABABABAB 3 BRIGHT A_SpawnItemEx("SpearShotTrail",0,0,0)
+        Goto Death
+
+      Death:
+        SPX1 A 0 A_Stop
+        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini",0,0,random(-180,180),2,random(-25,25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2",0,0,random(-180,180),2,random(-25,25))
+        SPX1 A 0 A_Scream
+        SPX1 A 4 BRIGHT A_Explode(120,240,0)
+        SPX1 BCDEF 4 BRIGHT
+        Stop
+    }
+}
+
+actor SpearBoltDM : SpearBolt
+{
+    DamageType "BJSpear"
+    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    States
+    {
+      Death:
+        SPX1 A 0 A_Stop
+        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMiniDM",0,0,random(-180,180),2,random(-25,25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2DM",0,0,random(-180,180),2,random(-25,25))
+        SPX1 A 0 A_Scream
+        SPX1 A 4 BRIGHT A_Explode(120,198,0)
+        SPX1 BCDEF 4 BRIGHT
+        Stop
+    }
+}
+
+actor SpearBolt2 : SpearBolt { +THRUSPECIES Species "Player" }
+
+actor SpearShotMini
+{
+    Radius 10
+    Height 16
+    Speed 10
+    Damage 4
+    Scale 0.75
+    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    PROJECTILE
+    +RIPPER
+    +DOOMBOUNCE
+    +NODAMAGETHRUST
+    +SKYEXPLODE
+    +CANBOUNCEWATER
+    +DONTREFLECT
+    DamageType "BJSpear"
+    SeeSound "wolfen/spearbounce"
+    DeathSound "wolfen/spearexplode2"
+    States
+    {
+      Spawn:
+        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
+        TNT1 A 0 A_Jump(128,"Spawn")
+        goto Death
+
+      Death:
+        TNT1 A 0 A_Scream
+        SPX3 C 1 A_Explode(64,64,0)
+        SPX3 C 1
+        SPX3 C 4 BRIGHT
+        SPX3 D 6 BRIGHT
+        Stop
+    }
+}
+
+actor SpearShotMiniDM : SpearShotMini
+{
+    DamageType "BJSpear"
+    Damage 3
+    +STRIFEDAMAGE
+    States
+    {
+      Spawn:
+        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
+        TNT1 A 0 A_Jump(96,"Spawn")
+        goto Death
+
+      Death:
+        TNT1 A 0 A_Scream
+        SPX3 C 1 A_Explode(32,64,0)
+        SPX3 C 1
+        SPX3 C 4 BRIGHT
+        SPX3 D 6 BRIGHT
+        Stop
+    }
+}
+
+actor SpearShotMini2
+{
+    Radius 3
+    Height 4
+    Speed 10
+    Damage 4
+    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    PROJECTILE
+    +RIPPER
+    +STRIFEDAMAGE
+    +DOOMBOUNCE
+    +NODAMAGETHRUST
+    +SKYEXPLODE
+    +CANBOUNCEWATER
+    +DONTREFLECT
+    DamageType "BJSpear"
+    SeeSound "wolfen/spearbounce"
+    DeathSound "wolfen/spearexplode2"
+    States
+    {
+      Spawn:
+        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
+        TNT1 A 0 A_Jump(128,"Spawn")
+        goto Death
+
+      Death:
+        TNT1 A 0 A_Scream
+        SPX2 AA 2 A_Explode(64,64,0)
+        SPX2 BCDE 4 BRIGHT
+        Stop
+    }
+}
+
+actor SpearShotMini2DM : SpearShotMini2
+{
+    DamageType "BJSpear"
+    Damage 3
+    +STRIFEDAMAGE
+    States
+    {
+      Spawn:
+        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
+        TNT1 A 0 A_Jump(96,"Spawn")
+        goto Death
+
+      Death:
+        TNT1 A 0 A_Scream
+        SPX2 AA 2 A_Explode(32,64,0)
+        SPX2 BCDE 4 BRIGHT
+        Stop
+    }
+}
+
+actor SpearShotTrail 
+{
+    Speed 1
+    Scale 0.8
+    Damage 0
+    PROJECTILE
+    -SOLID
+    +NOCLIP
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 2
+        SPTR ABCD 2 Bright
+        Stop   
+    }
+}
+
+actor SpearShotTrail2 : SpearShotTrail
+{
+    Scale 0.3
+    +CLIENTSIDEONLY
+}
+
