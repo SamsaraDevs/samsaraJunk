@@ -99,7 +99,7 @@ actor HammerMissile2 : HammerMissile replaces HammerMissile
 {
     Obituary "%k threw %o under the Hammer."
     Decal Scorch
-    Damage 20//10
+    Damage 10
     +THRUGHOST
     +FORCERADIUSDMG
     +SKYEXPLODE
