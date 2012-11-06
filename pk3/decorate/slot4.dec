@@ -7,7 +7,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
         stop
         
       SpawnLoop:      
-        "----" A 35 ACS_ExecuteAlways(228, 0, 4)
+        "----" A 35 bright ACS_ExecuteAlways(228, 0, 4)
         loop
         
         NoGuy:    WEPG D 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

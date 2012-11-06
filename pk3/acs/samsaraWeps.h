@@ -1,3 +1,25 @@
+int ClassUniques[CLASSCOUNT][CHOICECOUNT] = 
+{
+    {"DoomguyBerserker",    "", "", "", ""},
+    {"ChexSoulsphere",      "", "", "", ""},
+    {"ArtiEgg2",            "", "", "", ""},
+    {"WolfExtraLife",       "", "", "", ""},
+    {"PortMysticAmbit",     "", "", "", ""},
+    {"DukeJetpack",         "DukeJetpackFuel", "", "", ""},
+    {" Alien Weapon ",      "", "", "", ""},
+};
+
+int UniqueMaxes[CLASSCOUNT][3] = 
+{
+    {0,     0,      0},
+    {0,     0,      0},
+    {16,    0,      0},
+    {9,     0,      0},
+    {16,    0,      0},
+    {0,     100,    0},
+    {0,     50,     50},
+};
+
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {
     {   // Doomguy
@@ -80,7 +102,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 ""},
         {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 ""},
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
-        {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 ""},
+        {"TOZT-7 Napalm Unit",              "NapalmInTank", "",             "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
     }
 };
@@ -175,4 +197,15 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "marathon/itemget",
         "marathon/bigitemget",
     },
+};
+
+int ClassUniqueSounds[CLASSCOUNT] = 
+{
+    "doomguy/itemget",
+    "chex/weaponget",
+    "heretic/itemget",
+    "wolfen/lifeget",
+    "hexen/artiget",
+    "duke/itemget",
+    "marathon/itemget",
 };

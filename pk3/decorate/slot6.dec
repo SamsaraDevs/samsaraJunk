@@ -7,7 +7,7 @@ actor SamsaraSlotSixPickup: SamsaraSlotPickup replaces PlasmaRifle
         stop
         
       SpawnLoop:      
-        "----" A 35 ACS_ExecuteAlways(228, 0, 6)
+        "----" A 35 bright ACS_ExecuteAlways(228, 0, 6)
         loop
         
         NoGuy:    WEPG F 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

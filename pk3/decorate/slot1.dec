@@ -7,7 +7,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         stop
         
       SpawnLoop:      
-        "----" A 35 ACS_ExecuteAlways(228, 0, 1)
+        "----" A 35 bright ACS_ExecuteAlways(228, 0, 1)
         loop
         
         NoGuy:    WEPG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

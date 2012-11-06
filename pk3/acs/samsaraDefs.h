@@ -9,7 +9,9 @@
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215
 #define SAMSARA_GIVEWEAPON          229
+#define SAMSARA_GIVEUNIQUE          231
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
+#define SAMSARA_CLIENT_UNIQUEPICKUP 233
 #define SAMSARA_MARATHON            209
 
 #define SAMSARA_PUKE                226
@@ -75,15 +77,15 @@ int ClassItems[CLASSCOUNT] =
     "MarathonClass",
 };
 
-int PickupStates[CLASSCOUNT][3] = 
+int PickupStates[CLASSCOUNT][4] = 
 {
-    {"Doomguy", "DoomFull",     "DoomEmpty"},
-    {"Chexguy", "ChexFull",     "ChexEmpty"},
-    {"Heretic", "HereticFull",  "HereticEmpty"},
-    {"Wolfguy", "WolfFull",     "WolfEmpty"},
-    {"Hexen",   "HexenFull",    "HexenEmpty"},
-    {"Dukeguy", "DukeFull",     "DukeEmpty"},
-    {"Marathon","MarathonFull", "MarathonEmpty"},
+    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial"},
+    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial"},
+    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial"},
+    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial"},
+    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial"},
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};

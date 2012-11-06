@@ -374,6 +374,26 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             terminate;
         }
     }
+
+    if (slot == -1)
+    {
+        switch (displaymode)
+        {
+          case 0:
+            SetActorState(0, "NoGuy");
+            break;
+
+          case 1:
+            SetActorState(0, PickupStates[toClass][3]);
+            break;
+            
+          case 2:
+            SetActorState(0, PickupStates[toClass][0]);
+            break;
+        }
+
+        terminate;
+    }
     
     switch (displaymode)
     {
@@ -520,6 +540,46 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
 }
 
+script SAMSARA_GIVEUNIQUE (void)
+{
+    if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
+
+    int uniqueGet  = 0;
+    int pclass = samsaraClassNum();
+
+    int a1cnt  = 0, a2cnt = 0;
+    int a1max  = 0, a2max = 0;
+    int a1Full = 0, a2Full = 0;
+    int hasWep;
+
+    int unique  = ClassUniques[pclass][S_WEP],    wepbool = !!StrLen(unique); 
+    int ammo1   = ClassUniques[pclass][S_AMMO1],  a1bool  = !!StrLen(ammo1);
+    int ammo2   = ClassUniques[pclass][S_AMMO2],  a2bool  = !!StrLen(ammo2);
+
+    if (!wepbool || CheckInventory(ClassUniques[pclass][S_CHECKFAILITEM]))
+    {
+        terminate;
+    }
+
+    if (a1Bool) { a1Full = CheckInventory(ammo1) >= UniqueMaxes[pclass][1]; }
+    if (a2Bool) { a2Full = CheckInventory(ammo2) >= UniqueMaxes[pclass][2]; }
+
+    hasWep = (CheckInventory(unique) >= UniqueMaxes[pclass][0]) && (UniqueMaxes[pclass][0] != 0);
+
+    if (!hasWep || (a1bool && !a1Full) || (a2Bool && !a2Full))
+    {
+        uniqueGet = 1;
+    }
+
+    if (uniqueGet && IsServer)
+    {
+        GiveInventory(unique, 1);
+        ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
+    }
+    
+    SetResultValue(uniqueGet);
+}
+
 
 int QuoteStorage[MSGCOUNT];
 
@@ -579,6 +639,51 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
             DukeQuoteCooldown[pln] = 140;
         }
     }
+}
+
+script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
+{
+    int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
+    int pclass = samsaraClassNum();
+    int i, j, quoteCount = 0;
+
+    if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
+
+    if (cpln == pln)
+    {
+        if (GetCVar("samsara_cl_moremessages"))
+        {
+            for (i = 0; i < MSGCOUNT; i++)
+            {
+                j = ClassUniqueMessages[pclass][i];
+                if (!StrLen(j)) { continue; }
+                
+                QuoteStorage[quoteCount++] = j;
+            }
+
+            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
+            else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
+        }
+        else
+        {
+            i = ClassUniqueMessages[pclass][0];
+
+            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
+            else { Log(s:i); }
+        }
+    }
+
+    if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
+    else { ActivatorSound(ClassUniqueSounds[pclass], 127); }
+
+    if (DEBUG)
+    {
+        Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
+                s:" for ", d:ClassFades[pclass][4], s:" tics");
+    }
+
+    FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
+              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
 
 script SAMSARA_MARATHON (int class, int slot)

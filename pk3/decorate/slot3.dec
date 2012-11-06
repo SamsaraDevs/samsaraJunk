@@ -7,7 +7,7 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         stop
         
       SpawnLoop:      
-        "----" A 35 ACS_ExecuteAlways(228, 0, 3)
+        "----" A 35 bright ACS_ExecuteAlways(228, 0, 3)
         loop
         
         NoGuy:    WEPG C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
