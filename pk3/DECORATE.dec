@@ -1,5 +1,7 @@
 #include "samsara.dec"
 
+actor DoomNoBFGAim : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
+
 actor SamsaraChangeFlash
 {
     +NOINTERACTION
