@@ -338,7 +338,7 @@ actor MagnumBulletRight : Ammo
 
 actor MarathonMagnumBullet : FastProjectile
 {
-    Damage (random(20,28))
+    Damage (random(10,18))
     Radius 8
     Height 8
     Speed 100
@@ -373,6 +373,7 @@ actor MarathonMagnumBullet : FastProjectile
 
 actor MarathonMagnumBulletCoop : MarathonMagnumBullet
 {
+    Damage (random(20,28))
     Radius 1
     Height 1
     +THRUSPECIES
