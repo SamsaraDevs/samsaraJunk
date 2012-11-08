@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "zcommon.acs"
 #library "samsara"
 
