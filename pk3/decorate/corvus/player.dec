@@ -1,0 +1,247 @@
+actor CorvusPlayer : PlayerPawn
+{
+    Player.DisplayName "Corvus"
+    Player.StartItem "Elven Wand", 1
+    Player.StartItem " Staff ", 1
+    Player.StartItem "CorvusClass", 1
+    Player.StartItem "Clip", 50
+    //Player.StartItem "PermaProxyBomb", 1
+    Player.StartItem "PermaRemoteBomb", 1
+    Player.StartItem "PermaTimeBomb", 1
+    //Player.StartItem "CorvusCanProxy", 1
+    Player.Face "CRV"
+    Player.Soundclass "CorvusPlayer"
+    Player.JumpZ 9//Default is 8
+    BloodColor "Red"
+    DamageFactor "PoisonCloud", 1.75
+    DamageFactor "TimonsAxe", 0.75
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.1
+    DamageFactor "WMCBeam", 0.75
+    DamageFactor "WMCNade", 0.75
+    +NOSKIN
+    -DONTBLAST
+    -THRUSPECIES
+    Species "Player"
+    Translation "106:106=125:125"
+    Player.ColorRange 112, 127
+    
+    States
+    {
+      Spawn:
+        CORV A -1
+        Stop
+
+      See:
+        CORV ABCD 4
+        Loop
+
+      Melee:
+      Missile:
+        CORV F 6 BRIGHT
+        CORV E 12
+        Goto Spawn
+
+      Pain:
+        CORV G 4 //A_GiveInventory("CorvusCanProxy",1)
+        CORV G 4 A_Pain
+        Goto Spawn
+
+      Death:
+        CORV H 6
+        CORV I 6 A_PlayerScream
+        CORV JK 6
+        CORV L 6 A_NoBlocking
+        CORV MNO 6
+        CORV P -1
+        Stop
+
+      XDeath:
+        CORV Q 5 A_PlayerScream
+        TNT1 A 0 A_SpawnItemEx("BloodySkull2",0,0,46,random(-1,1),random(-1,1),5)
+        CORV R 5 A_NoBlocking
+        CORV STUVWX 5
+        CORV Y -1
+        Stop
+
+      Death.HexGreenFire:
+        //Death.MarathonPlasma:
+      Burn:
+        FDTH A 5 BRIGHT A_PlaySound("*burndeath")
+        FDTH B 4 BRIGHT
+        FDTH C 5 BRIGHT
+        FDTH D 4 BRIGHT
+        FDTH E 5 BRIGHT
+        FDTH F 4 BRIGHT
+        FDTH G 5 BRIGHT
+        FDTH H 4 BRIGHT
+        FDTH I 5 BRIGHT
+        FDTH J 4 BRIGHT
+        FDTH K 5 BRIGHT
+        FDTH L 4 BRIGHT
+        FDTH M 5 BRIGHT
+        FDTH N 4 BRIGHT
+        FDTH O 5 BRIGHT A_NoBlocking
+        FDTH P 4 BRIGHT
+        FDTH Q 5 BRIGHT
+        FDTH R 4 BRIGHT
+        ACLO E -1
+        stop
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        CORV G 0 A_Stop
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        CORV G 3 A_SpawnItem("ZorchEffectSmall")
+        CORV G 3 A_SetTranslucent(0.9,0)
+        CORV G 0 A_PlayerScream
+        CORV G 3 A_SetTranslucent(0.8,0)
+        CORV G 0 A_NoBlocking
+        CORV G 3 A_SetTranslucent(0.7,0)
+        CORV G 3 A_SetTranslucent(0.6,0)
+        CORV G 3 A_SetTranslucent(0.5,0)
+        CORV G 3 A_SetTranslucent(0.4,0)
+        CORV G 3 A_SetTranslucent(0.3,0)
+        CORV G 3 A_SetTranslucent(0.2,0)
+        CORV G 3 A_SetTranslucent(0.1,0)
+        ACLO E 1 A_SetTranslucent(1,0)
+        ACLO E -1
+        stop
+
+      CoOpModeOn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
+        TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
+        CORV A 1
+        goto See
+
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto Death
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto XDeath
+
+      Death.DukeIce:
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto Ice
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        CORV G 5 A_GenericFreezeDeath
+        CORV G 1 A_FreezeDeathChunks
+        Wait
+    }
+}
+
+actor BloodySkull2
+{
+    +CLIENTSIDEONLY
+    Radius 4
+    Height 4
+    Gravity 0.25
+    +NOBLOCKMAP
+    +DROPOFF
+    //+DOOMBOUNCE
+    //+LOWGRAVITY
+    +CANNOTPUSH
+    -SKYEXPLODE
+    +NOBLOCKMONST
+    -SOLID
+    +CLIENTSIDEONLY
+    //BounceCount 4
+    //BounceFactor 0.45
+    States
+    {
+      Spawn:
+        BSKL A 0
+        BSKL ABCDE 5 A_CheckFloor("Death")
+        Goto Spawn+1
+
+      Death:
+        TNT1 A 0 A_Stop
+        BSKL F -1
+        stop
+    }
+}
+
+actor ChickenPlayer2 : ChickenPlayer
+{
+    Health 100 // Previously 30
+    ReactionTime 0
+    PainChance 255
+    Radius 8
+    Height 12
+    Speed 1
+    Gravity 0.125
+    +NOSKIN
+    PainSound "chicken/pain"
+    DeathSound "chicken/death"
+    Player.JumpZ 1
+    Player.Viewheight 21
+    Player.ForwardMove 0.85, 0.9//1.22, 1.22
+    Player.SideMove 0.85, 0.9//1.22, 1.22
+    Player.SoundClass "Chicken"
+    Player.DisplayName "Chicken"
+    Player.MorphWeapon "Beak"
+    -PICKUP
+    States
+    {
+      Spawn:
+        CHKN A -1
+        Stop
+
+      See:
+        CHKN ABAB 3
+        Loop
+
+      Melee:
+      Missile:
+        CHKN C 12
+        Goto Spawn
+
+      Pain:
+        CHKN D 4 A_Feathers
+        CHKN C 4 A_Pain
+        Goto Spawn
+
+      Death:
+        CHKN E 6 A_Scream
+        CHKN F 6 A_Feathers
+        CHKN G 6
+        CHKN H 6 A_NoBlocking
+        CHKN IJK 6
+        CHKN L -1
+        Stop
+
+      Death.WolfenFlamethrower:
+        CHKN E 0 A_Scream
+        CHKN EEEEEEE 0 A_Feathers
+        CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
+        ACLO E -1
+        stop
+    }
+}
+
+actor CorvusClass : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }

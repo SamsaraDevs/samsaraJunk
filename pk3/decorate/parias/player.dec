@@ -1,0 +1,159 @@
+actor HexenPlayer : PlayerPawn
+{
+    Player.DisplayName "Parias"
+    Player.StartItem "Sapphire Wand", 1
+    Player.StartItem "Mace of Contrition", 1
+    Player.StartItem "HexenClass", 1
+    Player.StartItem "Clip", 50
+    Player.InvulnerabilityMode "Ghost"
+    Player.HealRadiusType "Health"
+    Player.Soundclass "HexenPlayer"
+    Player.JumpZ 10.75//Default is 9.75
+    Player.Viewheight 48
+    Player.Face "PRS"
+    BloodColor "Red"
+    RadiusDamageFactor 0.25
+    Player.ForwardMove 1.08, 1.2
+    Player.SideMove 1.125, 1.2 //Originally 1.475
+    DamageFactor "PoisonCloud", 1.75
+    DamageFactor "TimonsAxe", 0.75
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.1
+    DamageFactor "WMCBeam", 0.75
+    DamageFactor "WMCNade", 0.75
+    Player.ColorRange 240, 247
+    +NOSKIN
+    -DONTBLAST
+    -THRUSPECIES
+    Species "Player"
+    States
+    {
+      Spawn:
+        CLER A -1
+        Stop
+
+      See:
+        CLER ABCD 4
+        Loop
+
+      Pain:
+        CLER H 4
+        CLER H 4 A_Pain
+        Goto Spawn
+
+      Missile:
+      Melee:
+        CLER EFG 6
+        Goto Spawn
+
+      Death:
+        CLER I 6
+        CLER J 6 A_PlayerScream
+        CLER KL 6
+        CLER M 6 A_NoBlocking
+        CLER NOP 6
+        CLER Q -1
+        Stop
+
+      XDeath:
+        CLER R 5 A_PlayerScream
+        CLER S 5
+        CLER T 5 A_NoBlocking
+        CLER UVWXYZ 5
+        CLER [ -1
+        Stop
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        CLFR Z 5 A_FreezeDeath
+        CLFR Z 1 A_FreezeDeathChunks
+        Wait
+
+      Death.HexGreenFire:
+
+      Burn:
+        CBRN C 5 BRIGHT A_PlaySound("*burndeath")
+        CBRN D 4 BRIGHT
+        CBRN G 5 BRIGHT
+        CBRN H 4 BRIGHT A_PlayerScream
+        CBRN I 5 BRIGHT
+        CBRN J 4 BRIGHT
+        CBRN K 5 BRIGHT
+        CBRN L 4 BRIGHT
+        CBRN M 5 BRIGHT
+        CBRN N 4 BRIGHT
+        CBRN O 5 BRIGHT
+        CBRN P 4 BRIGHT
+        CBRN Q 5 BRIGHT
+        CBRN R 4 BRIGHT
+        CBRN S 5 BRIGHT A_NoBlocking
+        CBRN T 4 BRIGHT
+        CBRN U 5 BRIGHT
+        CBRN V 4 BRIGHT
+        ACLO E 35 A_CheckPlayerDone
+        Wait
+        ACLO E 8
+        Stop
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        CLER H 0 A_Stop
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        CLER H 3 A_SpawnItem("ZorchEffectSmall")
+        CLER H 3 A_SetTranslucent(0.9,0)
+        CLER H 0 A_PlayerScream
+        CLER H 3 A_SetTranslucent(0.8,0)
+        CLER H 0 A_NoBlocking
+        CLER H 3 A_SetTranslucent(0.7,0)
+        CLER H 3 A_SetTranslucent(0.6,0)
+        CLER H 3 A_SetTranslucent(0.5,0)
+        CLER H 3 A_SetTranslucent(0.4,0)
+        CLER H 3 A_SetTranslucent(0.3,0)
+        CLER H 3 A_SetTranslucent(0.2,0)
+        CLER H 3 A_SetTranslucent(0.1,0)
+        ACLO E 1 A_SetTranslucent(1,0)
+        ACLO E -1
+        stop
+
+      CoOpModeOn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
+        TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
+        CLER A 1
+        goto See
+
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto Death
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto XDeath
+
+      Death.DukeIce:
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
+        goto Ice
+    }
+}
+
+actor HexenClass : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }

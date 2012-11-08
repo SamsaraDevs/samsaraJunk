@@ -1,0 +1,232 @@
+actor WolfensteinChickenLeg : Stimpack
+{
+    Inventory.PickupMessage "Ate up a chicken leg for 10 Health."
+    Inventory.PickupSound "wolfen/chicken"
+    Scale 0.75
+    States
+    {
+      Spawn:
+        CHKL A -1
+        stop
+    }
+}
+
+actor DrinkableGibs : CustomInventory replaces Gibs
+{
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        POL5 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        POL5 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        POL5 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor DrinkableBrainStem : CustomInventory replaces BrainStem
+{
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        BRS1 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        BRS1 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        BRS1 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor DrinkableColonGibs : CustomInventory replaces ColonGibs
+{
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        POB1 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        POB1 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        POB1 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor DrinkableSmallBloodPool : CustomInventory replaces SmallBloodPool
+{
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        POB2 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        POB2 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        POB2 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor DrinkableHeartColumn : CustomInventory replaces HeartColumn
+{
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    Radius 16
+    Height 40
+    +SOLID
+    +DROPPED
+    States
+    {
+      Spawn:
+        COL5 AB 14
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        COL5 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        COL5 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        COL2 A 1
+        COL2 A 1 A_SpawnItemEx("ShortGreenColumn",38,0,-1)
+        COL2 A -1
+        stop
+    }
+}
+
+actor XOnAStick
+{
+    Radius 16
+    Height 64
+    +SOLID
+    States
+    {
+      Spawn:
+        GPOL A -1
+        Stop
+    }
+}
+
+actor DrinkableHeadOnAStick : CustomInventory replaces HeadOnAStick
+{
+    Radius 16
+    Height 64
+    +SOLID
+    +DROPPED
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        POL4 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        POL4 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        POL4 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        POL4 A 1
+        POL4 A 1 A_SpawnItemEx("XOnAStick",38,0,-1)
+        GPOL A -1
+        stop
+    }
+}
+
+actor DrinkableHeadsOnAStick : CustomInventory replaces HeadsOnAStick
+{
+    Radius 16
+    Height 64
+    +SOLID
+    +DROPPED
+    Inventory.PickupMessage "Drank up for 1 Health."
+    Inventory.PickupSound "wolfen/slurpie"
+    States
+    {
+      Spawn:
+        POL2 A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"WolfenCheck")
+        POL2 A 1
+        fail
+
+      WolfenCheck:
+        TNT1 A 0 A_JumpIfHealthLower(21,"DrinkUp")
+        POL2 A 1
+        fail
+
+      DrinkUp:
+        TNT1 A 0 A_GiveInventory("HealthBonus",1)
+        POL2 A 1
+        POL2 A 1 A_SpawnItemEx("XOnAStick",38,0,-1)
+        GPOL A -1
+        stop
+    }
+}

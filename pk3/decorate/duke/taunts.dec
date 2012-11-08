@@ -1,0 +1,197 @@
+actor DukeReady : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor DukeWaiting : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 15 }
+actor DukeTaunted : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor DukeTauntCooldown : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 5 }
+actor DukeBossSee : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor DukeBallgag : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+
+actor DukeBossKillTaunt : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/bosskill","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+
+actor DukeDMTaunt1 : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/mpkill","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+
+actor DukeDMTauntDuke : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/fragduke","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+
+actor DukeDMTauntDoomguy : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/mpkilldoom","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor DukeBossSightTaunt : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeClass",1,"ActuallyDuke")
+        stop
+
+      ActuallyDuke:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/bosssee","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor DukeKillTaunt : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/killtaunt","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+
+actor DukeBootTaunt : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/bootkill","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+
+actor DukeGibTaunt : CustomInventory
+{
+    -INVBAR
+    +INVENTORY.UNDROPPABLE
+    +INVENTORY.AUTOACTIVATE
+    Inventory.maxamount 2
+    States
+    {
+      Pickup:
+      Use:
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 20 A_JumpIfInventory("DukeBallgag",1,"UseStop")
+        TNT1 A 0 A_PlaySoundEx("duke/gibkill","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+
+      UseStop:
+        TNT1 A 15
+        stop
+    }
+}
+

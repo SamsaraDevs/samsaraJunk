@@ -1,0 +1,77 @@
+actor WolfExtraLife : Inventory//CustomInventory
+{
+    //tag "Extra Life"
+    Inventory.Icon WOLFLIFE
+    Inventory.Amount 1
+    Inventory.MaxAmount 9
+    +INVBAR
+    +HUBPOWER
+    +UNDROPPABLE
+    -INTERHUBSTRIP/*
+    States
+    {
+      Use:
+        TNT1 A 1 A_Print("You cannot use this here.")
+        fail
+    }*/
+}
+
+actor WolfLifeProtection : PowerProtection
+{
+    damagefactor "normal", 0.25
+    damagefactor "Pistol", 0.25
+    damagefactor "ZorchPistol", 0.25
+    damagefactor "TimonsAxe", 0.25
+    damagefactor "zorch", 0.25
+    damagefactor "fire", 0.25
+    damagefactor "ice", 0.25
+    damagefactor "slime", 0.25
+    damagefactor "bfg", 0.25
+    damagefactor "bfgspray", 0.25
+    damagefactor "disintegrate", 0.25
+    damagefactor "electric", 0.25
+    DamageFactor "BFG", 0.25
+    DamageFactor "BFGSpray", 0.25
+    DamageFactor "Poison", 0.25
+    DamageFactor "PoisonCloud", 0.25
+    DamageFactor "Mace", 0.25
+    DamageFactor "DragonClaw", 0.25
+    DamageFactor "WolfenFlamethrower", 0.25
+    DamageFactor "DukeDamage", 0.25
+    DamageFactor "DukeExplosive", 0.25
+    DamageFactor "MightyBoot", 0.25
+    DamageFactor "DukeIce", 0.25
+    
+    DamageFactor "DukePistol", 0.25
+    DamageFactor "MarathonPistol", 0.25
+    DamageFactor "Explosive", 0.25
+    DamageFactor "DoomPlasma", 0.25
+    DamageFactor "CorvusCrossbow", 0.25
+    DamageFactor "CorvusHellstaff", 0.25
+    DamageFactor "MarathonPlasma", 0.25
+    DamageFactor "BJSpear", 0.25
+    DamageFactor "DoomCacodemon", 0.25
+    DamageFactor "DoomHellNoble", 0.25
+    DamageFactor "DoomSpiderPlasma", 0.25
+    DamageFactor "DoomTheseGuysAreTheBest", 0.25
+    DamageFactor "HereNitrogolem", 0.25
+    DamageFactor "HereAxeGreen", 0.25
+    DamageFactor "HereAxeRed", 0.25
+    DamageFactor "Wizard", 0.25
+    DamageFactor "HereLichWind", 0.25
+    DamageFactor "HereDsparil", 0.25
+    DamageFactor "HexBishop", 0.25
+    DamageFactor "HexSlaughtaur", 0.25
+    DamageFactor "HexGreenFire", 0.25
+    DamageFactor "HexStalkerShot", 0.25
+    DamageFactor "HexHeresiarchPurple", 0.25
+    
+    powerup.color Grey 0.1
+}
+
+actor Salvate : ArtiTeleport
+{
+    +INVENTORY.AUTOACTIVATE
+    +INVENTORY.ALWAYSPICKUP
+}
+

@@ -1,0 +1,39 @@
+actor "Super Bootspork" : Weapon
+{
+    Weapon.Kickback 0
+    Weapon.SelectionOrder 2200
+    Weapon.SlotNumber 1
+    Weapon.SlotPriority 0
+    Inventory.PickUpSound "chex/weaponget"
+    Weapon.UpSound "chex/sawup"
+    Weapon.ReadySound "chex/sawidle"
+    Inventory.PickupMessage "You got a Super Bootspork! Find some milk!"
+    Obituary "%k thoroughly mixed %o with the Super Bootspork."
+    +WEAPON.MELEEWEAPON
+    +BLOODLESSIMPACT
+    +INVENTORY.UNDROPPABLE
+    DamageType "Zorch"
+    States
+    {
+      Ready:
+        SAWC CD 4 A_WeaponReady
+        loop
+
+      Deselect:
+        SAWC C 1 A_Lower
+        loop
+
+      Select:
+        SAWC C 1 A_Raise
+        loop
+
+      Fire:
+        SAWC AB 4 A_Saw("chex/sawfull","chex/sawhit",0,"ChexPuff")
+        SAWC B 0 A_ReFire
+        goto Ready
+
+      Spawn:
+        CSPR A -1
+        stop
+    }
+}

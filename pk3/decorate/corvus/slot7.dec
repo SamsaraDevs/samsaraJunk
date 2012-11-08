@@ -1,0 +1,156 @@
+/*actor PortTome : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +INVBAR
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTIPWBK"
+    Powerup.Type HereticTome
+}*/
+
+actor PortTome : CustomInventory
+{
+    //tag "Tome of Power"
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +INVBAR
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTIPWBK"
+    States
+    {
+      Use:
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"UseFail")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("PowerHereticTome",1)
+        TNT1 A 0 A_GiveInventory("PowerGreaterTome",1)
+        TNT1 A 0 A_GiveInventory("PowerTomeProtection",1)
+        stop
+
+      UseFail:
+        TNT1 A 1
+        fail
+    }
+}
+
+actor PortTomeCoOp : CustomInventory
+{
+    //tag "Tome of Power"
+    inventory.maxamount 1
+    inventory.usesound "heretic/itemuse"
+    +INVBAR
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTIPWBK"
+    States
+    {
+      Use:
+        TNT1 A 0 A_JumpIfInventory("TomeOfPowerCooldown",1,"UseFail")
+        TNT1 A 1
+        TNT1 A 0 A_GiveInventory("PowerHereticTome",1)
+        TNT1 A 0 A_GiveInventory("PowerGreaterTome",1)
+        TNT1 A 0 A_GiveInventory("PowerTomeProtection",1)
+        TNT1 A 0 ACS_ExecuteAlways(202)
+        TNT1 A 0 A_GiveInventory("TomeOfPowerCooldown",250)
+        fail
+
+      UseFail:
+        TNT1 A 1
+        TNT1 A 0 A_Print("The Tome of Power has not cooled down yet.")
+        fail
+    }
+}
+
+actor PowerHereticTome : Powerup//PowerWeaponLevel2
+{
+    Powerup.Duration -90
+    Inventory.Icon "SPINBK0"
+    Powerup.Color Red, 0.1
+}
+
+actor PowerHereticTomeCoOp : Powerup//PowerWeaponLevel2
+{
+    Powerup.Duration -120
+    Inventory.Icon "SPINBK0"
+    Powerup.Color Red, 0.1
+}
+
+actor PowerHereticTomeDM : PowerHereticTome
+{
+    Powerup.Duration -60
+}
+
+actor PowerGreaterTome : PowerDamage
+{
+    Powerup.Duration -90
+    DamageFactor "Pistol", 1.5
+    DamageFactor "Mace", 1.5
+    DamageFactor "Normal", 1.5
+    DamageFactor "DragonClaw", 1.5
+    DamageFactor "Fire", 1.5
+}
+
+actor PowerGreaterTomeDM : PowerGreaterTome
+{
+    Powerup.Duration -60
+}
+
+actor PowerTomeProtection : PowerProtection
+{
+    Powerup.Duration -90
+    damagefactor "normal", 0.55
+    damagefactor "Pistol", 0.55
+    damagefactor "ZorchPistol", 0.55
+    damagefactor "TimonsAxe", 0.55
+    damagefactor "zorch", 0.55
+    damagefactor "fire", 0.55
+    damagefactor "ice", 0.55
+    damagefactor "slime", 0.55
+    damagefactor "bfg", 0.55
+    damagefactor "bfgspray", 0.55
+    damagefactor "disintegrate", 0.55
+    damagefactor "electric", 0.55
+    DamageFactor "BFG", 0.55
+    DamageFactor "BFGSpray", 0.55
+    DamageFactor "Poison", 0.55
+    DamageFactor "PoisonCloud", 0.55
+    DamageFactor "Mace", 0.55
+    DamageFactor "DragonClaw", 0.55
+    DamageFactor "WolfenFlamethrower", 0.55
+    DamageFactor "DukeDamage", 0.55
+    DamageFactor "DukeExplosive", 0.55
+    DamageFactor "MightyBoot", 0.55
+    DamageFactor "DukeIce", 0.55
+    
+    DamageFactor "DukePistol", 0.55
+    DamageFactor "MarathonPistol", 0.55
+    DamageFactor "Explosive", 0.55
+    DamageFactor "DoomPlasma", 0.55
+    DamageFactor "CorvusCrossbow", 0.55
+    DamageFactor "CorvusHellstaff", 0.55
+    DamageFactor "MarathonPlasma", 0.55
+    DamageFactor "BJSpear", 0.55
+    DamageFactor "DoomCacodemon", 0.55
+    DamageFactor "DoomHellNoble", 0.55
+    DamageFactor "DoomSpiderPlasma", 0.55
+    DamageFactor "DoomTheseGuysAreTheBest", 0.55
+    DamageFactor "HereNitrogolem", 0.55
+    DamageFactor "HereAxeGreen", 0.55
+    DamageFactor "HereAxeRed", 0.55
+    DamageFactor "Wizard", 0.55
+    DamageFactor "HereLichWind", 0.55
+    DamageFactor "HereDsparil", 0.55
+    DamageFactor "HexBishop", 0.55
+    DamageFactor "HexSlaughtaur", 0.55
+    DamageFactor "HexGreenFire", 0.55
+    DamageFactor "HexStalkerShot", 0.55
+    DamageFactor "HexHeresiarchPurple", 0.55
+}
+
+actor PowerTomeProtectionDM : PowerTomeProtection
+{
+    Powerup.Duration -60
+}
+
+actor TomeOfPowerCooldown : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 360 }

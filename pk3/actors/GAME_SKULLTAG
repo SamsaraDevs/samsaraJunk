@@ -10,6 +10,7 @@ ACTOR RedArmor : BasicArmorPickup 5040 // Now gold!
     Inventory.Icon "ARM3A0"
     RenderStyle Add
     Alpha 0.95
+    +FLOATBOB
     Inventory.Pickupmessage "Picked up 250 explosive/fire-tempered armor."
     Inventory.PickupSound "armor3get"
     DamageFactor "Fire", 0.125

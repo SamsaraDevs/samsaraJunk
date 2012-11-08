@@ -1,0 +1,65 @@
+actor "Large Zorcher" : Weapon
+{
+    Weapon.SelectionOrder 1300
+    Weapon.SlotNumber 2
+    Inventory.PickUpSound "chex/weaponget"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 8
+    Weapon.AmmoType "AmmoShell"
+    +BLOODLESSIMPACT
+    +PUFFONACTORS
+    //+AMMO_OPTIONAL
+    +INVENTORY.UNDROPPABLE
+    DamageType "Zorch"
+    Inventory.PickupMessage "You got the Large Zorcher!"
+    Obituary "%k splayed %o with zorches all over."
+    States
+    {
+      Ready:
+        SHTC A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        SHTC A 1 A_Lower
+        Loop
+
+      Select:
+        SHTC A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        SHTC A 3
+        SHTC A 0 A_FireBullets (4, 0, 7, 5, "ChexPuff")
+        SHTC A 0 A_PlayWeaponSound ("chex/shotgf")
+        SHTC A 6 A_GunFlash // 7
+        SHTC BC 4 // 5
+        SHTC D 4 // 4
+        SHTC CB 4 // 5
+        SHTC A 3 // 3
+        SHTC A 5 A_ReFire // 7
+        Goto Ready
+
+      CoopFire:
+        SHTC A 3
+        SHTC A 0 A_FireCustomMissile("ChexBullet",random(-4,4),1,0,1)
+        SHTC AAAAAA 0 A_FireCustomMissile("ChexBullet",random(-4,4),0,0,1)
+        SHTC A 0 A_PlayWeaponSound ("chex/shotgf")
+        SHTC A 6 A_GunFlash // 7
+        SHTC BC 4 // 5
+        SHTC D 4 // 4
+        SHTC CB 4 // 5
+        SHTC A 3 // 3
+        SHTC A 5 A_ReFire // 7
+        Goto Ready
+
+      Flash:
+        CSHT A 3 Bright A_Light1
+        CSHT B 3 Bright A_Light2
+        Goto LightDone
+
+      Spawn:
+        SHOC A -1
+        Stop
+    }
+}

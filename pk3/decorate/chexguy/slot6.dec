@@ -1,0 +1,99 @@
+actor "Phasing Zorcher" : Weapon
+{
+    Weapon.SelectionOrder 100
+    Weapon.SlotNumber 6
+    Inventory.PickUpSound "chex/weaponget"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 40
+    Weapon.AmmoType "Cell"
+    +INVENTORY.UNDROPPABLE
+    Inventory.PickupMessage "You got the Phasing Zorcher!"
+    States
+    {
+      Ready:
+        PLSC A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        PLSC A 1 A_Lower
+        Loop
+
+      Select:
+        PLSC A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        PLSC A 0 A_GunFlash
+        TNT1 A 0 A_Jump(256,"Fire1","Fire2")
+
+      Fire1:
+        CPLS A 2 BRIGHT A_FireCustomMissile("ChexPlasma")
+        PLSC A 1
+        PLSC B 20 A_ReFire
+        Goto Ready
+
+      Fire2:
+        CPLS B 2 BRIGHT A_FireCustomMissile("ChexPlasma")
+        PLSC A 1
+        PLSC B 20 A_ReFire
+        Goto Ready
+
+      CoopFire:
+        PLSC A 0 A_GunFlash
+        TNT1 A 0 A_Jump(256,"CoopFire1","CoopFire2")
+
+      CoopFire1:
+        CPLS A 2 BRIGHT A_FireCustomMissile("ChexPlasma2")
+        PLSC A 1
+        PLSC B 20 A_ReFire
+        Goto Ready
+
+      CoopFire2:
+        CPLS B 2 BRIGHT A_FireCustomMissile("ChexPlasma2")
+        PLSC A 1
+        PLSC B 20 A_ReFire
+        Goto Ready
+
+      Flash:
+        TNT1 A 3 A_Light1
+        //CPLS A 4 Bright A_Light1
+        //CPLS B 4 Bright A_Light1
+        Goto LightDone
+
+      Spawn:
+        PLAC A -1
+        Stop
+    }
+}
+
+actor ChexPlasma
+{
+    Radius 13
+    Height 8
+    Speed 25
+    Damage (random(5,30))
+    Projectile
+    +RANDOMIZE
+    +BLOODLESSIMPACT
+    +BRIGHT
+    RenderStyle Add
+    Alpha 0.75
+    SeeSound "chex/plasmaf"
+    DeathSound "chex/plasmax"
+    Obituary "%k phased %o off of this planet."
+    DamageType "Zorch"
+    Decal ChexPlasmaScorch
+    States
+    {
+      Spawn:
+        CLSS AB 6 bright
+        loop
+
+      Death:
+        CLSE ABCDE 4 bright
+        stop
+    }
+}
+
+actor ChexPlasma2 : ChexPlasma { +THRUSPECIES Species "Player" }

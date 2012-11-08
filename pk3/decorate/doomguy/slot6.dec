@@ -1,0 +1,101 @@
+actor "Plasma Rifle" : PlasmaRifle
+{
+    Weapon.SlotNumber 6
+    +INVENTORY.UNDROPPABLE
+    States
+    {
+      Ready:
+        DPLS A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        DPLS A 1 A_Lower
+        Loop
+
+      Select:
+        DPLS A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        DPLS A 0 A_GunFlash
+        TNT1 A 0 A_Jump(258,"Fire1","Fire2")
+
+      Fire1:
+        DPLF A 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS DEF 1
+        DPLS GF 3
+        DPLS EDCBA 2
+        Goto Ready
+
+      Fire2:
+        DPLF B 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS DEF 1
+        DPLS GF 3
+        DPLS EDCBA 2
+        Goto Ready
+
+      CoopFire:
+        DPLS A 0 A_GunFlash
+        TNT1 A 0 A_Jump(258,"CoopFire1","CoopFire2")
+
+      CoopFire1:
+        DPLF A 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS DEF 1 A_CheckReload
+        DPLS GF 3
+        DPLS EDCBA 2
+        goto Ready
+
+      CoopFire2:
+        DPLF B 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        DPLS DEF 1
+        DPLS GF 3
+        DPLS EDCBA 2
+        Goto Ready
+
+      VanillaCooldown:
+        DPLS H 20
+        goto Ready
+
+      Flash:
+        TNT1 A 3 A_Light1
+        goto Lightdone
+
+      Spawn:
+        WPLS A -1
+        Stop
+    }
+}
+
+actor DoomPlasmaBall : PlasmaBall
+{
+    Decal DoomPlasmaScorch
+    SeeSound "doomguy/plasmaf"
+    DeathSound "doomguy/plasmax"
+    Obituary "%k melted %o with the Plasma Rifle."
+    DamageType "DoomPlasma"
+    States
+    {
+      Spawn:
+        DPLM AB 6 bright
+        loop
+
+      Death:
+        DPLE ABCDE 4 bright
+        stop
+    }
+}
+
+actor DoomPlasmaBall2 : DoomPlasmaBall { +THRUSPECIES Species "Player" }

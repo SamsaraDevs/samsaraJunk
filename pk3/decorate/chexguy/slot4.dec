@@ -1,0 +1,85 @@
+actor "Rapid Zorcher" : Weapon
+{
+    Weapon.SelectionOrder 700
+    Weapon.SlotNumber 4
+    Inventory.PickUpSound "chex/weaponget"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 20
+    Weapon.AmmoType "Clip"
+    +BLOODLESSIMPACT
+    +PUFFONACTORS
+    //+AMMO_OPTIONAL
+    +INVENTORY.UNDROPPABLE
+    DamageType "Zorch"
+    Inventory.PickupMessage "You got the Rapid Zorcher!"
+    Obituary "%k zorched %o full of neat holes."
+    States
+    {
+      Ready:
+        CHGC A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        CHGC A 1 A_Lower
+        Loop
+
+      Select:
+        CHGC A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        CHGC A 0 A_FireBullets (4, 0, 1, 5, "ChexPuff")
+        CHGC A 0 A_PlayWeaponSound("chex/pistol")
+        CHGC A 4 A_GunFlash
+        CHGC B 0 A_FireBullets (4, 0, 1, 5, "ChexPuff")
+        CHGC B 0 A_PlayWeaponSound("chex/pistol")
+        CHGC B 4
+        CHGC B 1 A_ReFire
+        goto Ready
+
+      CoopFire:
+        CHGC A 0 A_FireCustomMissile("ChexBullet",0,1,0,1)
+        CHGC A 0 A_PlayWeaponSound("chex/pistol")
+        CHGC A 4 A_GunFlash
+        CHGC B 0 A_FireCustomMissile("ChexBullet",0,1,0,1)
+        CHGC B 0 A_PlayWeaponSound("chex/pistol")
+        CHGC B 4
+        CHGC B 1 A_ReFire
+        goto Ready
+
+      Hold:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
+        CHGC A 0 A_FireBullets (4, 0, -1, 5, "ChexPuff")
+        CHGC A 0 A_PlayWeaponSound("chex/pistol")
+        CHGC A 4 A_GunFlash
+        CHGC B 0 A_FireBullets (4, 0, -1, 5, "ChexPuff")
+        CHGC B 0 A_PlayWeaponSound("chex/pistol")
+        CHGC B 4
+        CHGC B 1 A_ReFire
+        CHGC B 0 A_ClearRefire
+        goto Ready
+
+      CoopHold:
+        CHGC A 0 A_FireCustomMissile("ChexBullet",random(-4,4),1,0,1)
+        CHGC A 0 A_PlayWeaponSound("chex/pistol")
+        CHGC A 4 A_GunFlash
+        CHGC B 0 A_FireCustomMissile("ChexBullet",random(-4,4),1,0,1)
+        CHGC B 0 A_PlayWeaponSound("chex/pistol")
+        CHGC B 4
+        CHGC B 1 A_ReFire
+        CHGC B 0 A_ClearRefire
+        goto Ready
+
+      Flash:
+        CCHG A 4 bright A_Light1
+        CCHG B 5 bright A_Light2
+        CCHG A 0 bright A_Light0
+        stop
+
+      Spawn:
+        MGUC A -1
+        Stop
+    }
+}
+

@@ -1,0 +1,129 @@
+actor "Phoenix Rod" : Weapon
+{
+    Weapon.SelectionOrder 2600
+    Weapon.Kickback 150
+    Weapon.YAdjust 16
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 2
+    Weapon.SlotNumber 5
+    //+AMMO_OPTIONAL
+    +INVENTORY.UNDROPPABLE
+    Weapon.AmmoType "RocketAmmo"
+    Inventory.PickUpSound "heretic/weaponget"
+    Inventory.PickupMessage "You got the Phoenix Rod!"
+    Obituary "%k gave %o the bird."
+    
+    States
+    {
+      Spawn:
+        WPHX A -1
+        Stop
+
+      Ready:
+        PHNX A 1 A_WeaponReady
+        Loop
+
+      Deselect:
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        PHNX A 1 A_Lower
+        Loop
+
+      Select:
+        PHNX A 1 A_Raise
+        Loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        PHNX B 5 BRIGHT
+        PHNX C 0 A_Recoil(4)
+        PHNX C 0 A_FireCustomMissile("PhoenixShot")
+        PHNX C 7 BRIGHT
+        PHNX DB 4
+        PHNX B 0 A_Refire
+        Goto Ready
+
+      CoopFire:
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
+        PHNX B 5 BRIGHT
+        PHNX C 0 A_Recoil(4)
+        PHNX C 0 A_FireCustomMissile("PhoenixShot2")
+        PHNX C 7 BRIGHT
+        PHNX DB 4
+        PHNX B 0 A_Refire
+        Goto Ready
+
+      FireTomed:
+        PHNX B 3
+
+      Hold:
+        PHNX A 0 A_JumpIfInventory("PowerHereticTome",1,"HoldTomed")
+        PHNX A 0 A_ClearRefire
+        goto Fire
+
+      HoldTomed:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHoldTomed")
+        TNT1 A 0 A_JumpIfInventory("PhoenixRodCount",280,"Powerdown")
+        PHNX C 0 A_JumpIfInventory("PhoenixRodCount",1,1)
+        PHNX C 0 A_PlaySoundEx("weapons/phoenixpowshoot","weapon",1,0)
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("PhoenixRodCount",1)
+        PHNX C 0 A_FireCustomMissile("PhoenixFX2",random(-2,2),0,0,0,2,2)//,26,2,2)
+        PHNX C 1 BRIGHT //A_FirePhoenixPL2
+        PHNX B 4 BRIGHT A_ReFire
+        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
+        TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        goto Ready
+
+      CoopHoldTomed:
+        TNT1 A 0 A_JumpIfInventory("PhoenixRodCount",280,"Powerdown")
+        PHNX C 0 A_JumpIfInventory("PhoenixRodCount",1,1)
+        PHNX C 0 A_PlaySoundEx("weapons/phoenixpowshoot","weapon",1,0)
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("PhoenixRodCount",1)
+        PHNX C 0 A_FireCustomMissile("PhoenixFX2A",random(-2,2),0,0,0,2,2)//,26,2,2)
+        PHNX C 1 BRIGHT //A_FirePhoenixPL2
+        PHNX B 4 BRIGHT A_ReFire
+        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
+        TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        goto Ready
+
+      Powerdown:
+        TNT1 A 0 A_StopSoundEx("Weapon")
+        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
+        TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
+        PHNX B 4 A_Refire
+        TNT1 A 0 A_ClearRefire
+        Goto Ready
+    }
+}
+
+actor PhoenixRodCount : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 280 }
+
+actor PhoenixShot : PhoenixFX1
+{
+    -SPECIALFIREDAMAGE
+    +FIREDAMAGE
+    Decal Scorch
+    Obituary "%k gave %o the bird."
+}
+
+actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }
+actor PhoenixFX2A : PhoenixFX2
+{
+    +THRUSPECIES
+    Species "Player"
+    DECAL PhoenixThrowerScorch
+}
+
+actor PhoenixPuff2 : PhoenixPuff replaces PhoenixPuff
+{
+    DECAL PhoenixThrowerScorch
+    +CLIENTSIDEONLY
+}
