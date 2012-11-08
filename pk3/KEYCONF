@@ -9,14 +9,12 @@ addplayerclass "MarathonPlayer"
 
 addkeysection "Samsara" samsarakeys
 
-addmenukey "Doomguy: Toggle Animations" samsara_cmd_vanilladoomanims
-addmenukey "BJ: Toggle Retro Movement" samsara_cmd_bjwalk
-addmenukey "Duke: Toggle Ballgag" samsara_cmd_dukestfu
-//addmenukey "S.O.: Toggle Firing Modes" samsara_cmd_marathonshootan
-addmenukey "Global: Toggle Weapon Bar" samsara_cmd_wephud
-addmenukey "Global: Toggle Pickup Sprites" samsara_cmd_weppickups
-//addmenukey "Global: Toggle Alternate Messages" samsara_cmd_moremessages
-addmenukey "Global: Character Info" samsara_techon
+addmenukey "Doomguy: Animations" samsara_cmd_vanilladoomanims
+addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
+addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
+addmenukey "Global: Weapon Bar" samsara_cmd_wephud
+addmenukey "Global: Pickup GFX" samsara_cmd_weppickups
+addmenukey "Global: Tipboxes" samsara_techon
 
 alias samsara_cmd_vanilladoomanims "eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom; showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
 alias samsara_cmd_bjwalk "eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove; showmode \"Wolfenstein movement\" $samsara_cl_wolfmove"
