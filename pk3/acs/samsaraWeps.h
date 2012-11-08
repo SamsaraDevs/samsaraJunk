@@ -1,24 +1,40 @@
-int ClassUniques[CLASSCOUNT][CHOICECOUNT] = 
+#define CHOICECOUNT         5
+#define CHOICECOUNT_U       4
+
+#define S_WEP               0
+#define S_AMMO1             1
+#define S_AMMO2             2
+#define S_CHECKITEM         3
+#define S_CHECKFAILITEM     4
+
+#define U_UNIQUE1           0
+#define U_AMMO1             1
+#define U_UNIQUE2           2
+#define U_AMMO2             3
+
+int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {"DoomguyBerserker",    "", "", "", ""},
-    {"ChexSoulsphere",      "", "", "", ""},
-    {"ArtiEgg2",            "", "", "", ""},
-    {"WolfExtraLife",       "", "", "", ""},
-    {"PortMysticAmbit",     "", "", "", ""},
-    {"DukeJetpack",         "DukeJetpackFuel", "", "", ""},
-    {" Alien Weapon ",      "", "", "", ""},
+    {"DoomguyBerserker",    "",                 "", ""},
+    {"ChexSoulsphere",      "",                 "", ""},
+    {"ArtiEgg2",            "",                 "", ""},
+    {"WolfExtraLife",       "",                 "", ""},
+    {"PortMysticAmbit",     "",                 "", ""},
+    {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
+    {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
 };
 
-int UniqueMaxes[CLASSCOUNT][3] = 
+int UniqueMaxes[CLASSCOUNT][4] = 
 {
-    {0,     0,      0},
-    {0,     0,      0},
-    {16,    0,      0},
-    {9,     0,      0},
-    {16,    0,      0},
-    {0,     100,    0},
-    {0,     50,     50},
+    {0,     0,      0,  0},
+    {0,     0,      0,  0},
+    {16,    0,      0,  0},
+    {9,     0,      0,  0},
+    {16,    0,      0,  0},
+    {0,     100,    0,  0},
+    {0,     50,     0,  50},
 };
+
+int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON};
 
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {

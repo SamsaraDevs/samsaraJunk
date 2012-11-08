@@ -22,11 +22,9 @@
 
 #define SAMSARA_CL_VERSION          26
 
-#define LMSMODES            6
-
 #define CLASSCOUNT          7
 #define SLOTCOUNT           9
-#define CHOICECOUNT         5
+#define LMSMODES            6
 
 #define CLASS_DOOMGUY   0
 #define CLASS_CHEX      1
@@ -35,12 +33,6 @@
 #define CLASS_HEXEN     4
 #define CLASS_DUKE      5
 #define CLASS_MARATHON  6
-
-#define S_WEP               0
-#define S_AMMO1             1
-#define S_AMMO2             2
-#define S_CHECKITEM         3
-#define S_CHECKFAILITEM     4
 
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
@@ -77,15 +69,15 @@ int ClassItems[CLASSCOUNT] =
     "MarathonClass",
 };
 
-int PickupStates[CLASSCOUNT][4] = 
+int PickupStates[CLASSCOUNT][5] = 
 {
-    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial"},
-    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial"},
-    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial"},
-    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial"},
-    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial"},
-    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial"},
-    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial"},
+    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomSpecial2"},
+    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexSpecial2"},
+    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticSpecial2"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfSpecial2"},
+    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
+    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};

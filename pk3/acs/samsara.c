@@ -28,56 +28,55 @@ global int 0:CommandBitchingDone;
 script SAMSARA_OPEN open
 {
     IsServer = 1;
-
+    
     if (CommandBitchingDone == 0)
     {
         if (isSinglePlayer())
         {
             HudMessage(s:HELPSTR;
-                    HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
+            HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
             HudMessage(s:"See the console for \caJAZZ\c-.";
-                    HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
+            HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
         }
         else
         {
             Log(s:HELPSTR);
         }
-
+        
         CommandBitchingDone = 1;
     }
-
+    
     while (1)
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
-
+        
         if (!GetCVar("samsara_banjetpack"))
         {   ConsoleCommand("set samsara_banjetpack 0");
-            ConsoleCommand("archivecvar samsara_banjetpack"); }
+        ConsoleCommand("archivecvar samsara_banjetpack"); }
         
         if (!GetCVar("samsara_lmslife"))
         {   ConsoleCommand("set samsara_lmslife 0");
-            ConsoleCommand("archivecvar samsara_lmslife"); }
+        ConsoleCommand("archivecvar samsara_lmslife"); }
         
         if (!GetCVar("samsara_lmsult"))
         {   ConsoleCommand("set samsara_lmsult 0");
-            ConsoleCommand("archivecvar samsara_lmsult"); }
+        ConsoleCommand("archivecvar samsara_lmsult"); }
         
         if (!GetCVar("samsara_sogravity"))
         {   ConsoleCommand("set samsara_sogravity 0");
-            ConsoleCommand("archivecvar samsara_sogravity"); }
+        ConsoleCommand("archivecvar samsara_sogravity"); }
         
         if (!GetCVar("samsara_permault"))
         {   ConsoleCommand("set samsara_permault 0");
-            ConsoleCommand("archivecvar samsara_permault"); }
+        ConsoleCommand("archivecvar samsara_permault"); }
         
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
-            ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
-
+        ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
+        
         Delay(1);
     }
 }
-
 
 script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
 script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
@@ -85,29 +84,29 @@ script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
-
+    
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
-
+    
     if (isLMS()) { ApplyLMS(); }
-
+    
     if (isSinglePlayer())
     {
         SamsaraWepType = samsaraClassNum()+1;
     }
-
+    
     SetInventory("CoopModeOn", isCoop());
-
+    
     switch (samsaraClassNum())
     {
       case CLASS_DUKE:
         if (!respawning) { GiveInventory("DukeReady", 1); }
         break;
-
+        
       case CLASS_MARATHON:
         if (isInvasion()) { GiveInventory("InvasionDualShottyCheck", 1); }
         break;
     }
-
+    
     while (1)
     {
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
@@ -127,13 +126,13 @@ script SAMSARA_SPAWN (int respawning)
         
         if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
         else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
-
+        
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
-
+        
         TakeInventory("Mace", 1);
         TakeInventory("MacePowered", 1);
-
+        
         if (CheckInventory("MarathonClass"))
         {
             if (GetCVar("samsara_sogravity"))
@@ -147,9 +146,9 @@ script SAMSARA_SPAWN (int respawning)
                 SetActorProperty(0, APROP_JumpZ,   4.0);
             }
         }
-
+        
         Delay(1);
-
+        
         if (isDead(0)) { break; }
     }
 }
@@ -165,7 +164,7 @@ script SAMSARA_WOLFMOVE enter
     int velx, vely;
     int moving;
     int fired;
-
+    
     
     while (PlayerInGame(pln))
     {
@@ -175,7 +174,7 @@ script SAMSARA_WOLFMOVE enter
             Delay(1);
             continue;
         }
-
+        
         if (GetActorProperty(0, APROP_Health) < 1)
         {
             velx = 0;
@@ -222,7 +221,7 @@ script SAMSARA_PUKE (int values, int pln) net
     {
         PrintBold(s:"Player \"", n:pln+1, s:"\c-\" puked script ", d:SAMSARA_PUKE, s:" (", d:values, s:", ", d:pln, s:")");
     }
-
+    
     array_wolfmove[pln]     = values & 1;
     array_vanillaAnim[pln]  = values & 2;
     array_ballgag[pln]      = values & 4;
@@ -234,22 +233,21 @@ script SAMSARA_OPEN_CLIENT open clientside
 {
     int i;
     if (!DEBUG) { terminate; }
-
+    
     SetHudSize(1280, 1024, 1);
     PrintBold(s:"OPEN CLIENTSIDE running now");
-
+    
     while (1)
     {
         for (i = 0; i < PLAYERMAX; i++)
         {
             HudMessageBold(s:"Cooldown (\cd", d:i, s:"\c-): \ck", d:DukeQuoteCooldown[i];
-                        HUDMSG_FADEOUT, 8271+i, CR_LIGHTBLUE, 40.1, 20.0 + (8.0 * i), 2.0, 0.5);
+            HUDMSG_FADEOUT, 8271+i, CR_LIGHTBLUE, 40.1, 20.0 + (8.0 * i), 2.0, 0.5);
         }
-
+        
         Delay(1);
     }
 }
-
 
 script SAMSARA_ENTER_CLIENT enter clientside
 {
@@ -257,65 +255,65 @@ script SAMSARA_ENTER_CLIENT enter clientside
     int class, oClass;
     int pln = PlayerNumber();
     int i, j;
-
+    
     // Comment out these lines for zdoom
     int cpln = ConsolePlayerNumber();
     if (cpln != pln) { terminate; }
-
+    
     execInt = 0; oExecInt = 0;
     
     if (GetCVar("samsare_cl_exists") != SAMSARA_CL_VERSION)
     {
         ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
         ConsoleCommand("archivecvar samsara_cl_exists");
-
+        
         if (!GetCVar("samsara_cl_wolfmove"))
         {   ConsoleCommand("set samsara_cl_wolfmove 0");
-            ConsoleCommand("archivecvar samsara_cl_wolfmove"); }
+        ConsoleCommand("archivecvar samsara_cl_wolfmove"); }
         
         if (!GetCVar("samsara_cl_vanilladoom"))
         {   ConsoleCommand("set samsara_cl_vanilladoom 0");
-            ConsoleCommand("archivecvar samsara_cl_vanilladoom"); }
+        ConsoleCommand("archivecvar samsara_cl_vanilladoom"); }
         
         if (!GetCVar("samsara_cl_weaponhud"))
         {   ConsoleCommand("set samsara_cl_weaponhud 1");
-            ConsoleCommand("archivecvar samsara_cl_weaponhud"); }
+        ConsoleCommand("archivecvar samsara_cl_weaponhud"); }
         
         if (!GetCVar("samsara_cl_ballgag"))
         {   ConsoleCommand("set samsara_cl_ballgag 0");
-            ConsoleCommand("archivecvar samsara_cl_ballgag"); }
+        ConsoleCommand("archivecvar samsara_cl_ballgag"); }
         
         if (!GetCVar("samsara_cl_moremessages"))
         {   ConsoleCommand("set samsara_cl_moremessages 0");
-            ConsoleCommand("archivecvar samsara_cl_moremessages"); }
+        ConsoleCommand("archivecvar samsara_cl_moremessages"); }
         
         if (!GetCVar("samsara_cl_pickupmode"))
         {   ConsoleCommand("set samsara_cl_pickupmode 1");
-            ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
+        ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
     }
-
+    
     class = samsaraClassNum() + 1;
-
+    
     DukeQuoteCooldown[pln] = 0; 
-
+    
     while (PlayerInGame(pln))
     {
         oClass = class;
         class  = samsaraClassNum();
         DukeQuoteCooldown[pln] = max(0, DukeQuoteCooldown[pln]-1); 
-
+        
         SamsaraClientClass = class+1;
-
+        
         if (oClass != class) { SamsaraItemFlash = Timer(); }
-
+        
         for (i = 0; i < SLOTCOUNT; i++)
         {
             j = SamsaraClientWeps[i];
             SamsaraClientWeps[i] = HasClassWeapon(class, i) || CheckInventory(ClassWeapons[class][i][S_CHECKFAILITEM]);
-
+            
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
-
+        
         if (isSinglePlayer())
         {
             array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
@@ -328,7 +326,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
         {
             oExecInt = execInt;
             execInt = SamsaraClientVars();
-
+            
             if (execInt != oExecInt)
             {
                 execStr = StrParam(s:"puke -", d:SAMSARA_PUKE, s:" ", d:execInt, s:" ", d:pln);
@@ -336,7 +334,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
                 ConsoleCommand(execStr);
             }
         }
-
+        
         Delay(1);
     }
 }
@@ -346,7 +344,7 @@ script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
     // Comment out these lines for zdoom
     int cpln = ConsolePlayerNumber();
     if (cpln != pln) { terminate; }
-
+    
     SamsaraClientClass  = 0;
     SamsaraItemFlash    = Timer();
 }
@@ -358,7 +356,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int oldslot = slot;
     slot = itemToSlot(slot);
     int hasSlot = SamsaraClientWeps[slot];
-
+    
     //PrintBold(s:"Has weapon \"", s:ClassWeapons[toClass][slot][S_WEP], s:"\": ", d:hasSlot);
     
     if (displaymode != 0)
@@ -367,14 +365,14 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         {
             Spawn("SamsaraChangeFlash", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
-
+        
         if (toClass == -1)
         {
             SetActorState(0, "NoGuy");
             terminate;
         }
     }
-
+    
     if (slot == -1)
     {
         switch (displaymode)
@@ -382,7 +380,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
           case 0:
             SetActorState(0, "NoGuy");
             break;
-
+            
           case 1:
             SetActorState(0, PickupStates[toClass][3]);
             break;
@@ -391,7 +389,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             SetActorState(0, PickupStates[toClass][0]);
             break;
         }
-
+        
         terminate;
     }
     
@@ -400,13 +398,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
       case 0:
         SetActorState(0, "NoGuy");
         break;
-
+        
       case 1:
         if ((SamsaraClientWepFlashes[slot] >= (Timer() - 35)) && (Timer() >= 35))
         {
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
-
+        
         if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
         else         { SetActorState(0, PickupStates[toClass][2]); }
         break;
@@ -420,91 +418,91 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
 script SAMSARA_DECORATE (int choice)
 {
     int result;
-
+    
     switch (choice)
     {
       case 1:
         result = GetActorProperty(0, APROP_Dropped);
         break;
-      
+        
       case 2:
         if (CheckInventory("WolfenMovement") == 1) { SetActorState(0, "Spawn"); }
         break;
-
+        
       case 3:
         result = !(GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay"));
         break;
-
+        
       case 4:
         Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
         result = isInvasion() || !(isCoop() || isSinglePlayer());
-
+        
         Log(d:result);
         break;
     }
-
+    
     SetResultValue(result);
 }
 
 /*
- *      WARNING
- *  This script is over 20 variables. Check here first for segfaults.
- *  Also, keep an eye on this script for potential desync issues.
- */
+*      WARNING
+*  This script is over 20 variables. Check here first for segfaults.
+*  Also, keep an eye on this script for potential desync issues.
+*/
 
 script SAMSARA_GIVEWEAPON (int slot, int dropped)
 {
     slot = itemToSlot(slot);
-
+    
     if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
-
+    
     int weaponStay = !!GetCVar("sv_weaponstay");
     int weaponGet  = 0;
     int pclass = samsaraClassNum();
     int hasWep = HasClassWeapon(pclass, slot);
-
+    
     if (slot == SLOTCOUNT-1) { weaponStay &= !!GetCVar("samsara_permault"); }
-
+    
     int a1cnt  = 0, a2cnt = 0;
     int a1max  = 0, a2max = 0;
     int a1max2 = 0, a2max2 = 0;
     int a1Full = 0, a2Full = 0;
     int a1diff = 0, a2diff = 0;
-
+    
     int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
     int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
-
+    
     if (!wepbool || CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]))
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
     }
-
-
+    
+    
     if (a1bool)
     {
         a1cnt   = CheckInventory(ammo1);
         a1max   = GetAmmoCapacity(ammo1);
         a1max2  = a1max * 4; // ya never know
     }
-
+    
     if (a2bool)
     {
         a2cnt   = CheckInventory(ammo2);
         a2max   = GetAmmoCapacity(ammo2);
         a2max2  = a1max * 4;
     }
-
+    
     if (a1Bool) { a1Full = (CheckInventory(ammo1) == a1max); }
     if (a2Bool) { a2Full = (CheckInventory(ammo2) == a2max); }
-
+    
     if (dropped && IsServer)
     {
         if (a1bool) { SetAmmoCapacity(ammo1, a1max2); }
         if (a2bool) { SetAmmoCapacity(ammo2, a2max2); }
     }
-
+    
     if (!hasWep) { weaponGet = 1; }      // do we even have this?
     else if (!weaponStay || dropped)     // does this not stay on the ground?
     {
@@ -513,16 +511,16 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
             weaponGet = 1;
         }
     }
-
+    
     if (weaponGet && IsServer)
     {
         GiveClassWeapon(pclass, slot, 3);
-
+        
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
         ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
     }
-
+    
     if (dropped && IsServer)
     {
         TakeInventory(ammo1, (CheckInventory(ammo1) - a1cnt) / 2);
@@ -530,7 +528,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
         if (a1bool) { SetAmmoCapacity(ammo1, a1max); }
         if (a2bool) { SetAmmoCapacity(ammo2, a2max); }
     }
-
+    
     if (IsServer)
     {
         TakeInventory(ammo1, CheckInventory(ammo1) - a1max);
@@ -540,46 +538,62 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
 }
 
-script SAMSARA_GIVEUNIQUE (void)
+script SAMSARA_GIVEUNIQUE (int alt)
 {
     if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
-
+    
     int uniqueGet  = 0;
     int pclass = samsaraClassNum();
-
-    int a1cnt  = 0, a2cnt = 0;
-    int a1max  = 0, a2max = 0;
-    int a1Full = 0, a2Full = 0;
+    
+    int ammo, abool;
+    int acnt  = 0;
+    int amax  = 0;
+    int umax  = 0;
+    int aFull = 0;
     int hasWep;
-
-    int unique  = ClassUniques[pclass][S_WEP],    wepbool = !!StrLen(unique); 
-    int ammo1   = ClassUniques[pclass][S_AMMO1],  a1bool  = !!StrLen(ammo1);
-    int ammo2   = ClassUniques[pclass][S_AMMO2],  a2bool  = !!StrLen(ammo2);
-
-    if (!wepbool || CheckInventory(ClassUniques[pclass][S_CHECKFAILITEM]))
+    int unique, unbool;
+    
+    if (alt)
     {
+        unique = ClassUniques[pclass][U_UNIQUE2];
+        ammo   = ClassUniques[pclass][U_AMMO2];
+        umax   = UniqueMaxes[pclass][U_UNIQUE2];
+        amax   = UniqueMaxes[pclass][U_AMMO2];
+    }
+    else
+    {
+        unique = ClassUniques[pclass][U_UNIQUE1];
+        ammo   = ClassUniques[pclass][U_AMMO1];
+        umax   = UniqueMaxes[pclass][U_UNIQUE1];
+        amax   = UniqueMaxes[pclass][U_AMMO1];
+    }
+
+    unbool = !!StrLen(unique);
+    abool  = !!StrLen(ammo);
+    
+    if (!unbool)
+    {
+        if (DEBUG) { Print(s:"unbool is false (class = ", d:pclass, s:", alt = ", d:alt, s:")"); }
+        SetResultValue(0);
+        if (alt) { SetResultValue(ACS_ExecuteWithResult(SAMSARA_GIVEUNIQUE, 0,0,0,0)); }
         terminate;
     }
-
-    if (a1Bool) { a1Full = CheckInventory(ammo1) >= UniqueMaxes[pclass][1]; }
-    if (a2Bool) { a2Full = CheckInventory(ammo2) >= UniqueMaxes[pclass][2]; }
-
-    hasWep = (CheckInventory(unique) >= UniqueMaxes[pclass][0]) && (UniqueMaxes[pclass][0] != 0);
-
-    if (!hasWep || (a1bool && !a1Full) || (a2Bool && !a2Full))
-    {
-        uniqueGet = 1;
-    }
-
+    
+    if (aBool) { aFull = CheckInventory(ammo) >= amax; }
+    
+    hasWep = (CheckInventory(unique) >= umax) && (umax != 0);
+    
+    if (!hasWep || (abool && !aFull)) { uniqueGet = 1; }
+    
     if (uniqueGet && IsServer)
     {
         GiveInventory(unique, 1);
+        GiveInventory(ammo, amax - CheckInventory(ammo));
         ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
     }
     
     SetResultValue(uniqueGet);
 }
-
 
 int QuoteStorage[MSGCOUNT];
 
@@ -588,9 +602,9 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
-
+    
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
-
+    
     if (cpln == pln)
     {
         if (GetCVar("samsara_cl_moremessages"))
@@ -602,36 +616,37 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
                 
                 QuoteStorage[quoteCount++] = j;
             }
-
+            
             if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
             else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
         }
         else
         {
             i = ClassPickupMessages[pclass][slot][0];
-
+            
             if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
             else { Log(s:i); }
         }
     }
-
+    
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
     else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
-
+    
     if (DEBUG)
     {
         Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
-                s:" for ", d:ClassFades[pclass][4], s:" tics");
+        s:" for ", d:ClassFades[pclass][4], s:" tics");
     }
-
+    
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
-              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
-
+    ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
+    
     if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag"))
     {
         Delay(8);
-        Print(s:"cooldown is ", d:DukeQuoteCooldown[pln]);
 
+        if (DEBUG) { Print(s:"cooldown is ", d:DukeQuoteCooldown[pln]); }
+        
         if (!DukeQuoteCooldown[pln])
         {
             if (soundmode == 1) { LocalAmbientSound("duke/weapontaunt", 127); }
@@ -646,9 +661,9 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
-
+    
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
-
+    
     if (cpln == pln)
     {
         if (GetCVar("samsara_cl_moremessages"))
@@ -660,30 +675,30 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
                 
                 QuoteStorage[quoteCount++] = j;
             }
-
+            
             if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
             else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
         }
         else
         {
             i = ClassUniqueMessages[pclass][0];
-
+            
             if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
             else { Log(s:i); }
         }
     }
-
+    
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
     else { ActivatorSound(ClassUniqueSounds[pclass], 127); }
-
+    
     if (DEBUG)
     {
         Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
-                s:" for ", d:ClassFades[pclass][4], s:" tics");
+        s:" for ", d:ClassFades[pclass][4], s:" tics");
     }
-
+    
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
-              ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
+    ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
 
 script SAMSARA_MARATHON (int class, int slot)
@@ -692,8 +707,8 @@ script SAMSARA_MARATHON (int class, int slot)
     int shottyCount = cond(CheckInventory("CanDualShotties"), 2, CheckInventory("WSTE-M5 Combat Shotgun"));
     int limited     = !CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
-
-
+    
+    
     switch (slot)
     {
       case 1:
@@ -703,16 +718,16 @@ script SAMSARA_MARATHON (int class, int slot)
         
       case 3:
         if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
-
+        
         GiveInventory("Shell", 8);
         GiveInventory("AmmoShell", 8);
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
-
+        
         if (giveboth || shottyCount == 1)
         {
             GiveInventory("CanDualShotties", 1);
         }
-
+        
         if (limit)
         {
             GiveInventory("LevelLimiter", 1);
@@ -722,10 +737,10 @@ script SAMSARA_MARATHON (int class, int slot)
 }
 
 /*
- *
- * This is still to be converted.
- *
- */
+*
+* This is still to be converted.
+*
+*/
 
 int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {"RedCard", "YellowCard", "BlueCard", "RedSkull", "YellowSkull", "BlueSkull", "KeyBlue", "KeyGreen", "KeyYellow", "ChexRedCard", "ChexYellowCard", "ChexBlueCard", "RedFlemKey", "YellowFlemKey", "BlueFlemKey", "KeyAxe", "KeyCastle", "KeyCave", "KeyDungeon", "KeyEmerald", "KeyFire", "KeyHorn", "KeyRusted", "KeySilver", "KeySteel", "KeySwamp"},
@@ -768,7 +783,6 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //901-902: I'm pretty sure Synert is a wizard, too.
 //224: Doomguy's vanilla animations. By Ijon Tichy, transcribed by Llewellyn.
 //225: Weapon bar. By Ijon Tichy, transcribed by Llewellyn.
-
 ////////////////////
 // SHARED KEYS
 // (by Synert)
@@ -800,7 +814,6 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
 //if (GameType () == GAME_NET_TEAMGAME)
 //if (GameType () == GAME_NET_DEATHMATCH)
 //if (GameType () == GAME_SINGLE_PLAYER)
-
 script 211 ENTER
 {
     if (isCoop())
@@ -809,7 +822,6 @@ script 211 ENTER
         SetActorState(0,"CoOpModeOn");
     }
 }
-
 
 ///////////////
 // ITEM STUFF
@@ -1010,434 +1022,427 @@ script 212 (int textshit) // This is the shit for different text messages.
         break;
         
       case 3:
-        //if (GameType () == GAME_SINGLE_PLAYER)
-        //{
-            //Log(s:"MIGHTY BOOT ENGAGED");
-        //}
-        //else
-        //{
-            SetHudSize(400, 300, 0);
-            Hudmessage(s:"MIGHTY BOOT ENGAGED";
-            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
-            break;
-            
-          case 4:
-            if (GameType () != GAME_SINGLE_PLAYER)
-            {
-                SetHudSize(400, 300, 0);
-                Hudmessage(s:"Press any button to respawn.";
-                HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
-                delay(15);
-                LocalAmbientSound("duke/mpdeath",127);
-                GiveInventory("DukeTauntCooldown",5);
-                ACS_ExecuteAlways(205,0,0);
-            }
-            break;
-            
-          case 5:
-            Print(s:"You do not have enough fuel!");
-            break;
-            
-          case 6:
-            Print(s:"You do not have enough power!");
-            break;
-            
-          case 7:
-            Print(s:"You are already flying!");
-            break;
-            
-            // Weapon pickup messages!
-            // Doomguy
-          case 11:
-            Print(s:"You got the Chainsaw! Find some meat!");
-            break;
-            
-          case 12:
-            Print(s:"You got the Shotgun!");
-            break;
-            
-          case 13:
-            Print(s:"You got the Super Shotgun!");
-            break;
-            
-          case 14:
-            Print(s:"You got the Chaingun!");
-            break;
-            
-          case 15:
-            Print(s:"You got the Rocket Launcher!");
-            break;
-            
-          case 16:
-            Print(s:"You got the Plasma Rifle!");
-            break;
-            
-          case 17:
-            Print(s:"You got the B.F.G. 9000! Oh, yes.");
-            break;
-            
-          case 18:
-            Print(s:"You got the Berserk! Rip and tear!");
-            break;
-            
-            // Corvus
-          case 21:
-            Print(s:"You got the Gauntlets of the Necromancer!");
-            break;
-            
-          case 22:
-            Print(s:"You got the Firemace!");
-            break;
-            
-          case 23:
-            Print(s:"You got the Ethereal Crossbow!");
-            break;
-            
-          case 24:
-            Print(s:"You got the Dragon Claw!");
-            break;
-            
-          case 25:
-            Print(s:"You got the Phoenix Rod!");
-            break;
-            
-          case 26:
-            Print(s:"You got the Hellstaff!");
-            break;
-            
-          case 27:
-            Print(s:"Honor forbids you from using this until you are wounded again.");
-            break;
-            
-            //case 27:
-            // Tome of Power is already handled by ACS!
-            
-            // Chex Warrior
-          case 31:
-            Print(s:"You got the Super Bootspork! Find some milk!");
-            break;
-            
-          case 32:
-            Print(s:"You got the Large Zorcher!");
-            break;
-            
-          case 33:
-            Print(s:"You got the Super Large Zorcher!");
-            break;
-            
-          case 34:
-            Print(s:"You got the Rapid Zorcher!");
-            break;
-            
-          case 35:
-            Print(s:"You got the Zorch Propulsor!");
-            break;
-            
-          case 36:
-            Print(s:"You got the Phasing Zorcher!");
-            break;
-            
-          case 37:
-            Print(s:"You got the LAZ Device! Woot!");
-            break;
-            
-          case 38:
-            Print(s:"You got the Supercharge Breakfast!");
-            break;
-            
-            // B.J. Blazkowicz
-          case 41:
-            Print(s:"That's not a knife. THIS is a knife!");
-            break;
-            
-          case 42:
-            Print(s:"You got the Machine Gun!");
-            break;
-            
-            //case 43:
-            //break;
-            // Doesn't exist.
-            
-            //case 44:
-            //Print(s:"You got the Chaingun!");
-            //break;
-            // Case 14 handles this.
-            
-            //case 45:
-            //Print(s:"You got the Rocket Launcher!");
-            //break;
-            // Case 15 handles this.
-            
-          case 46:
-            Print(s:"You got the Flamethrower!");
-            break;
-            
-          case 47:
-            Print(s:"You got the Spear of Destiny!");
-            break;
-            
-          case 48:
-            Print(s:"You got an Extra Life!");
-            break;
-            
-            // Parias
-          case 51:
-            Print(s:"You got the Flechette!");
-            break;
-            
-          case 52:
-            Print(s:"You got the Frost Shards!");
-            break;
-            
-          case 53:
-            Print(s:"You got Timon's Axe!");
-            break;
-            
-          case 54:
-            Print(s:"You got the Serpent Staff!");
-            break;
-            
-          case 55:
-            Print(s:"You got the Hammer of Retribution!");
-            break;
-            
-          case 56:
-            Print(s:"You got the Firestorm!");
-            break;
-            
-          case 57:
-            Print(s:"You got the Wraithverge! Scream for me!");
-            break;
-            
-          case 58:
-            Print(s:"You got the Mystic Ambit Incant!");
-            break;
-            
-            // Duke
-          case 61:
-            Print(s:"You got the Pipebombs!");
-            break;
-            
-            //case 62:
-            //Print(s:"You got the Shotgun!");
-            //break;
-            // Case 12 handles this
-            
-          case 63:
-            Print(s:"You got the Explosive Shotgun!");
-            break;
-            
-          case 64:
-            Print(s:"You got the Ripper Chaingun Cannon!");
-            break;
-            
-          case 65:
-            Print(s:"You got the RPG!");
-            break;
-            
-          case 66:
-            Print(s:"You got the Freezethrower!");
-            break;
-            
-          case 67:
-            Print(s:"You got the Devastator!");
-            break;
-            
-          case 68:
-            Print(s:"You got the Jetpack!");
-            break;
-            
-            // Security Officer
-          case 71:
-            HudMessage(s:"You got the KKV-7 SMG Flechette!\n",
-            s:"You got a second .44 Magnum Mega Class A1!";
-            HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
-            break;
-            
-          case 72:
-            Print(s:"You got the WSTE-M5 Combat Shotgun!");
-            break;
-            
-          case 73:
-            Print(s:"You got the Zeus Class Fusion Pistol!");
-            break;
-            
-          case 74:
-            Print(s:"You got the MA-75B Assault Rifle!");
-            break;
-            
-          case 75:
-            Print(s:"You got the SPNKR-XP SSM Launcher!");
-            break;
-            
-          case 76:
-            Print(s:"You got the TOZT-7 Backpack Napalm Unit!");
-            break;
-            
-          case 77:
-            Print(s:"You got the ONI-71 Wave Motion Cannon!");
-            break;
-            
-          case 78:
-            HudMessage(s:"You got an\cina\cfaNN\ckAa\ciN \ccSYSTEM ERROR 0xfded";
-            HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
-            break;
-            
-          case 79:
-            Print(s:"You got a second WSTE-M5 Combat Shotgun!");
-            break;
-            
-          case 80:
-            Print(s:"You got a pair of WSTE-M5 Combat Shotguns!");
-            break;
-        }
-    }
-    
-    
-    /////////////////
-    // BOSS STUFF
-    //////////////
-    
-    script 204 (int bossmonologueshit)
-    {
-        switch(bossmonologueshit)
+        SetHudSize(400, 300, 0);
+        Hudmessage(s:"MIGHTY BOOT ENGAGED";
+        HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
+        break;
+        
+      case 4:
+        if (GameType () != GAME_SINGLE_PLAYER)
         {
-          case 1: // KORAX
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"So, you have come."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I have personally watched every step of your path, mortal."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Your journey has given you such raw, destructive power..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Endless mountains of corpses and blood pollute your wake..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I can't help but see myself when I look at you."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"You've done me a great favor by coming here..."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"...now there are so many more worlds open to me."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Don't feel too sad about never seeing home again."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I'll be sure to give my regards when I visit on your behalf."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Greetings, mortal..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            delay(100);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"...Are you ready to die?"; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
-            break;
-            
-          case 2: // LORD SNOTFOLUS
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Isn't it beautiful?"; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Look at it all. Look at all the goop that surrounds you."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Your people call it repulsive. Revolting. Disgusting."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"For me...it's life."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Would you deny a man food? Would you deny a man life?"; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Your food is made for only one purpose--to consume, as we have."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Would you blame me for leading my people to prosperous grounds?"; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"If I'm to play the villain simply for eating, then so be it."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I will bury you in slime."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            delay(100);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
-            break;
-            
-          case 3: // D'SPARIL
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I suppose congratulations are in order."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"You've come all this way to the doors of my sanctum."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"How many times have you narrowly dodged the clutch of death?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"It's such a shame that it was all ultimately pointless."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Do you realize you are the only living mortal left on this planet?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I command the vast power of the cosmos, the stars above you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I command the vast power of the hells, the nethers below you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I command the vast power of the dead, the corpses around you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"I can effortlessly rebuild anything you have broken with just a thought."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(154);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Gape at your own insignificance in the greater workings of the universe."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            delay(140);
-            SetHudSize(640, 400, 0);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Surrender to D'Sparil."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
-            break;
+            SetHudSize(400, 300, 0);
+            Hudmessage(s:"Press any button to respawn.";
+            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
+            delay(15);
+            LocalAmbientSound("duke/mpdeath",127);
+            GiveInventory("DukeTauntCooldown",5);
+            ACS_ExecuteAlways(205,0,0);
         }
+        break;
+        
+      case 5:
+        Print(s:"You do not have enough fuel!");
+        break;
+        
+      case 6:
+        Print(s:"You do not have enough power!");
+        break;
+        
+      case 7:
+        Print(s:"You are already flying!");
+        break;
+        
+        // Weapon pickup messages!
+        // Doomguy
+      case 11:
+        Print(s:"You got the Chainsaw! Find some meat!");
+        break;
+        
+      case 12:
+        Print(s:"You got the Shotgun!");
+        break;
+        
+      case 13:
+        Print(s:"You got the Super Shotgun!");
+        break;
+        
+      case 14:
+        Print(s:"You got the Chaingun!");
+        break;
+        
+      case 15:
+        Print(s:"You got the Rocket Launcher!");
+        break;
+        
+      case 16:
+        Print(s:"You got the Plasma Rifle!");
+        break;
+        
+      case 17:
+        Print(s:"You got the B.F.G. 9000! Oh, yes.");
+        break;
+        
+      case 18:
+        Print(s:"You got the Berserk! Rip and tear!");
+        break;
+        
+        // Corvus
+      case 21:
+        Print(s:"You got the Gauntlets of the Necromancer!");
+        break;
+        
+      case 22:
+        Print(s:"You got the Firemace!");
+        break;
+        
+      case 23:
+        Print(s:"You got the Ethereal Crossbow!");
+        break;
+        
+      case 24:
+        Print(s:"You got the Dragon Claw!");
+        break;
+        
+      case 25:
+        Print(s:"You got the Phoenix Rod!");
+        break;
+        
+      case 26:
+        Print(s:"You got the Hellstaff!");
+        break;
+        
+      case 27:
+        Print(s:"Honor forbids you from using this until you are wounded again.");
+        break;
+        
+        //case 27:
+        // Tome of Power is already handled by ACS!
+        
+        // Chex Warrior
+      case 31:
+        Print(s:"You got the Super Bootspork! Find some milk!");
+        break;
+        
+      case 32:
+        Print(s:"You got the Large Zorcher!");
+        break;
+        
+      case 33:
+        Print(s:"You got the Super Large Zorcher!");
+        break;
+        
+      case 34:
+        Print(s:"You got the Rapid Zorcher!");
+        break;
+        
+      case 35:
+        Print(s:"You got the Zorch Propulsor!");
+        break;
+        
+      case 36:
+        Print(s:"You got the Phasing Zorcher!");
+        break;
+        
+      case 37:
+        Print(s:"You got the LAZ Device! Woot!");
+        break;
+        
+      case 38:
+        Print(s:"You got the Supercharge Breakfast!");
+        break;
+        
+        // B.J. Blazkowicz
+      case 41:
+        Print(s:"That's not a knife. THIS is a knife!");
+        break;
+        
+      case 42:
+        Print(s:"You got the Machine Gun!");
+        break;
+        
+        //case 43:
+        //break;
+        // Doesn't exist.
+        
+        //case 44:
+        //Print(s:"You got the Chaingun!");
+        //break;
+        // Case 14 handles this.
+        
+        //case 45:
+        //Print(s:"You got the Rocket Launcher!");
+        //break;
+        // Case 15 handles this.
+        
+      case 46:
+        Print(s:"You got the Flamethrower!");
+        break;
+        
+      case 47:
+        Print(s:"You got the Spear of Destiny!");
+        break;
+        
+      case 48:
+        Print(s:"You got an Extra Life!");
+        break;
+        
+        // Parias
+      case 51:
+        Print(s:"You got the Flechette!");
+        break;
+        
+      case 52:
+        Print(s:"You got the Frost Shards!");
+        break;
+        
+      case 53:
+        Print(s:"You got Timon's Axe!");
+        break;
+        
+      case 54:
+        Print(s:"You got the Serpent Staff!");
+        break;
+        
+      case 55:
+        Print(s:"You got the Hammer of Retribution!");
+        break;
+        
+      case 56:
+        Print(s:"You got the Firestorm!");
+        break;
+        
+      case 57:
+        Print(s:"You got the Wraithverge! Scream for me!");
+        break;
+        
+      case 58:
+        Print(s:"You got the Mystic Ambit Incant!");
+        break;
+        
+        // Duke
+      case 61:
+        Print(s:"You got the Pipebombs!");
+        break;
+        
+        //case 62:
+        //Print(s:"You got the Shotgun!");
+        //break;
+        // Case 12 handles this
+        
+      case 63:
+        Print(s:"You got the Explosive Shotgun!");
+        break;
+        
+      case 64:
+        Print(s:"You got the Ripper Chaingun Cannon!");
+        break;
+        
+      case 65:
+        Print(s:"You got the RPG!");
+        break;
+        
+      case 66:
+        Print(s:"You got the Freezethrower!");
+        break;
+        
+      case 67:
+        Print(s:"You got the Devastator!");
+        break;
+        
+      case 68:
+        Print(s:"You got the Jetpack!");
+        break;
+        
+        // Security Officer
+      case 71:
+        HudMessage(s:"You got the KKV-7 SMG Flechette!\n",
+        s:"You got a second .44 Magnum Mega Class A1!";
+        HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
+        break;
+        
+      case 72:
+        Print(s:"You got the WSTE-M5 Combat Shotgun!");
+        break;
+        
+      case 73:
+        Print(s:"You got the Zeus Class Fusion Pistol!");
+        break;
+        
+      case 74:
+        Print(s:"You got the MA-75B Assault Rifle!");
+        break;
+        
+      case 75:
+        Print(s:"You got the SPNKR-XP SSM Launcher!");
+        break;
+        
+      case 76:
+        Print(s:"You got the TOZT-7 Backpack Napalm Unit!");
+        break;
+        
+      case 77:
+        Print(s:"You got the ONI-71 Wave Motion Cannon!");
+        break;
+        
+      case 78:
+        HudMessage(s:"You got an\cina\cfaNN\ckAa\ciN \ccSYSTEM ERROR 0xfded";
+        HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
+        break;
+        
+      case 79:
+        Print(s:"You got a second WSTE-M5 Combat Shotgun!");
+        break;
+        
+      case 80:
+        Print(s:"You got a pair of WSTE-M5 Combat Shotguns!");
+        break;
     }
+}
+
+/////////////////
+// BOSS STUFF
+//////////////
+
+script 204 (int bossmonologueshit)
+{
+    switch(bossmonologueshit)
+    {
+      case 1: // KORAX
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"So, you have come."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I have personally watched every step of your path, mortal."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Your journey has given you such raw, destructive power..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Endless mountains of corpses and blood pollute your wake..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I can't help but see myself when I look at you."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"You've done me a great favor by coming here..."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"...now there are so many more worlds open to me."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Don't feel too sad about never seeing home again."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I'll be sure to give my regards when I visit on your behalf."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Greetings, mortal..."; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        delay(100);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"...Are you ready to die?"; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+        break;
+        
+      case 2: // LORD SNOTFOLUS
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Isn't it beautiful?"; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Look at it all. Look at all the goop that surrounds you."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Your people call it repulsive. Revolting. Disgusting."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"For me...it's life."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Would you deny a man food? Would you deny a man life?"; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Your food is made for only one purpose--to consume, as we have."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Would you blame me for leading my people to prosperous grounds?"; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"If I'm to play the villain simply for eating, then so be it."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I will bury you in slime."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        delay(100);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+        break;
+        
+      case 3: // D'SPARIL
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I suppose congratulations are in order."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"You've come all this way to the doors of my sanctum."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"How many times have you narrowly dodged the clutch of death?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"It's such a shame that it was all ultimately pointless."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Do you realize you are the only living mortal left on this planet?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I command the vast power of the cosmos, the stars above you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I command the vast power of the hells, the nethers below you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I command the vast power of the dead, the corpses around you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I can effortlessly rebuild anything you have broken with just a thought."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Gape at your own insignificance in the greater workings of the universe."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(140);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Surrender to D'Sparil."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        break;
+    }
+}

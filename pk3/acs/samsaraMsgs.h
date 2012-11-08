@@ -669,7 +669,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Tape slabs of steel to your fists. Works wonders IRL.",
             "Punch-Out! would've been so much better with these.",
             "Can gib zombiemen. Yes, please.",
-	    "",
+	    "Holy gibfist jesus!",
 	    "",
 	    "",
 	    "",
