@@ -1,6 +1,7 @@
 actor SamsaraUniquePickup: CustomInventory replaces Berserk
 {
     +QUIET
+    +INVENTORY.BIGPOWERUP
 
     States
     {

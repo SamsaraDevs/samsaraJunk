@@ -182,6 +182,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
     +Floatbob
     +INVENTORY.BIGPOWERUP
     +INVENTORY.PICKUPFLASH
+    +NOGRAVITY
     +COUNTITEM
     Inventory.PickupAnnouncerEntry "soulsphere"
     Inventory.PickupMessage "Picked up 100 Health."
