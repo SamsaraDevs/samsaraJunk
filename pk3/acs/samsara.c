@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "zcommon.acs"
 #library "samsara"
 
@@ -146,6 +147,9 @@ script SAMSARA_SPAWN (int respawning)
                 SetActorProperty(0, APROP_JumpZ,   4.0);
             }
         }
+
+        if (GetCVar("sv_bfgfreeaim")) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
+        else { GiveInventory("DoomNoBFGAim", 1); }
         
         Delay(1);
         
@@ -735,6 +739,171 @@ script SAMSARA_MARATHON (int class, int slot)
         break;
     }
 }
+
+// TIPBOX START
+
+str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1"};
+//str CoolTips2[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP2", "HERETIP2", "WOLFTIP2", "HEXNTIP2", "DUKETIP2", "MARATIP2"};
+//str CoolTips3[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP3", "HERETIP3", "WOLFTIP3", "HEXNTIP3", "DUKETIP3", "MARATIP3"}; // NOPE AIN'T WORKIN'
+
+script 300 (int tipboxshit)
+{
+    switch(tipboxshit)
+    {
+      case 1:
+        SetHudSize(1024,650,0);
+        int classNumber = samsaraClassNum();
+        SetFont(CoolTips1[classNumber]);
+        HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+        break;
+        
+      case 2:
+        if (GameType () == GAME_NET_COOPERATIVE)
+        {
+            if (CheckInventory("DoomguyClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DOOMTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("ChexClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("CHEXTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("CorvusClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HERETIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("WolfenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("WOLFTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("HexenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HEXNTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("DukeClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DUKETIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("MarathonClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("MARATIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+        }
+        else if (GameType () == GAME_SINGLE_PLAYER)
+        {
+            if (CheckInventory("DoomguyClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DOOMTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("ChexClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("CHEXTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("CorvusClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HERETIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("WolfenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("WOLFTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("HexenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HEXNTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("DukeClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DUKETIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("MarathonClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("MARATIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+        }
+        else
+        {
+            if (CheckInventory("DoomguyClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DOOMTIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("ChexClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("CHEXTIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("CorvusClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HERETIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("WolfenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("WOLFTIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("HexenClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("HEXNTIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("DukeClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("DUKETIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("MarathonClass"))
+            {
+                SetHudSize(1024,650,0);
+                SetFont("MARATIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+        }
+        break;
+        
+      case 3:
+        SetHudSize(1024,650,0);
+        SetFont(CoolTips1[8]);
+        HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+        break;
+    }
+}
+
+// TIPBOX END DERP
 
 /*
 *
