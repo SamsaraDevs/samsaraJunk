@@ -1,5 +1,10 @@
 function int GiveClassWeapon(int class, int slot, int ammoMode)
 {
+    return _giveclassweapon(class, slot, ammoMode, 0);
+}
+
+function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
+{
     int weapon = ClassWeapons[class][slot][0];
     int ammo1  = ClassWeapons[class][slot][1];
     int ammo2  = ClassWeapons[class][slot][2];

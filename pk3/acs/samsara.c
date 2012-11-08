@@ -517,7 +517,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
     
     if (weaponGet && IsServer)
     {
-        GiveClassWeapon(pclass, slot, 3);
+        _giveclassweapon(pclass, slot, 3, dropped);
         
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
@@ -704,10 +704,11 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
 
-script SAMSARA_MARATHON (int class, int slot)
+script SAMSARA_MARATHON (int class, int slot, int dropped)
 {
     int giveboth    = isInvasion() || !isCoop();
-    int shottyCount = cond(CheckInventory("CanDualShotties"), 2, CheckInventory("WSTE-M5 Combat Shotgun"));
+    int hasShotty   = CheckInventory("WSTE-M5 Combat Shotgun");
+    int hasBoth     = CheckInventory("CanDualShotties");
     int limited     = !CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
     
@@ -726,7 +727,7 @@ script SAMSARA_MARATHON (int class, int slot)
         GiveInventory("AmmoShell", 8);
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
         
-        if (giveboth || shottyCount == 1)
+        if (giveboth || (hasShotty && !dropped))
         {
             GiveInventory("CanDualShotties", 1);
         }
