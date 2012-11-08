@@ -1,3 +1,26 @@
+actor SamsaraSlotPickup: CustomInventory
+{
+    +QUIET
+    Inventory.PickupMessage ""
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(215, 1) == 1, "IWasDropped")
+        TNT1 A 35 A_JumpIf(1==1, "SpawnLoop")
+        wait
+
+      PickupSuccess:
+        TNT1 A 0 A_ChangeFlag("FLOATBOB", 0)  // because you'll totally have floatbob as a player
+        stop
+
+      PickupFailure:
+        TNT1 A 0 A_ChangeFlag("FLOATBOB", 0)
+        fail
+    }
+}
+
 #include "decorate/slots/slot1.dec"
 #include "decorate/slots/slot2.dec"
 #include "decorate/slots/slot3.dec"
@@ -5,3 +28,4 @@
 #include "decorate/slots/slot5.dec"
 #include "decorate/slots/slot6.dec"
 #include "decorate/slots/slot7.dec"
+#include "decorate/slots/unique.dec"

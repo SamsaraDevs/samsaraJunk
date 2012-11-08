@@ -1,0 +1,106 @@
+actor ArmorScrap : ArmorBonus replaces ArmorBonus
+{
+    Scale 0.5
+    RenderStyle Add
+    Alpha 0.9
+    +Floatbob
+    -Inventory.ALWAYSPICKUP
+    Inventory.Pickupmessage "Picked up 1 Armor."
+    Inventory.PickupSound "armor0get"
+    Armor.Saveamount 1
+    Armor.MaxSaveAmount 200
+    States
+    {
+      Spawn:
+        BON2 A -1 BRIGHT //A_SpawnItemEx("ArmorScrapTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        stop
+    }
+}
+
+actor ArmorScrapTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.45
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        BON2 A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor ArmorPack1 : GreenArmor replaces GreenArmor
+{
+    Scale 0.75
+    RenderStyle Add
+    Alpha 0.9
+    +Floatbob
+    Translation "96:111=112:123", "5:8=124:127", "0:0=127:127"
+    Inventory.PickupMessage "Picked up 100 Armor."
+    Inventory.PickupSound "armor1get"
+    States
+    {
+      Spawn:
+        RMR1 A 1 BRIGHT //A_SpawnItemEx("ArmorPack1Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        loop
+    }
+}
+
+actor ArmorPack1Trail
+{
+    Renderstyle Add
+    Alpha 0.5
+    Scale 0.7
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        RMR1 A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor ArmorPack2 : BlueArmor replaces BlueArmor
+{
+    RenderStyle Add
+    Alpha 0.975
+    +Floatbob
+    Translation "96:111=200:207", "5:8=241:244", "0:0=245:245"
+    Inventory.PickupMessage "Picked up 200 Armor."
+    Inventory.PickupSound "armor2get"
+    States
+    {
+      Spawn:
+        RMR2 A -1 BRIGHT //A_SpawnItemEx("ArmorPack2Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        stop
+    }
+}
+
+actor ArmorPack2Trail
+{
+    Renderstyle Add
+    Alpha 0.5
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        RMR2 A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+

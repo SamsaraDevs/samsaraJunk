@@ -55,3 +55,6 @@ actor SamsaraSlotOneDrop: SamsaraSlotOnePickup
         goto PickupFailure
     }
 }
+
+actor SamsaraSlotOne_Chex:    SamsaraSlotOnePickup replaces SuperBootspork {}
+actor SamsaraSlotOne_Heretic: SamsaraSlotOnePickup replaces Gauntlets {}

@@ -2,40 +2,6 @@
 
 Actor Pod2 : Pod replaces Pod { +DONTRIP }
 
-Actor HereticShotgunAndSSGSpawner replaces Crossbow
-{
-	DropItem Shotgun
-	DropItem SuperShotgun
-	States
-	{
-	Spawn:
-		ACLO E 1
-		TNTA A 0 A_NoBlocking
-		stop
-	}
-}
-
-Actor HereticWeapon0Spawner : Weapon0Spawner replaces Gauntlets { }
-Actor HereticWeapon4Spawner : Weapon4Spawner replaces Blaster { }
-Actor HereticWeapon5Spawner : Weapon5Spawner replaces PhoenixRod { }
-Actor HereticWeapon6Spawner : Weapon6Spawner replaces SkullRod { }
-Actor HereticWeapon7Spawner : Weapon7Spawner replaces MaceSpawner { }/*SpecialSpot replaces MaceSpawner
-{
-  //+NOSECTOR
-  +INVISIBLE
-  +NOTARGET
-  +NOBLOCKMAP
-  States
-  {
-  Spawn:
-    TNT1 A 1
-    TNT1 A -1 A_SpawnSingleItem("Weapon7Spawner", 64, 0, 0)
-    Stop
-  }
-}*/
-
-Actor HereticWeapon7Spawner2 : Weapon7Spawner replaces Mace { }
-
 Actor HereticAmmo1Small : Ammo1Small replaces BlasterAmmo
 {
   Inventory.PickupSound "ammogem/bulletsmall"
@@ -201,8 +167,6 @@ Actor HereticArmorPack2 : ArmorPack2 replaces EnchantedShield
 Actor HereticInvisibility : PartialInvisibility replaces ArtiInvisibility { }//Inventory.PickupAnnouncerEntry "" }
 Actor HereticInvulnerability : InvulnPowerup replaces ArtiInvulnerability { }//Inventory.PickupAnnouncerEntry "" }
 Actor HereticVisor : Visor replaces ArtiTorch { }
-
-Actor HereticChickenPickup : UniqueItemSpawner replaces ArtiEgg { }
 
 Actor HereticFlightPickup : CustomInventory replaces ArtiFly
 {

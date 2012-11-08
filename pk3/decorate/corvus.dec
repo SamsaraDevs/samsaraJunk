@@ -1,7 +1,5 @@
 #include "decorate/corvus/player.dec"
 #include "decorate/corvus/timebombs.dec"
-#include "decorate/corvus/items.dec"
-#include "decorate/corvus/morphovum.dec"
 #include "decorate/corvus/fist.dec"
 #include "decorate/corvus/pistol.dec"
 #include "decorate/corvus/slot1.dec"

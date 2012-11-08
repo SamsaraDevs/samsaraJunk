@@ -1,0 +1,39 @@
+actor LMSArmor : BasicArmorPickup
+{
+    Armor.SaveAmount 300
+    Armor.SavePercent 50
+    Armor.MaxFullAbsorb 10
+    states
+    {
+      Spawn:
+        ACLO E 1
+        Stop
+    }
+}
+
+actor LMSArmor2 : BasicArmorPickup
+{
+    Armor.SaveAmount 400
+    Armor.SavePercent 50
+    Armor.MaxFullAbsorb 10
+    states
+    {
+      Spawn:
+        ACLO E 1
+        Stop
+    }
+}
+
+actor LMSArmor3 : BasicArmorPickup
+{
+    Armor.SaveAmount 500
+    Armor.SavePercent 50
+    Armor.MaxFullAbsorb 10
+    states
+    {
+      Spawn:
+        ACLO E 1
+        Stop
+    }
+}
+

@@ -65,6 +65,8 @@ actor SamsaraUniquePickup2: SamsaraUniquePickup
     }
 }
 
+actor HereticChickenPickup: SamsaraUniquePickup replaces ArtiEgg { }
+
 actor DoomguyBerserker: CustomInventory
 {
     Inventory.MaxAmount 0

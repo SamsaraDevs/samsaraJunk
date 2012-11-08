@@ -1,0 +1,70 @@
+actor EnemyZorched : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
+actor CoopModeOn : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
+actor SPModeOn : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
+actor ExpandedHud : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
+actor OverMax : Inventory { Inventory.MaxAmount 200 }
+actor OverOverMax : Inventory { Inventory.MaxAmount 300 }
+actor DoomNoBFGAim: CustomInventory { +UNDROPPABLE inventory.maxamount 1 }
+
+actor GotWeapon0 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon2 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon3 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon4 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon5 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon6 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor GotWeapon7 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+
+actor WeaponGetYaaaay : Ammo
+{
+    inventory.amount 1
+    inventory.maxamount 999
+    ammo.backpackamount 0
+    ammo.backpackmaxamount 999
+
+    Inventory.PickupMessage "\0"
+    +QUIET
+
+    states
+    {
+      Spawn:
+        TNT1 A 35
+        stop
+    }
+}
+
+actor WeaponGetYaaaay2 : Weapon
+{
+    Weapon.SelectionOrder 99999999999999999999999999999999
+    Weapon.AmmoUse 0
+    Weapon.AmmoType "Clip"
+
+    Inventory.PickupMessage "\0"
+    +WEAPON.NO_AUTO_SWITCH
+    +QUIET
+
+    states
+    {
+      Spawn:
+        TNT1 A -1
+        stop
+
+      Select:
+        PUF1 A 0 A_TakeInventory("WeaponGetYaaaay2")
+        PUF1 A 1 A_Raise
+        loop
+
+      Deselect:
+        PUF1 A 0 A_TakeInventory("WeaponGetYaaaay2")
+        PUF1 A 1 A_Lower
+        loop
+
+      Ready:
+        PUF1 A 0 A_TakeInventory("WeaponGetYaaaay2")
+        PUF1 A 1 A_WeaponReady
+        loop
+
+      Fire:
+        PUF1 A 1
+        goto Ready
+    }
+}

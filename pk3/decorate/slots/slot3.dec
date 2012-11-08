@@ -55,3 +55,6 @@ actor SamsaraSlotThreeDrop: SamsaraSlotThreePickup
         goto PickupFailure
     }
 }
+
+actor SamsaraSlotThree_Allmap:  SamsaraSlotThreePickup replaces Allmap {}
+actor SamsaraSlotThree_Chex:    SamsaraSlotThreePickup replaces SuperLargeZorcher {}

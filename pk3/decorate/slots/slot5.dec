@@ -60,3 +60,6 @@ actor SamsaraGLReplace: RandomSpawner replaces GrenadeLauncher
 {
     dropitem "SamsaraSlotFivePickup"
 }
+
+actor SamsaraSlotFive_Chex:    SamsaraSlotFivePickup replaces ZorchPropulsor {}
+actor SamsaraSlotFive_Heretic: SamsaraSlotFivePickup replaces PhoenixRod {}

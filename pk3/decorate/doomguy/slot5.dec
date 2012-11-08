@@ -1,4 +1,4 @@
-ctor "Rocket Launcher" : RocketLauncher
+actor "Rocket Launcher" : RocketLauncher
 {
     Weapon.SlotNumber 5
     +INVENTORY.UNDROPPABLE

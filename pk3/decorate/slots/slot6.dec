@@ -60,3 +60,6 @@ actor SamsaraRailgunReplace: RandomSpawner replaces Railgun
 {
     dropitem "SamsaraSlotSixPickup"
 }
+
+actor SamsaraSlotSix_Chex:    SamsaraSlotSixPickup replaces PhasingZorcher {}
+actor SamsaraSlotSix_Heretic: SamsaraSlotSixPickup replaces SkullRod {}

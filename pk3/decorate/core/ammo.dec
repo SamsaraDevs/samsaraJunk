@@ -1,0 +1,357 @@
+actor AmmoShell : Ammo
+{
+    Inventory.PickupMessage "$GOTSHELLS" // "Picked up 4 shotgun shells."
+    Inventory.Amount 4
+    Inventory.MaxAmount 100
+    Ammo.BackpackAmount 4
+    Ammo.BackpackMaxAmount 200
+    Inventory.Icon "SHELA0"
+    States
+    {
+      Spawn:
+        SHEL A -1
+        Stop
+    }
+}
+
+actor Ammo1Small : CustomInventory replaces Clip// replaces Clip
+{
+    Inventory.PickupMessage "Picked up 10 rounds of Ammo 1."
+    Inventory.PickupSound "ammo/bulletsmall"
+    States
+    {
+      Spawn:
+        AMSM A 20
+        AMSM A 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupFail:
+        AMSM A 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Clip",10)
+        stop
+    }
+}
+
+actor Ammo1Big : CustomInventory replaces ClipBox// replaces ClipBox
+{
+    Inventory.PickupMessage "Picked up 50 rounds of Ammo 1."
+    Inventory.PickupSound "ammo/bulletbig"
+    States
+    {
+      Spawn:
+        AMMB A 20
+        AMMB A 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_GiveInventory("Clip",50)
+        stop
+
+      PickupFail:
+        AMMB A 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Clip",50)
+        stop
+    }
+}
+
+actor Ammo2Small : CustomInventory replaces Shell
+{
+    Inventory.PickupMessage "Picked up 4 rounds of Ammo 2."
+    Inventory.PickupSound "ammo/shellsmall"
+    States
+    {
+      Spawn:
+        AMSM B 20
+        AMSM B 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("AmmoShell",4)
+        TNT1 A 1 A_GiveInventory("Shell",4)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",4)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Shell",4)
+        TNT1 A 1 A_GiveInventory("AmmoShell",4)
+        stop
+
+      PickupFail:
+        AMSM B 1
+        fail
+    }
+}
+
+actor Ammo2Big : CustomInventory replaces ShellBox
+{
+    Inventory.PickupMessage "Picked up 20 rounds of Ammo 2."
+    Inventory.PickupSound "ammo/shellbig"
+    States
+    {
+      Spawn:
+        AMMB B 20
+        AMMB B 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("AmmoShell",20)
+        TNT1 A 1 A_GiveInventory("Shell",20)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",50)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",20)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Shell",20)
+        TNT1 A 1 A_GiveInventory("AmmoShell",20)
+        stop
+
+      PickupFail:
+        AMMB B 1
+        fail
+    }
+}
+
+actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
+{
+    Inventory.PickupMessage "Picked up 2 rounds of Ammo 3."
+    Inventory.PickupSound "ammo/rocketsmall"
+    States
+    {
+      Spawn:
+        AMSM C 20
+        AMSM C 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",2)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",2)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("RocketAmmo",2)
+        stop
+
+      PickupFail:
+        AMSM C 1
+        fail
+    }
+}
+
+actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
+{
+    Inventory.PickupMessage "Picked up 6 rounds of Ammo 3."
+    Inventory.PickupSound "ammo/rocketbig"
+    States
+    {
+      Spawn:
+        AMMB C 20
+        AMMB C 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",6)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",6)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("RocketAmmo",6)
+        stop
+
+      PickupFail:
+        AMMB C 1
+        fail
+    }
+}
+
+actor Ammo4Small : CustomInventory replaces Cell// replaces Cell
+{
+    Inventory.PickupMessage "Picked up 20 rounds of Ammo 4."
+    Inventory.PickupSound "ammo/plasmasmall"
+    States
+    {
+      Spawn:
+        AMSM D 20
+        AMSM D 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_GiveInventory("Cell",20)
+        stop
+
+      PickupFail:
+        AMSM D 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Cell",20)
+        stop
+    }
+}
+
+actor Ammo4Big : CustomInventory replaces Cellpack// replaces Cellpack
+{
+    Inventory.PickupMessage "Picked up 100 rounds of Ammo 4."
+    Inventory.PickupSound "ammo/plasmabig"
+    States
+    {
+      Spawn:
+        AMMB D 20
+        AMMB D 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",0,"PickupMarathon")
+        TNT1 A 0 A_GiveInventory("Cell",100)
+        stop
+
+      PickupFail:
+        AMMB D 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.3,3)
+        TNT1 A 1 A_GiveInventory("Cell",100)
+        stop
+    }
+}
+
+actor AmmoBackpack : CustomInventory replaces Backpack
+{
+    Inventory.PickupMessage "Picked up Ammo Expansion Pack."
+    Inventory.PickupSound "nosoundforyoubitch"
+    +COUNTITEM
+    -INVENTORY.ALWAYSPICKUP
+    States
+    {
+      Spawn:
+        AMPK A 20
+        AMPK A 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_PlaySound("ammo/backpack")
+        TNT1 A 1 A_GiveInventory("Backpack",1)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_PlaySound("ammo/backpack")
+        TNT1 A 0 A_GiveInventory("Backpack",1)
+        TNT1 A 0 A_TakeInventory("AmmoShell",8)
+        TNT1 A 1 A_GiveInventory("Clip",4)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("PortKraterOfMight",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 1 A_GiveInventory("PortKraterOfMight",1)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_PlaySound("marathon/itemget")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("Backpack",1)
+        stop
+
+      PickupFail:
+        AMPK A 1 BRIGHT
+        fail
+    }
+}
+
+
+
+actor PortKraterOfMight : CustomInventory
+{
+    //tag "Krater of Might"
+    +FLOATBOB
+    +INVENTORY.INVBAR
+    +INVENTORY.PICKUPFLASH
+    +INVENTORY.FANCYPICKUPSOUND
+    +INVENTORY.UNDROPPABLE
+    Inventory.maxamount 16
+    Inventory.Icon "ARTIBMAN"
+    Inventory.PickupSound "hexen/artiget"
+    Inventory.UseSound "hexen/artiuse"
+    Inventory.PickupMessage "You picked up the Krater of Might!"
+    States
+    {
+      Spawn:
+        BMAN A -1
+        Stop
+
+      Use:
+        TNT1 A 0 A_GiveInventory("Clip", 100)
+        TNT1 A 0 A_GiveInventory("Cell", 150)
+        Stop
+    }
+}

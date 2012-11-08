@@ -1,0 +1,246 @@
+actor PartialInvisibility : CustomInventory replaces BlurSphere
+{
+    RenderStyle Add
+    Alpha 0.75
+    +Floatbob
+    +VISIBILITYPULSE
+    +INVENTORY.PICKUPFLASH
+    +INVENTORY.BIGPOWERUP
+    +COUNTITEM
+    Inventory.PickupAnnouncerEntry "partialinvisibility"
+    Inventory.PickupMessage "Picked up Partial Invisibility."
+    Inventory.PickupSound "nosoundforyoubitch"
+    states
+    {
+      Spawn:
+        NVSI A -1 BRIGHT //A_SpawnItemEx("InvisTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        stop
+
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 1 A_GiveInventory("BlurSphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortGhostly",0,"PickupHereticFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortGhostly")
+        stop
+
+      PickupHereticFail:
+        NVSI A 1 BRIGHT
+        fail
+
+      PickupHexen:
+        TNT1 A 0 A_PlaySound("invisibilityget")
+        TNT1 A 1 A_GiveInventory("PowerGhost")
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.5,6)
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        //TNT1 A 1 A_GiveInventory("Blursphere")
+        TNT1 A 1 A_GiveInventory("PowerShadow")
+        stop
+    }
+}
+
+actor InvisTrail
+{
+    Renderstyle Add
+    Alpha 0.35
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        NVSI A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
+{
+    RenderStyle Add
+    Alpha 0.95
+    +Floatbob
+    +INVENTORY.BIGPOWERUP
+    +INVENTORY.PICKUPFLASH
+    +COUNTITEM
+    Inventory.PickupAnnouncerEntry "invulnerability"
+    Inventory.PickupMessage "Picked up Invulnerability."
+    Inventory.PickupSound "nosoundforyoubitch"
+    states
+    {
+      Spawn:
+        NVLN A -1 BRIGHT //A_SpawnItemEx("InvulnTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_PlaySound("invulnget")
+        TNT1 A 1 A_GiveInventory("InvulnerabilitySphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortRingInvuln",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortRingInvuln")
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("PortIconDefender",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 1 A_GiveInventory("PortIconDefender")
+        stop
+
+      PickupFail:
+        NVLN A 1 BRIGHT
+        fail
+    }
+}
+
+actor InvulnTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        NVLN A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor BioSuit : PowerupGiver replaces RadSuit
+{
+    RenderStyle Add
+    Alpha 0.95
+    +CountItem
+    +FLOATBOB
+    +INVENTORY.PICKUPFLASH
+    +Inventory.AlwaysPickup
+    +Inventory.AutoActivate
+    Inventory.MaxAmount 1
+    Powerup.Type "IronFeet"
+    Powerup.Duration -60
+    Powerup.Color "Green", 0.125
+    Inventory.PickupMessage "Picked up Environmental Protection."
+    Inventory.PickupSound "antisterileget"
+    States
+    {
+      Spawn:
+        RDST A -1 BRIGHT //A_SpawnItemEx("BioTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        stop
+    }
+}
+
+actor BioTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        RDST A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+
+actor Visor : CustomInventory replaces Infrared// replaces Infrared
+{
+    RenderStyle Add
+    Alpha 0.85
+    +Floatbob
+    +INVENTORY.PICKUPFLASH
+    Inventory.PickupMessage "Picked up Light Amplification."
+    Inventory.PickupSound "nosoundforyoubitch"
+    States
+    {
+      Spawn:
+        VISR A 20 Bright //A_SpawnItemEx("VisorTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        VISR A 20
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("DukeClass",1,"PickupDuke")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_PlaySound("lettherebelight")
+        TNT1 A 1 A_GiveInventory("Infrared")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("PortTorch",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("PortTorch")
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("PortTorch2",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("hexen/artiget")
+        TNT1 A 1 A_GiveInventory("PortTorch2")
+        stop
+
+      PickupDuke:
+        TNT1 A 0 A_JumpIfInventory("DukeVisionFuel",0,"PickupFail")
+        TNT1 A 0 A_PlaySound("Duke/itemget")
+        TNT1 A 1 A_GiveInventory("DukePortNiVi")
+        TNT1 A 1 A_GiveInventory("DukeVisionFuel",100)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 1 A_GiveInventory("MarathonInfrared")
+        stop
+
+      PickupFail:
+        VISR A 1 BRIGHT
+        fail
+    }
+}
+
+actor MarathonInfrared : PowerLightAmp
+{
+    Powerup.Color GreenMap
+}
+
+actor VisorTrail
+{
+    Renderstyle Add
+    Alpha 0.4
+    Scale 0.95
+    -Solid
+    +Noclip
+    +Nogravity
+    +Nointeraction
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        VISR A 2 A_FadeOut(0.125)
+        Loop
+    }
+}
+

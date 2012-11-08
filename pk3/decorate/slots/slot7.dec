@@ -60,3 +60,6 @@ actor SamsaraBFG10kReplace: RandomSpawner replaces BFG10k
 {
     dropitem "SamsaraSlotSevenPickup"
 }
+
+actor SamsaraSlotSeven_Chex:    SamsaraSlotSevenPickup replaces LAZDevice {}
+actor SamsaraSlotSeven_Heretic: SamsaraSlotSevenPickup replaces MaceSpawner {}

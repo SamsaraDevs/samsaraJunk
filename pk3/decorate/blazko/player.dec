@@ -1,4 +1,4 @@
-Gctor WolfenPlayer : PlayerPawn
+actor WolfenPlayer : PlayerPawn
 {
     Player.DisplayName "Blazkowicz"
     Player.StartItem "Luger", 1
