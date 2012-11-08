@@ -746,12 +746,12 @@ str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HE
 //str CoolTips2[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP2", "HERETIP2", "WOLFTIP2", "HEXNTIP2", "DUKETIP2", "MARATIP2"};
 //str CoolTips3[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP3", "HERETIP3", "WOLFTIP3", "HEXNTIP3", "DUKETIP3", "MARATIP3"}; // NOPE AIN'T WORKIN'
 
-script 300 (int tipboxshit)
+script 300 (int tipboxshit) NET
 {
     switch(tipboxshit)
     {
       case 1:
-        SetHudSize(1024,650,0);
+        SetHudSize(1024,768,1);
         int classNumber = samsaraClassNum();
         SetFont(CoolTips1[classNumber]);
         HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
@@ -762,43 +762,43 @@ script 300 (int tipboxshit)
         {
             if (CheckInventory("DoomguyClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DOOMTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("ChexClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("CHEXTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("CorvusClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HERETIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("WolfenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("WOLFTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("HexenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HEXNTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("DukeClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DUKETIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("MarathonClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
@@ -807,43 +807,43 @@ script 300 (int tipboxshit)
         {
             if (CheckInventory("DoomguyClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DOOMTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("ChexClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("CHEXTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("CorvusClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HERETIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("WolfenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("WOLFTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("HexenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HEXNTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("DukeClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DUKETIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("MarathonClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
@@ -852,43 +852,43 @@ script 300 (int tipboxshit)
         {
             if (CheckInventory("DoomguyClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DOOMTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("ChexClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("CHEXTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("CorvusClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HERETIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("WolfenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("WOLFTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("HexenClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("HEXNTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("DukeClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("DUKETIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("MarathonClass"))
             {
-                SetHudSize(1024,650,0);
+                SetHudSize(1024,768,1);
                 SetFont("MARATIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
@@ -896,12 +896,13 @@ script 300 (int tipboxshit)
         break;
         
       case 3:
-        SetHudSize(1024,650,0);
+        SetHudSize(1024,768,1);
         SetFont(CoolTips1[8]);
         HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
         break;
     }
 }
+
 
 // TIPBOX END DERP
 
