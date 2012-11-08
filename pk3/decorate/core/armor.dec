@@ -104,3 +104,9 @@ actor ArmorPack2Trail
     }
 }
 
+actor CorvusMegaArmor : BasicArmorBonus
+{
+	Armor.SavePercent 50
+    Armor.SaveAmount 100
+    Armor.MaxSaveAmount 200
+}
