@@ -63,3 +63,5 @@ actor SamsaraBFG10kReplace: RandomSpawner replaces BFG10k
 
 actor SamsaraSlotSeven_Chex:    SamsaraSlotSevenPickup replaces LAZDevice {}
 actor SamsaraSlotSeven_Heretic: SamsaraSlotSevenPickup replaces MaceSpawner {}
+
+actor SamsaraSlotSeven_Hexen1:  SamsaraSlotSevenPickup replaces CWeaponPiece1 {}

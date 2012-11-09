@@ -58,3 +58,4 @@ actor SamsaraSlotOneDrop: SamsaraSlotOnePickup
 
 actor SamsaraSlotOne_Chex:    SamsaraSlotOnePickup replaces SuperBootspork {}
 actor SamsaraSlotOne_Heretic: SamsaraSlotOnePickup replaces Gauntlets {}
+actor SamsaraSlotOne_Hexen:   SamsaraSlotOnePickup replaces MWeapFrost {}

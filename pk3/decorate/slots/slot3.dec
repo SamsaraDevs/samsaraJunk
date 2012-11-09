@@ -58,3 +58,4 @@ actor SamsaraSlotThreeDrop: SamsaraSlotThreePickup
 
 actor SamsaraSlotThree_Allmap:  SamsaraSlotThreePickup replaces Allmap {}
 actor SamsaraSlotThree_Chex:    SamsaraSlotThreePickup replaces SuperLargeZorcher {}
+actor SamsaraSlotThree_Hexen:   SamsaraSlotThreePickup replaces CWeapFlame {}

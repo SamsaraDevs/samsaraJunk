@@ -3,7 +3,7 @@
 //#include "actors/GAME_DOOM"
 #include "actors/GAME_CHEX"
 #include "actors/GAME_HERETIC"
-//#include "actors/GAME_HEXEN"
+#include "actors/GAME_HEXEN"
 //#include "actors/GAME_STRIFE"
 #include "actors/GAME_CHAOS"
 #include "actors/GAME_TERRAINCOGNITA"

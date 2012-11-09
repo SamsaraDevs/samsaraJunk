@@ -63,3 +63,6 @@ actor SamsaraGLReplace: RandomSpawner replaces GrenadeLauncher
 
 actor SamsaraSlotFive_Chex:    SamsaraSlotFivePickup replaces ZorchPropulsor {}
 actor SamsaraSlotFive_Heretic: SamsaraSlotFivePickup replaces PhoenixRod {}
+
+actor SamsaraSlotFive_Hexen1:  SamsaraSlotFivePickup replaces CWeaponPiece3 {}
+actor SamsaraSlotFive_Hexen2:  SamsaraSlotFivePickup replaces MWeaponPiece2 {}

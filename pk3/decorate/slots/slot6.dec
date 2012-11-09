@@ -63,3 +63,6 @@ actor SamsaraRailgunReplace: RandomSpawner replaces Railgun
 
 actor SamsaraSlotSix_Chex:    SamsaraSlotSixPickup replaces PhasingZorcher {}
 actor SamsaraSlotSix_Heretic: SamsaraSlotSixPickup replaces SkullRod {}
+
+actor SamsaraSlotSix_Hexen1:  SamsaraSlotSixPickup replaces CWeaponPiece2 {}
+actor SamsaraSlotSix_Hexen2:  SamsaraSlotSixPickup replaces MWeaponPiece1 {}

@@ -57,6 +57,7 @@ actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
 }
 
 actor SamsaraSlotTwo_Chex:    SamsaraSlotTwoPickup replaces LargeZorcher {}
+actor SamsaraSlotTwo_Hexen:   SamsaraSlotTwoPickup replaces FWeapAxe {}
 
 actor SamsaraSlotTwo_Heretic
 {
