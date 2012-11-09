@@ -63,6 +63,8 @@ actor SamsaraMinigunReplace: RandomSpawner replaces Minigun
 
 actor SamsaraSlotFour_Hexen:   SamsaraSlotFourPickup replaces FWeapHammer {}
 actor SamsaraSlotFour_Heretic: SamsaraSlotFourPickup replaces Blaster {}
+actor SamsaraSlotFour_Strife1: SamsaraSlotFourPickup replaces AssaultGun {}
+actor SamsaraSlotFour_Strife2: SamsaraSlotFourPickup replaces AssaultGunStanding {}
 
 actor SamsaraSlotFour_Chex
 {

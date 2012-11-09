@@ -453,7 +453,7 @@ script SAMSARA_DECORATE (int choice)
 *  Also, keep an eye on this script for potential desync issues.
 */
 
-script SAMSARA_GIVEWEAPON (int slot, int dropped)
+script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 {
     slot = itemToSlot(slot);
     
@@ -521,7 +521,11 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped)
         
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
-        ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
+
+        if (!silent)
+        {
+            ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
+        }
     }
     
     if (dropped && IsServer)
