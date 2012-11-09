@@ -1,0 +1,137 @@
+actor Nazi2 : WolfensteinSS replaces WolfensteinSS
+{
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    DropItem "Clip2"
+    +THRUGHOST
+    +NOTDMATCH
+    +NOICEDEATH
+    states
+    {
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+
+      XDeath:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::XDeath"
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        SSWV EF 10 A_FaceTarget
+        TNT1 A 0 A_PlaySound("wolfss/attack")
+        SSWV G 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        SSWV F 6 A_FaceTarget
+        TNT1 A 0 A_PlaySound("wolfss/attack")
+        SSWV G 4 bright A_CustomMissile("DoomEnemyBullet",32,0,random(-22.5,22.5),8)
+        SSWV F 1 A_CPosRefire
+        goto Missile+2
+
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        SSWV H 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        SSWV H 16 A_Pain
+        Goto See
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        SSWV H 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        SSWV H 3 A_SpawnItem("ZorchEffectSmall")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        SSWV H 3 A_SetTranslucent(0.9,0)
+        SSWV H 0 A_Scream
+        SSWV H 3 A_SetTranslucent(0.8,0)
+        SSWV H 0 A_NoBlocking
+        SSWV H 3 A_SetTranslucent(0.7,0)
+        SSWV H 3 A_SetTranslucent(0.6,0)
+        SSWV H 3 A_SetTranslucent(0.5,0)
+        SSWV H 3 A_SetTranslucent(0.4,0)
+        SSWV H 3 A_SetTranslucent(0.3,0)
+        SSWV H 3 A_SetTranslucent(0.2,0)
+        SSWV H 3 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Raise:
+        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+        SSWV MLKJI 5
+        goto See
+
+      ZorchRaise:
+        TNT1 A 1 A_UnsetShootable
+        TNT1 A 1 A_SpawnItem("SpawnFire2")
+        TNT1 A 0 A_PlaySound("archvile/resummon")
+        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+        TNT1 A 0 A_SetTranslucent(0.1,0)
+        SSWV A 3 A_SetTranslucent(0.2,0)
+        SSWV A 3 A_SetTranslucent(0.3,0)
+        SSWV A 3 A_SetTranslucent(0.4,0)
+        SSWV A 3 A_SetTranslucent(0.5,0)
+        SSWV A 3 A_SetTranslucent(0.6,0)
+        SSWV A 3 A_SetTranslucent(0.7,0)
+        SSWV A 3 A_SetTranslucent(0.8,0)
+        SSWV A 3 A_SetTranslucent(0.9,0)
+        SSWV A 3 A_SetTranslucent(1,0)
+        SSWV A 1 A_SetShootable
+        Goto See
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        //TNT1 A 0 A_NoBlocking
+        //TNT1 A 0 A_SpawnItem("NaziFrozen")
+        SSWV H 0 A_GenericFreezeDeath
+        SSWV H 70 A_UnsetSolid
+        SSWV H 0 A_IceGuyDie
+        SSWV H 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+    }
+}
+

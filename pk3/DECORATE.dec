@@ -1,6 +1,6 @@
 #include "decorate/core.dec"
 
-#include "actors/GAME_DOOM"
+//#include "actors/GAME_DOOM"
 #include "actors/GAME_CHEX"
 #include "actors/GAME_HERETIC"
 //#include "actors/GAME_HEXEN"
@@ -16,7 +16,9 @@
 #include "decorate/duke.dec"
 #include "decorate/marathon.dec"
 
-#include "decorate/stDummies.dec"
 #include "decorate/slots.dec"
+
+#include "decorate/game_doom.dec"
+#include "decorate/stDummies.dec"
 
 #include "actors/KEYS"

@@ -1,3 +1,31 @@
+actor Minigun : Chaingun 5014
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 214
+}
+
+actor GrenadeLauncher : RocketLauncher 5011
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 163
+}
+
+actor Railgun : PlasmaRifle 5012
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 164
+}
+
+actor BFG10k : BFG9000 5013
+{
+    Weapon.SlotNumber 8
+    Game Doom
+    SpawnID 165
+}
+
 actor SamsaraSlotPickup: CustomInventory
 {
     +QUIET

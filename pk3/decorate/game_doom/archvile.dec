@@ -1,0 +1,88 @@
+actor Archvile2 : Archvile replaces Archvile
+{
+    DamageFactor "Mace", 1.15
+    DamageFactor "DragonClaw", 1.6
+    PainChance "MightyBoot", 255
+    +FIREDAMAGE
+    +DONTRIP
+    +NOTDMATCH
+    +NOICEDEATH
+    states
+    {
+      Death.DukeExplosive:
+
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        VILE Q 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(12)
+        VILE Q 16 A_Pain
+        Goto See
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        goto "Super::Missile"
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        VILE Q 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        VILE Q 4 A_SpawnItem("ZorchEffectBig")
+        VILE Q 4 A_SetTranslucent(0.9,0)
+        VILE Q 0 A_Scream
+        VILE Q 4 A_SetTranslucent(0.8,0)
+        VILE Q 0 A_NoBlocking
+        VILE Q 4 A_SetTranslucent(0.7,0)
+        VILE Q 4 A_SetTranslucent(0.6,0)
+        VILE Q 4 A_SetTranslucent(0.5,0)
+        VILE Q 4 A_SetTranslucent(0.4,0)
+        VILE Q 4 A_SetTranslucent(0.3,0)
+        VILE Q 4 A_SetTranslucent(0.2,0)
+        VILE Q 4 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        TNT1 A 0 A_NoBlocking
+        //TNT1 A 0 A_SpawnItem("ArchvileFrozen")
+        VILE Q 0 A_GenericFreezeDeath
+        VILE Q 70 A_UnsetSolid
+        VILE Q 0 A_IceGuyDie
+        VILE Q 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+    }
+}
+

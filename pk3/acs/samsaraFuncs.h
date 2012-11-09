@@ -36,7 +36,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
         if (giveScript > 0)
         {
-            ACS_ExecuteWithResult(giveScript, class, slot,0);
+            ACS_ExecuteWithResult(giveScript, class, slot, dropped);
         }
         else
         {

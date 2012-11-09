@@ -1,0 +1,102 @@
+// Stealth monsters!
+actor StealthArachnotron2 : Arachnotron2 replaces StealthArachnotron
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHBABY"
+}
+
+actor StealthArchvile2 : Archvile2 replaces StealthArchvile
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHVILE"
+}
+
+actor StealthBaron2 : BaronOfHell2 replaces StealthBaron
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHBARON"
+    HitObituary "$OB_STEALTHBARON"
+}
+
+actor StealthHellKnight2 : HellKnight2 replaces StealthHellKnight
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHKNIGHT"
+    HitObituary "$OB_STEALTHKNIGHT"
+}
+
+actor StealthCacodemon2 : Cacodemon2 replaces StealthCacodemon
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHCACO"
+    HitObituary "$OB_STEALTHCACO"
+}
+
+actor StealthDemon2 : DoomDemon2 replaces StealthDemon
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHDEMON"
+    HitObituary "$OB_STEALTHDEMON"
+}
+
+actor StealthChaingunGuy2 : ChaingunGuy2 replaces StealthChaingunGuy
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHCHAINGUY"
+}
+
+actor StealthDoomImp2 : DoomImp2 replaces StealthDoomImp
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHIMP"
+    HitObituary "$OB_STEALTHIMP"
+}
+
+actor StealthFatso2 : Fatso2 replaces StealthFatso
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHFATSO"
+}
+
+actor StealthRevenant2 : Revenant2 replaces StealthRevenant
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHUNDEAD"
+    HitObituary "$OB_STEALTHUNDEAD"
+}
+
+actor StealthShotgunGuy2 : ShotgunGuy2 replaces StealthShotgunGuy
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHSHOTGUNGUY"
+}
+
+actor StealthZombieman2 : Zombieman2 replaces StealthZombieman
+{
+    +STEALTH
+    RenderStyle Translucent
+    Alpha 0
+    Obituary "$OB_STEALTHZOMBIE"
+}

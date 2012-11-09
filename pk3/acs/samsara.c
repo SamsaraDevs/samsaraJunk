@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include "commonFuncs.h"
 
@@ -712,6 +712,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int limited     = !CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
     
+    if (DEBUG) { PrintBold(s:"\ca[MARATHON]\c- dropped is ", d:dropped); }
     
     switch (slot)
     {
@@ -723,8 +724,8 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       case 3:
         if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
         
-        GiveInventory("Shell", 8);
-        GiveInventory("AmmoShell", 8);
+        GiveInventory("Shell", 8 / (!!dropped+1));
+        GiveInventory("AmmoShell", 8 / (!!dropped+1));
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
         
         if (giveboth || (hasShotty && !dropped))

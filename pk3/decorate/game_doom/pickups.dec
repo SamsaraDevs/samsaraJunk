@@ -1,0 +1,28 @@
+actor SamsaraClip_Doom: CustomInventory
+{
+    Inventory.PickupMessage "Picked up 5 rounds of Ammo 1."
+    Inventory.PickupSound "ammo/bulletsmall"
+    States
+    {
+      Spawn:
+        CLIP B -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",5)
+        stop
+
+      PickupFail:
+        CLIP B 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("Clip",10)
+        stop
+    }
+}
+

@@ -1,0 +1,65 @@
+actor DoomExplosiveBarrel: ExplosiveBarrel replaces ExplosiveBarrel { +DONTRIP }
+
+actor DoomEnemyBullet : FastProjectile
+{
+    Damage (Random(1,3)*5)
+    Radius 1
+    Height 1
+    Speed 300
+    Projectile
+    Renderstyle "Normal"
+    +BLOODSPLATTER
+    +THRUGHOST
+    Alpha 1.0
+    Decal Bulletchip
+    States
+    {
+      Spawn:
+        TNT1 A 1
+        loop
+
+      Death:
+        TNT1 A 1 A_SpawnItem("DoomBulletPuff")
+        stop
+
+      XDeath:
+        TNT1 A 1
+        stop
+    }
+}
+
+actor SpawnFire2
+{
+    Height 78
+    
+    -SOLID
+    //+NOCLIP
+    +NOBLOCKMAP
+    +NOGRAVITY
+    RenderStyle Add
+    Alpha 0.5
+    States
+    {
+      Spawn:
+        FIRE ABCDEFGH 4 Bright
+        Stop
+    }
+}
+
+#include "decorate/game_doom/archvile.dec"
+#include "decorate/game_doom/barons.dec"
+#include "decorate/game_doom/bosses.dec"
+#include "decorate/game_doom/caco.dec"
+#include "decorate/game_doom/chinguy.dec"
+#include "decorate/game_doom/demons.dec"
+#include "decorate/game_doom/fatso.dec"
+#include "decorate/game_doom/imp.dec"
+#include "decorate/game_doom/nazi.dec"
+#include "decorate/game_doom/pickups.dec"
+#include "decorate/game_doom/revenant.dec"
+#include "decorate/game_doom/shotguy.dec"
+#include "decorate/game_doom/soulpain.dec"
+#include "decorate/game_doom/spiders.dec"
+#include "decorate/game_doom/zombieman.dec"
+
+#include "decorate/game_doom/stealth.dec"
