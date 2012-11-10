@@ -314,6 +314,10 @@ script SAMSARA_ENTER_CLIENT enter clientside
         if (!GetCVar("samsara_cl_pickupmode"))
         {   ConsoleCommand("set samsara_cl_pickupmode 1");
         ConsoleCommand("archivecvar samsara_cl_pickupmode"); }
+        
+        if (!GetCVar("samsara_cl_printpickup"))
+        {   ConsoleCommand("set samsara_cl_printpickup 0");
+        ConsoleCommand("archivecvar samsara_cl_printpickup"); }
     }
     
     class = samsaraClassNum() + 1;
@@ -637,6 +641,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
+    int logMsg;
     
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
@@ -652,17 +657,19 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
                 QuoteStorage[quoteCount++] = j;
             }
             
-            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
-            else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
+            if (!quoteCount) { logMsg = "Oh bugger there's no messages for this weapon."; }
+            else { logMsg = QuoteStorage[random(0, quoteCount-1)]; }
         }
         else
         {
-            i = ClassPickupMessages[pclass][slot][0];
+            logMsg = ClassPickupMessages[pclass][slot][0];
             
-            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
-            else { Log(s:i); }
+            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this weapon."; } 
         }
     }
+
+    if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
+    else { Log(s:logMsg); }
     
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
     else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
@@ -696,6 +703,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
+    int logMsg;
     
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
@@ -711,17 +719,19 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
                 QuoteStorage[quoteCount++] = j;
             }
             
-            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this unique."); }
-            else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
+            if (!quoteCount) { logMsg = "Oh bugger there's no messages for this unique."; }
+            else { logMsg = QuoteStorage[random(0, quoteCount-1)]; }
         }
         else
         {
-            i = ClassUniqueMessages[pclass][0];
+            logMsg = ClassUniqueMessages[pclass][0];
             
-            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this unique."); } 
-            else { Log(s:i); }
+            if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this unique."; } 
         }
     }
+
+    if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
+    else { Log(s:logMsg); }
     
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
     else { ActivatorSound(ClassUniqueSounds[pclass], 127); }

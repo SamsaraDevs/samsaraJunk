@@ -20,7 +20,7 @@
 #define SAMSARA_DISCONNECT_CLIENT   222
 #define SAMSARA_CLIENT_CLASS        228
 
-#define SAMSARA_CL_VERSION          26
+#define SAMSARA_CL_VERSION          2601
 
 #define CLASSCOUNT          7
 #define UNIQUECOUNT         2
