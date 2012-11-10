@@ -92,6 +92,7 @@ script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
+    int pariasMod;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
     
@@ -153,19 +154,21 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         
-        if (CheckInventory("MarathonClass"))
+        if (SamsaraClassNum() == CLASS_MARATHON)
         {
             if (GetCVar("samsara_sogravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
             else { SetActorProperty(0, APROP_Gravity, 0.15); }
         }
 
+        pariasMod = 9 * (SamsaraClassNum() == CLASS_HEXEN);
+
         if (GetCVar("samsara_hexenjump"))
         {
-            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(41, GetActorProperty(0, APROP_Gravity)));
+            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(41 + pariasMod, GetActorProperty(0, APROP_Gravity)));
         }
         else
         {
-            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32, GetActorProperty(0, APROP_Gravity)));
+            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32 + pariasMod, GetActorProperty(0, APROP_Gravity)));
         }
         
         Delay(1);

@@ -28,9 +28,9 @@
 
 #define LMSMODES            6
 
-#define CLASS_DOOMGUY   0
+#define CLASS_DOOM      0
 #define CLASS_CHEX      1
-#define CLASS_CORVUS    2
+#define CLASS_HERETIC   2
 #define CLASS_WOLFEN    3
 #define CLASS_HEXEN     4
 #define CLASS_DUKE      5
