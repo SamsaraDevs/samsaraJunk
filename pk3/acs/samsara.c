@@ -58,6 +58,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_lmslife 0");
         ConsoleCommand("archivecvar samsara_lmslife"); }
         
+        if (!GetCVar("samsara_lmsunique"))
+        {   ConsoleCommand("set samsara_lmsunique 0");
+        ConsoleCommand("archivecvar samsara_lmsunique"); }
+        
         if (!GetCVar("samsara_lmsult"))
         {   ConsoleCommand("set samsara_lmsult 0");
         ConsoleCommand("archivecvar samsara_lmsult"); }
@@ -611,8 +615,7 @@ script SAMSARA_GIVEUNIQUE (int alt)
     
     if (uniqueGet && IsServer)
     {
-        GiveInventory(unique, 1);
-        GiveInventory(ammo, amax - CheckInventory(ammo));
+        GiveClassUnique(pclass, alt);
         ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
     }
     

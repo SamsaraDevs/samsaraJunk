@@ -2,7 +2,7 @@
 #define WEPFLAGS_WEAPONSTAY 2
 
 #define CHOICECOUNT         5
-#define CHOICECOUNT_U       4
+#define CHOICECOUNT_U       (UNIQUECOUNT*2)
 
 #define S_WEP               0
 #define S_AMMO1             1

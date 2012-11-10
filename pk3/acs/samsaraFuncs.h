@@ -33,7 +33,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
     if (giveWep)
     {
-        GiveInventory(SlotItems[slot], 1);
+        if (StrLen(SlotItems[slot])) { GiveInventory(SlotItems[slot], 1); }
 
         if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
 
@@ -93,15 +93,40 @@ function int HasClassWeapon(int class, int slot)
     return hasWep || hasItem;
 }
 
+function void GiveClassUnique(int class, int which)
+{
+    int unique, ammo, amax;
+    
+    switch (which)
+    {
+      case 0:
+        unique = ClassUniques[class][U_UNIQUE1];
+        ammo   = ClassUniques[class][U_AMMO1];
+        amax   = UniqueMaxes[class][U_AMMO1];
+        break;
+    
+      case 1:
+        unique = ClassUniques[class][U_UNIQUE2];
+        ammo   = ClassUniques[class][U_AMMO2];
+        amax   = UniqueMaxes[class][U_AMMO2];
+        break;
+    }
+
+    if (StrLen(unique)) { GiveInventory(unique, 1); }
+    if (StrLen(ammo)) { GiveInventory(ammo, amax - CheckInventory(ammo)); }
+}
+
 function void ApplyLMS(void)
 {
     int classNum = samsaraClassNum();
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
 
-    for (i = 0; i < SLOTCOUNT-1; i++)
+    for (i = 0; i < SLOTCOUNT-1; i++) { GiveClassWeapon(classNum, i, 1); }
+
+    if (GetCVar("samsara_lmsunique"))
     {
-        GiveClassWeapon(classNum, i, 1);
+        for (i = 0; i < UNIQUECOUNT; i++) { GiveClassUnique(classNum, i); }
     }
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
@@ -109,7 +134,7 @@ function void ApplyLMS(void)
     
     if (lmsLevel)
     {
-        SetActorProperty(0, APROP_Health, 100 * lmsLevel);
+        SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) + (100 * (lmsLevel-1)));
         GiveInventory(LMSArmors[lmsLevel], 1);
     }
 } 

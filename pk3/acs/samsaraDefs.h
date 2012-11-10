@@ -23,7 +23,9 @@
 #define SAMSARA_CL_VERSION          26
 
 #define CLASSCOUNT          7
+#define UNIQUECOUNT         2
 #define SLOTCOUNT           9
+
 #define LMSMODES            6
 
 #define CLASS_DOOMGUY   0
@@ -45,7 +47,8 @@ samsara_banjetpack 0/1: Toggles whether Duke is allowed to pick up his jetpack o
 samsara_sogravity 0/1: Toggles whether the Security Officer operates off Marathon or Doom gravity.\n\
 samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
-samsara_lmsult 0/1: Toggles whether or not players get their VII in LMS mode.";
+samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
+samsara_lmsunique 0/1: Toggles whether players get their unique in LMS.";
 
 int LMSArmors[LMSMODES] = 
 {
