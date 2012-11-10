@@ -22,7 +22,6 @@
  ^- : Wolfenstein sounds ripped by Kinsie and Counter.
  ^- : Knife pickup sprite by Scuba Steve.
  ^- : Numerous sounds by as3sfxr
- ^- : Movement code by Ijon Tichy.
 - : Duke Nukem and the respective sprites/sounds are property of Gearbox and 3DRealms.
  ^- : Duke Nukem sprites and weapons ripped by Dolphman.
  ^- : Mighty Boot system inspired by Brutal Doom.
@@ -38,9 +37,10 @@
  ^- : Majority of resources/decorate given graciously by TwelveEyes. Thank you very much!
  ^- : Double, triple, and quadruple checking for Marathon accuracy by PresidentPeople.
  ^- : Synthesized fire mode by Xaser.
- ^- : HUD inspired by Hopper's M1A1 Enhanced hud.
- ^- : Marapfhont by ChristTrekker.
+ ^- : HUD inspired by Steven Tzé's M1A1 Enhanced hud.
+ ^- : Marapfhont and Squarish Sans by ChristTrekker.
 
+- : Fuckloads of ACS design, re-design, and enhancement done by ijon tichy.
 - : The Zorch cry for the Cyberdemon was taken from Duke Nukem 3D.
 - : Sounds for item pickups were taken from:
  ^- : The Health pickups were taken from Painkiller, Quake III, and Quake IV.
@@ -62,6 +62,5 @@
 - : Interframes for Doomguy's weapons done by Perkristian.
  ^- : Super Shotgun DECORATE done by Phi108.
 - : B.J.'s bot chatfile written by pkfan2004.
-- : Super Large Zorcher sprite bases by Xaser, Daniel, Digital Cafe and Kronos.
 - : Weapon bar streamlining and banning the jetpack done with major help by Llewellyn.
 - : Global key pickups taken from Shared Keys by Synert.
