@@ -79,6 +79,7 @@ actor DoomguyBerserker: CustomInventory
       Pickup:
         TNT1 A 0 A_GiveInventory("PowerStrength")
         TNT1 A 0 A_GiveInventory("PowerChainsawBerserk")
+	TNT1 A 0 A_SelectWeapon(" Fist ")
         stop
     }
 }

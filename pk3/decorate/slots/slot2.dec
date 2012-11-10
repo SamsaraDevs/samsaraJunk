@@ -60,7 +60,7 @@ actor SamsaraSlotTwo_Chex:    SamsaraSlotTwoPickup replaces LargeZorcher {}
 actor SamsaraSlotTwo_Hexen:   SamsaraSlotTwoPickup replaces FWeapAxe {}
 actor SamsaraSlotTwo_Strife:  SamsaraSlotTwoPickup replaces StrifeCrossbow {}
 
-actor SamsaraSlotTwo_Heretic
+actor SamsaraSlotTwo_Heretic replaces Crossbow
 {
     States
     {
