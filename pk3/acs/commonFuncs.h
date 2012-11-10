@@ -725,3 +725,8 @@ script DEFAULTTID_SCRIPT (int tid) clientside
 {
     Thing_ChangeTID(0, tid);
 }
+
+function int JumpZFromHeight(int height, int gravFactor)
+{
+    return sqrt(2 * height * gravFactor);
+}

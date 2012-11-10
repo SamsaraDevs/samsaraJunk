@@ -66,6 +66,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_lmsult 0");
         ConsoleCommand("archivecvar samsara_lmsult"); }
         
+        if (!GetCVar("samsara_hexenjump"))
+        {   ConsoleCommand("set samsara_hexenjump 0");
+        ConsoleCommand("archivecvar samsara_hexenjump"); }
+        
         if (!GetCVar("samsara_sogravity"))
         {   ConsoleCommand("set samsara_sogravity 0");
         ConsoleCommand("archivecvar samsara_sogravity"); }
@@ -151,16 +155,17 @@ script SAMSARA_SPAWN (int respawning)
         
         if (CheckInventory("MarathonClass"))
         {
-            if (GetCVar("samsara_sogravity"))
-            {
-                SetActorProperty(0, APROP_Gravity, 1.0);
-                SetActorProperty(0, APROP_JumpZ,   9.0);
-            }
-            else
-            {
-                SetActorProperty(0, APROP_Gravity, 0.15);
-                SetActorProperty(0, APROP_JumpZ,   4.0);
-            }
+            if (GetCVar("samsara_sogravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
+            else { SetActorProperty(0, APROP_Gravity, 0.15); }
+        }
+
+        if (GetCVar("samsara_hexenjump"))
+        {
+            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(41, GetActorProperty(0, APROP_Gravity)));
+        }
+        else
+        {
+            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32, GetActorProperty(0, APROP_Gravity)));
         }
         
         Delay(1);
