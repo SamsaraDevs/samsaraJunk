@@ -45,6 +45,7 @@ int HELPSTR =
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
 samsara_banjetpack 0/1: Toggles whether Duke is allowed to pick up his jetpack or not.\n\
 samsara_sogravity 0/1: Toggles whether the Security Officer operates off Marathon or Doom gravity.\n\
+samsara_hexenjump 0/1: Toggles whether the Heroes get a height boost for HeXen play.\n\
 samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
