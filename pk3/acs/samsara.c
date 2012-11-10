@@ -899,7 +899,7 @@ script 300 (int tipboxshit) NET
             if (CheckInventory("DoomguyClass"))
             {
                 SetHudSize(1024,768,1);
-                SetFont("DOOMTIP3");
+                SetFont("DOOMTIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
             if (CheckInventory("ChexClass"))
