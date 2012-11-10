@@ -1386,3 +1386,12 @@ script 204 (int bossmonologueshit)
         break;
     }
 }
+
+script 205 (void)
+{
+    while (CheckInventory("DukeTauntCooldown") > 0)
+    {
+        Delay(35);
+        TakeInventory("DukeTauntCooldown", 1);
+    }
+}

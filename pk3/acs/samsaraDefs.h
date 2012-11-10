@@ -15,7 +15,7 @@
 #define SAMSARA_MARATHON            209
 
 #define SAMSARA_PUKE                226
-#define SAMSARA_OPEN_CLIENT         205
+#define SAMSARA_OPEN_CLIENT         248
 #define SAMSARA_ENTER_CLIENT        221
 #define SAMSARA_DISCONNECT_CLIENT   222
 #define SAMSARA_CLIENT_CLASS        228
