@@ -707,7 +707,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "One-handed? That's right.",
             "In the future, shotguns will still have bullets.",
             "Is there such thing as a non-combat shotgun?",
-            "",
+            "You hear the agonised screams of a coder in the distance.",
             "",
             "",
         },
