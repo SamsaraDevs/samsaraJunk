@@ -171,13 +171,6 @@ actor WolfenAmmoCrate : CustomInventory
     }
 }
 
-actor Boolean : Inventory
-{
-    Inventory.MaxAmount 1
-    +UNDROPPABLE
-    -INVBAR
-}
-
 actor WolfMoving: Boolean {}
 actor WolfenMovement : Boolean {}
 actor WolfenClass : Boolean {}

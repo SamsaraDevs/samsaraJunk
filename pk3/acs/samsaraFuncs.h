@@ -14,6 +14,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     int giveScript = ClassScripts[class][slot];
     int hasAmmo = 0;
     int giveWep = 0;
+    int hasWep  = CheckInventory(weapon);
+    int success;
 
     if (!StrLen(weapon)) { return 0; }
 
@@ -36,13 +38,14 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
         if (giveScript > 0)
         {
-            ACS_ExecuteWithResult(giveScript, class, slot, dropped);
+            success = ACS_ExecuteWithResult(giveScript, class, slot, dropped);
         }
         else
         {
+            success = 1;
             GiveInventory(weapon, 1);
 
-            if (array_pickupswitch[PlayerNumber()] &&
+            if (array_pickupswitch[PlayerNumber()] && !hasWep &&
                     (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
             {
                 SetWeapon(ClassWeapons[class][slot][S_WEP]);
@@ -71,7 +74,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
         }
     }
 
-    return !giveWep;
+    return !success;
 }
 
 function int HasClassWeapon(int class, int slot)

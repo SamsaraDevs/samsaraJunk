@@ -212,3 +212,10 @@ actor DukeKickAttack : FastProjectile
         stop
     }
 }
+
+actor DukeBootserk: PowerDamage
+{
+    +HUBPOWER
+    Powerup.Duration 0x7FFFFFFF
+    DamageFactor "MightyBoot", 8
+}

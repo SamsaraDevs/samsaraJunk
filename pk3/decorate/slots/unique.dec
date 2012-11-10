@@ -1,4 +1,10 @@
-actor SamsaraUniquePickup: CustomInventory replaces Berserk
+actor SamsaraUniquePickup: RandomSpawner replaces Berserk
+{
+    dropitem "SamsaraUniquePickup1"
+    dropitem "SamsaraUniquePickup2"
+}
+
+actor SamsaraUniquePickup1: CustomInventory
 {
     +QUIET
     +INVENTORY.BIGPOWERUP
@@ -7,12 +13,7 @@ actor SamsaraUniquePickup: CustomInventory replaces Berserk
     {
       Spawn:
         UNIQ B 0
-        UNIQ B 1 A_Jump(128, "SpawnOther")
         goto SpawnLoop
-
-      SpawnOther:
-        UNIQ B 0 A_SpawnItemEx("SamsaraUniquePickup2")
-        stop
 
       SpawnLoop:      
         "----" A 35 bright ACS_ExecuteAlways(228, 0, -1)

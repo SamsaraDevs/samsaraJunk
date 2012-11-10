@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 1
+#define DEBUG 0
 
 #include "commonFuncs.h"
 
@@ -126,12 +126,24 @@ script SAMSARA_SPAWN (int respawning)
         
         if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
         else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
+
+        if (GetCVar("sv_bfgfreeaim")) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
+        else { GiveInventory("DoomNoBFGAim", 1); }
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
         
         TakeInventory("Mace", 1);
         TakeInventory("MacePowered", 1);
+
+        if (GetCVar("samsara_banjetpack") && CheckInventory("DukePortJetpack"))
+        {
+            GiveInventory("DukeBootserk", 1);
+            TakeInventory("DukePortJetpack", 0x7FFFFFFF);
+            TakeInventory("DukeJetpackFuel", 0x7FFFFFFF);
+            Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
+        }
+
         
         if (CheckInventory("MarathonClass"))
         {
@@ -146,9 +158,6 @@ script SAMSARA_SPAWN (int respawning)
                 SetActorProperty(0, APROP_JumpZ,   4.0);
             }
         }
-
-        if (GetCVar("sv_bfgfreeaim")) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
-        else { GiveInventory("DoomNoBFGAim", 1); }
         
         Delay(1);
         
@@ -476,7 +485,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
     
-    if (!wepbool || CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]))
+    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM] && !dropped)))
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -517,12 +526,10 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     
     if (weaponGet && IsServer)
     {
-        _giveclassweapon(pclass, slot, 3, dropped);
-        
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
 
-        if (!silent)
+        if (!silent &&  !_giveclassweapon(pclass, slot, 3, dropped))
         {
             ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
         }
@@ -683,14 +690,14 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
                 QuoteStorage[quoteCount++] = j;
             }
             
-            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this weapon."); }
+            if (!quoteCount) { Log(s:"Oh bugger there's no messages for this unique."); }
             else { Log(s:QuoteStorage[random(0, quoteCount-1)]); }
         }
         else
         {
             i = ClassUniqueMessages[pclass][0];
             
-            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this weapon."); } 
+            if (!StrLen(i)) { Log(s:"Oh bugger there's no message for this unique."); } 
             else { Log(s:i); }
         }
     }
@@ -713,7 +720,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int giveboth    = isInvasion() || !isCoop();
     int hasShotty   = CheckInventory("WSTE-M5 Combat Shotgun");
     int hasBoth     = CheckInventory("CanDualShotties");
-    int limited     = !CheckInventory("LevelLimiter");
+    int limited     = CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
     
     if (DEBUG) { PrintBold(s:"\ca[MARATHON]\c- dropped is ", d:dropped); }
@@ -726,7 +733,11 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         break;
         
       case 3:
-        if (!limited) { terminate; }   // although it shouldn't be executing ANYWAY
+        if (limited)
+        {
+            SetResultValue(0);
+            terminate;
+        }
         
         GiveInventory("Shell", 8 / (!!dropped+1));
         GiveInventory("AmmoShell", 8 / (!!dropped+1));

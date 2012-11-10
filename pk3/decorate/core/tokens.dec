@@ -1,18 +1,25 @@
-actor EnemyZorched : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
-actor CoopModeOn : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
-actor SPModeOn : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
-actor ExpandedHud : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.maxamount 1 }
-actor OverMax : Inventory { Inventory.MaxAmount 200 }
-actor OverOverMax : Inventory { Inventory.MaxAmount 300 }
-actor DoomNoBFGAim: CustomInventory { +UNDROPPABLE inventory.maxamount 1 }
+actor Boolean : Inventory
+{
+    Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
 
-actor GotWeapon0 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon2 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon3 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon4 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon5 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon6 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
-actor GotWeapon7 : inventory { -INVBAR +UNDROPPABLE inventory.maxamount 1 }
+actor EnemyZorched: Boolean {}
+actor CoopModeOn: Boolean {}
+actor SPModeOn: Boolean {}
+actor ExpandedHud: Boolean {}
+actor DoomNoBFGAim: Boolean {}
+actor OverMax: Inventory { Inventory.MaxAmount 200 }
+actor OverOverMax: Inventory { Inventory.MaxAmount 300 }
+
+actor GotWeapon0: Boolean {}
+actor GotWeapon2: Boolean {}
+actor GotWeapon3: Boolean {}
+actor GotWeapon4: Boolean {}
+actor GotWeapon5: Boolean {}
+actor GotWeapon6: Boolean {}
+actor GotWeapon7: Boolean {}
 
 actor WeaponGetYaaaay : Ammo
 {
