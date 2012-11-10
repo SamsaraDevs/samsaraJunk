@@ -23,36 +23,52 @@ actor " Fist " : Weapon
         loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk",1,"FireBerserk")
-        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaFire")
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
+        TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "Rage")
         DPUN LBCD 1
-        DPUN E 1 A_CustomPunch(random(1,10)*2,1,0,"DoomPunchPuff")//A_Punch
-        DPUN FGHI 2
-        DPUN JKL 1
-        DPUN A 5 A_ReFire
-        goto Ready
+        goto FireNorm
+
+      Rage:
+        DPUN LC 2
+        goto FireNorm
+
+      FireNorm:
+        DPUN E 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "FireBerserk")
+        DPUN E 0 A_CustomPunch(random(1, 10)*2, 1, 0, "DoomPunchPuff")
+        goto FireEnd
 
       FireBerserk:
-        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaFireBerserk")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaFireBerserk")
-        DPUN LBCD 1
-        DPUN E 1 A_CustomPunch(random(10,20)*12,1,0,"DoomPunchPuff2") // Technically should be random(2,20)*10, but oh well.
+        DPUN E 0 A_CustomPunch(random(10, 20)*12, 1, 0, "DoomPunchPuff2") // Technically should be random(1, 10)*20, but oh well.
+        goto FireEnd
+
+      FireEnd:
+        DPUN E 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
+        DPUN E 1
         DPUN FGHI 2
         DPUN JKL 1
         DPUN B 5 A_ReFire
         goto Ready
 
+      RageEnd:
+        DPUN EFGHIJL 2
+        DPUN B 4 A_ReFire
+        goto Ready
+
       VanillaFire:
-        TNT1 A 0 A_JumpIfInventory("PowerChainsawBerserk",1,"VanillaFireBerserk")
         DPUN M 4
-        DPUN N 4 A_CustomPunch(random(1,10)*2,1,0,"DoomPunchPuff")
-        DPUN O 5
-        DPUN N 4
-        DPUN M 5 A_ReFire
-        Goto Ready
+        goto VanillaFireNorm
+
+      VanillaFireNorm:
+        DPUN M 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "VanillaFireBerserk")
+        DPUN N 0 A_CustomPunch(random(1, 10)*2, 1, 0, "DoomPunchPuff")
+        goto VanillaEnd
 
       VanillaFireBerserk:
-        DPUN M 4
-        DPUN N 4 A_CustomPunch(random(10,20)*12,1,0,"DoomPunchPuff2")
+        DPUN N 0 A_CustomPunch(random(10, 20)*12, 1, 0, "DoomPunchPuff2")
+        goto VanillaEnd
+    
+      VanillaEnd:
+        DPUN E 4
         DPUN O 5
         DPUN N 4
         DPUN M 5 A_ReFire
