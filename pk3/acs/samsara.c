@@ -321,7 +321,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
         for (i = 0; i < SLOTCOUNT; i++)
         {
             j = SamsaraClientWeps[i];
-            SamsaraClientWeps[i] = HasClassWeapon(class, i) || CheckInventory(ClassWeapons[class][i][S_CHECKFAILITEM]);
+            SamsaraClientWeps[i] = HasClassWeapon(class, i);
             
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
@@ -491,7 +491,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
         terminate;
     }
     
-    
     if (a1bool)
     {
         a1cnt   = CheckInventory(ammo1);
@@ -515,13 +514,20 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
         if (a2bool) { SetAmmoCapacity(ammo2, a2max2); }
     }
     
-    if (!hasWep) { weaponGet = 1; }      // do we even have this?
+    // do we even have this?
+    if (!hasWep || !CheckInventory(ClassWeapons[pclass][slot][S_CHECKITEM]))
+    {
+        weaponGet = 1;
+    }
     else if (!weaponStay || dropped)     // does this not stay on the ground?
     {
-        if ((a1bool && !a1Full) || (a2Bool && !a2Full))
-        {
-            weaponGet = 1;
-        }
+        if ((a1bool && !a1Full) || (a2Bool && !a2Full)) { weaponGet = 1; }
+    }
+
+    if (DEBUG)
+    {
+        Print(s:"hasWep -> ", d:hasWep, s:"; hasCheckItem -> ", d:CheckInventory(ClassWeapons[pclass][slot][S_CHECKITEM]),
+            s:"\nweaponGet -> ", d:weaponGet);
     }
     
     if (weaponGet && IsServer)
@@ -529,7 +535,9 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
         Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
         Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
 
-        if (!silent &&  !_giveclassweapon(pclass, slot, 3, dropped))
+        int success = !_giveclassweapon(pclass, slot, 3, dropped);
+
+        if (!silent && success)
         {
             ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
         }
@@ -549,7 +557,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
         TakeInventory(ammo2, CheckInventory(ammo2) - a2max);
     }
     
-    SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (weaponGet * WEPFLAGS_GOTWEAPON));
+    SetResultValue((weaponStay * WEPFLAGS_WEAPONSTAY) + (success * WEPFLAGS_GOTWEAPON));
 }
 
 script SAMSARA_GIVEUNIQUE (int alt)
@@ -722,8 +730,17 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int hasBoth     = CheckInventory("CanDualShotties");
     int limited     = CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
+    int ammoFull    = CheckInventory("AmmoShell") >= (GetAmmoCapacity("AmmoShell") / ((dropped*3)+1));
+    // The above line is because of the quadupling of ammo capacity with dropped pickups
+    // It's a really gross hack. I hate it. But it works.
     
-    if (DEBUG) { PrintBold(s:"\ca[MARATHON]\c- dropped is ", d:dropped); }
+    if (DEBUG)
+    {
+        PrintBold(s:"\ca[MARATHON]\c- dropped is ", d:dropped,
+                s:"\ngiveBoth, hasShotty, limited, limit, ammoFull = (",
+                d:giveboth, s:", ", d:hasShotty, s:", ", d:hasBoth, s:", ",
+                d:limited, s:", ", d:limit, s:", ", d:ammoFull, s:")");
+    }
     
     switch (slot)
     {
@@ -738,6 +755,14 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             SetResultValue(0);
             terminate;
         }
+
+        if ((dropped && hasShotty && ammoFull) ||
+            (!dropped && (hasBoth || (hasShotty && limited)) && ammoFull)
+           )
+        {
+            SetResultValue(0);
+            terminate;
+        }
         
         GiveInventory("Shell", 8 / (!!dropped+1));
         GiveInventory("AmmoShell", 8 / (!!dropped+1));
@@ -748,7 +773,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             GiveInventory("CanDualShotties", 1);
         }
         
-        if (limit)
+        if (limit && !dropped)
         {
             GiveInventory("LevelLimiter", 1);
         }

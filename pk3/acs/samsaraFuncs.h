@@ -5,9 +5,9 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 {
-    int weapon = ClassWeapons[class][slot][0];
-    int ammo1  = ClassWeapons[class][slot][1];
-    int ammo2  = ClassWeapons[class][slot][2];
+    int weapon = ClassWeapons[class][slot][S_WEP];
+    int ammo1  = ClassWeapons[class][slot][S_AMMO1];
+    int ammo2  = ClassWeapons[class][slot][S_AMMO2];
     int a1count = CheckInventory(ammo1);
     int a2count = CheckInventory(ammo2);
 
@@ -20,6 +20,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
+    if (!CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
 
     if (StrLen(ammo1)) { hasAmmo |= 1; }
     if (StrLen(ammo2)) { hasAmmo |= 2; }
@@ -89,7 +90,7 @@ function int HasClassWeapon(int class, int slot)
     hasWep  = CheckInventory(weapon);
     hasItem = !StrLen(checkitem) || CheckInventory(checkitem);
 
-    return hasWep && hasItem;
+    return hasWep || hasItem;
 }
 
 function void ApplyLMS(void)
