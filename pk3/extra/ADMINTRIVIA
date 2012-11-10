@@ -1,13 +1,18 @@
 COMPETITIVE SHIT:
 
 - In Last Man Standing, you can adjust the amount of life/armor people start with
-  by using the sv_lmslife cvar. sv_lmslife 0 starts with just 100 life, using
-  sv_lmslife 1 starts with 100 life and 100 armor, sv_lmslife 2 starts with 200
-  life/armor, sv_lmslife 3 starts 300 life/armor, sv_lmslife 4 starts with 400,
-  and sv_lmslife 5 starts with 500.
+  by using the sv_lmslife cvar. sasmara_lmslife 0 starts with just 100 life, using
+  sasmara_lmslife 1 starts with 100 life and 100 armor, sasmara_lmslife 2 starts with
+  200 life/armor, sasmara_lmslife 3 starts 300 life/armor, sasmara_lmslife 4 starts
+  with 400, and sasmara_lmslife 5 starts with 500.
   
 - In Last Man Standing, to have characters spawn with Ultimate weapons as well,
-  use the sv_lmsult cvar. sv_lmsult 1 enables Ultimates, sv_lmsult 0 disables.
+  use the sasmara_lmsult cvar. sasmara_lmsult 1 enables Ultimates, sasmara_lmsult 0
+  disables it.
+
+- In Last Man Standing, to have characters spawn with their Unique item as well,
+  use the samsara_lmsunique cvar. samsara_lmsunique 1 enables, samsara_lmsunique 0
+  disables it.
 
 
 
@@ -26,15 +31,19 @@ COOPERATIVE SHIT:
 
 UNIVERSAL SHIT:
 
+- HeXen's emphasis on platforming requires a higher jumpheight for characters.
+  samsara_hexenjump cvar will increase everybody's jumpheight so as to accomodate
+  it.
+
 - Please consider disabling Weapon Drop On Death, as with it players will be able
   to pick up and use other characters' weapons.
 
-- You can disable Duke's jetpack with sv_banjetpack 1.
+- You can disable Duke's jetpack with sasmara_banjetpack 1.
 
 - You can tweak whether the Security Officer has Marathon-esque gravity or normal
-  gravity with sv_sogravity 1 (Doom gravity) or 0 (Marathon gravity).
+  gravity with sasmara_sogravity 1 (Doom gravity) or 0 (Marathon gravity).
   
-- Weapon VII can be toggled to be persistent or vanish on pickup by sv_permault
+- Weapon VII can be toggled to be persistent or vanish on pickup by sasmara_permault
   1 or 0. 0 has it vanish on pickup, 1 has it stay persistent. Note that it acts
   as a big powerup, so its respawn timer is much longer than others.
 
