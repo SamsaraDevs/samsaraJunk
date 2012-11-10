@@ -460,6 +460,7 @@ script SAMSARA_DECORATE (int choice)
 *      WARNING
 *  This script is over 20 variables. Check here first for segfaults.
 *  Also, keep an eye on this script for potential desync issues.
+*  (current count: 25)
 */
 
 script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
@@ -481,9 +482,10 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int a1Full = 0, a2Full = 0;
     int a1diff = 0, a2diff = 0;
     
-    int weapon  = ClassWeapons[pclass][slot][S_WEP],    wepbool = !!StrLen(weapon); 
-    int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],  a1bool  = !!StrLen(ammo1);
-    int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],  a2bool  = !!StrLen(ammo2);
+    int weapon  = ClassWeapons[pclass][slot][S_WEP],        wepbool = !!StrLen(weapon); 
+    int ammo1   = ClassWeapons[pclass][slot][S_AMMO1],      a1bool  = !!StrLen(ammo1);
+    int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],      a2bool  = !!StrLen(ammo2);
+    int check   = ClassWeapons[pclass][slot][S_CHECKITEM],  chkbool = !!StrLen(check);
     
     if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM] && !dropped)))
     {
@@ -515,7 +517,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     }
     
     // do we even have this?
-    if (!hasWep || !CheckInventory(ClassWeapons[pclass][slot][S_CHECKITEM]))
+    if (!hasWep || (chkbool && !CheckInventory(check)))
     {
         weaponGet = 1;
     }
@@ -1136,39 +1138,8 @@ script 208 (void)
 
 script 203 UNLOADING
 {
-    TakeInventory("TomeOfPowerCooldown",300);
-    TakeInventory("DiscOfRepulsionCooldown",99);
-    TakeInventory("RainTracker",997);
-    TakeInventory("DukeTauntCooldown",997);
-    TakeInventory("MaceAmmo",997);
-    TakeInventory("MacePowered",997);
-    TakeInventory("Mace",997);
-    TakeInventory("DukeFlying",997);
-    TakeInventory("DukePetJack",997);
-    TakeInventory("DukeVision",997);
-    TakeInventory("DukeReady",1);
-    TakeInventory("DukeWaiting",15);
-    TakeInventory("Infrared",997);
-    TakeInventory("SynthFireActive",99);
-    TakeInventory("SynthFireLeft",99);
-    TakeInventory("SynthFireRight",99);
-    TakeInventory("LevelLimiter",99);
-    TakeInventory("LeftReload",99);
-    TakeInventory("RightReload",99);
-    TakeInventory("UsingSMG",1);
-    TakeInventory("UsingFists",1);
-    TakeInventory("UsingPistols",1);
-    TakeInventory("UsingShotguns",1);
-    TakeInventory("UsingFusionPistol",1);
-    TakeInventory("UsingAssaultRifle",1);
-    TakeInventory("UsingSpanker",1);
-    TakeInventory("UsingToasty",1);
-    TakeInventory("UsingAlienWeapon",1);
-    TakeInventory("UsingAlienWeapon2",1);
-    TakeInventory("UsingWMC",1);
-    TakeInventory("UsingDualPistols",1);
-    TakeInventory("UsingDualShotguns",1);
-    TakeInventory("InvasionDualShottyCheck",1);
+    int i;
+    for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
 }
 
 script 201 (int hereticshit)
@@ -1261,251 +1232,6 @@ script 212 (int textshit) // This is the shit for different text messages.
         
       case 7:
         Print(s:"You are already flying!");
-        break;
-        
-        // Weapon pickup messages!
-        // Doomguy
-      case 11:
-        Print(s:"You got the Chainsaw! Find some meat!");
-        break;
-        
-      case 12:
-        Print(s:"You got the Shotgun!");
-        break;
-        
-      case 13:
-        Print(s:"You got the Super Shotgun!");
-        break;
-        
-      case 14:
-        Print(s:"You got the Chaingun!");
-        break;
-        
-      case 15:
-        Print(s:"You got the Rocket Launcher!");
-        break;
-        
-      case 16:
-        Print(s:"You got the Plasma Rifle!");
-        break;
-        
-      case 17:
-        Print(s:"You got the B.F.G. 9000! Oh, yes.");
-        break;
-        
-      case 18:
-        Print(s:"You got the Berserk! Rip and tear!");
-        break;
-        
-        // Corvus
-      case 21:
-        Print(s:"You got the Gauntlets of the Necromancer!");
-        break;
-        
-      case 22:
-        Print(s:"You got the Firemace!");
-        break;
-        
-      case 23:
-        Print(s:"You got the Ethereal Crossbow!");
-        break;
-        
-      case 24:
-        Print(s:"You got the Dragon Claw!");
-        break;
-        
-      case 25:
-        Print(s:"You got the Phoenix Rod!");
-        break;
-        
-      case 26:
-        Print(s:"You got the Hellstaff!");
-        break;
-        
-      case 27:
-        Print(s:"Honor forbids you from using this until you are wounded again.");
-        break;
-        
-        //case 27:
-        // Tome of Power is already handled by ACS!
-        
-        // Chex Warrior
-      case 31:
-        Print(s:"You got the Super Bootspork! Find some milk!");
-        break;
-        
-      case 32:
-        Print(s:"You got the Large Zorcher!");
-        break;
-        
-      case 33:
-        Print(s:"You got the Super Large Zorcher!");
-        break;
-        
-      case 34:
-        Print(s:"You got the Rapid Zorcher!");
-        break;
-        
-      case 35:
-        Print(s:"You got the Zorch Propulsor!");
-        break;
-        
-      case 36:
-        Print(s:"You got the Phasing Zorcher!");
-        break;
-        
-      case 37:
-        Print(s:"You got the LAZ Device! Woot!");
-        break;
-        
-      case 38:
-        Print(s:"You got the Supercharge Breakfast!");
-        break;
-        
-        // B.J. Blazkowicz
-      case 41:
-        Print(s:"That's not a knife. THIS is a knife!");
-        break;
-        
-      case 42:
-        Print(s:"You got the Machine Gun!");
-        break;
-        
-        //case 43:
-        //break;
-        // Doesn't exist.
-        
-        //case 44:
-        //Print(s:"You got the Chaingun!");
-        //break;
-        // Case 14 handles this.
-        
-        //case 45:
-        //Print(s:"You got the Rocket Launcher!");
-        //break;
-        // Case 15 handles this.
-        
-      case 46:
-        Print(s:"You got the Flamethrower!");
-        break;
-        
-      case 47:
-        Print(s:"You got the Spear of Destiny!");
-        break;
-        
-      case 48:
-        Print(s:"You got an Extra Life!");
-        break;
-        
-        // Parias
-      case 51:
-        Print(s:"You got the Flechette!");
-        break;
-        
-      case 52:
-        Print(s:"You got the Frost Shards!");
-        break;
-        
-      case 53:
-        Print(s:"You got Timon's Axe!");
-        break;
-        
-      case 54:
-        Print(s:"You got the Serpent Staff!");
-        break;
-        
-      case 55:
-        Print(s:"You got the Hammer of Retribution!");
-        break;
-        
-      case 56:
-        Print(s:"You got the Firestorm!");
-        break;
-        
-      case 57:
-        Print(s:"You got the Wraithverge! Scream for me!");
-        break;
-        
-      case 58:
-        Print(s:"You got the Mystic Ambit Incant!");
-        break;
-        
-        // Duke
-      case 61:
-        Print(s:"You got the Pipebombs!");
-        break;
-        
-        //case 62:
-        //Print(s:"You got the Shotgun!");
-        //break;
-        // Case 12 handles this
-        
-      case 63:
-        Print(s:"You got the Explosive Shotgun!");
-        break;
-        
-      case 64:
-        Print(s:"You got the Ripper Chaingun Cannon!");
-        break;
-        
-      case 65:
-        Print(s:"You got the RPG!");
-        break;
-        
-      case 66:
-        Print(s:"You got the Freezethrower!");
-        break;
-        
-      case 67:
-        Print(s:"You got the Devastator!");
-        break;
-        
-      case 68:
-        Print(s:"You got the Jetpack!");
-        break;
-        
-        // Security Officer
-      case 71:
-        HudMessage(s:"You got the KKV-7 SMG Flechette!\n",
-        s:"You got a second .44 Magnum Mega Class A1!";
-        HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
-        break;
-        
-      case 72:
-        Print(s:"You got the WSTE-M5 Combat Shotgun!");
-        break;
-        
-      case 73:
-        Print(s:"You got the Zeus Class Fusion Pistol!");
-        break;
-        
-      case 74:
-        Print(s:"You got the MA-75B Assault Rifle!");
-        break;
-        
-      case 75:
-        Print(s:"You got the SPNKR-XP SSM Launcher!");
-        break;
-        
-      case 76:
-        Print(s:"You got the TOZT-7 Backpack Napalm Unit!");
-        break;
-        
-      case 77:
-        Print(s:"You got the ONI-71 Wave Motion Cannon!");
-        break;
-        
-      case 78:
-        HudMessage(s:"You got an\cina\cfaNN\ckAa\ciN \ccSYSTEM ERROR 0xfded";
-        HUDMSG_PLAIN, 0, CR_GOLD, 0.5, 0.4, 2.0);
-        break;
-        
-      case 79:
-        Print(s:"You got a second WSTE-M5 Combat Shotgun!");
-        break;
-        
-      case 80:
-        Print(s:"You got a pair of WSTE-M5 Combat Shotguns!");
         break;
     }
 }

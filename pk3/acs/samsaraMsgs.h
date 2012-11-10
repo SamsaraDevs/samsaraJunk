@@ -693,7 +693,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "GUYS WHY CAN'T I DUAL WIELD",
             "20-28 damage is perfectly reasonable for a starting weapon.",
             "No, you can't actually use the scope. What, you think this is Halo?",
-            "",
+            "You rampant, hacking bastard.",
             "",
             "",
             "",

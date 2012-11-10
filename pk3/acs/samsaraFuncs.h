@@ -88,7 +88,7 @@ function int HasClassWeapon(int class, int slot)
     if (!StrLen(weapon)) { return 0; }
 
     hasWep  = CheckInventory(weapon);
-    hasItem = !StrLen(checkitem) || CheckInventory(checkitem);
+    hasItem = StrLen(checkitem) && CheckInventory(checkitem);
 
     return hasWep || hasItem;
 }

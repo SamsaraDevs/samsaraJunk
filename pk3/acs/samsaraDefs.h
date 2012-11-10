@@ -37,8 +37,7 @@
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define WEPFLAGS_GOTWEAPON  1
-#define WEPFLAGS_WEAPONSTAY 2
+#define UNLOADCOUNT 33
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -116,4 +115,16 @@ int LMSItems[CLASSCOUNT] =
     "",
     "",
     "",
+};
+
+int UnloadRemove[UNLOADCOUNT] =
+{
+    "TomeOfPowerCooldown", "DiscOfRepulsionCooldown", "RainTracker", 
+    "DukeTauntCooldown", "MaceAmmo", "MacePowered", "Mace", "DukeFlying", 
+    "DukePetJack", "DukeVision", "DukeReady", "DukeWaiting", "Infrared", 
+    "SynthFireActive", "SynthFireLeft", "SynthFireRight", "LevelLimiter", 
+    "LeftReload", "RightReload", "UsingSMG", "UsingFists", "UsingPistols", 
+    "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
+    "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
+    "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
 };

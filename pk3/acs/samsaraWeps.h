@@ -1,3 +1,6 @@
+#define WEPFLAGS_GOTWEAPON  1
+#define WEPFLAGS_WEAPONSTAY 2
+
 #define CHOICECOUNT         5
 #define CHOICECOUNT_U       4
 
