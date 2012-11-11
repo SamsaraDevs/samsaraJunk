@@ -117,7 +117,6 @@ actor DukeBootTaunt: DukeTaunt
     States
     {
       Pickup:
-        TNT1 A 0 A_Print("Yes, we're getting here.")
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "UseStop")
         TNT1 A 0 A_PlaySound("duke/bootkill", 7)
