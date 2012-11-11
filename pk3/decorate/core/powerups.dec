@@ -248,7 +248,7 @@ actor VisorTrail
 
 actor PortTorch : PowerupGiver
 {
-    //tag "Torch"
+    tag "Torch"
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
@@ -267,7 +267,7 @@ actor PortTorch : PowerupGiver
 
 actor PortRingInvuln : PowerupGiver
 {
-    //tag "Ring of Invulnerability"
+    tag "Ring of Invulnerability"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
     Inventory.MaxAmount 16
@@ -279,7 +279,7 @@ actor PortRingInvuln : PowerupGiver
 
 actor PortGhostly : PowerupGiver
 {
-    //tag "Shadowsphere"
+    tag "Shadowsphere"
     inventory.maxamount 16
     inventory.usesound "heretic/itemuse"
     +inventory.undroppable
@@ -290,7 +290,7 @@ actor PortGhostly : PowerupGiver
 
 actor PortTorch2 : PowerupGiver
 {
-    //tag "Torch"
+    tag "Torch"
     +FLOATBOB
     +INVENTORY.UNDROPPABLE
     +INVENTORY.PICKUPFLASH
@@ -309,7 +309,7 @@ actor PortTorch2 : PowerupGiver
 
 actor PortIconDefender : PowerupGiver
 {
-    //tag "Icon of the Defender"
+    tag "Icon of the Defender"
     +INVENTORY.UNDROPPABLE
     +inventory.hubpower
     Inventory.MaxAmount 16
