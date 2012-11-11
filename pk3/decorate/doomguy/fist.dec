@@ -68,7 +68,7 @@ actor " Fist " : Weapon
         goto VanillaEnd
     
       VanillaEnd:
-        DPUN E 4
+        DPUN N 4
         DPUN O 5
         DPUN N 4
         DPUN M 5 A_ReFire
