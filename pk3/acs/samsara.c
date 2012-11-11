@@ -20,6 +20,7 @@ int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash;
 int SamsaraClientWeps[SLOTCOUNT] = {0};
 int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
+int LMSMessaged = 0;
 
 global int 0:CommandBitchingDone;
 
@@ -93,6 +94,7 @@ script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
     int pariasMod;
+    int pcount, opcount;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
     
@@ -115,6 +117,8 @@ script SAMSARA_SPAWN (int respawning)
         if (isInvasion()) { GiveInventory("InvasionDualShottyCheck", 1); }
         break;
     }
+
+    pcount = PlayerCount();
     
     while (1)
     {
@@ -174,6 +178,29 @@ script SAMSARA_SPAWN (int respawning)
         Delay(1);
         
         if (isDead(0)) { break; }
+
+        opcount = pcount;
+        pcount  = PlayerCount();
+
+        /*
+        if (isLMS() && (pcount == 1) && (opcount > pcount))
+        {
+            SetHudSize(800, 600, 1);
+            SetFont("BIGFONT");
+            HudMessageBold(s:"Winning stats of ", n:0;
+                    HUDMSG_FADEOUT, 91028, CR_GOLD, 400.4, 350.1, 3.0, 2.0);
+            
+            SetFont("SMALLFONT");
+            HudMessageBold(s:"+ \ca", d:GetActorProperty(0, APROP_Health);
+                    HUDMSG_FADEOUT, 91027, CR_RED, 370.2, 370.1, 3.0, 2.0);
+            HudMessageBold(d:CheckInventory("BasicArmor"), s:" \cqA";
+                    HUDMSG_FADEOUT, 91029, CR_RED, 430.1, 370.1, 3.0, 2.0);
+
+            HudMessage(s:""; HUDMSG_PLAIN, 91027, 0, 0, 0, 0);
+            HudMessage(s:""; HUDMSG_PLAIN, 91028, 0, 0, 0, 0);
+            HudMessage(s:""; HUDMSG_PLAIN, 91029, 0, 0, 0, 0);
+        }
+        */
     }
 }
 
@@ -286,7 +313,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
     
     execInt = 0; oExecInt = 0;
     
-    if (GetCVar("samsare_cl_exists") != SAMSARA_CL_VERSION)
+    if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION)
     {
         ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
         ConsoleCommand("archivecvar samsara_cl_exists");

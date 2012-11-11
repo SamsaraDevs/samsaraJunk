@@ -52,7 +52,7 @@ actor SamsaraUniquePickup1: CustomInventory
     }
 }
 
-actor SamsaraUniquePickup2: SamsaraUniquePickup
+actor SamsaraUniquePickup2: SamsaraUniquePickup1
 {
     States
     {

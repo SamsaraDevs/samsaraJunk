@@ -121,6 +121,8 @@ function void ApplyLMS(void)
     int classNum = samsaraClassNum();
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
+    
+    GiveInventory("Backpack", 1);
 
     for (i = 0; i < SLOTCOUNT-1; i++) { GiveClassWeapon(classNum, i, 1); }
 
@@ -131,7 +133,7 @@ function void ApplyLMS(void)
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
-    
+
     if (lmsLevel)
     {
         SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) + (100 * (lmsLevel-1)));
