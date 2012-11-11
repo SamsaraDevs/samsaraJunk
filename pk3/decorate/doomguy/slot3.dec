@@ -5,7 +5,7 @@ actor "Super Shotgun" : SuperShotgun
     Weapon.SlotNumber 3
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
-    AttackSound "silence"
+    AttackSound ""
     Obituary "%k smeared %o across the wall with the SSG."
     States
     {
@@ -54,9 +54,6 @@ actor "Super Shotgun" : SuperShotgun
         DSSG A 2 A_Refire
         goto Ready
 
-      // iiiiiiiiiiiiiiiiiiiii(iiiii)
-      // iiiiiiiiiiiiiiiiiiiiiiiiiii(iiiiii)
-      // iiiiiiiiiiiiiiiiiiiiiiiiiii(iiiiii)
       RageEnd:
         DSSG A 2 bright
         DSSG A 4 bright A_ZoomFactor(1, ZOOM_INSTANT)

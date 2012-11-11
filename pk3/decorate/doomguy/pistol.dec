@@ -66,10 +66,10 @@ actor " Pistol " : Pistol
 
       CoopFire:
         TNT1 A 0 A_FireCustomMissile("DoomBullet2", 0, 1, 0, 1)
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         Goto FireAnim
 
       FireAnim:
-        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DPIS B 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
