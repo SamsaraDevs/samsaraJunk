@@ -157,8 +157,6 @@ actor DoomBFGSplash
     }
 }
 
-actor DoomNoBFGAim: Boolean {}
-
 actor BFGAmmoWaster
 {
     Projectile
