@@ -14,6 +14,7 @@ addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
 addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
 addmenukey "Global: Weapon Bar" samsara_cmd_wephud
 addmenukey "Global: Pickup GFX" samsara_cmd_weppickups
+addmenukey "Global: Pickup Msg. Mode" samsara_cmd_msgmode
 addmenukey "Global: Tipboxes" samsara_techon
 
 alias samsara_cmd_vanilladoomanims "eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom; showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
@@ -21,6 +22,7 @@ alias samsara_cmd_bjwalk "eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove; sh
 alias samsara_cmd_dukestfu "eval != 1 $samsara_cl_ballgag samsara_cl_ballgag; showmode \"Ballgag mode\" $samsara_cl_ballgag"
 alias samsara_cmd_wephud "eval != 1 $samsara_cl_weaponhud samsara_cl_weaponhud; showmode \"Alternate messages\" $samsara_cl_weaponhud"
 alias samsara_cmd_moremessages "eval != 1 $samsara_cl_moremessages samsara_cl_moremessages; showmode \"Weapon bar\" $samsara_cl_moremessages"
+alias samsara_cmd_msgmode "eval != 1 $samsara_cl_printpickup samsara_cl_printpickup; showmode \"Print pickup messages\" $samsara_cl_printpickup"
 alias samsara_cmd_weppickups "eval % + $samsara_cl_pickupmode 1 3 samsara_cl_pickupmode; showpickupmode"
 alias samsara_techon "puke 300 1;rebind samsara_hottip"
 alias samsara_hottip "puke 300 2;rebind samsara_cooltip"
