@@ -221,7 +221,7 @@ actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
 
 actor HexenArmor5A : CustomInventory
 {
-    //tag "Dragonskin Bracers"
+    tag "Dragonskin Bracers"
     +INVBAR
     Inventory.Icon "ARTIBRAC"
     Inventory.DefMaxAmount
@@ -351,7 +351,10 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
     }
 }
 
-actor ArtiHealingRadius2: ArtiHealingRadius { Inventory.MaxAmount 16 }
+actor ArtiHealingRadius2: ArtiHealingRadius {
+Inventory.MaxAmount 16
+Tag "Mystic Ambit Incant"
+}
 
 actor HexenHealPack0 : HealPack0 replaces ArtiPoisonBag { }
 
