@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 1
+#define DEBUG 0
 
 #include "commonFuncs.h"
 
