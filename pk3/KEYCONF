@@ -18,13 +18,14 @@ addmenukey "Global: Pickup Msg. Mode" samsara_cmd_msgmode
 addmenukey "Global: Tipboxes" samsara_techon
 addmenukey "Global: Taunt" samsara_zdtaunt
 
-alias samsara_cmd_vanilladoomanims "eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom; showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
-alias samsara_cmd_bjwalk "eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove; showmode \"Wolfenstein movement\" $samsara_cl_wolfmove"
-alias samsara_cmd_dukestfu "eval != 1 $samsara_cl_ballgag samsara_cl_ballgag; showmode \"Ballgag mode\" $samsara_cl_ballgag"
-alias samsara_cmd_wephud "eval != 1 $samsara_cl_weaponhud samsara_cl_weaponhud; showmode \"Weapon bar\" $samsara_cl_weaponhud"
-alias samsara_cmd_moremessages "eval != 1 $samsara_cl_moremessages samsara_cl_moremessages; showmode \"Alternate messages\" $samsara_cl_moremessages"
-alias samsara_cmd_msgmode "eval != 1 $samsara_cl_printpickup samsara_cl_printpickup; showmode \"Print pickup messages\" $samsara_cl_printpickup"
-alias samsara_cmd_weppickups "eval % + $samsara_cl_pickupmode 1 3 samsara_cl_pickupmode; showpickupmode"
+alias samsara_cmd_vanilladoomanims "set samsara_cl_vanilladoom $samsara_cl_vanilladoom; eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom; showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
+alias samsara_cmd_bjwalk "set samsara_cl_wolfmove $samsara_cl_wolfmove; eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove; showmode \"Wolfenstein movement\" $samsara_cl_wolfmove"
+alias samsara_cmd_dukestfu "set samsara_cl_ballgag $samsara_cl_ballgag; eval != 1 $samsara_cl_ballgag samsara_cl_ballgag; showmode \"Ballgag mode\" $samsara_cl_ballgag"
+alias samsara_cmd_wephud "set samsara_cl_weaponhud $samsara_cl_weaponhud; eval != 1 $samsara_cl_weaponhud samsara_cl_weaponhud; showmode \"Weapon bar\" $samsara_cl_weaponhud"
+alias samsara_cmd_moremessages "set samsara_cl_moremessages $samsara_cl_moremessages; eval != 1 $samsara_cl_moremessages samsara_cl_moremessages; showmode \"Alternate messages\" $samsara_cl_moremessages"
+alias samsara_cmd_msgmode "set samsara_cl_printpickup $samsara_cl_printpickup; eval != 1 $samsara_cl_printpickup samsara_cl_printpickup; showmode \"Print pickup messages\" $samsara_cl_printpickup"
+alias samsara_cmd_weppickups "set samsara_cl_pickupmode $samsara_cl_pickupmode; eval % + $samsara_cl_pickupmode 1 3 samsara_cl_pickupmode; showpickupmode"
+
 alias samsara_techon "puke 300 1;rebind samsara_hottip"
 alias samsara_hottip "puke 300 2;rebind samsara_cooltip"
 alias samsara_cooltip "puke 300 3;rebind samsara_techon"
