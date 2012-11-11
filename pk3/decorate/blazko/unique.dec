@@ -1,13 +1,14 @@
 actor WolfExtraLife : Inventory//CustomInventory
 {
-    //tag "Extra Life"
+    tag "Extra Life"
     Inventory.Icon WOLFLIFE
     Inventory.Amount 1
     Inventory.MaxAmount 9
     +INVBAR
     +HUBPOWER
     +UNDROPPABLE
-    -INTERHUBSTRIP/*
+    -INTERHUBSTRIP
+    +INVENTORY.PERSISTENTPOWER/*
     States
     {
       Use:
