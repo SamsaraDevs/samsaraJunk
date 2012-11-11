@@ -462,10 +462,13 @@ script SAMSARA_DECORATE (int choice)
         break;
         
       case 4:
-        Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
         result = isInvasion() || !(isCoop() || isSinglePlayer());
-        
-        Log(d:result);
+
+        if (DEBUG)
+        {
+            Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
+            Log(d:result);
+        }
         break;
     }
     
@@ -666,10 +669,10 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
             
             if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this weapon."; } 
         }
-    }
 
-    if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-    else { Log(s:logMsg); }
+        if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
+        else { Log(s:logMsg); }
+    }
     
     if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
     else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
@@ -728,10 +731,10 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
             
             if (!StrLen(logMsg)) { logMsg = "Oh bugger there's no message for this unique."; } 
         }
-    }
 
-    if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-    else { Log(s:logMsg); }
+        if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
+        else { Log(s:logMsg); }
+    }
     
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
     else { ActivatorSound(ClassUniqueSounds[pclass], 127); }
