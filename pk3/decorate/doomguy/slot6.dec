@@ -26,20 +26,14 @@ actor "Plasma Rifle" : PlasmaRifle
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
         DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
-        DPLS DEF 1
-        DPLS GF 3
-        DPLS EDCBA 2
-        Goto Ready
+        goto FireEnd
 
       Fire2:
         DPLF B 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
         DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
-        DPLS DEF 1
-        DPLS GF 3
-        DPLS EDCBA 2
-        Goto Ready
+        goto FireEnd
 
       CoopFire:
         DPLS A 0 A_GunFlash
@@ -50,20 +44,27 @@ actor "Plasma Rifle" : PlasmaRifle
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
         DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
-        DPLS DEF 1 A_CheckReload
-        DPLS GF 3
-        DPLS EDCBA 2
-        goto Ready
+        goto FireEnd
 
       CoopFire2:
         DPLF B 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
         DPLS B 1 A_JumpIfInventory("VanillaDoom",1,"VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCooldown")
+        goto FireEnd
+     
+      FireEnd:
+        DPLS D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
         DPLS DEF 1
         DPLS GF 3
         DPLS EDCBA 2
-        Goto Ready
+        goto Ready
+      
+      RageEnd:
+        DPLS DF 2
+        DPLS G 4
+        DPLS FEDCBA 2
+        goto Ready
 
       VanillaCooldown:
         DPLS H 20
