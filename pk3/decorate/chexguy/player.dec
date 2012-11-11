@@ -4,6 +4,7 @@ actor ChexWarrior : PlayerPawn
     Player.StartItem "Mini-Zorcher", 1
     Player.StartItem " Bootspoon ", 1
     Player.StartItem "ChexClass", 1
+   Player.StartItem "TauntButton", 1
     Player.StartItem "Clip", 50
     Player.Face "CHX"
     Player.Soundclass "ChexWarrior"

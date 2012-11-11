@@ -4,6 +4,7 @@ actor HexenPlayer : PlayerPawn
     Player.StartItem "Sapphire Wand", 1
     Player.StartItem "Mace of Contrition", 1
     Player.StartItem "HexenClass", 1
+   Player.StartItem "TauntButton", 1
     Player.StartItem "Clip", 50
     Player.InvulnerabilityMode "Ghost"
     Player.HealRadiusType "Health"
