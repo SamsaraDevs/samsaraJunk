@@ -3,8 +3,8 @@ actor DOUBLEFISTING : GenericItem {}
 
 actor "Steel Knuckles" : Weapon replaces Fist
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700

@@ -2,8 +2,8 @@ actor UsingToasty : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmou
 
 actor "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFlamerSkin"
     Weapon.SelectionOrder 700
     Weapon.SlotNumber 6

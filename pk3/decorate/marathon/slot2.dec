@@ -6,8 +6,8 @@ actor UsingDualShotguns : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.M
 
 actor "WSTE-M5 Combat Shotgun" : Weapon
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOShotgunSkin"
     Weapon.SelectionOrder 400
     Weapon.SlotNumber 2

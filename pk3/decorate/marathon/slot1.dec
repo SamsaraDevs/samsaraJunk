@@ -2,8 +2,8 @@ actor UsingSMG : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 
 
 actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOSMGSkin"
     Weapon.SelectionOrder 2200
     Weapon.SlotNumber 1

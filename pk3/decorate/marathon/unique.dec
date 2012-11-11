@@ -3,8 +3,8 @@ actor UsingAlienWeapon2 : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.M
 
 actor "Alien Weapon" : Weapon
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOM2AWSkin"
     Weapon.SelectionOrder 500
     Weapon.SlotNumber 8
@@ -131,8 +131,8 @@ actor "Alien Weapon" : Weapon
 
 actor " Alien Weapon " : Weapon
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOM1AWSkin"
     Weapon.SelectionOrder 500
     Weapon.SlotNumber 8

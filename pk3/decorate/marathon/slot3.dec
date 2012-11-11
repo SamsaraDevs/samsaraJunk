@@ -4,8 +4,8 @@ actor UsingFusionPistol : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.M
 
 actor "Fusion Pistol" : Weapon// replaces PlasmaRifle
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFusionSkin"
     Weapon.SelectionOrder 1300
     Weapon.SlotNumber 3

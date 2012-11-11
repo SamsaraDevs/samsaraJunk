@@ -223,7 +223,7 @@ actor Visor : CustomInventory replaces Infrared// replaces Infrared
 
 actor MarathonInfrared : PowerLightAmp
 {
-    Powerup.Color GreenMap
+    Powerup.Color BlueMap
 }
 
 actor VisorTrail
