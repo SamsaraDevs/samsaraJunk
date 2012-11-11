@@ -17,53 +17,54 @@ actor "Rocket Launcher" : RocketLauncher
         Loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaFire")
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         DMIS A 2 
-        DMIS A 4 BRIGHT A_GunFlash
-        DMIS B 2 BRIGHT 
-        DMIS D 3 BRIGHT A_FireCustomMissile("DoomRocket")
-        DMIS C 3 BRIGHT
-        DMIS BBEEFG 1
-        DMIS A 0 A_ReFire
-        Goto Ready
-
-      CoopFire:
-        TNT1 A 0 A_JumpIfInventory("VanillaDoom",1,"VanillaCoopFire")//A_JumpIf(ACS_ExecuteWithResult(219,0,0,0)==1,"VanillaCoopFire")
-        DMIS A 2 
-        DMIS A 4 BRIGHT A_GunFlash
-        DMIS B 2 BRIGHT 
-        DMIS D 3 BRIGHT A_FireCustomMissile("DoomRocket2")
-        DMIS C 3 BRIGHT
-        DMIS BBEEFG 1
-        DMIS A 0 A_ReFire
-        Goto Ready
-        
+        DMIS A 4 bright A_GunFlash
+        DMIS B 2 bright 
+        goto FireMid
+      
       VanillaFire:
-        DRKL A 3 BRIGHT A_Light1
-        DRKL B 4 BRIGHT
-        DRKL C 1 BRIGHT A_Light2
-        DRKL C 3 BRIGHT A_FireCustomMissile("DoomRocket")
-        DRKL D 4 BRIGHT
+        DRKL A 3 bright A_Light1
+        DRKL B 4 bright
+        DRKL C 1 bright A_Light2
+        goto FireMid
+
+      FireMid:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopMid")
+        TNT1 A 0 A_FireCustomMissile("DoomRocket")
+        goto FireEnd
+
+      CoopMid:
+        TNT1 A 0 A_FireCustomMissile("DoomRocket2")
+        goto FireEnd
+      
+      FireEnd:
+        TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaEnd")
+        DMIS D 3 bright
+        DMIS C 3 bright
+        DMIS BE 2
+        DMIS FG 1
+        DMIS A 0 A_Refire
+        goto Ready
+      
+      RageEnd:
+        DMIS DC 2 bright
+        DMIS BFG 2
+        DMIS A 0 A_Refire
+        goto Ready
+        
+      VanillaEnd:
+        DRKL C 3 bright
+        DRKL D 4 bright
         DMIS B 5 A_Light0
         DMIS B 0 A_ReFire // 20 frames total
         Goto Ready
-
-      VanillaCoopFire:
-        DRKL A 3 BRIGHT A_Light1
-        DRKL B 4 BRIGHT
-        DRKL C 1 BRIGHT A_Light2
-        DRKL C 3 BRIGHT A_FireCustomMissile("DoomRocket2")
-        DRKL D 4 BRIGHT
-        DMIS B 5 A_Light0
-        DMIS B 0 A_ReFire
-        Goto Ready
         
       Flash:
-        DMSF A 3 BRIGHT A_Light1
-        DMSF B 2 BRIGHT
-        DMSF C 2 BRIGHT A_Light2
-        DMSF DE 3 BRIGHT
+        DMSF A 3 bright A_Light1
+        DMSF B 2 bright
+        DMSF C 2 bright A_Light2
+        DMSF DE 3 bright
         Goto LightDone
 
       Spawn:
@@ -83,13 +84,13 @@ actor DoomRocket : Rocket
     States
     {
       Spawn:
-        DMSL A 1 Bright
+        DMSL A 1 bright
         Loop
 
       Death:
-        DMSL B 8 Bright A_Explode
-        DMSL C 6 Bright
-        DMSL D 4 Bright
+        DMSL B 8 bright A_Explode
+        DMSL C 6 bright
+        DMSL D 4 bright
         Stop
     }
 }
