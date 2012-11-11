@@ -38,15 +38,15 @@ actor " Pistol " : Pistol
 
       FireAnim:
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
+    	TNT1 A 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageAnim")
-        DPIS B 2 bright A_GunFlash
+        DPIS B 2 bright
         DPIS C 1 bright
         DPIS CEEDDBB 1
         DPIS A 5 A_ReFire
         Goto Ready
 
       RageAnim:
-    	TNT1 A 0 A_GunFlash
         DPIS BC 1 bright
         DPIS EDB 1
         DPIS A 3 A_Refire
