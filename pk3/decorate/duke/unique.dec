@@ -6,7 +6,7 @@ actor DukeVisionFuel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxA
 
 actor DukePortJetpack : CustomInventory
 {
-    //tag "Jetpack"
+    tag "Jetpack"
     +INVBAR
     +INVENTORY.UNDROPPABLE
     Inventory.Icon ARTIJETP
@@ -52,7 +52,7 @@ actor DukePortJetpack : CustomInventory
 
 actor DukePortNiVi : CustomInventory
 {
-    //tag "Night Vision Goggles"
+    tag "Night Vision Goggles"
     +INVBAR
     +INVENTORY.UNDROPPABLE
     Inventory.Icon ARTINIVI
