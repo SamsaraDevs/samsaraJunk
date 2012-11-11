@@ -760,7 +760,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
 
 script SAMSARA_MARATHON (int class, int slot, int dropped)
 {
-    int giveboth    = isInvasion() || !isCoop();
+    int giveboth    = isInvasion() || !(isCoop() || isSinglePlayer());
     int hasShotty   = CheckInventory("WSTE-M5 Combat Shotgun");
     int hasBoth     = CheckInventory("CanDualShotties");
     int limited     = CheckInventory("LevelLimiter");
