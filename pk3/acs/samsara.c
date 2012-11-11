@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include "commonFuncs.h"
 
@@ -50,6 +50,7 @@ script SAMSARA_OPEN open
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
         
+        /*
         if (!GetCVar("samsara_banjetpack"))
         {   ConsoleCommand("set samsara_banjetpack 0");
         ConsoleCommand("archivecvar samsara_banjetpack"); }
@@ -81,6 +82,7 @@ script SAMSARA_OPEN open
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
         ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
+        */
         
         Delay(1);
     }
@@ -281,11 +283,12 @@ script SAMSARA_ENTER_CLIENT enter clientside
     int i, j;
     
     // Comment out these lines for zdoom
-    int cpln = ConsolePlayerNumber();
-    if (cpln != pln) { terminate; }
+    //int cpln = ConsolePlayerNumber();
+    //if (cpln != pln) { terminate; }   // might be weird online, but who plays zdoom online? :V
     
     execInt = 0; oExecInt = 0;
     
+    /*
     if (GetCVar("samsare_cl_exists") != SAMSARA_CL_VERSION)
     {
         ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
@@ -319,6 +322,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
         {   ConsoleCommand("set samsara_cl_printpickup 0");
         ConsoleCommand("archivecvar samsara_cl_printpickup"); }
     }
+    */
     
     class = samsaraClassNum() + 1;
     
@@ -350,6 +354,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");
         }
+        /*
         else
         {
             oExecInt = execInt;
@@ -362,6 +367,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
                 ConsoleCommand(execStr);
             }
         }
+        */
         
         Delay(1);
     }
@@ -385,7 +391,10 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     slot = itemToSlot(slot);
     int hasSlot = SamsaraClientWeps[slot];
     
-    //PrintBold(s:"Has weapon \"", s:ClassWeapons[toClass][slot][S_WEP], s:"\": ", d:hasSlot);
+    if (DEBUG)
+    {
+        PrintBold(s:"Has weapon \"", s:ClassWeapons[toClass][slot][S_WEP], s:"\": ", d:hasSlot);
+    }
     
     if (displaymode != 0)
     {
@@ -648,7 +657,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
-    if (cpln == pln)
+    if (1)  // would be blanked but I want git merging to be as smooth as possible
     {
         if (GetCVar("samsara_cl_moremessages"))
         {
@@ -710,7 +719,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
-    if (cpln == pln)
+    if (1)  // would be blanked but I want git merging to be as smooth as possible
     {
         if (GetCVar("samsara_cl_moremessages"))
         {
