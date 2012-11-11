@@ -54,7 +54,7 @@ actor "Plasma Rifle" : PlasmaRifle
         goto FireEnd
      
       FireEnd:
-        DPLS D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
+        DPLS D 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageEnd")
         DPLS DEF 1
         DPLS GF 3
         DPLS EDCBA 2
