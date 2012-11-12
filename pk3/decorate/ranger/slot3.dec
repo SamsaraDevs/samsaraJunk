@@ -33,7 +33,15 @@ actor "Quake GL": Weapon replaces PlasmaRifle
       // 22 tics
       Fire:
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QGRL B 0 A_FireCustomMissile("QuakeGrenade")
+        goto Fire2
+
+      CoopFire:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoop")
+        goto Fire2
+
+      Fire2:
         QGRL B 4 bright
         QGRL C 6
         QGRL D 6
@@ -93,4 +101,13 @@ actor QuakeGrenade
         TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
         stop
     }
+}
+
+actor QuakeGrenadeCoop: QuakeGrenade
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (60)
 }
