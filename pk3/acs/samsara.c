@@ -1443,3 +1443,19 @@ script 205 (void)
         TakeInventory("DukeTauntCooldown", 1);
     }
 }
+
+script 583 (int x, int y, int z)
+{
+    SetResultValue(sqrt(x*x + y*y + z*z) );
+}
+
+script 586 (int divI, int divF, int divF1)
+{
+    int div = percFloat2(divI, divF, divF1);
+
+    int x = GetActorVelX(0);
+    int y = GetActorVelY(0);
+    int z = GetActorVelZ(0);
+
+    SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
+}
