@@ -6,8 +6,6 @@ actor "Quake LG": Weapon replaces BFG9000
     Weapon.AmmoGive 15
     Weapon.AmmoType "Cell"
 
-    Weapon.SlotNumber 8
-
     +NOAUTOAIM
 
     Inventory.Icon "PLASA0"

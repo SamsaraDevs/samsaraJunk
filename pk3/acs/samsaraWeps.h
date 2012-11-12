@@ -24,6 +24,7 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
+    {"",                    "",                 "", ""},
 };
 
 int UniqueMaxes[CLASSCOUNT][4] = 
@@ -35,6 +36,7 @@ int UniqueMaxes[CLASSCOUNT][4] =
     {16,    0,      0,  0},
     {0,     100,    0,  0},
     {0,     50,     0,  50},
+    {0,     0,      0,  0},
 };
 
 int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON};
@@ -123,7 +125,18 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
         {"TOZT-7 Napalm Unit",              "NapalmInTank", "",             "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
-    }
+    },
+    {   // Ranger
+        {"Quake Axe",                       "",             "",             "", ""},
+        {"",                                "",             "",             "", ""},
+        {"Quake SG",                        "",             "",             "", ""},
+        {"Quake SSG",                       "AmmoShell",    "",             "", ""},
+        {"Quake GL",                        "RocketAmmo",   "",             "", ""},
+        {"Quake NG",                        "Clip",         "",             "", ""},
+        {"Quake RL",                        "RocketAmmo",   "",             "", ""},
+        {"Quake LG",                        "Cell",         "",             "", ""},
+        {"",                                "",             "",             "", ""},
+    },
 };
 
 int ClassScripts[CLASSCOUNT][SLOTCOUNT] = 
@@ -135,6 +148,7 @@ int ClassScripts[CLASSCOUNT][SLOTCOUNT] =
     {0,0,                   0,  0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0},
     {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0},
 };
 
 int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] = 
@@ -215,6 +229,17 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "marathon/itemget",
         "marathon/itemget",
         "marathon/bigitemget",
+    },
+    {
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
+        "quakeweps/weaponget",
     },
 };
 

@@ -1,13 +1,13 @@
 actor "Quake RL": Weapon replaces RocketLauncher
 {
     Weapon.SelectionOrder 2
-    Weapon.SlotNumber 7
 
     Weapon.AmmoUse 1
     Weapon.AmmoGive 5
     Weapon.AmmoType "RocketAmmo"
 
     +NOAUTOAIM
+    +NOAUTOFIRE
 
     Inventory.Icon "LAUNA0"
 
@@ -39,6 +39,7 @@ actor "Quake RL": Weapon replaces RocketLauncher
         QRKL D 6
         QRKL E 6
         QRKL F 6
+        QRKL F 0 A_Refire
         goto Ready
 
       Spawn:

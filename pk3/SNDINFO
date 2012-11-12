@@ -995,6 +995,8 @@ alienweapon/hit			MTAWPHIT
 // Ranger sounds
 //////////////////
 
+quakeweps/weaponget         sounds/ranger/w_pkup.wav
+
 quakeweps/axe               sounds/ranger/axe.wav
 quakeweps/axewall           sounds/ranger/axewall.wav
 quakeweps/shotgunfire       sounds/ranger/shotgun.wav

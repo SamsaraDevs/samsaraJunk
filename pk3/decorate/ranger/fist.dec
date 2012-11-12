@@ -2,7 +2,6 @@ actor "Quake Fist": Weapon
 {
     Weapon.SelectionOrder 8
     Weapon.Kickback 100
-    Weapon.SlotNumber 1
 
     +NOAUTOAIM
     +NOALERT

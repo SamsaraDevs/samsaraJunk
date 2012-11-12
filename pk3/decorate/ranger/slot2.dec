@@ -2,11 +2,9 @@ actor "Quake SSG": Weapon replaces Shotgun
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 6
-    Weapon.AmmoUse 2
+    Weapon.AmmoUse 1
     Weapon.AmmoGive 5
     Weapon.AmmoType "AmmoShell"
-
-    Weapon.SlotNumber 3
 
     +NOAUTOAIM
 

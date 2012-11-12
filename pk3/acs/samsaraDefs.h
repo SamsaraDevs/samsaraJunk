@@ -22,7 +22,7 @@
 
 #define SAMSARA_CL_VERSION          2601
 
-#define CLASSCOUNT          7
+#define CLASSCOUNT          8
 #define UNIQUECOUNT         2
 #define SLOTCOUNT           9
 
@@ -70,6 +70,7 @@ int ClassItems[CLASSCOUNT] =
     "HexenClass",
     "DukeClass",
     "MarathonClass",
+    "QuakeClass",
 };
 
 int PickupStates[CLASSCOUNT][5] = 
@@ -81,6 +82,7 @@ int PickupStates[CLASSCOUNT][5] =
     {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
     {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
     {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakeSpecial2"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
@@ -95,6 +97,7 @@ int ClassFades[CLASSCOUNT][5] =
     {255, 255, 0,   0.1, 5},
     {255, 255, 0,   0.1, 5},
     {0,   255, 0,   0.4, 8},
+    {255, 255, 0,   0.1, 5},
 };
 
 int SlotItems[SLOTCOUNT] = 
@@ -116,6 +119,7 @@ int LMSItems[CLASSCOUNT] =
     "",
     "PortGhostly",
     "WolfenAmmoCrate",
+    "",
     "",
     "",
     "",

@@ -16,18 +16,10 @@ actor QuakePlayer: PlayerPawn
     Player.DisplayName "Marine"
     Player.CrouchSprite "PLYC"
 
+    Player.StartItem "QuakeClass"
     Player.StartItem "Quake SG"
     Player.StartItem "Quake Fist"
     Player.StartItem "Clip", 50
-
-    Player.WeaponSlot 1, "Quake Fist"
-    Player.WeaponSlot 2, "Quake SG"
-    Player.WeaponSlot 3, "Quake SSG"
-    Player.WeaponSlot 4, "Quake NG"
-    Player.WeaponSlot 5, "Quake SNG"
-    Player.WeaponSlot 6, "Quake GL"
-    Player.WeaponSlot 7, "Quake RL"
-    Player.WeaponSlot 8, "Quake LG"
 
     Player.ColorRange 112, 127
 
@@ -84,3 +76,5 @@ actor QuakePlayer: PlayerPawn
         Stop
     }
 }
+
+actor QuakeClass: Boolean {}

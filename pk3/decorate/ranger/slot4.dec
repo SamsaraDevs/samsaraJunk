@@ -6,8 +6,6 @@ actor "Quake NG": Weapon replaces SuperShotgun
     Weapon.AmmoGive 30
     Weapon.AmmoType "Clip"
 
-    Weapon.SlotNumber 4
-
 
     Inventory.Icon "MGUNA0"
 

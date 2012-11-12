@@ -3,8 +3,6 @@ actor "Quake SG": Weapon replaces Pistol
     Weapon.Kickback 100
     Weapon.SelectionOrder 7
 
-    Weapon.SlotNumber 2
-
     +NOAUTOAIM
 
     Inventory.Icon "SHOTA0"
