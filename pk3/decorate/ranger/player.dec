@@ -13,7 +13,7 @@ actor QuakePlayer: PlayerPawn
     GibHealth -30
     PainChance 255
 
-    Player.DisplayName "Marine"
+    Player.DisplayName "Ranger"
     Player.CrouchSprite "PLYC"
 
     Player.StartItem "QuakeClass"
@@ -78,3 +78,34 @@ actor QuakePlayer: PlayerPawn
 }
 
 actor QuakeClass: Boolean {}
+
+actor QuakeBullet: FastProjectile
+{
+    Damage (4)
+    Radius 1
+    Height 1
+    Speed 300
+    Projectile
+    Renderstyle "Normal"
+    Species "Player"
+    +BLOODSPLATTER
+    +THRUGHOST
+    +THRUSPECIES
+    +NOTIMEFREEZE
+    Alpha 1.0
+    Decal Bulletchip
+    States
+    {
+      Spawn:
+        TNT1 A 1
+        loop
+
+      Death:
+        TNT1 A 1 A_SpawnItem("DoomBulletPuff")
+        stop
+
+      XDeath:
+        TNT1 A 1
+        stop
+    }
+}

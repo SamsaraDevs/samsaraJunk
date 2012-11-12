@@ -34,8 +34,16 @@ actor "Quake SSG": Weapon replaces Shotgun
 
       // 25 tics
       Fire:
-        SHTG A 0 A_FireBullets(4, 4, 28, 1, "BulletPuff")
         QDBS A 0 A_PlaySound("quakeweps/ssgfire", CHAN_WEAPON)
+        QDBS A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QDBS A 0 A_FireBullets(4, 4, 7, 4, "BulletPuff")
+        goto Fire2
+
+      CoopFire:
+        QDBS AAAAAAAAAAAAAA 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 0, 0, 0, 0, random(-400,400)/100.0)
+        goto Fire2
+
+      Fire2:
         QDBS B 4
         QDBS C 4
         TNT1 A 9

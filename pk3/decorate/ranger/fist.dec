@@ -8,7 +8,7 @@ actor "Quake Fist": Weapon
     +WEAPON.MELEEWEAPON
 
     Inventory.Icon "PSTRA0"
-    Obituary "%o is fist-murdered by %k"
+    Obituary "%o is axe-murdered by %k"
 
     States
     {
