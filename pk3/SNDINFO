@@ -989,3 +989,32 @@ wmc/grenadeexplode2		wmcgxpl2
 
 alienweapon/shoot		MTAWPSHT
 alienweapon/hit			MTAWPHIT
+
+
+///////////////////
+// Ranger sounds
+//////////////////
+
+quakeweps/axe               sounds/ranger/axe.wav
+quakeweps/axewall           sounds/ranger/axewall.wav
+quakeweps/shotgunfire       sounds/ranger/shotgun.wav
+quakeweps/ssgfire           sounds/ranger/shotgun2.wav
+quakeweps/nailgunfire       sounds/ranger/nailgun.wav
+quakeweps/sngfire           sounds/ranger/supernailgun.wav
+
+quakeweps/nr1               sounds/ranger/ric1.wav
+quakeweps/nr2               sounds/ranger/ric2.wav
+quakeweps/nr3               sounds/ranger/ric3.wav
+
+$random quakeweps/nailricochet  { quakeweps/nr1 quakeweps/nr2 quakeweps/nr3 }
+$rolloff quakeweps/nailricochet 64 384
+
+quakeweps/explode           sounds/ranger/explode.wav
+quakeweps/glfire            sounds/ranger/grenade.wav
+quakeweps/grenadebounce     sounds/ranger/bounce.wav
+$limit quakeweps/grenadebounce  0
+
+quakeweps/rlfire            sounds/ranger/rocket.wav
+
+quakeweps/lightningstart    sounds/ranger/lstart.wav
+quakeweps/lightning         sounds/ranger/lightning.wav

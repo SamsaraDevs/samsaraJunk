@@ -1,0 +1,98 @@
+actor "Quake RL": Weapon replaces RocketLauncher
+{
+    Weapon.SelectionOrder 2
+    Weapon.SlotNumber 7
+
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 5
+    Weapon.AmmoType "RocketAmmo"
+
+    +NOAUTOAIM
+
+    Inventory.Icon "LAUNA0"
+
+    Inventory.PickupSound "quakeweps/weaponpickup"
+    Inventory.PickupMessage "You got the rocket launcher"
+
+    States
+    {
+      Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Lower
+        QRKL A 1 A_Lower
+        Loop
+
+      Select:
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Raise
+        QRKL A 1 A_Raise
+        Loop
+
+      Ready:
+        QRKL A 1 A_WeaponReady
+        Loop
+
+      // 28 tics
+      Fire:
+        QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
+        QRKL B 0 A_FireCustomMissile("QuakeRocket")
+        QRKL B 5 bright
+        QRKL C 5 bright
+        QRKL D 6
+        QRKL E 6
+        QRKL F 6
+        goto Ready
+
+      Spawn:
+        LAUN A -1
+        Stop
+    }
+}
+
+
+actor QuakeRocket
+{
+    Radius 4
+    Height 4
+    Speed 50
+
+    Scale 0.65
+
+    Projectile
+
+    +RANDOMIZE
+    +DEHEXPLOSION
+    +ROCKETTRAIL
+
+    DeathSound "quakeweps/explode"
+
+    Obituary "%o rides %k's rocket"
+
+    States
+    {
+      Spawn:
+        MISL A -1
+        loop
+
+      Death:
+        MISL B 0 A_Explode(64, 128, 0)
+        MISL B 0 A_Explode(64, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeExplosion
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+
+    RenderStyle Add
+
+    States
+    {
+      Spawn:
+        MISL B 8 bright
+        MISL C 6 bright
+        MISL D 4 bright
+        stop
+    }
+}
