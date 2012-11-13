@@ -10,16 +10,20 @@ actor QuakePlayer: PlayerPawn
     Player.JumpZ 6.9283
 
     Health 100
-    GibHealth -30
     PainChance 255
+
+    Species "Player"
+    +THRUSPECIES
+
+    Player.SoundClass "ranger"
 
     Player.DisplayName "Ranger"
     Player.CrouchSprite "PLYC"
 
     Player.StartItem "QuakeClass"
     Player.StartItem "Quake SG"
-    Player.StartItem "Quake Fist"
     Player.StartItem "Clip", 50
+    Player.StartItem "Quake Axe"
 
     Player.ColorRange 112, 127
 
@@ -37,42 +41,42 @@ actor QuakePlayer: PlayerPawn
       Melee:
         PLAY F 6 BRIGHT
         Goto Missile
+
       Pain:
         PLAY G 4
         PLAY G 4 A_Pain
         Goto Spawn
+
+      Pain.Falling:
+        PLAY G 2
+        PLAY G 6 A_PlaySound("ranger/fallpain", CHAN_VOICE)
+        goto Spawn
+
       Death:
-        PLAY H 0 A_PlayerSkinCheck("AltSkinDeath")
-      Death1:
         PLAY H 10
         PLAY I 10 A_PlayerScream
         PLAY J 10 A_NoBlocking
         PLAY KLM 10
         PLAY N -1
         Stop
+      
+      Death.Telefrag:
+        goto XDeath.Telefrag
+
       XDeath:
-        PLAY O 0 A_PlayerSkinCheck("AltSkinXDeath")
-      XDeath1:
         PLAY O 5
         PLAY P 5 A_XScream
         PLAY Q 5 A_NoBlocking
         PLAY RSTUV 5
         PLAY W -1
         Stop
-      AltSkinDeath:
-        PLAY H 6
-        PLAY I 6 A_PlayerScream
-        PLAY JK 6
-        PLAY L 6 A_NoBlocking
-        PLAY MNO 6
-        PLAY P -1
-        Stop
-      AltSkinXDeath:
-        PLAY Q 5 A_PlayerScream
-        PLAY R 0 A_NoBlocking
-        PLAY R 5 A_SkullPop
-        PLAY STUVWX 5
-        PLAY Y -1
+      
+      XDeath.Telefrag:
+        PLAY O 5
+        PLAY P 5 A_PlaySound("ranger/telefragged", CHAN_VOICE)
+        PLAY Q 5 A_NoBlocking
+        PLAY RSTUV 5
+        PLAY W -1
         Stop
     }
 }
@@ -108,4 +112,9 @@ actor QuakeBullet: FastProjectile
         TNT1 A 1
         stop
     }
+}
+
+actor TelefragTester: Rocket
+{
+    DamageType "Telefrag"
 }

@@ -995,6 +995,56 @@ alienweapon/hit			MTAWPHIT
 // Ranger sounds
 //////////////////
 
+ranger/death1   sounds/ranger/death1.wav
+ranger/death2   sounds/ranger/death2.wav
+ranger/death3   sounds/ranger/death3.wav
+$random ranger/death        { ranger/death1 ranger/death2 ranger/death3 }
+
+ranger/hideath1 sounds/ranger/hideath1.wav
+ranger/hideath2 sounds/ranger/hideath2.wav
+$random ranger/hideath      { ranger/hideath1 ranger/hideath2 }
+
+ranger/pain100_1    sounds/ranger/pain1.wav
+ranger/pain100_2    sounds/ranger/pain2.wav
+$random ranger/pain100      { ranger/pain100_1 ranger/pain100_2 }
+
+ranger/pain75_1     sounds/ranger/pain4.wav
+ranger/pain75_2     sounds/ranger/pain5.wav
+$random ranger/pain75       { ranger/pain75_1 ranger/pain75_2 }
+
+ranger/pain50_1     sounds/ranger/pain3.wav
+$random ranger/pain50       { ranger/pain75_1 ranger/pain50_1 }
+
+ranger/pain25       sounds/ranger/pain6.wav
+
+ranger/fallpain     sounds/ranger/land2.wav
+
+ranger/telefragged1 sounds/ranger/teledth1.wav
+ranger/telefragged2 sounds/ranger/tornoff2.wav
+$random ranger/telefragged  { ranger/telefragged1 ranger/telefragged2 }
+
+ranger/gib1         sounds/ranger/gib.wav
+ranger/gib2         sounds/ranger/udeath.wav
+$random ranger/gib          { ranger/gib1 ranger/gib2 }
+
+$playeralias        Ranger      male    *death          ranger/death
+$playeralias        Ranger      male    *xdeath         ranger/hideath
+$playersound        Ranger      male    *burndeath      dgdethf
+$playersound        Ranger      male    *crazydeath     dgdethx
+$playersound        Ranger      male    *wimpydeath     *death
+$playeralias        Ranger      male    *gibbed         ranger/gib
+$playersound        Ranger      male    *falling        sounds/ranger/falling1.wav
+$playeralias        Ranger      male    *pain100        ranger/pain100
+$playeralias        Ranger      male    *pain75         ranger/pain75
+$playeralias        Ranger      male    *pain50         ranger/pain50
+$playeralias        Ranger      male    *pain25         ranger/pain25
+$playersound        Ranger      male    *jump           sounds/ranger/plyrjmp8.wav
+$playersound        Ranger      male    *land           dgland
+$playersound        Ranger      male    *grunt          sounds/ranger/land.wav
+$playersound        Ranger      male    *usefail        sounds/ranger/land.wav
+$playersound        Ranger      male    *puzzfail       dgpuzz
+$playersound        Ranger      male    *taunt          sounds/ranger/taunt.wav
+
 quakeweps/blank             sounds/ranger/blank.ogg
 quakeweps/weaponget         sounds/ranger/w_pkup.wav
 

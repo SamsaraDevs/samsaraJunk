@@ -1,4 +1,4 @@
-actor "Quake Fist": Weapon
+actor "Quake Axe": Weapon
 {
     Weapon.SelectionOrder 8
     Weapon.Kickback 100
