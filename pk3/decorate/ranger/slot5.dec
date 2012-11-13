@@ -63,8 +63,6 @@ actor QuakeRocket
     +DEHEXPLOSION
     +ROCKETTRAIL
 
-    DeathSound "quakeweps/explode"
-
     Obituary "%o rides %k's rocket"
 
     States
@@ -91,9 +89,19 @@ actor QuakeExplosion
     States
     {
       Spawn:
-        MISL B 8 bright
+        MISL B 0 bright
+        MISL B 8 bright A_PlaySound("quakeweps/explode")
         MISL C 6 bright
         MISL D 4 bright
         stop
     }
+}
+
+actor QuakeRocketCoop: QuakeRocket
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (75)
 }

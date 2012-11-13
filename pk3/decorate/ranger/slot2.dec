@@ -40,7 +40,7 @@ actor "Quake SSG": Weapon replaces Shotgun
         goto Fire2
 
       CoopFire:
-        QDBS AAAAAAAAAAAAAA 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 0, 0, 0, 0, random(-400,400)/100.0)
+        QDBS AAAAAAAAAAAAAAAA 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 0, 0, 0, 0, random(-400,400)/100.0)
         goto Fire2
 
       Fire2:

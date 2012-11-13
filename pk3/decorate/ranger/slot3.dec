@@ -74,7 +74,6 @@ actor QuakeGrenade
     ReactionTime 90
 
     SeeSound "quakeweps/grenadebounce"
-    DeathSound "quakeweps/explode"
 
     Obituary "%o eats %k's pineapple"
 
@@ -109,5 +108,5 @@ actor QuakeGrenadeCoop: QuakeGrenade
     +THRUSPECIES
     Species "Player"
 
-    Damage (60)
+    Damage (75)
 }
