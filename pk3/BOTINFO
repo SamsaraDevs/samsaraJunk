@@ -123,3 +123,21 @@ perception = 2
 chatfrequency = 30
 favoriteweapon = "MA-75B Assault Rifle"
 }
+
+{
+name = "\csRanger"
+script = DFULTBOT
+chatlump = RANGCHAT
+gender = male
+revealed = true
+class = "Ranger"
+color = "CC 99 00"
+accuracy = 2
+intellect = 1
+evade = 3
+anticipation = 4
+reactiontime = 4
+perception = 3
+chatfrequency = 20
+favoriteweapon = "Quake RL" // We'll need to decide what to do with these weapon names later.
+}
