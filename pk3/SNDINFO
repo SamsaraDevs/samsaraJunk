@@ -1071,3 +1071,8 @@ quakeweps/rlfire            sounds/ranger/rocket.wav
 
 quakeweps/lightningstart    sounds/ranger/lstart.wav
 quakeweps/lightning         sounds/ranger/lightning.wav
+
+quakeweps/quadon            sounds/ranger/quaddamage.wav
+quakeweps/quadfire          sounds/ranger/damage3.wav
+quakeweps/quadoff           sounds/ranger/damage2.wav
+quakeweps/quadready         sounds/ranger/damage.wav

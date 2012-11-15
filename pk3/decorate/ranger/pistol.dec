@@ -31,6 +31,14 @@ actor "Quake SG": Weapon replaces Pistol
 
       // 17 tics
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        goto AfterSound
+
+      QuadSound:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound
+
+      AfterSound:
         QSGN A 0 A_PlaySound("quakeweps/shotgunfire", CHAN_WEAPON)
         QSGN A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QSGN A 0 A_FireBullets(1.5, 1.5, 4, 3, "BulletPuff")

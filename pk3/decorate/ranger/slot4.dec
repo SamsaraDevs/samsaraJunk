@@ -30,6 +30,14 @@ actor "Quake NG": Weapon replaces SuperShotgun
         Loop
 
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        goto AfterSound
+
+      QuadSound:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound
+
+      AfterSound:
         QNLG A 0 A_GunFlash
         QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
         goto FireNail

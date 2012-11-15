@@ -32,6 +32,14 @@ actor "Quake GL": Weapon replaces PlasmaRifle
 
       // 22 tics
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        goto AfterSound
+
+      QuadSound:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound
+
+      AfterSound:
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
         QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QGRL B 0 A_FireCustomMissile("QuakeGrenade")

@@ -135,7 +135,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Quake NG",                        "Clip",         "",             "", ""},
         {"Quake RL",                        "RocketAmmo",   "",             "", ""},
         {"Quake LG",                        "Cell",         "",             "", ""},
-        {"",                                "",             "",             "", ""},
+        {"QuadDamageItem",                  "",             "",             "", ""},
     },
 };
 

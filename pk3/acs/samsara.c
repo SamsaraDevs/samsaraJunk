@@ -22,6 +22,8 @@ int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 int LMSMessaged = 0;
 
+int QuakePowers[PLAYERMAX][P_COUNT] = {{-1050, 0}};
+
 global int 0:CommandBitchingDone;
 
 #include "samsaraFuncs.h"
@@ -94,6 +96,7 @@ script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
     int pariasMod;
+    int quadTimer, oQuadTimer;
     int pcount, opcount;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
@@ -104,6 +107,8 @@ script SAMSARA_SPAWN (int respawning)
     {
         SamsaraWepType = samsaraClassNum()+1;
     }
+
+    if (!respawning) { QuakePowers[pln][P_QUAD] = -QUAD_DEADRECHARGE; }
     
     SetInventory("CoopModeOn", isCoop());
     
@@ -119,6 +124,8 @@ script SAMSARA_SPAWN (int respawning)
     }
 
     pcount = PlayerCount();
+
+    quadTimer = QuakePowers[pln][P_QUAD];
     
     while (1)
     {
@@ -157,6 +164,62 @@ script SAMSARA_SPAWN (int respawning)
             Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
         }
 
+        oQuadTimer = quadTimer;
+        quadTimer = QuakePowers[pln][P_QUAD];
+
+        if (quadTimer - 35 > oQuadTimer)
+        {
+            AmbientSound("quakeweps/quadon", 127);
+        }
+
+        if (quadTimer > 0)
+        {
+            if (quadTimer % 35 == 0)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 590.1, 390.0, 1.5, 1.0);
+                SetFont("BIGFONT");
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 585.2, 390.0, 1.5, 1.0);
+            }
+            GiveInventory("QuadDamagePower", 1);
+        }
+        else
+        {
+            if (quadTimer == 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58102, CR_UNTRANSLATED, 0, 0, 1);
+            }
+            TakeInventory("QuadDamagePower", 1);
+        }
+
+        if (quadTimer == 105)
+        {
+            ActivatorSound("quakeweps/quadoff", 127);
+        }
+
+        if ((quadTimer % 35 == 0) && (quadTimer / 35 <= 3) && (quadTimer > 0))
+        {
+            FadeRange(0, 64, 255, 0.25, 0, 64, 255, 0, 0.33);
+        }
+
+        if (quadTimer == -QUAD_DEADRECHARGE)
+        {
+            if (oQuadTimer != -QUAD_DEADRECHARGE) { ActivatorSound("quakeweps/quadready", 48); }
+
+            TakeInventory("CantQuad", 0x7FFFFFFF);
+        }
+        else
+        {
+            GiveInventory("CantQuad", 1);
+        }
+
+        quadTimer = max(quadTimer - 1, -QUAD_DEADRECHARGE);
+        QuakePowers[pln][P_QUAD] = quadTimer;
+
+        if (DEBUG) { Print(d:oQuadTimer, s:" -> ", d:quadTimer); }
+            
         
         if (SamsaraClassNum() == CLASS_MARATHON)
         {
@@ -830,6 +893,22 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         {
             GiveInventory("LevelLimiter", 1);
         }
+        break;
+    }
+}
+
+script SAMSARA_POWERUPSET (int which, int duration)
+{
+    int pln = PlayerNumber();
+
+    switch (which)
+    {
+      case 0:
+        QuakePowers[pln][P_QUAD] = duration;
+        break;
+
+      case 1:
+        QuakePowers[pln][P_REGEN] = duration;
         break;
     }
 }

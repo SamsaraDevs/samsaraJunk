@@ -13,6 +13,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
 #define SAMSARA_CLIENT_UNIQUEPICKUP 233
 #define SAMSARA_MARATHON            209
+#define SAMSARA_POWERUPSET          249
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_OPEN_CLIENT         248
@@ -35,11 +36,18 @@
 #define CLASS_HEXEN     4
 #define CLASS_DUKE      5
 #define CLASS_MARATHON  6
+#define CLASS_QUAKE     7
 
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
 #define UNLOADCOUNT 33
+
+#define P_COUNT 2
+#define P_QUAD  0
+#define P_REGEN 1
+
+#define QUAD_DEADRECHARGE   1050
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
