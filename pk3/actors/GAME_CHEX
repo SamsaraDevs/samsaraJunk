@@ -372,8 +372,6 @@ actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
       Death.ZorchPistol:
 
       Death.Zorch:
-
-      Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TROO I 8
         TROO J 8 A_Scream
@@ -385,6 +383,8 @@ actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
       Death.DukeExplosive:
 
       Death.DukeDamage:
+
+      Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
         goto Death
