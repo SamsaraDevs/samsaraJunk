@@ -239,7 +239,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "quakeweps/weaponget",
         "quakeweps/weaponget",
         "quakeweps/weaponget",
-        "quakeweps/weaponget",
+        "quakeweps/quadget",
     },
 };
 

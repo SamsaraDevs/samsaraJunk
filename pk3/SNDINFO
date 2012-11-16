@@ -1047,6 +1047,7 @@ $playersound        Ranger      male    *taunt          sounds/ranger/taunt.wav
 
 quakeweps/blank             sounds/ranger/blank.ogg
 quakeweps/weaponget         sounds/ranger/w_pkup.wav
+quakeweps/megahealth        sounds/ranger/m_health.wav
 
 quakeweps/axe               sounds/ranger/axe.wav
 quakeweps/axewall           sounds/ranger/axewall.wav
@@ -1072,7 +1073,8 @@ quakeweps/rlfire            sounds/ranger/rocket.wav
 quakeweps/lightningstart    sounds/ranger/lstart.wav
 quakeweps/lightning         sounds/ranger/lightning.wav
 
+quakeweps/quadget           sounds/ranger/quadget.wav
 quakeweps/quadon            sounds/ranger/quaddamage.wav
 quakeweps/quadfire          sounds/ranger/damage3.wav
 quakeweps/quadoff           sounds/ranger/damage2.wav
-quakeweps/quadready         sounds/ranger/damage.wav
+quakeweps/quadready         sounds/ranger/quadready.wav

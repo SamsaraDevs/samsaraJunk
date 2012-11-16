@@ -32,16 +32,24 @@ actor "Quake GL": Weapon replaces PlasmaRifle
 
       // 22 tics
       Fire:
-        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
         goto AfterSound
 
       QuadSound:
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSound
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeQuad")
+        goto Fire2
+
+      CoopQuad:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoopQuad")
+        goto Fire2
 
       AfterSound:
-        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
         QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         QGRL B 0 A_FireCustomMissile("QuakeGrenade")
         goto Fire2
 
@@ -117,4 +125,27 @@ actor QuakeGrenadeCoop: QuakeGrenade
     Species "Player"
 
     Damage (75)
+}
+
+actor QuakeGrenadeQuad: QuakeGrenade
+{
+    DamageType "NotQuadded"
+
+    States
+    {
+      Death:
+        DMSL B 0 A_Explode(256, 128, 0)
+        DMSL B 0 A_Explode(256, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (300)
 }

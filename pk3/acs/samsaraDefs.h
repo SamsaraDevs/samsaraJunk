@@ -13,7 +13,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
 #define SAMSARA_CLIENT_UNIQUEPICKUP 233
 #define SAMSARA_MARATHON            209
-#define SAMSARA_POWERUPSET          249
+#define SAMSARA_MEGAHEALTH          249
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_OPEN_CLIENT         248
@@ -41,13 +41,13 @@
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 33
+#define UNLOADCOUNT 34
 
 #define P_COUNT 2
 #define P_QUAD  0
 #define P_REGEN 1
 
-#define QUAD_DEADRECHARGE   1050
+#define QUAD_THRESHOLD      1050
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -143,4 +143,5 @@ int UnloadRemove[UNLOADCOUNT] =
     "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
     "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
     "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
+    "QuakeQuadTimer",
 };

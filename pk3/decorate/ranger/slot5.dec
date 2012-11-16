@@ -32,15 +32,21 @@ actor "Quake RL": Weapon replaces RocketLauncher
 
       // 28 tics
       Fire:
-        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
         goto AfterSound
 
-      QuadSound:
+      QuadFire:
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSound
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
+        QRKL B 0 A_FireCustomMissile("QuakeRocketQuad")
+        goto Fire2
+
+      CoopQuad:
+        QRKL B 0 A_FireCustomMissile("QuakeRocketCoopQuad")
+        goto Fire2
 
       AfterSound:
-        QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         QRKL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QRKL B 0 A_FireCustomMissile("QuakeRocket")
         goto Fire2
@@ -95,6 +101,21 @@ actor QuakeRocket
     }
 }
 
+actor QuakeRocketQuad: QuakeRocket
+{
+    DamageType "NotQuadded"
+
+    States
+    {
+      Death:
+        DMSL B 0 A_Explode(256, 128, 0)
+        DMSL B 0 A_Explode(256, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+
 actor QuakeExplosion
 {
     +NOINTERACTION
@@ -120,4 +141,13 @@ actor QuakeRocketCoop: QuakeRocket
     Species "Player"
 
     Damage (75)
+}
+
+actor QuakeRocketCoopQuad: QuakeRocketQuad
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (300)
 }

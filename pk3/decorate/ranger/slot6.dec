@@ -77,7 +77,14 @@ actor "Quake LG": Weapon replaces BFG9000
         QLTG E 0 A_Refire
         QLTG E 0 A_TakeInventory("LGFrame")
         QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
-        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7, 1.0)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
+        goto AfterSound2
+
+      QuadSound2:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound2
+
+      AfterSound2:
         QLTG A 0 A_StopSound(6)
         goto Ready
 

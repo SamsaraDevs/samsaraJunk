@@ -21,8 +21,7 @@ int SamsaraClientWeps[SLOTCOUNT] = {0};
 int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 int LMSMessaged = 0;
-
-int QuakePowers[PLAYERMAX][P_COUNT] = {{-1050, 0}};
+int UnloadingNow = 0;
 
 global int 0:CommandBitchingDone;
 
@@ -108,8 +107,6 @@ script SAMSARA_SPAWN (int respawning)
         SamsaraWepType = samsaraClassNum()+1;
     }
 
-    if (!respawning) { QuakePowers[pln][P_QUAD] = -QUAD_DEADRECHARGE; }
-    
     SetInventory("CoopModeOn", isCoop());
     
     switch (samsaraClassNum())
@@ -124,8 +121,6 @@ script SAMSARA_SPAWN (int respawning)
     }
 
     pcount = PlayerCount();
-
-    quadTimer = QuakePowers[pln][P_QUAD];
     
     while (1)
     {
@@ -165,7 +160,7 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         oQuadTimer = quadTimer;
-        quadTimer = QuakePowers[pln][P_QUAD];
+        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
 
         if (quadTimer - 35 > oQuadTimer)
         {
@@ -179,8 +174,9 @@ script SAMSARA_SPAWN (int respawning)
                 SetHudSize(640, 480, 1);
                 SetFont("QUADICO2");
                 HudMessage(s:"A"; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 590.1, 390.0, 1.5, 1.0);
-                SetFont("BIGFONT");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 585.2, 390.0, 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 290.2, 195.0, 1.5, 1.0);
             }
             GiveInventory("QuadDamagePower", 1);
         }
@@ -204,9 +200,15 @@ script SAMSARA_SPAWN (int respawning)
             FadeRange(0, 64, 255, 0.25, 0, 64, 255, 0, 0.33);
         }
 
-        if (quadTimer == -QUAD_DEADRECHARGE)
+        if (quadTimer == -QUAD_THRESHOLD)
         {
-            if (oQuadTimer != -QUAD_DEADRECHARGE) { ActivatorSound("quakeweps/quadready", 48); }
+            if (CheckInventory("CantQuad") && !UnloadingNow)
+            {
+                ActivatorSound("quakeweps/quadready", 96);
+                SetHudSize(240, 180, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 146.0, 0.0, 1.0);
+            }
 
             TakeInventory("CantQuad", 0x7FFFFFFF);
         }
@@ -215,12 +217,10 @@ script SAMSARA_SPAWN (int respawning)
             GiveInventory("CantQuad", 1);
         }
 
-        quadTimer = max(quadTimer - 1, -QUAD_DEADRECHARGE);
-        QuakePowers[pln][P_QUAD] = quadTimer;
+        TakeInventory("QuakeQuadTimer", 1);
 
         if (DEBUG) { Print(d:oQuadTimer, s:" -> ", d:quadTimer); }
             
-        
         if (SamsaraClassNum() == CLASS_MARATHON)
         {
             if (GetCVar("samsara_sogravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
@@ -897,21 +897,43 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     }
 }
 
-script SAMSARA_POWERUPSET (int which, int duration)
+script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 {
-    int pln = PlayerNumber();
+    int hpGiven = GetActorProperty(0, APROP_Health);
+    SetActorProperty(0, APROP_Health, min(hpGiven + hpcount, 250));
+    hpGiven = GetActorProperty(0, APROP_Health) - hpGiven;
 
-    switch (which)
+    hpPerSec = itof(hpPerSec) / 35;
+
+    int takeCounter, hpToTake;
+
+    while (1)
     {
-      case 0:
-        QuakePowers[pln][P_QUAD] = duration;
-        break;
+        if (UnloadingNow)
+        {
+            hpToTake = GetActorProperty(0, APROP_Health);
+            hpToTake = middle(hpToTake, getMaxHealth(), hpToTake - hpGiven);
+            SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_HEALTH) - hpGiven);
+            break;
+        }
 
-      case 1:
-        QuakePowers[pln][P_REGEN] = duration;
-        break;
+        if (delayTics > 0) { delayTics--; }
+        else
+        {
+            takeCounter += hpPerSec;
+            hpToTake = min(ftoi(takeCounter), hpGiven);
+            hpGiven -= hpToTake;
+
+            SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) - hpToTake);
+            takeCounter -= itof(hpToTake);
+        }
+
+        if (hpGiven <= 0) { break; }
+        if (GetActorProperty(0, APROP_Health) <= getMaxHealth()) { break; }
+        Delay(1);
     }
 }
+
 
 // TIPBOX START
 
@@ -1268,6 +1290,7 @@ script 208 (void)
 
 script 203 UNLOADING
 {
+    UnloadingNow = 1;
     int i;
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
 }
