@@ -270,6 +270,7 @@ actor DukeRipperBullet : DukePistolBullet
     +NOTIMEFREEZE
     Obituary "%k ripped %o a new one."
     Damage (15)// Original was (9)
+    DamageType "DukeDamage"
 }
 
 actor DukeRipperBulletCoop : DukePistolBullet
@@ -280,6 +281,7 @@ actor DukeRipperBulletCoop : DukePistolBullet
     +THRUSPECIES
     +NOTIMEFREEZE
     Species "Player"
+    DamageType "DukeDamage"
 }
 
 actor ShellCasingSpawner3 : FastProjectile
