@@ -28,7 +28,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
         HexenFull:     PSST B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeFull:      PRPR B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonFull:  PARF B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeFull:     PQSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeFull:     PNLG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomEmpty:     PDCH A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexEmpty:     PRPZ A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -37,7 +37,7 @@ actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
         HexenEmpty:    PSST A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeEmpty:     PRPR A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonEmpty: PARF A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeEmpty:    PQSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeEmpty:    PNLG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 4) & 3) == 1, "PickupSuccess")

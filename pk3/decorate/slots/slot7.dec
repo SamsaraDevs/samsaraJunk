@@ -28,7 +28,7 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         HexenFull:     PWRT B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeFull:      PDVS B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonFull:  PWMC B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeFull:     PQSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeFull:     PQUD B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomEmpty:     PBFG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexEmpty:     PLZD A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -37,7 +37,7 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         HexenEmpty:    PWRT A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeEmpty:     PDVS A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonEmpty: PWMC A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeEmpty:    PQSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeEmpty:    PQUD A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 7) & 3) == 1, "PickupSuccess")
