@@ -100,6 +100,7 @@ StatusBar Fullscreen
 	IsSelected "Machine Gun" {drawimage "STY2NUM2", 136, 10;}
 	IsSelected "WSTE-M5 Combat Shotgun" {drawimage "STY2NUM2", 136, 10;}
 	IsSelected "Frost Shards" {drawimage "STY2NUM2", 136, 10;}
+	IsSelected "Quake SSG" {drawimage "STY2NUM2", 136, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 3, "", "STYSNUM3", 146, 10;
 	IsSelected "Super Shotgun" {drawimage "STY2NUM3", 146, 10;}
@@ -108,6 +109,7 @@ StatusBar Fullscreen
 	IsSelected "Explosive Shotgun" {drawimage "STY2NUM3", 146, 10;}
 	IsSelected "Timon's Axe" {drawimage "STY2NUM3", 146, 10;}
 	IsSelected "Fusion Pistol" {drawimage "STY2NUM3", 146, 10;}
+	IsSelected "Quake GL" {drawimage "STY2NUM3", 146, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 4, "", "STYSNUM4", 156, 10;
 	IsSelected " Chaingun " {drawimage "STY2NUM4", 156, 10;}
@@ -117,6 +119,7 @@ StatusBar Fullscreen
 	IsSelected "Serpent Staff" {drawimage "STY2NUM4", 156, 10;}
 	IsSelected "Chaingun Cannon" {drawimage "STY2NUM4", 156, 10;}
 	IsSelected "MA-75B Assault Rifle" {drawimage "STY2NUM4", 156, 10;}
+	IsSelected "Quake NG" {drawimage "STY2NUM4", 156, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 5, "", "STYSNUM5", 166, 10;
 	IsSelected "Rocket Launcher" {drawimage "STY2NUM5", 166, 10;}
@@ -126,6 +129,7 @@ StatusBar Fullscreen
 	IsSelected "Hammer of Retribution" {drawimage "STY2NUM5", 166, 10;}
 	IsSelected "RPG" {drawimage "STY2NUM5", 166, 10;}
 	IsSelected "SPNKR-XP SSM Launcher" {drawimage "STY2NUM5", 166, 10;}
+	IsSelected "Quake RL" {drawimage "STY2NUM5", 166, 10;} // Need to change
 
    DrawSwitchableImage WeaponSlot 6, "", "STYSNUM6", 176, 10;
 	IsSelected "Plasma Rifle" {drawimage "STY2NUM6", 176, 10;}
@@ -135,6 +139,7 @@ StatusBar Fullscreen
 	IsSelected "Firestorm" {drawimage "STY2NUM6", 176, 10;}
 	IsSelected "Freezethrower" {drawimage "STY2NUM6", 176, 10;}
 	IsSelected "TOZT-7 Napalm Unit" {drawimage "STY2NUM6", 176, 10;}
+	IsSelected "Quake LG" {drawimage "STY2NUM6", 176, 10;}
 	
    DrawSwitchableImage WeaponSlot 7, "", "STYSNUM7", 186, 10;
    InInventory PortTome, 1 {drawimage "STYSNUM7", 186, 10;}
@@ -145,6 +150,7 @@ StatusBar Fullscreen
 	IsSelected "Spear of Destiny" {drawimage "STY2NUM7", 186, 10;}
 	IsSelected "Wraithverge" {drawimage "STY2NUM7", 186, 10;}
 	IsSelected "Devastator" {drawimage "STY2NUM7", 186, 10;}
+	InInventory QuadDamagePower, 1 {drawimage "STY2NUM7", 186, 10;}
    
    IsSelected not "MA-75B Assault Rifle" {
    InInventory DiscOfrepulsionCooldown, 1 {drawnumber 3, INDEXFON, red, DiscOfRepulsionCooldown, 134, 16;}}
@@ -1641,6 +1647,117 @@ playerclass SecurityOfficer
 	IsSelected "ONI-71 Wave Motion Cannon" {drawimage "WPMARA7Y", 247, 11;}
 	}
 	}
+	
+playerclass Ranger
+	{
+	drawimage "QUAKBAR", 0, 168;
+    drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+	drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
+
+	//Doom keys
+	InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
+	InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
+	InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
+	InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
+	InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
+	InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+	//Chex keys
+	InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
+	InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
+	InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
+	InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
+	InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
+	InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+	//Heretic keys
+	InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
+	InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
+	InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+	//HeXen keys
+	InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
+	InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
+	InInventory KeyAxe, 1 {drawimage "HEXKEY3", 223, 191;}
+	InInventory KeyFire, 1 {drawimage "HEXKEY4", 233, 171;}
+	InInventory KeyEmerald, 1 {drawimage "HEXKEY5", 233, 181;}
+	InInventory KeyDungeon, 1 {drawimage "HEXKEY6", 233, 191;}
+	InInventory KeySilver, 1 {drawimage "HEXKEY7", 243, 171;}
+	InInventory KeyRusted, 1 {drawimage "HEXKEY8", 243, 181;}
+	InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
+	InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
+	InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+
+	drawnumber 3, INDEXFON, red, ammo Clip, 289, 173;
+	drawnumber 3, INDEXFON, red, ammo AmmoShell, 289, 179;
+	drawnumber 3, INDEXFON, red, ammo RocketAmmo, 289, 185;
+	drawnumber 3, INDEXFON, red, ammo Cell, 289, 191;
+
+	drawnumber 3, INDEXFON, red, ammocapacity Clip, 315, 173;
+	drawnumber 3, INDEXFON, red, ammocapacity AmmoShell, 315, 179;
+	drawnumber 3, INDEXFON, red, ammocapacity RocketAmmo, 315, 185;
+	drawnumber 3, INDEXFON, red, ammocapacity Cell, 315, 191;
+	gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
+	{
+		drawnumber 3, QUAKHUDF, untranslated, frags, 140, 181;
+	}
+	gamemode cooperative, singleplayer
+	{
+		drawnumber 3, QUAKHUDF, untranslated, KillCountAmount, 140, 181;
+		InInventory KillCountNotch, 1 {drawimage "DOMNOTCH", 100, 176;}
+		InInventory KillCountNotch, 2 {drawimage "DOMNOTCH", 105, 176;}
+		InInventory KillCountNotch, 3 {drawimage "DOMNOTCH", 110, 176;}
+		InInventory KillCountNotch, 4 {drawimage "DOMNOTCH", 115, 176;}
+		InInventory KillCountNotch, 5 {drawimage "DOMNOTCH", 120, 176;}
+		InInventory KillCountNotch, 6 {drawimage "DOMNOTCH", 125, 176;}
+		InInventory KillCountNotch, 7 {drawimage "DOMNOTCH", 130, 176;}
+		InInventory KillCountNotch, 8 {drawimage "DOMNOTCH", 135, 176;}
+		InInventory KillCountNotch, 9 {drawimage "DOMNOTCH", 140, 176;}
+	}
+		DrawImage RuneIcon, 20, 40, Center;
+	    drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
+   GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
+	{
+	drawimage translatable "CLRDOOM", 145, 169;
+	}
+		drawmugshot "STF", 5, 143, 168;
+	InInventory ExpandedHud, 1
+	{
+	drawimage "QUAKBART", 0, 0;
+	//InInventory GotWeapon0, 1 {drawimage "WEPSELN1", 54, 0;}
+	//InInventory GotWeapon0, 1 {drawimage "WPQUAK1N", 49, 11;}
+	//IsSelected " Chainsaw " {drawimage "WEPSELY1", 54, 0;}
+	//IsSelected " Chainsaw " {drawimage "WPQUAK1Y", 49, 11;}
+	
+	InInventory GotWeapon2, 1 {drawimage "WEPSELN2", 87, 0;}
+	InInventory GotWeapon2, 1 {drawimage "WPQUAK2N", 82, 11;}
+	IsSelected "Quake SSG" {drawimage "WEPSELY2", 87, 0;}
+	IsSelected "Quake SSG" {drawimage "WPQUAK2Y", 82, 11;}
+	
+	InInventory GotWeapon3, 1 {drawimage "WEPSELN3", 120, 0;}
+	InInventory GotWeapon3, 1 {drawimage "WPQUAK3N", 115, 11;}
+	IsSelected "Quake GL" {drawimage "WEPSELY3", 120, 0;}
+	IsSelected "Quake GL" {drawimage "WPQUAK3Y", 115, 11;}
+	
+	InInventory GotWeapon4, 1 {drawimage "WEPSELN4", 154, 0;}
+	InInventory GotWeapon4, 1 {drawimage "WPQUAK4N", 148, 11;}
+	IsSelected "Quake NG" {drawimage "WEPSELY4", 154, 0;}
+	IsSelected "Quake NG" {drawimage "WPQUAK4Y", 148, 11;}
+	
+	InInventory GotWeapon5, 1 {drawimage "WEPSELN5", 186, 0;}
+	InInventory GotWeapon5, 1 {drawimage "WPQUAK5N", 181, 11;}
+	IsSelected "Quake RL" {drawimage "WEPSELY5", 186, 0;}
+	IsSelected "Quake RL" {drawimage "WPQUAK5Y", 181, 11;}
+	
+	InInventory GotWeapon6, 1 {drawimage "WEPSELN6", 219, 0;}
+	InInventory GotWeapon6, 1 {drawimage "WPQUAK6N", 214, 11;}
+	IsSelected "Quake LG" {drawimage "WEPSELY6", 219, 0;}
+	IsSelected "Quake LG" {drawimage "WPQUAK6Y", 214, 11;}
+	
+	InInventory GotWeapon7, 1 {drawimage "WEPSELN7", 251, 0;}
+	InInventory GotWeapon7, 1 {drawimage "WPQUAK7N", 247, 11;}
+	InInventory QuadDamagePower, 1 {drawimage "WEPSELY7", 251, 0;}
+	InInventory QuadDamagePower, 1 {drawimage "WPQUAK7Y", 247, 11;}
+	}
+	}
 }
 
 statusbar inventory
@@ -2823,6 +2940,79 @@ playerclass SecurityOfficer
    GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
 	{
 	drawimage translatable "CLRMARA1", 145, 169;
+	}
+		drawmugshot "STF", 5, 143, 168;
+	}
+	
+playerclass Ranger
+	{
+	drawimage "QUAKBAR", 0, 168;
+    drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+	drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
+
+	//Doom keys
+	InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
+	InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
+	InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
+	InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
+	InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
+	InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+	//Chex keys
+	InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
+	InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
+	InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
+	InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
+	InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
+	InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+	//Heretic keys
+	InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
+	InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
+	InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+	//HeXen keys
+	InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
+	InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
+	InInventory KeyAxe, 1 {drawimage "HEXKEY3", 223, 191;}
+	InInventory KeyFire, 1 {drawimage "HEXKEY4", 233, 171;}
+	InInventory KeyEmerald, 1 {drawimage "HEXKEY5", 233, 181;}
+	InInventory KeyDungeon, 1 {drawimage "HEXKEY6", 233, 191;}
+	InInventory KeySilver, 1 {drawimage "HEXKEY7", 243, 171;}
+	InInventory KeyRusted, 1 {drawimage "HEXKEY8", 243, 181;}
+	InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
+	InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
+	InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+
+	drawnumber 3, INDEXFON, red, ammo Clip, 289, 173;
+	drawnumber 3, INDEXFON, red, ammo AmmoShell, 289, 179;
+	drawnumber 3, INDEXFON, red, ammo RocketAmmo, 289, 185;
+	drawnumber 3, INDEXFON, red, ammo Cell, 289, 191;
+
+	drawnumber 3, INDEXFON, red, ammocapacity Clip, 315, 173;
+	drawnumber 3, INDEXFON, red, ammocapacity AmmoShell, 315, 179;
+	drawnumber 3, INDEXFON, red, ammocapacity RocketAmmo, 315, 185;
+	drawnumber 3, INDEXFON, red, ammocapacity Cell, 315, 191;
+	gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
+	{
+		drawnumber 3, QUAKHUDF, untranslated, frags, 140, 181;
+	}
+	gamemode cooperative, singleplayer
+	{
+		drawnumber 3, QUAKHUDF, untranslated, KillCountAmount, 140, 181;
+		InInventory KillCountNotch, 1 {drawimage "DOMNOTCH", 100, 176;}
+		InInventory KillCountNotch, 2 {drawimage "DOMNOTCH", 105, 176;}
+		InInventory KillCountNotch, 3 {drawimage "DOMNOTCH", 110, 176;}
+		InInventory KillCountNotch, 4 {drawimage "DOMNOTCH", 115, 176;}
+		InInventory KillCountNotch, 5 {drawimage "DOMNOTCH", 120, 176;}
+		InInventory KillCountNotch, 6 {drawimage "DOMNOTCH", 125, 176;}
+		InInventory KillCountNotch, 7 {drawimage "DOMNOTCH", 130, 176;}
+		InInventory KillCountNotch, 8 {drawimage "DOMNOTCH", 135, 176;}
+		InInventory KillCountNotch, 9 {drawimage "DOMNOTCH", 140, 176;}
+	}
+		DrawImage RuneIcon, 20, 40, Center;
+	    drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
+   GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
+	{
+	drawimage translatable "CLRDOOM", 145, 169;
 	}
 		drawmugshot "STF", 5, 143, 168;
 	}
