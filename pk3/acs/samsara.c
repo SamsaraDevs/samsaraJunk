@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include "commonFuncs.h"
 
@@ -866,7 +866,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         break;
         
       case 3:
-        if (limited)
+        if (limited && !dropped)
         {
             SetResultValue(0);
             terminate;
@@ -889,7 +889,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             GiveInventory("CanDualShotties", 1);
         }
         
-        if (limit && !dropped)
+        if (limit)
         {
             GiveInventory("LevelLimiter", 1);
         }
@@ -912,8 +912,11 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
         if (UnloadingNow)
         {
             hpToTake = GetActorProperty(0, APROP_Health);
+
+            if (DEBUG) { Print(d:hpToTake, s:", ", d:getMaxHealth(), s:", ", d:hpToTake - hpGiven); }
+
             hpToTake = middle(hpToTake, getMaxHealth(), hpToTake - hpGiven);
-            SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_HEALTH) - hpGiven);
+            SetActorProperty(0, APROP_Health, hpToTake);
             break;
         }
 
@@ -943,11 +946,11 @@ str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HE
 
 script 300 (int tipboxshit) NET
 {
-    switch(tipboxshit)
+    int classNumber = samsaraClassNum();
+    switch (tipboxshit)
     {
       case 1:
         SetHudSize(1024,768,1);
-        int classNumber = samsaraClassNum();
         SetFont(CoolTips1[classNumber]);
         HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
         break;
