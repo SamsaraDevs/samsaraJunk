@@ -48,6 +48,8 @@ actor "Quake LG": Weapon replaces BFG9000
       Hold:
         QLTG A 0 A_JumpIf(waterlevel > 1, "Discharge")
         QLTG A 0 A_GunFlash
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, 2)
+        TNT1 A 0 A_StopSound(7)
         QLTG A 0 A_JumpIfInventory("LGFrame", 3, "Fire3")
         QLTG A 0 A_JumpIfInventory("LGFrame", 2, "Fire2")
         QLTG A 0 A_JumpIfInventory("LGFrame", 1, "Fire1")
@@ -77,6 +79,7 @@ actor "Quake LG": Weapon replaces BFG9000
         QLTG E 0 A_Refire
         QLTG E 0 A_TakeInventory("LGFrame")
         QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
+        QLTG A 0 A_StopSound(7)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
         goto AfterSound2
 
