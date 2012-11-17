@@ -143,7 +143,7 @@ actor QuakeNail
 {
     Height 4
     Radius 4
-    Speed 50
+    Speed 75
 
     Projectile
     Damage (9)
