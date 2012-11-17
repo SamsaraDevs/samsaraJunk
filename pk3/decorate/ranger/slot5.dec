@@ -39,6 +39,7 @@ actor "Quake RL": Weapon replaces RocketLauncher
       QuadFire:
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
         QRKL B 0 A_FireCustomMissile("QuakeRocketQuad")
         goto Fire2
 
@@ -48,6 +49,7 @@ actor "Quake RL": Weapon replaces RocketLauncher
 
       AfterSound:
         QRKL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QRKL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         QRKL B 0 A_FireCustomMissile("QuakeRocket")
         goto Fire2
 

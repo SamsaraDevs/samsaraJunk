@@ -107,8 +107,6 @@ script SAMSARA_SPAWN (int respawning)
         SamsaraWepType = samsaraClassNum()+1;
     }
 
-    SetInventory("CoopModeOn", isCoop());
-    
     switch (samsaraClassNum())
     {
       case CLASS_DUKE:
@@ -118,6 +116,16 @@ script SAMSARA_SPAWN (int respawning)
       case CLASS_MARATHON:
         if (isInvasion()) { GiveInventory("InvasionDualShottyCheck", 1); }
         break;
+    }
+
+    if (isSinglePlayer())
+    {
+        GiveInventory("SPModeOn", 1);
+    }
+    else if (isCoop())
+    {
+        GiveInventory("CoopModeOn", 1);
+        SetActorState(0, "CoOpModeOn");
     }
 
     pcount = PlayerCount();
@@ -1174,22 +1182,6 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
         HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
     }
     keys[0][a] = 1;
-}
-
-///////////////
-// STATUS STUFF
-//////////////
-//if (GameType () == GAME_NET_COOPERATIVE)
-//if (GameType () == GAME_NET_TEAMGAME)
-//if (GameType () == GAME_NET_DEATHMATCH)
-//if (GameType () == GAME_SINGLE_PLAYER)
-script 211 ENTER
-{
-    if (isCoop())
-    {
-        GiveInventory("CoopModeOn", 1);
-        SetActorState(0,"CoOpModeOn");
-    }
 }
 
 ///////////////
