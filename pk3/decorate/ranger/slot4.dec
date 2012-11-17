@@ -95,7 +95,7 @@ actor "Quake NG": Weapon replaces SuperShotgun
 
 actor QNTrail1
 {
-    Speed 36
+    Speed 54
 
     Projectile
 
@@ -115,20 +115,20 @@ actor QNTrail1
 
 actor QNTrail2: QNTrail1
 {
-    Speed 25
+    Speed 37
 
     States
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 0 ACS_ExecuteAlways(586, 0, 2,0,0)
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 2, 02, 7)
         goto SpawnLoop
     }
 }
 
 actor QNTrail3: QNTrail1
 {
-    Speed 12
+    Speed 18
 
     States
     {
@@ -139,11 +139,11 @@ actor QNTrail3: QNTrail1
     }
 }
 
-actor QuakeNail
+actor QuakeNail: FastProjectile
 {
-    Height 4
-    Radius 4
-    Speed 50
+    Radius 1
+    Height 0
+    Speed 75
 
     Projectile
     Damage (9)
@@ -181,7 +181,7 @@ actor QuakeNailCoop: QuakeNail
     +THRUSPECIES
     Species "Player"
 
-    Damage (11)
+    Damage (12)
 }
 
 actor NailBounce

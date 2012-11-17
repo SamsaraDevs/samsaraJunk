@@ -900,6 +900,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
 script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 {
     int hpGiven = GetActorProperty(0, APROP_Health);
+    int startHealth = hpGiven;
     SetActorProperty(0, APROP_Health, min(hpGiven + hpcount, 250));
     hpGiven = GetActorProperty(0, APROP_Health) - hpGiven;
 
@@ -932,7 +933,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
         }
 
         if (hpGiven <= 0) { break; }
-        if (GetActorProperty(0, APROP_Health) <= getMaxHealth()) { break; }
+        if (GetActorProperty(0, APROP_Health) <= startHealth) { break; }
         Delay(1);
     }
 }
