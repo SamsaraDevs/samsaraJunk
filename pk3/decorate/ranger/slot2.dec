@@ -8,7 +8,7 @@ actor "Quake SSG": Weapon replaces Shotgun
 
     +NOAUTOAIM
 
-    Inventory.Icon "SGN2A0"
+    Inventory.Icon "QDBSZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the double-barreled shotgun"
@@ -67,7 +67,7 @@ actor "Quake SSG": Weapon replaces Shotgun
         Goto Ready
 
       Spawn:
-        SGN2 A -1
+        QDBS Z -1
         Stop
     }
 }

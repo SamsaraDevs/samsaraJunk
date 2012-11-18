@@ -7,7 +7,7 @@ actor "Quake NG": Weapon replaces SuperShotgun
     Weapon.AmmoType "Clip"
 
 
-    Inventory.Icon "MGUNA0"
+    Inventory.Icon "QNLGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the nailgun"
@@ -90,7 +90,7 @@ actor "Quake NG": Weapon replaces SuperShotgun
         Goto LightDone
 
       Spawn:
-        MGUN A -1
+        QNLG Z -1
         Stop
     }
 }

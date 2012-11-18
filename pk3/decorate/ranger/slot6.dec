@@ -8,7 +8,7 @@ actor "Quake LG": Weapon replaces BFG9000
 
     +NOAUTOAIM
 
-    Inventory.Icon "DPLSA0"
+    Inventory.Icon "QLTGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the thunderbolt"
@@ -195,7 +195,7 @@ actor "Quake LG": Weapon replaces BFG9000
         Goto LightDone
 
       Spawn:
-        DPLS A -1
+        QLTG Z -1
         Stop
     }
 }

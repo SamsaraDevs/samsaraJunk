@@ -9,7 +9,7 @@ actor "Quake RL": Weapon replaces RocketLauncher
     +NOAUTOAIM
     +NOAUTOFIRE
 
-    Inventory.Icon "LAUNA0"
+    Inventory.Icon "QRKLZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the rocket launcher"
@@ -67,7 +67,7 @@ actor "Quake RL": Weapon replaces RocketLauncher
         goto Ready
 
       Spawn:
-        LAUN A -1
+        QRKL Z -1
         Stop
     }
 }

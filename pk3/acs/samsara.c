@@ -181,10 +181,10 @@ script SAMSARA_SPAWN (int respawning)
             {
                 SetHudSize(640, 480, 1);
                 SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 590.1, 390.0, 1.5, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 590.1, 380.0, 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 290.2, 195.0, 1.5, 1.0);
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 290.2, 190.0, 1.5, 1.0);
             }
             GiveInventory("QuadDamagePower", 1);
         }
@@ -215,7 +215,7 @@ script SAMSARA_SPAWN (int respawning)
                 ActivatorSound("quakeweps/quadready", 96);
                 SetHudSize(240, 180, 1);
                 SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 146.0, 0.0, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 142.0, 0.0, 1.0);
             }
 
             TakeInventory("CantQuad", 0x7FFFFFFF);
@@ -273,6 +273,8 @@ script SAMSARA_SPAWN (int respawning)
         }
         */
     }
+
+    TakeInventory("QuakeQuadTimer", 0x7FFFFFFF);
 }
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
@@ -1165,10 +1167,16 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 // (by Synert)
 /////////////////
 
-script 901 ENTER { // Give keys as needed, for people joining the game.
-    while(PlayerInGame(PlayerNumber())) {
-        for(int a = 0; a < 26; a++) {
-            if(keys[0][a] == 1) {
+// Give keys as needed, for people joining the game.
+
+script 901 ENTER
+{
+    while (PlayerInGame(PlayerNumber()))
+    {
+        for (int a = 0; a < 26; a++)
+        {
+            if (keys[0][a] == 1)
+            {
                 GiveInventory(keys[1][a], 1);
             }
         }
@@ -1544,7 +1552,14 @@ script 205 (void)
 
 script 583 (int x, int y, int z)
 {
-    SetResultValue(sqrt(x*x + y*y + z*z) );
+    if (GetActorZ(0) - GetActorFloorZ(0) > 4.0)
+    {
+        SetResultValue(1);
+    }
+    else
+    {
+        SetResultValue(sqrt(x*x + y*y + z*z) );
+    }
 }
 
 script 586 (int divI, int divF, int divF1)

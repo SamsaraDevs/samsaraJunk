@@ -9,7 +9,7 @@ actor "Quake GL": Weapon replaces PlasmaRifle
     +NOAUTOAIM
     +NOAUTOFIRE
 
-    Inventory.Icon "GLAUA0"
+    Inventory.Icon "QGRLZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the grenade launcher"
@@ -66,7 +66,7 @@ actor "Quake GL": Weapon replaces PlasmaRifle
         Goto Ready
 
       Spawn:
-        GLAU A -1
+        QGRL Z -1
         Stop
     }
 }
