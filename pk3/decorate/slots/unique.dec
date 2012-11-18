@@ -37,6 +37,7 @@ actor SamsaraUniquePickup1: CustomInventory
         HexenSpecial:     UNIQ G 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeSpecial:      UNIQ E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonSpecial:  UNIQ I 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeSpecial: 	  UNIQ J 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
         //TNT1 A 0 A_Print("lol ur a faget")

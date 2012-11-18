@@ -30,6 +30,8 @@ QUACKGUI:
 
  -  Convert .wav sounds to .ogg (LOW PRIORITY)
 
+ -  Tipbox for spectators.
+
 
 NON-QUAKE:
  -  BJ gets frozen when Wolf movement is on, level is exited, then Wolf movement is turned off.
