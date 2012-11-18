@@ -11,6 +11,8 @@ actor "Quake Gauntlet": Weapon
     Inventory.PickupMessage "You got the gauntlet"
     Obituary "%o is cut up by %k"
     
+    Weapon.YAdjust 16
+    
     States
     {
       Spawn:
