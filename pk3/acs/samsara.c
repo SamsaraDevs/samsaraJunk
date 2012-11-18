@@ -96,6 +96,9 @@ script SAMSARA_SPAWN (int respawning)
     int pln = PlayerNumber();
     int pariasMod;
     int quadTimer, oQuadTimer;
+    int regenTimer, oRegenTimer;
+    int health, regenPulse, oPulse;
+    int regenX, regenY;
     int pcount, opcount;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
@@ -132,6 +135,8 @@ script SAMSARA_SPAWN (int respawning)
     
     while (1)
     {
+        health = GetActorProperty(0, APROP_Health);
+
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
         
@@ -167,6 +172,8 @@ script SAMSARA_SPAWN (int respawning)
             Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
         }
 
+
+        // Quakeguy quad shit
         oQuadTimer = quadTimer;
         quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
 
@@ -181,10 +188,10 @@ script SAMSARA_SPAWN (int respawning)
             {
                 SetHudSize(640, 480, 1);
                 SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 590.1, 380.0, 1.5, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 290.2, 190.0, 1.5, 1.0);
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 295.2, 190.0, 1.5, 1.0);
             }
             GiveInventory("QuadDamagePower", 1);
         }
@@ -228,6 +235,69 @@ script SAMSARA_SPAWN (int respawning)
         TakeInventory("QuakeQuadTimer", 1);
 
         if (DEBUG) { Print(d:oQuadTimer, s:" -> ", d:quadTimer); }
+        // End quad shit
+        
+        // Quakeguy regen shit
+        oRegenTimer = regenTimer;
+        regenTimer =  CheckInventory("QuakeRegenTimer");
+
+        if (regenTimer == 0)
+        {
+            if (oRegenTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
+            }
+        }
+        else
+        {
+            if (regenTimer - 35 > oRegenTimer) { AmbientSound("quakeweps/regenannounce", 127); }
+
+            regenX = 640 - (regenPulse * 18);
+            regenY = 480 - (regenPulse * 18);
+
+            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0)
+            {
+                SetHudSize(regenX, regenY, 1);
+                regenX = ftoi(regenX * REGEN_CENTER_X);
+                regenY = ftoi(regenY * REGEN_CENTER_Y);
+
+                SetFont("REGENICO");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT, 58104, CR_UNTRANSLATED, 295.2, 165.0, 1.5, 1.0);
+            }
+
+            oPulse = regenPulse;
+            regenPulse = max(0, regenPulse - 1);
+
+            if (regenTimer % 35 == 18)
+            {
+                if (health >= getMaxHealth()) { giveHealthMax(5, 250); }
+                else if (health + 10 >= getMaxHealth())
+                {
+                    SetActorProperty(0, APROP_Health, getMaxHealth());
+                    giveHealthMax(5, 250);
+                }
+                else { giveHealthMax(15, 250); }
+
+                if (GetActorProperty(0, APROP_Health) > health)
+                {
+                    FadeRange(255, 0, 0, 0.2, 255, 0, 0, 0.0, 0.3333);
+                    ActivatorSound("quakeweps/regen", 127);
+                    regenPulse = 12;
+                }
+            }
+
+            if (regenTimer % 35 == 0 && regenTimer / 35 < 5)
+            {
+                ActivatorSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
+            }
+        }
+
+        TakeInventory("QuakeRegenTimer", 1);
+        
             
         if (SamsaraClassNum() == CLASS_MARATHON)
         {

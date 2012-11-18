@@ -41,13 +41,16 @@
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 34
+#define UNLOADCOUNT 35
 
 #define P_COUNT 2
 #define P_QUAD  0
 #define P_REGEN 1
 
 #define QUAD_THRESHOLD      1050
+
+#define REGEN_CENTER_X      0.953125    // 610 / 640
+#define REGEN_CENTER_Y      0.6875      // 330 / 480
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -143,5 +146,7 @@ int UnloadRemove[UNLOADCOUNT] =
     "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
     "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
     "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
-    "QuakeQuadTimer",
+    "QuakeQuadTimer", "QuakeRegenTimer",
 };
+
+int PowerOutVols[5] = {96, 104, 112, 120, 127};

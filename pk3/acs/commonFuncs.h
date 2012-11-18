@@ -416,12 +416,16 @@ function int giveHealth(int amount)
 
 function int giveHealthFactor(int amount, int maxFactor)
 {
-    int maxHP = ftoi(getMaxHealth() * maxFactor);
+    return giveHealthMax(amount, ftoi(getMaxHealth() * maxFactor));
+}
+
+function int giveHealthMax(int amount, int maxHP)
+{
     int newHP;
 
     int curHP = GetActorProperty(0, APROP_Health);
 
-    if (maxFactor == 0.0) { newHP = max(curHP, curHP+amount); }
+    if (maxHP == 0) { newHP = max(curHP, curHP+amount); }
     else { newHP = middle(curHP, curHP+amount, maxHP); }
 
     SetActorProperty(0, APROP_Health, newHP);
