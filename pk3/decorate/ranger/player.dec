@@ -47,6 +47,8 @@ actor QuakePlayer: PlayerPawn
         RANG F 4 A_Pain
         Goto Spawn
 
+      Pain.WolfenFlamethrower:
+      Pain.MarathonPlasma:
       Pain.Slime:
       Pain.Fire:
         RANG F 4

@@ -1053,7 +1053,7 @@ $playersound        Ranger      male    *land           dgland
 $playersound        Ranger      male    *grunt          sounds/ranger/land.wav
 $playersound        Ranger      male    *usefail        sounds/ranger/land.wav
 $playersound        Ranger      male    *puzzfail       dgpuzz
-$playersound        Ranger      male    *taunt          sounds/ranger/taunt.wav
+$playersound        Ranger      male    *taunt          sounds/ranger/taunt.ogg
 
 quakeweps/blank             sounds/ranger/blank.ogg
 quakeweps/weaponget         sounds/ranger/w_pkup.wav

@@ -1021,7 +1021,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
 // TIPBOX START
 
-str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1"};
+str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1", "QUAKTIP1"};
 //str CoolTips2[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP2", "HERETIP2", "WOLFTIP2", "HEXNTIP2", "DUKETIP2", "MARATIP2"};
 //str CoolTips3[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP3", "HERETIP3", "WOLFTIP3", "HEXNTIP3", "DUKETIP3", "MARATIP3"}; // NOPE AIN'T WORKIN'
 
@@ -1081,6 +1081,12 @@ script 300 (int tipboxshit) NET
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
         }
         else if (GameType () == GAME_SINGLE_PLAYER)
         {
@@ -1126,6 +1132,12 @@ script 300 (int tipboxshit) NET
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
         }
         else
         {
@@ -1169,6 +1181,12 @@ script 300 (int tipboxshit) NET
             {
                 SetHudSize(1024,768,1);
                 SetFont("MARATIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
         }
