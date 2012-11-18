@@ -1,4 +1,4 @@
-actor "Quake SSG": Weapon replaces Shotgun
+actor "Quake SSG": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 6

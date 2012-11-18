@@ -1,4 +1,4 @@
-actor "Quake LG": Weapon replaces BFG9000
+actor "Quake LG": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 1

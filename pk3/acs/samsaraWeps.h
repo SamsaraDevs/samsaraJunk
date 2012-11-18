@@ -128,7 +128,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     },
     {   // Ranger
         {"Quake Axe",                       "",             "",             "", ""},
-        {"",                                "",             "",             "", ""},
+        {"Quake Gauntlet",                  "",             "",             "", ""},
         {"Quake SG",                        "",             "",             "", ""},
         {"Quake SSG",                       "AmmoShell",    "",             "", ""},
         {"Quake GL",                        "RocketAmmo",   "",             "", ""},

@@ -1049,6 +1049,11 @@ quakeweps/blank             sounds/ranger/blank.ogg
 quakeweps/weaponget         sounds/ranger/w_pkup.wav
 quakeweps/megahealth        sounds/ranger/m_health.wav
 
+quakeweps/gauntlet          sounds/ranger/fstrun.wav
+quakeweps/gauntlethum       sounds/ranger/fsthum.wav
+quakeweps/gauntlethit       sounds/ranger/fstatck.wav
+$limit quakeweps/gauntlethit 0
+
 quakeweps/axe               sounds/ranger/axe.wav
 quakeweps/axewall           sounds/ranger/axewall.wav
 quakeweps/shotgunfire       sounds/ranger/shotgun.wav

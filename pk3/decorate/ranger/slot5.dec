@@ -1,4 +1,4 @@
-actor "Quake RL": Weapon replaces RocketLauncher
+actor "Quake RL": Weapon
 {
     Weapon.SelectionOrder 2
 

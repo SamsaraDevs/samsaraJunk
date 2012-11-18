@@ -19,6 +19,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         Hexen:    PSBG A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         Dukeguy:  WPBM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: FSMG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Quake:    QGNT Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomFull:      PSAW B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexFull:      PBSP B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

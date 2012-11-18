@@ -1,4 +1,4 @@
-actor "Quake GL": Weapon replaces PlasmaRifle
+actor "Quake GL": Weapon
 {
     Weapon.SelectionOrder 2
 

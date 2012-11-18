@@ -786,8 +786,8 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "",
         },
         {
-            "You got... something. I don't even know.",
-            "",
+            "A gauntlet! Find some combatants!",
+            "It's actually a circular saw, but we'll forgo the technicalities.",
             "",
             "",
             "",
@@ -871,7 +871,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You got the Quad Damage! Gib everything.",
-            "",
+            "I like the part where everything dies.",
             "",
             "",
             "",
