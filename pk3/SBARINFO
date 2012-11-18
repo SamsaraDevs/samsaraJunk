@@ -100,7 +100,7 @@ StatusBar Fullscreen
 	IsSelected "Machine Gun" {drawimage "STY2NUM2", 136, 10;}
 	IsSelected "WSTE-M5 Combat Shotgun" {drawimage "STY2NUM2", 136, 10;}
 	IsSelected "Frost Shards" {drawimage "STY2NUM2", 136, 10;}
-	IsSelected "Quake SSG" {drawimage "STY2NUM2", 136, 10;} // Need to change
+	IsSelected "Double Shotgun" {drawimage "STY2NUM2", 136, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 3, "", "STYSNUM3", 146, 10;
 	IsSelected "Super Shotgun" {drawimage "STY2NUM3", 146, 10;}
@@ -109,7 +109,7 @@ StatusBar Fullscreen
 	IsSelected "Explosive Shotgun" {drawimage "STY2NUM3", 146, 10;}
 	IsSelected "Timon's Axe" {drawimage "STY2NUM3", 146, 10;}
 	IsSelected "Fusion Pistol" {drawimage "STY2NUM3", 146, 10;}
-	IsSelected "Quake GL" {drawimage "STY2NUM3", 146, 10;} // Need to change
+	IsSelected "Grenade Launcher" {drawimage "STY2NUM3", 146, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 4, "", "STYSNUM4", 156, 10;
 	IsSelected " Chaingun " {drawimage "STY2NUM4", 156, 10;}
@@ -119,7 +119,7 @@ StatusBar Fullscreen
 	IsSelected "Serpent Staff" {drawimage "STY2NUM4", 156, 10;}
 	IsSelected "Chaingun Cannon" {drawimage "STY2NUM4", 156, 10;}
 	IsSelected "MA-75B Assault Rifle" {drawimage "STY2NUM4", 156, 10;}
-	IsSelected "Quake NG" {drawimage "STY2NUM4", 156, 10;} // Need to change
+	IsSelected "Nailgun" {drawimage "STY2NUM4", 156, 10;} // Need to change
 	
    DrawSwitchableImage WeaponSlot 5, "", "STYSNUM5", 166, 10;
 	IsSelected "Rocket Launcher" {drawimage "STY2NUM5", 166, 10;}
@@ -129,7 +129,7 @@ StatusBar Fullscreen
 	IsSelected "Hammer of Retribution" {drawimage "STY2NUM5", 166, 10;}
 	IsSelected "RPG" {drawimage "STY2NUM5", 166, 10;}
 	IsSelected "SPNKR-XP SSM Launcher" {drawimage "STY2NUM5", 166, 10;}
-	IsSelected "Quake RL" {drawimage "STY2NUM5", 166, 10;} // Need to change
+	IsSelected "  Rocket Launcher  " {drawimage "STY2NUM5", 166, 10;} // Need to change
 
    DrawSwitchableImage WeaponSlot 6, "", "STYSNUM6", 176, 10;
 	IsSelected "Plasma Rifle" {drawimage "STY2NUM6", 176, 10;}
@@ -139,7 +139,7 @@ StatusBar Fullscreen
 	IsSelected "Firestorm" {drawimage "STY2NUM6", 176, 10;}
 	IsSelected "Freezethrower" {drawimage "STY2NUM6", 176, 10;}
 	IsSelected "TOZT-7 Napalm Unit" {drawimage "STY2NUM6", 176, 10;}
-	IsSelected "Quake LG" {drawimage "STY2NUM6", 176, 10;}
+	IsSelected "Thunderbolt" {drawimage "STY2NUM6", 176, 10;}
 	
    DrawSwitchableImage WeaponSlot 7, "", "STYSNUM7", 186, 10;
    InInventory PortTome, 1 {drawimage "STYSNUM7", 186, 10;}
@@ -1729,28 +1729,28 @@ playerclass Ranger
 	
 	InInventory GotWeapon2, 1 {drawimage "WEPSELN2", 87, 0;}
 	InInventory GotWeapon2, 1 {drawimage "WPQUAK2N", 82, 11;}
-	IsSelected "Quake SSG" {drawimage "WEPSELY2", 87, 0;}
-	IsSelected "Quake SSG" {drawimage "WPQUAK2Y", 82, 11;}
+	IsSelected "Double Shotgun" {drawimage "WEPSELY2", 87, 0;}
+	IsSelected "Double Shotgun" {drawimage "WPQUAK2Y", 82, 11;}
 	
 	InInventory GotWeapon3, 1 {drawimage "WEPSELN3", 120, 0;}
 	InInventory GotWeapon3, 1 {drawimage "WPQUAK3N", 115, 11;}
-	IsSelected "Quake GL" {drawimage "WEPSELY3", 120, 0;}
-	IsSelected "Quake GL" {drawimage "WPQUAK3Y", 115, 11;}
+	IsSelected "Grenade Launcher" {drawimage "WEPSELY3", 120, 0;}
+	IsSelected "Grenade Launcher" {drawimage "WPQUAK3Y", 115, 11;}
 	
 	InInventory GotWeapon4, 1 {drawimage "WEPSELN4", 154, 0;}
 	InInventory GotWeapon4, 1 {drawimage "WPQUAK4N", 148, 11;}
-	IsSelected "Quake NG" {drawimage "WEPSELY4", 154, 0;}
-	IsSelected "Quake NG" {drawimage "WPQUAK4Y", 148, 11;}
+	IsSelected "Nailgun" {drawimage "WEPSELY4", 154, 0;}
+	IsSelected "Nailgun" {drawimage "WPQUAK4Y", 148, 11;}
 	
 	InInventory GotWeapon5, 1 {drawimage "WEPSELN5", 186, 0;}
 	InInventory GotWeapon5, 1 {drawimage "WPQUAK5N", 181, 11;}
-	IsSelected "Quake RL" {drawimage "WEPSELY5", 186, 0;}
-	IsSelected "Quake RL" {drawimage "WPQUAK5Y", 181, 11;}
+	IsSelected "  Rocket Launcher  " {drawimage "WEPSELY5", 186, 0;}
+	IsSelected "  Rocket Launcher  " {drawimage "WPQUAK5Y", 181, 11;}
 	
 	InInventory GotWeapon6, 1 {drawimage "WEPSELN6", 219, 0;}
 	InInventory GotWeapon6, 1 {drawimage "WPQUAK6N", 214, 11;}
-	IsSelected "Quake LG" {drawimage "WEPSELY6", 219, 0;}
-	IsSelected "Quake LG" {drawimage "WPQUAK6Y", 214, 11;}
+	IsSelected "Thunderbolt" {drawimage "WEPSELY6", 219, 0;}
+	IsSelected "Thunderbolt" {drawimage "WPQUAK6Y", 214, 11;}
 	
 	InInventory GotWeapon7, 1 {drawimage "WEPSELN7", 251, 0;}
 	InInventory GotWeapon7, 1 {drawimage "WPQUAK7N", 247, 11;}

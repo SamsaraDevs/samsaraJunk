@@ -139,5 +139,5 @@ anticipation = 4
 reactiontime = 4
 perception = 3
 chatfrequency = 20
-favoriteweapon = "Quake RL" // We'll need to decide what to do with these weapon names later.
+favoriteweapon = "  Rocket Launcher  " // We'll need to decide what to do with these weapon names later.
 }

@@ -1,4 +1,4 @@
-actor "Quake SG": Weapon
+actor "Single Shotgun": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 7

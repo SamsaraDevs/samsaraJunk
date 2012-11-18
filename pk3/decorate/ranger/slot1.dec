@@ -1,11 +1,11 @@
-actor "Quake Gauntlet": Weapon
+actor "Gauntlet": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 7
 
     +NOAUTOAIM
 
-    Inventory.Icon "QSHTZ0"
+    Inventory.Icon "QGNTZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the gauntlet"

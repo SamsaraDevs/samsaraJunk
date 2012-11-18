@@ -1,4 +1,4 @@
-actor "Quake NG": Weapon
+actor "Nailgun": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 5

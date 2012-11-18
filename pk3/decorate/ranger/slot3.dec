@@ -1,4 +1,4 @@
-actor "Quake GL": Weapon
+actor "Grenade Launcher": Weapon
 {
     Weapon.SelectionOrder 2
 

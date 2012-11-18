@@ -21,9 +21,9 @@ actor QuakePlayer: PlayerPawn
     //Player.CrouchSprite "PLYC"
 
     Player.StartItem "QuakeClass"
-    Player.StartItem "Quake SG"
+    Player.StartItem "Single Shotgun"
     Player.StartItem "Clip", 50
-    Player.StartItem "Quake Axe"
+    Player.StartItem "Axe"
 
     Player.ColorRange 112, 127
 
