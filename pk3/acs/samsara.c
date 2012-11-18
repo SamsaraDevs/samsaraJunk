@@ -99,6 +99,7 @@ script SAMSARA_SPAWN (int respawning)
     int regenTimer, oRegenTimer;
     int health, regenPulse, oPulse;
     int regenX, regenY;
+    int healthGiven;
     int pcount, opcount;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
@@ -248,6 +249,13 @@ script SAMSARA_SPAWN (int respawning)
                 HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
                 HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
             }
+
+            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
+            {
+                SetActorProperty(0, APROP_Health, health - 1);
+            }
+
+            if (health < getMaxHealth()) { healthGiven = 0; }
         }
         else
         {
@@ -288,6 +296,9 @@ script SAMSARA_SPAWN (int respawning)
                     ActivatorSound("quakeweps/regen", 127);
                     regenPulse = 12;
                 }
+
+                healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0);
+                health = GetActorProperty(0, APROP_Health);
             }
 
             if (regenTimer % 35 == 0 && regenTimer / 35 < 5)
@@ -314,6 +325,11 @@ script SAMSARA_SPAWN (int respawning)
         else
         {
             SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32 + pariasMod, GetActorProperty(0, APROP_Gravity)));
+        }
+
+        if (UnloadingNow && samsaraClassNum() == CLASS_QUAKE)
+        {
+            SetActorProperty(0, APROP_Health, max(50, health - healthGiven));
         }
         
         Delay(1);
@@ -984,7 +1000,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
     SetActorProperty(0, APROP_Health, min(hpGiven + hpcount, 250));
     hpGiven = GetActorProperty(0, APROP_Health) - hpGiven;
 
-    hpPerSec = itof(hpPerSec) / 35;
+    hpPerSec = 1.0 / (hpPerSec * 35);
 
     int takeCounter, hpToTake;
 

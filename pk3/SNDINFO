@@ -1058,6 +1058,7 @@ $playersound        Ranger      male    *taunt          sounds/ranger/taunt.wav
 quakeweps/blank             sounds/ranger/blank.ogg
 quakeweps/weaponget         sounds/ranger/w_pkup.wav
 quakeweps/megahealth        sounds/ranger/m_health.wav
+quakeweps/megasphere        sounds/ranger/megasphere.wav
 
 quakeweps/gauntlet          sounds/ranger/fstrun.wav
 quakeweps/gauntlethum       sounds/ranger/fsthum.wav

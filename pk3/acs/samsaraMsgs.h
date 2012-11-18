@@ -811,7 +811,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You got the double-barreled shotgun!",
-            "",
+            "Where does the other shell come from? My arse.",
             "",
             "",
             "",
@@ -823,7 +823,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You got the grenade launcher!",
-            "",
+            "Guaranteed to make friends with campers.",
             "",
             "",
             "",
@@ -835,7 +835,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You got the nailgun!",
-            "",
+            "Double-barreled, automatic nailguns are \canot good\c- for construction.",
             "",
             "",
             "",
@@ -972,9 +972,9 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "",
     },
     {
-        "Haste!",
-        "The most useless powerup in Quake 3.",
-        "",
+        "Regeneration!",
+        "Now you don't have to go looking for health.",
+        "Now with 80% more ACS!",
         "",
         "",
         "",

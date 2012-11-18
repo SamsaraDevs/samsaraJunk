@@ -24,7 +24,7 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"",                    "",                 "", ""},
+    {"QuakeRegenGiver",     "",                 "", ""},
 };
 
 int UniqueMaxes[CLASSCOUNT][4] = 
@@ -39,7 +39,7 @@ int UniqueMaxes[CLASSCOUNT][4] =
     {0,     0,      0,  0},
 };
 
-int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON};
+int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON, 0};
 
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {
