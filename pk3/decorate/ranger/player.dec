@@ -47,6 +47,17 @@ actor QuakePlayer: PlayerPawn
         RANG F 4 A_Pain
         Goto Spawn
 
+      Pain.Slime:
+      Pain.Fire:
+        RANG F 4
+        RANG F 4 A_PlaySound("ranger/firepain", CHAN_VOICE)
+        goto Spawn
+
+      Pain.Drowning:
+        RANG F 4
+        RANG F 4 A_PlaySound("ranger/drowning", CHAN_VOICE)
+        goto Spawn
+
       Pain.Falling:
         RANG F 2
         RANG F 6 A_PlaySound("ranger/fallpain", CHAN_VOICE)
@@ -54,6 +65,13 @@ actor QuakePlayer: PlayerPawn
 
       Death:
         RANG I 10 A_PlayerScream
+        RANG J 10 A_NoBlocking
+        RANG KLM 10
+        RANG N -1
+        Stop
+
+      Death.Drowning:
+        RANG I 10 A_PlaySound("ranger/drown", CHAN_VOICE)
         RANG J 10 A_NoBlocking
         RANG KLM 10
         RANG N -1
@@ -70,7 +88,7 @@ actor QuakePlayer: PlayerPawn
         Stop
       
       XDeath.Telefrag: // This, too
-		RANG I 10 A_PlaySound("ranger/telefragged", CHAN_VOICE)
+        RANG I 10 A_PlaySound("ranger/telefragged", CHAN_VOICE)
         RANG J 10 A_NoBlocking
         RANG KLM 10
         RANG N -1
