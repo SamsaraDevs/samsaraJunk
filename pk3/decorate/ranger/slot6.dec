@@ -29,6 +29,7 @@ actor "Thunderbolt": Weapon
         Loop
 
       Ready:
+        QLTG A 0 A_StopSound(6)
         QLTG A 1 A_WeaponReady
         Loop
 
@@ -41,8 +42,8 @@ actor "Thunderbolt": Weapon
         goto AfterSound
 
       AfterSound:
-        QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
         QLTG A 0 A_PlaySound("quakeweps/lightning", 6, 1.0, 1)
+        QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
         goto Hold
 
       Hold:
@@ -81,18 +82,15 @@ actor "Thunderbolt": Weapon
         QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
         QLTG A 0 A_StopSound(7)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
-        goto AfterSound2
+        goto Ready
 
       QuadSound2:
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSound2
-
-      AfterSound2:
-        QLTG A 0 A_StopSound(6)
         goto Ready
 
       Discharge:
-        QLTG A 0 A_PlaySound("weapons/bfgx", CHAN_BODY, 1, 0, ATTN_NONE)
+        QLTG A 0 A_StopSound(6)
+        QLTG A 0 A_PlaySound("weapons/lightningstart", CHAN_BODY, 1, 0, 0.2)
         QLTG A 0 A_FireCustomMissile("LGDischarge")
         goto Ready  // you're probably dead now
 
@@ -290,8 +288,8 @@ actor LGDischarge
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 0 A_Explode(18 * ACS_ExecuteWithResult(584),    4096, 0)
-        TNT1 A 0 A_Explode(17 * ACS_ExecuteWithResult(584, 1), 4096)
+        TNT1 A 0 A_Explode(18 * ACS_ExecuteWithResult(215, 5),    4096, 0)
+        TNT1 A 0 A_Explode(17 * ACS_ExecuteWithResult(215, 5, 1), 4096)
         stop
     }
 }

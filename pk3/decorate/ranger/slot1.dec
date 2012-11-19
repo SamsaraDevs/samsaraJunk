@@ -36,6 +36,14 @@ actor "Gauntlet": Weapon
         loop
 
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        goto AfterSound
+
+      QuadSound:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound
+
+      AfterSound:
         QGNT A 0 A_PlaySound("quakeweps/gauntlet", 6, 1, 1)
         QGNT D 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
         QGNT D 0 A_JumpIfInventory("SPModeOn", 1, "CoopHold")

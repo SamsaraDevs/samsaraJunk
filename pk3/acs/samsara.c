@@ -250,12 +250,12 @@ script SAMSARA_SPAWN (int respawning)
                 HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
             }
 
+            if (health < getMaxHealth()) { healthGiven = 0; }
+
             if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
             {
                 SetActorProperty(0, APROP_Health, health - 1);
             }
-
-            if (health < getMaxHealth()) { healthGiven = 0; }
         }
         else
         {
@@ -330,6 +330,7 @@ script SAMSARA_SPAWN (int respawning)
         if (UnloadingNow && samsaraClassNum() == CLASS_QUAKE)
         {
             SetActorProperty(0, APROP_Health, max(50, health - healthGiven));
+            break;
         }
         
         Delay(1);
@@ -629,7 +630,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     }
 }
 
-script SAMSARA_DECORATE (int choice)
+script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
     int result;
     
@@ -655,6 +656,12 @@ script SAMSARA_DECORATE (int choice)
             Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
             Log(d:result);
         }
+        break;
+
+      case 5:
+        SetActivatorToTarget(0);
+        result = CheckInventory("Cell");
+        if (arg1) { TakeInventory("Cell", result); }
         break;
     }
     
@@ -1006,6 +1013,8 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
     while (1)
     {
+        if (DEBUG) { Print(s:"hpGiven = ", d:hpGiven, s:", startHealth = ", d:startHealth); }
+
         if (UnloadingNow)
         {
             hpToTake = GetActorProperty(0, APROP_Health);
@@ -1029,7 +1038,8 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
         }
 
         if (hpGiven <= 0) { break; }
-        if (GetActorProperty(0, APROP_Health) <= startHealth) { break; }
+        if (GetActorProperty(0, APROP_Health) <= startHealth ||
+            GetActorProperty(0, APROP_Health) <= getMaxHealth()) { break; }
         Delay(1);
     }
 }
