@@ -1,4 +1,4 @@
-actor "Gauntlet": Weapon
+actor "Gauntlet": InstantSwitchWeapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 7
@@ -18,17 +18,6 @@ actor "Gauntlet": Weapon
       Spawn:
         QGNT Z -1
         stop
-
-      Deselect:
-        QGNT A 0 A_StopSound(6)
-        QGNT AAAAAAAAAAAAAAAAAAAA 0 A_Lower
-        QGNT A 1 A_Lower
-        loop
-
-      Select:
-        QGNT AAAAAAAAAAAAAAAAAAAA 0 A_Raise
-        QGNT A 1 A_Raise
-        loop
 
       Ready:
         QGNT A 0 A_PlaySound("quakeweps/gauntlethum", 6, 0.2, 1)
@@ -55,6 +44,7 @@ actor "Gauntlet": Weapon
         goto Hold2
 
       Hold2:
+        QGNT D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageHold")
         QGNT D 1 bright offset(0, 33)
         QGNT E 1 bright offset(0, 34)
         QGNT F 1 bright offset(0, 33)
@@ -62,8 +52,16 @@ actor "Gauntlet": Weapon
         QGNT G 0 bright A_Refire
         QGNT G 0 A_StopSound(6)
         QGNT G 1 bright A_Refire
-        QGNT B 2 A_Refire
-        QGNT C 4 A_Refire
+        QGNT BBCCCC 1 A_Refire
+        goto Ready
+
+      RageHold:
+        QGNT D 2 bright offset(0, 34)
+        QGNT F 2 bright offset(0, 32)
+        QGNT G 0 bright A_Refire
+        QGNT G 0 A_StopSound(6)
+        QGNT G 1 bright A_Refire
+        QGNT BCC 2 A_Refire
         goto Ready
     }
 }

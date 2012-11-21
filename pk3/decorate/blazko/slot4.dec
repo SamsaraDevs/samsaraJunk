@@ -1,4 +1,4 @@
-actor "  Chaingun  " : Weapon
+actor "  Chaingun  ": InstantSwitchWeapon
 {
     Weapon.SelectionOrder 1700
     Weapon.SlotNumber 4
@@ -19,17 +19,8 @@ actor "  Chaingun  " : Weapon
         Loop
 
       Ready:
-        TNT1 A 0 SetPlayerProperty(0,1,2)
         WCHN A 1 A_WeaponReady
-        goto Ready+1
-
-      Deselect:
-        WCHN A 1 A_Lower
-        Loop
-
-      Select:
-        WCHN A 1 A_Raise
-        Loop
+        loop
 
       Fire:
         WCHN AB 2

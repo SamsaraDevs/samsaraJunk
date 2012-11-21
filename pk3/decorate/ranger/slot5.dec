@@ -1,4 +1,4 @@
-actor "  Rocket Launcher  ": Weapon
+actor "  Rocket Launcher  ": InstantSwitchWeapon
 {
     Weapon.SelectionOrder 2
 
@@ -16,16 +16,6 @@ actor "  Rocket Launcher  ": Weapon
 
     States
     {
-      Deselect:
-        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Lower
-        QRKL A 1 A_Lower
-        Loop
-
-      Select:
-        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Raise
-        QRKL A 1 A_Raise
-        Loop
-
       Ready:
         QRKL A 1 A_WeaponReady
         Loop

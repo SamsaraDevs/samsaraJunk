@@ -437,6 +437,8 @@ duke/freezeshot		DKFRZTHR
 $pitchshiftrange 					0
 duke/nightvision	DKNITVIS
 
+$limit duke/explosion 0
+
 $random duke/pain100 { duke/pain1 duke/pain2 }
 duke/pain1			DKPN7501
 duke/pain2			DKPN7502
