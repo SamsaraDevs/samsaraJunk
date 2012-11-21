@@ -81,7 +81,7 @@ actor QuakeGrenade
 
     SeeSound "quakeweps/grenadebounce"
 
-    Obituary "%o eats %k's pineapple"
+    Obituary "%k threw %o a pineapple."
 
     States
     {

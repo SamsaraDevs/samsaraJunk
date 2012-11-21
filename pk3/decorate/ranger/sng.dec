@@ -13,7 +13,7 @@ actor "Quake SNG": Weapon replaces Chaingun
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the super nailgun"
-    Obituary "%o is punctured by %k"
+    Obituary "%k SUPER-nailed %o." // like this will ever be uuuuuused
 
     States
     {
