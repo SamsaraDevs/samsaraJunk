@@ -227,14 +227,14 @@ actor DukeRocket
     States
     {
       Spawn:
-        RPGX A 1 BRIGHT A_SpawnItem("DukeRocketPuff")
+        RPGX A 1 bright A_SpawnItemEx("DukeRocketPuff")
         loop
 
       Death:
         TNT1 A 0 A_Explode(128, 128)
         TNT1 A 0 A_PlaySound("duke/explosion", 6, 1.0, 0, ATTN_NONE)
-        TNT1 A 0 A_SpawnItemEx("RPGExplosion")
-        Stop
+        TNT1 A 1 A_SpawnItemEx("RPGExplosion")
+        stop
     }
 }
 
@@ -242,7 +242,7 @@ actor DukeRocketCoop : DukeRocket { +THRUSPECIES Species "Player" }
 
 actor RPGExplosion
 {
-    //+CLIENTSIDEONLY - Enabling this makes it not spawn in online games. Da fuck?
+    +CLIENTSIDEONLY
     +NOINTERACTION
     Scale 0.7
     States
