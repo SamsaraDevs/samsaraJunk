@@ -379,6 +379,12 @@ script SAMSARA_WOLFMOVE enter
     
     while (PlayerInGame(pln))
     {
+        if (UnloadingNow)
+        {
+            SetActorProperty(0, APROP_Speed, realspeed);
+            break;
+        }
+
         if (!(CheckInventory("WolfenClass") && CheckInventory("WolfenMovement")) )
         {
             SetActorProperty(0, APROP_Speed, realspeed);
