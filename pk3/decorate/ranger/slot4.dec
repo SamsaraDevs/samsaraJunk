@@ -11,7 +11,7 @@ actor "Nailgun": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the nailgun"
-    Obituary "%o is nailed by %k"
+    Obituary "%k nailed %o."
 
     States
     {

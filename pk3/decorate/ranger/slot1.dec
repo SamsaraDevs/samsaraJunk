@@ -9,7 +9,7 @@ actor "Gauntlet": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the gauntlet"
-    Obituary "%o is cut up by %k"
+    Obituary "%k made %o talk to the hand."
     
     Weapon.YAdjust 16
     
