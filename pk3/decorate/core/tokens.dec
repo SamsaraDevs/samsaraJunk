@@ -1,6 +1,13 @@
-actor Boolean : Inventory
+actor Boolean: Inventory
 {
     Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
+
+actor Counter: Inventory
+{
+    Inventory.MaxAmount 0x7FFFFFFF
     +UNDROPPABLE
     -INVBAR
 }
@@ -10,8 +17,8 @@ actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}
 actor ExpandedHud: Boolean {}
 actor DoomNoBFGAim: Boolean {}
-actor OverMax: Inventory { Inventory.MaxAmount 200 }
-actor OverOverMax: Inventory { Inventory.MaxAmount 300 }
+actor OverMax: Counter { Inventory.MaxAmount 200 }
+actor OverOverMax: Counter { Inventory.MaxAmount 300 }
 
 actor GotWeapon0: Boolean {}
 actor GotWeapon2: Boolean {}

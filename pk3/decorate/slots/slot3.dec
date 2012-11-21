@@ -19,6 +19,7 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         Hexen:    WFAX A 0 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Dukeguy:  DXSP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: FUSP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Quake:    QGRL Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomFull:      PSSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexFull:      PSLZ B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -27,6 +28,7 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         HexenFull:     PAXE B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeFull:      PXSG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonFull:  PFSP B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeFull:     PGRL B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomEmpty:     PSSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexEmpty:     PSLZ A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -35,6 +37,7 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
         HexenEmpty:    PAXE A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeEmpty:     PXSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonEmpty: PFSP A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeEmpty:    PGRL A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
         TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 3) & 3) == 1, "PickupSuccess")

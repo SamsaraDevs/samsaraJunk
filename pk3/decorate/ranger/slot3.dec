@@ -1,0 +1,141 @@
+actor "Grenade Launcher": InstantSwitchWeapon
+{
+    Weapon.SelectionOrder 2
+
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 5
+    Weapon.AmmoType "RocketAmmo"
+
+    +NOAUTOAIM
+    +NOAUTOFIRE
+
+    Inventory.Icon "QGRLZ0"
+
+    Inventory.PickupSound "quakeweps/weaponpickup"
+    Inventory.PickupMessage "You got the grenade launcher"
+
+    States
+    {
+      Ready:
+        QGRL A 1 A_WeaponReady
+        Loop
+
+      // 22 tics
+      Fire:
+        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
+        goto AfterSound
+
+      QuadFire:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeQuad")
+        goto Fire2
+
+      CoopQuad:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoopQuad")
+        goto Fire2
+
+      AfterSound:
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
+        QGRL B 0 A_FireCustomMissile("QuakeGrenade")
+        goto Fire2
+
+      CoopFire:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoop")
+        goto Fire2
+
+      Fire2:
+        QGRL B 4 bright
+        QGRL C 6
+        QGRL D 6
+        QGRL E 6
+        QGRL E 0 A_Refire
+        Goto Ready
+
+      Spawn:
+        QGRL Z -1
+        Stop
+    }
+}
+
+actor QuakeGrenade
+{
+    Radius 4
+    Height 4
+    Speed 40
+
+    Projectile
+    -NOGRAVITY
+
+    BounceFactor 0.3
+
+    +HEXENBOUNCE
+    +RANDOMIZE
+    +DEHEXPLOSION
+    +GRENADETRAIL
+
+    ReactionTime 90
+
+    SeeSound "quakeweps/grenadebounce"
+
+    Obituary "%o eats %k's pineapple"
+
+    States
+    {
+      Spawn:
+        SGRN A 0 A_JumpIf(1==1, 2)
+        SGRN A 0 A_PlaySound("quakeweps/blank", CHAN_VOICE)
+        SGRN A 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        SGRN A 0 A_Countdown
+        loop
+
+      StopSpawnStart:
+        goto StopSpawn
+
+      StopSpawn:
+        SGRN A 1 A_Stop
+        SGRN A 0 A_Countdown
+        loop
+
+      Death:
+        MISL B 0 A_Explode(64, 128, 0)
+        MISL B 0 A_Explode(64, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeGrenadeCoop: QuakeGrenade
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (80)
+}
+
+actor QuakeGrenadeQuad: QuakeGrenade
+{
+    DamageType "NotQuadded"
+
+    States
+    {
+      Death:
+        DMSL B 0 A_Explode(256, 128, 0)
+        DMSL B 0 A_Explode(256, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (300)
+}

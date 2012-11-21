@@ -21,6 +21,7 @@ int SamsaraClientWeps[SLOTCOUNT] = {0};
 int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 int LMSMessaged = 0;
+int UnloadingNow = 0;
 
 global int 0:CommandBitchingDone;
 
@@ -94,6 +95,11 @@ script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
     int pariasMod;
+    int quadTimer, oQuadTimer;
+    int regenTimer, oRegenTimer;
+    int health, regenPulse, oPulse;
+    int regenX, regenY;
+    int healthGiven;
     int pcount, opcount;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
@@ -104,9 +110,7 @@ script SAMSARA_SPAWN (int respawning)
     {
         SamsaraWepType = samsaraClassNum()+1;
     }
-    
-    SetInventory("CoopModeOn", isCoop());
-    
+
     switch (samsaraClassNum())
     {
       case CLASS_DUKE:
@@ -118,10 +122,22 @@ script SAMSARA_SPAWN (int respawning)
         break;
     }
 
+    if (isSinglePlayer())
+    {
+        GiveInventory("SPModeOn", 1);
+    }
+    else if (isCoop())
+    {
+        GiveInventory("CoopModeOn", 1);
+        SetActorState(0, "CoOpModeOn");
+    }
+
     pcount = PlayerCount();
     
     while (1)
     {
+        health = GetActorProperty(0, APROP_Health);
+
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
         
@@ -157,7 +173,143 @@ script SAMSARA_SPAWN (int respawning)
             Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
         }
 
+
+        // Quakeguy quad shit
+        oQuadTimer = quadTimer;
+        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
+
+        if (quadTimer - 35 > oQuadTimer)
+        {
+            AmbientSound("quakeweps/quadon", 127);
+        }
+
+        if (quadTimer > 0)
+        {
+            if (quadTimer % 35 == 0)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 295.2, 190.0, 1.5, 1.0);
+            }
+            GiveInventory("QuadDamagePower", 1);
+        }
+        else
+        {
+            if (quadTimer == 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58102, CR_UNTRANSLATED, 0, 0, 1);
+            }
+            TakeInventory("QuadDamagePower", 1);
+        }
+
+        if (quadTimer == 105)
+        {
+            ActivatorSound("quakeweps/quadoff", 127);
+        }
+
+        if ((quadTimer % 35 == 0) && (quadTimer / 35 <= 3) && (quadTimer > 0))
+        {
+            FadeRange(0, 64, 255, 0.25, 0, 64, 255, 0, 0.33);
+        }
+
+        if (quadTimer == -QUAD_THRESHOLD)
+        {
+            if (CheckInventory("CantQuad") && !UnloadingNow)
+            {
+                ActivatorSound("quakeweps/quadready", 96);
+                SetHudSize(240, 180, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 142.0, 0.0, 1.0);
+            }
+
+            TakeInventory("CantQuad", 0x7FFFFFFF);
+        }
+        else
+        {
+            GiveInventory("CantQuad", 1);
+        }
+
+        TakeInventory("QuakeQuadTimer", 1);
+
+        if (DEBUG) { Print(d:oQuadTimer, s:" -> ", d:quadTimer); }
+        // End quad shit
         
+        // Quakeguy regen shit
+        oRegenTimer = regenTimer;
+        regenTimer =  CheckInventory("QuakeRegenTimer");
+
+        if (regenTimer == 0)
+        {
+            if (oRegenTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
+            }
+
+            if (health < getMaxHealth()) { healthGiven = 0; }
+
+            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
+            {
+                SetActorProperty(0, APROP_Health, health - 1);
+            }
+        }
+        else
+        {
+            if (regenTimer - 35 > oRegenTimer) { AmbientSound("quakeweps/regenannounce", 127); }
+
+            regenX = 640 - (regenPulse * 18);
+            regenY = 480 - (regenPulse * 18);
+
+            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0)
+            {
+                SetHudSize(regenX, regenY, 1);
+                regenX = ftoi(regenX * REGEN_CENTER_X);
+                regenY = ftoi(regenY * REGEN_CENTER_Y);
+
+                SetFont("REGENICO");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT, 58104, CR_UNTRANSLATED, 295.2, 165.0, 1.5, 1.0);
+            }
+
+            oPulse = regenPulse;
+            regenPulse = max(0, regenPulse - 1);
+
+            if (regenTimer % 35 == 18)
+            {
+                if (health >= getMaxHealth()) { giveHealthMax(5, 250); }
+                else if (health + 10 >= getMaxHealth())
+                {
+                    SetActorProperty(0, APROP_Health, getMaxHealth());
+                    giveHealthMax(5, 250);
+                }
+                else { giveHealthMax(15, 250); }
+
+                if (GetActorProperty(0, APROP_Health) > health)
+                {
+                    FadeRange(255, 0, 0, 0.2, 255, 0, 0, 0.0, 0.3333);
+                    ActivatorSound("quakeweps/regen", 127);
+                    regenPulse = 12;
+                }
+
+                healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0);
+                health = GetActorProperty(0, APROP_Health);
+            }
+
+            if (regenTimer % 35 == 0 && regenTimer / 35 < 5)
+            {
+                ActivatorSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
+            }
+        }
+
+        TakeInventory("QuakeRegenTimer", 1);
+        
+            
         if (SamsaraClassNum() == CLASS_MARATHON)
         {
             if (GetCVar("samsara_sogravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
@@ -173,6 +325,12 @@ script SAMSARA_SPAWN (int respawning)
         else
         {
             SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32 + pariasMod, GetActorProperty(0, APROP_Gravity)));
+        }
+
+        if (UnloadingNow && samsaraClassNum() == CLASS_QUAKE)
+        {
+            SetActorProperty(0, APROP_Health, max(50, health - healthGiven));
+            break;
         }
         
         Delay(1);
@@ -202,6 +360,8 @@ script SAMSARA_SPAWN (int respawning)
         }
         */
     }
+
+    TakeInventory("QuakeQuadTimer", 0x7FFFFFFF);
 }
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
@@ -470,7 +630,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     }
 }
 
-script SAMSARA_DECORATE (int choice)
+script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
     int result;
     
@@ -496,6 +656,12 @@ script SAMSARA_DECORATE (int choice)
             Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
             Log(d:result);
         }
+        break;
+
+      case 5:
+        SetActivatorToTarget(0);
+        result = CheckInventory("Cell");
+        if (arg1) { TakeInventory("Cell", result); }
         break;
     }
     
@@ -803,7 +969,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         break;
         
       case 3:
-        if (limited)
+        if (limited && !dropped)
         {
             SetResultValue(0);
             terminate;
@@ -826,7 +992,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             GiveInventory("CanDualShotties", 1);
         }
         
-        if (limit && !dropped)
+        if (limit)
         {
             GiveInventory("LevelLimiter", 1);
         }
@@ -834,19 +1000,64 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     }
 }
 
+script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
+{
+    int hpGiven = GetActorProperty(0, APROP_Health);
+    int startHealth = hpGiven;
+    SetActorProperty(0, APROP_Health, min(hpGiven + hpcount, 250));
+    hpGiven = GetActorProperty(0, APROP_Health) - hpGiven;
+
+    hpPerSec = 1.0 / (hpPerSec * 35);
+
+    int takeCounter, hpToTake;
+
+    while (1)
+    {
+        if (DEBUG) { Print(s:"hpGiven = ", d:hpGiven, s:", startHealth = ", d:startHealth); }
+
+        if (UnloadingNow)
+        {
+            hpToTake = GetActorProperty(0, APROP_Health);
+
+            if (DEBUG) { Print(d:hpToTake, s:", ", d:getMaxHealth(), s:", ", d:hpToTake - hpGiven); }
+
+            hpToTake = middle(hpToTake, getMaxHealth(), hpToTake - hpGiven);
+            SetActorProperty(0, APROP_Health, hpToTake);
+            break;
+        }
+
+        if (delayTics > 0) { delayTics--; }
+        else
+        {
+            takeCounter += hpPerSec;
+            hpToTake = min(ftoi(takeCounter), hpGiven);
+            hpGiven -= hpToTake;
+
+            SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) - hpToTake);
+            takeCounter -= itof(hpToTake);
+        }
+
+        if (hpGiven <= 0) { break; }
+        if (GetActorProperty(0, APROP_Health) <= startHealth ||
+            GetActorProperty(0, APROP_Health) <= getMaxHealth()) { break; }
+        Delay(1);
+    }
+}
+
+
 // TIPBOX START
 
-str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1"};
+str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1", "QUAKTIP1"};
 //str CoolTips2[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP2", "HERETIP2", "WOLFTIP2", "HEXNTIP2", "DUKETIP2", "MARATIP2"};
 //str CoolTips3[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP3", "HERETIP3", "WOLFTIP3", "HEXNTIP3", "DUKETIP3", "MARATIP3"}; // NOPE AIN'T WORKIN'
 
 script 300 (int tipboxshit) NET
 {
-    switch(tipboxshit)
+    int classNumber = samsaraClassNum();
+    switch (tipboxshit)
     {
       case 1:
         SetHudSize(1024,768,1);
-        int classNumber = samsaraClassNum();
         SetFont(CoolTips1[classNumber]);
         HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
         break;
@@ -896,6 +1107,12 @@ script 300 (int tipboxshit) NET
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
         }
         else if (GameType () == GAME_SINGLE_PLAYER)
         {
@@ -941,6 +1158,12 @@ script 300 (int tipboxshit) NET
                 SetFont("MARATIP2");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP2");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
         }
         else
         {
@@ -984,6 +1207,12 @@ script 300 (int tipboxshit) NET
             {
                 SetHudSize(1024,768,1);
                 SetFont("MARATIP3");
+                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+            }
+            if (CheckInventory("QuakeClass"))
+            {
+                SetHudSize(1024,768,1);
+                SetFont("QUAKTIP3");
                 HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
             }
         }
@@ -1052,10 +1281,16 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 // (by Synert)
 /////////////////
 
-script 901 ENTER { // Give keys as needed, for people joining the game.
-    while(PlayerInGame(PlayerNumber())) {
-        for(int a = 0; a < 26; a++) {
-            if(keys[0][a] == 1) {
+// Give keys as needed, for people joining the game.
+
+script 901 ENTER
+{
+    while (PlayerInGame(PlayerNumber()))
+    {
+        for (int a = 0; a < 26; a++)
+        {
+            if (keys[0][a] == 1)
+            {
                 GiveInventory(keys[1][a], 1);
             }
         }
@@ -1069,22 +1304,6 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
         HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
     }
     keys[0][a] = 1;
-}
-
-///////////////
-// STATUS STUFF
-//////////////
-//if (GameType () == GAME_NET_COOPERATIVE)
-//if (GameType () == GAME_NET_TEAMGAME)
-//if (GameType () == GAME_NET_DEATHMATCH)
-//if (GameType () == GAME_SINGLE_PLAYER)
-script 211 ENTER
-{
-    if (isCoop())
-    {
-        GiveInventory("CoopModeOn", 1);
-        SetActorState(0,"CoOpModeOn");
-    }
 }
 
 ///////////////
@@ -1189,6 +1408,7 @@ script 208 (void)
 
 script 203 UNLOADING
 {
+    UnloadingNow = 1;
     int i;
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
 }
@@ -1442,4 +1662,27 @@ script 205 (void)
         Delay(35);
         TakeInventory("DukeTauntCooldown", 1);
     }
+}
+
+script 583 (int x, int y, int z)
+{
+    if (GetActorZ(0) - GetActorFloorZ(0) > 4.0)
+    {
+        SetResultValue(1);
+    }
+    else
+    {
+        SetResultValue(sqrt(x*x + y*y + z*z) );
+    }
+}
+
+script 586 (int divI, int divF, int divF1)
+{
+    int div = percFloat2(divI, divF, divF1);
+
+    int x = GetActorVelX(0);
+    int y = GetActorVelY(0);
+    int z = GetActorVelZ(0);
+
+    SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
 }

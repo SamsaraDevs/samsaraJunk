@@ -1,0 +1,39 @@
+actor CantQuad: Boolean {}
+actor QuakeQuadTimer: Counter {}
+
+actor QuadDamagePower: PowerDamage
+{
+    Powerup.Color "00 50 FF", 0.15
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "Normal", 4
+    DamageFactor "NotQuadded", 1
+}
+
+actor QuadDamageItem: CustomInventory
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 1 
+
+    Inventory.Icon "QUADICON"
+
+    +INVBAR
+    +UNDROPPABLE
+    +FLOATBOB
+
+    States
+    {
+      Spawn:
+        QUAD A -1 bright
+        stop
+
+      Use:
+        TNT1 A 0 A_JumpIfInventory("CantQuad", 1, "NoU")
+        TNT1 A 0 A_GiveInventory("QuakeQuadTimer", 35*75)
+        fail
+
+      NoU:
+        TNT1 A 0 A_Print("Quad Damage is recharging")
+        fail
+    }
+}

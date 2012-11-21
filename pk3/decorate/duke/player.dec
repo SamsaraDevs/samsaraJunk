@@ -240,7 +240,7 @@ actor BurnDeathDuke
     Speed 8
     +FLOORCLIP
     +LOOKALLAROUND
-    +SOLID
+    -SOLID
     -SHOOTABLE
     //RenderStyle Add
     //Alpha 1.0

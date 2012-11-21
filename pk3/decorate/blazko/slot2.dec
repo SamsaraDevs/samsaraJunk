@@ -1,4 +1,4 @@
-actor "Machine Gun" : Weapon
+actor "Machine Gun": InstantSwitchWeapon
 {
     Weapon.SelectionOrder 1300
     Weapon.SlotNumber 2
@@ -19,17 +19,8 @@ actor "Machine Gun" : Weapon
         Loop
 
       Ready:
-        TNT1 A 0 SetPlayerProperty(0,1,2)
         WMGN A 1 A_WeaponReady
-        goto Ready+1
-
-      Deselect:
-        WMGN A 1 A_Lower
-        Loop
-
-      Select:
-        WMGN A 1 A_Raise
-        Loop
+        loop
 
       Fire:
         WMGN AB 2

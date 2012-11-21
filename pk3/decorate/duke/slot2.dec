@@ -270,6 +270,7 @@ actor DukeShotgunBullet : DukePistolBullet
     +NOTIMEFREEZE
     Obituary "%k deemed %o a threat."
     Damage (10)
+    DamageType "DukeDamage"
 }
 
 actor DukeShotgunBulletCoop : DukePistolBullet
@@ -280,4 +281,5 @@ actor DukeShotgunBulletCoop : DukePistolBullet
     +THRUSPECIES
     +NOTIMEFREEZE
     Species "Player"
+    DamageType "DukeDamage"
 }

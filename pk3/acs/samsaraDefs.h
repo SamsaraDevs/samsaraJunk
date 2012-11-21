@@ -13,6 +13,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 216
 #define SAMSARA_CLIENT_UNIQUEPICKUP 233
 #define SAMSARA_MARATHON            209
+#define SAMSARA_MEGAHEALTH          249
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_OPEN_CLIENT         248
@@ -22,7 +23,7 @@
 
 #define SAMSARA_CL_VERSION          2601
 
-#define CLASSCOUNT          7
+#define CLASSCOUNT          8
 #define UNIQUECOUNT         2
 #define SLOTCOUNT           9
 
@@ -35,11 +36,21 @@
 #define CLASS_HEXEN     4
 #define CLASS_DUKE      5
 #define CLASS_MARATHON  6
+#define CLASS_QUAKE     7
 
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 33
+#define UNLOADCOUNT 35
+
+#define P_COUNT 2
+#define P_QUAD  0
+#define P_REGEN 1
+
+#define QUAD_THRESHOLD      1050
+
+#define REGEN_CENTER_X      0.953125    // 610 / 640
+#define REGEN_CENTER_Y      0.6875      // 330 / 480
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -70,6 +81,7 @@ int ClassItems[CLASSCOUNT] =
     "HexenClass",
     "DukeClass",
     "MarathonClass",
+    "QuakeClass",
 };
 
 int PickupStates[CLASSCOUNT][5] = 
@@ -81,6 +93,7 @@ int PickupStates[CLASSCOUNT][5] =
     {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
     {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
     {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakeSpecial2"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
@@ -95,6 +108,7 @@ int ClassFades[CLASSCOUNT][5] =
     {255, 255, 0,   0.1, 5},
     {255, 255, 0,   0.1, 5},
     {0,   255, 0,   0.4, 8},
+    {255, 255, 0,   0.1, 5},
 };
 
 int SlotItems[SLOTCOUNT] = 
@@ -119,6 +133,7 @@ int LMSItems[CLASSCOUNT] =
     "",
     "",
     "",
+    "",
 };
 
 int UnloadRemove[UNLOADCOUNT] =
@@ -131,4 +146,7 @@ int UnloadRemove[UNLOADCOUNT] =
     "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
     "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
     "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
+    "QuakeQuadTimer", "QuakeRegenTimer",
 };
+
+int PowerOutVols[5] = {96, 104, 112, 120, 127};
