@@ -161,9 +161,9 @@ script SAMSARA_SPAWN (int respawning)
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
-        
         TakeInventory("Mace", 1);
         TakeInventory("MacePowered", 1);
+        ConvertClassWeapons(-1);
 
         if (GetCVar("samsara_banjetpack") && CheckInventory("DukePortJetpack"))
         {

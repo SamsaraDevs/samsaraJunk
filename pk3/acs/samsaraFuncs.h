@@ -194,3 +194,30 @@ function int ClassWeaponSlot(void)
 
     return -1;
 }
+
+function int ConvertClassWeapons(int classnum)
+{
+    int i, j;
+    int ret;
+    if (classnum < 0) { classnum = samsaraClassNum(); }
+
+    for (i = 0; i < CLASSCOUNT; i++)
+    {
+        if (i == classnum)
+        {
+            if (DEBUG) { Print(s:"skipping class #", d:classnum); }
+            continue;
+        }
+
+        for (j = 0; j < SLOTCOUNT; j++)
+        {
+            if (HasClassWeapon(i, j))
+            {
+                TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
+                GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
+            }
+        }
+    }
+
+    return ret;
+}
