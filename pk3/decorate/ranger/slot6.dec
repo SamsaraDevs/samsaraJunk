@@ -12,7 +12,7 @@ actor "Thunderbolt": Weapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the thunderbolt"
-    Obituary "%o accepts %k's shaft"
+    Obituary "%k gave %o the shaft."
 
     States
     {

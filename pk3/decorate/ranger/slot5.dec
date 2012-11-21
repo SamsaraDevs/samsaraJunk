@@ -87,7 +87,7 @@ actor QuakeRocket: FastProjectile
     +DEHEXPLOSION
     +ROCKETTRAIL
 
-    Obituary "%o rides %k's rocket"
+    Obituary "%k made %o ride the rocket." // Might need to change, exact same as Doomguy's.
 
     States
     {

@@ -12,7 +12,7 @@ actor "Double Shotgun": Weapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the double-barreled shotgun"
-    Obituary "%o eats two loads of %k's buckshot"
+    Obituary "%k gave %o two loads of buckshot."
 
     Decal BulletChip
 

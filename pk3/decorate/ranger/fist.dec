@@ -8,7 +8,7 @@ actor "Axe": Weapon
     +WEAPON.MELEEWEAPON
 
     Inventory.Icon "PSTRA0"
-    Obituary "%o is axe-murdered by %k"
+    Obituary "%k met %o and became an axe-murderer."
 
     States
     {
