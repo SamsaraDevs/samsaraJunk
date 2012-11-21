@@ -864,7 +864,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Who wants a body massage?",
             "Stick a socket in it.",
             "There's nothin' like a fistfulla' lightnin', now is there?",
-            "Cower, mortal, forn ow I control thy destiny.",
+            "Cower, mortal, for now I control thy destiny.",
             "Atop the tallest of earth's peaks dwell the gods of earth, and suffer not man to tell that he hath looked upon them.",
             "",
             "",
