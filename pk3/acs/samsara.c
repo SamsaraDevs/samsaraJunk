@@ -669,6 +669,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         result = CheckInventory("Cell");
         if (arg1) { TakeInventory("Cell", result); }
         break;
+
+      case 6:
+        result = GetCVar("skulltag");
+        break;
     }
     
     SetResultValue(result);
@@ -1291,6 +1295,8 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 
 script 901 ENTER
 {
+    if (!(IsSinglePlayer() || IsCoop())) { terminate; }
+
     while (PlayerInGame(PlayerNumber()))
     {
         for (int a = 0; a < 26; a++)
@@ -1305,7 +1311,7 @@ script 901 ENTER
 }
 
 script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
-    if(keys[0][a] == 0 && !isSinglePlayer()) {
+    if(keys[0][a] == 0 && isCoop() && !isSinglePlayer()) {
         Log(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*."); // Let the server admins know.
         HudMessageBold(n:0,s:"\c* has picked up the ",s:keys[2][a],s:"\c*.";HUDMSG_FADEOUT, 900, CR_GOLD, 0.5, 0.1, 3.0, 0.5);
     }
