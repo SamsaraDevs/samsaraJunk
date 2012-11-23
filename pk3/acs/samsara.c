@@ -72,9 +72,9 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_hexenjump 0");
         ConsoleCommand("archivecvar samsara_hexenjump"); }
         
-        if (!GetCVar("samsara_sogravity"))
-        {   ConsoleCommand("set samsara_sogravity 0");
-        ConsoleCommand("archivecvar samsara_sogravity"); }
+        if (!GetCVar("samsara_nocustomgravity"))
+        {   ConsoleCommand("set samsara_nocustomgravity 0");
+        ConsoleCommand("archivecvar samsara_nocustomgravity"); }
         
         if (!GetCVar("samsara_permault"))
         {   ConsoleCommand("set samsara_permault 0");
@@ -101,6 +101,7 @@ script SAMSARA_SPAWN (int respawning)
     int regenX, regenY;
     int healthGiven;
     int pcount, opcount;
+    int endloop;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
     
@@ -134,7 +135,7 @@ script SAMSARA_SPAWN (int respawning)
 
     pcount = PlayerCount();
     
-    while (1)
+    while (!endloop)
     {
         health = GetActorProperty(0, APROP_Health);
 
@@ -310,10 +311,25 @@ script SAMSARA_SPAWN (int respawning)
         TakeInventory("QuakeRegenTimer", 1);
         
             
-        if (SamsaraClassNum() == CLASS_MARATHON)
+        switch (samsaraClassNum())
         {
-            if (GetCVar("samsara_sogravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
+          case CLASS_MARATHON:
+            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
             else { SetActorProperty(0, APROP_Gravity, 0.15); }
+            break;
+
+          case CLASS_QUAKE:
+            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
+            else { SetActorProperty(0, APROP_Gravity, 0.6); }
+
+            if (UnloadingNow)
+            {
+                SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
+                health = GetActorProperty(0, APROP_Health);
+                SetActorProperty(0, APROP_Health, max(health, getMaxHealth() / 2));
+                endloop = 1;
+            }
+            break;
         }
 
         pariasMod = 9 * (SamsaraClassNum() == CLASS_HEXEN);
@@ -325,14 +341,6 @@ script SAMSARA_SPAWN (int respawning)
         else
         {
             SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32 + pariasMod, GetActorProperty(0, APROP_Gravity)));
-        }
-
-        if (UnloadingNow && samsaraClassNum() == CLASS_QUAKE)
-        {
-            SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
-            health = GetActorProperty(0, APROP_Health);
-            SetActorProperty(0, APROP_Health, max(health, getMaxHealth() / 2));
-            break;
         }
         
         Delay(1);
