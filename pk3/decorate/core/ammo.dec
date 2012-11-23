@@ -202,9 +202,10 @@ actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
 
       Pickup:
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
-        TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
         TNT1 A 0 A_GiveInventory("RocketAmmo", 6)
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
         stop
 
       PickupHexen:
@@ -213,9 +214,11 @@ actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("Green", 0.3, 3)
-        TNT1 A 1 A_GiveInventory("RocketAmmo", 6)
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("ClusterRocketAmmo", 1)
         stop
 
       PickupFail:

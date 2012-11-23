@@ -19,6 +19,10 @@ actor "Gauntlet": InstantSwitchWeapon
         QGNT Z -1
         stop
 
+      Deselect:
+        QGNT A 0 A_StopSound(6)
+        goto Super::Deselect
+
       Ready:
         QGNT A 0 A_PlaySound("quakeweps/gauntlethum", 6, 0.2, 1)
         QGNT A 1 A_WeaponReady

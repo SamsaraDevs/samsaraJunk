@@ -329,7 +329,9 @@ script SAMSARA_SPAWN (int respawning)
 
         if (UnloadingNow && samsaraClassNum() == CLASS_QUAKE)
         {
-            SetActorProperty(0, APROP_Health, max(50, health - healthGiven));
+            SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
+            health = GetActorProperty(0, APROP_Health);
+            SetActorProperty(0, APROP_Health, max(health, getMaxHealth() / 2));
             break;
         }
         

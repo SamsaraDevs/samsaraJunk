@@ -5,7 +5,7 @@ actor QuakeExplosion
     
     RenderStyle Add
     
-    ReactionTime 100
+    ReactionTime 50
     
     States
     {
