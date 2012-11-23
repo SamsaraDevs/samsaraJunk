@@ -1057,46 +1057,52 @@ $playersound        Ranger      male    *usefail        sounds/ranger/land.wav
 $playersound        Ranger      male    *puzzfail       dgpuzz
 $playersound        Ranger      male    *taunt          sounds/ranger/taunt.ogg
 
-quakeweps/blank             sounds/ranger/blank.ogg
-quakeweps/weaponget         sounds/ranger/w_pkup.wav
-quakeweps/megahealth        sounds/ranger/m_health.wav
-quakeweps/megasphere        sounds/ranger/megasphere.wav
+quakeweps/blank                 sounds/ranger/blank.ogg
+quakeweps/weaponget             sounds/ranger/w_pkup.wav
+quakeweps/megahealth            sounds/ranger/m_health.wav
+quakeweps/megasphere            sounds/ranger/megasphere.wav
 
-quakeweps/gauntlet          sounds/ranger/fstrun.wav
-quakeweps/gauntlethum       sounds/ranger/fsthum.wav
-quakeweps/gauntlethit       sounds/ranger/fstatck.wav
+quakeweps/gauntlet              sounds/ranger/fstrun.wav
+quakeweps/gauntlethum           sounds/ranger/fsthum.wav
+quakeweps/gauntlethit           sounds/ranger/fstatck.wav
 $limit quakeweps/gauntlethit 0
 
-quakeweps/axe               sounds/ranger/axe.wav
-quakeweps/axewall           sounds/ranger/axewall.wav
-quakeweps/shotgunfire       sounds/ranger/shotgun.wav
-quakeweps/ssgfire           sounds/ranger/shotgun2.wav
-quakeweps/nailgunfire       sounds/ranger/nailgun.wav
-quakeweps/sngfire           sounds/ranger/supernailgun.wav
+quakeweps/axe                   sounds/ranger/axe.wav
+quakeweps/axewall               sounds/ranger/axewall.wav
+quakeweps/shotgunfire           sounds/ranger/shotgun.wav
+quakeweps/ssgfire               sounds/ranger/shotgun2.wav
+quakeweps/nailgunfire           sounds/ranger/nailgun.wav
+quakeweps/sngfire               sounds/ranger/supernailgun.wav
 
-quakeweps/nr1               sounds/ranger/ric1.wav
-quakeweps/nr2               sounds/ranger/ric2.wav
-quakeweps/nr3               sounds/ranger/ric3.wav
+quakeweps/nr1                   sounds/ranger/ric1.wav
+quakeweps/nr2                   sounds/ranger/ric2.wav
+quakeweps/nr3                   sounds/ranger/ric3.wav
 
 $random quakeweps/nailricochet  { quakeweps/nr1 quakeweps/nr2 quakeweps/nr3 }
 $rolloff quakeweps/nailricochet 64 384
 
-quakeweps/explode           sounds/ranger/explode.wav
-quakeweps/glfire            sounds/ranger/grenade.wav
-quakeweps/grenadebounce     sounds/ranger/bounce.wav
+quakeweps/glfire                sounds/ranger/grenade.wav
+quakeweps/grenadebounce         sounds/ranger/bounce.wav
 $limit quakeweps/grenadebounce  0
 
-quakeweps/rlfire            sounds/ranger/rocket.wav
+quakeweps/grenadebounce_quiet   sounds/ranger/bounce.wav
+$volume quakeweps/quakebounce_quiet 0.3
+$limit  quakeweps/quakebounce_quiet 0
 
-quakeweps/lightningstart    sounds/ranger/lstart.wav
-quakeweps/lightning         sounds/ranger/lightning.wav
+quakeweps/explode               sounds/ranger/explode.wav
+$limit quakeweps/explode        0
 
-quakeweps/quadget           sounds/ranger/quadget.wav
-quakeweps/quadon            sounds/ranger/quaddamage.ogg
-quakeweps/quadfire          sounds/ranger/damage3.wav
-quakeweps/quadoff           sounds/ranger/damage2.wav
-quakeweps/quadready         sounds/ranger/quadready.wav
+quakeweps/rlfire                sounds/ranger/rocket.wav
 
-quakeweps/regenannounce     sounds/ranger/regeneration.wav
-quakeweps/regen             sounds/ranger/regen.wav
-quakeweps/regenout          sounds/ranger/wearoff.wav
+quakeweps/lightningstart        sounds/ranger/lstart.wav
+quakeweps/lightning             sounds/ranger/lightning.wav
+
+quakeweps/quadget               sounds/ranger/quadget.wav
+quakeweps/quadon                sounds/ranger/quaddamage.ogg
+quakeweps/quadfire              sounds/ranger/damage3.wav
+quakeweps/quadoff               sounds/ranger/damage2.wav
+quakeweps/quadready             sounds/ranger/quadready.wav
+
+quakeweps/regenannounce         sounds/ranger/regeneration.wav
+quakeweps/regen                 sounds/ranger/regen.wav
+quakeweps/regenout              sounds/ranger/wearoff.wav

@@ -5,7 +5,7 @@ actor QuakeExplosion
     
     RenderStyle Add
     
-    ReactionTime 300
+    ReactionTime 100
     
     States
     {
@@ -19,6 +19,28 @@ actor QuakeExplosion
         
       Death:
         TNT1 B 8 bright A_PlaySound("quakeweps/explode")
+        TNT1 C 6 bright
+        TNT1 D 4 bright
+        stop
+    }
+}
+
+actor QuakeTinyExplosion: QuakeExplosion
+{
+    ReactionTime 50
+    
+    States
+    {
+      Spawn:
+        TNT1 B 0 bright
+        TNT1 A 0 A_CustomMissile("QuakeTinyParticle",  0, 0, random(-180, 180), 2, random(-180, 180))
+        TNT1 A 0 A_CustomMissile("QuakeTinyParticle2", 0, 0, random(-180, 180), 2, random(-180, 180))
+        TNT1 A 0 A_CustomMissile("QuakeTinyParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
+        TNT1 B 0 A_Countdown
+        loop
+        
+      Death:
+        TNT1 B 8 bright A_PlaySound("quakeweps/explode", CHAN_AUTO, 0.5)
         TNT1 C 6 bright
         TNT1 D 4 bright
         stop
@@ -43,7 +65,7 @@ actor QuakeExplosionParticle
     {
       Spawn:
         DPFF A 0 bright
-        DPFF A 0 ACS_ExecuteAlways(586, 0, 0, random(70, 130), 0)
+        DPFF A 0 ACS_ExecuteAlways(586, 0, 0, random(90, 110), 0)
         DPFF A 1 A_Jump(255, "SpawnLoop")
         wait
 
@@ -78,3 +100,7 @@ actor QuakeExplosionParticle3: QuakeExplosionParticle
         loop
     }
 }
+
+actor QuakeTinyParticle:  QuakeExplosionParticle  { Speed 2  Scale 0.6 }
+actor QuakeTinyParticle2: QuakeExplosionParticle2 { Speed 6  Scale 0.6 }
+actor QuakeTinyParticle3: QuakeExplosionParticle3 { Speed 1  Scale 0.6 }
