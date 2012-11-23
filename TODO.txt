@@ -35,7 +35,7 @@ NON-QUAKE:
 
 
 CHANGES FROM QUAKE:
- -  Quake had such a lower damage scale than Doom it wasn't even funny. In co-op, his weapons have been buffed the fuck out.
+ -  Quake had such a lower damage scale than Doom it wasn't even funny. The Vore had 400 HP, equivalent to two Centaurs. In co-op, his weapons have been buffed the fuck out.
 
  -  The Quad Damage is now a reuseable item, partly to help with the aforementioned damage issues, and partly because there was no appropriate item to replace it with. (Berserks didn't work--too rare, too erratically placed, not to mention should be more utility)
 
@@ -43,3 +43,4 @@ CHANGES FROM QUAKE:
 
  -  Gravity has been ever-so-slightly reduced so as to simulate Quake's strange air physics.
 
+ -  The nails and rockets originally travelled at the same speed. Here, Nails have been increased to speed 75.
