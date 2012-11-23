@@ -66,6 +66,14 @@ StatusBar Fullscreen
             DrawImage "AMSMC0", 238, 195, Center;
         DrawImage "AMSMD0", 238, 185, Center;}
 
+        IsSelected "Nailgun"
+        {
+            DrawImage "HUDBAR", 250, 192;
+            DrawBar "HAMBAR", "HEMPTY", LavaNails, Horizontal, Reverse, 251, 193;
+            DrawNumber 3, INDEXFON, White, LavaNails, 270, 186;
+            DrawImage AmmoIcon2, 228, 192, Center;
+        }
+
         IsSelected "  Rocket Launcher  ", "Grenade Launcher"
         {
             DrawImage "HUDBAR", 250, 192;

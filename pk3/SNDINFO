@@ -1073,6 +1073,7 @@ quakeweps/shotgunfire           sounds/ranger/shotgun.wav
 quakeweps/ssgfire               sounds/ranger/shotgun2.wav
 quakeweps/nailgunfire           sounds/ranger/nailgun.wav
 quakeweps/sngfire               sounds/ranger/supernailgun.wav
+quakeweps/lavaend               sounds/ranger/lavaend.wav
 
 quakeweps/nr1                   sounds/ranger/ric1.wav
 quakeweps/nr2                   sounds/ranger/ric2.wav

@@ -970,6 +970,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int limited     = CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
     int ammoFull    = CheckInventory("AmmoShell") >= (GetAmmoCapacity("AmmoShell") / ((dropped*3)+1));
+    int i;
     // The above line is because of the quadupling of ammo capacity with dropped pickups
     // It's a really gross hack. I hate it. But it works.
     
@@ -1016,6 +1017,16 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         {
             GiveInventory("LevelLimiter", 1);
         }
+        break;
+
+      default:
+        GiveInventory(ClassWeapons[class][slot][S_WEP], 1);
+
+        i = ammoCount(ClassWeapons[class][slot][S_AMMO1]);
+        GiveInventory(ClassWeapons[class][slot][S_AMMO1], i*2);
+
+        i = ammoCount(ClassWeapons[class][slot][S_AMMO2]);
+        GiveInventory(ClassWeapons[class][slot][S_AMMO2], i*2);
         break;
     }
 }

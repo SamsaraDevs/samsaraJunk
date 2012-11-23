@@ -127,14 +127,14 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
     },
     {   // Ranger
-        {"Axe",                       "",             "",             "", ""},
-        {"Gauntlet",                  "",             "",             "", ""},
-        {"Single Shotgun",                        "",             "",             "", ""},
-        {"Double Shotgun",                       "AmmoShell",    "",             "", ""},
-        {"Grenade Launcher",                        "RocketAmmo",   "",             "", ""},
-        {"Nailgun",                        "Clip",         "",             "", ""},
-        {"  Rocket Launcher  ",                        "RocketAmmo",   "",             "", ""},
-        {"Thunderbolt",                        "Cell",         "",             "", ""},
+        {"Axe",                             "",             "",             "", ""},
+        {"Gauntlet",                        "",             "",             "", ""},
+        {"Single Shotgun",                  "",             "",             "", ""},
+        {"Double Shotgun",                  "AmmoShell",    "",             "", ""},
+        {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
+        {"Nailgun",                         "Clip",         "",             "", ""},
+        {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
+        {"Thunderbolt",                     "Cell",         "",             "", ""},
         {"QuadDamageItem",                  "",             "",             "", ""},
     },
 };
@@ -147,7 +147,7 @@ int ClassScripts[CLASSCOUNT][SLOTCOUNT] =
     {0,0,                   0,  0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0},
-    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,0,0,0,0,0},
+    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON},
     {0,0,                   0,  0,0,0,0,0,0},
 };
 

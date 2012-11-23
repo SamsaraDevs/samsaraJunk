@@ -221,3 +221,17 @@ function int ConvertClassWeapons(int classnum)
 
     return ret;
 }
+
+function int ammoCount(int ammoname)
+{
+    switch (ammoname)
+    {
+      case "Clip":          return 10;
+      case "Shell":         return 4;
+      case "AmmoShell":     return 4;
+      case "RocketAmmo":    return 1;
+      case "Cell":          return 20;
+    }
+
+    return GetAmmoCapacity(ammoname); // not the best of defaults but ya gotta have SOMETHING
+}
