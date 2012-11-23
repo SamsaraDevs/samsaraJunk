@@ -1,5 +1,6 @@
 #include "decorate/ranger/player.dec"
 #include "decorate/ranger/altammos.dec"
+#include "decorate/ranger/explosion.dec"
 #include "decorate/ranger/fist.dec"
 #include "decorate/ranger/pistol.dec"
 #include "decorate/ranger/slot1.dec"
