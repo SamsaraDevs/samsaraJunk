@@ -16,7 +16,7 @@ actor QuakePlayer: PlayerPawn
     +THRUSPECIES
 
     Player.SoundClass "ranger"
-
+    Player.Face "RNG"
     Player.DisplayName "Ranger"
     //Player.CrouchSprite "PLYC"
 
