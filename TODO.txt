@@ -6,7 +6,7 @@ QUACKGUI:
 
  -  Smooth out animations (offset abuse go)
 
- -  Give weapons their appropriate effects (guns don't leave bullet decals, spatter grey particles instead of puffs, rockets/grenades explode in a sphere of DPUF A)
+ -  Give weapons their appropriate effects (guns don't leave bullet decals, spatter grey particles instead of puffs, rockets/grenades have their proper explosion graphic)
 
  -  Model support (LAST PRIORITY, SHIT LOOKS HARD YO)
 
