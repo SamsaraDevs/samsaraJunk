@@ -149,7 +149,6 @@ actor QuakeNail: FastProjectile
     Projectile
     Damage (9)
 
-
     +SPAWNSOUNDSOURCE
     +BLOODSPLATTER
 
