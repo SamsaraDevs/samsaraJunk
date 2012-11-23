@@ -1,0 +1,10 @@
+actor ClusterRocketAmmo: Ammo
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 50
+
+    Ammo.BackpackAmount 1
+    Ammo.BackpackMaxAmount 100
+
+    Inventory.Icon "AMSML0"
+}
