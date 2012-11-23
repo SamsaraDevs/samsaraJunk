@@ -5,7 +5,7 @@ actor QuakeExplosion
     
     RenderStyle Add
     
-    ReactionTime 300
+    ReactionTime 100
     
     States
     {
@@ -14,6 +14,7 @@ actor QuakeExplosion
         TNT1 A 0 A_CustomMissile("QuakeExplosionParticle",  0, 0, random(-180, 180), 2, random(-180, 180))
         TNT1 A 0 A_CustomMissile("QuakeExplosionParticle2", 0, 0, random(-180, 180), 2, random(-180, 180))
         TNT1 A 0 A_CustomMissile("QuakeExplosionParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
+        TNT1 A 0 A_CustomMissile("QuakeExplosionParticle4", 0, 0, random(-180, 180), 2, random(-180, 180))
         TNT1 B 0 A_Countdown
         loop
         
@@ -32,8 +33,14 @@ actor QuakeExplosionParticle
 
     Speed 4
 
-    +NOINTERACTION
+    //+NOINTERACTION
     +CLIENTSIDEONLY
+    //-NOINTERACTION
+    +NOCLIP
+    +HEXENBOUNCE
+
+    Gravity 0.2
+    BounceFactor 0.9
 
     Scale 0.65
     Renderstyle Add
@@ -55,6 +62,8 @@ actor QuakeExplosionParticle
 
 actor QuakeExplosionParticle2: QuakeExplosionParticle
 {
+    Translation "160:167=180:187", "224:231=168:175", "64:71=36:51"
+
     Speed 12
     Alpha 1
 
@@ -70,6 +79,19 @@ actor QuakeExplosionParticle3: QuakeExplosionParticle
 {
     Speed 2
     Alpha 1
+
+    States
+    {
+      SpawnLoop:
+        DPFF A 2 bright A_FadeOut(0.04)
+        loop
+    }
+}
+
+actor QuakeExplosionParticle4: QuakeExplosionParticle
+{
+    Translation "160:163=220:223", "164:167=232:235", "224:231=208:215", "64:71=232:235"
+    Speed 6
 
     States
     {
