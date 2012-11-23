@@ -2,12 +2,6 @@ QUACKGUI:
 
  -  Team Power
 
- -  HUD sprites for the Gauntlet
-
- -  Hybrid pickup sprites for the Gauntlet
-
- -  Weapon bar sprite for the Gauntlet
-
  -  Tipbox (1/3 done)
 
  -  Smooth out animations (offset abuse go)
@@ -18,26 +12,16 @@ QUACKGUI:
 
  -  Total invisibility from Partial Invisibility pickup, complete with Quake III announcer
 
- -  Mugshot
-
  -  Co-op through a short mapset of each game with him--Doom, Heretic, HeXen, Chex Quest. Preliminary testing!
 
  -  Compile changelist from original Quake.
 
  -  Proper gib death
 
- -  Rename Quake weapons to their in-universe names rather than referring to their games.
-
  -  Convert .wav sounds to .ogg (LOW PRIORITY)
-
- -  Tipbox for spectators.
 
 
 NON-QUAKE:
- -  BJ gets frozen when Wolf movement is on, level is exited, then Wolf movement is turned off.
-
- -  Duke's rockets are quiet and don't leave an obituary.
-
  -  Is it possible to play a different sound effect when picking up dropped shotguns/chainguns?
 
  -  "The Security Officer don't get any ammo from Chainguns, dropped or placed. Dropped shotguns works, as well dropped ammo cases by zombies."
@@ -46,6 +30,8 @@ NON-QUAKE:
  -  Replace some more of Strife's weapons/ammo types/enemies/items/etc.
 
  -  Fiddle with possible Harmony support. Will need to convert enemies/items to DECORATE. Already recieved permission.
+
+ -  Tipbox for spectators.
 
 
 CHANGES FROM QUAKE:
