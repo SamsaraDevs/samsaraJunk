@@ -371,7 +371,8 @@ script SAMSARA_SPAWN (int respawning)
         */
     }
 
-    TakeInventory("QuakeQuadTimer", 0x7FFFFFFF);
+    quadTimer = CheckInventory("QuakeQuadTimer"); 
+    TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
 }
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
@@ -483,9 +484,8 @@ script SAMSARA_ENTER_CLIENT enter clientside
     int pln = PlayerNumber();
     int i, j;
     
-    // Comment out these lines for zdoom
+    // Comment out this line for zdoom
     int cpln = ConsolePlayerNumber();
-    if (cpln != pln) { terminate; }
     
     execInt = 0; oExecInt = 0;
     
@@ -532,6 +532,9 @@ script SAMSARA_ENTER_CLIENT enter clientside
         oClass = class;
         class  = samsaraClassNum();
         DukeQuoteCooldown[pln] = max(0, DukeQuoteCooldown[pln]-1); 
+
+        // Also this line
+        if (cpln != pln) { continue; }
         
         SamsaraClientClass = class+1;
         
