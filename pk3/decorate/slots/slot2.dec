@@ -47,6 +47,8 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
 
 actor SamsaraSlotTwoPickupF: SamsaraSlotTwoPickup
 {
+    -DROPPED
+
     States
     {
       Spawn:

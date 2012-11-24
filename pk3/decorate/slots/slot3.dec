@@ -47,6 +47,8 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
 
 actor SamsaraSlotThreePickupF: SamsaraSlotThreePickup
 {
+    -DROPPED
+
     States
     {
       Spawn:
