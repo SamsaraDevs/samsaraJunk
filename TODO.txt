@@ -6,8 +6,6 @@ QUACKGUI:
 
  -  Smooth out animations (offset abuse go)
 
- -  Give weapons their appropriate effects (rockets/grenades have their proper explosion graphic)
-
  -  Model support (LAST PRIORITY, SHIT LOOKS HARD YO)
 
  -  Total invisibility from Partial Invisibility pickup, complete with Quake III announcer

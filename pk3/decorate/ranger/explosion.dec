@@ -18,9 +18,10 @@ actor QuakeExplosion
         loop
         
       Death:
-        TNT1 B 8 bright A_PlaySound("quakeweps/explode")
-        TNT1 C 6 bright
-        TNT1 D 4 bright
+        QEXP A 4 bright A_PlaySound("quakeweps/explode")
+        QEXP B 4 bright
+        QEXP CD 3 bright
+		QEXP EF 2 bright
         stop
     }
 }
@@ -40,9 +41,10 @@ actor QuakeTinyExplosion: QuakeExplosion
         loop
         
       Death:
-        TNT1 B 8 bright A_PlaySound("quakeweps/explode", CHAN_AUTO, 0.5)
-        TNT1 C 6 bright
-        TNT1 D 4 bright
+        QEXP A 4 bright A_PlaySound("quakeweps/explode")
+        QEXP B 4 bright
+        QEXP CD 3 bright
+		QEXP EF 2 bright
         stop
     }
 }
