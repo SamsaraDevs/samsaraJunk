@@ -81,7 +81,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // B.J.
         {"Knife",                           "",             "",             "", ""},
-        {"GotWeapon0",                      "",             "",             "", ""},
+        {"BJSuperKnife",                    "",             "",             "", ""},
         {"Luger",                           "",             "",             "", ""},
         {"Machine Gun",                     "Clip",         "",             "", ""},
         {"Machine Gun",                     "Clip",         "",             "", ""},

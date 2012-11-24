@@ -203,16 +203,13 @@ function int ConvertClassWeapons(int classnum)
 
     for (i = 0; i < CLASSCOUNT; i++)
     {
-        if (i == classnum)
-        {
-            if (DEBUG) { Print(s:"skipping class #", d:classnum); }
-            continue;
-        }
+        if (i == classnum) { continue; }
 
         for (j = 0; j < SLOTCOUNT; j++)
         {
             if (HasClassWeapon(i, j))
             {
+                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:"(", d:i, s:", ", d:j, s:")"); }
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
                 GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
             }

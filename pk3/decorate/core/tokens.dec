@@ -21,6 +21,7 @@ actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
 
 actor GotWeapon0: Boolean {}
+actor GotWeapon1: Boolean {}
 actor GotWeapon2: Boolean {}
 actor GotWeapon3: Boolean {}
 actor GotWeapon4: Boolean {}
