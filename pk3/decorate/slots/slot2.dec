@@ -45,6 +45,16 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
     }
 }
 
+actor SamsaraSlotTwoPickupF: SamsaraSlotTwoPickup
+{
+    States
+    {
+      Spawn:
+        WEPG B 0
+        goto SpawnLoop
+    }
+}
+
 actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
 {
     States
@@ -69,53 +79,8 @@ actor SamsaraSlotTwo_Heretic replaces Crossbow
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("SamsaraSlotTwoPickup", 0,0,0, random(0,4),0,0, random(0, 360))
-        TNT1 A 0 A_SpawnItemEx("SamsaraSlotThreePickup", 0,0,0, random(0,4),0,0, random(0, 360))
-        stop
-    }
-}
-
-actor SOShotgunGiver: CustomInventory
-{
-    -INVBAR
-    
-    +AUTOACTIVATE
-    
-    Inventory.maxamount 1
-    
-    States
-    {
-      Pickup:
-      Use:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 4) == 1, "PickupBoth")  // if Invasion or competitive 
-        TNT1 A 0 A_JumpIfInventory("LevelLimiter", 1, "PickupFail")
-        TNT1 A 0 A_JumpIfInventory("WSTE-M5 Combat Shotgun", 1, "PickupSecond")
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 3) == 1, "PickupNorm")  // !(sv_weaponstay || sv_itemrespawn)
-        goto PickupLimit
-        
-      PickupBoth:
-        TNT1 A 0 A_GiveInventory("CanDualShotties",1)
-        
-        TNT1 A 0 A_GiveInventory("AmmoShell",8)
-        TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
-        stop
-        
-      PickupLimit:
-        TNT1 A 0 A_GiveInventory("LevelLimiter", 1) // Removed on level Unloading, which keeps co-op players from picking up two at once.
-        goto PickupNorm
-        
-      PickupNorm:
-        TNT1 A 0 A_GiveInventory("AmmoShell",8)
-        TNT1 A 1 A_GiveInventory("WSTE-M5 Combat Shotgun")
-        stop
-        
-      PickupSecond:
-        TNT1 A 0 A_GiveInventory("CanDualShotties",1)
-        TNT1 A 1 A_GiveInventory("AmmoShell",8)
-        stop
-        
-      PickupFail:
-        TNT1 A 1
+        TNT1 A 0 A_SpawnItemEx("SamsaraSlotTwoPickupF", 0,0,0, random(0,4),0,0, random(0, 360))
+        TNT1 A 0 A_SpawnItemEx("SamsaraSlotThreePickupF", 0,0,0, random(0,4),0,0, random(0, 360))
         stop
     }
 }

@@ -45,6 +45,17 @@ actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
     }
 }
 
+actor SamsaraSlotThreePickupF: SamsaraSlotThreePickup
+{
+    States
+    {
+      Spawn:
+        WEPG C 0
+        goto SpawnLoop
+    }
+}
+
+
 actor SamsaraSlotThreeDrop: SamsaraSlotThreePickup
 {
     States
