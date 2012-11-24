@@ -21,7 +21,7 @@ actor QuakeExplosion
         QEXP A 4 bright A_PlaySound("quakeweps/explode")
         QEXP B 4 bright
         QEXP CD 3 bright
-		QEXP EF 2 bright
+        QEXP EF 2 bright
         stop
     }
 }
@@ -41,10 +41,10 @@ actor QuakeTinyExplosion: QuakeExplosion
         loop
         
       Death:
-        QEXP A 4 bright A_PlaySound("quakeweps/explode")
+        QEXP A 4 bright A_PlaySound("quakeweps/explode", CHAN_AUTO, 0.5)
         QEXP B 4 bright
         QEXP CD 3 bright
-		QEXP EF 2 bright
+        QEXP EF 2 bright
         stop
     }
 }
@@ -53,16 +53,16 @@ actor QuakeExplosionParticle
 {
     Radius 0
     Height 0
-
+    
     Speed 4
-
+    
     +NOINTERACTION
     +CLIENTSIDEONLY
-
+    
     Scale 0.65
     Renderstyle Add
     Alpha 0.7
-
+    
     States
     {
       Spawn:
@@ -70,7 +70,7 @@ actor QuakeExplosionParticle
         DPFF A 0 ACS_ExecuteAlways(586, 0, 0, random(90, 110), 0)
         DPFF A 1 A_Jump(255, "SpawnLoop")
         wait
-
+        
       SpawnLoop:
         DPFF A 2 bright A_FadeOut(0.05)
         loop
@@ -81,7 +81,7 @@ actor QuakeExplosionParticle2: QuakeExplosionParticle
 {
     Speed 12
     Alpha 1
-
+    
     States
     {
       SpawnLoop:
@@ -94,7 +94,7 @@ actor QuakeExplosionParticle3: QuakeExplosionParticle
 {
     Speed 2
     Alpha 1
-
+    
     States
     {
       SpawnLoop:
