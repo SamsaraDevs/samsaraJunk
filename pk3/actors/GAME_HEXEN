@@ -498,6 +498,7 @@ actor FireDemon2 : FireDemon replaces FireDemon
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 2
     DamageFactor "Pistol", 2
@@ -648,6 +649,7 @@ actor Ettin2 : Ettin replaces Ettin
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -807,6 +809,7 @@ actor Centaur2 : Centaur replaces Centaur
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -940,6 +943,7 @@ actor CentaurLeader2 : CentaurLeader replaces CentaurLeader
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1107,6 +1111,7 @@ actor Demon1B : Demon1 replaces Demon1
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1276,6 +1281,7 @@ actor Demon2B : Demon2 replaces Demon2
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1437,6 +1443,7 @@ actor IceGuy2 : IceGuy replaces IceGuy
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1536,6 +1543,7 @@ actor Serpent2 : Serpent replaces Serpent
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1661,6 +1669,7 @@ actor SerpentLeader2 : SerpentLeader replaces SerpentLeader
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1792,6 +1801,7 @@ actor Bishop2 : Bishop replaces Bishop
 {
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -1922,6 +1932,7 @@ actor Wraith2 : Wraith replaces Wraith
     +NOTDMATCH
     +NOICEDEATH
     Alpha 0.75
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -2043,6 +2054,7 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
     +NOTDMATCH
     +NOICEDEATH
     Alpha 0.75
+    DamageFactor "QuakePistol", 1.5
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
@@ -2212,6 +2224,7 @@ actor Dragon2 : Dragon replaces Dragon
     +NOTDMATCH
     +NOICEDEATH
     Health 1500
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
@@ -2319,6 +2332,7 @@ actor Heresiarch2 : Heresiarch replaces Heresiarch
     +NORADIUSDMG
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
@@ -2434,6 +2448,7 @@ actor FighterBoss2 : FighterBoss replaces FighterBoss
     +NORADIUSDMG
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
@@ -2560,6 +2575,7 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
     +NORADIUSDMG
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
@@ -2669,6 +2685,7 @@ actor MageBoss2 : MageBoss replaces MageBoss
     +NORADIUSDMG
     +NOTDMATCH
     +NOICEDEATH
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
@@ -2787,6 +2804,7 @@ actor MageStaffFX22 : MageStaffFX2 replaces MageStaffFX2
 
 actor Korax2 : Korax replaces Korax
 {
+    DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75

@@ -203,6 +203,12 @@ actor QuakeBullet: FastProjectile
     }
 }
 
+actor QuakeBullet2: QuakeBullet
+{
+    -THRUSPECIES
+    DamageType "QuakePistol"
+}
+
 actor TelefragTester: Rocket
 {
     DamageType "Telefrag"
