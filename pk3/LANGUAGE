@@ -1,7 +1,7 @@
 [enu default]
 
-//Buddha
-QUITMSG = "Neither fire nor wind,\nbirth nor death,\ncan erase our good deeds.";
+//Quake
+QUITMSG = "Are you gonna quit this game\njust like everything else?";
 //Doom
 QUITMSG1 = "hey, ron!\ncan we say 'fuck' in the game?";
 QUITMSG2 = "i'd leave:\nthis is just more monsters and levels.\nwhat a load.";
@@ -60,6 +60,16 @@ QUITMSG39 = "If I had a rocket launcher, I'd make somebody pay.";
 QUITMSG40 = "The candles burn out for you; I am free.";
 QUITMSG41 = "T-Minus 15.193792102158E+9 years\nuntil the universe closes!";
 QUITMSG42 = "You can stay behind to work on your tan,\nif you'd like, but I'm leaving.";
+//Quake
+QUITMSG43 = "Did the scary monsters frighten you?\nOr did Mr. Sandman tug at your little lids? ";
+QUITMSG44 = "If you quit now, I'll throw a\nblanket-party for you next time!";
+QUITMSG45 = "Um, Asmodeus dislikes his children trying to quit.\nPress Y to return to your tinkertoys.";
+QUITMSG46 = "No matter! What is important is you love our game.\nCongratulations, you are probably not a thief.";
+//Buddha
+QUITMSG47 = "Neither fire nor wind,\nbirth nor death,\ncan erase our good deeds.";
+QUITMSG48 = "If on the hand there is no wound,\none may carry even poison in it.\nPoison does not affect one who is free from wounds.";
+QUITMSG49 = "Neither in the sky nor in mid-ocean,\nnor by entering into mountain clefts,\nnowhere in the world is there a place\nwhere one will not be overcome by death.";
+
 
 /*
 DOOM:
