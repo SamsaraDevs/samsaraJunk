@@ -78,7 +78,7 @@ Actor QuakeBulletPuff
 
 actor QuakeBullet2 : QuakeBullet
 {
--THRUSPECIES
+-THRUGHOST
 }
 
 Actor QuakeBulletPuff2 : BulletPuff
