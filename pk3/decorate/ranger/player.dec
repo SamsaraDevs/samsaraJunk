@@ -13,7 +13,8 @@ actor QuakePlayer: PlayerPawn
     PainChance 255
     
     Species "Player"
-    +THRUSPECIES
+    -THRUSPECIES
+    -DONTBLAST
     
     Player.SoundClass "ranger"
     Player.Face "RNG"
@@ -159,6 +160,13 @@ actor QuakePlayer: PlayerPawn
         RANG F 5 A_GenericFreezeDeath
         RANG F 1 A_FreezeDeathChunks
         Wait
+
+      CoOpModeOn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
+        TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
+        RANG A 1
+        goto See
     }
 }
 
