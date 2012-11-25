@@ -7,6 +7,7 @@ actor "Double Shotgun": InstantSwitchWeapon
     Weapon.AmmoType "AmmoShell"
 
     +NOAUTOAIM
+    +UNDROPPABLE
 
     Inventory.Icon "QDBSZ0"
 

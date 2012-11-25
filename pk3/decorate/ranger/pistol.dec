@@ -4,6 +4,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     Weapon.SelectionOrder 7
 
     +NOAUTOAIM
+    +UNDROPPABLE
 
     Inventory.Icon "QSHTZ0"
 

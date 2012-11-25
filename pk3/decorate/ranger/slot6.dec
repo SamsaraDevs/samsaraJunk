@@ -7,6 +7,7 @@ actor "Thunderbolt": InstantSwitchWeapon
     Weapon.AmmoType "Cell"
 
     +NOAUTOAIM
+    +UNDROPPABLE
 
     Inventory.Icon "QLTGZ0"
 

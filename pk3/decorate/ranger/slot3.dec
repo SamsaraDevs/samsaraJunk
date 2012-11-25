@@ -12,6 +12,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
 
     +NOAUTOAIM
     +NOAUTOFIRE
+    +UNDROPPABLE
 
     Inventory.Icon "QGRLZ0"
 

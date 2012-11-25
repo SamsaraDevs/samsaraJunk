@@ -4,6 +4,7 @@ actor "Gauntlet": InstantSwitchWeapon
     Weapon.SelectionOrder 7
 
     +NOAUTOAIM
+    +UNDROPPABLE
 
     Inventory.Icon "QGNTZ0"
 

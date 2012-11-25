@@ -12,6 +12,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
 
     +NOAUTOAIM
     +NOAUTOFIRE
+    +UNDROPPABLE
 
     Inventory.Icon "QRKLZ0"
 

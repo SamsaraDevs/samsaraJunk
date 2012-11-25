@@ -11,6 +11,9 @@ actor "Nailgun": InstantSwitchWeapon
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "LavaNails"
 
+    +NOAUTOAIM
+    +UNDROPPABLE
+
     Inventory.Icon "QNLGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
