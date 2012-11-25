@@ -48,7 +48,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
             if (array_pickupswitch[PlayerNumber()] && !hasWep &&
                     (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot())
-                && !PlayerIsBot(PlayerNumber()))
+                || PlayerIsBot(PlayerNumber()))
+                
             {
                 SetWeapon(ClassWeapons[class][slot][S_WEP]);
             }
@@ -209,7 +210,7 @@ function int ConvertClassWeapons(int classnum)
         {
             if (HasClassWeapon(i, j))
             {
-                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:"(", d:i, s:", ", d:j, s:")"); }
+                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:" (", d:i, s:", ", d:j, s:")"); }
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
                 GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
             }
