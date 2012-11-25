@@ -6,8 +6,8 @@ actor QuakePlayer: PlayerPawn
     Scale 0.19
     Speed 1
     
-    Gravity 0.6
-    Player.JumpZ 6.1968
+    Gravity 0.75
+    Player.JumpZ 6.9282
     
     Health 100
     PainChance 255

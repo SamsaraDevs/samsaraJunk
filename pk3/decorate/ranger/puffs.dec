@@ -64,3 +64,8 @@ Actor QuakeBulletPuff4 : QuakeBulletPuff2
         Stop
     }
 }
+
+actor QuakePistolPuff: QuakeBulletPuff
+{
+    DamageType "QuakePistol"
+}

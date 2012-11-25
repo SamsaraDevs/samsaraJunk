@@ -60,7 +60,7 @@ actor ChainsawShells: RandomSpawner replaces Chainsaw
     dropitem "QuakeShellBox"
 }
 
-actor QuakeAxePuff: QuakeBulletPuff
+actor QuakeAxePuff: QuakePistolPuff
 {
     AttackSound "quakeweps/axewall"
 }
