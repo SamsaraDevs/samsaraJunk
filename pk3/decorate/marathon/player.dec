@@ -379,6 +379,8 @@ actor MarathonPlayer : PlayerPawn
       Pain.DukeDamage:
 
       Pain.DukePistol:
+      
+      Pain.QuakePistol:
 
       Pain.Pistol:
 

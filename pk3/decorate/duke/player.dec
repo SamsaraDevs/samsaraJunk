@@ -61,6 +61,7 @@ actor DukePlayer : PlayerPawn
     DamageFactor "HexHeresiarchPurple", 1.1
     DamageFactor "WMCBeam", 0.85
     DamageFactor "WMCNade", 0.85
+    DamageFactor "QuakePistol", 1.1
     
     RadiusDamageFactor 0.9
     +NOSKIN

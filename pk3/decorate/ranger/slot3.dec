@@ -100,7 +100,7 @@ actor QuakeGrenade
 
     Projectile
     -NOGRAVITY
-
+    DamageType "Explosive"
     Gravity 0.6
     BounceFactor 0.3
 

@@ -111,7 +111,7 @@ actor QuakeRocket: FastProjectile
     Radius 1
     Height 0
     Speed 50
-
+    DamageType "Explosive"
     Scale 0.65
 
     Projectile
