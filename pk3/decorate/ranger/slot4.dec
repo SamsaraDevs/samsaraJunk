@@ -297,6 +297,8 @@ actor QuakeLavaNail: QuakeNail
     +PIERCEARMOR
 
     Translation "160:164=208:214"
+
+    Obituary "%k was too hot for %o."
     
     States
     {

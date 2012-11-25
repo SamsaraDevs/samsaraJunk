@@ -138,6 +138,8 @@ actor QuakeRocket: FastProjectile
 
 actor QuakeRocketQuad: QuakeRocket
 {
+    Obituary "%k smeared %o."
+
     DamageType "NotQuadded"
 
     States
@@ -170,6 +172,8 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
 
 actor QuakeClusterRocket: QuakeRocket
 {
+    Obituary "%k gave %o four rockets to ride."
+
     States
     {
       Death:
@@ -192,6 +196,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
 actor QuadClusterRocket: QuakeClusterRocket
 {
     DamageType "NotQuadded"
+    Obituary "%k turned %o into a fine mist."
 
     States
     {
