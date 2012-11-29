@@ -3,6 +3,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     Weapon.Kickback 100
     Weapon.SelectionOrder 7
     
+	+WEAPON.DONTBOB
     +NOAUTOAIM
     +UNDROPPABLE
     
@@ -17,11 +18,13 @@ actor "Single Shotgun": InstantSwitchWeapon
     States
     {
       Ready:
+		TNT1 A 0 A_JumpIfInventory("RangerMoving",1,"Bobbing")
         QSGN A 1 A_WeaponReady
         Loop
         
       // 17 tics
       Fire:
+		TNT1 A 0 A_TakeInventory("RangerMoving")
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
         goto AfterSound
         
@@ -45,13 +48,19 @@ actor "Single Shotgun": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-        QSGN B 3 bright
-        QSGN C 4 bright
-        QSGN D 5
-        QSGN E 6
-        
+        QSGN B 2 bright // 2
+        QSGN C 2 bright // 4
+        QSGN D 3		// 7
+        QSGN E 3		// 10
+		QSGN F 4		// 14
+		QSGN G 4		// 18
+        // 18 frames
         QSGN A 0 A_ReFire
         Goto Ready
+		
+	  Bobbing:
+		QSGB ABCDEFGHIJKL 2 A_WeaponReady
+		goto Ready
         
       Spawn:
         QSHT Z -1

@@ -31,11 +31,11 @@ actor QuakePlayer: PlayerPawn
     States
     {
       Spawn:
-        RANG A -1
+        RANG A 1 A_TakeInventory("RangerMoving",1)
         Loop
 
       See:
-        RANG BCDE 4
+        RANG BBBBCCCCDDDDEEEE 1 A_GiveInventory("RangerMoving",1)
         Loop
 
       Missile:
@@ -171,6 +171,7 @@ actor QuakePlayer: PlayerPawn
 }
 
 actor QuakeClass: Boolean {}
+actor RangerMoving : Boolean {}
 
 actor QuakeBullet: FastProjectile
 {
