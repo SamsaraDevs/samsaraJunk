@@ -1,29 +1,37 @@
-actor "Double Shotgun": InstantSwitchWeapon
+actor "Nailgun": InstantSwitchWeapon
 {
     Weapon.Kickback 100
-    Weapon.SelectionOrder 6
+    Weapon.SelectionOrder 5
+
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 10
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoGive 30
+    Weapon.AmmoType "Clip"
+
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 0
+    Weapon.AmmoType2 "LavaNails"
 
     +NOAUTOAIM
     +UNDROPPABLE
 
-    Inventory.Icon "QDBSZ0"
+    Inventory.Icon "QNLGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
-    Inventory.PickupMessage "You got the double-barreled shotgun"
-    Obituary "%k gave %o two loads of buckshot."
-
-    //Decal BulletChip
+    Inventory.PickupMessage "You got the nailgun"
+    Obituary "%k nailed %o."
 
     States
     {
       Ready:
-        QDBS A 1 A_WeaponReady
-        Loop
+        QNLG A 0 A_JumpIfInventory("FiringLavaNails", 1, "LavaEnd")
+        QNLG A 1 A_WeaponReady
+        loop
 
-      // 25 tics
+      LavaEnd:
+        QNLG A 0 A_PlaySound("quakeweps/lavaend", 5)
+        QNLG A 0 A_TakeInventory("FiringLavaNails")
+        goto Ready
+
       Fire:
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
         goto AfterSound
@@ -33,37 +41,386 @@ actor "Double Shotgun": InstantSwitchWeapon
         goto AfterSound
 
       AfterSound:
-        QDBS A 0 A_PlaySound("quakeweps/ssgfire", CHAN_WEAPON)
-        QDBS A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
-        QDBS A 0 A_JumpIfInventory("SPModeOn", 1, "SPFire")
-        QDBS A 0 A_FireBullets(4, 4, 7, 4, "QuakeBulletPuff")
-        goto Fire2
+        QNLG A 0 A_GunFlash
+        QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
+        goto FireNail
 
-      SPFire:
-        QDBS A 0 A_FireBullets(4, 4, 32, 1, "QuakeBulletPuff")
-        goto Fire2
+      FireNail:
+        QNLG A 0 A_JumpIfInventory("NailgunSide", 1, "NailRight")
+        goto NailLeft
 
-      CoopFire:
-        QDBS AAAAAAAAAAAAAAA 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 0, 0, 0, 0, random(-400,400)/100.0)
-        QDBS A 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 1, 0, 0, 0, random(-400,400)/100.0)
-        goto Fire2
 
-      Fire2:
-        QDBS B 1
-        QDBS C 1
-        QDBS D 2
-        QDBS E 6
-        QDBS F 2
-        QDBS G 2
-        QDBS H 3
-        QDBS I 4
-		QDBS A 3
-		// 25 tics
-        QDBS I 0 A_ReFire
-        Goto Ready
+      NailLeft:
+        QNLG A 0 A_FireCustomMissile("QNTrail1",  0, 0, -3)
+        QNLG A 0 A_FireCustomMissile("QNTrail2",  0, 0, -3)
+        QNLG A 0 A_FireCustomMissile("QNTrail3",  0, 0, -3)
+        QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "NailLeftCoop")
+        QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "NailLeftCoop")
+        QNLG A 0 A_FireCustomMissile("QuakeNail", 0, 1, -3)
+        goto NailLeft2
+
+      NailLeftCoop:
+        QNLG A 0 A_FireCustomMissile("QuakeNailCoop", 0, 1, -3)
+        goto NailLeft2
+
+      NailLeft2:
+        QNLG A 0 A_GiveInventory("NailgunSide")
+        QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailLeft")
+        QNLG D 2 bright
+        QNLG E 1 bright
+        QNLG C 0 A_Refire
+        goto Ready
+
+      RageNailLeft:
+        QNLG D 2
+        QNLG C 0 A_Refire
+        goto Ready
+
+      NailRight:
+        QNLG A 0 A_FireCustomMissile("QNTrail1",  0, 0, 3)
+        QNLG A 0 A_FireCustomMissile("QNTrail2",  0, 0, 3)
+        QNLG A 0 A_FireCustomMissile("QNTrail3",  0, 0, 3)
+        QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "NailRightCoop")
+        QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "NailRightCoop")
+        QNLG A 0 A_FireCustomMissile("QuakeNail", 0, 1, 3)
+        goto NailRight2
+
+      NailRightCoop:
+        QNLG A 0 A_FireCustomMissile("QuakeNailCoop", 0, 1, 3)
+        goto NailRight2
+
+      NailRight2:
+        QNLG A 0 A_TakeInventory("NailgunSide")
+        QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailRight")
+        QNLG B 2 bright
+        QNLG C 2 bright
+        QNLG B 0 A_Refire
+        goto Ready
+
+      RageNailRight:
+        QNLG B 2
+        QNLG C 0 A_Refire
+        goto Ready
+
+
+      AltFire:
+        TNT1 A 0 A_GiveInventory("FiringLavaNails")
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSoundAlt")
+        goto AfterSoundAlt
+
+      QuadSoundAlt:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSoundAlt
+
+      AfterSoundAlt:
+        QNLG A 0 A_GunFlash
+        QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
+        goto FireAlt
+
+      FireAlt:
+        QNLG A 0 A_JumpIfInventory("NailgunSide", 1, "AltRight")
+        goto AltLeft
+
+
+      AltLeft:
+        QNLG A 0 A_FireCustomMissile("QLTrail1",  0, 0, -3)
+        QNLG A 0 A_FireCustomMissile("QLTrail2",  0, 0, -3)
+        QNLG A 0 A_FireCustomMissile("QLTrail3",  0, 0, -3)
+        QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "AltLeftCoop")
+        QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "AltLeftCoop")
+        QNLG A 0 A_FireCustomMissile("QuakeLavaNail", 0, 1, -3)
+        goto NailLeft2
+
+      AltLeftCoop:
+        QNLG A 0 A_FireCustomMissile("QuakeLavaNailCoop", 0, 1, -3)
+        goto NailLeft2
+
+
+      AltRight:
+        QNLG A 0 A_FireCustomMissile("QLTrail1",  0, 0, 3)
+        QNLG A 0 A_FireCustomMissile("QLTrail2",  0, 0, 3)
+        QNLG A 0 A_FireCustomMissile("QLTrail3",  0, 0, 3)
+        QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "AltRightCoop")
+        QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "AltRightCoop")
+        QNLG A 0 A_FireCustomMissile("QuakeLavaNail", 0, 1, 3)
+        goto NailRight2
+
+      AltRightCoop:
+        QNLG A 0 A_FireCustomMissile("QuakeLavaNailCoop", 0, 1, 3)
+        goto NailRight2
+
+      Flash:
+        TNT1 A 2 A_Light2
+        Goto LightDone
 
       Spawn:
-        QDBS Z -1
+        QNLG Z -1
         Stop
     }
+}
+
+actor QNTrail1
+{
+    Speed 54
+
+    Projectile
+    +CLIENTSIDEONLY
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 1, 38, 88)
+        goto SpawnLoop
+
+      SpawnLoop:
+        TNT1 A 1 A_SpawnItemEx("QuakeNailTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        loop
+
+    }
+}
+
+actor QNTrail2: QNTrail1
+{
+    Speed 37
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 2, 02, 7)
+        goto SpawnLoop
+    }
+}
+
+actor QNTrail3: QNTrail1
+{
+    Speed 18
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 4, 16, 66)
+        goto SpawnLoop
+    }
+}
+
+actor QuakeNail: FastProjectile
+{
+    Radius 1
+    Height 0
+    Speed 75
+
+    Projectile
+    Damage (9)
+
+    +BLOODSPLATTER
+
+    Decal BulletChip
+    
+    States
+    {
+      Spawn:
+        DART A 0
+        goto SpawnLoop
+
+      SpawnLoop:
+        DART A 1 A_SpawnItemEx("QuakeNailTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        loop
+
+      XDeath:
+        TNT1 A 0
+        stop
+
+      Death:
+        TNT1 A 0 A_SpawnItemEx("NailBounce", 0,0,0, random(-2, 2),0,random(2, 4), random(0, 360))
+        TNT1 A 1 A_PlaySound("quakeweps/nailricochet")
+        stop
+    }
+}
+
+actor QuakeNailCoop: QuakeNail
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (12)
+}
+
+
+actor QLTrail1
+{
+    Speed 54
+
+    Projectile
+    +CLIENTSIDEONLY
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 1, 38, 88)
+        goto SpawnLoop
+
+      SpawnLoop:
+        TNT1 A 1 A_SpawnItemEx("QuakeLavaTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        loop
+
+    }
+}
+
+actor QLTrail2: QLTrail1
+{
+    Speed 37
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 2, 02, 7)
+        goto SpawnLoop
+    }
+}
+
+actor QLTrail3: QLTrail1
+{
+    Speed 18
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(586, 0, 4, 16, 66)
+        goto SpawnLoop
+    }
+}
+
+actor QuakeLavaNail: QuakeNail
+{
+    Damage (18)
+    +PIERCEARMOR
+
+    Translation "160:164=208:214"
+
+    Obituary "%k was too hot for %o."
+    
+    States
+    {
+      Spawn:
+        DART A 0
+        goto SpawnLoop
+
+      SpawnLoop:
+        DART A 1 A_SpawnItemEx("QuakeLavaTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        loop
+
+      Death:
+        TNT1 A 0 A_SpawnItemEx("LavaNailBounce")
+        TNT1 A 1 A_PlaySound("quakeweps/nailricochet")
+        stop
+    }
+}
+
+actor QuakeLavaNailCoop: QuakeLavaNail
+{
+    +THRUGHOST
+    +THRUSPECIES
+    Species "Player"
+
+    Damage (24)
+}
+
+
+actor NailBounce
+{
+    +CLIENTSIDEONLY
+    +NOCLIP
+
+    ReactionTime 24
+    
+    States
+    {
+      Spawn:
+        TNT1 A 0 A_Countdown
+        TNT1 A 1 A_SpawnItemEx("QuakeNailTrail2")
+        loop
+    }
+}
+
+actor LavaNailBounce
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+
+    RenderStyle Add
+    Alpha 0.8
+    Scale 0.5
+
+    States
+    {
+      Spawn:
+        CFCF ACEGIKNOP 2 bright
+        stop
+    }
+}
+
+actor QuakeNailTrail: BulletPuff
+{
+    Alpha 0.1
+    Scale 0.5
+
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+}
+
+actor QuakeLavaTrail
+{
+    Alpha 0.3
+    Scale 0.5
+
+    RenderStyle Add
+
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+
+    States
+    {
+      Spawn:
+        CFFX NOP 2 bright
+        stop
+    }
+}
+
+actor QuakeNailTrail2: BulletPuff
+{
+    Alpha 0.5
+    Scale 0.5
+
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+
+    States
+    {
+      Spawn:
+        PUFF A 2
+        PUFF A 2 A_FadeOut(0.4)
+        PUFF BCD 4
+        stop
+    }
+}
+
+actor FiringLavaNails: Boolean {}
+
+actor NailgunSide: Inventory
+{
+    inventory.maxamount 2
+    +UNDROPPABLE
+}
+
+actor NailgunFrame: Inventory
+{
+    inventory.maxamount 4
+    +UNDROPPABLE
 }
