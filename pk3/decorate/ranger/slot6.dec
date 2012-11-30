@@ -73,8 +73,9 @@ actor "Thunderbolt": InstantSwitchWeapon
       FireEnd:
         QLTG E 0 A_Refire
         QLTG E 0 A_TakeInventory("LGFrame")
-        QLTG A 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
-        QLTG A 0 A_StopSound(7)
+        QLTG F 2 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
+        QLTG G 1 A_StopSound(7)
+		QLTG H 1
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
         goto Ready
 
