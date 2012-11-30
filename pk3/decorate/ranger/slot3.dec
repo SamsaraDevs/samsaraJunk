@@ -53,11 +53,16 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto Fire2
 
       Fire2:
-        QGRL B 4 bright
-        QGRL C 6
-        QGRL D 6
-        QGRL E 6
-        QGRL E 0 A_Refire
+        QGRL B 2 bright
+        QGRL C 3
+        QGRL D 4
+        QGRL E 4
+        QGRL F 3
+        QGRL G 3
+        QGRL H 2
+        QGRL I 1
+		// 22 tics
+        QGRL I 0 A_Refire
         Goto Ready
 
       AltFire:

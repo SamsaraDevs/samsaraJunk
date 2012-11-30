@@ -31,11 +31,11 @@ actor QuakePlayer: PlayerPawn
     States
     {
       Spawn:
-        RANG A 1 A_TakeInventory("RangerMoving",1)
-        Loop
+        RANG A -1
+        stop
 
       See:
-        RANG BBBBCCCCDDDDEEEE 1 A_GiveInventory("RangerMoving",1)
+        RANG BBBBCCCCDDDDEEEE 1
         Loop
 
       Missile:
@@ -73,16 +73,16 @@ actor QuakePlayer: PlayerPawn
         goto Spawn
         
       Death:
-        RANG I 10 A_PlayerScream
-        RANG J 10 A_NoBlocking
-        RANG KLM 10
+        RANG I 5 A_PlayerScream
+        RANG J 4 A_NoBlocking
+        RANG KLM 3
         RANG N -1
         Stop
         
       Death.Drowning:
-        RANG I 10 A_PlaySound("ranger/drown", CHAN_VOICE)
-        RANG J 10 A_NoBlocking
-        RANG KLM 10
+        RANG I 5 A_PlaySound("ranger/drown", CHAN_VOICE)
+        RANG J 4 A_NoBlocking
+        RANG KLM 3
         RANG N -1
         Stop
         
@@ -90,16 +90,16 @@ actor QuakePlayer: PlayerPawn
         goto XDeath.Telefrag
         
       XDeath: // Need to replace with a proper gib animation
-        RANG I 10 A_XScream
-        RANG J 10 A_NoBlocking
-        RANG KLM 10
+        RANG I 5 A_XScream
+        RANG J 4 A_NoBlocking
+        RANG KLM 3
         RANG N -1
         Stop
         
       XDeath.Telefrag: // This, too
-        RANG I 10 A_PlaySound("ranger/telefragged", CHAN_VOICE)
-        RANG J 10 A_NoBlocking
-        RANG KLM 10
+        RANG I 5 A_PlaySound("ranger/telefragged", CHAN_VOICE)
+        RANG J 4 A_NoBlocking
+        RANG KLM 3
         RANG N -1
         Stop
         
