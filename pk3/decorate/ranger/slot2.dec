@@ -53,11 +53,11 @@ actor "Double Shotgun": InstantSwitchWeapon
         QDBS C 1
         QDBS D 2
         QDBS E 6
-        QDBS F 2
-        QDBS G 2
+        QDBS F 4
+        QDBS G 3
         QDBS H 3
-        QDBS I 4
-		QDBS A 3
+        QDBS I 2
+        QDBS A 2
 		// 25 tics
         QDBS I 0 A_ReFire
         Goto Ready
