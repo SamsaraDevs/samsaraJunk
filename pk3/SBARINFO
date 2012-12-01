@@ -1764,8 +1764,8 @@ playerclass Ranger
         
         InInventory GotWeapon6, 1 {drawimage "WEPSELN6", 219, 0;}
         InInventory GotWeapon6, 1 {drawimage "WPQUAK6N", 214, 11;}
-        IsSelected "Thunderbolt" {drawimage "WEPSELY6", 219, 0;}
-        IsSelected "Thunderbolt" {drawimage "WPQUAK6Y", 214, 11;}
+        IsSelected "Super Nailgun" {drawimage "WEPSELY6", 219, 0;}
+        IsSelected "Super Nailgun" {drawimage "WPQUAK6Y", 214, 11;}
         
         InInventory GotWeapon7, 1 {drawimage "WEPSELN7", 251, 0;}
         InInventory GotWeapon7, 1 {drawimage "WPQUAK7N", 247, 11;}
