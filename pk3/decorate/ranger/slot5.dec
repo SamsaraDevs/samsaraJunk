@@ -52,8 +52,11 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto Fire2
 
       Fire2:
+        TNT1 A 0 A_ZoomFactor(0.98, ZOOM_INSTANT)
         QRKL B 2 bright
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
         QRKL C 2 bright
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
         QRKL D 3 bright
         QRKL E 4
         QRKL F 5

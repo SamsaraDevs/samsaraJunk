@@ -66,14 +66,19 @@ actor "Nailgun": InstantSwitchWeapon
       NailLeft2:
         QNLG A 0 A_GiveInventory("NailgunSide")
         QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailLeft")
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG D 1 bright
+        TNT1 A 0 A_ZoomFactor(0.995, ZOOM_INSTANT)
         QNLG E 1 bright
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
         QNLG A 1 bright
         QNLG C 0 A_Refire
         goto Ready
 
       RageNailLeft:
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG D 2 bright
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
         QNLG C 0 A_Refire
         goto Ready
 
@@ -93,14 +98,19 @@ actor "Nailgun": InstantSwitchWeapon
       NailRight2:
         QNLG A 0 A_TakeInventory("NailgunSide")
         QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailRight")
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG B 1 bright
+        TNT1 A 0 A_ZoomFactor(0.995, ZOOM_INSTANT)
         QNLG C 1 bright
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
         QNLG A 2 bright
         QNLG B 0 A_Refire
         goto Ready
 
       RageNailRight:
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG B 2 bright
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
         QNLG A 2 bright
         QNLG C 0 A_Refire
         goto Ready
@@ -219,7 +229,7 @@ actor QuakeNail: FastProjectile
 
     +BLOODSPLATTER
 
-    Decal BulletChip
+    //Decal BulletChip
     
     States
     {
@@ -236,6 +246,9 @@ actor QuakeNail: FastProjectile
         stop
 
       Death:
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff2",random(-5,5),random(-5,5),random(-5,-5),0,0,random(-10,1)/10)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("QuakeBulletPuff3",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff4",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
         TNT1 A 0 A_SpawnItemEx("NailBounce", 0,0,0, random(-2, 2),0,random(2, 4), random(0, 360))
         TNT1 A 1 A_PlaySound("quakeweps/nailricochet")
         stop
@@ -319,6 +332,9 @@ actor QuakeLavaNail: QuakeNail
         loop
 
       Death:
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff2",random(-5,5),random(-5,5),random(-5,-5),0,0,random(-10,1)/10)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("QuakeBulletPuff3",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff4",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
         TNT1 A 0 A_SpawnItemEx("LavaNailBounce")
         TNT1 A 1 A_PlaySound("quakeweps/nailricochet")
         stop

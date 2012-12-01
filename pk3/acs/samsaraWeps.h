@@ -252,4 +252,5 @@ int ClassUniqueSounds[CLASSCOUNT] =
     "hexen/artiget",
     "duke/itemget",
     "marathon/itemget",
+    "quakeweps/weaponget",
 };
