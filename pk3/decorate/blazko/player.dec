@@ -4,6 +4,7 @@ actor WolfenPlayer : PlayerPawn
     Player.StartItem "Luger", 1
     Player.StartItem "Knife", 1
     Player.StartItem "WolfenClass", 1
+    Player.StartItem "CanWolfMovement", 1
     Player.StartItem "Clip", 50
     Player.Face "BJF"
     Player.JumpZ 9//Default is 8
@@ -172,6 +173,7 @@ actor WolfenAmmoCrate : CustomInventory
 }
 
 actor WolfMoving: Boolean {}
+actor CanWolfMovement : Boolean {}
 actor WolfenMovement : Boolean {}
 actor WolfenClass : Boolean {}
 

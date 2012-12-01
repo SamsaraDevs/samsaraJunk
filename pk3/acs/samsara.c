@@ -405,7 +405,7 @@ script SAMSARA_WOLFMOVE enter
             break;
         }
 
-        if (!(CheckInventory("WolfenClass") && CheckInventory("WolfenMovement")) )
+        if (!(CheckInventory("CanWolfMovement") && CheckInventory("WolfenMovement")) )
         {
             SetActorProperty(0, APROP_Speed, realspeed);
             Delay(1);

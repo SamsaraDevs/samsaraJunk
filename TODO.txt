@@ -14,6 +14,8 @@ QUACKGUI:
 
  -  Convert .wav sounds to .ogg (LOW PRIORITY)
 
+ -  A new weapon I. Preferably one that uses Cell as ammo.
+
 
 NON-QUAKE:
  -  Is it possible to play a different sound effect when picking up dropped shotguns/chainguns?
@@ -33,3 +35,5 @@ CHANGES FROM QUAKE:
  -  The nails and rockets originally travelled at the same speed. Here, Nails have been increased to speed 75.
 
  -  Lava Nails, Multi-Grenades, and Multi-Rockets were handled a bit differently.
+
+ -  The Double Barreled Shotgun's and Nailgun's animations are slightly smoother.

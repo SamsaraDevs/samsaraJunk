@@ -34,6 +34,8 @@ FROM 0.26 TO 0.27
 - B.J. Blazkowicz remembers how to use his feet when going from level to level with Wolfmove on. Also a weird glitch!
 - One of the oldest and most frustrating bugs has been fixed! Occaisionally people could use Random or swap between char classes and get other classes' weapons. No longer! While Weapon Drop on Death is not advised and will completely mess up the hud, it can be used now if you insist!
 - Skulltag mode works now! For the ten people that play this game mode, very sorry it took so long to fix.
+- The tipboxes have been enhanced dramatically! Now they work in spectator mode, and can be scrolled through to the different characters' at the player's leisure.
+- Wolfenstein Movement has been made a separate item from B.J. entirely. This is for the modders that want to add Wolfenstein Movement to their characters--add CanWolfMovement to your character, and viola!
 
 FROM 0.25 TO 0.26
 ========================
