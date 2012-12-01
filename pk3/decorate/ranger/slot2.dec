@@ -23,7 +23,6 @@ actor "Double Shotgun": InstantSwitchWeapon
         QDBS A 1 A_WeaponReady
         Loop
         
-        // 25 tics
       Fire:
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
         goto AfterSound
@@ -48,17 +47,17 @@ actor "Double Shotgun": InstantSwitchWeapon
         QDBS A 0 A_FireCustomMissile("QuakeBullet", random(-400,400)/100.0, 1, 0, 0, 0, random(-400,400)/100.0)
         goto Fire2
         
+        // 25 tics
       Fire2:
         QDBS B 1 bright
         QDBS C 1 bright
         QDBS D 2 bright
-        QDBS E 6
-        QDBS F 2
-        QDBS G 2
+        QDBS E 7
+        QDBS F 4
+        QDBS G 3
         QDBS H 3
-        QDBS I 4
-        QDBS A 3
-        // 25 tics
+        QDBS I 2
+        QDBS A 2
         QDBS I 0 A_ReFire
         Goto Ready
         

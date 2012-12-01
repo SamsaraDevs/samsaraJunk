@@ -66,13 +66,14 @@ actor "Nailgun": InstantSwitchWeapon
       NailLeft2:
         QNLG A 0 A_GiveInventory("NailgunSide")
         QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailLeft")
-        QNLG C 2 bright
+        QNLG D 1 bright
+        QNLG E 1 bright
         QNLG A 1 bright
         QNLG C 0 A_Refire
         goto Ready
 
       RageNailLeft:
-        QNLG C 2
+        QNLG D 2 bright
         QNLG C 0 A_Refire
         goto Ready
 
@@ -91,11 +92,18 @@ actor "Nailgun": InstantSwitchWeapon
 
       NailRight2:
         QNLG A 0 A_TakeInventory("NailgunSide")
-        QNLG B 2 bright
+        QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailRight")
+        QNLG B 1 bright
+        QNLG C 1 bright
         QNLG A 2 bright
         QNLG B 0 A_Refire
         goto Ready
 
+      RageNailRight:
+        QNLG B 2 bright
+        QNLG A 2 bright
+        QNLG C 0 A_Refire
+        goto Ready
 
       AltFire:
         TNT1 A 0 A_GiveInventory("FiringLavaNails")
