@@ -24,7 +24,7 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"QuakeRegenGiver",     "",                 "", ""},
+    {"Thunderbolt",         "Cell",                 "", ""},
 };
 
 int UniqueMaxes[CLASSCOUNT][4] = 
@@ -134,7 +134,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
-        {"Thunderbolt",                     "Cell",         "",             "", ""},
+        {"Super Nailgun",                   "Clip",         "",             "", ""},
         {"QuadDamageItem",                  "",             "",             "", ""},
     },
 };

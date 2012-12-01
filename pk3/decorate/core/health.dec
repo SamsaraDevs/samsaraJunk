@@ -312,7 +312,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
 
       PickupQuake:
         TNT1 A 0 A_PlaySound("quakeweps/megasphere", CHAN_ITEM)
-        TNT1 A 0 ACS_ExecuteAlways(249, 0, 250, 2, 175)
+        TNT1 A 0 A_GiveInventory("QuakeRegenGiver")//ACS_ExecuteAlways(249, 0, 250, 2, 175)
         TNT1 A 0 A_GiveInventory("QuakeRedArmor")
         stop
 
