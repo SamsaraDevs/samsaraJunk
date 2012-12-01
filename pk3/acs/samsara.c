@@ -17,6 +17,7 @@ int array_pickupswitch[PLAYERMAX];
 int DukeQuoteCooldown[PLAYERMAX];
 int ServerEnterTimes[PLAYERMAX];
 int ClientEnterTimes[PLAYERMAX];
+int ClientTipboxes[PLAYERMAX];
 
 int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash;
 int SamsaraClientWeps[SLOTCOUNT] = {0};
@@ -1094,185 +1095,82 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
     }
 }
 
-
-// TIPBOX START
-
-str CoolTips1[CLASSCOUNT] = {"DOOMTIP1", "CHEXTIP1", "HERETIP1", "WOLFTIP1", "HEXNTIP1", "DUKETIP1", "MARATIP1", "QUAKTIP1"};
-//str CoolTips2[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP2", "HERETIP2", "WOLFTIP2", "HEXNTIP2", "DUKETIP2", "MARATIP2"};
-//str CoolTips3[CLASSCOUNT] = {"DOOMTIP2", "CHEXTIP3", "HERETIP3", "WOLFTIP3", "HEXNTIP3", "DUKETIP3", "MARATIP3"}; // NOPE AIN'T WORKIN'
-
-script 300 (int tipboxshit) NET
+script SAMSARA_TIPBOX (void) net
 {
-    int classNumber = samsaraClassNum();
-    switch (tipboxshit)
+    int pln = PlayerNumber();
+
+    ClientTipboxes[pln] = !ClientTipboxes[pln];
+
+    SetPlayerProperty(0, ClientTipboxes[pln], PROP_TOTALLYFROZEN);
+    ACS_ExecuteAlways(SAMSARA_TIPBOX_CLIENT, 0, ClientTipboxes[pln], 0, 0);
+}
+
+script SAMSARA_TIPBOX_CLIENT (int tipon) clientside
+{
+    int tipclass;
+    int tipnum = 0;
+    int pln = PlayerNumber();
+
+    int i, j, modc, modn, modx, mody, classmod, tipscroll;
+
+    // Comment out for ZDoom
+    if (ConsolePlayerNumber() != pln) { terminate; } // Unnecessary but nice to not have assumptions made
+
+    if (PlayerIsSpectator(pln)) { tipclass = random(1, CLASSCOUNT) - 1; }
+    else { tipclass = samsaraClassNum(); }
+
+    ClientTipboxes[pln] = tipon;
+
+    while (ClientTipboxes[pln])
     {
-      case 1:
-        SetHudSize(1024,768,1);
-        SetFont(CoolTips1[classNumber]);
-        HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-        break;
+        SetHudSize(1024, 768, 1);
+
+        for (i = -2; i <= 2; i++)
+        {
+            modc = mod(tipclass + i, CLASSCOUNT);
+            modn = tipnum;
+
+            j = 900 * tipscroll;
+            j -= (j % 1.0);
+            modx = itof(512 + (900 * i)) - j;
+
+
+            //if (modx < 0) { modx -= 0.6; }
+            //else { modx += 0.4; }
+
+            SetFont(Tipboxes[modc][modn]);
+            HudMessage(s:"A"; HUDMSG_FADEOUT, -6281 + i, CR_UNTRANSLATED, modx, 384.0, 1.0, 0.5);
+        }
+
+        classmod += keyPressed(BT_RIGHT) + keyPressed(BT_MOVERIGHT);
+        classmod -= keyPressed(BT_LEFT) + keyPressed(BT_MOVELEFT);
         
-      case 2:
-        if (GameType () == GAME_NET_COOPERATIVE)
+        tipscroll += itof(classmod) / TIP_SCROLLRATE;
+
+        if (ftoi(abs(tipscroll)))
         {
-            if (CheckInventory("DoomguyClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DOOMTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("ChexClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("CHEXTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("CorvusClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HERETIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("WolfenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("WOLFTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("HexenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HEXNTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("DukeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DUKETIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("MarathonClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("MARATIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("QuakeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("QUAKTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
+            tipclass += roundZero(tipscroll);
+            classmod -= roundZero(tipscroll);
+            tipscroll = mod(scroll, 1.0);
         }
-        else if (GameType () == GAME_SINGLE_PLAYER)
-        {
-            if (CheckInventory("DoomguyClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DOOMTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("ChexClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("CHEXTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("CorvusClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HERETIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("WolfenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("WOLFTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("HexenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HEXNTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("DukeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DUKETIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("MarathonClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("MARATIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("QuakeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("QUAKTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-        }
-        else
-        {
-            if (CheckInventory("DoomguyClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DOOMTIP2");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("ChexClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("CHEXTIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("CorvusClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HERETIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("WolfenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("WOLFTIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("HexenClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("HEXNTIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("DukeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("DUKETIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("MarathonClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("MARATIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-            if (CheckInventory("QuakeClass"))
-            {
-                SetHudSize(1024,768,1);
-                SetFont("QUAKTIP3");
-                HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-            }
-        }
-        break;
-        
-      case 3:
-        SetHudSize(1024,768,1);
-        SetFont(CoolTips1[8]);
-        HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-        break;
+
+        tipclass = mod(tipclass, CLASSCOUNT);
+
+        tipnum -= keyPressed(BT_FORWARD) + keyPressed(BT_LOOKUP);
+        tipnum += keyPressed(BT_BACK) + keyPressed(BT_LOOKDOWN);
+        tipnum = mod(tipnum, TIPCOUNT);
+
+        SetFont("SMALLFONT");
+        HudMessage(k:"+left", s:"\cj or \c-", k:"+moveleft", s:"\cj to scroll left";
+                        HUDMSG_PLAIN, -8281, CR_GOLD, 662.4, 712.1, 1.0, 0.5);
+
+        HudMessage(k:"+right", s:"\cj or \c-", k:"+moveright", s:"\cj to scroll right";
+                        HUDMSG_PLAIN, -8282, CR_GOLD, 362.4, 712.1, 1.0, 0.5);
+
+        HudMessage(s:"\cj(\c-", k:"+forward", s:"\cj, \c-", k:"+lookup", s:"\cj) and (\c-", k:"+back", s:"\cj, \c-", k:"+lookdown", s:"\cj) change tipbox mode";
+                        HUDMSG_PLAIN, -8283, CR_GOLD, 512.4, 726.1, 1.0, 0.5);
+
+        Delay(1);
     }
 }
 

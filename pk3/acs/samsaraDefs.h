@@ -15,6 +15,9 @@
 #define SAMSARA_MARATHON            209
 #define SAMSARA_MEGAHEALTH          249
 
+#define SAMSARA_TIPBOX              300
+#define SAMSARA_TIPBOX_CLIENT       301
+
 #define SAMSARA_PUKE                226
 #define SAMSARA_OPEN_CLIENT         248
 #define SAMSARA_ENTER_CLIENT        221
@@ -26,6 +29,7 @@
 #define CLASSCOUNT          8
 #define UNIQUECOUNT         2
 #define SLOTCOUNT           9
+#define TIPCOUNT            2
 
 #define LMSMODES            6
 
@@ -51,6 +55,8 @@
 
 #define REGEN_CENTER_X      0.953125    // 610 / 640
 #define REGEN_CENTER_Y      0.6875      // 330 / 480
+
+#define TIP_SCROLLRATE      8
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -150,3 +156,28 @@ int UnloadRemove[UNLOADCOUNT] =
 };
 
 int PowerOutVols[5] = {96, 104, 112, 120, 127};
+
+int Tipboxes[CLASSCOUNT][TIPCOUNT] =
+{
+    {"DOOMTIP1", "DOOMTIP2"},
+    {"CHEXTIP1", "CHEXTIP2"},
+    {"HERETIP1", "HERETIP2"},
+    {"WOLFTIP1", "WOLFTIP2"},
+    {"HEXNTIP1", "HEXNTIP2"},
+    {"DUKETIP1", "DUKETIP2"},
+    {"MARATIP1", "MARATIP2"},
+    {"QUAKTIP1", "QUAKTIP2"},
+};
+
+
+int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
+{
+    {"", "DOOMTIP3"},
+    {"", "CHEXTIP3"},
+    {"", "HERETIP3"},
+    {"", "WOLFTIP3"},
+    {"", "HEXNTIP3"},
+    {"", "DUKETIP3"},
+    {"", "MARATIP3"},
+    {"", "QUAKTIP3"},
+};

@@ -734,3 +734,9 @@ function int JumpZFromHeight(int height, int gravFactor)
 {
     return sqrt(2 * height * gravFactor);
 }
+
+function int roundZero(int toround)
+{
+    int i = toround % 1.0;
+    return ftoi(toround - i);
+}
