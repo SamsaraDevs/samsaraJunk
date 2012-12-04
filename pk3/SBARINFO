@@ -2987,7 +2987,7 @@ playerclass Ranger
 	IsSelected not "Super Nailgun" {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}}}}
 	IsSelected "Grenade Launcher" {
 	InInventory not UsingMultiNades {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
-	InInventory UsingMultiNades, 1 {drawnumber 3, QUAKHUDF, gold, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	InInventory UsingMultiNades, 1 {drawnumber 3, QUAKHUDF, gold, ammo2, 42, 181, 0, red, 0, red, 20;}
 	}
 	IsSelected "  Rocket Launcher  " {
 	InInventory not UsingMultiRockets {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
