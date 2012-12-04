@@ -66,7 +66,7 @@ StatusBar Fullscreen
             DrawImage "AMSMC0", 238, 195, Center;
         DrawImage "AMSMD0", 238, 185, Center;}
 
-        IsSelected "Nailgun", "Super Nailgun"
+        IsSelected "Nailgun"
         {
             DrawImage "HUDBAR", 250, 192;
             DrawBar "HAMBAR", "HEMPTY", LavaNails, Horizontal, Reverse, 251, 193;
@@ -155,7 +155,7 @@ StatusBar Fullscreen
         IsSelected "Firestorm" {drawimage "STY2NUM6", 176, 10;}
         IsSelected "Freezethrower" {drawimage "STY2NUM6", 176, 10;}
         IsSelected "TOZT-7 Napalm Unit" {drawimage "STY2NUM6", 176, 10;}
-        IsSelected "Thunderbolt" {drawimage "STY2NUM6", 176, 10;}
+        IsSelected "Super Nailgun" {drawimage "STY2NUM6", 176, 10;}
         
         DrawSwitchableImage WeaponSlot 7, "", "STYSNUM7", 186, 10;
         InInventory PortTome, 1 {drawimage "STYSNUM7", 186, 10;}
@@ -166,6 +166,7 @@ StatusBar Fullscreen
         IsSelected "Spear of Destiny" {drawimage "STY2NUM7", 186, 10;}
         IsSelected "Wraithverge" {drawimage "STY2NUM7", 186, 10;}
         IsSelected "Devastator" {drawimage "STY2NUM7", 186, 10;}
+        InInventory QuadDamageItem, 1 {drawimage "STYSNUM7", 186, 10;}
         InInventory QuadDamagePower, 1 {drawimage "STY2NUM7", 186, 10;}
         
         IsSelected not "MA-75B Assault Rifle" {
@@ -1666,7 +1667,26 @@ InInventory ExpandedHud, 1
 playerclass Ranger
 {
     drawimage "QUAKBAR", 0, 168;
-    drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	IsSelected not "Grenade Launcher" {
+	IsSelected not "  Rocket Launcher  " {
+	IsSelected not "Nailgun" {
+	IsSelected not "Super Nailgun" {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}}}}
+	IsSelected "Grenade Launcher" {
+	InInventory not UsingMultiNades {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory UsingMultiNades, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "  Rocket Launcher  " {
+	InInventory not UsingMultiRockets {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory UsingMultiRockets, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "Nailgun" {
+	InInventory not FiredLavaNails {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory FiredLavaNails, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "Super Nailgun" {
+	InInventory not FiredSLNails {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory FiredSLNails, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
     drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
     
@@ -2961,7 +2981,26 @@ drawmugshot "STF", 5, 143, 168;
 playerclass Ranger
 {
     drawimage "QUAKBAR", 0, 168;
-    drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	IsSelected not "Grenade Launcher" {
+	IsSelected not "  Rocket Launcher  " {
+	IsSelected not "Nailgun" {
+	IsSelected not "Super Nailgun" {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}}}}
+	IsSelected "Grenade Launcher" {
+	InInventory not UsingMultiNades {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory UsingMultiNades, 1 {drawnumber 3, QUAKHUDF, gold, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "  Rocket Launcher  " {
+	InInventory not UsingMultiRockets {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory UsingMultiRockets, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "Nailgun" {
+	InInventory not FiredLavaNails {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory FiredLavaNails, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
+	IsSelected "Super Nailgun" {
+	InInventory not FiredSLNails {drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;}
+	InInventory FiredSLNails, 1 {drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;}
+	}
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
     drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
     

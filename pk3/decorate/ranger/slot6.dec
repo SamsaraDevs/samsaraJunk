@@ -1,15 +1,17 @@
-actor "Super Nailgun": InstantSwitchWeapon
+actor "Super Nailgun": Weapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 4
-
-    Weapon.AmmoType "Clip"
-    Weapon.AmmoType2 "LavaNails"
     Weapon.AmmoUse 2
-    Weapon.AmmoUse2 2
     Weapon.AmmoGive 30
+    Weapon.AmmoType "Clip"
+
+    Weapon.AmmoUse2 2
+    Weapon.AmmoGive2 0
+    Weapon.AmmoType2 "LavaNails"
 
     Weapon.SlotNumber 6
+
 
     Inventory.Icon "QSNGZ0"
 
@@ -19,13 +21,23 @@ actor "Super Nailgun": InstantSwitchWeapon
 
     States
     {
+      Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Lower
+        QSNG A 1 A_Lower
+        Loop
+
+      Select:
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Raise
+        QSNG A 1 A_Raise
+        Loop
+
       Ready:
         QSNG A 0 A_TakeInventory("SNGFrame")
+        QSNG A 0 A_JumpIfInventory("FiredSLNails", 1, "LavaReady")
         QSNG A 1 A_WeaponReady
         Loop
 
       LavaReady:
-        QSNG A 0 A_TakeInventory("SNGFrame")
         QSNL A 1 A_WeaponReady
         loop
 
@@ -112,9 +124,9 @@ actor "Super Nailgun": InstantSwitchWeapon
         QSNL A 0 A_GiveInventory("FiredSLNails")
         QSNL A 0 A_GunFlash
         QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
-        QSNL A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
-        QSNL A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
-        QSNL A 0 A_FireCustomMissile("QNTrail3",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
 
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
@@ -186,7 +198,7 @@ actor "Super Nailgun": InstantSwitchWeapon
       AltFireEnd:
         QSNL A 0 A_TakeInventory("SNGFrame")
         QSNL A 0 A_PlaySound("quakeweps/lavaend", 5)
-        goto LavaReady
+        goto Ready
 
       Spawn:
         QSNG Z -1

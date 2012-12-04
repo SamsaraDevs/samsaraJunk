@@ -22,20 +22,23 @@ actor "Grenade Launcher": InstantSwitchWeapon
     States
     {
       Ready:
+		TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"Ready2")
         QGRL A 1 A_WeaponReady
-        loop
-
-      MultiReady:
+        Loop
+		
+      Ready2:
         QMGL A 1 A_WeaponReady
-        loop
+        Loop
 
       // 22 tics
       Fire:
+		TNT1 A 0 A_TakeInventory("UsingMultiNades")
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
         goto AfterSound
 
       QuadFire:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
         QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
         QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
         QGRL B 0 A_FireCustomMissile("QuakeGrenadeQuad", 0, 1, 0, 0, 0, 5)
@@ -67,33 +70,35 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QGRL G 3
         QGRL H 2
         QGRL I 1
-        // 22 tics
+		// 22 tics
         QGRL I 0 A_Refire
         Goto Ready
 
       AltFire:
-        QMGL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+		TNT1 A 0 A_GiveInventory("UsingMultiNades")
+        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadAlt")
         goto AfterSoundAlt
 
       QuadAlt:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuadAlt")
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuadAlt")
-        QMGL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 1, 0, 0, 0, 5)
+        QGRL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 1, 0, 0, 0, 5)
         goto AltFire2
 
       CoopQuadAlt:
-        QMGL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        QGRL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 1, 0, 0, 0, 5)
         goto AltFire2
 
       AfterSoundAlt:
-        QMGL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
-        QMGL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
-        QMGL B 0 A_FireCustomMissile("QuakeClusterGrenade", 0, 1, 0, 0, 0, 5)
+        QGRL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
+        QGRL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
+        QGRL B 0 A_FireCustomMissile("QuakeClusterGrenade", 0, 1, 0, 0, 0, 5)
         goto AltFire2
 
       CoopAlt:
-        QMGL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        QGRL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 1, 0, 0, 0, 5)
         goto AltFire2
 
       AltFire2:
@@ -108,15 +113,17 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QMGL G 3
         QMGL H 2
         QMGL I 1
-        // 22 tics
+		// 22 tics
         QMGL I 0 A_Refire
-        goto MultiReady
+        Goto Ready
 
       Spawn:
         QGRL Z -1
         Stop
     }
 }
+
+actor UsingMultiNades : Boolean { }
 
 actor QuakeGrenade
 {
