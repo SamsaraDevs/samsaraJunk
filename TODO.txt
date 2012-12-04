@@ -1,7 +1,5 @@
 QUACKGUI:
 
- -  Team Power
-
  -  Tipbox (1/3 done)
 
  -  Model support (LAST PRIORITY, SHIT LOOKS HARD YO)

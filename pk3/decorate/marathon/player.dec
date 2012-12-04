@@ -361,6 +361,8 @@ actor MarathonPlayer : PlayerPawn
       Pain.Explosive:
 
       Pain.DukeExplosive:
+
+      Pain.NotQuadded:
         SOPL Y 4 A_SetBlend("Yellow",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn

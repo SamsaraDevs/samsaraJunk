@@ -309,6 +309,8 @@ Actor PowerLesserTome : PowerDamage
 	DamageFactor "BJSpear", 1.5
 	DamageFactor "WMCBeam", 1.5
 	DamageFactor "WMCNade", 1.5
+  DamageFactor "NotQuadded", 1.5
+  DamageFactor "QuakePistol", 1.5
 }
 
 // Dropped ammo replacement!
