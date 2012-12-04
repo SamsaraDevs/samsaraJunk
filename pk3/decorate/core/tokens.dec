@@ -17,6 +17,7 @@ actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}
 actor ExpandedHud: Boolean {}
 actor DoomNoBFGAim: Boolean {}
+actor UsingDoEAmmo: Boolean {}
 actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
 
