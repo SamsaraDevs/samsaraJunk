@@ -2,7 +2,7 @@ QUACKGUI:
 
  -  Team Power
 
- -  Tipbox (1/3 done)]
+ -  Tipbox (1/3 done)
 
  -  Model support (LAST PRIORITY, SHIT LOOKS HARD YO)
 
@@ -11,8 +11,6 @@ QUACKGUI:
  -  Compile changelist from original Quake.
 
  -  Proper gib death
-
- -  Convert .wav sounds to .ogg (LOW PRIORITY)
 
  -  A new weapon I. Preferably one that uses Cell as ammo.
 
@@ -34,6 +32,6 @@ CHANGES FROM QUAKE:
 
  -  The nails and rockets originally travelled at the same speed. Here, Nails have been increased to speed 75.
 
- -  Lava Nails, Multi-Grenades, and Multi-Rockets were handled a bit differently.
+ -  Lava Nails, Multi-Grenades, and Multi-Rockets were handled a bit differently. There were no alt-fires, much less that swapped between weapons, and the ammo pickups were separate.
 
  -  The Double Barreled Shotgun's and Nailgun's animations are slightly smoother.
