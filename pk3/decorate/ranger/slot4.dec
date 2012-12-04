@@ -35,14 +35,6 @@ actor "Nailgun": InstantSwitchWeapon
 
       Fire:
         TNT1 A 0 A_TakeInventory("FiredLavaNails")
-        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
-        goto AfterSound
-
-      QuadSound:
-        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSound
-
-      AfterSound:
         QNLG A 0 A_GunFlash
         QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
         goto FireNail
@@ -110,14 +102,6 @@ actor "Nailgun": InstantSwitchWeapon
 
       AltFire:
         TNT1 A 0 A_GiveInventory("FiredLavaNails")
-        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSoundAlt")
-        goto AfterSoundAlt
-
-      QuadSoundAlt:
-        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSoundAlt
-
-      AfterSoundAlt:
         QNLG A 0 A_GunFlash
         QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
         goto FireAlt

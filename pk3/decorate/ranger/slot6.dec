@@ -13,7 +13,7 @@ actor "Super Nailgun": Weapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the super nailgun"
-    Obituary "%k SUPER-nailed %o." // like this will ever be uuuuuused // Oh, the irony!
+    Obituary "%k penetrated %o."
 
     States
     {
@@ -29,17 +29,32 @@ actor "Super Nailgun": Weapon
 
       Ready:
         QSNG A 0 A_TakeInventory("SNGFrame")
+        QSNG A 0 A_JumpIfInventory("FiredSLNails", 1, "LavaReady")
         QSNG A 1 A_WeaponReady
         Loop
 
+      LavaReady:
+        QSNL A 1 A_WeaponReady
+        loop
+
       Fire:
+        QSNG A 0 A_TakeInventory("FiredSLNails")
         QSNG A 0 A_GunFlash
         QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
         QSNG A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
         QSNG A 0 A_FireCustomMissile("QNTrail3",  0, 0, 0)
-        QSNG A 0 A_FireCustomMissile("QuakeSuperNail")
 
+        QSNG A 0 A_JumpIfInventory("CoopModeOn", 1, "FireCoop")
+        QSNG A 0 A_JumpIfInventory("SPModeOn", 1, "FireCoop")
+        QSNG A 0 A_FireCustomMissile("QuakeSuperNail")
+        goto Fire0
+
+      FireCoop:
+        QSNG A 0 A_FireCustomMissile("QuakeSuperNailCoop")
+        goto Fire0
+      
+      Fire0:
         QSNG A 0 A_JumpIfInventory("SNGFrame", 6, "Fire7")
         QSNG A 0 A_JumpIfInventory("SNGFrame", 5, "Fire6")
         QSNG A 0 A_JumpIfInventory("SNGFrame", 4, "Fire5")
@@ -49,70 +64,136 @@ actor "Super Nailgun": Weapon
         goto Fire1
 
       Fire1:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG B 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG B 1 bright
+        QSNG B 0 bright A_GiveInventory("SNGFrame")
+        QSNG B 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG B 0 A_Refire
         goto FireEnd
 
       Fire2:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG C 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG C 2 bright
+        QSNG C 0 bright A_GiveInventory("SNGFrame")
+        QSNG C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG C 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG C 0 A_Refire
         goto FireEnd
 
       Fire3:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG D 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG D 1 bright
+        QSNG D 0 bright A_GiveInventory("SNGFrame")
+        QSNG D 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG D 0 A_Refire
         goto FireEnd
 
       Fire4:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG E 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG E 2 bright
+        QSNG E 0 bright A_GiveInventory("SNGFrame")
+        QSNG E 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG E 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG E 0 A_Refire
         goto FireEnd
 
       Fire5:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG F 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG F 1 bright
+        QSNG F 0 bright A_GiveInventory("SNGFrame")
+        QSNG F 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG F 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG F 0 A_Refire
         goto FireEnd
 
       Fire6:
-        QSNG A 0 bright A_GiveInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG G 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG G 2 bright
+        QSNG G 0 bright A_GiveInventory("SNGFrame")
+        QSNG G 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG G 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG G 0 A_Refire
         goto FireEnd
 
       Fire7:
-        QSNG A 0 bright A_TakeInventory("SNGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QSNG H 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QSNG H 1 bright
+        QSNG H 0 bright A_TakeInventory("SNGFrame")
+        QSNG H 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNG H 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QSNG H 0 A_Refire
         goto FireEnd
       
       FireEnd:
         QSNG A 0 A_TakeInventory("SNGFrame")
+        goto Ready
+
+      AltFire:
+        QSNL A 0 A_GiveInventory("FiredSLNails")
+        QSNL A 0 A_GunFlash
+        QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
+        QSNL A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QNTrail3",  0, 0, 0)
+
+        QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
+        QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
+        QSNL A 0 A_FireCustomMissile("QuakeSLNail")
+        goto AltFire0
+
+      AltFireCoop:
+        QSNL A 0 A_FireCustomMissile("QuakeSLNailCoop")
+        goto AltFire0
+      
+      AltFire0:
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 6, "AltFire7")
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 5, "AltFire6")
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 4, "AltFire5")
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 3, "AltFire4")
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 2, "AltFire3")
+        QSNL A 0 A_JumpIfInventory("SNGFrame", 1, "AltFire2")
+        goto AltFire1
+
+      AltFire1:
+        QSNL B 0 bright A_GiveInventory("SNGFrame")
+        QSNL B 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL B 0 A_Refire
+        goto AltFireEnd
+
+      AltFire2:
+        QSNL C 0 bright A_GiveInventory("SNGFrame")
+        QSNL C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL C 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL C 0 A_Refire
+        goto AltFireEnd
+
+      AltFire3:
+        QSNL D 0 bright A_GiveInventory("SNGFrame")
+        QSNL D 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL D 0 A_Refire
+        goto AltFireEnd
+
+      AltFire4:
+        QSNL E 0 bright A_GiveInventory("SNGFrame")
+        QSNL E 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL E 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL E 0 A_Refire
+        goto AltFireEnd
+
+      AltFire5:
+        QSNL F 0 bright A_GiveInventory("SNGFrame")
+        QSNL F 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL F 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL F 0 A_Refire
+        goto AltFireEnd
+
+      AltFire6:
+        QSNL G 0 bright A_GiveInventory("SNGFrame")
+        QSNL G 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL G 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL G 0 A_Refire
+        goto AltFireEnd
+
+      AltFire7:
+        QSNL H 0 bright A_TakeInventory("SNGFrame")
+        QSNL H 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QSNL H 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+        QSNL H 0 A_Refire
+        goto AltFireEnd
+      
+      AltFireEnd:
+        QSNL A 0 A_TakeInventory("SNGFrame")
+        QSNL A 0 A_PlaySound("quakeweps/lavaend", 5)
         goto Ready
 
       Spawn:
@@ -125,21 +206,28 @@ actor "Super Nailgun": Weapon
 actor QuakeSuperNail: QuakeNail
 {
     Damage (18)
-
-    States
-    {
-      Death:
-        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff2",random(-5,5),random(-5,5),random(-5,-5),0,0,random(-10,1)/10)
-        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("QuakeBulletPuff3",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
-        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff4",random(-5,5),random(-5,5),random(-5,5),0,0,random(-10,1)/10)
-        TNT1 AA 0 A_SpawnItemEx("NailBounce", 0,0,0, random(-2, 2),0,random(2, 4), random(0, 360))
-        TNT1 A 1 A_PlaySound("quakeweps/nailricochet")
-        stop
-    }
 }
+
+actor QuakeSuperNailCoop: QuakeSuperNail
+{
+    Damage (24)
+}
+
+actor QuakeSLNail: QuakeLavaNail
+{
+    Damage (36)
+}
+
+actor QuakeSLNailCoop: QuakeSLNail
+{
+    Damage (48)
+}
+
 
 actor SNGFrame: Inventory
 {
     inventory.maxamount 0x7FFFFFFF
     +UNDROPPABLE
 }
+
+actor FiredSLNails: Boolean {}

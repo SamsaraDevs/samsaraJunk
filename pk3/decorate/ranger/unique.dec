@@ -1,6 +1,5 @@
 actor QuakeRegenTimer: Counter {}
 
-
 actor "Thunderbolt": InstantSwitchWeapon
 {
     Weapon.Kickback 100
@@ -8,6 +7,8 @@ actor "Thunderbolt": InstantSwitchWeapon
     Weapon.AmmoUse 1
     Weapon.AmmoGive 15
     Weapon.AmmoType "Cell"
+
+    Weapon.SlotNumber 7
 
     +NOAUTOAIM
     +UNDROPPABLE
@@ -20,7 +21,12 @@ actor "Thunderbolt": InstantSwitchWeapon
 
     States
     {
+      Select:
+        TNT1 A 0 A_GiveInventory("UsingLG")
+        goto Super::Select
+
       Deselect:
+        TNT1 A 0 A_TakeInventory("UsingLG")
         TNT1 A 0 A_StopSound(6)
         TNT1 A 0 A_StopSound(7)
         goto Super::Deselect
@@ -55,47 +61,43 @@ actor "Thunderbolt": InstantSwitchWeapon
 
       Fire0:
         QLTG B 0 A_GiveInventory("LGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QLTG B 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QLTG B 1 bright
+        QLTG B 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QLTG B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         goto FireEnd
 
       Fire1:
         QLTG C 0 A_GiveInventory("LGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QLTG C 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QLTG C 1 bright
+        QLTG C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QLTG C 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         goto FireEnd
 
       Fire2:
         QLTG D 0 A_GiveInventory("LGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QLTG D 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QLTG D 1 bright
+        QLTG D 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QLTG D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         goto FireEnd
 
       Fire3:
         QLTG E 0 A_TakeInventory("LGFrame")
-        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QLTG E 2 bright
-        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
-        QLTG E 1 bright
+        QLTG E 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QLTG E 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         goto FireEnd
 
       FireEnd:
         QLTG E 0 A_Refire
         QLTG E 0 A_TakeInventory("LGFrame")
-        QLTG F 2 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
-        QLTG G 1 A_StopSound(7)
-		QLTG H 1
+        QLTG E 0 A_PlaySound("quakeweps/lightningstart", CHAN_WEAPON)
+        QLTG E 0 A_StopSound(7)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
-        goto Ready
+        goto End2
 
       QuadSound2:
-        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 6)
+        goto End2
+
+      End2:
+        QLTG F 2 A_WeaponReady
+        QLTG GH 1 A_WeaponReady
         goto Ready
 
       Discharge:
@@ -309,3 +311,5 @@ actor LGFrame: Inventory
     inventory.maxamount 0x7FFFFFFF
     +UNDROPPABLE
 }
+
+actor UsingLG: Boolean {}
