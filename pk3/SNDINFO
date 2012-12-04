@@ -997,46 +997,46 @@ alienweapon/hit			MTAWPHIT
 // Ranger sounds
 //////////////////
 
-ranger/death1   sounds/ranger/death1.wav
-ranger/death2   sounds/ranger/death2.wav
-ranger/death3   sounds/ranger/death3.wav
+ranger/death1   sounds/ranger/death1.ogg
+ranger/death2   sounds/ranger/death2.ogg
+ranger/death3   sounds/ranger/death3.ogg
 $random ranger/death        { ranger/death1 ranger/death2 ranger/death3 }
 
-ranger/hideath1 sounds/ranger/hideath1.wav
-ranger/hideath2 sounds/ranger/hideath2.wav
+ranger/hideath1 sounds/ranger/hideath1.ogg
+ranger/hideath2 sounds/ranger/hideath2.ogg
 $random ranger/hideath      { ranger/hideath1 ranger/hideath2 }
 
 ranger/pain100_1    sounds/ranger/pain1.wav
 ranger/pain100_2    sounds/ranger/pain2.wav
 $random ranger/pain100      { ranger/pain100_1 ranger/pain100_2 }
 
-ranger/pain75_1     sounds/ranger/pain4.wav
-ranger/pain75_2     sounds/ranger/pain5.wav
+ranger/pain75_1     sounds/ranger/pain4.ogg
+ranger/pain75_2     sounds/ranger/pain5.ogg
 $random ranger/pain75       { ranger/pain75_1 ranger/pain75_2 }
 
-ranger/pain50_1     sounds/ranger/pain3.wav
+ranger/pain50_1     sounds/ranger/pain3.ogg
 $random ranger/pain50       { ranger/pain75_1 ranger/pain50_1 }
 
-ranger/pain25       sounds/ranger/pain6.wav
+ranger/pain25       sounds/ranger/pain6.ogg
 
-ranger/drowning1    sounds/ranger/drown1.wav
+ranger/drowning1    sounds/ranger/drown1.ogg
 ranger/drowning2    sounds/ranger/drown2.wav
 $random ranger/drowning  { ranger/drowning1 ranger/drowning2 }
 
-ranger/drown        sounds/ranger/h2odeath.wav
+ranger/drown        sounds/ranger/h2odeath.ogg
 
-ranger/firepain1    sounds/ranger/lburn1.wav
-ranger/firepain2    sounds/ranger/lburn2.wav
+ranger/firepain1    sounds/ranger/lburn1.ogg
+ranger/firepain2    sounds/ranger/lburn2.ogg
 $random ranger/firepain  { ranger/firepain1 ranger/firepain2 }
 
-ranger/fallpain     sounds/ranger/land2.wav
+ranger/fallpain     sounds/ranger/land2.ogg
 
-ranger/telefragged1 sounds/ranger/teledth1.wav
-ranger/telefragged2 sounds/ranger/tornoff2.wav
+ranger/telefragged1 sounds/ranger/teledth1.ogg
+ranger/telefragged2 sounds/ranger/tornoff2.ogg
 $random ranger/telefragged  { ranger/telefragged1 ranger/telefragged2 }
 
-ranger/gib1         sounds/ranger/gib.wav
-ranger/gib2         sounds/ranger/udeath.wav
+ranger/gib1         sounds/ranger/gib.ogg
+ranger/gib2         sounds/ranger/udeath.ogg
 $random ranger/gib          { ranger/gib1 ranger/gib2 }
 
 $playeralias        Ranger      male    *death          ranger/death
@@ -1045,12 +1045,12 @@ $playersound        Ranger      male    *burndeath      dgdethf
 $playeralias        Ranger      male    *crazydeath     ranger/hideath
 $playersound        Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib
-$playersound        Ranger      male    *falling        sounds/ranger/falling1.wav
+$playersound        Ranger      male    *falling        sounds/ranger/falling1.ogg
 $playeralias        Ranger      male    *pain100        ranger/pain100
 $playeralias        Ranger      male    *pain75         ranger/pain75
 $playeralias        Ranger      male    *pain50         ranger/pain50
 $playeralias        Ranger      male    *pain25         ranger/pain25
-$playersound        Ranger      male    *jump           sounds/ranger/plyrjmp8.wav
+$playersound        Ranger      male    *jump           sounds/ranger/plyrjmp8.ogg
 $playersound        Ranger      male    *land           dgland
 $playersound        Ranger      male    *grunt          sounds/ranger/land.wav
 $playersound        Ranger      male    *usefail        sounds/ranger/land.wav
@@ -1058,52 +1058,52 @@ $playersound        Ranger      male    *puzzfail       dgpuzz
 $playersound        Ranger      male    *taunt          sounds/ranger/taunt.ogg
 
 quakeweps/blank                 sounds/ranger/blank.ogg
-quakeweps/weaponget             sounds/ranger/w_pkup.wav
-quakeweps/megahealth            sounds/ranger/m_health.wav
-quakeweps/megasphere            sounds/ranger/megasphere.wav
+quakeweps/weaponget             sounds/ranger/w_pkup.ogg
+quakeweps/megahealth            sounds/ranger/m_health.ogg
+quakeweps/megasphere            sounds/ranger/megasphere.ogg
 
-quakeweps/gauntlet              sounds/ranger/fstrun.wav
-quakeweps/gauntlethum           sounds/ranger/fsthum.wav
-quakeweps/gauntlethit           sounds/ranger/fstatck.wav
+quakeweps/gauntlet              sounds/ranger/fstrun.ogg
+quakeweps/gauntlethum           sounds/ranger/fsthum.ogg
+quakeweps/gauntlethit           sounds/ranger/fstatck.ogg
 $limit quakeweps/gauntlethit 0
 
 quakeweps/axe                   sounds/ranger/axe.wav
 quakeweps/axewall               sounds/ranger/axewall.wav
-quakeweps/shotgunfire           sounds/ranger/shotgun.wav
-quakeweps/ssgfire               sounds/ranger/shotgun2.wav
-quakeweps/nailgunfire           sounds/ranger/nailgun.wav
-quakeweps/sngfire               sounds/ranger/supernailgun.wav
-quakeweps/lavaend               sounds/ranger/lavaend.wav
+quakeweps/shotgunfire           sounds/ranger/shotgun.ogg
+quakeweps/ssgfire               sounds/ranger/shotgun2.ogg
+quakeweps/nailgunfire           sounds/ranger/nailgun.ogg
+quakeweps/sngfire               sounds/ranger/supernailgun.ogg
+quakeweps/lavaend               sounds/ranger/lavaend.ogg
 
-quakeweps/nr1                   sounds/ranger/ric1.wav
-quakeweps/nr2                   sounds/ranger/ric2.wav
-quakeweps/nr3                   sounds/ranger/ric3.wav
+quakeweps/nr1                   sounds/ranger/ric1.ogg
+quakeweps/nr2                   sounds/ranger/ric2.ogg
+quakeweps/nr3                   sounds/ranger/ric3.ogg
 
 $random quakeweps/nailricochet  { quakeweps/nr1 quakeweps/nr2 quakeweps/nr3 }
 $rolloff quakeweps/nailricochet 64 384
 
-quakeweps/glfire                sounds/ranger/grenade.wav
-quakeweps/grenadebounce         sounds/ranger/bounce.wav
+quakeweps/glfire                sounds/ranger/grenade.ogg
+quakeweps/grenadebounce         sounds/ranger/bounce.ogg
 $limit quakeweps/grenadebounce  0
 
-quakeweps/grenadebounce_quiet   sounds/ranger/bounce.wav
+quakeweps/grenadebounce_quiet   sounds/ranger/bounce.ogg
 $volume quakeweps/quakebounce_quiet 0.3
 $limit  quakeweps/quakebounce_quiet 0
 
-quakeweps/explode               sounds/ranger/explode.wav
+quakeweps/explode               sounds/ranger/explode.ogg
 $limit quakeweps/explode        0
 
-quakeweps/rlfire                sounds/ranger/rocket.wav
+quakeweps/rlfire                sounds/ranger/rocket.ogg
 
-quakeweps/lightningstart        sounds/ranger/lstart.wav
-quakeweps/lightning             sounds/ranger/lightning.wav
+quakeweps/lightningstart        sounds/ranger/lstart.ogg
+quakeweps/lightning             sounds/ranger/lightning.ogg
 
-quakeweps/quadget               sounds/ranger/quadget.wav
+quakeweps/quadget               sounds/ranger/quadget.ogg
 quakeweps/quadon                sounds/ranger/quaddamage.ogg
-quakeweps/quadfire              sounds/ranger/damage3.wav
-quakeweps/quadoff               sounds/ranger/damage2.wav
-quakeweps/quadready             sounds/ranger/quadready.wav
+quakeweps/quadfire              sounds/ranger/damage3.ogg
+quakeweps/quadoff               sounds/ranger/damage2.ogg
+quakeweps/quadready             sounds/ranger/quadready.ogg
 
-quakeweps/regenannounce         sounds/ranger/regeneration.wav
-quakeweps/regen                 sounds/ranger/regen.wav
-quakeweps/regenout              sounds/ranger/wearoff.wav
+quakeweps/regenannounce         sounds/ranger/regeneration.ogg
+quakeweps/regen                 sounds/ranger/regen.ogg
+quakeweps/regenout              sounds/ranger/wearoff.ogg
