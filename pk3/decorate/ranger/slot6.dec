@@ -1,4 +1,4 @@
-actor "Super Nailgun": Weapon
+actor "Super Nailgun": InstantSwitchWeapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 4
@@ -8,7 +8,6 @@ actor "Super Nailgun": Weapon
 
     Weapon.SlotNumber 6
 
-
     Inventory.Icon "QSNGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
@@ -17,23 +16,13 @@ actor "Super Nailgun": Weapon
 
     States
     {
-      Deselect:
-        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Lower
-        QSNG A 1 A_Lower
-        Loop
-
-      Select:
-        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_Raise
-        QSNG A 1 A_Raise
-        Loop
-
       Ready:
         QSNG A 0 A_TakeInventory("SNGFrame")
-        QSNG A 0 A_JumpIfInventory("FiredSLNails", 1, "LavaReady")
         QSNG A 1 A_WeaponReady
         Loop
 
       LavaReady:
+        QSNG A 0 A_TakeInventory("SNGFrame")
         QSNL A 1 A_WeaponReady
         loop
 
@@ -194,7 +183,7 @@ actor "Super Nailgun": Weapon
       AltFireEnd:
         QSNL A 0 A_TakeInventory("SNGFrame")
         QSNL A 0 A_PlaySound("quakeweps/lavaend", 5)
-        goto Ready
+        goto LavaReady
 
       Spawn:
         QSNG Z -1

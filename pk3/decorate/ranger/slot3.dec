@@ -23,7 +23,11 @@ actor "Grenade Launcher": InstantSwitchWeapon
     {
       Ready:
         QGRL A 1 A_WeaponReady
-        Loop
+        loop
+
+      MultiReady:
+        QMGL A 1 A_WeaponReady
+        loop
 
       // 22 tics
       Fire:
@@ -64,12 +68,12 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QGRL G 3
         QGRL H 2
         QGRL I 1
-		// 22 tics
+        // 22 tics
         QGRL I 0 A_Refire
         Goto Ready
 
       AltFire:
-        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        QMGL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadAlt")
         goto AfterSoundAlt
 
@@ -77,22 +81,38 @@ actor "Grenade Launcher": InstantSwitchWeapon
         TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuadAlt")
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuadAlt")
-        QGRL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 1, 0, 0, 0, 5)
-        goto Fire2
+        QMGL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
 
       CoopQuadAlt:
-        QGRL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 1, 0, 0, 0, 5)
-        goto Fire2
+        QMGL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
 
       AfterSoundAlt:
-        QGRL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
-        QGRL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
-        QGRL B 0 A_FireCustomMissile("QuakeClusterGrenade", 0, 1, 0, 0, 0, 5)
-        goto Fire2
+        QMGL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
+        QMGL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
+        QMGL B 0 A_FireCustomMissile("QuakeClusterGrenade", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
 
       CoopAlt:
-        QGRL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 1, 0, 0, 0, 5)
-        goto Fire2
+        QMGL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
+
+      AltFire2:
+        TNT1 A 0 A_ZoomFactor(0.98, ZOOM_INSTANT)
+        QMGL B 2 bright
+        TNT1 A 0 A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QMGL C 3
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
+        QMGL D 4
+        QMGL E 4
+        QMGL F 3
+        QMGL G 3
+        QMGL H 2
+        QMGL I 1
+        // 22 tics
+        QMGL I 0 A_Refire
+        goto MultiReady
 
       Spawn:
         QGRL Z -1
