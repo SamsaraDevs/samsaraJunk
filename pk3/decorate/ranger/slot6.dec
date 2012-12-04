@@ -2,9 +2,12 @@ actor "Super Nailgun": InstantSwitchWeapon
 {
     Weapon.Kickback 100
     Weapon.SelectionOrder 4
-    Weapon.AmmoUse 2
-    Weapon.AmmoGive 30
+
     Weapon.AmmoType "Clip"
+    Weapon.AmmoType2 "LavaNails"
+    Weapon.AmmoUse 2
+    Weapon.AmmoUse2 2
+    Weapon.AmmoGive 30
 
     Weapon.SlotNumber 6
 
