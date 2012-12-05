@@ -3,7 +3,6 @@ actor "Single Shotgun": InstantSwitchWeapon
     Weapon.Kickback 100
     Weapon.SelectionOrder 7
     
-    +NOAUTOAIM
     +UNDROPPABLE
     
     Inventory.Icon "QSHTZ0"

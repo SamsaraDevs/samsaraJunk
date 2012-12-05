@@ -3,7 +3,6 @@ actor "Axe": InstantSwitchWeapon
     Weapon.SelectionOrder 8
     Weapon.Kickback 100
 
-    +NOAUTOAIM
     +NOALERT
     +WEAPON.MELEEWEAPON
     +UNDROPPABLE

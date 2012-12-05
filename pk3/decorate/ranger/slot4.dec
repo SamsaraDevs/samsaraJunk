@@ -11,7 +11,6 @@ actor "Nailgun": InstantSwitchWeapon
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "LavaNails"
 
-    +NOAUTOAIM
     +UNDROPPABLE
 
     Inventory.Icon "QNLGZ0"
@@ -22,6 +21,11 @@ actor "Nailgun": InstantSwitchWeapon
 
     States
     {
+      Deselect:
+        QRKL A 0 A_TakeInventory("FiredLavaNails")
+        QRKL A 0 A_TakeInventory("UsingDoEAmmo")
+        goto Super::Deselect
+
       Ready:
         QNLG A 1 A_WeaponReady
         loop

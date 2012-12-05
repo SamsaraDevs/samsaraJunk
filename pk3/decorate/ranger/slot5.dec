@@ -10,7 +10,6 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "ClusterRocketAmmo"
     
-    +NOAUTOAIM
     +NOAUTOFIRE
     +UNDROPPABLE
     
@@ -21,12 +20,16 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
     
     States
     {
+      Deselect:
+        QRKL A 0 A_TakeInventory("UsingMultiRockets")
+        QRKL A 0 A_TakeInventory("UsingDoEAmmo")
+        goto Super::Deselect
+
       Ready:
-        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"Ready2")
         QRKL A 1 A_WeaponReady
         Loop
         
-      Ready2:
+      MultiReady:
         QMRL A 1 A_WeaponReady
         Loop
         
@@ -120,7 +123,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         QMRL H 6
         // 27 tics
         QMRL H 0 A_Refire
-        goto Ready
+        goto MultiReady
         
       Spawn:
         QRKL Z -1
