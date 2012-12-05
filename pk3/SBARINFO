@@ -431,8 +431,8 @@ StatusBar normal, forcescaled
     Playerclass Corvus
     {
         drawimage "HRTCBAR", 0, 151;
-        drawswitchableimage invulnerable, "HEREGOD1", "nullimage", 6, 167;
-        drawswitchableimage invulnerable, "HEREGOD2", "nullimage", 297, 167;
+        InInventory PowerInvulnerable, 1 {drawimage "HEREGOD1", 6, 167;}
+        InInventory PowerInvulnerable, 1 {drawimage "HEREGOD2", 297, 167;}
         drawnumber 3, HEREHUDF, gold, ammo1, 58, 171, 0, untranslated, 0, untranslated, 20;
         drawimage ammoicon1, 47, 189, center;
         drawnumber 3, HEREHUDF, gold, health, 96, 180, white, 25, untranslated, 50;
@@ -1697,7 +1697,8 @@ playerclass Ranger
     drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
 
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
-    drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
+	InInventory not PowerInvulnerable {drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;}
+	InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
 
     //Doom keys
     InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
@@ -1753,7 +1754,16 @@ playerclass Ranger
     {
         drawimage translatable "CLRDOOM", 145, 169;
     }
-    drawmugshot "STF", 5, 143, 168;
+	InInventory not PowerInvisibility {
+	InInventory not QuadDamagePower {
+    drawmugshot "STF", 5, 143, 168;}}
+	InInventory not PowerInvisibility {
+	InInventory QuadDamagePower, 1 {drawimage "RNGQUAD0", 143, 168;}}
+	InInventory PowerInvisibility, 1 {drawimage "RNGNVSB0", 143, 168;
+    InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
+	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
+	InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}
+}
 
     InInventory ExpandedHud, 1
     {
@@ -1954,8 +1964,8 @@ statusbar Automap
     Playerclass Corvus
     {
         drawimage "HRTCBAR", 0, 151;
-        drawswitchableimage invulnerable, "HEREGOD1", "nullimage", 6, 167;
-        drawswitchableimage invulnerable, "HEREGOD2", "nullimage", 297, 167;
+        InInventory PowerInvulnerable, 1 {drawimage "HEREGOD1", 6, 167;}
+        InInventory PowerInvulnerable, 1 {drawimage "HEREGOD2", 297, 167;}
         drawnumber 3, HEREHUDF, gold, ammo1, 58, 171, 0, untranslated, 0, untranslated, 20;
         drawimage ammoicon1, 47, 189, center;
         drawnumber 3, HEREHUDF, gold, health, 96, 180, white, 25, untranslated, 50;
@@ -3011,7 +3021,8 @@ playerclass Ranger
     drawnumber 3, INDEXFON, darkbrown, ammocapacity AmmoShell, 315, 179;
     drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
-    drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;
+	InInventory not PowerInvulnerable {drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;}
+	InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
 
     //Doom keys
     InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
@@ -3067,6 +3078,15 @@ playerclass Ranger
     {
         drawimage translatable "CLRDOOM", 145, 169;
     }
-    drawmugshot "STF", 5, 143, 168;
+	InInventory not PowerInvisibility {
+	InInventory not QuadDamagePower {
+    drawmugshot "STF", 5, 143, 168;}}
+	InInventory not PowerInvisibility {
+	InInventory QuadDamagePower, 1 {drawimage "RNGQUAD0", 143, 168;}}
+	InInventory PowerInvisibility, 1 {drawimage "RNGNVSB0", 143, 168;
+    InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
+	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
+	InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}
+}
 }
 }
