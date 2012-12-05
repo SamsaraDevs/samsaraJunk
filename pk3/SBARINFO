@@ -1763,6 +1763,7 @@ playerclass Ranger
     InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
 	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
 	InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}
+}
 
     InInventory ExpandedHud, 1
     {
@@ -3086,5 +3087,6 @@ playerclass Ranger
     InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
 	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
 	InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}
+}
 }
 }
