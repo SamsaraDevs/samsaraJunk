@@ -176,7 +176,6 @@ actor QuakeGrenade
 
 actor QuakeGrenadeCoop: QuakeGrenade
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -199,7 +198,6 @@ actor QuakeGrenadeQuad: QuakeGrenade
 
 actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -228,7 +226,6 @@ actor QuakeClusterGrenade: QuakeGrenade
 
 actor QuakeClusterGrnCoop: QuakeClusterGrenade
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -266,7 +263,6 @@ actor QuadClusterGrenade: QuakeClusterGrenade
 
 actor QuadClusterGrnCoop: QuadClusterGrenade
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -326,7 +322,6 @@ actor QuakeTinyGrenade: QuakeGrenade
 
 actor QuakeTinyGrnCoop: QuakeTinyGrenade
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -349,7 +344,6 @@ actor QuadTinyGrenade: QuakeTinyGrenade
 
 actor QuadTinyGrnCoop: QuadTinyGrenade
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     

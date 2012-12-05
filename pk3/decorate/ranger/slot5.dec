@@ -181,7 +181,6 @@ actor QuakeRocketQuad: QuakeRocket
 
 actor QuakeRocketCoop: QuakeRocket
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -190,7 +189,6 @@ actor QuakeRocketCoop: QuakeRocket
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
