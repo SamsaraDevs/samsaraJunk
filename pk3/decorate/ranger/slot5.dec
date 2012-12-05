@@ -139,7 +139,7 @@ actor QuakeRocket: FastProjectile
     Height 0
     Speed 50
     DamageType "Explosive"
-    Scale 0.65
+    Scale 0.3
     
     Projectile
     
@@ -152,7 +152,7 @@ actor QuakeRocket: FastProjectile
     States
     {
       Spawn:
-        DMSL A -1
+        QRKT A -1
         loop
         
       Death:
