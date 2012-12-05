@@ -3,7 +3,7 @@ actor " Firemace " : Weapon
     Weapon.SelectionOrder 1400
     Inventory.PickUpSound "heretic/weaponget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive1 50
+    Weapon.AmmoGive1 10
     Weapon.SlotNumber 2
     Weapon.YAdjust 16
     Weapon.AmmoType "AmmoShell"

@@ -4,10 +4,6 @@ QUACKGUI:
 
  -  Total invisibility from Partial Invisibility pickup, complete with Quake III announcer
 
- -  Compile changelist from original Quake.
-
- -  Proper gib death
-
  -  A new weapon I. Preferably one that uses Cell as ammo.
 
 
