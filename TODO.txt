@@ -24,6 +24,8 @@ CHANGES FROM QUAKE:
 
  -  The Quad Damage is now a reuseable item, partly to help with the aforementioned damage issues, and partly because there was no appropriate item to replace it with. (Berserks didn't work--too rare, too erratically placed, not to mention should be more utility)
 
+ -  The Double-Barreled Shotgun uses only one shell instead of two due to the aforementioned much lower damage radio.
+
  -  In Quake, the projectiles had no hitbox. Here, their hitbox is simply obscenely tiny--about 1/0.
 
  -  Gravity has been ever-so-slightly reduced so as to simulate Quake's strange air physics.
@@ -33,3 +35,5 @@ CHANGES FROM QUAKE:
  -  Lava Nails, Multi-Grenades, and Multi-Rockets were handled a bit differently. There were no alt-fires, much less that swapped between weapons, and the ammo pickups were separate.
 
  -  The Double Barreled Shotgun's and Nailgun's animations are slightly smoother.
+
+ -  The Shotgun and Double-Barreled Shotgun's damages are random by 1d3, while Quake's damage values were completely static. Turns out people are getting upset for using fake bullets. Whoops.
