@@ -668,6 +668,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
+    int quadcount;
     int result;
     
     switch (choice)
@@ -702,6 +703,12 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
       case 6:
         result = GetCVar("skulltag");
+        break;
+      
+      case 7:
+        quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
+        GiveInventory("QuakeQuadTimer", quadcount);
+        GiveInventory("QuakeQuadTimer", arg1);
         break;
     }
     
@@ -739,7 +746,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],      a2bool  = !!StrLen(ammo2);
     int check   = ClassWeapons[pclass][slot][S_CHECKITEM],  chkbool = !!StrLen(check);
     
-    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM] && !dropped)))
+    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped))
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -1065,6 +1072,12 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
     while (1)
     {
         if (DEBUG) { Print(s:"hpGiven = ", d:hpGiven, s:", startHealth = ", d:startHealth); }
+
+        if (CheckInventory("QuakeRegenTimer"))
+        {
+            Delay(1);
+            continue;
+        }
 
         if (UnloadingNow)
         {
