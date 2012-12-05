@@ -22,9 +22,13 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 
 FROM 0.26 TO 0.27
 ========================
+- Ranger has joined the Wheel of Samsara!
+Ranger is a character who moves fast, shoots fast, and hits hard from a safe distance. Almost all of his weapons dominate in mid-to-long range, and come out fast as well--accentuating this is his superb maneuverability, allowing him to get into many positions and areas to find a critical area to strike from. While he suffers quite a bit from lack of early game burst damage, once he stocks up with later weapons and ammo he becomes a long-range speedy explosive terror.
+In short, if you liked SO's range control or Blazkowicz's accuracy but wish they had more oomph, or if you liked Doomguy's hefty damage but wish he could put it out at a longer range, Ranger will be a character you may find enjoyable.
+
 - sv_bfgfreeaim actually works, now. It no longer gives BFG/LAZ wielders infinite ammo in DM.
 - Doomguy's Berserk heals him up to 100. Someone derped and accidentally took it out.
-- The Rapid Zorcher now actually spawns the proper IV and III weapons.
+- The Rapid Zorcher in Chex Quest now actually spawns the proper IV and III weapons.
 - Duke Nukem shooting Armored Bipedal Flemoids should no longer zorch them.
 - Duke Nukem's Shotgun and Ripper no longer uses the DukePistol damage type.
 - In Invasion, the Security Officer will no longer be forbidden from picking up dropped shotguns if he picks up his II first.
@@ -39,6 +43,7 @@ FROM 0.26 TO 0.27
 - Previously, Corvus' skulls only had the eye glow when manually entering god mode, and not when invulnerable via item. This has been reversed.
 - Since the Firemace used to run off Clip ammo, it gave 50 on pickup. Now that it's converted to Shell, this is way too damned much. Reduced to 10, which is still relatively more but much more reasonable.
 - The Tipbox listed Duke's Explosive Shotgun's explosive damage in coop as being 32, while its actual damage was only 30. This has been fixed.
+- The F1 tipbox now says what Samsara is. Some folks were asking for it, so here it is.
 
 FROM 0.25 TO 0.26
 ========================
