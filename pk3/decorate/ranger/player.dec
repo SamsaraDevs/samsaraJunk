@@ -363,7 +363,7 @@ actor QuakeBullet: FastProjectile
 
 actor QuakeBullet2: QuakeBullet
 {
-    -THRUSPECIES
+    -THRUGHOST
     DamageType "QuakePistol"
 }
 
