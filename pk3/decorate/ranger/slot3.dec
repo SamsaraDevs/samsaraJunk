@@ -135,7 +135,7 @@ actor QuakeGrenade
     -NOGRAVITY
     DamageType "Explosive"
     Gravity 0.6
-	Scale 0.3
+	Scale 0.2
     BounceFactor 0.3
     
     +HEXENBOUNCE
@@ -332,7 +332,7 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
 actor QuakeTinyGrenade: QuakeGrenade
 {
     Speed 8
-	Scale 0.15
+	Scale 0.125
     ReactionTime 46
     
     SeeSound "quakeweps/grenadebounce_quiet"
