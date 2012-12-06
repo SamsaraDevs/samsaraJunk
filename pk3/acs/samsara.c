@@ -381,6 +381,9 @@ script SAMSARA_SPAWN (int respawning)
     quadTimer = CheckInventory("QuakeQuadTimer"); 
     TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
 
+    TakeInventory("SynthFireLeft", 0x7FFFFFFF);
+    TakeInventory("SynthFireRight", 0x7FFFFFFF);
+
     if (DEBUG) { Log(n:PlayerNumber()+1, s:"\c- exits SAMSARA_SPAWN (quadTimer was ", d:quadTimer, s:")"); }
 }
 

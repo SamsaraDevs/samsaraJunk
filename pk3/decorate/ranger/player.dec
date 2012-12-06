@@ -33,33 +33,33 @@ actor QuakePlayer: PlayerPawn
       Spawn:
         RANG A -1
         stop
-
+        
       See:
         RANG BBBBCCCCDDDDEEEE 1
         Loop
-
+        
       Missile:
         RANG G 0 A_JumpIfInventory("UsingLG", 1, "Missile2")
         RANG G 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound1")
         goto Missile2
-
+        
       QuadSound1:
         RANG G 0 A_PlaySound("quakeweps/quadfire", 7)
         goto Missile2
-
+        
       Missile2:
         RANG G 12
         Goto Spawn
-
+        
       Melee:
         RANG G 0 A_JumpIfInventory("UsingLG", 1, "Melee2")
         RANG G 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound2")
         goto Melee2
-
+        
       QuadSound2:
         RANG G 0 A_PlaySound("quakeweps/quadfire", 7)
         goto Melee2
-
+        
       Melee2:
         RANG H 6 bright
         RANG G 12
@@ -71,11 +71,11 @@ actor QuakePlayer: PlayerPawn
         Goto Spawn
         
       Pain.WolfenFlamethrower:
-
+        
       Pain.MarathonPlasma:
-
+        
       Pain.Slime:
-
+        
       Pain.Fire:
         RANG F 4
         RANG F 4 A_PlaySound("ranger/firepain", CHAN_VOICE)
@@ -109,22 +109,19 @@ actor QuakePlayer: PlayerPawn
         goto XDeath.Telefrag
         
       XDeath:
-	    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("Blood",0,0,random(25,90),random(-4,4),random(-4,4),random(1,5),48,0)
-		TNT1 A 0 A_SpawnItemEx("QuakeSmallGibDropper",0,0,random(20,40),0,0,0,0,1)
-		ACLO E 1 A_XScream
-		ACLO E 1 A_NoBlocking
-		ACLO E 1
-		ACLO E -1
-		Stop
+        TNT1 A 0 A_PlaySound("ranger/gib", CHAN_VOICE)
+        goto Explod
         
       XDeath.Telefrag:
-	    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("Blood",0,0,random(25,90),random(-4,4),random(-4,4),random(1,5),48,0)
-		TNT1 A 0 A_SpawnItemEx("QuakeSmallGibDropper",0,0,random(20,40),0,0,0,0,1)
-		ACLO E 1 A_PlaySound("ranger/telefragged", CHAN_VOICE)
-		ACLO E 1 A_NoBlocking
-		ACLO E 1
-		ACLO E -1
-		Stop
+        TNT1 A 0 A_PlaySound("ranger/telefragged", CHAN_VOICE)
+        goto Explod
+
+      Explod:
+        ACLO EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 0 A_SpawnItemEx("Blood", 0, 0, random(8, 56), random(-4, 4), 0, random(0, 6))
+        ACLO E 0 A_SpawnItemEx("QuakeSmallGibDropper",0,0,random(20,40),0,0,0,0,1)
+        QGBA C 1 ThrustThing(random(0, 255), random(0, 4), 1, 0)
+        QGBA C -1 ThrustThingZ(0, random(14, 20), 0, 1)
+        Stop
         
       Death.ZorchPistol:
         
@@ -183,7 +180,7 @@ actor QuakePlayer: PlayerPawn
         RANG F 5 A_GenericFreezeDeath
         RANG F 1 A_FreezeDeathChunks
         Wait
-
+        
       CoOpModeOn:
         TNT1 A 0
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
@@ -195,28 +192,29 @@ actor QuakePlayer: PlayerPawn
 
 Actor RangerHead
 {
-	Projectile
-	Damage 0
-	+DOOMBOUNCE
-	Speed 7
-	Scale 0.34
-	BounceFactor 0.4
-	-NOLIFTDROP
-	-SOLID
-	+DROPOFF
-	-NOGRAVITY
-	-NOBLOCKMAP
-	States
-	{
-	Spawn:
-		QGBA C 4 A_Gravity
-		QGBA C 0 A_CustomMissile("Blood",0,0,0,0)
-		Loop
-	Death:
-		TNT1 A 0 A_Gravity
-		QGBA C 1000
-		Stop
-	}
+    Projectile
+    Damage 0
+    +DOOMBOUNCE
+    Speed 7
+    Scale 0.34
+    BounceFactor 0.4
+    -NOLIFTDROP
+    -SOLID
+    +DROPOFF
+    -NOGRAVITY
+    -NOBLOCKMAP
+    States
+    {
+      Spawn:
+        QGBA C 4 A_Gravity
+        QGBA C 0 A_CustomMissile("Blood",0,0,0,0)
+        Loop
+
+      Death:
+        TNT1 A 0 A_Gravity
+        QGBA C 1000
+        Stop
+    }
 }
 
 Actor QuakeSmallGibDropper
@@ -224,108 +222,113 @@ Actor QuakeSmallGibDropper
     Speed 0
     Projectile
     RenderStyle None
-	+CLIENTSIDEONLY
+    +CLIENTSIDEONLY
     States
     {
-    Spawn:
-	  NULL A 0
-	  NULL AAA 0 A_Jump(180,"Drop2","Drop3","Drop4")
-	  TNT1 AAA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
-	  TNT1 A 1
-	  Stop
-    Drop2:
-	  TNT1 AAA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 AA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
-	  TNT1 A 1
-	  Stop
-    Drop3:
-	  TNT1 AA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 AAA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
-	  TNT1 A 1
-	  Stop
-    Drop4:
-	  TNT1 AA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 AA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
-	  TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
-	  TNT1 A 1
-	  Stop
-	}
+      Spawn:
+        TNT1 A 0
+        TNT1 AAA 0 A_Jump(180,"Drop2","Drop3","Drop4")
+        TNT1 AAA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
+        TNT1 A 1
+        Stop
+
+      Drop2:
+        TNT1 AAA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 AA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
+        TNT1 A 1
+        Stop
+
+      Drop3:
+        TNT1 AA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 AAA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
+        TNT1 A 1
+        Stop
+
+      Drop4:
+        TNT1 AA 0 A_SpawnItemEx("SmallGib1",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 AA 0 A_SpawnItemEx("SmallGib2",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("SmallGibTorso",0,0,0,random(-8,8),0,0,random(1,359),1)
+        TNT1 A 0 A_SpawnItemEx("RangerHead",0,0,20,random(1,7),0,random(1,7),random(0,359),32)
+        TNT1 A 1
+        Stop
+    }
 }
 
 actor SmallGib1
 {
-	BounceFactor 0.45
-	+DOOMBOUNCE
-	Speed 8
-	Projectile
-	-NOGRAVITY
-	-NOBLOCKMAP
-	-NOLIFTDROP
-	-SOLID
-	+DROPOFF
-	+THRUACTORS
-	Speed 8
-	Scale 0.27
-	+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 1 ThrustThingZ(0,random(10,60),0,1)
-		QGBB BBCCDDEEFFGGHHIIJJKKLLMMNN 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1,128)
-		Goto Death
-	Death:
+    BounceFactor 0.45
+    +DOOMBOUNCE
+    Speed 8
+    Projectile
+    -NOGRAVITY
+    -NOBLOCKMAP
+    -NOLIFTDROP
+    -SOLID
+    +DROPOFF
+    +THRUACTORS
+    Speed 8
+    Scale 0.27
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 ThrustThingZ(0,random(10,60),0,1)
+        QGBB BBCCDDEEFFGGHHIIJJKKLLMMNN 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1,128)
+        Goto Death
+
+      Death:
         TNT1 A 0 A_Gravity
-		QGBB N 1000
-		stop
-	}
+        QGBB N 1000
+        stop
+    }
 }
 
 actor SmallGibTorso : SmallGib1 
 {
-	Speed 2
-	Scale 0.23
-	+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 1 ThrustThingZ(0,random(10,50),0,1)
-		QGBC AABBCCDDEEFF 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1,128)
-		Goto Death
-	Death:
-        TNT1 A 0 A_Gravity
-		QGBC F 1000
-		Wait
-	}
-}
+    Speed 2
+    Scale 0.23
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 ThrustThingZ(0,random(10,50),0,1)
+        QGBC AABBCCDDEEFF 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1,128)
+        Goto Death
 
+      Death:
+        TNT1 A 0 A_Gravity
+        QGBC F 1000
+        Wait
+    }
+}
 
 actor SmallGib2 : SmallGib1 
 {
-	Speed 5
-	Scale 0.19
-	+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 1 ThrustThingZ(0,random(10,60),0,1)
-		QGBD AABBCCDDEE 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1)
-		Goto Death
-	Death:
+    Speed 5
+    Scale 0.19
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 1 ThrustThingZ(0,random(10,60),0,1)
+        QGBD AABBCCDDEE 2 A_SpawnItemEx("Blood",0,0,0,0,0,0,0,1)
+        Goto Death
+
+      Death:
         TNT1 A 0 A_Gravity
-		QGBD F 1000
-		Wait
-	}
+        QGBD F 1000
+        Wait
+    }
 }
 
 actor QuakeClass: Boolean {}
