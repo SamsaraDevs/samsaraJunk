@@ -61,6 +61,6 @@ actor ChainsawShells: RandomSpawner replaces Chainsaw
 
 actor QuakeAxePuff: QuakePistolPuff
 {
-	DamageType "Pistol"
+    DamageType "Pistol"
     AttackSound "quakeweps/axewall"
 }

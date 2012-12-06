@@ -133,10 +133,10 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
 
 actor UsingMultiRockets : Boolean {}
 
-actor QuakeRocket: FastProjectile
+actor QuakeRocket
 {
-    Radius 1
-    Height 0
+    Radius 2
+    Height 2
     Speed 50
     DamageType "Explosive"
     Scale 0.65
