@@ -139,7 +139,7 @@ actor QuakeRocket
     Height 2
     Speed 50
     DamageType "Explosive"
-    Scale 0.65
+    Scale 0.3
     
     Projectile
     
@@ -152,7 +152,7 @@ actor QuakeRocket
     States
     {
       Spawn:
-        DMSL A -1
+        QRKT A -1
         loop
         
       Death:
@@ -181,7 +181,6 @@ actor QuakeRocketQuad: QuakeRocket
 
 actor QuakeRocketCoop: QuakeRocket
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     
@@ -190,7 +189,6 @@ actor QuakeRocketCoop: QuakeRocket
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
-    +THRUGHOST
     +THRUSPECIES
     Species "Player"
     

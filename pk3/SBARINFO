@@ -66,7 +66,7 @@ StatusBar Fullscreen
             DrawImage "AMSMC0", 238, 195, Center;
             DrawImage "AMSMD0", 238, 185, Center;}
 
-        IsSelected "Nailgun"
+        IsSelected "Nailgun", "Super Nailgun"
         {
             DrawImage "HUDBAR", 250, 192;
             DrawBar "HAMBAR", "HEMPTY", LavaNails, Horizontal, Reverse, 251, 193;
@@ -199,8 +199,9 @@ StatusBar Fullscreen
     //DrawMugShot "STF", 5, 73, 168;
     //DrawSelectedInventory alwaysshowcounter, HUDFONT_DOOM, 287, 153, 286, 163, untranslated;
     drawselectedinventory alwaysshowcounter, HUDFONT_DOOM, 290, 22, 293, 30, untranslated;
+    InInventory DukeClass, 1 {
     InInventory DukeFlying, 1 {drawnumber 3, INDEXFON, White, DukeJetpackFuel, 293, 48;}
-    InInventory DukeVision, 1 {drawnumber 3, INDEXFON, White, DukeVisionFuel, 293, 48;}
+    InInventory DukeVision, 1 {drawnumber 3, INDEXFON, White, DukeVisionFuel, 293, 48;}}
 }
 
 StatusBar normal, forcescaled

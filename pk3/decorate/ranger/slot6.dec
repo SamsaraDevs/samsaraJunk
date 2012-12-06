@@ -220,6 +220,8 @@ actor QuakeSuperNail: QuakeNail
 
 actor QuakeSuperNailCoop: QuakeSuperNail
 {
+    +THRUSPECIES
+    Species "Player"
     Damage (24)
 }
 
@@ -230,6 +232,8 @@ actor QuakeSLNail: QuakeLavaNail
 
 actor QuakeSLNailCoop: QuakeSLNail
 {
+    +THRUSPECIES
+    Species "Player"
     Damage (48)
 }
 
