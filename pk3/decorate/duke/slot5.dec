@@ -242,7 +242,7 @@ actor DukeRocketCoop : DukeRocket { +THRUSPECIES Species "Player" }
 
 actor RPGExplosion
 {
-    +CLIENTSIDEONLY
+    //+CLIENTSIDEONLY - Adding this makes the Pipebomb's explosions invisible WELL OKAY THEN
     +NOINTERACTION
     Scale 0.7
     States
