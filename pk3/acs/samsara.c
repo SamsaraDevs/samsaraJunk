@@ -398,9 +398,8 @@ script SAMSARA_WOLFMOVE enter
     int velx, vely;
     int moving;
     int fired;
-    
-    
-    while (PlayerInGame(pln))
+
+    while (1)
     {
         if (UnloadingNow)
         {
@@ -828,52 +827,17 @@ script SAMSARA_GIVEUNIQUE (int alt)
 {
     if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
     
-    int uniqueGet  = 0;
+    int uniqueGet = 0;
     int pclass = samsaraClassNum();
     
-    int ammo, abool;
-    int acnt  = 0;
-    int amax  = 0;
-    int umax  = 0;
-    int aFull = 0;
-    int hasWep;
-    int unique, unbool;
-    
-    if (alt)
+    while (!uniqueGet && alt >= 0)
     {
-        unique = ClassUniques[pclass][U_UNIQUE2];
-        ammo   = ClassUniques[pclass][U_AMMO2];
-        umax   = UniqueMaxes[pclass][U_UNIQUE2];
-        amax   = UniqueMaxes[pclass][U_AMMO2];
+        uniqueGet = GiveUnique(pclass, alt);
+        alt--;
     }
-    else
-    {
-        unique = ClassUniques[pclass][U_UNIQUE1];
-        ammo   = ClassUniques[pclass][U_AMMO1];
-        umax   = UniqueMaxes[pclass][U_UNIQUE1];
-        amax   = UniqueMaxes[pclass][U_AMMO1];
-    }
-
-    unbool = !!StrLen(unique);
-    abool  = !!StrLen(ammo);
-    
-    if (!unbool)
-    {
-        if (DEBUG) { Print(s:"unbool is false (class = ", d:pclass, s:", alt = ", d:alt, s:")"); }
-        SetResultValue(0);
-        if (alt) { SetResultValue(ACS_ExecuteWithResult(SAMSARA_GIVEUNIQUE, 0,0,0,0)); }
-        terminate;
-    }
-    
-    if (aBool) { aFull = CheckInventory(ammo) >= amax; }
-    
-    hasWep = (CheckInventory(unique) >= umax) && (umax != 0);
-    
-    if (!hasWep || (abool && !aFull)) { uniqueGet = 1; }
     
     if (uniqueGet && IsServer)
     {
-        GiveClassUnique(pclass, alt);
         ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
     }
     
@@ -1357,10 +1321,11 @@ script 208 (void)
     }
 }
 
-script 203 UNLOADING
+script 203 unloading
 {
-    UnloadingNow = 1;
     int i;
+    UnloadingNow = 1;
+
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
 }
 

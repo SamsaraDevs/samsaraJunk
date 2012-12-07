@@ -27,16 +27,28 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"Thunderbolt",         "Cell",                 "", ""},
 };
 
-int UniqueMaxes[CLASSCOUNT][4] = 
+int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
 {
     {0,     0,      0,  0},
     {0,     0,      0,  0},
     {16,    0,      0,  0},
     {9,     0,      0,  0},
     {16,    0,      0,  0},
-    {0,     100,    0,  0},
-    {0,     50,     0,  50},
-    {0,     0,      0,  0},
+    {1,     100,    0,  0},
+    {1,     50,     1,  50},
+    {1,     0,      0,  0},
+};
+
+int UniqueCounts[CLASSCOUNT][CHOICECOUNT_U] =
+{
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,     0,     -1, -1},
 };
 
 int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON, 0};
