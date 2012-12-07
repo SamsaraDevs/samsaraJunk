@@ -48,7 +48,7 @@ actor QuakePlayer: PlayerPawn
         goto Missile2
         
       Missile2:
-        RANG G 12
+        RANG GGGGGGGGGGGG 1 A_JumpIfHealthLower(0, "Death")
         Goto Spawn
         
       Melee:
@@ -61,8 +61,8 @@ actor QuakePlayer: PlayerPawn
         goto Melee2
         
       Melee2:
-        RANG H 6 bright
-        RANG G 12
+        RANG HHHHHH 1 bright A_JumpIfHealthLower(0, "Death")
+        RANG GGGGGGGGGGGG 1 A_JumpIfHealthLower(0, "Death")
         Goto Spawn
         
       Pain:
@@ -92,6 +92,7 @@ actor QuakePlayer: PlayerPawn
         goto Spawn
         
       Death:
+        RANG GGGG 1 A_JumpIfHealthLower(-100, "XDeath")
         RANG I 5 A_PlayerScream
         RANG J 5 A_NoBlocking
         RANG KLM 4
@@ -99,6 +100,7 @@ actor QuakePlayer: PlayerPawn
         Stop
         
       Death.Drowning:
+        RANG GGGG 1 A_JumpIfHealthLower(-100, "XDeath")
         RANG I 5 A_PlaySound("ranger/drown", CHAN_VOICE)
         RANG J 5 A_NoBlocking
         RANG KLM 4
