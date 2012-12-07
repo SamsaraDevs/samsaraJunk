@@ -103,6 +103,6 @@ actor QuakeExplosionParticle3: QuakeExplosionParticle
     }
 }
 
-actor QuakeTinyParticle:  QuakeExplosionParticle  { Speed 2  Scale 0.6 }
-actor QuakeTinyParticle2: QuakeExplosionParticle2 { Speed 6  Scale 0.6 }
-actor QuakeTinyParticle3: QuakeExplosionParticle3 { Speed 1  Scale 0.6 }
+actor QuakeTinyParticle:  QuakeExplosionParticle  { Speed 2  Scale 0.1 }
+actor QuakeTinyParticle2: QuakeExplosionParticle2 { Speed 6  Scale 0.1 }
+actor QuakeTinyParticle3: QuakeExplosionParticle3 { Speed 1  Scale 0.1 }

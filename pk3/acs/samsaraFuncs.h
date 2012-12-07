@@ -240,7 +240,7 @@ function void TakeUnique(int cnum, int unum)
 function int HasUnique(int cnum, int unum)
 {
     int unique = ClassUniques[cnum][unum*2];
-    return CheckInventory(unique);
+    return (unique != "") && CheckInventory(unique);
 }
 
 
@@ -263,7 +263,6 @@ function int ConvertClassWeapons(int classnum)
 {
     int i, j, k;
     int ret;
-    int u1, u2, c1, c2;
 
     if (classnum < 0) { classnum = samsaraClassNum(); }
 
@@ -282,15 +281,11 @@ function int ConvertClassWeapons(int classnum)
             }
         }
 
-        u1 = ClassUniques[i][U_UNIQUE1];
-        u2 = ClassUniques[i][U_UNIQUE2];
-
         for (j = 0; j < UNIQUECOUNT; j++)
         {
             if (HasUnique(i, j))
             {
                 k = j;
-
                 TakeUnique(i, j);
 
                 while (!GiveUnique(classnum, k) && k >= 0) { k--; }
