@@ -1771,8 +1771,8 @@ playerclass Ranger
         drawimage "QUAKBART", 0, 0;
         InInventory GotWeapon0, 1 {drawimage "WEPSELN1", 54, 0;}
         InInventory GotWeapon0, 1 {drawimage "WPQUAK1N", 49, 11;}
-        IsSelected "Gauntlet" {drawimage "WEPSELY1", 54, 0;}
-        IsSelected "Gauntlet" {drawimage "WPQUAK1Y", 49, 11;}
+        IsSelected "Laser Cannon" {drawimage "WEPSELY1", 54, 0;}
+        IsSelected "Laser Cannon" {drawimage "WPQUAK1Y", 49, 11;}
 
         InInventory GotWeapon2, 1 {drawimage "WEPSELN2", 87, 0;}
         InInventory GotWeapon2, 1 {drawimage "WPQUAK2N", 82, 11;}

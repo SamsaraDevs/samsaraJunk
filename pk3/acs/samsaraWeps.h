@@ -128,7 +128,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     },
     {   // Ranger
         {"Axe",                             "",             "",             "", ""},
-        {"Gauntlet",                        "",             "",             "", ""},
+        {"Laser Cannon",                    "Cell",         "",             "", ""},
         {"Single Shotgun",                  "",             "",             "", ""},
         {"Double Shotgun",                  "AmmoShell",    "",             "", ""},
         {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
