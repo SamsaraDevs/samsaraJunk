@@ -45,14 +45,14 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
         {
             success = 1;
             GiveInventory(weapon, 1);
+        }
 
-            if (array_pickupswitch[PlayerNumber()] && !hasWep &&
-                    (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot())
-                || PlayerIsBot(PlayerNumber()))
-                
-            {
-                SetWeapon(ClassWeapons[class][slot][S_WEP]);
-            }
+        if (success && array_pickupswitch[PlayerNumber()] && !hasWep &&
+                (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot())
+            || PlayerIsBot(PlayerNumber()))
+            
+        {
+            SetWeapon(ClassWeapons[class][slot][S_WEP]);
         }
 
         switch (ammoMode)

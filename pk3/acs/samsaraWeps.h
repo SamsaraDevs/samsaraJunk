@@ -123,7 +123,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 ""},
         {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 ""},
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
-        {"TOZT-7 Napalm Unit",              "NapalmInTank", "",             "",                 ""},
+        {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
     },
     {   // Ranger

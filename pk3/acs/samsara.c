@@ -1052,11 +1052,17 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
       default:
         GiveInventory(ClassWeapons[class][slot][S_WEP], 1);
 
-        i = ammoCount(ClassWeapons[class][slot][S_AMMO1]);
-        GiveInventory(ClassWeapons[class][slot][S_AMMO1], i*2);
+        if (ClassWeapons[class][slot][S_AMMO1] != "")
+        {
+            i = ammoCount(ClassWeapons[class][slot][S_AMMO1]);
+            GiveInventory(ClassWeapons[class][slot][S_AMMO1], i*2);
+        }
 
-        i = ammoCount(ClassWeapons[class][slot][S_AMMO2]);
-        GiveInventory(ClassWeapons[class][slot][S_AMMO2], i*2);
+        if (ClassWeapons[class][slot][S_AMMO2] != "")
+        {
+            i = ammoCount(ClassWeapons[class][slot][S_AMMO2]);
+            GiveInventory(ClassWeapons[class][slot][S_AMMO2], i*2);
+        }
         break;
     }
 }
@@ -1228,15 +1234,8 @@ int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //207: Flechette cooldown.
 //208: Buddha mode for B.J.'s Extra Life.
 //209: Activate Send Full Button Info and activate sv_banjetpack/sv_lmslife/sv_lmsult.
-//211: Coop/SP mode on, as well as singleplayer "what class is playing this game" determines.
 //212: Displaying text.
 //214: Duke Jetpack/Visor fuel draining.
-//215: Turn on and off Retro Movement.
-//216: Turn on and off Ballgag.
-//217: Weapon bar.
-//219: Weapon VII co-op perma-spawn check.
-//220: Denying Duke his jetpack if the server has that option.
-//273-275: Ijon Tichy's wizardry for B.J.'s retro movement.
 //901-902: I'm pretty sure Synert is a wizard, too.
 //224: Doomguy's vanilla animations. By Ijon Tichy, transcribed by Llewellyn.
 //225: Weapon bar. By Ijon Tichy, transcribed by Llewellyn.
@@ -1275,20 +1274,6 @@ script 902 (int a) { // Picked up a key, broadcast that shit to the whole world!
 ///////////////
 // ITEM STUFF
 //////////////
-
-script 220 (void)
-{
-    if (GetCvar("samsara_banjetpack"))
-    {
-        Print(s:"The server has forbidden the jetpack. Sorry.");
-    }
-    else
-    {
-        Print(s:"You got the Jetpack!");
-        GiveInventory("DukePortJetpack",1);
-        GiveInventory("DukeJetpackFuel",100);
-    }
-}
 
 script 214 (int dukeshit)
 {
