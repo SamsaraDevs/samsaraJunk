@@ -397,7 +397,7 @@ actor LavaNailBounce
     }
 }
 
-actor QuakeNailTrail: BulletPuff
+actor QuakeNailTrail: DoomBulletPuff
 {
     Alpha 0.1
     Scale 0.5
