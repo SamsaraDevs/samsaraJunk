@@ -106,7 +106,7 @@ StatusBar Fullscreen
         IsSelected "Knife" {
             InInventory GotWeapon0, 1 {drawimage "STY2NUM1", 126, 10;}}
         InInventory DiscOfRepulsionCooldown, 9 {drawimage "STY2NUM1", 126, 10;}
-        IsSelected "Gauntlet" {drawimage "STY2NUM1", 126, 10;}
+        IsSelected "Laser Cannon" {drawimage "STY2NUM1", 126, 10;}
 
         DrawSwitchableImage WeaponSlot 2, "", "STYSNUM2", 136, 10;
         IsSelected " Shotgun " {drawimage "STY2NUM2", 136, 10;}

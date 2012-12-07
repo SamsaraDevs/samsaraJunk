@@ -1,0 +1,90 @@
+actor "Gauntlet": InstantSwitchWeapon
+{
+    Weapon.Kickback 100
+    Weapon.SelectionOrder 7
+
+    +UNDROPPABLE
+
+    Inventory.Icon "QGNTZ0"
+
+    Inventory.PickupSound "quakeweps/weaponpickup"
+    Inventory.PickupMessage "You got the gauntlet"
+    Obituary "%k made %o talk to the hand."
+    
+    Weapon.YAdjust 16
+    
+    States
+    {
+      Spawn:
+        QGNT Z -1
+        stop
+
+      Deselect:
+        QGNT A 0 A_StopSound(6)
+        goto Super::Deselect
+
+      Ready:
+        QGNT A 0 A_PlaySound("quakeweps/gauntlethum", 6, 0.2, 1)
+        QGNT A 1 A_WeaponReady
+        loop
+
+      Fire:
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
+        goto AfterSound
+
+      QuadSound:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        goto AfterSound
+
+      AfterSound:
+        QGNT A 0 A_PlaySound("quakeweps/gauntlet", 6, 1, 1)
+        QGNT D 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
+        QGNT D 0 A_JumpIfInventory("SPModeOn", 1, "CoopHold")
+        QGNT D 0 A_CustomPunch(50, 1, 0, "GauntletPuff")
+        goto Hold2
+
+      CoopHold:
+        QGNT D 0 A_CustomPunch(15, 1, 0, "GauntletPuff")
+        goto Hold2
+
+      Hold2:
+        QGNT D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageHold")
+        QGNT D 1 bright offset(0, 33)
+        QGNT E 1 bright offset(0, 34)
+        QGNT F 1 bright offset(0, 33)
+        QGNT G 1 bright offset(0, 32)
+        QGNT G 0 bright A_Refire
+        QGNT G 0 A_StopSound(6)
+        QGNT G 1 bright A_Refire
+        QGNT BBCCCC 1 A_Refire
+        goto Ready
+
+      RageHold:
+        QGNT D 2 bright offset(0, 34)
+        QGNT F 2 bright offset(0, 32)
+        QGNT G 0 bright A_Refire
+        QGNT G 0 A_StopSound(6)
+        QGNT G 1 bright A_Refire
+        QGNT BCC 2 A_Refire
+        goto Ready
+    }
+}
+
+actor GauntletPuff: BulletPuff
+{
+    +PUFFONACTORS
+
+    SeeSound "quakeweps/gauntlethit"
+    //Decal "BulletChip"
+
+    States
+    {
+      Melee:
+        TNT1 A 1
+        stop
+
+      Crash:
+        TNT1 A 1 A_SpawnItemEx("QuakeAxePuff")
+        stop
+    }
+}
