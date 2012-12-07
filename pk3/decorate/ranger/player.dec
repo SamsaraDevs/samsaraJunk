@@ -357,9 +357,11 @@ actor QuakeBullet: FastProjectile
         loop
         
       Death:
+        TNT1 A 1
         TNT1 A 1 A_SpawnItem("QuakeBulletPuff")
         stop
         
+      Crash:
       XDeath:
         TNT1 A 1
         stop
