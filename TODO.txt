@@ -1,15 +1,13 @@
 QUACKGUI:
-
  -  Model support (LAST PRIORITY, SHIT LOOKS HARD YO)
 
  -  Total invisibility from Partial Invisibility pickup, complete with Quake III announcer
+
 
 CHANGES FROM QUAKE:
  -  Quake had such a lower damage scale than Doom it wasn't even funny. The Vore had 400 HP, equivalent to two Centaurs. In co-op, his weapons have been buffed the fuck out.
 
  -  The Quad Damage is now a reuseable item, partly to help with the aforementioned damage issues, and partly because there was no appropriate item to replace it with. (Berserks didn't work--too rare, too erratically placed, not to mention should be more utility)
-
- -  The Double-Barreled Shotgun uses only one shell instead of two due to the aforementioned much lower damage radio.
 
  -  In Quake, the projectiles had no hitbox. Here, their hitbox is simply obscenely tiny.
 

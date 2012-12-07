@@ -40,11 +40,12 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - Skulltag mode works now! For the ten people that play this game mode, very sorry it took so long to fix.
 - The tipboxes have been enhanced dramatically! Now they work in spectator mode, and can be scrolled through to the different characters' at the player's leisure.
 - Wolfenstein Movement has been made a separate item from B.J. entirely. This is for the modders that want to add Wolfenstein Movement to their characters--add CanWolfMovement to your character, and viola!
-- Previously, Corvus' skulls only had the eye glow when manually entering god mode, and not when invulnerable via item. This has been reversed.
+- Previously, Corvus' skulls only had the eye glow when manually entering god mode via console, and not when invulnerable via item. This has been reversed.
 - Since the Firemace used to run off Clip ammo, it gave 50 on pickup. Now that it's converted to Shell, this is way too damned much. Reduced to 10, which is still relatively more but much more reasonable.
 - The Tipbox listed Duke's Explosive Shotgun's explosive damage in coop as being 32, while its actual damage was only 30. This has been fixed.
 - The F1 tipbox now says what Samsara is. Some folks were asking for it, so here it is.
 - The Security Officer's TOZT now makes a sound on pickup, and is removed properly in singleplayer mode.
+- The Security Officer's tipbox did not indicate his I went through ghosts. This has been fixed.
 
 FROM 0.25 TO 0.26
 ========================
