@@ -44,6 +44,7 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - Since the Firemace used to run off Clip ammo, it gave 50 on pickup. Now that it's converted to Shell, this is way too damned much. Reduced to 10, which is still relatively more but much more reasonable.
 - The Tipbox listed Duke's Explosive Shotgun's explosive damage in coop as being 32, while its actual damage was only 30. This has been fixed.
 - The F1 tipbox now says what Samsara is. Some folks were asking for it, so here it is.
+- The Security Officer's TOZT now makes a sound on pickup, and is removed properly in singleplayer mode.
 
 FROM 0.25 TO 0.26
 ========================

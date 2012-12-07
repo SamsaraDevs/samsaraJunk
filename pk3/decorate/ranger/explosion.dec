@@ -2,6 +2,7 @@ actor QuakeExplosion
 {
     +NOINTERACTION
     +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
     
     RenderStyle Add
     
@@ -58,6 +59,7 @@ actor QuakeExplosionParticle
     
     +NOINTERACTION
     +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
     
     Scale 0.225
     Renderstyle Add
