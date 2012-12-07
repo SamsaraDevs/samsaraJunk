@@ -84,6 +84,7 @@ actor LaserCannonBolt
     Damage (9) //Original was 18 per shot.
 
     +HEXENBOUNCE
+    +BLOODSPLATTER
     BounceCount 3
 
     Scale 0.55
