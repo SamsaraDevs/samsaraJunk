@@ -59,7 +59,7 @@ actor QuakeExplosionParticle
     +NOINTERACTION
     +CLIENTSIDEONLY
     
-    Scale 0.15
+    Scale 0.225
     Renderstyle Add
     Alpha 0.7
     
@@ -103,6 +103,6 @@ actor QuakeExplosionParticle3: QuakeExplosionParticle
     }
 }
 
-actor QuakeTinyParticle:  QuakeExplosionParticle  { Speed 2  Scale 0.1 }
-actor QuakeTinyParticle2: QuakeExplosionParticle2 { Speed 6  Scale 0.1 }
-actor QuakeTinyParticle3: QuakeExplosionParticle3 { Speed 1  Scale 0.1 }
+actor QuakeTinyParticle:  QuakeExplosionParticle  { Speed 2  Scale 0.15 }
+actor QuakeTinyParticle2: QuakeExplosionParticle2 { Speed 6  Scale 0.15 }
+actor QuakeTinyParticle3: QuakeExplosionParticle3 { Speed 1  Scale 0.15 }
