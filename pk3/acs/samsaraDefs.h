@@ -19,6 +19,7 @@
 #define SAMSARA_TIPBOX_CLIENT       301
 
 #define SAMSARA_PUKE                226
+#define SAMSARA_PUKE_CLIENT         227
 #define SAMSARA_OPEN_CLIENT         248
 #define SAMSARA_ENTER_CLIENT        221
 #define SAMSARA_DISCONNECT_CLIENT   222
