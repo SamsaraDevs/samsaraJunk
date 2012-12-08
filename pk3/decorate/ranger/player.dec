@@ -48,7 +48,7 @@ actor QuakePlayer: PlayerPawn
         goto Missile2
         
       Missile2:
-        RANG GGGGGGGGGGGG 1 A_JumpIfHealthLower(0, "Death")
+        RANG G 12
         Goto Spawn
         
       Melee:
@@ -61,8 +61,8 @@ actor QuakePlayer: PlayerPawn
         goto Melee2
         
       Melee2:
-        RANG HHHHHH 1 bright A_JumpIfHealthLower(0, "Death")
-        RANG GGGGGGGGGGGG 1 A_JumpIfHealthLower(0, "Death")
+        RANG H 6 bright
+        RANG G 12
         Goto Spawn
         
       Pain:

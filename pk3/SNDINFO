@@ -1067,8 +1067,8 @@ quakeweps/gauntlethum           sounds/ranger/fsthum.ogg
 quakeweps/gauntlethit           sounds/ranger/fstatck.ogg
 $limit quakeweps/gauntlethit 0
 
-quakeweps/lasershot				sounds/ranger/laserg.ogg
-quakeweps/laserbounce			sounds/ranger/laserric.ogg
+quakeweps/lasershot             sounds/ranger/laserg.ogg
+quakeweps/laserbounce           sounds/ranger/laserric.ogg
 
 quakeweps/axe                   sounds/ranger/axe.wav
 quakeweps/axewall               sounds/ranger/axewall.wav
@@ -1100,6 +1100,9 @@ quakeweps/rlfire                sounds/ranger/rocket.ogg
 
 quakeweps/lightningstart        sounds/ranger/lstart.ogg
 quakeweps/lightning             sounds/ranger/lightning.ogg
+
+quakeweps/lightningdischarge    sounds/ranger/lstart.ogg
+$rolloff quakeweps/lightningdischarge 512 2048
 
 quakeweps/quadget               sounds/ranger/quadget.ogg
 quakeweps/quadon                sounds/ranger/quaddamage.ogg
