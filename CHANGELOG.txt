@@ -46,6 +46,7 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - The F1 tipbox now says what Samsara is. Some folks were asking for it, so here it is.
 - The Security Officer's TOZT now makes a sound on pickup, and is removed properly in singleplayer mode.
 - The Security Officer's tipbox did not indicate his I went through ghosts. This has been fixed.
+- D'Sparil is now actually invulnerable during his intro.
 
 FROM 0.25 TO 0.26
 ========================
