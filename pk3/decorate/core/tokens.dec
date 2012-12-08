@@ -32,13 +32,16 @@ actor GotWeapon7: Boolean {}
 
 actor WeaponGetYaaaay : Ammo
 {
+    Radius 4
+    Height 1
+
     inventory.amount 1
     inventory.maxamount 999
     ammo.backpackamount 0
     ammo.backpackmaxamount 999
 
     Inventory.PickupMessage "\0"
-    +QUIET
+    Inventory.PickupSound ""
 
     states
     {
@@ -50,13 +53,16 @@ actor WeaponGetYaaaay : Ammo
 
 actor WeaponGetYaaaay2 : Weapon
 {
+    Radius 4
+    Height 1
+
     Weapon.SelectionOrder 99999999999999999999999999999999
     Weapon.AmmoUse 0
     Weapon.AmmoType "Clip"
 
     Inventory.PickupMessage "\0"
+    Inventory.PickupSound ""
     +WEAPON.NO_AUTO_SWITCH
-    +QUIET
 
     states
     {

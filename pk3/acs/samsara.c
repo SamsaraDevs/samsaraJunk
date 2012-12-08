@@ -802,13 +802,16 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     
     if (weaponGet && IsServer)
     {
-        Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
-        Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
-
         int success = !_giveclassweapon(pclass, slot, 3, dropped);
 
         if (!silent && success)
         {
+            if (!hasWep)
+            {
+                Spawn("WeaponGetYaaaay", GetActorX(0), GetActorY(0), GetActorZ(0));
+                Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
+            }
+
             ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
         }
     }
