@@ -35,7 +35,7 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - Burning Duke Nukem is no longer solid.
 - Previously, bots were somehow dual-wielding their starting weapon and the existing weapon they held. They should no longer do that.
 - Duke's rockets have their obituary and explosive sound again. That was a weird glitch!
-- B.J. Blazkowicz remembers how to use his feet when going from level to level with Wolfmove on. Also a weird glitch!
+- Offline, B.J. Blazkowicz remembers how to use his feet when going from level to level with Wolfmove on. Online is broke due to an engine bug and cannot be fixed until later. Also a weird glitch!
 - One of the oldest and most frustrating bugs has been fixed! Occaisionally people could use Random or swap between char classes and get other classes' weapons. No longer! While Weapon Drop on Death is not advised and will completely mess up the hud, it can be used now if you insist!
 - Skulltag mode works now! For the ten people that play this game mode, very sorry it took so long to fix.
 - The tipboxes have been enhanced dramatically! Now they work in spectator mode, and can be scrolled through to the different characters' at the player's leisure.
@@ -47,6 +47,7 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - The Security Officer's TOZT now makes a sound on pickup, and is removed properly in singleplayer mode.
 - The Security Officer's tipbox did not indicate his I went through ghosts. This has been fixed.
 - D'Sparil is now actually invulnerable during his intro.
+- Morph Ovum now has the Heretic use item sound upon using it.
 
 FROM 0.25 TO 0.26
 ========================
