@@ -248,11 +248,11 @@ actor QuakeNail: FastProjectile
     States
     {
       Spawn:
-        DART A 0
+        QKNL A 0
         goto SpawnLoop
 
       SpawnLoop:
-        DART A 1 A_SpawnItemEx("QuakeNailTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        QKNL A 1 A_SpawnItemEx("QuakeNailTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
         loop
 
       XDeath:
@@ -337,11 +337,11 @@ actor QuakeLavaNail: QuakeNail
     States
     {
       Spawn:
-        DART A 0
+        QKNL A 0
         goto SpawnLoop
 
       SpawnLoop:
-        DART A 1 A_SpawnItemEx("QuakeLavaTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
+        QKNL A 1 A_SpawnItemEx("QuakeLavaTrail", 0,0,0, random(-3,3)/10.0,random(-3,3)/10.0,random(-3, 3)/10.0)
         loop
 
       Death:
