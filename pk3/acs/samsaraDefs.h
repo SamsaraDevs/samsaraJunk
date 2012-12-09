@@ -1,4 +1,5 @@
-#define SAMSARA_ENTER               213
+#define SAMSARA_ENTER               211
+#define SAMSARA_RETURN              213
 #define SAMSARA_RESPAWN             218
 #define SAMSARA_DEATH               219
 #define SAMSARA_OPEN                223
