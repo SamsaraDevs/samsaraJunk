@@ -370,11 +370,19 @@ actor BlueFlemKey2 : CustomInventory replaces BlueFlemKey
 }
 
 // HeXen
-actor KeyAxe2 : CustomInventory replaces KeyAxe
+actor HexenSharedKey: CustomInventory
+{
+    Radius 8
+    Height 20
+
+    Inventory.PickupSound "misc/k_pkup"
+}
+
+actor KeyAxe2: HexenSharedKey replaces KeyAxe
 {
     inventory.pickupmessage "$TXT_KEY_AXE"
     //inventory.icon "KEYSLOT3"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -389,11 +397,11 @@ actor KeyAxe2 : CustomInventory replaces KeyAxe
     }
 }
 
-actor KeyCastle2 : CustomInventory replaces KeyCastle
+actor KeyCastle2: HexenSharedKey replaces KeyCastle
 {
     inventory.pickupmessage "$TXT_KEY_CASTLE"
     //inventory.icon "KEYSLOTB"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -408,11 +416,11 @@ actor KeyCastle2 : CustomInventory replaces KeyCastle
     }
 }
 
-actor KeyCave2 : CustomInventory replaces KeyCave
+actor KeyCave2: HexenSharedKey replaces KeyCave
 {
     inventory.pickupmessage "$TXT_KEY_CAVE"
     //inventory.icon "KEYSLOT2"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -427,11 +435,10 @@ actor KeyCave2 : CustomInventory replaces KeyCave
     }
 }
 
-actor KeyDungeon2 : CustomInventory replaces KeyDungeon
+actor KeyDungeon2: HexenSharedKey replaces KeyDungeon
 {
     inventory.pickupmessage "$TXT_KEY_DUNGEON"
     //inventory.icon "KEYSLOT6"
-    inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
     States
     {
@@ -446,11 +453,11 @@ actor KeyDungeon2 : CustomInventory replaces KeyDungeon
     }
 }
 
-actor KeyEmerald2 : CustomInventory replaces KeyEmerald
+actor KeyEmerald2: HexenSharedKey replaces KeyEmerald
 {
     inventory.pickupmessage "$TXT_KEY_EMERALD"
     //inventory.icon "KEYSLOT5"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -465,11 +472,11 @@ actor KeyEmerald2 : CustomInventory replaces KeyEmerald
     }
 }
 
-actor KeyFire2 : CustomInventory replaces KeyFire
+actor KeyFire2: HexenSharedKey replaces KeyFire
 {
     inventory.pickupmessage "$TXT_KEY_FIRE"
     //inventory.icon "KEYSLOT4"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -484,11 +491,11 @@ actor KeyFire2 : CustomInventory replaces KeyFire
     }
 }
 
-actor KeyHorn2 : CustomInventory replaces KeyHorn
+actor KeyHorn2: HexenSharedKey replaces KeyHorn
 {
     inventory.pickupmessage "$TXT_KEY_HORN"
     //inventory.icon "KEYSLOT9"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -503,11 +510,11 @@ actor KeyHorn2 : CustomInventory replaces KeyHorn
     }
 }
 
-actor KeyRusted2 : CustomInventory replaces KeyRusted
+actor KeyRusted2: HexenSharedKey replaces KeyRusted
 {
     inventory.pickupmessage "$TXT_KEY_RUSTED"
     //inventory.icon "KEYSLOT8"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -522,11 +529,11 @@ actor KeyRusted2 : CustomInventory replaces KeyRusted
     }
 }
 
-actor KeySilver2 : CustomInventory replaces KeySilver
+actor KeySilver2: HexenSharedKey replaces KeySilver
 {
     inventory.pickupmessage "$TXT_KEY_SILVER"
     //inventory.icon "KEYSLOT7"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -541,11 +548,11 @@ actor KeySilver2 : CustomInventory replaces KeySilver
     }
 }
 
-actor KeySteel2 : CustomInventory replaces KeySteel
+actor KeySteel2: HexenSharedKey replaces KeySteel
 {
     inventory.pickupmessage "$TXT_KEY_STEEL"
     //inventory.icon "KEYSLOT1"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
@@ -560,11 +567,11 @@ actor KeySteel2 : CustomInventory replaces KeySteel
     }
 }
 
-actor KeySwamp2 : CustomInventory replaces KeySwamp
+actor KeySwamp2: HexenSharedKey replaces KeySwamp
 {
     inventory.pickupmessage "$TXT_KEY_SWAMP"
     //inventory.icon "KEYSLOTA"
-    inventory.pickupsound "misc/k_pkup"
+
     +NOTDMATCH
     States
     {
