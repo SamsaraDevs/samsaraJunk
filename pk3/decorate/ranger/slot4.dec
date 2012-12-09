@@ -329,6 +329,7 @@ actor QuakeLavaNail: QuakeNail
 {
     Damage (18)
     +PIERCEARMOR
+    DamageType Fire
 
     Translation "160:164=208:214"
 

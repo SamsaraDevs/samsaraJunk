@@ -228,6 +228,7 @@ actor QuakeSuperNailCoop: QuakeSuperNail
 actor QuakeSLNail: QuakeLavaNail
 {
     Damage (36)
+    DamageType Fire
 }
 
 actor QuakeSLNailCoop: QuakeSLNail
