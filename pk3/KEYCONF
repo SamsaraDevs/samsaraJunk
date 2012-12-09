@@ -8,17 +8,20 @@ addplayerclass "DukePlayer"
 addplayerclass "MarathonPlayer"
 addplayerclass "QuakePlayer"
 
-addkeysection "Samsara" samsarakeys
+addkeysection "Samsara: Characters" samsarakeys
 
 addmenukey "Doomguy: Animations" samsara_cmd_vanilladoomanims
 addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
 addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
-addmenukey "Global: Weapon Bar" samsara_cmd_wephud
-addmenukey "Global: Pickup GFX" samsara_cmd_weppickups
-addmenukey "Global: Pickup Msg. Mode" samsara_cmd_msgmode
-addmenukey "Global: Tipboxes"  samsara_tipbox
-addmenukey "Global: Prev. tip" samsara_tipleft
-addmenukey "Global: Next tip"  samsara_tipright
+
+addkeysection "Samsara: System" samsarasyskeys
+
+addmenukey "Weapon Bar" samsara_cmd_wephud
+addmenukey "Pickup Graphics" samsara_cmd_weppickups
+addmenukey "Pickup Msg. Mode" samsara_cmd_msgmode
+addmenukey "Tipbox: Show"  samsara_tipbox
+addmenukey "Tipbox: Next char" samsara_tipright
+addmenukey "Tipbox: Next page"  samsara_tipdown
 
 alias samsara_id_vanilladoom  "set samsara_cl_vanilladoom  $samsara_cl_vanilladoom;  archivecvar samsara_cl_vanilladoom"
 alias samsara_id_wolfmove     "set samsara_cl_wolfmove     $samsara_cl_wolfmove;     archivecvar samsara_cl_wolfmove"   
