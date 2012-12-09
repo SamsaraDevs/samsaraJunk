@@ -1,19 +1,19 @@
-#define SAMSARA_ENTER               211
-#define SAMSARA_RETURN              213
-#define SAMSARA_RESPAWN             218
-#define SAMSARA_DEATH               219
-#define SAMSARA_OPEN                223
-#define SAMSARA_SPAWN               224
-#define SAMSARA_DISCONNECT          217
-#define SAMSARA_WOLFMOVE            273
+#define SAMSARA_ENTER               611
+#define SAMSARA_RETURN              613
+#define SAMSARA_RESPAWN             618
+#define SAMSARA_DEATH               619
+#define SAMSARA_OPEN                623
+#define SAMSARA_SPAWN               624
+#define SAMSARA_DISCONNECT          617
+#define SAMSARA_WOLFMOVE            673
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215
 #define SAMSARA_GIVEWEAPON          229
 #define SAMSARA_GIVEUNIQUE          231
-#define SAMSARA_CLIENT_WEAPONPICKUP 216
-#define SAMSARA_CLIENT_UNIQUEPICKUP 233
-#define SAMSARA_MARATHON            209
+#define SAMSARA_CLIENT_WEAPONPICKUP 616
+#define SAMSARA_CLIENT_UNIQUEPICKUP 633
+#define SAMSARA_MARATHON            609
 #define SAMSARA_MEGAHEALTH          249
 
 #define SAMSARA_TIPBOX              300
@@ -21,9 +21,9 @@
 
 #define SAMSARA_PUKE                226
 #define SAMSARA_PUKE_CLIENT         227
-#define SAMSARA_OPEN_CLIENT         248
-#define SAMSARA_ENTER_CLIENT        221
-#define SAMSARA_DISCONNECT_CLIENT   222
+#define SAMSARA_OPEN_CLIENT         548
+#define SAMSARA_ENTER_CLIENT        521
+#define SAMSARA_DISCONNECT_CLIENT   522
 #define SAMSARA_CLIENT_CLASS        228
 
 #define SAMSARA_CL_VERSION          2601
