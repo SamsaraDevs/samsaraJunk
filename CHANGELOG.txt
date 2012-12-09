@@ -49,6 +49,8 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - D'Sparil is now actually invulnerable during his intro.
 - Morph Ovum now has the Heretic use item sound upon using it.
 - A lot of HeXen shit was pretty borked--namely, keys and repeatedly returning to areas. This has been (hopefully) fixed!
+- B.J.'s health now turns red instead of white upon reaching low health.
+- The script range has been increased from 200-255 to 550-650. There were simply too many conflicts beforehand.
 
 FROM 0.25 TO 0.26
 ========================
