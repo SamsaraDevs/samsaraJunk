@@ -548,7 +548,7 @@ StatusBar normal, forcescaled
     {
         drawimage "WOLFBAR", 0, 168;
         drawnumber 3, WOLFHUDF, gold, ammo1, 37, 181, 0, untranslated, 0, untranslated, 20;
-        drawnumber 3, WOLFHUDF, gold, health, 90, 181, white, 25, untranslated, 50;
+        drawnumber 3, WOLFHUDF, gold, health, 90, 181, red, 25, untranslated, 50;
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
@@ -2036,7 +2036,7 @@ statusbar Automap
     {
         drawimage "WOLFBAR", 0, 168;
         drawnumber 3, WOLFHUDF, gold, ammo1, 37, 181, 0, untranslated, 0, untranslated, 20;
-        drawnumber 3, WOLFHUDF, gold, health, 90, 181, white, 25, untranslated, 50;
+        drawnumber 3, WOLFHUDF, gold, health, 90, 181, red, 25, untranslated, 50;
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
