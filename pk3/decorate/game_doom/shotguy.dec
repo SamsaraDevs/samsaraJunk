@@ -42,6 +42,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         goto Death.DukeDamage
 
       DukeGibStart:
+        SPOS G 1
         TNT1 A 0 A_UnsetSolid
         TNT1 A 0 A_SpawnDebris("DukeGibs1")
         TNT1 A 0 A_SpawnDebris("DukeGibs2")
