@@ -4,8 +4,8 @@ actor CanDualPistols : GenericItem {}
 
 actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOPistolSkin"
     Weapon.SlotNumber 1
     Weapon.SelectionOrder 1900

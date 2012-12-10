@@ -2,8 +2,8 @@ actor UsingSpanker : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmo
 
 actor "SPNKR-XP SSM Launcher" : Weapon// replaces RocketLauncher
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOSpankerSkin"
     Weapon.SelectionOrder 2500
     Weapon.SlotNumber 5
