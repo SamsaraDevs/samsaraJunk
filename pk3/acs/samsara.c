@@ -192,6 +192,8 @@ script SAMSARA_SPAWN (int respawning)
             Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
         }
 
+        // useless but harmless in Zandro - triggers buddha mode when Blazko has an extra life in ZDoom
+        SetPlayerProperty(0, CheckInventory("WolfExtraLife"), 16);
 
         // Quakeguy quad shit
         oQuadTimer = quadTimer;
@@ -1370,18 +1372,6 @@ script 207 (void)
         delay(35);
         TakeInventory("DiscOfRepulsionCooldown",1);
         restart;
-    }
-}
-
-script 208 (void)
-{
-    if (CheckInventory("WolfExtraLife") > 0)
-    {
-        SetPlayerProperty(0,1,16);
-    }
-    else
-    {
-        SetPlayerProperty(0,0,16);
     }
 }
 
