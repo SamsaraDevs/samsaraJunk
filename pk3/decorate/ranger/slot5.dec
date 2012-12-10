@@ -146,6 +146,7 @@ actor QuakeRocket
     +RANDOMIZE
     +DEHEXPLOSION
     +ROCKETTRAIL
+    +EXPLODEONWATER
     
     Obituary "%k made %o ride the rocket." // Might need to change, exact same as Doomguy's.
     

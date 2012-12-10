@@ -139,6 +139,7 @@ actor QuakeGrenade
     BounceFactor 0.3
     
     +HEXENBOUNCE
+    +CANBOUNCEWATER
     +RANDOMIZE
     +DEHEXPLOSION
     +GRENADETRAIL
