@@ -52,6 +52,8 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - B.J.'s health now turns red instead of white upon reaching low health.
 - The script range has been increased from 200-255 to 550-650. There were simply too many conflicts beforehand.
 - Duke 3D gibs should now properly show up online!
+- Duke no longer runs his mouth every time he picks up a dropped weapon.
+- Everyone has their old pickup sounds again!
 
 FROM 0.25 TO 0.26
 ========================
