@@ -1,6 +1,5 @@
 DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 2: Script 209 doesn't work and is commented out
-3: SBarInfo is modified to get rid of the multiplayer shit
 9: Change the ACS from its reliance on ConsoleCommands, due to ZDoom not supporting it.
 12: ZDoom version has more quit messages.
 
