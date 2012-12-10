@@ -814,7 +814,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
                 Spawn("WeaponGetYaaaay2", GetActorX(0), GetActorY(0), GetActorZ(0));
             }
 
-            ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),0);
+            ACS_ExecuteAlways(SAMSARA_CLIENT_WEAPONPICKUP, 0, slot,GetCVar("compat_silentpickup"),dropped);
         }
     }
     
@@ -858,7 +858,7 @@ script SAMSARA_GIVEUNIQUE (int alt)
 
 int QuoteStorage[MSGCOUNT];
 
-script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
+script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) clientside
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
@@ -905,7 +905,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode) clientside
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
     
-    if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag"))
+    if (pclass == CLASS_DUKE && !GetCVar("samsara_cl_ballgag") && !dropped)
     {
         Delay(8);
 
