@@ -13,7 +13,7 @@ actor QuadDamagePower: PowerDamage
 actor QuadDamagePickup: CustomInventory
 {
     Inventory.MaxAmount 0
-
+    tag "Quad Damage"
     Inventory.Icon "QUADICON"
 
     +FLOATBOB
