@@ -1,6 +1,4 @@
 DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
-1: Zdoom has the TauntButton custominventory to allow players to taunt
- ^- : DON'T FORGET THE KEYCONF ENTRIES
 2: Script 209 doesn't work and is commented out
 3: SBarInfo is modified to get rid of the multiplayer shit
 4: Items have the Tag property to say what they really are

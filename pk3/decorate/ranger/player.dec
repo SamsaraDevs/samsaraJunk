@@ -23,6 +23,7 @@ actor QuakePlayer: PlayerPawn
     
     Player.StartItem "QuakeClass"
     Player.StartItem "Single Shotgun"
+   Player.StartItem "TauntButton", 1
     Player.StartItem "Clip", 50
     Player.StartItem "Axe"
     
