@@ -48,7 +48,7 @@ actor WolfenPlayer : PlayerPawn
         Goto Spawn
 
       GoingToSalvate:
-        BJBL G 4 A_JumpIfHealthLower(20, "GoingTo")
+        BJBL G 4 A_JumpIfHealthLower(5, "GoingTo")
         BJBL G 4 A_Pain
         Goto Spawn
 

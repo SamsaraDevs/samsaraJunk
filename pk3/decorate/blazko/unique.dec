@@ -7,7 +7,8 @@ actor WolfExtraLife : Inventory//CustomInventory
     +INVBAR
     +HUBPOWER
     +UNDROPPABLE
-    -INTERHUBSTRIP/*
+    -INTERHUBSTRIP
++INVENTORY.PERSISTENTPOWER/*
     States
     {
       Use:

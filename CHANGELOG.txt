@@ -8,9 +8,6 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
  D: Duke
  E: HeXen's alternate Mystic Ambit Incant for Corvus
  F: HeXen's Dragonskin Bracers
-5: Decrease amount of life B.J. needs to activate extra life, from 20 to 5.
-6: Give +INVENTORY.PERSISTENTPOWER to B.J.'s Extra Life.
-7: Remove RuneProsperity from the Medikit (making it a boolean works just as well, I noticed)
 8: Give the SO his BlueMap for infrared.
 9: Change the ACS from its reliance on ConsoleCommands, due to ZDoom not supporting it.
 10: Uncomment the Weapon.BobRangeX / Weapon.BobStyle Smooth bits on the SO's weapons.
