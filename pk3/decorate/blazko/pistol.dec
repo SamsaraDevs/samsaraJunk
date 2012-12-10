@@ -3,7 +3,7 @@ actor Luger: InstantSwitchWeapon
     Weapon.SelectionOrder 1900
     Weapon.SlotNumber 1
     Inventory.PickUpSound "wolfen/knifeget"
-    Obituary "%k put a hole in %o with the Luger."
+    Obituary "%k \cjput a hole in\c- %o \cjwith the Luger.\c-"
     Inventory.PickupMessage "You got the Luger Pistol!"
     DamageType "Pistol"
     Weapon.AmmoUse 0

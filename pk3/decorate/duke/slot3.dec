@@ -296,7 +296,7 @@ actor DukeExplosiveShotgunBullet : FastProjectile
     Height 1
     Speed 300
     Projectile
-    Obituary "%k pulverized %o with a spray of explosions."
+    Obituary "%k \cfpulverized\c- %o \cfwith a spray of explosions.\c-"
     DamageType "DukeExplosive"
     Renderstyle "Normal"
     +BLOODSPLATTER

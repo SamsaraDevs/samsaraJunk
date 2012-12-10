@@ -10,7 +10,7 @@ actor " Firemace " : Weapon
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the Firemace!"
-    Obituary "%k pelted %o with balls of steel."
+    Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
     
     States
     {
@@ -285,7 +285,7 @@ actor MaceFX12 : MaceFX1 replaces MaceFX1
     Damage 2 // Originally 2
     Decal BaronScorch
     //+STRIFEDAMAGE
-    Obituary "%k pelted %o with balls of steel."
+    Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
 }
 
 actor MaceFX1Coop : MaceFX12
@@ -304,7 +304,7 @@ actor MaceFX22 : MaceFX2 replaces MaceFX2
     SeeSound "weapons/maceshoot"
     Decal BaronScorch
     //+STRIFEDAMAGE
-    Obituary "%k pelted %o with balls of steel."
+    Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
 }
 
 actor MaceFX2Coop : MaceFX22
@@ -322,7 +322,7 @@ actor MaceFX32 : MaceFX3 replaces MaceFX3
     Damage 3 // Originally 4
     Decal BaronScorch
     //+STRIFEDAMAGE
-    Obituary "%k pelted %o with balls of steel."
+    Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
 }
 
 actor MaceFX42 : MaceFX4 replaces MaceFX4
@@ -330,7 +330,7 @@ actor MaceFX42 : MaceFX4 replaces MaceFX4
     DamageType "Mace"
     Decal BFGScorch
     +FOILINVUL
-    Obituary "%k crushed %o with giant balls."
+    Obituary "%k \cqcrushed\c- %o \cqwith giant balls.\c-"
 }
 
 actor MaceFX43 : MaceFX42 { +THRUSPECIES Species "Player" }

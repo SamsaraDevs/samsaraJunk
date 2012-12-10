@@ -148,7 +148,7 @@ actor QuakeRocket
     +ROCKETTRAIL
     +EXPLODEONWATER
     
-    Obituary "%k made %o ride the rocket." // Might need to change, exact same as Doomguy's.
+    Obituary "%k \csmade\c- %o \csride the rocket.\c-" // Might need to change, exact same as Doomguy's.
     
     States
     {
@@ -166,7 +166,7 @@ actor QuakeRocket
 
 actor QuakeRocketQuad: QuakeRocket
 {
-    Obituary "%k smeared %o."
+    Obituary "%k \cssmeared\c- %o \cswith a Quadded Rocket."
     
     DamageType "NotQuadded"
     
@@ -198,7 +198,7 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
 
 actor QuakeClusterRocket: QuakeRocket
 {
-    Obituary "%k gave %o four rockets to ride."
+    Obituary "%k \csgave\c- %o \csfour rockets to ride.\c-"
     
     States
     {
@@ -221,7 +221,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
 actor QuadClusterRocket: QuakeClusterRocket
 {
     DamageType "NotQuadded"
-    Obituary "%k turned %o into a fine mist."
+    Obituary "%k \csturned\c- %o \csinto a fine mist.\c-"
     
     States
     {

@@ -5,7 +5,7 @@ actor Knife: InstantSwitchWeapon
     Weapon.SlotNumber 0
     Inventory.PickUpSound "wolfen/knifeget"
     Inventory.PickupMessage "You got a Knife! Wait, shouldn't you start with this?"
-    Obituary "%k shanked %o with a knife."
+    Obituary "%k \cjshanked\c- %o \cjwith a knife.\c-"
     +WEAPON.MELEEWEAPON
     +DONTBOB
     +NOALERT

@@ -8,7 +8,7 @@ actor " Staff " : Weapon
     +NOALERT
     +STAFF2_KICKBACK
     +INVENTORY.UNDROPPABLE
-    Obituary "%k spoke softly and gave %o the big stick."
+    Obituary "%k \cqspoke softly and gave\c- %o \cqthe big stick.\c-"
     States
     {
       Ready:

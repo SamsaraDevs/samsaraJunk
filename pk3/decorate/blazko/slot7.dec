@@ -64,7 +64,7 @@ actor SpearBolt
     Damage 55
     SeeSound ""
     DeathSound "wolfen/spearexplode1"
-    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +DONTREFLECT
     DamageType "BJSpear"
@@ -90,7 +90,7 @@ actor SpearBolt
 actor SpearBoltDM: SpearBolt
 {
     DamageType "BJSpear"
-    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     States
     {
       Death:
@@ -113,7 +113,7 @@ actor SpearShotMini
     Speed 10
     Damage 4
     Scale 0.75
-    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
     +DOOMBOUNCE
@@ -169,7 +169,7 @@ actor SpearShotMini2
     Height 4
     Speed 10
     Damage 4
-    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
     +STRIFEDAMAGE

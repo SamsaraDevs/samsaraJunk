@@ -63,7 +63,7 @@ actor ChexRocket
     +BRIGHT
     SeeSound "chex/rocklf"
     DeathSound "chex/rocklx"
-    Obituary "%k zorched %o with way more force than needed."
+    Obituary "%k \chzorched\c- %o \chwith way more force than needed.\c-"
     DamageType "Zorch"
     States
     {

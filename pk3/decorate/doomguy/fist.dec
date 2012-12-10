@@ -7,7 +7,7 @@ actor " Fist " : Weapon
     +WEAPON.WIMPY_WEAPON
     +WEAPON.MELEEWEAPON
     +WEAPON.NOALERT
-    Obituary "%k fisted %o with a pair of brass knuckles."
+    Obituary "%k \cdfisted\c- %o \cdwith a pair of brass knuckles.\c-"
     States
     {
       Ready:

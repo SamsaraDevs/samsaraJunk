@@ -147,7 +147,7 @@ actor FlameShot
     Scale 0.85
     DeathSound ""
     Projectile
-    Obituary "%k made %o all TOZT."
+    Obituary "%k \cnmade %o \cnall TOZT."
     +RANDOMIZE
     +RIPPER
     +NOBLOOD

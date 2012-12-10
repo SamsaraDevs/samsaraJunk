@@ -12,7 +12,7 @@ Actor "LAZ Device" : Weapon
     +NOEXTREMEDEATH
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the LAZ Device! Woot!"
-    Obituary "%k showed %o you can always get LAZ'd."
+    Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
     DamageType "Zorch"
     States
     {
@@ -123,7 +123,7 @@ actor ChexBFGBall
     Speed 25
     Damage 100
     RenderStyle Translucent
-    Obituary "%o fell prey to %k's LAZ device."
+    Obituary "%o \chfell prey to\c- %k\ch's LAZ device.\c-"
     Alpha 0.75
     DeathSound "chex/bfgx"
     Projectile

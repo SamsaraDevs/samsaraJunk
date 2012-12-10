@@ -7,7 +7,7 @@ actor " Chainsaw " : Chainsaw replaces Chainsaw
     Weapon.ReadySound "doomguy/sawidle"
     DamageType "Chainsaw"
     +INVENTORY.UNDROPPABLE
-    Obituary "%k massacred %o with the Chainsaw."
+    Obituary "%k \cdmassacred\c- %o \cdwith the Chainsaw.\c-"
     States
     {
       Ready:

@@ -9,7 +9,7 @@ actor "Mace of Contrition" : CWeapMace
     +WEAPON.MELEEWEAPON
     +WEAPON.NOALERT
     +INVENTORY.UNDROPPABLE
-    Obituary "%k maced %o the ol'-fashioned way."
+    Obituary "%k \clmaced\c- %o \clthe ol'-fashioned way.\c-"
     States
     {
       Select:

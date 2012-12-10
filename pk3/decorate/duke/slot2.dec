@@ -268,14 +268,14 @@ actor DukeShotgunBullet : DukePistolBullet
 {
     +THRUGHOST
     +NOTIMEFREEZE
-    Obituary "%k deemed %o a threat."
+    Obituary "%k \cfdeemed\c- %o \cfa threat.\c-"
     Damage (10)
     DamageType "DukeDamage"
 }
 
 actor DukeShotgunBulletCoop : DukePistolBullet
 {
-    Obituary "%k deemed %o a threat."
+    Obituary "%k \cfdeemed\c- %o \cfa threat.\c-"
     Damage (10)
     +THRUGHOST
     +THRUSPECIES

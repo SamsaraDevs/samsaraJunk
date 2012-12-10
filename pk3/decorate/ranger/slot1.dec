@@ -90,7 +90,7 @@ actor LaserCannonBolt
     Scale 0.55
     SeeSound "quakeweps/laserbounce"
 
-    Obituary "%k tazed %o with the Laser Cannon."
+    Obituary "%k \cstazed\c- %o \cswith the Laser Cannon.\c-"
 
     States
     {

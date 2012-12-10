@@ -278,7 +278,7 @@ actor FreezethrowerBolt
     Damage (22)//Original was 20.
     DamageType "DukeIce"
     Projectile
-    Obituary "%k threw %o on the freezer."
+    Obituary "%k \cfthrew\c- %o \cfin the freezer.\c-"
     Scale 0.14
     Alpha 0.95
     RenderStyle Add

@@ -8,7 +8,7 @@ actor "Axe": InstantSwitchWeapon
     +UNDROPPABLE
 
     Inventory.Icon "PSTRA0"
-    Obituary "%k met %o and became an axe-murderer."
+    Obituary "%k \csmet\c- %o \csand became an axe-murderer.\c-"
 
     States
     {

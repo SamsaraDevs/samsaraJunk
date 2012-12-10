@@ -6,7 +6,7 @@ actor " Shotgun " : Shotgun
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
     AttackSound ""
-    Obituary "%k showed %o his boomstick."
+    Obituary "%k \cdshowed\c- %o \cdhis boomstick.\c-"
     States
     {
       Ready:

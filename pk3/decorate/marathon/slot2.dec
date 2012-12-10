@@ -255,7 +255,7 @@ actor MarathonShotgunBullet : FastProjectile
     Radius 8
     Height 8
     Projectile
-    Obituary "%k wasted %o with the WSTE-M5."
+    Obituary "%k \cnwasted\c- %o \cnwith the WSTE-M5.\c-"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH

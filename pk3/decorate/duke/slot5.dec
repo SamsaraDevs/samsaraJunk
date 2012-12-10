@@ -218,7 +218,7 @@ actor DukeRocket
     Speed 30
     Damage (80)
     Projectile
-    Obituary "%k sent %o home in a box."
+    Obituary "%k \cfsent\c- %o \cfhome in a box.\c-"
     Scale 0.4
     Decal Scorch
     DamageType "DukeExplosive"

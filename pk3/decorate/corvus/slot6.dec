@@ -10,7 +10,7 @@ actor Hellstaff : Weapon
     +INVENTORY.UNDROPPABLE
     Inventory.PickUpSound "heretic/weaponget"
     Inventory.PickupMessage "You got the Hellstaff!"
-    Obituary "%k sent %o to the depths of Hell."
+    Obituary "%k \cqsent\c- %o \cqto the depths of Hell.\c-"
     
     States
     {

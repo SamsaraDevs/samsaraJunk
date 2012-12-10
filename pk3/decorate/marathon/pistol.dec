@@ -345,7 +345,7 @@ actor MarathonMagnumBullet : FastProjectile
     Height 8
     Speed 100
     Projectile
-    Obituary "%k emptied %o's skull with a .44 Magnum."
+    Obituary "%k \cnemptied\c- %o\cn's skull with a .44 Magnum.\c-"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH

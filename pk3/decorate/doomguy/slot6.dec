@@ -85,7 +85,7 @@ actor DoomPlasmaBall : PlasmaBall
     Decal DoomPlasmaScorch
     SeeSound "doomguy/plasmaf"
     DeathSound "doomguy/plasmax"
-    Obituary "%k melted %o with the Plasma Rifle."
+    Obituary "%k \cdmelted\c- %o \cdwith the Plasma Rifle.\c-"
     DamageType "DoomPlasma"
     States
     {

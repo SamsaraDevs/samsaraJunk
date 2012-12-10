@@ -49,7 +49,7 @@ actor WolfRocket
     +NOEXTREMEDEATH
     SeeSound "wolfen/missilefire"
     DeathSound "wolfen/missilexplod"
-    Obituary "%k tore through %o with the Rocket Launcher."
+    Obituary "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-"
     States
     {
       Spawn:

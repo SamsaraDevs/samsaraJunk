@@ -17,7 +17,7 @@ actor "Thunderbolt": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the thunderbolt"
-    Obituary "%k gave %o the shaft."
+    Obituary "%k \csgave\c- %o \csthe shaft.\c-"
 
     States
     {
@@ -552,7 +552,7 @@ actor LGPuff: BulletPuff
 
     RenderStyle Add
 
-    Obituary "%o accepts %k's shaft"
+    Obituary "%o \csaccepts\c- %k's \csshaft.\c-"
 
     States
     {
@@ -575,7 +575,7 @@ actor LGDischarge
 
     Projectile
 
-    Obituary "%o accepts %k's discharge"
+    Obituary "%o \csaccepts\c- %k's \csdischarge.\c-"
 
     States
     {

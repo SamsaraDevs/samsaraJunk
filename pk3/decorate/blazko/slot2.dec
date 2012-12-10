@@ -10,7 +10,7 @@ actor "Machine Gun": InstantSwitchWeapon
     +DONTBOB
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the Machine Gun!"
-    Obituary "%k shot %o to pieces with the Machine Gun."
+    Obituary "%k \cjshot\c- %o \cjto pieces with the Machine Gun.\c-"
     Weapon.YAdjust 16
     States
     {

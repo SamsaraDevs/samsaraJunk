@@ -10,7 +10,7 @@ actor "  Chaingun  ": InstantSwitchWeapon
     +DONTBOB
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the Chaingun!"
-    Obituary "%k drilled %o with the Chaingun."
+    Obituary "%k \cjdrilled\c- %o \cjwith the Chaingun.\c-"
     Weapon.YAdjust 16
     States
     {

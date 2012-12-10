@@ -9,7 +9,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the shotgun"
-    Obituary "%k gave %o a boomstick to chew on."
+    Obituary "%k \csgave\c- %o \csa boomstick to chew on.\c-"
     
     //Decal BulletChip
     

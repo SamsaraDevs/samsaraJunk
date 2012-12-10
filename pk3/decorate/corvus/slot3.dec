@@ -10,7 +10,7 @@ actor "Ethereal Crossbow" : Weapon
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the Ethereal Crossbow!"
-    Obituary "%k turned %o into an ethereal pincushion."
+    Obituary "%k \cqturned\c- %o \cqinto an ethereal pincushion.\c-"
     
     States
     {

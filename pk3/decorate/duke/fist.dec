@@ -187,7 +187,7 @@ actor DukeKickAttack : FastProjectile
     Projectile
     Damage (10)
     Speed 25
-    Obituary "%k put %o out with a snap kick."
+    Obituary "%k \cfput\c- %o \cfout with a snap kick.\c-"
     SeeSound "none"
     DeathSound "none"
     Decal "none"
