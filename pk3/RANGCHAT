@@ -1,0 +1,101 @@
+// Personality: Nihilistic survivalist, combination of Quake III quotes and Lovecraftian cynicism
+
+[IntroStrings]
+"Ranger leads the way."
+"Special orders, here...time to remove all hostiles."
+"You get up, I'll knock your ass right back down."
+"You'd think I'd learn not to hop into any strange portals anymore."
+"I'm going in. You guys are going out."
+"Time to return shit to dust."
+
+[FragStrings]
+"Lemme guess. That was a headshot."
+"I'm goin' slow 'cause I like the look on your ugly face."
+"That's your lot in life. That's all you'll amount to!"
+"I'd say you almost got it right...but I don't feel right lying."
+"Surprise. No more paintballs."
+"Quit your crying. It's shameful."
+"I don't use blanks. Live ammo, here."
+"I'd take your dog tags, but I don't deal with baby bracelets."
+"Informing your next of kin would be pointless."
+
+[KilledStrings]
+"In a blaze of glory! Oh, hell, at least it's a blaze."
+"Best trophy you'll ever get, scumbag."
+"I hate taking point."
+"I'm so used to ugly things with claws and swords, forgot about the ones with guns."
+"Mama always said there'd be days like this."
+"Stop waving that thing at me. I'll let you off easy this time."
+"Nope. Still hate dyin'."
+"Guess I should've ducked my head down lower."
+"Gotta correct my aim for windage."
+
+[RoamingStrings]
+"Failure is not part of a Marine's vocabulary."
+"Go! Go! Go!"
+"I'm used to killin' ugly shit."
+"So, I take it I'm leading the charge again?"
+"Let's get the juices flowing. Yours."
+"Aren't the dreams of poets and travellers all bullshit?"
+"Ia ia fhtagn, motherfuckers."
+"Searching for the truth is always more joyful than findin' it."
+"I'm loving this dive into the unknown abyss."
+"We're haunting strange and far places, now."
+"I'm a horror beyond horrors. Come and get me."
+"You'll see what goes on beyond the midnight. It ain't pretty."
+"The smart kids know there isn't really a line between fact and fantasy."
+"Kind of nice, seeing all the shadows all over the place. Just like old times."
+"My reality's right in front of me. Gun. Barrel. Your body."
+"It's too easy to call strange shit 'supernatural'. Gotta think harder."
+"What do we know 'bout the world and the universe around us?"
+"When you actively search for the terrible, you find it. And it sucks."
+"Memories and possibilities are always worse than reality, I've learned."
+"You ever just look up at the stars?"
+"Gotta get one with your savage self. Show me your ol' primal beastly rage."
+"Gotta fight, kill, die. That's what we do. Bring it."
+"Don't get excited. Get your ass down. Wait, that's your head."
+"All sorts of dark and lonely places here. Let's light it up."
+"Even death itself can be slain. Gets pissy if you do, though."
+"I've brought the shadows with me. What's your backup?"
+"The strongest emotion's fear, and the strongest fear's of the unknown. You fear me, kid?"
+"With enough gunpowder, you can open up the whole universe."
+"I'm gonna remove all wonder from that brain of yours."
+"They were, they are, and they will be. Then I shot them. Whoops."
+"Lemme tell you. Some parts of Earth's dead, dark corners? You leave the hell alone."
+"Oh Earthling, more fortunate than you'd ever realize..."
+
+[RareRoamingStrings]
+"Y'know, heard the damndest thing. Apparently there's a gun that shoots portals, now. The hell?"
+"I'm no stranger to this Wheel. Been in an eternal arena once before."
+"I'm disillusioned enough to know that nobody's worth a damn unless they can back it up."
+"I've seen the memories and dreams of time itself, shit beyond the scale of the universe."
+"Gotta be honest. My mind's a little scattered now. And I think that's a mercy."
+"Been having a hard time really caring about anything after going toe to toe with...them."
+"I'm fantasizing at least 20 different ways to kill you. Probably ain't healthy."
+"Disintegration's pretty painless, lemme tell you. You curious about that?"
+"I don't care about your job. I care about your mind. That's what's important, in a man."
+
+//[LosingRoamingStrings]
+
+[WinStrings]
+"Good thing we don't have any of you fighting against eternity."
+"Semper fi, do or die! Semper fi, I did, you died!"
+"What a freakin' waste of time!"
+"And this is why it pays to pay attention."
+"My high ground isn't just a high horse, kids."
+
+[LoseStrings]
+"Son of an ass-smellin' momma's dog!"
+"Damn. Just...damn."
+"Nice shooting, first-class private wise-ass."
+"Sure, whatever."
+"Okay, that just wasn't acceptable."
+
+//[FrustratedStrings] // Spammer!
+
+//[EnragedStrings] // You fail it!
+
+//[DemoralizedStrings] // Your skill is not enough!
+
+[PissedStrings] // Llama!
+"I wasn't mad before. Then you just did that shit."

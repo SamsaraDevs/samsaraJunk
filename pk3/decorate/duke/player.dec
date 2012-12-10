@@ -62,6 +62,8 @@ actor DukePlayer : PlayerPawn
     DamageFactor "HexHeresiarchPurple", 1.1
     DamageFactor "WMCBeam", 0.85
     DamageFactor "WMCNade", 0.85
+    DamageFactor "QuakePistol", 1.1
+    DamageFactor "NotQuadded", 1.1
     
     RadiusDamageFactor 0.9
     +NOSKIN
@@ -241,7 +243,7 @@ actor BurnDeathDuke
     Speed 8
     +FLOORCLIP
     +LOOKALLAROUND
-    +SOLID
+    -SOLID
     -SHOOTABLE
     //RenderStyle Add
     //Alpha 1.0

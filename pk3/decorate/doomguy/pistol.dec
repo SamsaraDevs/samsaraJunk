@@ -10,7 +10,7 @@ actor " Pistol " : Pistol
     +INVENTORY.UNDROPPABLE
     AttackSound "doomguy/pistol"
     DamageType Pistol
-    Obituary "%k executed %o for insubordination."
+    Obituary "%k \cdexecuted\c- %o \cdfor insubordination.\c-"
     States
     {
       Ready:

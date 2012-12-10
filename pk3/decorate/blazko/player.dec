@@ -4,7 +4,8 @@ actor WolfenPlayer : PlayerPawn
     Player.StartItem "Luger", 1
     Player.StartItem "Knife", 1
     Player.StartItem "WolfenClass", 1
-   Player.StartItem "TauntButton", 1
+    Player.StartItem "TauntButton", 1
+    Player.StartItem "CanWolfMovement", 1
     Player.StartItem "Clip", 50
     Player.Face "BJF"
     Player.JumpZ 9//Default is 8
@@ -115,6 +116,7 @@ actor WolfenPlayer : PlayerPawn
         goto Death.DukeDamage
 
       DukeGibStart:
+	BJBL G 1
         TNT1 A 0 A_UnsetSolid
         TNT1 A 0 A_PlaySound("duke/enemygib")
         TNT1 A 0 A_SpawnDebris("DukeGibs1")
@@ -173,6 +175,7 @@ actor WolfenAmmoCrate : CustomInventory
 }
 
 actor WolfMoving: Boolean {}
+actor CanWolfMovement : Boolean {}
 actor WolfenMovement : Boolean {}
 actor WolfenClass : Boolean {}
 

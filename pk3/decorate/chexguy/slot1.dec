@@ -8,7 +8,7 @@ actor "Super Bootspork" : Weapon
     Weapon.UpSound "chex/sawup"
     Weapon.ReadySound "chex/sawidle"
     Inventory.PickupMessage "You got a Super Bootspork! Find some milk!"
-    Obituary "%k thoroughly mixed %o with the Super Bootspork."
+    Obituary "%k \chthoroughly mixed\c- %o \chwith the Super Bootspork.\c-"
     +WEAPON.MELEEWEAPON
     +BLOODLESSIMPACT
     +INVENTORY.UNDROPPABLE

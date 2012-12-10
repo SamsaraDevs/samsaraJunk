@@ -416,12 +416,16 @@ function int giveHealth(int amount)
 
 function int giveHealthFactor(int amount, int maxFactor)
 {
-    int maxHP = ftoi(getMaxHealth() * maxFactor);
+    return giveHealthMax(amount, ftoi(getMaxHealth() * maxFactor));
+}
+
+function int giveHealthMax(int amount, int maxHP)
+{
     int newHP;
 
     int curHP = GetActorProperty(0, APROP_Health);
 
-    if (maxFactor == 0.0) { newHP = max(curHP, curHP+amount); }
+    if (maxHP == 0) { newHP = max(curHP, curHP+amount); }
     else { newHP = middle(curHP, curHP+amount, maxHP); }
 
     SetActorProperty(0, APROP_Health, newHP);
@@ -729,4 +733,18 @@ script DEFAULTTID_SCRIPT (int tid) clientside
 function int JumpZFromHeight(int height, int gravFactor)
 {
     return sqrt(2 * height * gravFactor);
+}
+
+function int roundZero(int toround)
+{
+    int i = toround % 1.0;
+    return ftoi(toround - i);
+}
+
+function int roundAway(int toround)
+{
+    int i = toround % 1.0;
+
+    if (i == 0) { return ftoi(toround); }
+    return ftoi(toround + (1.0 - i));
 }

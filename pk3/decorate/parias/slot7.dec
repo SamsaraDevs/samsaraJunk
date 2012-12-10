@@ -11,7 +11,7 @@ actor Wraithverge : CWeapWraithverge
     Weapon.KickBack 150
     Weapon.AmmoType1 "Clip"
     Weapon.AmmoType2 "Cell"
-    Obituary "%k added %o's soul to the Wraithverge."
+    Obituary "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-"
     Inventory.PickupMessage "You picked up the Wraithverge!"
     Inventory.PickupSound "hexen/weaponget"
     States
@@ -47,7 +47,7 @@ actor Wraithverge : CWeapWraithverge
 
 actor HolySpirit2 : HolySpirit replaces HolySpirit
 {
-    Obituary "%k added %o's soul to the Wraithverge."
+    Obituary "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-"
     Renderstyle Add
     Speed 10
     Alpha 0.7

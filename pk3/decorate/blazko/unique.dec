@@ -66,6 +66,8 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "HexGreenFire", 0.25
     DamageFactor "HexStalkerShot", 0.25
     DamageFactor "HexHeresiarchPurple", 0.25
+    DamageFactor "QuakePistol", 0.25
+    DamageFactor "NotQuadded", 0.25
     
     powerup.color Grey 0.1
 }

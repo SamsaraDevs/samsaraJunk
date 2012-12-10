@@ -1,0 +1,24 @@
+actor InstantSwitchWeapon: Weapon
+{
+    States
+    {
+      Select:
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Raise
+        TNT1 A 1 A_Raise
+        loop
+
+      Deselect:
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
+        TNT1 A 1 A_Lower
+        loop
+
+      Ready:
+        TNT1 A 0 A_TakeInventory("InstantSwitchWeapon")
+        TNT1 A 1 A_WeaponReady
+        loop
+
+      Fire:
+        TNT1 A 1
+        goto Ready
+    }
+}

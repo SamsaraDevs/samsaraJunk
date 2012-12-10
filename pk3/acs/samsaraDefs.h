@@ -1,30 +1,37 @@
-#define SAMSARA_ENTER               213
-#define SAMSARA_RESPAWN             218
-#define SAMSARA_DEATH               219
-#define SAMSARA_OPEN                223
-#define SAMSARA_SPAWN               224
-#define SAMSARA_DISCONNECT          217
-#define SAMSARA_WOLFMOVE            273
+#define SAMSARA_ENTER               611
+#define SAMSARA_RETURN              613
+#define SAMSARA_RESPAWN             618
+#define SAMSARA_DEATH               619
+#define SAMSARA_OPEN                623
+#define SAMSARA_SPAWN               624
+#define SAMSARA_DISCONNECT          617
+#define SAMSARA_WOLFMOVE            673
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215
 #define SAMSARA_GIVEWEAPON          229
 #define SAMSARA_GIVEUNIQUE          231
-#define SAMSARA_CLIENT_WEAPONPICKUP 216
-#define SAMSARA_CLIENT_UNIQUEPICKUP 233
-#define SAMSARA_MARATHON            209
+#define SAMSARA_CLIENT_WEAPONPICKUP 616
+#define SAMSARA_CLIENT_UNIQUEPICKUP 633
+#define SAMSARA_MARATHON            609
+#define SAMSARA_MEGAHEALTH          249
+
+#define SAMSARA_TIPBOX              300
+#define SAMSARA_TIPBOX_CLIENT       301
 
 #define SAMSARA_PUKE                226
-#define SAMSARA_OPEN_CLIENT         248
-#define SAMSARA_ENTER_CLIENT        221
-#define SAMSARA_DISCONNECT_CLIENT   222
+#define SAMSARA_PUKE_CLIENT         227
+#define SAMSARA_OPEN_CLIENT         548
+#define SAMSARA_ENTER_CLIENT        521
+#define SAMSARA_DISCONNECT_CLIENT   522
 #define SAMSARA_CLIENT_CLASS        228
 
 #define SAMSARA_CL_VERSION          2601
 
-#define CLASSCOUNT          7
+#define CLASSCOUNT          8
 #define UNIQUECOUNT         2
 #define SLOTCOUNT           9
+#define TIPCOUNT            2
 
 #define LMSMODES            6
 
@@ -35,11 +42,23 @@
 #define CLASS_HEXEN     4
 #define CLASS_DUKE      5
 #define CLASS_MARATHON  6
+#define CLASS_QUAKE     7
 
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 33
+#define UNLOADCOUNT 35
+
+#define P_COUNT 2
+#define P_QUAD  0
+#define P_REGEN 1
+
+#define QUAD_THRESHOLD      1050
+
+#define REGEN_CENTER_X      0.953125    // 610 / 640
+#define REGEN_CENTER_Y      0.6875      // 330 / 480
+
+#define TIP_SCROLLRATE      8
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
@@ -70,6 +89,7 @@ int ClassItems[CLASSCOUNT] =
     "HexenClass",
     "DukeClass",
     "MarathonClass",
+    "QuakeClass",
 };
 
 int PickupStates[CLASSCOUNT][5] = 
@@ -81,6 +101,7 @@ int PickupStates[CLASSCOUNT][5] =
     {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
     {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
     {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakeSpecial2"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
@@ -95,6 +116,7 @@ int ClassFades[CLASSCOUNT][5] =
     {255, 255, 0,   0.1, 5},
     {255, 255, 0,   0.1, 5},
     {0,   255, 0,   0.4, 8},
+    {255, 255, 0,   0.1, 5},
 };
 
 int SlotItems[SLOTCOUNT] = 
@@ -119,6 +141,7 @@ int LMSItems[CLASSCOUNT] =
     "",
     "",
     "",
+    "",
 };
 
 int UnloadRemove[UNLOADCOUNT] =
@@ -131,4 +154,32 @@ int UnloadRemove[UNLOADCOUNT] =
     "UsingShotguns", "UsingFusionPistol", "UsingAssaultRifle", "UsingSpanker", 
     "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
     "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
+    "QuakeQuadTimer", "QuakeRegenTimer",
+};
+
+int PowerOutVols[5] = {96, 104, 112, 120, 127};
+
+int Tipboxes[CLASSCOUNT][TIPCOUNT] =
+{
+    {"DOOMTIP1", "DOOMTIP2"},
+    {"CHEXTIP1", "CHEXTIP2"},
+    {"HERETIP1", "HERETIP2"},
+    {"WOLFTIP1", "WOLFTIP2"},
+    {"HEXNTIP1", "HEXNTIP2"},
+    {"DUKETIP1", "DUKETIP2"},
+    {"MARATIP1", "MARATIP2"},
+    {"QUAKTIP1", "QUAKTIP2"},
+};
+
+
+int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
+{
+    {"", "DOOMTIP3"},
+    {"", "CHEXTIP3"},
+    {"", "HERETIP3"},
+    {"", "WOLFTIP3"},
+    {"", "HEXNTIP3"},
+    {"", "DUKETIP3"},
+    {"", "MARATIP3"},
+    {"", "QUAKTIP3"},
 };

@@ -13,7 +13,7 @@ actor "Dragon Claw" : Weapon
     Weapon.AmmoType "Clip"
     DamageType "DragonClaw"
     Decal RailScorchLower
-    Obituary "%k clawed %o wide open."
+    Obituary "%k \cqclawed\c- %o \cqwide open.\c-"
     Inventory.PickupMessage "You got the Dragon Claw!"
     
     States

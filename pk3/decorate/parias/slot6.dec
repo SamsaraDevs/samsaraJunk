@@ -9,7 +9,7 @@ actor Firestorm : CWeapFlame
     Weapon.AmmoType1 "Cell"
     Inventory.PickupMessage "You got the Firestorm!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k baptized %o in the Firestorm."
+    Obituary "%k \clbaptized\c- %o \clin the Firestorm.\c-"
     +INVENTORY.UNDROPPABLE
     +BRIGHT
     States
@@ -99,7 +99,7 @@ actor CFlameMissileDM : CFlameMissile
 
 actor CircleFlame1 : CircleFlame
 {
-    Obituary "%k baptized %o in the Firestorm."
+    Obituary "%k \clbaptized\c- %o \clin the Firestorm.\c-"
     Damage 2//Originally 2
     +STRIFEDAMAGE
     States
@@ -120,7 +120,7 @@ actor CFlameMissile2 : CFlameMissile replaces CFlameMissile
 
 actor CircleFlame2 : CircleFlame replaces CircleFlame
 {
-    Obituary "%k baptized %o in the Firestorm."
+    Obituary "%k \clbaptized\c- %o \clin the Firestorm.\c-"
     Damage 2
     +THRUSPECIES
     Species "Player"

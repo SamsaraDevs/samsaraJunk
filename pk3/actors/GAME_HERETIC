@@ -309,6 +309,8 @@ Actor PowerLesserTome : PowerDamage
 	DamageFactor "BJSpear", 1.5
 	DamageFactor "WMCBeam", 1.5
 	DamageFactor "WMCNade", 1.5
+  DamageFactor "NotQuadded", 1.5
+  DamageFactor "QuakePistol", 1.5
 }
 
 // Dropped ammo replacement!
@@ -619,6 +621,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    IMPX G 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -757,6 +760,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    IMPX G 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -895,6 +899,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    MUMM H 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -1004,6 +1009,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    MUMM H 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -1116,6 +1122,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    MUMM H 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -1239,6 +1246,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    MUMM H 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -1754,6 +1762,7 @@ Death.DukeExplosive:
 	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
 	goto Death.DukeDamage
 DukeGibStart:
+    BEAS G 1
 	TNT1 A 0 A_UnsetSolid
     TNT1 A 0 A_SpawnDebris("DukeGibs1")
     TNT1 A 0 A_SpawnDebris("DukeGibs2")
@@ -2085,6 +2094,7 @@ DamageFactor "WMCBeam", 0.75
 DamageFactor "WMCNade", 0.55
 DamageFactor "DragonClaw", 1.5
 	PainChance "MarathonFusion", 0
++INVULNERABLE
 +DONTRIP
 +NOTDMATCH
 +NOICEDEATH

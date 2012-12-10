@@ -48,7 +48,7 @@ actor PoisonBagCoop
     +FOILINVUL
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
-    Obituary "%k put %o under the gas."
+    Obituary "%k \clput\c- %o \clunder the gas.\c-"
     States
     {
       Spawn:

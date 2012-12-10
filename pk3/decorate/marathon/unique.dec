@@ -244,7 +244,7 @@ actor EnforcerShot
     +NOBLOOD
     Scale 0.35
     DeathSound "enforcer/hit"
-    Obituary "%k kildldedd %o witfji09 tth e   44 SYSTEM ERROR"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
     Projectile
     States
     {
@@ -266,7 +266,7 @@ actor AlienWeaponBullet : FastProjectile
     Speed 80
     Projectile
     DamageType MarathonPlasma
-    Obituary "%k kildldedd %o witfji09 tth e   44 SYSTEM ERROR"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
     -BLOODSPLATTER
     +NOBLOOD
     +NOTIMEFREEZE

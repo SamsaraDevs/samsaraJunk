@@ -1,0 +1,400 @@
+actor "Grenade Launcher": InstantSwitchWeapon
+{
+    Weapon.SelectionOrder 2
+    
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 10
+    Weapon.AmmoType "RocketAmmo"
+    
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 0
+    Weapon.AmmoType2 "ClusterRocketAmmo"
+    
+    +NOAUTOAIM
+    +NOAUTOFIRE
+    +UNDROPPABLE
+    
+    Inventory.Icon "QGRLZ0"
+    
+    Inventory.PickupSound "quakeweps/weaponpickup"
+    Inventory.PickupMessage "You got the grenade launcher"
+    
+    States
+    {
+      Deselect:
+        QRKL A 0 A_TakeInventory("UsingMultiNades")
+        QRKL A 0 A_TakeInventory("UsingDoEAmmo")
+        goto Super::Deselect
+
+      Ready:
+        QGRL A 1 A_WeaponReady
+        Loop
+        
+      MultiReady:
+        QMGL A 1 A_WeaponReady
+        Loop
+        
+        // 22 tics
+      Fire:
+        TNT1 A 0 A_TakeInventory("UsingMultiNades")
+        TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
+        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
+        goto AfterSound
+        
+      QuadFire:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuad")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuad")
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeQuad", 0, 1, 0, 0, 0, 5)
+        goto Fire2
+        
+      CoopQuad:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoopQuad", 0, 1, 0, 0, 0, 5)
+        goto Fire2
+        
+      AfterSound:
+        QGRL B 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        QGRL B 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
+        QGRL B 0 A_FireCustomMissile("QuakeGrenade", 0, 1, 0, 0, 0, 5)
+        goto Fire2
+        
+      CoopFire:
+        QGRL B 0 A_FireCustomMissile("QuakeGrenadeCoop", 0, 1, 0, 0, 0, 5)
+        goto Fire2
+        
+      Fire2:
+        QGRL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
+        QGRL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QGRL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+        QGRL E 4
+        QGRL F 3
+        QGRL G 3
+        QGRL H 2
+        QGRL I 1
+        // 22 tics
+        QGRL I 0 A_Refire
+        Goto Ready
+        
+      AltFire:
+        TNT1 A 0 A_GiveInventory("UsingMultiNades")
+        TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
+        QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
+        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadAlt")
+        goto AfterSoundAlt
+        
+      QuadAlt:
+        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuadAlt")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuadAlt")
+        QGRL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
+        
+      CoopQuadAlt:
+        QGRL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
+        
+      AfterSoundAlt:
+        QGRL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
+        QGRL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
+        QGRL B 0 A_FireCustomMissile("QuakeClusterGrenade", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
+        
+      CoopAlt:
+        QGRL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 1, 0, 0, 0, 5)
+        goto AltFire2
+        
+      AltFire2:
+        QMGL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
+        QMGL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
+        QMGL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+        QMGL E 4
+        QMGL F 3
+        QMGL G 3
+        QMGL H 2
+        QMGL I 1
+        // 22 tics
+        QMGL I 0 A_Refire
+        goto MultiReady
+        
+      Spawn:
+        QGRL Z -1
+        Stop
+    }
+}
+
+actor UsingMultiNades : Boolean { }
+
+actor QuakeGrenade
+{
+    Radius 4
+    Height 4
+    Speed 24
+    
+    Projectile
+    -NOGRAVITY
+    DamageType "Explosive"
+    Gravity 0.6
+    Scale 0.2
+    BounceFactor 0.3
+    
+    +HEXENBOUNCE
+    +CANBOUNCEWATER
+    +RANDOMIZE
+    +DEHEXPLOSION
+    +GRENADETRAIL
+    
+    ReactionTime 92
+    
+    SeeSound "quakeweps/grenadebounce"
+    
+    Obituary "%k \csfed\c- %o \csa pineapple.\c-"
+    
+    States
+    {
+      Spawn:
+        QGRN A 0
+        QGRN A 0 A_Recoil(-1)  // to stop the "freeze in midair" bug from happening
+        QGRN A 0 A_PlaySound("quakeweps/blank", CHAN_VOICE)
+      goto SpawnLoop
+
+
+      SpawnLoop:
+        QGRN C 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN C 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN D 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN D 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN E 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN E 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN F 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN F 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN G 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN G 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN H 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN H 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN I 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN I 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN J 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN J 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN K 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN K 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN L 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN L 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN M 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN M 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN N 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        QGRN N 1 A_JumpIf(ACS_ExecuteWithResult(583, momx, momy, momz) < 1, "StopSpawnStart")
+        QGRN A 0 A_Countdown
+        loop
+        
+      StopSpawnStart:
+        goto StopSpawn
+        
+      StopSpawn:
+        QGRN C 1 A_Stop
+        QGRN A 0 A_Countdown
+        loop
+        
+      Death:
+        MISL B 0 A_Explode(64, 128, 0)
+        MISL B 0 A_Explode(64, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeGrenadeCoop: QuakeGrenade
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    Damage (80)
+}
+
+actor QuakeGrenadeQuad: QuakeGrenade
+{
+    DamageType "NotQuadded"
+    
+    States
+    {
+      Death:
+        DMSL B 0 A_Explode(256, 128, 0)
+        DMSL B 0 A_Explode(256, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeExplosion")
+        stop
+    }
+}
+
+actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    Damage (320)
+}
+
+actor QuakeClusterGrenade: QuakeGrenade
+{
+    Translation "80:111=48:79"
+    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    
+    ReactionTime 46
+    
+    States
+    {
+      Death:
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0,   0, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 144, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 216, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrenade", 0,0, 288, 6, 70)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuakeClusterGrnCoop: QuakeClusterGrenade
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    Damage (32)
+    
+    States
+    {
+      Death:
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0,   0, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 144, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 216, 6, 70)
+        MISL B 0 A_CustomMissile("QuakeTinyGrnCoop", 0,0, 288, 6, 70)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuadClusterGrenade: QuakeClusterGrenade
+{
+    DamageType "NotQuadded"
+    
+    States
+    {
+      Death:
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,   0, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 144, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 216, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 288, 6, 70)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuadClusterGrnCoop: QuadClusterGrenade
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    DamageType "NotQuadded"
+    Damage (128)
+    
+    States
+    {
+      Death:
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,   0, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,  72, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 144, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 216, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 288, 6, 70)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuakeTinyGrenade: QuakeGrenade
+{
+    Speed 8
+    Scale 0.1625
+    ReactionTime 46
+    
+    SeeSound "quakeweps/grenadebounce_quiet"
+    
+    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    
+    States
+    {
+      Spawn:
+        QGRN A 0
+        QGRN A 0 A_PlaySound("quakeweps/blank", CHAN_VOICE)
+        QGRN A 0 ThrustThingZ(0, random(0, 8), random(0, 1), 1)
+        goto SpawnLoop
+        
+      StopSpawnStart:
+        goto StopSpawn
+        
+      StopSpawn:
+        QGRN C 1 A_Stop
+        QGRN A 0 A_Jump(64, "StopSpawn")
+        QGRN A 0 A_Countdown
+        loop
+        
+      Death:
+        MISL B 0 A_Explode(26, 128, 0)
+        MISL B 0 A_Explode(25, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuakeTinyGrnCoop: QuakeTinyGrenade
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    Damage (32)
+}
+
+actor QuadTinyGrenade: QuakeTinyGrenade
+{
+    DamageType "NotQuadded"
+    
+    States
+    {
+      Death:
+        MISL B 0 A_Explode(102, 128, 0)
+        MISL B 0 A_Explode(102, 128)
+        TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
+        stop
+    }
+}
+
+actor QuadTinyGrnCoop: QuadTinyGrenade
+{
+    +THRUSPECIES
+    Species "Player"
+    
+    Damage (128)
+}

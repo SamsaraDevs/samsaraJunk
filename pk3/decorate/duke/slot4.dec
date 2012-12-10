@@ -268,18 +268,20 @@ actor DukeRipperBullet : DukePistolBullet
 {
     +THRUGHOST
     +NOTIMEFREEZE
-    Obituary "%k ripped %o a new one."
+    Obituary "%k \cfripped\c- %o \cfa new one.\c-"
     Damage (15)// Original was (9)
+    DamageType "DukeDamage"
 }
 
 actor DukeRipperBulletCoop : DukePistolBullet
 {
-    Obituary "%k ripped %o a new one."
+    Obituary "%k \cfripped\c- %o \cfa new one.\c-"
     Damage (15)
     +THRUGHOST
     +THRUSPECIES
     +NOTIMEFREEZE
     Species "Player"
+    DamageType "DukeDamage"
 }
 
 actor ShellCasingSpawner3 : FastProjectile

@@ -430,7 +430,7 @@ actor LauncherRocket
     DamageType "Explosive"
     Scale 0.55
     DeathSound "marathon/rocket/hit"
-    Obituary "%k spanked %o."
+    Obituary "%k \cnspanked\c- %o."
     Projectile
     +RANDOMIZE
     +FORCERADIUSDMG

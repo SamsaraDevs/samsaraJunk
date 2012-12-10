@@ -1,11 +1,13 @@
 gameinfo
 {
-	quitmessages = "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+	infopage = "SAMSTIP0", "CREDIT"
+	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
 				   "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14",
 				   "$QUITMSG15", "$QUITMSG16", "$QUITMSG17", "$QUITMSG18", "$QUITMSG19", "$QUITMSG20", "$QUITMSG21",
 				   "$QUITMSG22", "$QUITMSG23", "$QUITMSG24", "$QUITMSG25", "$QUITMSG26", "$QUITMSG27", "$QUITMSG28",
 				   "$QUITMSG29", "$QUITMSG30", "$QUITMSG31", "$QUITMSG32", "$QUITMSG33", "$QUITMSG34", "$QUITMSG35",
-				   "$QUITMSG36", "$QUITMSG37", "$QUITMSG38", "$QUITMSG39", "$QUITMSG40", "$QUITMSG41", "$QUITMSG42", "$QUITMSG"
+				   "$QUITMSG36", "$QUITMSG37", "$QUITMSG38", "$QUITMSG39", "$QUITMSG40", "$QUITMSG41", "$QUITMSG42",
+				   "$QUITMSG43", "$QUITMSG44", "$QUITMSG45", "$QUITMSG46", "$QUITMSG47", "$QUITMSG48", "$QUITMSG49"
 }
 
 skill baby
@@ -23,6 +25,7 @@ skill baby
     PlayerClassName = "Parias", "Altar Boy"
     PlayerClassName = "Duke", "Piece of Cake"
 	PlayerClassName = "SecurityOfficer", "Kindergarten"
+    PlayerClassName = "Ranger", "I Can Win"
 }
 
 skill easy
@@ -37,6 +40,7 @@ skill easy
     PlayerClassName = "Parias", "Acolyte"
     PlayerClassName = "Duke", "Let's Rock"
 	PlayerClassName = "SecurityOfficer", "Easy"
+    PlayerClassName = "Ranger", "Bring It On"
 }
 
 skill normal
@@ -50,6 +54,7 @@ skill normal
     PlayerClassName = "Parias", "Priest"
     PlayerClassName = "Duke", "Come Get Some"
 	PlayerClassName = "SecurityOfficer", "Normal"
+    PlayerClassName = "Ranger", "Hurt Me Plenty"
 	//DefaultSkill
 }
 
@@ -64,6 +69,7 @@ skill hard
     PlayerClassName = "Parias", "Cardinal"
     PlayerClassName = "Duke", "Damn I'm Good"
 	PlayerClassName = "SecurityOfficer", "Major Damage"
+    PlayerClassName = "Ranger", "Hardcore"
 }
 
 skill nightmare
@@ -81,6 +87,7 @@ skill nightmare
     PlayerClassName = "Parias", "Pope"
     PlayerClassName = "Duke", "Hail to the King"
 	PlayerClassName = "SecurityOfficer", "Total Carnage"
+    PlayerClassName = "Ranger", "NIGHTMARE!"
 	MustConfirm = "Heedfulness is the Deathless path; heedlessness, the path to death."
 	
 	DamageFactor = 1.5

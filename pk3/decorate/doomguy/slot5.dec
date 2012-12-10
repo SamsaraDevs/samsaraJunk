@@ -80,7 +80,7 @@ actor DoomRocket : Rocket
     DeathSound "doomguy/rocklx"
     -FIREDAMAGE
     Damagetype "Explosive"
-    Obituary "%k made %o ride the rocket."
+    Obituary "%k \cdmade\c- %o \cdride the rocket.\c-"
     States
     {
       Spawn:

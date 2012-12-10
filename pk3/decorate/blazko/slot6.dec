@@ -1,4 +1,4 @@
-actor " Flamethrower " : Weapon
+actor " Flamethrower ": InstantSwitchWeapon
 {
     Weapon.SelectionOrder 1900
     Weapon.SlotNumber 6
@@ -18,17 +18,8 @@ actor " Flamethrower " : Weapon
         Stop
 
       Ready:
-        TNT1 A 0 SetPlayerProperty(0,1,2)
         WFLM A 1 A_WeaponReady
-        goto Ready+1
-
-      Deselect:
-        WFLM A 1 A_Lower
-        Loop
-
-      Select:
-        WFLM A 1 A_Raise
-        Loop
+        loop
 
       Fire:
         WFLM B 5
@@ -69,7 +60,7 @@ actor WolfenFire
     +BRIGHT
     DamageType "WolfenFlamethrower"
     SeeSound "wolfen/flamethrower"
-    Obituary "%k scorched %o with the Flamethrower."
+    Obituary "%k \cjscorched\c- %o \cjwith the Flamethrower.\c-"
     States
     {
       Spawn:
@@ -82,4 +73,4 @@ actor WolfenFire
     }
 }
 
-actor WolfenFire2 : WolfenFire { +THRUSPECIES Species "Player" }
+actor WolfenFire2: WolfenFire { +THRUSPECIES Species "Player" }

@@ -12,7 +12,7 @@ actor "Gauntlets of the Necromancer" : Gauntlets
     Inventory.PickUpSound "heretic/weaponget"
     Weapon.UpSound "weapons/gauntletsactivate"
     Inventory.PickupMessage "You got the Gauntlets of the Necromancer!"
-    Obituary "%k seized %o's soul in %p very body."
+    Obituary "%k \cqseized\c- %o's \cqsoul in %p very body.\c-"
     
     States
     {

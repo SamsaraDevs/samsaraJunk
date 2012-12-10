@@ -24,20 +24,34 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
+    {"Thunderbolt",         "Cell",                 "", ""},
 };
 
-int UniqueMaxes[CLASSCOUNT][4] = 
+int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
 {
     {0,     0,      0,  0},
     {0,     0,      0,  0},
     {16,    0,      0,  0},
     {9,     0,      0,  0},
     {16,    0,      0,  0},
-    {0,     100,    0,  0},
-    {0,     50,     0,  50},
+    {1,     100,    0,  0},
+    {1,     50,     1,  50},
+    {1,     0,      0,  0},
 };
 
-int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON};
+int UniqueCounts[CLASSCOUNT][CHOICECOUNT_U] =
+{
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,    -1,     -1, -1},
+    {-1,     0,     -1, -1},
+};
+
+int UniqueScripts[CLASSCOUNT] = {0, 0, 0, 0, 0, 0, SAMSARA_MARATHON, 0};
 
 int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] = 
 {
@@ -79,7 +93,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
 
     {   // B.J.
         {"Knife",                           "",             "",             "", ""},
-        {"GotWeapon0",                      "",             "",             "", ""},
+        {"BJSuperKnife",                    "",             "",             "", ""},
         {"Luger",                           "",             "",             "", ""},
         {"Machine Gun",                     "Clip",         "",             "", ""},
         {"Machine Gun",                     "Clip",         "",             "", ""},
@@ -121,9 +135,20 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 ""},
         {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 ""},
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
-        {"TOZT-7 Napalm Unit",              "NapalmInTank", "",             "",                 ""},
+        {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
-    }
+    },
+    {   // Ranger
+        {"Axe",                             "",             "",             "", ""},
+        {"Laser Cannon",                    "Cell",         "",             "", ""},
+        {"Single Shotgun",                  "",             "",             "", ""},
+        {"Double Shotgun",                  "AmmoShell",    "",             "", ""},
+        {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
+        {"Nailgun",                         "Clip",         "",             "", ""},
+        {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
+        {"Super Nailgun",                   "Clip",         "",             "", ""},
+        {"QuadDamagePickup",                "",             "",             "", "QuakeQuadTimer"},
+    },
 };
 
 int ClassScripts[CLASSCOUNT][SLOTCOUNT] = 
@@ -134,97 +159,6 @@ int ClassScripts[CLASSCOUNT][SLOTCOUNT] =
     {0,0,                   0,  0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0},
-    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,0,0,0,0,0},
-};
-
-int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] = 
-{
-    {
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-        "doomguy/weaponget",
-    },
-    {
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-        "chex/weaponget",
-    },
-    {
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-        "heretic/weaponget",
-    },
-    {
-        "wolfen/knifeget",
-        "wolfen/knifeget",
-        "wolfen/itemget",
-        "wolfen/mgunget",
-        "wolfen/mgunget",
-        "wolfen/weaponget",
-        "wolfen/rocketget",
-        "wolfen/flameget",
-        "wolfen/spearget",
-    },
-    {
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
-    },
-    {
-        "duke/weaponget",
-        "duke/itemget",
-        "duke/weaponget",
-        "duke/mosspump2",
-        "duke/xshotgunpump",
-        "duke/weaponget",
-        "duke/weaponget",
-        "duke/weaponget",
-        "duke/weaponget",
-    },
-    {
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/itemget",
-        "marathon/bigitemget",
-    },
-};
-
-int ClassUniqueSounds[CLASSCOUNT] = 
-{
-    "doomguy/itemget",
-    "chex/weaponget",
-    "heretic/itemget",
-    "wolfen/lifeget",
-    "hexen/artiget",
-    "duke/itemget",
-    "marathon/itemget",
+    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON},
+    {0,0,                   0,  0,0,0,0,0,0},
 };

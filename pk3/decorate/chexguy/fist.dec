@@ -8,7 +8,7 @@ actor " Bootspoon " : Weapon
     +WEAPON.NOALERT
     +BLOODLESSIMPACT
     +INVENTORY.UNDROPPABLE
-    Obituary "%k spooned %o back to home."
+    Obituary "%k \chspooned\c- %o \chback to home.\c-"
     States
     {
       Ready:

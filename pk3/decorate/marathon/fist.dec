@@ -8,7 +8,7 @@ actor "Steel Knuckles" : Weapon replaces Fist
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700
-    Obituary "%k snapped %o with a nasty hook."
+    Obituary "%k \cnsnapped\c- %o \cnwith a nasty hook.\c-"
     //AttackSound "marathon/fist/hit"
     Weapon.Kickback 300
     +WIMPY_WEAPON

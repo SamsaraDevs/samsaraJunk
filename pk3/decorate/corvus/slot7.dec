@@ -146,6 +146,8 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "HexGreenFire", 0.55
     DamageFactor "HexStalkerShot", 0.55
     DamageFactor "HexHeresiarchPurple", 0.55
+    DamageFactor "QuakePistol", 0.55
+    DamageFactor "NotQuadded", 0.55
 }
 
 actor PowerTomeProtectionDM : PowerTomeProtection

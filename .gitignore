@@ -1,4 +1,5 @@
 *.sw[op]
 *.pk[37]
+*.zip
 nocommit/*
 *.err

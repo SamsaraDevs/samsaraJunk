@@ -5,7 +5,7 @@ actor " Chaingun " : Chaingun
     AttackSound "doomguy/pistol"
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
-    Obituary "%k mowed %o down with his Chaingun."
+    Obituary "%k \cdmowed\c- %o \cddown with his Chaingun.\c-"
     States
     {
       Ready:

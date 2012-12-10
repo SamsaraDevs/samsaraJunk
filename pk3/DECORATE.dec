@@ -7,6 +7,7 @@
 #include "decorate/parias.dec"
 #include "decorate/duke.dec"
 #include "decorate/marathon.dec"
+#include "decorate/ranger.dec"
 
 #include "decorate/slots.dec"
 

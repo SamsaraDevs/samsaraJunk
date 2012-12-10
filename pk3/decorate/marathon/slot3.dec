@@ -239,7 +239,7 @@ actor FusionShot
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +PIERCEARMOR
-    Obituary "%k fused %o with the dirt."
+    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
     {
@@ -271,7 +271,7 @@ actor FusionShotWater
     Scale 0.35
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
-    Obituary "%k fused %o with the dirt."
+    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
     {
@@ -298,7 +298,7 @@ actor FusionSuper
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +PIERCEARMOR
-    Obituary "%k fused %o with the dirt."
+    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
     {
@@ -347,7 +347,7 @@ actor FusionShotWater2
     Scale 0.75
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
-    Obituary "%k fused %o with the dirt."
+    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
     {

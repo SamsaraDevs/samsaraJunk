@@ -11,7 +11,7 @@ actor "Phoenix Rod" : Weapon
     Weapon.AmmoType "RocketAmmo"
     Inventory.PickUpSound "heretic/weaponget"
     Inventory.PickupMessage "You got the Phoenix Rod!"
-    Obituary "%k gave %o the bird."
+    Obituary "%k \cqgave\c- %o \cqthe bird.\c-"
     
     States
     {

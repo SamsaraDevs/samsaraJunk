@@ -45,12 +45,14 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
         {
             success = 1;
             GiveInventory(weapon, 1);
+        }
 
-            if (array_pickupswitch[PlayerNumber()] && !hasWep &&
-                    (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot()))
-            {
-                SetWeapon(ClassWeapons[class][slot][S_WEP]);
-            }
+        if (success && array_pickupswitch[PlayerNumber()] && !hasWep &&
+                (array_pickupswitch[PlayerNumber()] >= 2 || slot > ClassWeaponSlot())
+            || PlayerIsBot(PlayerNumber()))
+            
+        {
+            SetWeapon(ClassWeapons[class][slot][S_WEP]);
         }
 
         switch (ammoMode)
@@ -121,6 +123,8 @@ function void ApplyLMS(void)
     int classNum = samsaraClassNum();
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
+    
+    GiveInventory("Backpack", 1);
 
     for (i = 0; i < SLOTCOUNT-1; i++) { GiveClassWeapon(classNum, i, 1); }
 
@@ -131,7 +135,7 @@ function void ApplyLMS(void)
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
-    
+
     if (lmsLevel)
     {
         SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) + (100 * (lmsLevel-1)));
@@ -176,6 +180,69 @@ function int SamsaraClientVars(void)
     return (switchOnPickup << 4) + (weaponBar << 3) + (ballgag << 2) + (classicAnims << 1) + wolfmove;
 }
 
+function int GiveUnique(int cnum, int unum)
+{
+    int success; 
+
+    unum *= 2;
+    int uanum = unum + 1;
+
+    int unique = ClassUniques[cnum][unum];
+    int unammo = ClassUniques[cnum][uanum];
+
+    int uniqueMax = UniqueMaxes[cnum][unum];
+    int unammoMax = UniqueMaxes[cnum][uanum];
+
+    int unCount = UniqueCounts[cnum][unum];
+    int unammoCount = UniqueCounts[cnum][uanum];
+
+    unCount = cond(unCount == -1, 1, unCount);
+    unammoCount = cond(unammoCount == -1, unammoMax, unammoCount);
+
+    if (unammoMax == 0 && unammo) { unammoMax = GetAmmoCapacity(unammo); }
+
+    // If you can get a unique and:
+    //  - You don't have the unique at all
+    //   or
+    //  - You don't get multiple duplicates of the unique, and it lacks ammo
+    //   or
+    //  - It does have ammo, but you're not full
+    //   or
+    //  - You can have multiple duplicates of the unique, and you're not full
+
+    if (unique != "" && (!CheckInventory(unique) || 
+                         (uniqueMax <= 1 && (unammo == "" || unammoMax == 0)) ||
+                         (unammoMax != 0 && CheckInventory(unammo) != unammoMax) ||
+                         (uniqueMax > 1 && CheckInventory(unique) != uniqueMax)
+                        )
+       )
+    {
+        GiveInventory(unique, unCount);
+        GiveInventory(unammo, unammoCount);
+        success = 1;
+    }
+
+    return success;
+}
+
+function void TakeUnique(int cnum, int unum)
+{
+    unum *= 2;
+    int uanum = unum + 1;
+
+    int unique = ClassUniques[cnum][unum];
+    int unammo = ClassUniques[cnum][uanum];
+
+    if (unique != "") { TakeInventory(unique, 0x7FFFFFFF); }
+    if (unammo != "") { TakeInventory(unammo, 0x7FFFFFFF); }
+}
+
+function int HasUnique(int cnum, int unum)
+{
+    int unique = ClassUniques[cnum][unum*2];
+    return (unique != "") && CheckInventory(unique);
+}
+
 
 function int ClassWeaponSlot(void)
 {
@@ -190,4 +257,58 @@ function int ClassWeaponSlot(void)
     }
 
     return -1;
+}
+
+function int ConvertClassWeapons(int classnum)
+{
+    int i, j, k;
+    int ret;
+
+    if (classnum < 0) { classnum = samsaraClassNum(); }
+
+    for (i = 0; i < CLASSCOUNT; i++)
+    {
+        if (i == classnum) { continue; }
+
+        for (j = 0; j < SLOTCOUNT; j++)
+        {
+            if (HasClassWeapon(i, j))
+            {
+                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:" (", d:i, s:", ", d:j, s:")"); }
+                TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
+                GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
+                ret += 1;
+            }
+        }
+
+        /*
+        for (j = 0; j < UNIQUECOUNT; j++)
+        {
+            if (HasUnique(i, j))
+            {
+                k = j;
+                TakeUnique(i, j);
+
+                while (!GiveUnique(classnum, k) && k >= 0) { k--; }
+            }
+        }
+        */
+    }
+
+
+    return ret;
+}
+
+function int ammoCount(int ammoname)
+{
+    switch (ammoname)
+    {
+      case "Clip":          return 10;
+      case "Shell":         return 4;
+      case "AmmoShell":     return 4;
+      case "RocketAmmo":    return 1;
+      case "Cell":          return 20;
+    }
+
+    return GetAmmoCapacity(ammoname); // not the best of defaults but ya gotta have SOMETHING
 }

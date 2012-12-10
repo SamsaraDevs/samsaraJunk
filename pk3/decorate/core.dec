@@ -2,6 +2,7 @@
 #include "decorate/core/armor.dec"
 #include "decorate/core/effects.dec"
 #include "decorate/core/health.dec"
+#include "decorate/core/instantweapon.dec"
 #include "decorate/core/killcount.dec"
 #include "decorate/core/lms.dec"
 #include "decorate/core/powerups.dec"

@@ -1,1 +1,745 @@
+DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
+1: Zdoom has the TauntButton custominventory to allow players to taunt
+ ^- : DON'T FORGET THE KEYCONF ENTRIES
+2: Script 209 doesn't work and is commented out
+3: SBarInfo is modified to get rid of the multiplayer shit
+4: Items have the Tag property to say what they really are
+ A: Corvus
+ B: B.J. Blazkowicz
+ C: Parias
+ D: Duke
+ E: HeXen's alternate Mystic Ambit Incant for Corvus
+ F: HeXen's Dragonskin Bracers
+5: Decrease amount of life B.J. needs to activate extra life, from 20 to 5.
+6: Give +INVENTORY.PERSISTENTPOWER to B.J.'s Extra Life.
+7: Remove RuneProsperity from the Medikit (making it a boolean works just as well, I noticed)
+8: Give the SO his BlueMap for infrared.
+9: Change the ACS from its reliance on ConsoleCommands, due to ZDoom not supporting it.
+10: Uncomment the Weapon.BobRangeX / Weapon.BobStyle Smooth bits on the SO's weapons.
+11: Change the SO's reliance on Weapon.PreferredSkin to A_JumpIfInInventory.
+12: ZDoom version has more quit messages.
 
+
+FROM 0.26 TO 0.27
+========================
+- Ranger has joined the Wheel of Samsara!
+Ranger is a character who moves fast, shoots fast, and hits hard from a safe distance. Almost all of his weapons dominate in mid-to-long range, and come out fast as well--accentuating this is his superb maneuverability, allowing him to get into many positions and areas to find a critical area to strike from. While he suffers quite a bit from lack of early game burst damage, once he stocks up with later weapons and ammo he becomes a long-range speedy explosive terror.
+In short, if you liked SO's range control or Blazkowicz's accuracy but wish they had more oomph, or if you liked Doomguy's hefty damage but wish he could put it out at a longer range, Ranger will be a character you may find enjoyable.
+
+- sv_bfgfreeaim actually works, now. It no longer gives BFG/LAZ wielders infinite ammo in DM.
+- Doomguy's Berserk heals him up to 100. Someone derped and accidentally took it out.
+- The Rapid Zorcher in Chex Quest now actually spawns the proper IV and III weapons.
+- Duke Nukem shooting Armored Bipedal Flemoids should no longer zorch them.
+- Duke Nukem's Shotgun and Ripper no longer uses the DukePistol damage type.
+- In Invasion, the Security Officer will no longer be forbidden from picking up dropped shotguns if he picks up his II first.
+- Burning Duke Nukem is no longer solid.
+- Previously, bots were somehow dual-wielding their starting weapon and the existing weapon they held. They should no longer do that.
+- Duke's rockets have their obituary and explosive sound again. That was a weird glitch!
+- Offline, B.J. Blazkowicz remembers how to use his feet when going from level to level with Wolfmove on. Online is broke due to an engine bug and cannot be fixed until later. Also a weird glitch!
+- One of the oldest and most frustrating bugs has been fixed! Occaisionally people could use Random or swap between char classes and get other classes' weapons. No longer! While Weapon Drop on Death is not advised and will completely mess up the hud, it can be used now if you insist!
+- Skulltag mode works now! For the ten people that play this game mode, very sorry it took so long to fix.
+- The tipboxes have been enhanced dramatically! Now they work in spectator mode, and can be scrolled through to the different characters' at the player's leisure.
+- Wolfenstein Movement has been made a separate item from B.J. entirely. This is for the modders that want to add Wolfenstein Movement to their characters--add CanWolfMovement to your character, and viola!
+- Previously, Corvus' skulls only had the eye glow when manually entering god mode via console, and not when invulnerable via item. This has been reversed.
+- Since the Firemace used to run off Clip ammo, it gave 50 on pickup. Now that it's converted to Shell, this is way too damned much. Reduced to 10, which is still relatively more but much more reasonable.
+- The Tipbox listed Duke's Explosive Shotgun's explosive damage in coop as being 32, while its actual damage was only 30. This has been fixed.
+- The F1 tipbox now says what Samsara is. Some folks were asking for it, so here it is.
+- The Security Officer's TOZT now makes a sound on pickup, and is removed properly in singleplayer mode.
+- The Security Officer's tipbox did not indicate his I went through ghosts. This has been fixed.
+- D'Sparil is now actually invulnerable during his intro.
+- Morph Ovum now has the Heretic use item sound upon using it.
+- A lot of HeXen shit was pretty borked--namely, keys and repeatedly returning to areas. This has been (hopefully) fixed!
+- B.J.'s health now turns red instead of white upon reaching low health.
+- The script range has been increased from 200-255 to 550-650. There were simply too many conflicts beforehand.
+- Duke 3D gibs should now properly show up online!
+- Duke no longer runs his mouth every time he picks up a dropped weapon.
+- Everyone has their old pickup sounds again!
+- Keys are now displayed horizontally instead of vertically, so as to reduce wasted space.
+- Obituaries are now colored, depending upon what char is killing the other.
+
+FROM 0.25 TO 0.26
+========================
+- Ijon Tichy has joined the Wheel of Samsara! "You remember all that old ACS? Hahaha no fuck that."
+Well, not as an actual character, but as a code wizard. His first foray is probably the most daunting, and he has personally recoded the entire cvar system as well as the weapon pickup system. More on those below, but for the most part everything will run much more smoothly and with much less chance of crashing. It'll be interesting to see what new gameplay systems are open for consideration now.
+
+- Samsara now has the ability for individual players to define what they see the pickups as! Players can choose between the old pickups with the octagons and skulls, or the individual weapon pickups, OR a hybrid style with the octagons showing the individual weapons inside! The most exciting thing about this feature is that players will always see their OWN weapon, and not the other classes'! Exclamation points!
+- Duke's pistol no longer takes extra tics to fire in co-op.
+- Duke's pipebomb throwing is no longer affected by autoaim.
+- The Security Officer's Magnums no longer have differing firing times. Previously, it was a single magnum took longer to fire than two magnums, and one of the two magnums fired faster than the other. Now all of them have the same speed.
+- The Red Keycard in Chex Quest now has the proper pickup message.
+- The Alien Weapon's shots no longer draw blood, as per proper Marathon behavior.
+- Picking up the Boots of Speed as the Security Officer no longer provides an error.
+- The Security Officer's SMG Flechette reloads faster now, more reminiscent of its Marathon reload time.
+- The Fusion Pistol fires slightly faster now, more reminiscent of its Marathon firing speed.
+- The Fusion Pistol's initial charge is slightly faster now, more reminiscent of its Marathon speed.
+- The Combat Shotgun's recocking animation is slightly more reminiscent of its Marathon animation.
+- The Assault Rifle reloads slightly faster now, more reminiscent of its Marathon firing speed.
+- The cooldown for the grenades for the Assault Rifle have been lowered slightly, more reminiscent of its Marathon speed.
+- The Security Officer's Assault Rifle is slightly more accurate in PvP, now.
+- In PvP, the Security Officer's Magnums have had their damage reduced from 20-28 to 10-18.
+- In Marathon, the Security Officer had a larger hitbox compared to the Doomguy, which made hitting him easier. While obviously increasing his hitbox is a Bad Idea here, the physical size of his bullets has been increased to make hitting others easier.
+- The Security Officer now has his weapon skins back! Unfortunately not for dual pistols or dual shotguns, but they're back and they're better than ever! Practically zero chance of crashing a server, now.
+- The TOZT now fires twice as fast, more reminiscent of its Marathon speed.
+- The Security Officer's Steel Knuckles have had their range increased from 74 to 96. The Marathon range was actually even longer, but this is good enough.
+- Doomguy's BFG now has a smooth animation that doesn't suck, with offsets by Ijon Tichy!
+- The Super Large Zorcher now has Bright frames when firing.
+- Doomguy's Shotgun/Super Shotgun should no longer play their firing sound twice at times.
+- By popular demand, the double Duke boot bug from early versions of Duke Nukem 3D has been replicated. I don't know WHY you folks wanted this, but hey, it's here! Enjoy!
+- Duke Nukem's ballgag is now a cvar, rather than a inventory toggle, and thus will now persist from game to game.
+- B.J.'s Wolfenstein movement is now a cvar, rather than an inventory toggle, and thus will now persist from game to game
+- The cvars have been renamed with a samsara_ prefix, in order to help admins keep track of what's a default flag and what isn't. The current server cvars are now:
+ ^: samsara_banjetpack
+ ^: samsara_sogravity
+ ^: samsara_hexenjump
+ ^: samsara_permault
+ ^: samsara_lmslife
+ ^: samsara_lmsult
+ ^: samsara_lmsunique
+- The samsara_banjetpack and samsara_sogravity cvars now take effect shortly after the admin has enabled/disabled them, rather than needing to wait on the next pickup/next spawn for it.
+- samsara_lmsunique is in! Some people have been asking for the ability to enable/disable unique items in LMS, and here they are!
+- samsara_hexenjump is in! Now for HeXen play, people can have the appropriate jump height for it, and outside of HeXen people can have a regular jump height!
+- sv_weaponstay affects the weapons now! Disable it, and weapons are removed on pickup. Enable it, and weapon pickups stay! samsara_permault is different from this, obviously, and thus sv_weaponstay does not affect the VII.
+- Picking up keys in singleplayer no longer broadcasts to the entire "server" who got what key.
+- Duke's M1911 now runs off actual ammo, rather than a dummy inventory count. This should nix the reload bug once and for all.
+- There are new winpics and losepics for PvP gamemodes!
+- Picking up a Riot Shotgunner's dropped SSG now gives Duke RocketAmmo instead of Shells.
+- Picking up Ammo II boxes now gives vanilla Shells as well as the Shell replacement ammo, in case there's an add-on weapon that runs off shells.
+- Doomguy's bar hud and weapon bar now bear the original textures.
+- Chex Warrior should not be dealing as much damage as easily as Doomguy does with the power weapons. The Zorch Propulsor has had a 6-tic delay added to it, and the Phasing Zorcher has had its damage cap reduced from 40 to 30.
+- The Hammer of Retribution in co-op was doing twice its actual HeXen damage. This has been fixed.
+- The radius for Duke Nukem's explosions were all over the place--considering his "Changes" section listed them as being based off Doom's, they were very erratic. The Pipebomb and RPG's have been standardized based off Doom's 128 explosive radius.
+- The Explosive Shotgun's spread has been somewhat more normalized, and now will rarely have shots that all cling around the edges.
+- The Golden 250 armor now floatbobs.
+- There are now tipboxes for every character! These give a short overview of the character, how they play, as well as hard numbers for their weapons depending on PvE modes or PvP modes. Note that all of them were designed and tested with 1024x768 resolution in mind, though, so lower resolutions might have trouble seeing things.
+- The BFG 9000 and LAZ Device now support sv_bfgfreeaim!
+- The Soulsphere replacement now has +NOGRAVITY as it properly should have.
+- Corvus can now pick up and carry the Megasphere! This should give him another difference from Parias' inventory system, as well as give him another utility advantage. It now gives him only 100 extra armor and 100 extra life, but it can be used whenever, wherever, and carried as needed!
+- Doomguy's smooth animation weapons now support the Rage rune!
+- The Security Officer's dual pistols can no longer eternally light up the room.
+
+
+FROM 0.24 TO 0.25
+========================
+- Whoops! Looks like I'd accidentally deleted the ACS source. Sorry about that. ACS source restored, for everyone who wants to look through it for n?i?c?k?i?n?g? referencing.
+- Parias now finally has a separate co-op and DM mode for his more troublesome weapons! Now in co-op, his attacks can go through allies, and I can use different damage values for him in DM.
+- In HeXen DM, other characters also had 0.25 radius damage resistance, and I was not taking the other Heroes' lack of that into effect in regards to Parias' weapons. Multiplying existing damage by 1/4 for DM means that the Firestorm should be dealing 5 explosive radius damage per impact and the Hammer of Retribution 32 explosive radius damage. 32 is pretty fucking low for a rocket, though, so it does half and deals 64 explosive radius damage.
+- In DM, Parias' Frost Shards deal 1-4 damage per shard rather than 1-8, providing a total damage range of 17-68. Its melee damage has been reduced to 70-95.
+- I was reading the Aim section in A_FireCustomMissile wrong this whole time! Weapons will no longer be ungodly pin-point accurate with autoaim on. Weapons affected by this are: Doomguy's Shotgun (co-op), Doomguy's Super Shotgun (co-op), Corvus' Firemace (co-op/DM), Duke's Pipebombs (co-op/DM), Duke's M1911 when an enemy isn't under the crosshair (co-op/DM), Duke's Shotgun (co-op/DM), Duke's Explosive Shotgun (co-op/DM), Duke's Chaingun Cannon (co-op/DM), Duke's Devastator (co-op/DM), Security Officer's Dual-Wielded Magnums (co-op), Security Officer's SMG Flechette (not underwater in co-op), Security Officer's combat shotguns (co-op), Security Officer's Assault Rifle (co-op), Security Officer's M1 Alien Weapon (co-op).
+- Chexter's Super Large Zorcher has been slightly reworked, both in design and function. Its design is now significantly more Chex-like, thanks to guidance and assistance from Charles Jacobi himself, the artist of Chex Quest! Its function has had the gimmicky kickback removed, replaced with small "spatters" of kinetic zorch charges on death. These spatters should give it a large crowd control boost, while keeping its long range function intact. They do minimal damage in PvP, because c'mon, seriously, it was already fucking annoying enough being a four-bolt railgun. Finally, due to launching four bolts at once, it now uses four ammo rather than one--which should encourage players to use other weapons rather than rely solely on the Super Large Zorcher.
+- The Security Officer in ZDoom now has Marathon-style bobbing for his weapons! Whoo!
+- Now there is a serverside command to dictate whether the VII vanishes on pickup or is persistent. sv_permault 1 keeps the VII in place when people pick it up, while sv_permault 0 has it vanish on pickup.
+- The Security Officer no longer crashes when going from level to level.
+- The Security Officer is no longer solid on his burn and gib death states, and thus should be able to pass through decorations and monsters.
+- The Security Officer now freezes properly. For some reason, A_GenericFreezeDeath wasn't giving him the palette. So now he just has sprites for it.
+- The Security Officer now splatters Duke gibs when landing, rather than right away.
+- The Security Officer's weapons are now no longer droppable.
+- The Security Officer's SPNKR and Wave Motion Cannon now can weapon-scroll during its reload sequence(s).
+- The Security Officer's SPNKR and Wave Motion Cannon no longer bobs and weaves during raising it. It can still be deselected during its raise.
+- The Security Officer's SMG Flechette was not as accurate as its Marathon incarnation. Its accuracy has been slightly increased.
+- The Security Officer's Fusion Pistol now pierces through armor. It foils invuln, logically it should foil armor as well.
+- The Security Officer's damage for the Combat Shotguns in DM was slightly increased.
+- The Security Officer's explosive radius for the Grenades and Rockets has been slightly increased.
+- The Wave Motion Cannon's sprite on the weapon select bar has been modified to a more accurate image, thanks to President People. Thanks!
+- The Marathon 1 Alien Weapon's pickup sprite is now right side up. Whoopsie.
+- The Security Officer's armor gotten from the Megasphere is slightly less absorbant.
+- In Zandronum, the Megasphere should now have the announcer properly announce it.
+- The Baron of Hell has had its melee and missile states integrated into A_CustomComboAttack, and thus should no longer do a melee when the enemy is at long range.
+- The Marathon 1 Alien Weapon no longer sets other players on fire.
+- Doomguy's BFG9000 now properly has its vanilla animation.
+- Security Officer's Wave Motion Cannon now has a slot in keyconf, so weapon mods that have a slot VII will no longer overwrite it.
+- The Wave Motion Cannon and SPNKR no longer infinitely repeat their animation when lowered on death.
+- The TOZT Napalm Unit no longer draws blood on its shots, like in Marathon.
+- The Dehacked has been removed, allowing compatibility with mods that use Dehacked for unique enemies or weapons. To accomodate the Dehacked upgrading 50 Shells to 100, the Ammo 2 ammo type has been universally replaced. PLEASE LET ME KNOW IF THIS BORKS SOME SHIT.
+- The WSTE-M5 Shotgun has had its sprites renamed, due to numerous older mods having those sprites replaced.
+- In DM, Duke's Explosive Shotgun has had its radius reduced from 32 to 12.
+- B.J.'s Spear of Destiny's miniature bolts now spew half as many particles.
+- B.J.'s Spear of Destiny now takes an extra twenty tics during firing. Now it takes a total of 80 tics, a little over two seconds, to fire.
+- Corvus' Hellstaff's Tomed Rain now dissipates on slopes.
+- Duke Nukem's pipebombs can now be held down and thrown farther, just as they could in Duke Nukem 3D.
+- Duke Nukem's weapons now bob, weave, and sway again in his hand again, like they did in Duke Nukem 3D. The only one exempt from this is the Freezethrower.
+- Corvus' Utility role was not being used as well as had hoped. When he had the Shadowsphere, Morph Ovum, and Tome, he was a force, but before then he was just as damage-focused as the others. To make up for this, Corvus now has two additional weapons at his disposal--The Time Bomb of the Ancients and Mine of the Ancients.
+- Corvus now also spawns with a Shadowsphere in Last Man Standing mode.
+- Duke Nukem's M1911, knuckle-crack, and Corvus' staff are now widescreen friendly. Only six more weapons to go!
+- Fixed some rare instances of Chex Warrior not being able to pick up the Supercharge Breakfast.
+- Updated the Shared Keys code to Synert's current version. Much more streamlined, I think!
+- Shared Keys occaisionally wasn't giving the pickupper the actual key. Now all of them have A_GiveInventory lines that should always give them at least to the pickupper on pickup, just in case.
+- Parias' Krater of Might now only fills up his ammo halfway, rather than completely.
+- Duke Nukem now properly flashes when shooting his Ripper, Devastator, and RPG.
+- Tweaked a few obituaries to sound less awkward.
+- Parias now has the HeXen-appropriate gib death sounds.
+- Security Officer now has a landing grunt.
+- Unique quit messages. Each of the heroes has at two quotes from their respective games or promotional material around it.
+
+
+FROM 0.23 TO 0.24
+========================
+- The Security Officer has joined the wheel of Samsara!
+The Security Officer specializes in DPS and boasts quick weapons with fairly high rates of fire, broken up only by a need to reload. Between his Assault Rifle, Napalm Unit, SMG, and Combat Shotgun, the Security Officer can unload a hail of constant damage on a wide position, offering the other heroes some much needed suppression to get into the fray. Unfortunately, with this emphasis on quick attacks comes a severe lack of burst damage--possibly the odd ball out of his arsenal, the SPNKR, is unbelievably slow to raise, fire, and reload, and getting thrown head-first against a large amount of heavy enemies will give him some trouble.
+
+- Barons of Hell and Belphegors no longer always do their missile attack right after their melee.
+- Chex Warrior can now be telefragged.
+- Duke Nukem's jetpack should no longer be active on death.
+- The Revenant's non-homing rockets can no longer hit ghosts.
+- The Revenant's homing and non-homing rockets now have the proper smoke-trail distinction behind them. Thanks to Qent for the code!
+- Weapons spawned in singleplayer mode no longer count for the item percentage count.
+- Corvus no longer gets double ammo for his Firemace in singleplayer on the easiest difficulty setting.
+- Duke Nukem, when picking up a dropped Super Shotgun from Super Shotgun Guys, now has his HUD respond accordingly.
+- In Last Man Standing mode, now there are two more cvars available for server hosts--sv_lmslife and sv_lmsult. The former dictates how much health/armor is given on spawn/respawn, the latter dictates whether or not players have their VII as well.
+- The explosive radius of the Firestorm in DM was reduced from 34 to 20, and its damage reduced from 20 to 15.
+- Skulltag's Red Armor has been replaced, and should no longer look weird in ST maps.
+- Duke Nukem and B.J. Blazkowicz now have a burn death hailing from their respective engine. B.J.'s burn death references Rise of the Triad, while Duke Nukem's references Blood.
+- The Prosperity Rune should now work for non-Corvus/Parias players.
+- Duke Nukem's M1911 should now deal more damage towards HeXen enemies.
+- The strange green blots that occaisionally came out of weapon spawns has been removed.
+- Weapons can no longer be removed by crushers.
+- Removed an instance of incorrectly referring to the Phasing Zorcher as "Phazing Zorcher".
+- B.J. Blazkowicz's shell slot on his bar HUD has been blanked out, in order to emphasize that he really doesn't use shells.
+- In DM, the Super Large Zorcher's damage was far too random with far too much of a range of variation--between four bolts with 6-48 damage, this resulted in a damage range of 24-192, with an average damage of 108. Its damage range has been reduced to 10-30 per bolt, now with a total range of 40-120. Now it's more deminiscent of the 1d3(X) damage bullets use.
+
+
+FROM 0.22 TO 0.23
+========================
+- Turns out I was wrong this whole time--Duke's weapon switching bug wasn't in the original game, but rather [url=http://forums.duke4.net/topic/2180-suggestiion-for-weapon-switching-in-eduke32/]is specific to eDuke32[/url]. This behavior has been removed from his weapons.
+- A few fixes I forgot to log. Whoopsie!
+- Super Shotgunners now appropriately drop Super Shotguns, rather than shotguns.
+- Corvus' Dragon Claw puff now behaves properly in co-op, spawning tiny sparks on walls and larger sparks when hitting enemies.
+- Doomguy's Shotgun now has the proper BRIGHT length for its frames.
+- The weapon bar was not persisting from level to level, match to match. This has been fixed--now it persists even from game to game! Super-mega-major thanks to ijon tichy and Llewellyn for help with this!
+- Removed the te13- suffix. Originally that was because I'm a forgetful lad and I had trouble keeping track of what projects were mine. I'm pretty sure I know Samsara's mine by now!
+- Chexter's hitscans, Corvus' Elven Wand/Dragon Claw, Doomguy's bullets, B.J.'s bullets, Duke's kick, and Duke's bullets are no longer affected by Time Freeze.
+- Duke Nukem will no longer skip his M1911 reload when putting an enemy under the crosshair.
+- The small HUD no longer has the character's mugshot on it.
+- The small HUD now has health and armor icons, in order to help distinguish which number is health and which number is armor.
+- In HeXen, the sheer amount of keys could be hidden underneath the selected inventory of the small HUD. The inventory item now is moved up to match its position on the normal HUD.
+- The HUD now supports team colors in team based game-modes! Pick red, blue, green, or gold, and the black space behind your mugshot will be filled with color, and in the small hud there'll be a splash of color behind the life/armor bar.
+- The small HUD's numbers at the top are now toggled on and off by the weapon bar.
+- The small HUD's numbers now light up when their appropriate weapon is selected, rather than just hanging there.
+- The fuel of Duke's jetpack and night vision goggles can now be seen in the small HUD.
+- The big Ammo 2 canister no longer turns into small Ammo 2 upon failing the pickup.
+- B.J.'s resistance upon activating the extra life was not taking into account the Mini-Zorchers, BFG, BFG Sprays, Poison Flechette, Firemace, Dragon Claw, Flamethrower, or any of Duke's attacks. This has been rectified.
+- The Shotgun weapon usually has seven pellets for one shell. The Firemace was using four shots for one shell. This has been inreased to eight shots.
+- The rate of fire for the Frost Shards has been slowed down slightly. Now the attack takes 28 tics, 35 tics if Fire is not held. Vanilla frost shards takes 30 tics to attack, 40 if Fire is not held.
+- Parias' side movement speed has been slowed down slightly from 1.35 to 1.25.
+- Most console errors have been removed from start-up.
+- The automap HUD now takes into account Team Deathmatch, One Flag CTF, Capture the Flag, Skulltag, Team Last Man Standing, and Team Possession data. This was absolutely a required fix.
+- Corvus now spews out his skull on gibbing.
+- Everyone now has difficulty settings! They have text taken from/inspired from their respective game--taking from Heretic and HeXen, however, skill 4 doesn't have respawns. Instead, as well as the typical fastmonsters, enemies deal increased damage to you and are hyper-aggressive.
+
+- Corvus now properly has his damage buff in co-op/survival play.
+- The Tome of Power's cooldown was reduced from 300 seconds to 250 seconds, almost a full minute decrease. Its cooldown is now a little over four minutes, rather than five.
+- In cooperative modes, the duration of Corvus' Tome of Power has been increased from 60 seconds to 90 seconds.
+- The Tome of Power in DM was not delivering the 1.5x damage boost as well. This has been rectified.
+- The Tome of Power now provides a 50% damage resistance to everything as well.
+- The weapons now have addslotdefault to them in the keyconf. If a mod has setslot weapons defined, they will no longer overwrite Samsara.
+- There is now an option to use the original animations for Doomguy! For those who don't like the smoother animations or get thrown off by their timing, now you can play vanilla! The only thing that should remain is the shaking for the BFG9000 as it charges up.
+- Duke's deployed pipebombs can now be shot and detonated by other attacks, which should discourage people from camping and setting up piles of them. Thanks to Doomrater for helping out!
+- Duke's Freezethrower shots have had their speed increased from 22 to 35. Now, running forward and shooting will no longer kill you.
+- In Last Man Standing, everyone now consistently spawns with their starting pistol weapon in hand, rather than some with their shotguns and others with diddly squat.
+- In Last Man Standing, B.J. had an annoying tendency to run out of ammo with his fully-automatic weapons, leaving him defenseless. Now he spawns with an Ammo Crate--when used, it fills his Clip ammo/Ammo 1 back to full.
+- Duke's Explosive Shotgun sprite will no longer be cut off when it sways to the side while shucking.
+- B.J. now plays his Machine Gun sound when he picks up a Machine Gun via a dropped Shotgun, instead of silence. That was a very specific fix.
+- The Super Shotgun was checking for its reload much sooner than Vanilla doom. This has been fixed.
+- The Weapon VII pickup is now persistent in co-op/survival games!
+- Duke's Jetpack is now an optional pickup as according to the server administrator. If sv_banjetpack 1 is in effect, Duke will not get a jetpack on pickup.
+- Keycards and Skullkeys should now be a shared resource among players. If one is picked up, everyone gets it--and DCing/changing class should not make you lose them. Thanks to Synert for permission to use his code!
+- In DM, Corvus' Ethereal Crossbow travels much faster, having had its speed increased from 30 to 40, and the side bolts increased from 20 to 35.
+- In DM, Chexter's Super Large Zorcher bolts spawn much closer to the center, in order to keep vital shots from dying at the wall.
+- In DM, B.J.'s Spear of Destiny has been nerfed...again. The miniature bolts now have a higher chance to die (from 128 chance to continue to 96 chance), +STRIFEDAMAGE added to their ripping, and do much less explosive damage when they die (from 98 to 64).
+
+FROM 0.22 TO 0.22SNSFNF
+========================
+- Corvus now properly has his damage buff in co-op/survival play.
+- The Tome of Power's cooldown was reduced from 300 seconds to 250 seconds, almost a full minute decrease. Its cooldown is now a little over four minutes.
+- The duration of Corvus' Tome of Power has been increased from 60 seconds to 90 seconds.
+- The Tome of Power in DM was not delivering the 1.5x damage boost as well. This has been rectified
+- The weapons now have addslotdefault to them in the keyconf. If a mod has setslot weapons defined, they will no longer overwrite Samsara.
+- There is now an option to use the original animations for Doomguy! For those who don't like the smoother animations or get thrown off by their timing, now you can play vanilla! The only thing that should remain is the shaking for the BFG9000 as it charges up.
+- Duke's deployed pipebombs can now be shot and detonated by other attacks, which should discourage people from camping and setting up piles of them. Thanks to Doomrater for helping out!
+- Duke's Freezethrower shots have had their speed increased from 22 to 35. Now, running forward and shooting will no longer kill you.
+- In Last Man Standing, everyone now consistently spawns with their starting pistol weapon in hand, rather than some with their shotguns and others with diddly squat.
+- In Last Man Standing, B.J. had an annoying tendency to run out of ammo with his fully-automatic weapons, leaving him defenseless. Now he spawns with an Ammo Crate--when used, it fills his Clip ammo/Ammo 1 back to full.
+- Duke's Explosive Shotgun sprite will no longer be cut off when it sways to the side while shucking.
+- B.J. now plays his Machine Gun sound when he picks up a Machine Gun via a dropped Shotgun, instead of silence. That was a very specific fix.
+- The Super Shotgun was checking for its reload much sooner than Vanilla doom. This has been fixed.
+- The Weapon VII pickup is now persistent in co-op/survival games!
+- Duke's Jetpack is now an optional pickup as according to the server administrator. If sv_banjetpack 1 is in effect, Duke will not get a jetpack on pickup.
+- Keycards and Skullkeys should now be a shared resource among players. If one is picked up, everyone gets it--and DCing/changing class should not make you lose them. Thanks to Synert for permission to use his code!
+- In DM, Corvus' Ethereal Crossbow travels much faster, having had its speed increased from 30 to 40, and the side bolts increased from 20 to 35.
+- In DM, Chexter's Super Large Zorcher bolts spawn much closer to the center, in order to keep vital shots from dying at the wall.
+- In DM, B.J.'s Spear of Destiny has been nerfed...again. The miniature bolts now have a higher chance to die (from 128 chance to continue to 96 chance), +STRIFEDAMAGE added to their ripping, and do much less explosive damage when they die (from 98 to 64).
+
+
+FROM 0.21 TO 0.22
+========================
+- Much like how there is a co-op mode for weapons that allows shots to pass through allies, now there is a DM mode for weapons that need their behavior slightly changed for balance. It is activated automatically if the game mode is neither co-op nor singleplayer.
+ ^-: In DM, Duke's Explosive Shotgun has been nerfed (again) with a vengeance. Funny how a nerfed weapon is still so OP, even when nerfed brutally. Anyway, its damage has been reduced from 30 to 25, and its explosion radius reduced from 64 to 30.
+ ^-: In DM, the Firestorm has been nerfed--it has reduced explosive damage and radius, from 32/65 to now 20/32.
+ ^-: In DM, the Firemace's behavior is now based off the co-op version. While this slightly affects mace ball dispersal, it's no longer possible to get infinite ammo when double ammo is turned on. Still waiting for this weapon to break horribly...
+ ^-: B.J.'s Chaingun has been nerfed. In DM, now it has a slight 2-by-2 spread, and its damage has been reduced from 7,14,21 to 5,10,15.
+ ^-: B.J.'s Machine Gun has been slightly nerfed. In DM, its damage has been reduced from 7,14,21 to 6,12,18.
+ ^-: B.J.'s Spear of Destiny has been slightly nerfed. The explosion radius of the main blast was reduced from 240 to 198, and its bolts damage reduced from 4-16 to 3-12.
+ ^-: In DM, Chex Warrior's Super Large Zorcher has had a buff and a nerf. Its speed has been doubled, as mentioned below, making it more of a railgun. However, now does 6-48 damage per bolt, for a total of 24-192 damage.
+ ^-: In DM, Timon's Axe has had a buff and a nerf. Its's damage has been increased to 100-144--getting two to three hits was next to impossible in the fast rate of DM, and it is now capable of one-shotting people again. However, its 45-degree auto-aim has been removed, making it a very risky weapon to seriously wield, but with a very high reward.
+
+- Turns out all this time there was +STRIFEDAMAGE added onto the Firemace balls and I'd forgotten about adding them! Whoops! These have been removed.
+- Corvus' Ethereal Crossbow has been given a slight buff. The main projectile has had its damage increased from 10-80 to 12-96, the side projectiles increased from 2-16 to 3-24, and its tomed main projectiles increased from 6-46 to 8-56. This should increase its total damage from 14-112 to 18-144, and its tomed counterpart from 22-170 to 30-216.
+- In singleplayer, Corvus was firing a much weaker version of the Dragon Claw bullets (3-21 damage), rather than the actually proper damage formula ((1d8)*4). While he keeps the existing damage formula for DM, its ceiling has been raised from 21 to 27. These three fixes together should make Corvus a much more viable character, damage-wise.
+- In Duke Nukem 3D, the M1911 was perfectly accurate when there was a target in the crosshairs. This has been replicated.
+- Corvus' Tomed Firemace was passing through enemies in DM. Whoops!
+- Corvus' Morph Ovum transformation in PvP now only lasts 10 seconds.
+- Players morphed with the Morph Ovum now have 100 health, rather than carrying over 100+ health.
+- Players morphed with the Morph Ovum were actually moving 1.25 times faster than normal. This has been fixed--now they move 0.9 times their normal speed.
+- Paris now has Baratus' speed boost. This should help him get up close to players in DM.
+- Duke no longer has an obscene amount of armor in Team Last Man Standing. He's tough, but not THAT tough.
+- The radius on Parias' Poison Cloud Flechette has been increased from 98 to 124. Now it should cover the standard rocket explosion area.
+- Freezethrower crystals are slightly larger, and now can only emit their explosion on dying due to bouncing, just like their Duke 3D incarnation. Hitting an enemy will not cause them to explode--though they'll still explode on players, for some reason.
+- Telefragging someone at the start of Last Man Standing/Team Last Man Standing should no longer deny them their weapons/armor/health.
+- Repeated telefragging of players will no longer crash a server! Whoo!
+- Chexter's damage resistance was not quite performing as well as hoped--it's been increased from 10% all around to 20%. His resistance to explosive damage has been increased to 25%.
+- The speed of the Super Large Zorcher's bolts have been doubled from 50 to 100. Now it should act like the ranged weapon it should be.
+- In co-op and singleplayer, the damage of the Super Large Zorcher has been increased to 8-56 per bolt, total damage now 32-224.
+- The Bar HUD now appropriately accomodates info for One Flag CTF, Capture the Flag, Skulltag, Team Last Man Standing, and Team Possession.
+- Runes are now displayed on the bar hud, on the opposite side of the selected inventory.
+- The bolts of the Super Large Zorcher have been changed to a more Chex-ish appearance, utilizing existing Chex Quest graphics.
+- Duke no longer pumps the shotgun later in DM/SP than he does in co-op.
+- The selected inventory item is now a little bit lower on the bar HUD, so as not to be obscured by the weapon bar.
+- The selected inventory no longer shows up on the automap, for a clearer view.
+- Added "rounds" to the ammo pickup text, so as to be less awkward.
+- Duke's taunt system has been reworked, thanks to assistance from Doomrater! It now operates off each weapon, rather than being a separate weapon. This means the taunt will go back to each weapon after it's done, and Duke getting killed while intro-taunting will no longer crash a server.
+- The Super Shotgun now has proper BRIGHT length in its frames.
+- Duke's explosion sound has had its number of allowed instances back to 1. No more spamming the sound.
+- The "MIGHTY BOOT ENGAGED" and "Press any button to respawn." messages for Duke now appear at the top-center of the screen at the appropriate font size, no matter the resolution or message display values of the user.
+- The "Press any button to respawn." message for Duke now lasts slightly longer.
+- Fixed some typos in the botchats.
+- Rephrased a few obituaries to sound less awkward.
+- The Terra Incognita Herald of Doom will no longer replace Doom actors.
+- The Terra Incognita Super Crossbow will now give B.J. the proper ammo 1/clip-using version.
+- The weapon bar toggle has been enhanced--in co-op and singleplayer, it will now persist between levels and will go away upon toggling the automap. It will also now work in ZDoom. Whoo!
+- In singleplayer and co-op, Duke will no longer mock himself for being an imposter when he suicides with an explosive weapon.
+- Doomguy now has burning death sprites and sounds! Thanks to Bloax for the sprites, and thanks for cdrk for the sound.
+- The kill counter has been expanded even further! Now when the thousands are reached, a little notch will be added at the top of the kill counter. With these, the kill counter can now go up to 9999 kills!
+- Due to demand, Duke's use fail sound is now his appropriate Duke 3D sound. I don't know why in the world you guys wanted it, but here.
+- Doomguy, Corvus, and Chexter now have landing sounds, to maintain consistency with Parias and Duke.
+- Just like in Wolfenstein 3D, now the different weapons for B.J. have different pickup sounds.
+
+FROM 0.2 TO 0.21
+========================
+- The Dual Mini-Zorchers failed in being an appropriate Slot II weapon. The Large Zorcher has been moved to slot II, and Slot III now occupies the Super Large Zorcher!
+The Super Large Zorcher is a weapon wielded by IFC soldiers to quell riots and handle civilian disputes. The four zorch blasts that the Super Large Zorcher shoots charges carry several loads of stored kinetic energy, and upon hitting an enemy they release it in a sharp burst--flinging the target away if they're not zorched. Sacrificing power and rate of fire for incredible pushing ability, it's an excellent way to protect oneself and other important VIP personnel.
+
+- No, I'm serious, Duke's night vision goggles run out properly now. Or should.
+- Duke's explosion sounds have gone from limitless to only being able to have eight active at a time. 
+- I was under the impression Doomguy's taunt was his Quake III taunt. Nope, was actually Grunt's! Has been replaced with his actual Quake III taunt.
+- Doomguy's pistol is no longer droppable.
+- Every player has had their damage resistance to Timon's Axe and the Wraithverge slightly increased. Timon's Axe is no longer a one-hit-kill weapon, but should take about two or three hits now...occaisionally four.
+- Players have had their damage resistance to the Poison Cloud Flechette drastically reduced. Due to its small radius and lengthy set-up time, it was a difficult weapon to properly use.
+- For Zandronum players, bots have been added to the roster! Now players can play in DM, team DM, CTF, or whatever offline against other heroes of Samsara!
+- Players will no longer occaisionally get messages of what other people have picked up, anymore.
+- The Frost Shards' melee now acts more like HeXen's--it doesn't "grab" onto enemies, and it doesn't shed any blood.
+- For ZDoom/GZDoom players, compatibility with Terra Incognita! FireSeraphim has generously donated bits of his code, and now Samsara works well with his new Heretic episode!
+- Golems no longer vanish when gibbed via Duke's explosions.
+- Buried Reivers are no longer invisible and invincible.
+- When playing in Heretic and HeXen, the ammo pickups (aside from the backpack) now have an embedded gem appearance rather than ammo boxes, in order to fit the medieval aesthetic.
+- Afrits now use their Pain sound instead of their Active sound when zorched.
+- The Bootspoon now properly puffs on actors.
+- The trails behind items have been temporarily removed. Turns out they were causing some larger maps to seriously slow down and crash.
+- B.J. Blazkowic's falling sound has been replaced with the Macenstein B.J. death sound.
+- Stealth monsters have their appropriate replacements now. Now if a mapset uses Stealth version of Doom monsters, things won't mess up!
+- Korax's speed has been increase from 10 to 20, because he's the slowest fuck in all of the idtech1 games.
+- Thanks to Doomrater, now the Freezethrower's shots can appropriately self-damage Duke! Careful out there!
+- The Wraithverge has had its damage reduced from 3-24 per tic to 3-12. It also moves slightly slower, speed reduced from 12 to 10. This is the third time nerfing it, and it is still the Rapeverge.
+- Gargoyles zorched against the ground no longer block the way.
+- Duke's pipebombs are now slightly lighter in their movement.
+- Last Man Standing/Team Last Man Standing support has been added! Players will spawn with all non-ultimate weapons, 300 health, and 300 armor.
+- In Heretic, Chex Warrior no longer has Corvus' Wimpy Death sound.
+- Skulltag-specific enemies have had their translations corrected--some of them weren't being fully translated.
+- The bar at the top is now toggleable through an extra key. Those that didn't like the bar at the top, rejoice! It's no longer the default!
+- At full ammo, the Firemace no longer shoots takes two ammo.
+
+
+FROM 0.19 TO 0.2
+=========================
+- Sabreclaws and Golems no longer vanish randomly. Well, that was embarrassing.
+- Ghost Golems and Ghost Nitrogolems no longer freeze transparent.
+- Doomguy's Chaingun no longer has a palette flicker in non-Doom/Chex games.
+- Duke's Night Vision Goggles run out properly now.
+- The Cycloptis' body no longer vanishes when hitting the sky.
+- The Cycloptis' body no longer has such a drastic throw upwards.
+- The trails behind the Ethereal Crossbow now fall slower.
+- B.J.'s Spear of Destiny no longer has a glitched pick-up sprite.
+- The Tomed Crossbow's bolts have much less gravity to them, now.
+- B.J.'s unupgraded knife did not recieve the damage buff from 0.19. This has been rectified.
+- Duke Nukem 3D's bosses were not immune to splash damage. All of Duke's explosive weapons now have +FORCERADIUSDMG on them.
+- The Devastator's rockets now have more impact damage, increased from 20 to the Duke-Nukem-3D-accurate 38.
+- The Pipebombs in Duke Nukem 3D had a 1.5 larger blast radius than the RPG. Whoops! Pipebomb blast radius extended from 98 to 147.
+- A Duke that's thrown a pipebomb, but hasn't detonated it yet, then dies will not have the next pipebomb explode in his hands.
+- Corvus and Parias will now fail the Team Power pickup if they have 16 Mystic Ambit Incants.
+- Menelkir's Bloodscourge and Zedek's Quietus have been drastically nerfed, to accomodate the lack of Disc of Repulsions to counter them.
+- Picking up the Devastator in singleplayer mode now produces the appropriate sparkles.
+- In singleplayer mode, picking up a weapon you already have will not give you "You got the X!" text.
+- In singleplayer mode, weapons and most unique items now cannot be picked up if you're already full on supplies for them.
+- Duke's Chaingun Cannon has recieved a slight graphical enhancement. Now the individual barrels light up with the muzzle flash.
+- The sound of Duke's explosions are now limitless--they will now overlap each other no matter how many are on the map.
+- Duke's Shotgun and Chaingun Cannon now cannot hit ghosts.
+- Duke's pipebomb will not bounce off ghosts now.
+- Duke's M1911 no longer sways with movement on reloading, due to the arm cutting off when the graphic swayed to the left.
+- Duke's pistol reloading animation is now slightly more accurate to Duke Nukem 3D.
+- HeXen enemies should no longer be invisible upon exiting and re-entering a hub multiple times. Should. Hopefully. Fingers crossed.
+- Duke's Ballgag and B.J.'s Retro Movement settings now work properly after multiple uses, multiple games, and/or multiple respawns, instead of giving you an off/on message when you already have it off/on.
+- Duke's Team Power in HeXen has been reduced from 14 of Ammo 3 to 10.
+- Skulltag actors now have their respective spawn ID and thing ID, which should make them spawn more consistently.
+- Duke's jetpack can no longer be used when the Wings of Wrath is active, and the Wings of Wrath can no longer be picked up while using Duke's jetpack.
+- In Co-op mode, turning on double ammo will no longer break Corvus' Firemace.
+- Corvus' Untomed Firemace now finally has an appropriate co-op mode that goes through allied players. This is going to glitch somehow. I know it is. I KNOW it's going to break somehow. Fucking Sidhe.
+ ^- : Challenge accepted.
+- Everyone's mug now has sprites for the Doomsphere.
+
+
+
+FROM 0.18 TO 0.19
+=========================
+- Duke Nukem has joined the wheel of Samsara!
+Duke adds quite a bit of AoE damage to the heroes, acting as their official crowd control specialist. With half of his weapons being explosives of some kind, it's no wonder that he can dominate hordes of enemies in a short amount of time.
+Unfortunately, being from the Build Engine rather than the idtech1 engine has left some transitions rather rocky--due to how easily he could die in Duke Nukem 3D, he takes 10% more damage from everything in Samsara, and his movement is a little bit slower. That being said, his ability to blow away entire groups of enemies is second to none, and besides--cool guys specialize in explosions, anyway.
+
+- Corvus' Dragon Claw in co-op now properly spawns its different puffs depending on whether hitting a bleeding actor or a wall.
+- Fixed an error with B.J.'s Flamethrower in regards to a certain enemy.
+- Doomguy's Pistol no longer shows up as "Doomguy Pistol" under rare circumstances.
+- Enemies in Chex Quest no longer become lab supplies when crushed.
+- Chexter no longer vanishes when crushed.
+- Lord Snotfolus does slightly less damage with his main slimeballs, now.
+- Chexter's Bootspoon no longer causes blood to spatter.
+- Chexter's Frag and Zorch count was moved slightly to the right.
+- Corvus' Firemace now operates off Ammo 2/Shells, so as to help him in maps where there is plenty of shotgun ammo but very little clip ammo, and no weapon III. You'd think this scenario would be less common than it really is.
+- Singleplayer Samsara fans rejoice! In Singleplayer mode, the weapon drops are replaced with the actual weapon your character will use!
+- B.J.'s bullet damage has been boosted slightly from 6(1d3) to 7(1d3), to give him an early game buff.
+- Doomguy's Chaingun now has its flash synched with its barrel rotations.
+- In co-op play, player bullets now spawn at a slightly higher height, to keep from catching on gates and fences.
+- Shotgun drops only give Parias 4 of ammo 2 now, rather than 10.
+- The Frost shards and Timon's Axe now respectively cost two and three mana to fire.
+- The Serpent Staff gives a little less health on draining.
+- The Lesser Tome of Power in Heretic now gives 1.5 damage multiplier, to match the benefit of Corvus' Tome of Power, rather than 1.3.
+- Attacking frozen enemies with ice attacks will now shatter them just as well as attacking them with non-ice attacks.
+- Chexter's Phasing Zorcher goes through allied players now. This was a pretty embarrassing glitch from 0.18.
+- The Krater of Might, Poison Cloud Flechette, and Mystic Ambit Incant should now have their respective use sounds.
+- B.J. moves slightly slower in his retro movement, now--he was actually moving faster than normal movement in it, before.
+- The Flemoid Cycloptis' body now spawns at its proper height in its death animation.
+- The KeyConf weapon slots have been removed for improved compatibility! Now if a map has a (non-KeyConf-defined) custom weapon, the heroes of Samsara should be able to pick it up and wield it.
+- Zorched enemies no longer gib invisible bodies on being crushed by doors and lifts.
+- Shotgunners, Chaingunners, and Zombiemen shoot higher from their guns, now, which should keep them from constantly shooting at walls/floors in front of them.
+- The Mystic Ambit Incant, Krater of Might, Poison Cloud Flechette, Mace of Contrition, Morph Ovum, Staff, Fist, and Bootspoon are no longer droppable.
+
+
+FROM 0.17 TO 0.18
+==========================
+- If the Firemace is placed directly on a Heretic map rather than through the mace spawner, Weapon VII will now replace it as well.
+- Chex monster remains now raise and lower along with lifts, rather than stay at one level.
+- Corvus, Parias, and B.J. will now fail their unique item pickup if their inventory amount is already full.
+- Corvus and Parias will no longer pick up torches if their inventory with it is full.
+- Corvus will now carry only up to 16 Morph Ovums, as per Heretic.
+- Frozen enemies no longer double-drop ammo.
+- The Death Wyvern uses the proper freeze sprite now.
+- For those insane enough, the frag count now supports three-digit numbers instead of just two.
+- Font colors have been tweaked so as to allow normal HUD colors in Chex Quest. I AM VERY INTERESTED IN SEEING IF THIS MESSES WITH OTHER WADS WITH DIFFERENT COLORSCHEMES, PLEASE LET ME KNOW IF ANYTHING BORKS OR SEEMS OFF!
+- The HUDs now display the weapon numbers in colors consistent with the HUD, rather than all turning red.
+- The HUDs' weapon displays now are with a black background rather than red, to maintain consistency with the HUDs.
+- The Tome of Power and Flechette cooldown numbers are now gold, to match with the HUD colors.
+- The Flechette's numeral only lights up while the Flechette is still in the field now.
+- Corvus' Tome of Power is now alight when ready to use.
+- Doomguy's plasma rifle and BFG9000 should now leave the right decal on the wall in different games.
+- Chexter's Phasing Zorcher should now leave the right decal on the wall in different games.
+- Parias and Corvus now evilface on picking up the Flechette and Tome of Power now.
+- The Slot I weapons now properly occupy slot 1 on the keyboard.
+- Playing offline in singleplayer mode should no longer force you to use the Fastprojectile ThruSpecies versions of weapons.
+- Playing in Capture the Flag/Skulltag mode no longer activates the move-and-shoot-through-each-other mode.
+- When in Capture the Flag/Skulltag mode, Corvus' Morph Ovum now actually affects enemies.
+- The Former Human, Former Sergeant, and Former Commando now actually have their attacks go through ghostly Parias/Corvus. Turns out +ThruGhost doesn't affect A_CustomBulletAttack, WHO KNEW.
+- Added D_STWIN and D_STLOSE music, so now people can play DM/CTF/whatever and celebrate with a cool tune.
+- Restored the old Skulltag win/lose pictures. These are temporary! I will be looking to replace them soon-ish!
+- Now there are text indicators as to when B.J.'s retro movement is toggled on or off.
+- B.J.'s retro movement is now defaulted to off when chosen.
+- In ZDoom (due to Buddha mode working properly), B.J.'s extra life now activates when at a lower-than-5 health level, rather than 20.
+- In co-op, Corvus' tomed Hellstaff rain should no longer infinitely repeat.
+- Fixed some errant pixels on B.J.'s Luger, Knife, and Spear.
+- Everyone now has their old melee weapons back! There's been a bit of discussion as to whether having melee weapons makes the characters more true to their game or whether the starting pistols being infinite makes things easier in more difficult wads--so, here's a compromise: Everyone has their melee weapon back, but the starting pistols are still infinite ammo.
+- Doomguy's Berserk now selects the Fist, rather than the Chainsaw. The Chainsaw still has a Berserk bonus, but the Fist is the main Berserk weapon now.
+- Parias' and Corvus' HUD now supports widescreen.
+- The Phoenix Rod, B.J.'s Rocket Launcher, Firestorm, and Wraithverge should now auto-swap when out of ammo.
+- Doomguy's Plasma Rifle and Chexter's Phasing Zorcher now properly randomly swaps between the two frames of its firing animation while firing.
+- Chexter's Phasing Zorcher now properly flickers in and out of firing frames and normal frames while firing.
+- Doomguy's Plasma Rifle and Chexter's Phasing Zorcher now can only shoot one bolt at a time when tapped.
+- Online, Parias' Mystic Ambit Incant should no longer say it cannot be used when it's successfully been used.
+- In HeXen, Weapon V and Weapon VI will be spawned in place of the Mage's 2nd and 3rd weapon piece. This is to help people online who missed the weapon from the last hub.
+- Corvus can now carry only 16 Mystic Ambit Incants in HeXen.
+- In HeXen's third hub, Corvus was unable to pick up any Morph Ovums. This incredibly specific bug has been fixed.
+- Condensed several ACS scripts together, freeing up several script numbers to hopefully reduce conflicts with levelsets.
+- Resurrection of Chaos is now completely supported! Enemies from Hordes of Chaos will no longer spawn in Resurrection of Chaos, so enjoy your crossover levels with HeXen flavor! Just, uh, careful with the VII right at the start.
+- Smooth weapon animations have been integrated for Doomguy! The animation tics and frames have been checked, double-checked, and triple-checked to make sure that they sync perfectly with Doomguy's gameplay--for example, it still takes three fics for him to fire the Super Shotgun, still takes seven for the muzzle flash, and then still another 41 to break and reload.
+- Chexter's Large Zorcher flash animation syncs up properly now.
+- Chexter's 10% damage resistance was not being applied to explosions. This has been fixed.
+- B.J. now has an easter egg with his flamethrower. What it is and how to trigger it is a secret to everybody.
+- The afterimages of the items were causing lag on some low-end PCs in maps with larger counts of items. The time before they fade away has now been reduced.
+
+
+FROM 0.16 to 0.17
+==========================
+
+MONSTERS:
+- D'Sparil and Snotfolus are slightly more resistant to BFGs.
+- Monsters can no longer be spawned in DM play.
+- The Hell Nobles, Cacodemon, and Lost Souls now bleed the proper colors.
+- Lord Snotfolus now has a chance to do a spread attack of slime balls.
+- Cyclops Flemoids can now fly.
+- Flemoids now have the proper zorch pain animation when hit with the mini-zorcher.
+- More Chex Quest enemies now have death sequences! The Larva, Cyclops, Stridicus, Flem Mine, Quadrumpus, Armored Bipedicus, and Super Cyclops now splatter into gooey messes. Now the only enemies that don't are the bosses.
+- The Armored Flemoid Bipedicus has slightly higher HP.
+- The Stridicus has been made slightly faster in both movement and attack.
+- The Quadrumpus has slightly higher HP and slightly increased attack.
+- When a Chicken is killed with a Mini-Zorcher it will now be zorched.
+- Frozen monsters no longer have a random duration, but rather last for exactly two seconds before shattering.
+- It's no longer possible to block the way with frozen monsters. 
+- It's no longer possible to double-freeze a monster and crash the game with a permanent A_GenericFreezeDeath loop.
+- Freezing Spectres and ghosts no longer makes nearly-invisible/transparent ice.
+- Freezing an enemy on water in Heretic no longer makes the monster simply vanish.
+- Freezing Pain Elementals now spits out Lost Souls again.
+- Wraiths are transparent now, so as to better indicate their +Ghost status.
+- Bosses (outside of the Chex bosses) have their own freezing deaths now!
+
+
+WEAPONS:
+- Frost Shards and Timon's Axe now occupy slot 2 and 3 respectively on the keyboard.
+- The Flechette's cooldown should no longer decrease exponentially with multiple uses.
+- The Tome of Power no longer decreases exponentially when used RIGHT after it cools down.
+- When Corvus is gibbed, the Tome of Power no longer freezes its cooldown.
+- The Firestorm's damage has been lowered slightly.
+- The Spear of Destiny no longer throws people around.
+- The Wraithverge now has a delay after firing to reduce its rate of fire, and costs 25 of each ammo.- The Poison Gas Flechette now has a set duration of six seconds rather than a random duration.
+- Tomed Dragon Claw Rippers in online Heretic no longer go through walls, all the way across the map, and back in again.
+- Some of Corvus'/B.J.'s weapons did not have BRIGHT on them when they were being fired. This has been fixed.
+- The Frost Shard weapon recovers a few tics faster after firing, now.
+- The Sapphire Wand's missile has had its size reduced to radius 3/height 2, which should help Parias in maps where he needs to shoot through thin bars.
+- The Rapid Zorcher no longer has any vertical variation. Not sure why it did in the first place.
+- B.J.'s flamethrower has had its damage increased in light of its worse rate of fire.
+- The tomed Elven Wand no longer passes harmlessly through ghosts.
+- The Elven Wand and Dragon Claw now have a more-accurate-to-Heretic random damage curve in co-op.
+- The melee attack of the Hammer of Retribution and Frost Shards were doing about as much damage as Timon's Axe. Not anymore!
+- B.J.'s Spear of Destiny was given the BFG damagetype, which means D'Sparil, Korax, and Lord Snotfolus will no longer be so weak to it.
+- Timon's Axe no longer spawns the axe blood, due to dissonance with Flemoids and non-red-bleeding actors.
+- Doomguy's chaingun and Chexter's Rapid Zorcher now has the gunflash at the proper point of animation.
+
+
+SYSTEM:
+- Filesize was compressed slightly, in order to pave the way for the next hero.
+- The Mystic Ambit Incant should no longer spawn a clone in your inventory when used at full health, and can no longer be used at full health.
+- The Lesser Tome of Power in Heretic now has an announcer entry to go with it.
+- Online, swapping back and forth from B.J.'s retro walk should no longer make the server whine about cheats.
+- B.J.'s previous ammo values have been restored.
+- Corvus and Parias no longer swap to a non-existent weapon upon picking up a Tome of Power/Flechette when weapon auto-swap is enabled.
+ ^- : Unfortunately, now they don't evilface on picking it up, but it's a small price to pay.
+- Teleporters and glitter effects in online Heretic no longer go all the way up to the sky, through the ground, and up some more.
+- In rare circumstances, Weapon VII in Heretic would simply be replaced with Corvus' Firemace. This has been fixed.
+- Weapon VII should now respawn in Heretic co-op.
+- The Automap had the selected inventory item in the wrong place, WHOOPSIE DAISY. This has been fixed.
+- B.J.'s retro movement no longer negatively affects his jumping. It no longer halts all his mid-air movement, allowing him to change direction mid-air and move around while he flies, and it should no longer reduce his height slightly over time.
+- The Ammo boxes in HeXen now properly indicate that they're for Mana 1/2 and Mana 3/4 respectively.
+- (Partial) Skulltag support has been added! Now you can play in your favorite Invasion or ST-designed DM levels with Samsara! Not completed yet, unfortunately, but I'm eager to see what options are now open.
+- Players can walk back and forth through each other in co-op play.
+- Weapons can now go through allies in co-op play! Notable exceptions are the untomed Firemace and everything from Parias, thanks to yet-undefined Decorate functions.
+- The kill counter now works properly! Rather than count all of the kills on the map, whether by your hand or not, it only counts the kills that you personally have done. It also keeps track between maps, so you can see your total bodycount!
+- Parias now has an evil laugh when he teleports in Heretic.
+- The Armor Shard sound's volume was reduced slightly.
+- Corvus' taunt sound volume was increased slightly.
+- The key display for Doom now separates the Skull keys and key cards, rather than lumping them together. Hey, I've got room, why not use them?
+- In ZDoom, items have their proper names when scrolled through in the inventory.
+
+
+
+FROM 0.15 to 0.16
+==========================
+- Parias has joined the wheel of Samsara!
+Parias stretches goal two of Samsara to its absolute limit--because HeXen plays so much differently from the other idtech1 games, he's been changed the most in order to fit in with Doom gameplay. His arsenal has been expanded to carry the weapons from the other Hexen classes, and several of their behaviors have been slightly tweaked in order to fit with the ascending power level of acquired weapons while still staying true to their original functions.
+While playing as Parias unfortunately will not be "just like" HeXen due to the general faster pace and broader arsenal of the other idtech1 games, the HeXen weapons and items are still intact and should work exactly like you remember and/or expect them to.
+
+- When B.J. picks up weapons, the weapon graphics no longer change for a split second to the weapon I pickup.
+- Picking up Weapon VI no longer causes it to vanish under rare circumstances.
+- Picking up a Chaingun Commando's Chaingun as B.J. when lacking the Chaingun does not spawn a graphic of the Weapon IV pickup anymore.
+ ^- : Damn, these bugs are getting specific.
+- Shotguns dropped by Sergeants now give only 4 of ammo 2, instead of 8.
+- Chainguns dropped by Chaingun Commandos now only give 10 of ammo 1, instead of 20.
+- The GLDefs for Pistol bullet puffs and Mini-Zorcher puffs work now.
+- The Gauntlets of the Necromancer have GLDefs now.
+- B.J.'s Extra Life should work a lot more in ZDoom now, thanks to Buddha mode. Zandronum players are still kind of borked.
+- Hordes of Chaos is now supported! Resurrection of Chaos is, unfortunately, only partially supported and will probably never be completely supported.
+- Attacking enemies while they're being revived no longer makes them permanently transparent.
+- Various decals have been fixed and attributed--now a lot of weapons should leave a lot of different marks.
+- B.J.'s taunt has been replaced with the YEAH! at the end of Wolfenstein episodes.
+- Doomguy's Chaingun and Pistol should no longer be silent under rare circumstances.
+- Shotguns and Chainguns in Doom will now no longer pick up if you're full on ammo.
+- Everyone's jumpheight has been slightly increased in order to accommodate HeXen. Parias is still the highest jumper. This is a temporary fix until I figure something more permanent.
+- The Computer Area Map has been replaced with a Super Shotgun spawn in order to accommodate Ultimate Doom. This, too, is a temporary fix.
+- The EVL/evil grin face should activate every time a new weapon is picked up, now.
+- Zorched Spectres are no longer resummoned as normal Pinkies.
+- The Archvile's resummoning of zorched enemies has its own sound now, rather than the squishy resurrect sound.
+- Revenants no longer have the +DONTRIP flag.
+- The trails behind the tomed Ethereal Crossbow should no longer hang in the air.
+- The enemies in Heretic and HeXen now have proper damage types and should give ice deaths to players now, as well as burn deaths to the heroes that have burn deaths.
+ ^- : Yes, still planning on giving B.J./Doomguy/Chexter burn deaths eventually.
+- B.J.'s movement should be more accurate to his game--thanks to Ijon Tichy for helping with the code!
+- The automap now displays three-digit counts of kills, rather than stopping at 99.
+- The inventory box in all iwads supported now displays in its proper area, rather than being way up high in Heretic. It also has its own unique graphic now! Yay!
+- Corvus (and by extension Parias) now gets a Torch when light enhancement item is picked up.
+- HeXen keys should show up on the HUD now and should no longer overstuff the fullscreen HUD.
+- The Tome of Power in singleplayer/co-op now gives Corvus a slight (1.5) damage boost as well.
+- ZDoom players now have a taunt button to hear each character's taunt.
+
+
+FROM 0.14 TO 0.15
+==========================
+- The Firemace's effectiveness and Dragon Claw's effectiveness on critters should be more drastic now.
+- Spectres now use the Pinky zorch sound.
+- Corvus no longer plays the fire death sound twice when he burns up.
+- Doomguy no longer gets a damage bonus to all weapons when he picks up the Berserk.
+- Doomguy's Rocket Launcher no longer has infinite ammo.
+- The fullscreen HUD now shows the proper image of what ammo type a weapon uses.
+- B.J.'s Spear of Destiny now has A_Explode on the li'l balls' explosion as well as the main ball.
+- The Spear of Destiny's balls now bounce off water and explodes when hitting the sky instead of vanishing.
+- The Spear of Destiny's shots, the BFG Ball, and LAZ Ball now cannot be reflected by the Heresiarch.
+- The Tome of Power's cooldown no longer dwindles exponentially with multiple uses.
+- Corvus' Elven Wand, when tomed, now has the proper fan effect.
+- Weapon pickups outside of the Ultimate no longer count towards the Item percentage.
+- A few errant pixels on Corvus' HUD mug and B.J.'s Spear of Destiny have been fixed up.
+- Chex Warrior's zorching now has GLDefs. Because pretty.
+- B.J. now gets equivalent Ammo 1/Clip drops from Ammo 2/Shells, rather than an exact ratio. i.e. picking up a small Ammo 2 box should give 10 of Ammo 1, instead of 4.
+- Common/Bipedal Flemoids no longer zorch when gibbed.
+- Players bleed red in Chex Quest now, instead of green.
+- HeXen enemies should no longer be maddeningly resistant to pistols. I'm making HeXen more fun, one step at a time!
+- The Heresiarch and Death Wyvern no longer take radius damage.
+- The Archvile no longer revives zorched enemies--instead, he summons them back from the pits of Hell, as in Doom 3!
+- Chex Warrior now plays his Pain sound when hurt.
+- Increased drinking limit for B.J. from 10 to 20. It's quite a deviation from his original game, but it was almost impossible to use otherwise.
+
+FROM 0.13C TO 0.14
+==========================
+- Doomguy and Corvus now have their respective GLDefs from their respective games.
+- Chex Warrior has new GLdefs.
+- Korax and Lord Snotfolus' pain chance have been reduced.
+- Corvus should no longer pick up inventory items he's full on, now.
+- B.J. no longer gets Shells/Ammo 2 from HeXen mana drops.
+- The HeXen armor has been reduced from 50 per pickup to 25.
+- Chex Warrior's Team Power has been reduced from 25 armor to 15.
+- B.J.'s Team Power has been reduced from 5 of Ammo 1/2 to 3 of Ammo 1/2.
+- Enemies should no longer be so weak against the Firemace and resistant against the Dragon Claw. This is backwards.
+- The Baron of Hell's fireball no longer goes through Ghost-Corvus.
+- The Mancubi's, however, now does.
+- On the off-hand chance someone gets their hand on ice weapons, freezing certain bosses no longer breaks the game.
+- The Undead Knight's bloody axe now goes through Ghost-Corvus.
+- The Weredragon's fireball now goes through Ghost-Corvus.
+- The Firemace no longer has black boxes on the bottom of its sprite.
+- The Firemace should no longer mess up inventories with the Tome of Power. Again. If it breaks stuff again, I think I'll cry.
+- The Firemace, when Tomed, now costs 5 of Ammo 1 to shoot.
+- Explosive barrels, fungi pods, and poison mushrooms no longer can be ripped through with B.J.'s rocket launcher.
+- The health, armor, and a few other items should now have trails behind them to enhance visual recognition.
+- Doomguy's Shotgun/Super Shotgun now have proper placement on the weapon bar now.
+- Adjustment positioning of various pickups.
+- Filled in several missing sounds for different characters. Now characters have a fairly full soundset!
+- B.J.'s Extra Life has been removed as his Ultimate, due to popular demand. It has been replaced with (hopefully) the only original weapon in Samsara--the Spear of Destiny!
+- The Berserk/Morph Ovum/Porkalator has been replaced with a Unique Item drop, which gives each character an item from their respective game.
+- The Morph Ovum can now morph people in DM.
+- Doomguy's Chaingun no longer plays the Rapid Zorcher sound effect in Chex Quest.
+
+
+FROM 0.13 TO 0.13C
+==========================
+- Added Hexen support!
+- The Kill Count in co-op games now goes up to three digits.
+- All ammo drops from enemies have been replaced with CustomInventory ammo givers, which should hopefully keep players from firing blanks.
+- Ammo3 drops now give 2 for small pickups, and 6 for big pickups.
+- The Power of the Chicken was reduced further to 25 seconds, in line with other Heretic powerups.
+- Doomguy's Pistol and B.J.'s Luger now hit ghosts.
+- Lord Snotfolus and D'Sparil should now be actually fairly challenging to fight.
+- The Flemoids that have death sprites now have death sounds.
+- Zorching works in water, now!
+
+
+FROM 0.12 TO 0.13
+==========================
+- The Power of the Chicken's duration has been drastically reduced, from a full minute to half a minute.
+- Dropped Crossbow ammo should no longer give B.J. shells.
+- The Armor in Heretic now matches Heretic's armor values of 50/100, rather than 100/200.
+- B.J.'s rockets have had their impact damage reduced from 25 to 15.
+- Gargoyles should no longer leave half-transparent gibs and zorch properly now. You have no clue how happy I am.
+- The Dragon Claw and Firemace's damage is now buffed, but only against monsters. In DM it still holds more-randomized chaingun-esque damage.
+- The replacement for MaceAmmoHefty now dumps big ammo of every kind, much like MaceAmmo's dumping of small ammo.
+- B.J.'s bullet weapons now go through ghosts.
+- The Iron Lich, Maulotaur, and D'Sparil are less resistant to the BFG9000.
+- The Tome of Power now has a replacement--everyone now picks up a Lesser Tome, which grants a very brief and very slight damage buff.
+- GoldWandHefty now drops strictly health.
+
+
+FROM CONCEPT RELEASE TO 0.12
+===========================
+- The Backpack finally has a replacement item
+- Likewise, B.J. can no longer get shells from the Backpack
+- The fullscreen HUD now takes account of B.J.'s extra lives.
+- Corvus in co-op cannot pick up another Tome of Power to supplement his already-there Tome of Power.
+- Corvus' Tome of Power cooldown hits 0 every time a level is exited now.
+- Chex Warrior's Dual Mini-Zorchers should now be favored in auto-select more than the Mini-Zorchers.
+- The Super Bootspork no longer reports the killer's name twice in DM.
+- The Radius and Height of B.J.'s rockets have been reduced from 11/8 to 8/6, to better match its tiny size.
+- B.J.'s weapon sprites have been nudged slightly to the right to line up better with the crosshair.
+- The Spider Mastermind and the Pinky now have alternate sound effects for their Zorching, rather than an explosion or thudding on the ground.
+- B.J. now has a pain sound, for easier time DMing against him.
+- Doomguy should now play the original Doom/Doom II sounds and show his sprites, no matter the wad/iwad.
+- Doomguy's weapons now are properly bright during their firing state, rather than simply having parts that are bright.
+- Partial support for Heretic and Chex Quest! Things are still a little rough around the edges, but they don't cause crashes on loading the game and people can play through them without any serious errors!
+- Now there's an actual shower of sparks when you pick up the ultimate weapon, rather than one piddly spark.
+
+
+FROM 1.2 TO CONCEPT BUILD
+===========================
+- Phoenix Rod now has auto-fire.
+- Weapons are now no longer droppable--people can no longer swap weapons back and forth for an AEoD-lite inventory.
+- Radius for B.J.'s rocket launcher increased from 14 to 32.
+- B.J.'s rockets now have +NOEXTREMEDEATH attached to them, to keep them in line with the original game.
+- The automap's HUD now has the same colors as the normal HUD.
+- B.J. should no longer accidentally miss his weapon auto-switch, added SetPlayerProperty(0,1,2) to the rest of his weapons.
+- Adjusted the keys location on the fullscreen HUD to a better location.
+- Adjusted positioning of inventory items and weapon numbers on fullscreen HUD.
+- Only the B.J. with the Extra Life should see the "You cannot use this here." message.
+- When out of ammo, weapons should now swap to different weapons depending on what ammo you have.
+- Added an extra frame to B.J.'s death state.
+- The Tome of Power now alternates depending on whether the game is currently co-op or deathmatch.
+- B.J., when picking up the Chaingunner-dropped Chaingun for the first time, doesn't play Corvus' "Item Get" sound.
+- Corvus doesn't have a secret second HUD displaying Chex Warrior's weapons.
+- B.J.'s VI HUD slot should light up now when he has the Flamethrower.
+
+
+FROM 1.1 to 1.2
+====================
+- Chaingun flash works properly when firing the weapon now.
+- Doomguy no longer gets a "You got the Shotgun!" spam when picking up dropped shotguns.
+- Minor graphical tweaks for the Chex Warrior's Mini-Zorcher(s). Now he actually fires when he presses the button, not before.
+- Picking up the Chaingun/Shotgun from zombies presented problems when you picked it up from the respective weapon drop. Fix'd.
+- B.J. Blazkowicz stands ready to do battle!
+- There is now a new HUD and a new fullscreen HUD!
+- Doomguy's face is now always normal and won't vary depending on the wad.
+- Corvus' face shows damage.
+- Lots of other shit I forgot to note down.
+
+
+FROM 1.0 to 1.1
+====================
+- Corvus should no longer leave a standing guy when he dies to fire.
+- The BFG weapon slot should take much longer to respawn.
+- Other weapons stay in place after they're picked up, now, which should prevent players from resource-hogging.
+- Doom's weapons have rewritten obituaries to fill the pattern of Killer > Victim > Weapon
+- The Firemace should always leave an obituary, now.
+- Corvus got an overall damage nerf--Doomguy should be the damage champion with his Super Shotgun and Plasma Rifle, not Corvus.
+- Doomguy's weapons are now always normal and don't vary depending on the wad.
+- Everyone now swaps back to other weapons when out of ammo.
+- Chex weapon get sound, health pickup sounds, and Corvus-shotgun-get-while-holding-the-Firemace sounds are now louder.
+- Corvus should no longer have any problems with the Firemace and swapping between weapons.
+- Chex Warrior's Large Zorcher is a few ticks faster.
+- Chex Warrior's damage resistances now work on additional damage types--including the Zorch.
+- Chex Warrior now has a (temporary) additional death sprite that should make his death much less obtrusive in hectic DM games.
+- Armor has been given less alpha to improve visibility.

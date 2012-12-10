@@ -479,7 +479,7 @@ actor DukePipebomb
     Radius 10
     Height 8
     Health 5
-    Obituary "%k gave %o the pipe."
+    Obituary "%k \cfpassed\c- %o \cfthe pipe.\c-"
     Gravity 0.8
     BounceFactor 0.7
     BounceCount 3

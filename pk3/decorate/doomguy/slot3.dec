@@ -6,7 +6,7 @@ actor "Super Shotgun" : SuperShotgun
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
     AttackSound ""
-    Obituary "%k smeared %o across the wall with the SSG."
+    Obituary "%k \cdsmeared\c- %o \cdacross the wall with the SSG.\c-"
     States
     {
       Ready:

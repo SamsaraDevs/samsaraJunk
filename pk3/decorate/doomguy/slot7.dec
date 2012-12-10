@@ -2,7 +2,7 @@ Actor "B.F.G. 9000" : BFG9000
 {
     Weapon.SlotNumber 7
     DamageType "BFG"
-    Obituary "%k showed %o you don't hide from the B.F.G. 9000."
+    Obituary "%k \cdshowed\c- %o \cdyou don't hide from the B.F.G. 9000.\c-"
     +INVENTORY.UNDROPPABLE
     States
     {
@@ -125,7 +125,7 @@ actor DoomBFGBall : BFGBall
     +BRIGHT
     +DONTREFLECT
     DeathSound "doomguy/bfgx"
-    Obituary "%k obliterated %o with the B.F.G. 9000."
+    Obituary "%k \cdobliterated\c- %o \cdwith the B.F.G. 9000.\c-"
     States
     {
       Spawn:

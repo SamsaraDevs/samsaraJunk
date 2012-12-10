@@ -144,7 +144,7 @@ actor MarathonSMGBullet : FastProjectile
     Height 8
     Speed 100
     Projectile
-    Obituary "%k shredded %o with the KKV-7."
+    Obituary "%k \cnshredded\c- %o \cnwith the KKV-7.\c-"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH

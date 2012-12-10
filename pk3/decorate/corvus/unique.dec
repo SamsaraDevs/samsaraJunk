@@ -3,6 +3,7 @@ actor ArtiEgg2 : ArtiEgg
     tag "Morph Ovum"
     +INVENTORY.UNDROPPABLE
     Inventory.MaxAmount 16
+    inventory.usesound "heretic/itemuse"
     States
     {
       Use:
