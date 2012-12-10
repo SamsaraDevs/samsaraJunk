@@ -281,6 +281,7 @@ function int ConvertClassWeapons(int classnum)
             }
         }
 
+        /*
         for (j = 0; j < UNIQUECOUNT; j++)
         {
             if (HasUnique(i, j))
@@ -291,6 +292,7 @@ function int ConvertClassWeapons(int classnum)
                 while (!GiveUnique(classnum, k) && k >= 0) { k--; }
             }
         }
+        */
     }
 
 

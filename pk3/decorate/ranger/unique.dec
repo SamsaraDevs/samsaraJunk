@@ -504,7 +504,6 @@ actor LGBeam: BulletPuff
 
     RenderStyle Add
 
-
     States
     {
       Spawn:
