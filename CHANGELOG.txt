@@ -54,6 +54,7 @@ In short, if you liked SO's range control or Blazkowicz's accuracy but wish they
 - Duke 3D gibs should now properly show up online!
 - Duke no longer runs his mouth every time he picks up a dropped weapon.
 - Everyone has their old pickup sounds again!
+- Keys are now displayed horizontally instead of vertically, so as to reduce wasted space.
 
 FROM 0.25 TO 0.26
 ========================

@@ -215,23 +215,23 @@ StatusBar normal, forcescaled
         drawnumber 3, DOOMHUDF, gold, armor, 219, 171, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -326,23 +326,23 @@ StatusBar normal, forcescaled
         drawnumber 3, CHEXHUDF, yellow, armor, 220, 172, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -440,23 +440,23 @@ StatusBar normal, forcescaled
         drawnumber 3, HEREHUDF, gold, armor, 210, 180, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -552,23 +552,23 @@ StatusBar normal, forcescaled
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -684,23 +684,23 @@ StatusBar normal, forcescaled
         }
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -787,23 +787,23 @@ StatusBar normal, forcescaled
         drawnumber 3, DUKEHUDF, gold, armor, 205, 183, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -1571,23 +1571,23 @@ IsSelected not " Alien Weapon " {
                                         drawnumber 3, INDEXFON, green, armor, 125, 191;
 
                                         //Doom keys
-                                        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-                                        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-                                        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-                                        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-                                        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-                                        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
-                                        //Chex keys
-                                        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-                                        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-                                        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-                                        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-                                        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-                                        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
-                                        //Heretic keys
-                                        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-                                        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-                                        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+										InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+										InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+										InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+										InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+										InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+										InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
+										//Chex keys
+										InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+										InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+										InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+										InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+										InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+										InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
+										//Heretic keys
+										InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+										InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+										InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
                                         //HeXen keys
                                         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
                                         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -1702,23 +1702,23 @@ playerclass Ranger
 	InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
 
     //Doom keys
-    InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-    InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-    InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-    InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-    InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-    InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
-    //Chex keys
-    InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-    InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-    InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-    InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-    InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-    InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
-    //Heretic keys
-    InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-    InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-    InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
+        //Chex keys
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
+        //Heretic keys
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
     //HeXen keys
     InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
     InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -1827,23 +1827,23 @@ statusbar Automap
         drawnumber 3, DOOMHUDF, gold, armor, 219, 171, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -1898,23 +1898,23 @@ statusbar Automap
         drawnumber 3, CHEXHUDF, yellow, armor, 220, 172, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -1973,23 +1973,23 @@ statusbar Automap
         drawnumber 3, HEREHUDF, gold, armor, 210, 180, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -2040,23 +2040,23 @@ statusbar Automap
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -2129,23 +2129,23 @@ statusbar Automap
         }
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -2191,23 +2191,23 @@ statusbar Automap
         drawnumber 3, DUKEHUDF, gold, armor, 205, 183, 0, untranslated, 0, untranslated, 50;
 
         //Doom keys
-        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
         //Chex keys
-        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
         //Heretic keys
-        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
         //HeXen keys
         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -2934,23 +2934,23 @@ IsSelected not " Alien Weapon " {
                                         drawnumber 3, INDEXFON, green, armor, 125, 191;
 
                                         //Doom keys
-                                        InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-                                        InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-                                        InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-                                        InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-                                        InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-                                        InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
-                                        //Chex keys
-                                        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-                                        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-                                        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-                                        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-                                        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-                                        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
-                                        //Heretic keys
-                                        InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-                                        InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-                                        InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
+        //Chex keys
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
+        //Heretic keys
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
                                         //HeXen keys
                                         InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
                                         InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
@@ -3026,23 +3026,23 @@ playerclass Ranger
 	InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
 
     //Doom keys
-    InInventory BlueCard, 1 {drawimage "STKEYS0", 233, 171;}
-    InInventory YellowCard, 1 {drawimage "STKEYS1", 233, 181;}
-    InInventory RedCard, 1 {drawimage "STKEYS2", 233, 191;}
-    InInventory BlueSkull, 1 {drawimage "STKEYS3", 245, 171;}
-    InInventory YellowSkull, 1 {drawimage "STKEYS4", 245, 181;}
-    InInventory RedSkull, 1 {drawimage "STKEYS5", 245, 191;}
-    //Chex keys
-    InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 231, 171;}
-    InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 231, 181;}
-    InInventory ChexRedCard, 1 {drawimage "STKEYS2", 231, 191;}
-    InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 245, 171;}
-    InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 245, 181;}
-    InInventory RedFlemKey, 1 {drawimage "STKEYS5", 245, 191;}
-    //Heretic keys
-    InInventory KeyYellow, 1 {drawimage "YKEYICON", 237, 172;}
-    InInventory KeyGreen, 1 {drawimage "GKEYICON", 237, 182;}
-    InInventory KeyBlue, 1 {drawimage "BKEYICON", 237, 192;}
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
+        //Chex keys
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
+        //Heretic keys
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
     //HeXen keys
     InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
     InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
