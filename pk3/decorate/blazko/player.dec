@@ -115,6 +115,7 @@ actor WolfenPlayer : PlayerPawn
         goto Death.DukeDamage
 
       DukeGibStart:
+	BJBL G 1
         TNT1 A 0 A_UnsetSolid
         TNT1 A 0 A_PlaySound("duke/enemygib")
         TNT1 A 0 A_SpawnDebris("DukeGibs1")

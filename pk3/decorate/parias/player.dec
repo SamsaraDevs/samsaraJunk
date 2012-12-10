@@ -137,6 +137,7 @@ actor HexenPlayer : PlayerPawn
         goto Death.DukeDamage
 
       DukeGibStart:
+	CLER H 1
         TNT1 A 0 A_UnsetSolid
         TNT1 A 0 A_PlaySound("duke/enemygib")
         TNT1 A 0 A_SpawnDebris("DukeGibs1")
