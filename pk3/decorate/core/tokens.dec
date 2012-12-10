@@ -26,6 +26,7 @@ ACTOR TauntButton : CustomInventory
 }
 
 Actor RuneProsperity : Boolean { }
+Actor RuneDoubleFiringSpeed : Boolean { }
 
 actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}
