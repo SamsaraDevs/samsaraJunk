@@ -7,6 +7,7 @@
 
 #include "samsaraDefs.h"
 #include "samsaraWeps.h"
+#include "samsaraSounds.h"
 #include "samsaraMsgs.h"
 
 int array_wolfmove[PLAYERMAX];
@@ -864,8 +865,11 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
     int logMsg;
+    int pickupsound = ClassPickupSounds[pclass][slot];
     
     if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
+    
+    if (dropped) { pickupsound = ClassDropSounds[pclass][slot]; }
     
     if (cpln == pln)
     {
@@ -893,8 +897,8 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
         else { Log(s:logMsg); }
     }
     
-    if (soundmode == 1) { LocalAmbientSound(ClassPickupSounds[pclass][slot], 127); }
-    else { ActivatorSound(ClassPickupSounds[pclass][slot], 127); }
+    if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
+    else { ActivatorSound(pickupsound, 127); }
     
     if (DEBUG)
     {
