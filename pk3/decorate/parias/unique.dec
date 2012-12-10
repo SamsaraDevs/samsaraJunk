@@ -1,6 +1,6 @@
 actor PortMysticAmbit : CustomInventory
 {
-    //tag "Mystic Ambit Incant"
+    tag "Mystic Ambit Incant"
     +FLOATBOB
     Inventory.MaxAmount 16
     +INVENTORY.INVBAR
@@ -34,7 +34,7 @@ actor PortMysticAmbit : CustomInventory
 
 actor PortMysticAmbit2 : ArtiHealingRadius
 {
-    //tag "Mystic Ambit Incant"
+    tag "Mystic Ambit Incant"
     +INVENTORY.AUTOACTIVATE
 }
 

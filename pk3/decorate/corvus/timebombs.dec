@@ -1,6 +1,6 @@
 actor PermaRemoteBomb : CustomInventory
 {
-    //tag "Mine of the Ancients"
+    tag "Mine of the Ancients"
     +FLOATBOB
     Inventory.Amount 1
     Inventory.MaxAmount 1
@@ -34,7 +34,7 @@ actor PermaRemoteBomb : CustomInventory
 
 actor PermaTimeBomb : CustomInventory
 {
-    //tag "Time Bomb of the Ancients"
+    tag "Time Bomb of the Ancients"
     +FLOATBOB
     Inventory.Amount 1
     Inventory.MaxAmount 1

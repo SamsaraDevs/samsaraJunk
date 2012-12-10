@@ -356,7 +356,7 @@ actor QuakeRedArmor: BasicArmorPickup
 
 actor PortQuartzFlask : HealthPickup
 {
-    //tag "Quartz Flask"
+    tag "Quartz Flask"
     health 25
     inventory.maxamount 16
     inventory.icon "ARTIQRTZ"
@@ -367,7 +367,7 @@ actor PortQuartzFlask : HealthPickup
 
 actor PortQuartzFlask2 : HealthPickup
 {
-    //tag "Quartz Flask"
+    tag "Quartz Flask"
     health 25
     inventory.maxamount 16
     inventory.icon "ARTIQRTZ"
@@ -379,7 +379,7 @@ actor PortQuartzFlask2 : HealthPickup
 
 actor PortSuperHealth : HealthPickup
 {
-    //tag "Mystic Urn"
+    tag "Mystic Urn"
     health 100
     inventory.maxamount 16
     inventory.icon "ARTISPHL"
@@ -390,7 +390,7 @@ actor PortSuperHealth : HealthPickup
 }
 actor PortSuperHealth2 : HealthPickup
 {
-    //tag "Mystic Urn"
+    tag "Mystic Urn"
     health 100
     inventory.maxamount 16
     inventory.icon "ARTISPHL"
@@ -402,7 +402,7 @@ actor PortSuperHealth2 : HealthPickup
 
 actor CorvusMegasphere : CustomInventory
 {
-    //tag "Unbound Megasphere"
+    tag "Unbound Megasphere"
     Inventory.Amount 1
     Inventory.MaxAmount 16
     +INVBAR

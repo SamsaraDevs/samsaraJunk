@@ -2,7 +2,7 @@ actor DiscOfRepulsionCooldown : inventory { -INVBAR +INVENTORY.UNDROPPABLE inven
 
 actor PortFlechette : CustomInventory
 {
-    //tag "Poison Cloud Flechette"
+    tag "Poison Cloud Flechette"
     +FLOATBOB
     Inventory.Amount 1
     Inventory.MaxAmount 1

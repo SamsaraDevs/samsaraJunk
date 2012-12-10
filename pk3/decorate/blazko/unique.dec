@@ -1,6 +1,6 @@
 actor WolfExtraLife : Inventory//CustomInventory
 {
-    //tag "Extra Life"
+    tag "Extra Life"
     Inventory.Icon WOLFLIFE
     Inventory.Amount 1
     Inventory.MaxAmount 9

@@ -350,7 +350,7 @@ actor AmmoBackpack : CustomInventory replaces Backpack
 
 actor PortKraterOfMight : CustomInventory
 {
-    //tag "Krater of Might"
+    tag "Krater of Might"
     +FLOATBOB
     +INVENTORY.INVBAR
     +INVENTORY.PICKUPFLASH
