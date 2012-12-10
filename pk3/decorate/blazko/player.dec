@@ -53,7 +53,6 @@ actor WolfenPlayer : PlayerPawn
         Goto Spawn
 
       GoingTo:
-        TNT1 A 0 ACS_ExecuteAlways(208)
         TNT1 A 0 A_GiveInventory("Medikit")
         TNT1 A 0 A_GiveInventory("Medikit")
         TNT1 A 0 A_GiveInventory("Medikit")
