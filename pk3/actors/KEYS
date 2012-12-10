@@ -79,32 +79,7 @@ actor BlueCard2 : CustomInventory replaces BlueCard
     }
 }
 
-actor RedSkull: DoomKey 38
-{
-    Game Doom
-    SpawnID 89
-    Inventory.PickupMessage "$GOTREDSKUL"
-    Inventory.Icon "STKEYS5"
-
-    States
-    {
-      Spawn:
-       RSKU A 0
-       TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6) != 1, "SpawnKey")
-       goto Spawn2
-
-      SpawnKey:
-        RSKU A 0 A_SpawnItemEx("RedSkull2")
-        stop
-
-      Spawn2:
-        RSKU A 10
-        RSKU B 10 Bright
-        loop
-    }
-}
-
-actor RedSkull2: CustomInventory
+actor RedSkull2: CustomInventory replaces RedSkull
 {
     inventory.pickupmessage "$GOTREDSKUL" // "Picked up a red skull key."
     //inventory.icon "STKEYS5"
@@ -146,31 +121,7 @@ actor YellowSkull2: CustomInventory replaces YellowSkull
     }
 }
 
-actor BlueSkull: DoomKey 40
-{
-    Game Doom
-    SpawnID 90
-    Inventory.PickupMessage "$GOTBLUESKUL"
-    Inventory.Icon "STKEYS3"
-    States
-    {
-      Spawn:
-       BSKU A 0
-       TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6) != 1, "SpawnKey")
-       goto Super::Spawn
-
-      SpawnKey:
-        BSKU A 0 A_SpawnItemEx("BlueSkull2")
-        stop
-
-      Spawn2:
-        BSKU A 10
-        BSKU B 10 Bright
-        loop
-    }
-}
-
-actor BlueSkull2: CustomInventory
+actor BlueSkull2: CustomInventory replaces BlueSkull
 {
     inventory.pickupmessage "$GOTBLUESKUL" // "Picked up a blue skull key."
     //inventory.icon "STKEYS3"

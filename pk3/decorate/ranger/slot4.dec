@@ -61,7 +61,7 @@ actor "Nailgun": InstantSwitchWeapon
 
       NailLeft2:
         QNLG A 0 A_GiveInventory("NailgunSide")
-        QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailLeft")
+        QNLG A 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageNailLeft")
         QNLG D 1 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG E 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
         QNLG A 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
@@ -89,7 +89,7 @@ actor "Nailgun": InstantSwitchWeapon
 
       NailRight2:
         QNLG A 0 A_TakeInventory("NailgunSide")
-        QNLG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageNailRight")
+        QNLG A 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageNailRight")
         QNLG B 1 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
         QNLG C 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
         QNLG A 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
@@ -143,7 +143,7 @@ actor "Nailgun": InstantSwitchWeapon
 
       LavaLeft:
         QLNG A 0 A_GiveInventory("NailgunSide")
-        QLNG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageLavaLeft")
+        QLNG A 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageLavaLeft")
         QLNG D 1 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
         QLNG E 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
         QLNG A 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
@@ -160,7 +160,7 @@ actor "Nailgun": InstantSwitchWeapon
 
       LavaRight:
         QLNG A 0 A_TakeInventory("NailgunSide")
-        QLNG A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageLavaRight")
+        QLNG A 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageLavaRight")
         QLNG B 1 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
         QLNG C 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
         QLNG A 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
