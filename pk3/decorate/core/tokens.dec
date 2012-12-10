@@ -5,19 +5,6 @@ actor Boolean: Inventory
     -INVBAR
 }
 
-ACTOR TauntButton : CustomInventory
-{
-  -INVBAR
-  Inventory.Amount 1
-  Inventory.MaxAmount 1
-  States
-  {
-      Use:
-      TNT1 A 0 A_PlaySoundEX("*taunt","Voice",0,0)
-      Fail
-  }
-}
-
 Actor RuneProsperity : Boolean { }
 
 actor Counter: Inventory
@@ -103,5 +90,21 @@ actor WeaponGetYaaaay2 : Weapon
       Fire:
         PUF1 A 1
         goto Ready
+    }
+}
+
+actor TauntButton: CustomInventory
+{
+    -INVBAR
+    +UNDROPPABLE
+    
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    
+    states
+    {
+      Use:
+        TNT1 A 0 A_PlaySound("*taunt", CHAN_VOICE)
+        fail
     }
 }

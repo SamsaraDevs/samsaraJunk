@@ -25,6 +25,7 @@ actor QuakePlayer: PlayerPawn
     Player.StartItem "Single Shotgun"
     Player.StartItem "Clip", 50
     Player.StartItem "Axe"
+    Player.StartItem "TauntButton"  // ZDoom
     
     Player.ColorRange 112, 127
     

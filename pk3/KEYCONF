@@ -22,6 +22,7 @@ addmenukey "Pickup Msg. Mode" samsara_cmd_msgmode
 addmenukey "Tipbox: Show"  samsara_tipbox
 addmenukey "Tipbox: Next char" samsara_tipright
 addmenukey "Tipbox: Next page"  samsara_tipdown
+addmenukey "ZDoom: Taunt" samsara_zdtaunt
 
 alias samsara_id_vanilladoom  "set samsara_cl_vanilladoom  $samsara_cl_vanilladoom;  archivecvar samsara_cl_vanilladoom"
 alias samsara_id_wolfmove     "set samsara_cl_wolfmove     $samsara_cl_wolfmove;     archivecvar samsara_cl_wolfmove"   
