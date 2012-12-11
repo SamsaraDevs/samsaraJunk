@@ -1058,8 +1058,8 @@ $playersound        Ranger      male    *puzzfail       dgpuzz
 $playersound        Ranger      male    *taunt          sounds/ranger/taunt.ogg
 
 quakeweps/blank                 sounds/ranger/blank.ogg
-quakeweps/weaponget             sounds/ranger/w_pkup.ogg
-quakeweps/itemget             sounds/ranger/lock4.wav
+quakeweps/weaponget             sounds/ranger/w_pkup.wav
+quakeweps/itemget               sounds/ranger/lock4.wav
 quakeweps/megahealth            sounds/ranger/m_health.ogg
 quakeweps/megasphere            sounds/ranger/megasphere.ogg
 
