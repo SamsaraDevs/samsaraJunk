@@ -12,6 +12,7 @@ actor "Super Nailgun": Weapon
 
     Weapon.SlotNumber 6
 
+    +INVENTORY.UNDROPPABLE
     Inventory.Icon "QSNGZ0"
 
     Inventory.PickupSound "quakeweps/weaponpickup"
