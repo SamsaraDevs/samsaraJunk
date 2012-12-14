@@ -13,7 +13,7 @@ actor "Hammer of Retribution" : FWeapHammer
     Weapon.AmmoType1 "Cell"
     Inventory.PickupMessage "You got the Hammer of Retribution!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \clsplintered\c- %o's \clskull and spine with the Hammer of Retribution.\c-"
+    Obituary "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-"
     States
     {
       Spawn:

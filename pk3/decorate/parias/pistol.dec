@@ -32,7 +32,7 @@ actor MageWandMissile2 : MageWandMissile replaces MageWandMissile
 {
     Radius 3
     Height 2
-    Obituary "%k \clunwove\c- %o's \cllife force with the Sapphire Wand.\c-"
+    Obituary "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-"
     Decal RailScorchLower
     Damage 1
     +STRIFEDAMAGE
