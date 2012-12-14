@@ -19,7 +19,7 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         Hexen:    WWRT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Dukeguy:  DEVP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: WMCP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        Quake:    QUAD A 35 bright A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+        Quake:    QUDD A 35 bright A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         
         DoomFull:      PBFG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexFull:      PLZD B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

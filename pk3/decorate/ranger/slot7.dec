@@ -22,7 +22,7 @@ actor QuadDamagePickup: CustomInventory
     States
     {
       Spawn:
-        QUAD A -1 bright
+        QUDD A -1 bright
         stop
 
       Pickup:
@@ -46,7 +46,7 @@ actor QuadDamageItem: CustomInventory
     States
     {
       Spawn:
-        QUAD A -1 bright
+        QUDD A -1 bright
         stop
 
       Use:
