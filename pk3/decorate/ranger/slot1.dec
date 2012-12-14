@@ -27,7 +27,9 @@ actor "Laser Cannon" : InstantSwitchWeapon
       Fire:
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlayWeaponSound("quakeweps/lasershot")
-        QLSC B 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.35)
+        QLSC B 1 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.2)
         QLSC B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         QLSC A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QLSC A 0 A_JumpIfInventory("SPModeOn",   1, "CoopFire")
@@ -42,6 +44,7 @@ actor "Laser Cannon" : InstantSwitchWeapon
         goto Fire2
 
       Fire2:
+	    TNT1 A 0 A_SetPitch(pitch+.15)
         QLSC C 2 bright
         QLSC C 0 A_Refire
         Goto Ready
@@ -49,7 +52,9 @@ actor "Laser Cannon" : InstantSwitchWeapon
       Hold:
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlayWeaponSound("quakeweps/lasershot")
-        QLSC D 1 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.35)
+        QLSC D 1 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.2)
         QLSC D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",   1, "CoopHold")
@@ -64,6 +69,7 @@ actor "Laser Cannon" : InstantSwitchWeapon
         goto Hold2
 
       Hold2:
+	    TNT1 A 0 A_SetPitch(pitch+.15)
         QLSC E 2 bright A_ClearRefire
         goto Ready
         

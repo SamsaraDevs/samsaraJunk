@@ -64,10 +64,15 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-        QGRL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
-        QGRL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-1.5)
+        QGRL B 2 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
+        QGRL C 3 A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
         QGRL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
         QGRL E 4
+	    //TNT1 A 0 A_SetPitch(pitch+.25)
         QGRL F 3
         QGRL G 3
         QGRL H 2
@@ -105,9 +110,13 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto AltFire2
         
       AltFire2:
-        QMGL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
-        QMGL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-1.5)
+        QMGL B 2 bright A_ZoomFactor(0.995, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
+        QMGL C 3 A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
         QMGL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.5)
         QMGL E 4
         QMGL F 3
         QMGL G 3

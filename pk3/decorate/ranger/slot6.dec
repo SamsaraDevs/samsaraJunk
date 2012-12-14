@@ -75,50 +75,71 @@ actor "Super Nailgun": Weapon
 
       Fire1:
         QSNG B 0 bright A_GiveInventory("SNGFrame")
-        QSNG B 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG B 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG B 0 A_Refire
         goto FireEnd
 
       Fire2:
         QSNG C 0 bright A_GiveInventory("SNGFrame")
-        QSNG C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG C 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG C 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG C 0 A_Refire
         goto FireEnd
 
       Fire3:
         QSNG D 0 bright A_GiveInventory("SNGFrame")
-        QSNG D 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG D 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG D 0 A_Refire
         goto FireEnd
 
       Fire4:
         QSNG E 0 bright A_GiveInventory("SNGFrame")
-        QSNG E 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG E 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG E 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG E 0 A_Refire
         goto FireEnd
 
       Fire5:
         QSNG F 0 bright A_GiveInventory("SNGFrame")
-        QSNG F 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG F 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG F 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG F 0 A_Refire
         goto FireEnd
 
       Fire6:
         QSNG G 0 bright A_GiveInventory("SNGFrame")
-        QSNG G 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG G 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG G 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG G 0 A_Refire
         goto FireEnd
 
       Fire7:
         QSNG H 0 bright A_TakeInventory("SNGFrame")
-        QSNG H 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNG H 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG H 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNG H 0 A_Refire
         goto FireEnd
       
@@ -155,50 +176,71 @@ actor "Super Nailgun": Weapon
 
       AltFire1:
         QSNL B 0 bright A_GiveInventory("SNGFrame")
-        QSNL B 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL B 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL B 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL B 0 A_Refire
         goto AltFireEnd
 
       AltFire2:
         QSNL C 0 bright A_GiveInventory("SNGFrame")
-        QSNL C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL C 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL C 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL C 0 A_Refire
         goto AltFireEnd
 
       AltFire3:
         QSNL D 0 bright A_GiveInventory("SNGFrame")
-        QSNL D 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL D 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL D 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL D 0 A_Refire
         goto AltFireEnd
 
       AltFire4:
         QSNL E 0 bright A_GiveInventory("SNGFrame")
-        QSNL E 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL E 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL E 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL E 0 A_Refire
         goto AltFireEnd
 
       AltFire5:
         QSNL F 0 bright A_GiveInventory("SNGFrame")
-        QSNL F 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL F 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL F 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL F 0 A_Refire
         goto AltFireEnd
 
       AltFire6:
         QSNL G 0 bright A_GiveInventory("SNGFrame")
-        QSNL G 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL G 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL G 2 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL G 0 A_Refire
         goto AltFireEnd
 
       AltFire7:
         QSNL H 0 bright A_TakeInventory("SNGFrame")
-        QSNL H 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch-.5)
+        QSNL H 2 bright A_ZoomFactor(0.9975, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL H 1 bright A_ZoomFactor(1, ZOOM_INSTANT)
+	    TNT1 A 0 A_SetPitch(pitch+.25)
         QSNL H 0 A_Refire
         goto AltFireEnd
       
