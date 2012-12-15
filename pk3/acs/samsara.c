@@ -738,6 +738,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
 script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 {
+    if (!IsServer) { terminate; }
     slot = itemToSlot(slot);
     
     if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
@@ -840,6 +841,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 
 script SAMSARA_GIVEUNIQUE (int alt)
 {
+    if (!IsServer) { terminate; }
     if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
     
     int uniqueGet = 0;

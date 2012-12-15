@@ -182,6 +182,11 @@ function int SamsaraClientVars(void)
 
 function int GiveUnique(int cnum, int unum)
 {
+    return _giveunique(cnum, unum, 0);
+}
+
+function int _giveunique(int cnum, int unum, int ignoreinv)
+{
     int success; 
 
     unum *= 2;
@@ -210,10 +215,10 @@ function int GiveUnique(int cnum, int unum)
     //   or
     //  - You can have multiple duplicates of the unique, and you're not full
 
-    if (unique != "" && (!CheckInventory(unique) || 
+    if (unique != "" && ((!CheckInventory(unique) || ignoreinv) || 
                          (uniqueMax <= 1 && (unammo == "" || unammoMax == 0)) ||
-                         (unammoMax != 0 && CheckInventory(unammo) != unammoMax) ||
-                         (uniqueMax > 1 && CheckInventory(unique) != uniqueMax)
+                         (unammoMax != 0 && (CheckInventory(unammo) != unammoMax || ignoreinv)) ||
+                         (uniqueMax > 1 && (CheckInventory(unique) != uniqueMax || ignoreinv))
                         )
        )
     {
@@ -281,7 +286,6 @@ function int ConvertClassWeapons(int classnum)
             }
         }
 
-        /*
         for (j = 0; j < UNIQUECOUNT; j++)
         {
             if (HasUnique(i, j))
@@ -289,10 +293,9 @@ function int ConvertClassWeapons(int classnum)
                 k = j;
                 TakeUnique(i, j);
 
-                while (!GiveUnique(classnum, k) && k >= 0) { k--; }
+                while (!_giveunique(classnum, k, 1) && k >= 0) { k--; }
             }
         }
-        */
     }
 
 

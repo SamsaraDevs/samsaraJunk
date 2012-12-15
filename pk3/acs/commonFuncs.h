@@ -148,19 +148,19 @@ function int adjustShort(int tmin, int tmax, int i)
 
 function int sqrt_i(int number)
 {
-	if (number <= 3) { return number > 0; }
+    if (number <= 3) { return number > 0; }
 
-	int oldAns = number >> 1,                     // initial guess
-	    newAns = (oldAns + number / oldAns) >> 1; // first iteration
+    int oldAns = number >> 1,                     // initial guess
+        newAns = (oldAns + number / oldAns) >> 1; // first iteration
 
-	// main iterative method
-	while (newAns < oldAns)
-	{
-		oldAns = newAns;
-		newAns = (oldAns + number / oldAns) >> 1;
-	}
+    // main iterative method
+    while (newAns < oldAns)
+    {
+        oldAns = newAns;
+        newAns = (oldAns + number / oldAns) >> 1;
+    }
 
-	return oldAns;
+    return oldAns;
 }
 
 function int sqrt(int number)
