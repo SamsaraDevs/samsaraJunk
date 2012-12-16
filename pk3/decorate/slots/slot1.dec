@@ -1,5 +1,7 @@
 actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
 {
+    ConversationID 167
+
     States
     {
       IWasDropped:
@@ -62,3 +64,4 @@ actor SamsaraSlotOneDrop: SamsaraSlotOnePickup
 actor SamsaraSlotOne_Chex:    SamsaraSlotOnePickup replaces SuperBootspork {}
 actor SamsaraSlotOne_Heretic: SamsaraSlotOnePickup replaces Gauntlets {}
 actor SamsaraSlotOne_Hexen:   SamsaraSlotOnePickup replaces MWeapFrost {}
+actor SamsaraSlotOne_Strife:  SamsaraSlotOnePickup replaces Targeter {}

@@ -1,0 +1,68 @@
+actor StrifeBackpack: RandomSpawner replaces AmmoSatchel
+{
+    dropitem "AmmoBackpack"
+}
+
+actor StrifeClipOfBullets: Ammo1Small replaces ClipOfBullets {}
+
+actor StrifeAmmo1_Conv: Ammo1Small
+{
+    ConversationID 179
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("StrifeAcolyteDrop", 0,0,0, momx,momy,momz)
+        stop
+    }
+}
+
+actor StrifeBoxOfBullets: Ammo1Big replaces BoxOfBullets { ConversationID 180 }
+
+actor StrifeElectricBolts: CustomInventory replaces ElectricBolts
+{
+    ConversationID 186
+
+    Inventory.PickupMessage "Picked up 12 rounds of Ammo 2."
+    Inventory.PickupSound "ammo/shellbig"
+
+    States
+    {
+      Spawn:
+        AMMD B 20
+        AMMD B 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("Shell", 12)
+        TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("AmmoShell", 12)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip", 30)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Clip", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip", 30)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
+        TNT1 A 0 A_SetBlend("Green", 0.3, 3)
+        TNT1 A 1 A_GiveInventory("AmmoShell", 12)
+        stop
+
+      PickupFail:
+        AMMB B 1
+        fail
+    }
+}
+
+actor StrifePoisonBolts: Ammo2Big replaces PoisonBolts { ConversationID 185 }

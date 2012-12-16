@@ -12,6 +12,7 @@
 #include "decorate/slots.dec"
 
 #include "decorate/game_doom.dec"
+#include "decorate/game_strife.dec"
 #include "decorate/stDummies.dec"
 
 //#include "actors/GAME_DOOM"

@@ -303,9 +303,12 @@ actor Ammo4Big : CustomInventory replaces Cellpack// replaces Cellpack
 actor AmmoBackpack : CustomInventory replaces Backpack
 {
     Inventory.PickupMessage "Picked up Ammo Expansion Pack."
-    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupSound "silence"
     +COUNTITEM
     -INVENTORY.ALWAYSPICKUP
+
+    ConversationID 187, 181, 184
+
     States
     {
       Spawn:
@@ -345,8 +348,6 @@ actor AmmoBackpack : CustomInventory replaces Backpack
         fail
     }
 }
-
-
 
 actor PortKraterOfMight : CustomInventory
 {
