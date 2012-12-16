@@ -212,6 +212,7 @@ function int quadNeg(int a, int b, int c)
     return b1;
 }
 
+// All the arguments are to be fixed-point
 function int quad(int a, int b, int c, int y)
 {
     return FixedMul(a, FixedMul(y, y)) + FixedMul(b, y) + c + y;

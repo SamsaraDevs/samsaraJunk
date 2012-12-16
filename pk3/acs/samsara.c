@@ -1224,6 +1224,58 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
 
 // TIPBOX END DERP
 
+script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
+{
+    if (defaultCVar("samsara_cl_norecoil", 0) == 1) { terminate; }
+
+    degrees = itof(degrees);
+    if (degrees < 0) { degrees /= -100; }
+
+    int qCurve, oldPitch, newPitch, pitchDiff, i;
+
+    if (ticsup > 0)
+    {
+        qCurve = degrees / pow(-ticsup, 2);
+        newPitch = qCurve * pow(-ticsup, 2);
+
+        for (i = 0; i < ticsup; i++)
+        {
+            oldPitch = newPitch;
+            // y = a(x-h)**2 + k
+            newPitch = qCurve * pow((i+1)-ticsup, 2);
+            pitchDiff = (newPitch - oldPitch) / 360;
+
+            SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+            Delay(1);
+        }
+    }
+    else
+    {
+        SetActorPitch(0, GetActorPitch(0) - (degrees / 360));
+    }
+
+    if (ticsdown > 0)
+    {
+        qCurve = -degrees / pow(ticsDown, 2);
+        newPitch = qCurve * pow(-ticsdown, 2);
+
+        for (i = 0; i < ticsdown; i++)
+        {
+            oldPitch = newPitch;
+            // y = a(x-h)**2 + k
+            newPitch = qCurve * pow((i+1)-ticsdown, 2);
+            pitchDiff = (newPitch - oldPitch) / 360;
+
+            SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+            Delay(1);
+        }
+    }
+    else
+    {
+        SetActorPitch(0, GetActorPitch(0) + (degrees / 360));
+    }
+}
+
 /*
 *
 * This is still to be converted.
