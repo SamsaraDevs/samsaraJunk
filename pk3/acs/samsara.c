@@ -1233,7 +1233,7 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
 
 script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 {
-    if (defaultCVar("samsara_cl_norecoil", 0) == 1) { terminate; }
+    if (GetCVar("samsara_cl_norecoil") == 1) { terminate; }
 
     degrees = itof(degrees);
     if (degrees < 0) { degrees /= -100; }
