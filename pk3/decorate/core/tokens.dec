@@ -6,6 +6,7 @@ actor Boolean: Inventory
 }
 
 Actor RuneProsperity : Boolean { }
+Actor RuneDoubleFiringSpeed : Boolean { }
 
 actor Counter: Inventory
 {

@@ -40,7 +40,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
         // 22 tics
       Fire:
-        TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
+        //TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
         TNT1 A 0 A_TakeInventory("UsingMultiNades")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
@@ -87,7 +87,7 @@ TNT1 A 0 A_SetPitch(pitch+.5)
         Goto Ready
         
       AltFire:
-        TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
+        //TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         TNT1 A 0 A_GiveInventory("UsingMultiNades")
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
