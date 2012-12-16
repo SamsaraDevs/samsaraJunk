@@ -13,7 +13,7 @@ addkeysection "Samsara: Characters" samsarakeys
 addmenukey "Doomguy: Animations" samsara_cmd_vanilladoomanims
 addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
 addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
-addmenukey "Ranger: Recoil" samsara_cmd_norecoil
+//addmenukey "Ranger: Recoil" samsara_cmd_norecoil
 
 addkeysection "Samsara: System" samsarasyskeys
 

@@ -38,7 +38,6 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         Loop
         
       Fire:
-        TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 2, 17)
         TNT1 A 0 A_TakeInventory("UsingMultiRockets")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
         QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
@@ -67,17 +66,22 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-        QRKL BC 2 bright
-        QRKL D 3 bright
+TNT1 A 0 A_SetPitch(pitch-2.5)
+        QRKL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+1)
+        QRKL C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+1)
+        QRKL D 3 bright A_ZoomFactor(1, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+.5)
         QRKL E 4
-        QRKL FG 5
+        QRKL F 5
+        QRKL G 5
         QRKL H 6
         // 27 tics
         QRKL H 0 A_Refire
         goto Ready
         
       AltFire:
-        TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 2, 17)
         TNT1 A 0 A_GiveInventory("UsingMultiRockets")
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
@@ -89,42 +93,42 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopQuadAlt")
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopQuadAlt")
         QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -10, 0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket",  5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket",  10)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", 5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", 10)
         goto AltFire2
         
       CoopQuadAlt:
         QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop", -10, 0)
-        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop", -5,  0)
-        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop",  5,  0)
-        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop",  10)
+        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop", -5, 0)
+        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop", 5, 0)
+        QMRL B 0 A_FireCustomMissile("QuadClusterRkCoop", 10)
         goto AltFire2
         
       AfterSoundAlt:
         QMRL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
         QMRL A 0 A_JumpIfInventory("SPModeOn", 1, "CoopAlt")
         QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -10, 0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket",  5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket",  10)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", -5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", 5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRocket", 10)
         goto AltFire2
         
       CoopAlt:
         QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop", -10, 0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop", -5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop",  5,  0)
-        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop",  10)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop", -5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop", 5, 0)
+        QMRL B 0 A_FireCustomMissile("QuakeClusterRkCoop", 10)
         goto AltFire2
         
       AltFire2:
-        TNT1 A 0
-        QMRL B 2 bright
-        TNT1 A 0
-        QMRL C 2 bright
-        TNT1 A 0
-        QMRL D 3 bright
-        TNT1 A 0
+TNT1 A 0 A_SetPitch(pitch-2.5)
+        QMRL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+1)
+        QMRL C 2 bright A_ZoomFactor(0.99, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+1)
+        QMRL D 3 bright A_ZoomFactor(1, ZOOM_INSTANT)
+TNT1 A 0 A_SetPitch(pitch+.5)
         QMRL E 4
         QMRL F 5
         QMRL G 5

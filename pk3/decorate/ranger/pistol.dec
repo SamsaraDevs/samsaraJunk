@@ -40,12 +40,19 @@ actor "Single Shotgun": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-        QSGN B 2 bright
-        QSGN C 2 bright
-        QSGN D 3
-        QSGN E 3
-        QSGN F 4
-        QSGN G 4
+	TNT1 A 0 A_SetPitch(pitch-1)
+        TNT1 A 0 A_ZoomFactor(0.995, ZOOM_INSTANT)
+        QSGN B 2 bright // 2
+        TNT1 A 0 A_SetPitch(pitch+.5)
+        TNT1 A 0 A_ZoomFactor(0.9975, ZOOM_INSTANT)
+        QSGN C 2 bright // 4
+        TNT1 A 0 A_SetPitch(pitch+.25)
+        TNT1 A 0 A_ZoomFactor(1, ZOOM_INSTANT)
+        QSGN D 3 // 7
+        QSGN E 3 // 10
+        TNT1 A 0 A_SetPitch(pitch+.25)
+        QSGN F 4 // 14
+        QSGN G 4 // 18
         // 18 frames
         QSGN A 0 A_ReFire
         Goto Ready
