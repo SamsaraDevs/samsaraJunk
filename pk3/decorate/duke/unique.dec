@@ -1,8 +1,7 @@
-actor DukeFlying : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor DukeJetpackFuel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
-
-actor DukeVision : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor DukeVisionFuel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 100 }
+actor DukeFlying : Boolean {}
+actor DukeVision : Boolean {}
+actor DukeJetpackFuel : Counter { Inventory.MaxAmount 100 }
+actor DukeVisionFuel : Counter { Inventory.MaxAmount 100 }
 
 actor DukePortJetpack : CustomInventory
 {

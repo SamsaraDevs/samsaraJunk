@@ -1,6 +1,10 @@
 actor "Grenade Launcher": InstantSwitchWeapon
 {
-    Weapon.SelectionOrder 2
+    Weapon.BobRangeX 0
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.1
+    Weapon.BobStyle Alpha
+    Weapon.SelectionOrder 3
     
     Weapon.AmmoUse 1
     Weapon.AmmoGive 10
@@ -36,6 +40,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
         // 22 tics
       Fire:
+        TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
         TNT1 A 0 A_TakeInventory("UsingMultiNades")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
@@ -64,9 +69,9 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-        QGRL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
-        QGRL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QGRL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+        QGRL B 2 bright 
+        QGRL C 3 
+        QGRL D 4 
         QGRL E 4
         QGRL F 3
         QGRL G 3
@@ -77,6 +82,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         Goto Ready
         
       AltFire:
+        TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         TNT1 A 0 A_GiveInventory("UsingMultiNades")
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
@@ -105,9 +111,9 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto AltFire2
         
       AltFire2:
-        QMGL B 2 bright A_ZoomFactor(0.98, ZOOM_INSTANT)
-        QMGL C 3 A_ZoomFactor(0.99, ZOOM_INSTANT)
-        QMGL D 4 A_ZoomFactor(1, ZOOM_INSTANT)
+        QMGL B 2 bright 
+        QMGL C 3 
+        QMGL D 4 
         QMGL E 4
         QMGL F 3
         QMGL G 3

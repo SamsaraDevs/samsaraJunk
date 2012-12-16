@@ -25,6 +25,7 @@
 #define SAMSARA_ENTER_CLIENT        521
 #define SAMSARA_DISCONNECT_CLIENT   522
 #define SAMSARA_CLIENT_CLASS        228
+#define SAMSARA_RECOIL              312
 
 #define SAMSARA_CL_VERSION          2601
 

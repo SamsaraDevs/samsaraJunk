@@ -22,7 +22,7 @@ actor QuadDamagePickup: CustomInventory
     States
     {
       Spawn:
-        QUAD A -1 bright
+        QUDD A -1 bright
         stop
 
       Pickup:
@@ -46,12 +46,12 @@ actor QuadDamageItem: CustomInventory
     States
     {
       Spawn:
-        QUAD A -1 bright
+        QUDD A -1 bright
         stop
 
       Use:
         TNT1 A 0 A_JumpIfInventory("CantQuad", 1, "NoU")
-        TNT1 A 0 ACS_ExecuteWithResult(215, 7, 1575)
+        TNT1 A 0 ACS_ExecuteWithResult(215, 7, 1075)
         fail
 
       NoU:

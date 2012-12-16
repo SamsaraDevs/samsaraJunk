@@ -1,5 +1,10 @@
-actor UsingAlienWeapon : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor UsingAlienWeapon2 : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor UsingAlienWeapon: Boolean {}
+actor UsingAlienWeapon2: Boolean {}
+
+actor AlienWeaponFired: Counter {}
+actor AlienWeaponFiredP: Counter {}
+actor AlienWeaponFiredS: Counter {}
+actor AlienWeaponSecondarySide: Boolean {}
 
 actor "Alien Weapon" : Weapon
 {
@@ -12,15 +17,19 @@ actor "Alien Weapon" : Weapon
     Weapon.AmmoType ""
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
-    +INVENTORY.UNDROPPABLE
+
     Scale 0.35
-    Radius				12
-    Height				12
+    Radius 12
+    Height 12
+
+    +NOALERT
+    +INVENTORY.UNDROPPABLE
+
     States
     {
       Spawn:
         AWPN A -1
-        STOP
+        stop
 
       Deselect:
         TNT1 A 0 A_Lower
@@ -28,122 +37,140 @@ actor "Alien Weapon" : Weapon
         loop
 
       Select:
-        TNT1 A 0 A_TakeInventory("UsingSMG",1)
-        TNT1 A 0 A_TakeInventory("UsingPistols",1)
-        TNT1 A 0 A_TakeInventory("UsingFists",1)
-        TNT1 A 0 A_TakeInventory("UsingShotguns",1)
-        TNT1 A 0 A_TakeInventory("UsingFusionPistol",1)
-        TNT1 A 0 A_TakeInventory("UsingAssaultRifle",1)
-        TNT1 A 0 A_TakeInventory("UsingSpanker",1)
-        TNT1 A 0 A_TakeInventory("UsingToasty",1)
-        //TNT1 A 0 A_TakeInventory("UsingAlienWeapon",1)
-        TNT1 A 0 A_TakeInventory("UsingAlienWeapon2",1)
-        TNT1 A 0 A_TakeInventory("UsingWMC",1)
-        TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
-        TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+        TNT1 A 0 A_TakeInventory("UsingSMG", 1)
+        TNT1 A 0 A_TakeInventory("UsingPistols", 1)
+        TNT1 A 0 A_TakeInventory("UsingFists", 1)
+        TNT1 A 0 A_TakeInventory("UsingShotguns", 1)
+        TNT1 A 0 A_TakeInventory("UsingFusionPistol", 1)
+        TNT1 A 0 A_TakeInventory("UsingAssaultRifle", 1)
+        TNT1 A 0 A_TakeInventory("UsingSpanker", 1)
+        TNT1 A 0 A_TakeInventory("UsingToasty", 1)
+        //TNT1 A 0 A_TakeInventory("UsingAlienWeapon", 1)
+        TNT1 A 0 A_TakeInventory("UsingAlienWeapon2", 1)
+        TNT1 A 0 A_TakeInventory("UsingWMC", 1)
+        TNT1 A 0 A_TakeInventory("UsingDualPistols", 1)
+        TNT1 A 0 A_TakeInventory("UsingDualShotguns", 1)
         
-        TNT1 A 0 A_GiveInventory("UsingAlienWeapon",1)
+        TNT1 A 0 A_GiveInventory("UsingAlienWeapon", 1)
         TNT1 A 0 A_Raise
         AWP1 A 1 A_Raise
         Goto Select+1
 
       GetRidOfThatShit:
-        TNT1 A 0 A_TakeInventory("Alien Weapon",1)
+        TNT1 A 0 A_TakeInventory("Alien Weapon", 1)
         TNT1 A 0 A_Lower
         AWP1 A 1 A_Lower
         loop
 
       Ready:
-        TNT1 A 0 A_JumpIfInventory("UnknownAmmo",1,1)
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo", 1, "ReadyStart")
         goto GetRidOfThatShit
 
-      Ready2:
+      ReadyStart:
+        AWP1 A 0 A_TakeInventory("AlienWeaponFired", 1)
+        AWP1 A 0 A_TakeInventory("AlienWeaponFiredP", 1)
+        AWP1 A 0 A_TakeInventory("AlienWeaponFiredS", 1)
+        goto ReadyShow
+
+      ReadyShow:
+        AWP1 A 0 A_JumpIfInventory("AlienWeaponFired", 4, "ReadyFired")
         AWP1 A 1 A_WeaponReady
-        loop
+        goto Ready
+
+      ReadyFired:
+        AWP1 B 1 bright A_WeaponReady(1)
+        goto Ready
 
       Fire:
-        TNT1 A 0 A_JumpIf(waterlevel == 3, "NothingFire")
-        TNT1 A 0 A_JumpIfInventory("UnknownAmmo",1,1)
-        Goto Ready//LIdle
-        AWP1 A 3 A_PlaySoundEx("enforcer/shoot","Auto",0)
-        TNT1 A 0 A_AlertMonsters//,0,0,0,0)
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShot",random(-1,1),0,0,0,0,random(-1,1))
-        TNT1 A 0 A_Jump(64,1)
-        goto Ready
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
-        Goto Ready
+        TNT1 A 0 A_JumpIf(waterlevel == 3, "CheckAltfire")
+        TNT1 A 0 A_JumpIfInventory("AlienWeaponFiredP", 1, "CheckAltfire")
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo", 1, 1)
+        goto CheckAltfire
+
+        TNT1 A 0 A_PlaySound("enforcer/shoot", CHAN_AUTO)
+        TNT1 A 0 A_JumpIfInventory("AlienWeaponFired", 1, 2)
+        TNT1 A 0 A_GiveInventory("AlienWeaponFired", 7)
+        TNT1 A 0 A_GiveInventory("AlienWeaponFiredP", 7)
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+        TNT1 B 0 A_FireCustomMissile("EnforcerShot", random(-1, 1), 0, 0, 0, 0, random(-1, 1))
+        goto Fire2
 
       CoopFire:
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShotCoop",random(-1,1),0,0,0,0,random(-1,1))
-        TNT1 A 0 A_Jump(64,1)
-        goto Ready
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
-        Goto Ready
+        TNT1 B 0 A_FireCustomMissile("EnforcerShotCoop", random(-1, 1), 0, 0, 0, 0, random(-1, 1))
+        Goto Fire2
+
+      Fire2:
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Jump(64, 1)
+        goto CheckAltfire
+        TNT1 A 0 A_TakeInventory("UnknownAmmo", 1)
+        goto CheckAltfire
+
+      CheckAltfire:
+        AWP1 A 0 A_JumpIfInventory("SynthFireRight", 1, "AltFire")
+        goto ReadyShow
 
       AltFire:
-        TNT1 A 0 A_JumpIf(waterlevel == 3, "NothingFire")
-        TNT1 A 0 A_JumpIfInventory("UnknownAmmo",1,1)
-        Goto Ready
-        AWP1 A 3 A_PlaySoundEx("enforcer/shoot","Auto",0)
-        TNT1 A 0 A_AlertMonsters//,0,0,0,0)
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopAltFire1")
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShot",-22,0)
-        TNT1 A 0 A_Jump(64,1)
+        TNT1 A 0 A_JumpIf(waterlevel == 3, "ReadyShow")
+        TNT1 A 0 A_JumpIfInventory("AlienWeaponFiredS", 1, "ReadyShow")
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo", 1, 1)
+        goto ReadyShow
+
+        TNT1 A 0 A_PlaySound("enforcer/shoot", CHAN_AUTO)
+        TNT1 A 0 A_JumpIfInventory("AlienWeaponFired", 1, 2)
+        TNT1 A 0 A_GiveInventory("AlienWeaponFired", 7)
+        TNT1 A 0 A_GiveInventory("AlienWeaponFiredS", 7)
+        TNT1 A 0 A_JumpIfInventory("AlienWeaponSecondarySide", 1, "AltFire1")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAltFire1")
+        TNT1 B 0 A_FireCustomMissile("EnforcerShot", -22, 0, 0, 0, 0, random(-1, 1))
+        TNT1 B 0 A_GiveInventory("AlienWeaponSecondarySide")
         goto AltFire2
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
 
-      AltFire2:
-        AWP1 A 3 A_PlaySoundEx("enforcer/shoot","Auto",0)
-        TNT1 A 0 A_AlertMonsters//,0,0,0,0)
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopAltFire2")
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShot",22,0)
-        TNT1 A 0 A_Jump(64,1)
-        goto Ready
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
-        Goto Ready
-
-      NothingFire:
-        TNT1 A 0
-        goto Ready
+      AltFire1:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAltFire2")
+        TNT1 B 0 A_FireCustomMissile("EnforcerShot", 22, 0, 0, 0, 0, random(-1, 1))
+        TNT1 B 0 A_TakeInventory("AlienWeaponSecondarySide")
+        goto AltFire2
 
       CoopAltFire1:
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShotCoop",-22,0)
-        TNT1 A 0 A_Jump(64,1)
-        goto AltFire2
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
+        AWP1 B 0 Bright A_FireCustomMissile("EnforcerShotCoop", -22, 0)
+        TNT1 B 0 A_GiveInventory("AlienWeaponSecondarySide")
         goto AltFire2
 
       CoopAltFire2:
-        AWP1 B 4 Bright A_FireCustomMissile("EnforcerShotCoop",22,0)
-        TNT1 A 0 A_Jump(64,1)
-        goto Ready
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo",1)
-        Goto Ready
+        AWP1 B 0 Bright A_FireCustomMissile("EnforcerShotCoop", 22, 0)
+        TNT1 B 0 A_TakeInventory("AlienWeaponSecondarySide")
+        goto AltFire2
+
+      AltFire2:
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_Jump(64, 1)
+        goto ReadyShow
+        TNT1 A 0 A_TakeInventory("UnknownAmmo", 1)
+        Goto ReadyShow
     }
 }
 
 actor " Alien Weapon " : Weapon
 {
-    Weapon.BobRangeX 0
-    Weapon.BobStyle Smooth
-    Weapon.PreferredSkin "SOM1AWSkin"
-    Weapon.SelectionOrder 500
-    Weapon.SlotNumber 8
-    Inventory.PickupMessage "system error 0xfded"
+    Radius 12
+    Height 12
+
     Weapon.AmmoType ""
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
+
     +INVENTORY.UNDROPPABLE
+
+    Weapon.SelectionOrder 500
+    Weapon.SlotNumber 8
+    Weapon.PreferredSkin "SOM1AWSkin"
+
+    Weapon.BobRangeX 0
+    Weapon.BobStyle Smooth
+    Inventory.PickupMessage "system error 0xfded"
     Scale 0.35
-    Radius				12
-    Height				12
+
     States
     {
       Spawn:
@@ -151,13 +178,13 @@ actor " Alien Weapon " : Weapon
         STOP
 
       GetRidOfThatShit:
-        TNT1 A 0 A_TakeInventory(" Alien Weapon ",1)
+        TNT1 A 0 A_TakeInventory(" Alien Weapon ", 1)
         TNT1 A 0 A_Lower
         AWP1 A 1 A_Lower
         loop
 
       Ready:
-        TNT1 A 0 A_JumpIfInventory("UnknownAmmo2",1,1)
+        TNT1 A 0 A_JumpIfInventory("UnknownAmmo2", 1, 1)
         goto GetRidOfThatShit
 
       Ready2:
@@ -165,21 +192,21 @@ actor " Alien Weapon " : Weapon
         Loop
 
       Select:
-        TNT1 A 0 A_TakeInventory("UsingSMG",1)
-        TNT1 A 0 A_TakeInventory("UsingPistols",1)
-        TNT1 A 0 A_TakeInventory("UsingFists",1)
-        TNT1 A 0 A_TakeInventory("UsingShotguns",1)
-        TNT1 A 0 A_TakeInventory("UsingFusionPistol",1)
-        TNT1 A 0 A_TakeInventory("UsingAssaultRifle",1)
-        TNT1 A 0 A_TakeInventory("UsingSpanker",1)
-        TNT1 A 0 A_TakeInventory("UsingToasty",1)
-        TNT1 A 0 A_TakeInventory("UsingAlienWeapon",1)
-        //TNT1 A 0 A_TakeInventory("UsingAlienWeapon2",1)
-        TNT1 A 0 A_TakeInventory("UsingWMC",1)
-        TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
-        TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+        TNT1 A 0 A_TakeInventory("UsingSMG", 1)
+        TNT1 A 0 A_TakeInventory("UsingPistols", 1)
+        TNT1 A 0 A_TakeInventory("UsingFists", 1)
+        TNT1 A 0 A_TakeInventory("UsingShotguns", 1)
+        TNT1 A 0 A_TakeInventory("UsingFusionPistol", 1)
+        TNT1 A 0 A_TakeInventory("UsingAssaultRifle", 1)
+        TNT1 A 0 A_TakeInventory("UsingSpanker", 1)
+        TNT1 A 0 A_TakeInventory("UsingToasty", 1)
+        TNT1 A 0 A_TakeInventory("UsingAlienWeapon", 1)
+        //TNT1 A 0 A_TakeInventory("UsingAlienWeapon2", 1)
+        TNT1 A 0 A_TakeInventory("UsingWMC", 1)
+        TNT1 A 0 A_TakeInventory("UsingDualPistols", 1)
+        TNT1 A 0 A_TakeInventory("UsingDualShotguns", 1)
         
-        TNT1 A 0 A_GiveInventory("UsingAlienWeapon2",1)
+        TNT1 A 0 A_GiveInventory("UsingAlienWeapon2", 1)
         AWP2 A 0 A_Raise
         AWP2 A 1 A_Raise
         Loop
@@ -190,43 +217,43 @@ actor " Alien Weapon " : Weapon
         Loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         AWP2 B 1 A_Recoil(0.1)
         TNT1 A 0 A_Light2
         TNT1 A 0 A_PlayWeaponSound("alienweapon/shoot")
-        TNT1 A 0 A_FireCustomMissile("AlienWeaponBullet",random(-3,3),0,0,0)
-        AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBullet",random(-2,2),0,0,0)//A_FireBullets(7.5,0,3,5,"alienpuff",1,0)
+        TNT1 A 0 A_FireCustomMissile("AlienWeaponBullet", random(-3, 3), 0, 0, 0)
+        AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBullet", random(-2, 2), 0, 0, 0)//A_FireBullets(7.5, 0, 3, 5, "alienpuff", 1, 0)
         TNT1 A 0 A_Light0
         AWP2 B 1
-        TNT1 A 0 A_Jump(48,1)
+        TNT1 A 0 A_Jump(48, 1)
         goto Ready
         TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo2",1)
+        TNT1 A 0 A_TakeInventory("UnknownAmmo2", 1)
         Goto Ready
 
       CoopFire:
         AWP2 B 1 A_Recoil(0.1)
         TNT1 A 0 A_Light2
         TNT1 A 0 A_PlayWeaponSound("alienweapon/shoot")
-        TNT1 A 0 A_FireCustomMissile("AlienWeaponBulletCoop",random(-3,3),0,0,0)
-        AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBulletCoop",random(-2,2),0,0,0)//A_FireBullets(7.5,0,3,5,"alienpuff",1,0)
+        TNT1 A 0 A_FireCustomMissile("AlienWeaponBulletCoop", random(-3, 3), 0, 0, 0)
+        AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBulletCoop", random(-2, 2), 0, 0, 0)//A_FireBullets(7.5, 0, 3, 5, "alienpuff", 1, 0)
         TNT1 A 0 A_Light0
         AWP2 B 1
-        TNT1 A 0 A_Jump(48,1)
+        TNT1 A 0 A_Jump(48, 1)
         goto Ready
         TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo2",1)
+        TNT1 A 0 A_TakeInventory("UnknownAmmo2", 1)
         Goto Ready
     }
 }
 
-actor UnknownAmmo : Ammo 
+actor UnknownAmmo : Ammo
 {
     +IGNORESKILL
     Inventory.MaxAmount 50
 }
 
-actor UnknownAmmo2 : Ammo 
+actor UnknownAmmo2 : Ammo
 {
     +IGNORESKILL
     Inventory.MaxAmount 50
@@ -238,13 +265,13 @@ actor EnforcerShot
     Radius 6
     Height 8
     Speed 15
-    Damage (random(30,38)) // Formerly 20,28
+    Damage (random(30, 38)) // Formerly 20, 28
     DamageType Fire
     -BLOODSPLATTER
     +NOBLOOD
     Scale 0.35
     DeathSound "enforcer/hit"
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e 44 \cjSYSTEM ERROR\c-"
     Projectile
     States
     {
@@ -260,13 +287,13 @@ actor EnforcerShot
 
 actor AlienWeaponBullet : FastProjectile
 {
-    Damage (random(9,15)) //Unknown what the damage values were before
+    Damage (random(9, 15)) //Unknown what the damage values were before
     Radius 1
     Height 1
     Speed 80
     Projectile
     DamageType MarathonPlasma
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e 44 \cjSYSTEM ERROR\c-"
     -BLOODSPLATTER
     +NOBLOOD
     +NOTIMEFREEZE
@@ -326,4 +353,3 @@ actor EnforcerShotCoop : EnforcerShot
     +THRUSPECIES
     Species "Player"
 }
-

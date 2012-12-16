@@ -11,48 +11,48 @@ actor "Phasing Zorcher" : Weapon
     States
     {
       Ready:
-        PLSC A 1 A_WeaponReady
+        PHSC A 1 A_WeaponReady
         Loop
 
       Deselect:
-        PLSC A 1 A_Lower
+        PHSC A 1 A_Lower
         Loop
 
       Select:
-        PLSC A 1 A_Raise
+        PHSC A 1 A_Raise
         Loop
 
       Fire:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-        PLSC A 0 A_GunFlash
+        PHSC A 0 A_GunFlash
         TNT1 A 0 A_Jump(256,"Fire1","Fire2")
 
       Fire1:
         CPLS A 2 BRIGHT A_FireCustomMissile("ChexPlasma")
-        PLSC A 1
-        PLSC B 20 A_ReFire
+        PHSC A 1
+        PHSC B 20 A_ReFire
         Goto Ready
 
       Fire2:
         CPLS B 2 BRIGHT A_FireCustomMissile("ChexPlasma")
-        PLSC A 1
-        PLSC B 20 A_ReFire
+        PHSC A 1
+        PHSC B 20 A_ReFire
         Goto Ready
 
       CoopFire:
-        PLSC A 0 A_GunFlash
+        PHSC A 0 A_GunFlash
         TNT1 A 0 A_Jump(256,"CoopFire1","CoopFire2")
 
       CoopFire1:
         CPLS A 2 BRIGHT A_FireCustomMissile("ChexPlasma2")
-        PLSC A 1
-        PLSC B 20 A_ReFire
+        PHSC A 1
+        PHSC B 20 A_ReFire
         Goto Ready
 
       CoopFire2:
         CPLS B 2 BRIGHT A_FireCustomMissile("ChexPlasma2")
-        PLSC A 1
-        PLSC B 20 A_ReFire
+        PHSC A 1
+        PHSC B 20 A_ReFire
         Goto Ready
 
       Flash:

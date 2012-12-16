@@ -13,6 +13,7 @@ addkeysection "Samsara: Characters" samsarakeys
 addmenukey "Doomguy: Animations" samsara_cmd_vanilladoomanims
 addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
 addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
+addmenukey "Ranger: Recoil" samsara_cmd_norecoil
 
 addkeysection "Samsara: System" samsarasyskeys
 
@@ -30,11 +31,13 @@ alias samsara_id_ballgag      "set samsara_cl_ballgag      $samsara_cl_ballgag; 
 alias samsara_id_weaponhud    "set samsara_cl_weaponhud    $samsara_cl_weaponhud;    archivecvar samsara_cl_weaponhud"  
 alias samsara_id_moremessages "set samsara_cl_moremessages $samsara_cl_moremessages; archivecvar samsara_cl_moremessages"
 alias samsara_id_printpickup  "set samsara_cl_printpickup  $samsara_cl_printpickup;  archivecvar samsara_cl_printpickup"
-alias samsara_id_pickupmode   "set samsara_cl_pickupmode   $samsara_cl_pickupmode;   archivecvar samsara_cl_pickupmode" 
+alias samsara_id_pickupmode   "set samsara_cl_pickupmode   $samsara_cl_pickupmode;   archivecvar samsara_cl_pickupmode"
+alias samsara_id_norecoil     "set samsara_cl_norecoil     $samsara_cl_norecoil;     archivecvar samsara_cl_norecoil"  
 
 alias samsara_cmd_vanilladoomanims "samsara_id_vanilladoom;  eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom;   showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
 alias samsara_cmd_bjwalk           "samsara_id_wolfmove;     eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove;         showmode \"Wolfenstein movement\" $samsara_cl_wolfmove"
 alias samsara_cmd_dukestfu         "samsara_id_ballgag;      eval != 1 $samsara_cl_ballgag samsara_cl_ballgag;           showmode \"Ballgag mode\" $samsara_cl_ballgag"
+alias samsara_cmd_norecoil         "samsara_id_norecoil;     eval != 1 $samsara_cl_norecoil samsara_cl_norecoil;         showmode \"No recoil\" $samsara_cl_norecoil"
 alias samsara_cmd_wephud           "samsara_id_weaponhud;    eval != 1 $samsara_cl_weaponhud samsara_cl_weaponhud;       showmode \"Weapon bar\" $samsara_cl_weaponhud"
 alias samsara_cmd_moremessages     "samsara_id_moremessages; eval != 1 $samsara_cl_moremessages samsara_cl_moremessages; showmode \"Alternate messages\" $samsara_cl_moremessages"
 alias samsara_cmd_msgmode          "samsara_id_printpickup;  eval != 1 $samsara_cl_printpickup samsara_cl_printpickup;   showmode \"Print pickup messages\" $samsara_cl_printpickup"
