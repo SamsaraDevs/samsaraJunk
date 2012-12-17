@@ -1195,7 +1195,6 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
         }
 
         tipclass = mod(tipclass, CLASSCOUNT);
-        Print(f:tipscroll, s:", ", d:classMod, s:", ", d:tipClass);
 
         tipnum -= keyPressed(BT_FORWARD) + keyPressed(BT_LOOKUP);
         tipnum += keyPressed(BT_BACK) + keyPressed(BT_LOOKDOWN);
