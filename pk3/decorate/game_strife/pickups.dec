@@ -66,3 +66,118 @@ actor StrifeElectricBolts: CustomInventory replaces ElectricBolts
 }
 
 actor StrifePoisonBolts: Ammo2Big replaces PoisonBolts { ConversationID 185 }
+
+actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
+{
+    ConversationID 181
+
+    Inventory.PickupMessage "Picked up 4/2/1/8 Ammo 1/2/3/4."
+    Inventory.PickupSound "ammo/mana"
+
+    States
+    {
+      Spawn:
+        AMSM M 20
+        AMSM M 20 bright
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+        TNT1 A 0 A_GiveInventory("Clip", 4)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 2)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 8)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_GiveInventory("Clip", 4)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 2)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 8)
+        TNT1 A 0 A_SetBlend("Green", 0.4, 4)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_GiveInventory("Clip", 8)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 8)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_GiveInventory("Clip", 12)
+        TNT1 A 0 A_GiveInventory("Cell", 12)
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("Clip", 4)
+        TNT1 A 0 A_GiveInventory("LavaNails", 1)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 2)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 2)
+        TNT1 A 0 A_GiveInventory("Cell", 8)
+        stop
+    }
+}
+
+actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
+{
+    ConversationID 182
+
+    Inventory.PickupMessage "Picked up 15/6/3/30 Ammo 1/2/3/4."
+    Inventory.PickupSound "ammo/mana"
+
+    States
+    {
+      Spawn:
+        AMMD E 20
+        AMMD E 20 bright
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+        TNT1 A 0 A_GiveInventory("Clip", 15)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
+        TNT1 A 0 A_GiveInventory("Cell", 30)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_GiveInventory("Clip", 15)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
+        TNT1 A 0 A_GiveInventory("Cell", 30)
+        TNT1 A 0 A_SetBlend("Green", 0.4, 4)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_GiveInventory("Clip", 30)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
+        TNT1 A 0 A_GiveInventory("Cell", 30)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_GiveInventory("Clip", 45)
+        TNT1 A 0 A_GiveInventory("Cell", 45)
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("Clip", 15)
+        TNT1 A 0 A_GiveInventory("LavaNails", 4)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 6)
+        TNT1 A 0 A_GiveInventory("ClusterRocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 30)
+        stop
+    }
+}
+
+actor StrifeHEGrenades: Ammo3Small replaces HEGrenadeRounds { ConversationID 177 }
+actor StrifePHGrenades: Ammo3Big replaces PhosphorusGrenadeRounds { ConversationID 178 }
+
+actor StrifeEnergyPod: Ammo4Small replaces EnergyPod {}
+actor StrifeEnergyPack: Ammo4Big replaces EnergyPack {}
