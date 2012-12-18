@@ -20,6 +20,14 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 12: ZDoom version has more quit messages.
 
 
+FROM 0.27 TO 0.28
+========================
+- The primary and secondary fire of the Security Officer's Assault Rifle are now independant of each other!
+- Same with the Marathon 2 alien weapon! Actually that was done in 0.27, but we forgot to mention it. Whoops.
+- Some of the ACS has been repositioned and readjusted for easier organization.
+- The start-up console no longer tells you about samsara_sogravity, but rather samsara_nocustomgravity.
+
+
 FROM 0.26 TO 0.27
 ========================
 - Ranger has joined the Wheel of Samsara!
