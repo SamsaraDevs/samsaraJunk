@@ -19,6 +19,7 @@ actor DukePlayer : PlayerPawn
     DamageFactor "DragonClaw", 1.2
     DamageFactor "PoisonCloud", 1.1
     DamageFactor "Pistol", 1.1
+    DamageFactor "DoomFist", 1.1
     DamageFactor "ZorchPistol", 1.1
     DamageFactor "BFG", 1.1
     DamageFactor "BFGSpray", 1.1

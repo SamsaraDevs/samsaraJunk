@@ -972,7 +972,7 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "",
     },
     {
-        "You got the thunderbolt!",
+        "You got the Thunderbolt!",
         "Well, okay, you might use this in deathmatch too.",
         "Let's make an electromagnet, bring the enemies closer.",
         "Who wants a body massage?",
@@ -981,6 +981,6 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "Cower, mortal, for now I control thy destiny.",
         "Atop the tallest of earth's peaks dwell the gods of earth, and suffer not man to tell that he hath looked upon them.",
         "This used to be Slot 6. Then bitching happened.",
-        "",
+        "Control the fucking weather.",
     },
 };

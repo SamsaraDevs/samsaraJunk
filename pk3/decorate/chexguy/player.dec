@@ -21,6 +21,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "DragonClaw", 0.9
     DamageFactor "MarathonPistol", 0.8
     DamageFactor "Pistol", 0.8
+    DamageFactor "DoomFist", 0.8
     DamageFactor "ZorchPistol", 0.8
     DamageFactor "BFG", 0.8
     DamageFactor "BFGSpray", 0.8

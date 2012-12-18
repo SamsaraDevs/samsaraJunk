@@ -1,2 +1,4 @@
 #include "decorate/game_strife/pickups.dec"
+#include "decorate/game_strife/accuracy.dec"
+
 #include "decorate/game_strife/acolytes.dec"

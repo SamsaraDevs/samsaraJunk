@@ -78,7 +78,7 @@ actor " Fist " : Weapon
 
 actor DoomPunchPuff : BulletPuff
 {
-    DamageType "Pistol"
+    DamageType "DoomFist"
     States
     {
       Spawn:
@@ -95,7 +95,7 @@ actor DoomPunchPuff : BulletPuff
 
 actor DoomPunchPuff2 : BulletPuff
 {
-    DamageType "Pistol"
+    DamageType "DoomFist"
     States
     {
       Spawn:

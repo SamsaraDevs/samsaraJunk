@@ -9,6 +9,7 @@
 #include "samsaraWeps.h"
 #include "samsaraSounds.h"
 #include "samsaraMsgs.h"
+#include "samsaraStrife.h"
 
 int array_wolfmove[PLAYERMAX];
 int array_vanillaAnim[PLAYERMAX];
@@ -36,6 +37,7 @@ global int 0:CommandBitchingDone;
 #include "script_pickup.h"
 #include "script_quake.h"
 #include "script_tipbox.h"
+#include "script_strife.h"
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {

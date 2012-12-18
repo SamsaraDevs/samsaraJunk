@@ -75,6 +75,7 @@ script SAMSARA_SPAWN (int respawning)
     int pcount, opcount;
     int startTime = Timer();
     int endloop;
+    int i;
 
     ServerEnterTimes[pln] = startTime;
     
@@ -153,6 +154,14 @@ script SAMSARA_SPAWN (int respawning)
             TakeInventory("DukePortJetpack", 0x7FFFFFFF);
             TakeInventory("DukeJetpackFuel", 0x7FFFFFFF);
             Print(s:"The jetpack is banned on this server. Have 8x boot damage instead.");
+        }
+
+        for (i = 0; i < 10; i++)
+        {
+            if (CheckInventory("DoomZerkCounter") > i && !CheckInventory(DoomAccuracyZerks[i]))
+            {
+                GiveInventory(DoomAccuracyZerks[i], 1);
+            }
         }
 
         // useless but harmless in Zandro - triggers buddha mode when Blazko has an extra life in ZDoom
