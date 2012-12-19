@@ -83,16 +83,28 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         GiveInventory("QuakeQuadTimer", quadcount);
         GiveInventory("QuakeQuadTimer", arg1);
         break;
+
+      case 8:
+        result = defaultCVar("samsara_cl_expparticles", 0);
+        if (!result) { result = 100; }
+
+        result = max(0, result);
+
+        result *= max(arg1, 1);
+        result /= max(arg2, 1);
+
+        GiveInventory("QuakeExplosionCounter", result);
+        break;
     }
     
     SetResultValue(result);
 }
 
 /*
-*
-* This is still to be converted.
-*
-*/
+ *
+ * This is still to be converted.
+ *
+ */
 
 int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {"RedCard", "YellowCard", "BlueCard", "RedSkull", "YellowSkull", "BlueSkull", "KeyBlue", "KeyGreen", "KeyYellow", "ChexRedCard", "ChexYellowCard", "ChexBlueCard", "RedFlemKey", "YellowFlemKey", "BlueFlemKey", "KeyAxe", "KeyCastle", "KeyCave", "KeyDungeon", "KeyEmerald", "KeyFire", "KeyHorn", "KeyRusted", "KeySilver", "KeySteel", "KeySwamp"},
