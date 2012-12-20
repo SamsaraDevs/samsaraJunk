@@ -236,10 +236,7 @@ function void TakeUnique(int cnum, int unum)
     int uanum = unum + 1;
 
     int unique = ClassUniques[cnum][unum];
-    int unammo = ClassUniques[cnum][uanum];
-
     if (unique != "") { TakeInventory(unique, 0x7FFFFFFF); }
-    if (unammo != "") { TakeInventory(unammo, 0x7FFFFFFF); }
 }
 
 function int HasUnique(int cnum, int unum)
