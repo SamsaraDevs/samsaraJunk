@@ -2,3 +2,6 @@
 #include "decorate/game_strife/accuracy.dec"
 
 #include "decorate/game_strife/acolytes.dec"
+
+#include "decorate/game_strife/beacon.dec"
+#include "decorate/game_strife/allies.dec"

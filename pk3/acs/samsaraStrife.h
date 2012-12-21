@@ -1,5 +1,17 @@
 #define ACCURACYCOUNT   10
 
+int BeaconMonsters[CLASSCOUNT] = 
+{
+    "FriendlyDoomImp",
+    "FriendlyFlemoid",
+    "FriendlyNitrogolem",
+    "FriendlyNazi",
+    "FriendlyAfrit",
+    "Backpack",
+    "Backpack",
+    "Backpack",
+};
+
 int AccuracyUniques[CLASSCOUNT][ACCURACYCOUNT] = 
 {
     {"DoomZerkCounter", "", "", "", "", "", "", "", "", ""},

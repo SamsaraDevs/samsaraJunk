@@ -57,3 +57,43 @@ script SAMSARA_CLIENT_ACCURACY (int soundmode) clientside
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
+
+script SAMSARA_BEACON (int noloop)
+{
+    int pln, classnum, monType, monTID, success = 0;
+    int beaconTID = defaultTID(0);
+    int x = GetActorX(0), y = GetActorY(0), z = GetActorZ(0);
+
+    SetActivatorToTarget(0);
+    
+    pln = PlayerNumber();
+    classnum = samsaraClassNum();
+
+    if (pln == -1)
+    {
+        SetActorState(beaconTID, "WhatAmIDoingWithMyLife");
+        terminate;
+    }
+
+    monType = BeaconMonsters[classnum];
+
+    SetActivator(beaconTID);
+
+    while (!success)
+    {
+        monTID = unusedTID(14000, 24000);
+        success = Spawn(monType, x, y, z, monTID);
+
+        if (noloop)
+        {
+            SetResultValue(success);
+
+            if (!success) { SetActorState(beaconTID, "FuckYouImAPickup"); }
+            terminate;
+        }
+
+        Delay(1);
+    }
+
+    Spawn("TeleportFog", x, y, z);
+}
