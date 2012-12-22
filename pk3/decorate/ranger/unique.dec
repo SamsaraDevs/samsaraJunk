@@ -498,16 +498,15 @@ actor LGBeam: BulletPuff
     +NOPAIN
     VSpeed 0
 
-    Scale 0.1
+    Scale 0.075
 
     RenderStyle Add
+    Alpha 0.25
 
     States
     {
       Spawn:
         DPLE A 0
-        DPLE A 0 ThrustThing(random(0, 1)*128, random(-2, 2), 1, 0)
-        DPLE A 0 ThrustThingZ(0, random(-8, 8), 0, 0)
         DPLE A 0 A_Jump(255, "B", "C", "D", "E")
         goto C
 
@@ -547,6 +546,7 @@ actor LGPuff: BulletPuff
     +NODAMAGETHRUST
 
     VSpeed 0
+    Scale 0.4
 
     RenderStyle Add
 

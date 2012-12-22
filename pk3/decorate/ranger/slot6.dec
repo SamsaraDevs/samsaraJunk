@@ -217,6 +217,7 @@ actor "Super Nailgun": Weapon
 actor QuakeSuperNail: QuakeNail
 {
     Damage (18)
+    Obituary "%k \cspenetrated\c- %o\cs."
 }
 
 actor QuakeSuperNailCoop: QuakeSuperNail
@@ -228,15 +229,16 @@ actor QuakeSuperNailCoop: QuakeSuperNail
 
 actor QuakeSLNail: QuakeLavaNail
 {
-    Damage (36)
+    Damage (27)
     DamageType Fire
+    Obituary "%k\cs's penetrator was too hot for \c- %o\cs."  // this sounds so bad but whatever
 }
 
 actor QuakeSLNailCoop: QuakeSLNail
 {
     +THRUSPECIES
     Species "Player"
-    Damage (40)
+    Damage (30)
 }
 
 

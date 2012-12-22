@@ -283,7 +283,7 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
     +THRUSPECIES
     Species "Player"
     
-    Damage (32)
+    Damage (26)
     
     States
     {
@@ -305,11 +305,11 @@ actor QuadClusterGrenade: QuakeClusterGrenade
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,   0, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,  72, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 144, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 216, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 288, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,   0, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0,  72, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 144, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 216, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrenade", 0,0, 288, 6, random(60,80))
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -321,16 +321,16 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     Species "Player"
     
     DamageType "NotQuadded"
-    Damage (128)
+    Damage (102)
     
     States
     {
       Death:
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,   0, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,  72, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 144, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 216, 6, 70)
-        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 288, 6, 70)
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,   0, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0,  72, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 144, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 216, 6, random(60,80))
+        MISL B 0 A_CustomMissile("QuadTinyGrnCoop", 0,0, 288, 6, random(60,80))
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -364,8 +364,8 @@ actor QuakeTinyGrenade: QuakeGrenade
         loop
         
       Death:
-        MISL B 0 A_Explode(26, 128, 0)
-        MISL B 0 A_Explode(25, 128)
+        MISL B 0 A_Explode(20, 91, 0)
+        MISL B 0 A_Explode(19, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -376,7 +376,7 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Damage (32)
+    Damage (26)
 }
 
 actor QuadTinyGrenade: QuakeTinyGrenade
@@ -386,8 +386,8 @@ actor QuadTinyGrenade: QuakeTinyGrenade
     States
     {
       Death:
-        MISL B 0 A_Explode(102, 128, 0)
-        MISL B 0 A_Explode(102, 128)
+        MISL B 0 A_Explode(77, 91, 0)
+        MISL B 0 A_Explode(76, 91)
         TNT1 A 1 A_SpawnItemEx("QuakeTinyExplosion")
         stop
     }
@@ -398,5 +398,5 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Damage (128)
+    Damage (102)
 }

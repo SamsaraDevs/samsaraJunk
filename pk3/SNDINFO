@@ -1043,7 +1043,7 @@ $playeralias        Ranger      male    *death          ranger/death
 $playeralias        Ranger      male    *xdeath         ranger/hideath
 $playersound        Ranger      male    *burndeath      dgdethf
 $playeralias        Ranger      male    *crazydeath     ranger/hideath
-$playersound        Ranger      male    *wimpydeath     *death
+$playersounddup     Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib
 $playersound        Ranger      male    *falling        sounds/ranger/falling1.ogg
 $playeralias        Ranger      male    *pain100        ranger/pain100
