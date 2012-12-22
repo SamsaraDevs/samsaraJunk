@@ -8,7 +8,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
     
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "ClusterRocketAmmo"
+    Weapon.AmmoType2 "MultiRocketAmmo"
     
     +NOAUTOAIM
     +NOAUTOFIRE

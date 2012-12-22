@@ -77,8 +77,8 @@ StatusBar Fullscreen
         IsSelected "  Rocket Launcher  ", "Grenade Launcher"
         {
             DrawImage "HUDBAR", 250, 192;
-            DrawBar "HAMBAR", "HEMPTY", ClusterRocketAmmo, Horizontal, Reverse, 251, 193;
-            DrawNumber 3, INDEXFON, White, ClusterRocketAmmo, 270, 186;
+            DrawBar "HAMBAR", "HEMPTY", MultiRocketAmmo, Horizontal, Reverse, 251, 193;
+            DrawNumber 3, INDEXFON, White, MultiRocketAmmo, 270, 186;
             DrawImage AmmoIcon2, 228, 192, Center;
         }
 
@@ -1685,10 +1685,10 @@ playerclass Ranger
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
 
         drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-        drawnumber 3, INDEXFON, red, ammo ClusterRocketAmmo, 289, 185;
+        drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-        drawnumber 3, INDEXFON, red, ammocapacity ClusterRocketAmmo, 315, 185;
+        drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     }
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
@@ -3010,10 +3010,10 @@ playerclass Ranger
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
 
         drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-        drawnumber 3, INDEXFON, red, ammo ClusterRocketAmmo, 289, 185;
+        drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-        drawnumber 3, INDEXFON, red, ammocapacity ClusterRocketAmmo, 315, 185;
+        drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     }
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
