@@ -145,6 +145,7 @@ actor QuakeGrenade
     +RANDOMIZE
     +DEHEXPLOSION
     +GRENADETRAIL
+    +MOVEWITHSECTOR
     
     ReactionTime 92
     
