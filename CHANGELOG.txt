@@ -28,6 +28,7 @@ FROM 0.27 TO 0.28
 - The start-up console no longer tells you about samsara_sogravity, but rather samsara_nocustomgravity.
 - The BFG and LAZ Device, with sv_bfgfreeaim off, now support Spread.
 - Ranger now has a wimpy death sound in Heretic.
+- The Grenade Launcher's Grenades now properly go up and down lifts.
 
 
 FROM 0.26 TO 0.27
