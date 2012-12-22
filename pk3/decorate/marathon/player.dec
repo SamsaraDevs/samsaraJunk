@@ -482,13 +482,8 @@ actor MarathonPuff : BulletPuff
     {
       Spawn:
         TNT1 A 0
-        MPUF A 2 Bright A_PlaySound("puff/ric")
-        MPUF B 2 Bright
-        MPUF C 2 Bright
-        MPUF D 2 Bright
-        MPUF E 2 Bright
-        MPUF F 2 Bright
-        MPUF G 2 Bright
-        Stop
+        TNT1 A 0 Bright A_PlaySound("puff/ric")
+        MPFF ABCDEFG 2 Bright
+        stop
     }
 }

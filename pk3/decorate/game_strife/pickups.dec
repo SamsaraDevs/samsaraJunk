@@ -170,7 +170,7 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
         TNT1 A 0 A_GiveInventory("LavaNails", 4)
         TNT1 A 0 A_GiveInventory("AmmoShell", 6)
         TNT1 A 0 A_GiveInventory("RocketAmmo", 6)
-        TNT1 A 0 A_GiveInventory("ClusterRocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 1)
         TNT1 A 0 A_GiveInventory("Cell", 30)
         stop
     }
@@ -179,5 +179,17 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 actor StrifeHEGrenades: Ammo3Small replaces HEGrenadeRounds { ConversationID 177 }
 actor StrifePHGrenades: Ammo3Big replaces PhosphorusGrenadeRounds { ConversationID 178 }
 
-actor StrifeEnergyPod: Ammo4Small replaces EnergyPod { ConversationID 183 }
+actor StrifeEnergyPod: Ammo4Small replaces EnergyPod {}
 actor StrifeEnergyPack: Ammo4Big replaces EnergyPack { ConversationID 184 }
+
+actor StrifeEnergyPod2: Ammo4Small
+{
+    ConversationID 183
+
+    States
+    {
+      Spawn: 
+        BRY1 AB 6
+        loop
+    }
+}

@@ -1,13 +1,3 @@
-actor StrifeTemplarDrop: Ammo4Small
-{
-    States
-    {
-      Spawn:
-        BRY1 AB 6
-        loop
-    }
-}
-
 actor Templar2 : Templar replaces Templar
 {
     ConversationID 62, 61, 62
@@ -19,7 +9,7 @@ actor Templar2 : Templar replaces Templar
     +NOTDMATCH
     +NOICEDEATH
 
-    DropItem "StrifeTemplarDrop"
+    DropItem "StrifeEnergyPod2"
 
     states
     {

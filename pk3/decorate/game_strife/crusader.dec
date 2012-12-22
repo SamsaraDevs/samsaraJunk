@@ -1,13 +1,3 @@
-actor StrifeCrusaderDrop: Ammo4Small
-{
-    States
-    {
-      Spawn:
-        BRY1 AB 6
-        loop
-    }
-}
-
 actor Crusader2 : Crusader replaces Crusader
 {
     ConversationID 63
@@ -19,7 +9,7 @@ actor Crusader2 : Crusader replaces Crusader
     +NOTDMATCH
     +NOICEDEATH
 
-    DropItem "StrifeCrusaderDrop"
+    DropItem "StrifeEnergyPod2"
 
     states
     {
