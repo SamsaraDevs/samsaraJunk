@@ -9,7 +9,7 @@ actor LavaNails: Ammo
     Inventory.Icon "AMSMK0"
 }
 
-actor ClusterRocketAmmo: Ammo
+actor MultiRocketAmmo: Ammo
 {
     Inventory.Amount 1
     Inventory.MaxAmount 10

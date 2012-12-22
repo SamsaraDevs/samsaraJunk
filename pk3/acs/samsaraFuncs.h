@@ -133,8 +133,11 @@ function void ApplyLMS(void)
         for (i = 0; i < UNIQUECOUNT; i++) { GiveClassUnique(classNum, i); }
     }
 
-    if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
+    if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
+
+    GiveInventory("LavaNails",       GetAmmoCapacity("LavaNails"));
+    GiveInventory("MultiRocketAmmo", GetAmmoCapacity("MultiRocketAmmo"));
 
     if (lmsLevel)
     {

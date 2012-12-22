@@ -179,5 +179,5 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 actor StrifeHEGrenades: Ammo3Small replaces HEGrenadeRounds { ConversationID 177 }
 actor StrifePHGrenades: Ammo3Big replaces PhosphorusGrenadeRounds { ConversationID 178 }
 
-actor StrifeEnergyPod: Ammo4Small replaces EnergyPod {}
-actor StrifeEnergyPack: Ammo4Big replaces EnergyPack {}
+actor StrifeEnergyPod: Ammo4Small replaces EnergyPod { ConversationID 183 }
+actor StrifeEnergyPack: Ammo4Big replaces EnergyPack { ConversationID 184 }
