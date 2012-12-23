@@ -29,6 +29,15 @@ FROM 0.27 TO 0.28
 - The BFG and LAZ Device, with sv_bfgfreeaim off, now support Spread.
 - Ranger now has a wimpy death sound in Heretic.
 - The Grenade Launcher's Grenades now properly go up and down lifts.
+- Weapon III drops by Riot Shotgunners now properly respect Ranger and give him the Grenade Launcher.
+- The Weapon III drops by Riot Shotgunners now have caught up with the conversion to ACS-based weapon giving.
+- Ranger now gets some Lava Nail and Multi Rocket ammo in Last Man Standing.
+- They are called "Multi Rockets", not "Cluster Rockets". All instances of "Cluster Rockets" have been renamed to "Multi Rockets".
+- The Multi-Rocket Launcher's width of fire has been tightened up to match its spread in Dissolution of Eternity.
+- Quadded multi-rockets were getting quadded twice over, dealing 16x damage. Uh. Whoops. This has been fixed.
+- The Dissolution of Eternity ammo was making things hell to balance, and have been brutally cut in effectiveness. The maximum capacity has been fractioned, multi-rocket impact damage and explosive radius reduced, lava nail is now 150% damage rather than double damage.
+- The Thunderbolt's visuals have been slightly tweaked to be less obtrusive on the screen.
+- Duke Nukem now has his proper Explosive Shotgun ready sprite, thanks to Warhawk!
 
 
 FROM 0.26 TO 0.27
