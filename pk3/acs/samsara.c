@@ -41,7 +41,7 @@ global int 0:CommandBitchingDone;
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
-    int quadcount;
+    int quadcount, clipcount;
     int result;
     
     switch (choice)
@@ -94,6 +94,17 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         result /= max(arg2, 1);
 
         GiveInventory("QuakeExplosionCounter", result);
+        break;
+
+      case 9:
+        clipcount = CheckInventory("Clip");
+
+        if (clipcount < 50)
+        {
+            GiveInventory("Clip", 50 - clipcount);
+            TakeInventory("Clip", CheckInventory("Clip") - 50);
+            result = 1;
+        }
         break;
     }
     

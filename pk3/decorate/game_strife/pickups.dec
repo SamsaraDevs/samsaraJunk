@@ -182,3 +182,18 @@ actor StrifeEnergyPod2: Ammo4Small
         loop
     }
 }
+
+actor StrifeAmmoFillup: CustomInventory replaces AmmoFillup
+{
+    ConversationID 298
+
+    Inventory.MaxAmount 0
+    +AUTOACTIVATE
+
+    States
+    {
+      Pickup:
+        TNT1 A 0 ACS_ExecuteAlways(215, 0, 9)
+        stop
+    }
+}
