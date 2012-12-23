@@ -7,12 +7,12 @@ healpack0pickup		HLTH0GET // Taken from Painkiller
 healpack1pickup		HLTH1GET // Taken from Quake III Arena
 healpack2pickup		HLTH2GET // Taken from Quake IV
 megapackpickup		MEGAGET // Taken from Unreal Tournament III
-armor0get			ARMR0GET // Taken from Fatal/Fake
-armor1get			ARMR1GET // Taken from Fatal/Fake
-armor2get			ARMR2GET // Taken from Fatal/Fake
-armor3get			ARMR3GET // Taken from Fatal/Fake
+armor0get		ARMR0GET // Taken from Fatal/Fake
+armor1get		ARMR1GET // Taken from Fatal/Fake
+armor2get		ARMR2GET // Taken from Fatal/Fake
+armor3get		ARMR3GET // Taken from Fatal/Fake
 invisibilityget		NVSIGET // Taken from Fatal/Fake
-invulnget			NVLNGET // Taken from Super Street Fighter IV
+invulnget		NVLNGET // Taken from Super Street Fighter IV
 healpack3pickup		SOULGET // Taken from Super Street Fighter IV
 antisterileget		RADGET // Taken from...uh...I can't remember where...
 lettherebelight		LITEVISR // Taken from Devil May Cry 3
@@ -27,7 +27,7 @@ ammo/rocketbig		AMMROCKB // Taken from Painkiller
 ammo/plasmasmall	AMMPLASS // Taken from Painkiller
 ammo/plasmabig		AMMPLASB // Taken from Unreal Tournament III
 ammo/backpack		AMMBACKP // Taken from Unreal Tournament III
-ammo/mana			AMMOMANA // Taken from Painkiller
+ammo/mana		AMMOMANA // Taken from Painkiller
 
 ammogem/bulletsmall	GEMCLIPS
 ammogem/bulletbig	GEMCLIPB
@@ -38,7 +38,7 @@ ammogem/rocketbig	GEMROCKB
 ammogem/plasmasmall	GEMPLASS
 ammogem/plasmabig	GEMPLASB
 
-tome/lesser			LESRTOME // Taken from Unreal Tournament 2003
+tome/lesser		LESRTOME // Taken from Unreal Tournament 2003
 
 archvile/resummon	VILESMMN // Taken from Fatal/Fake
 

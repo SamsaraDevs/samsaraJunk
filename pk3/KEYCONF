@@ -132,3 +132,5 @@ addslotdefault 7 "Thunderbolt"
 
 addslotdefault 8 "Alien Weapon"
 addslotdefault 8 " Alien Weapon "
+
+addslotdefault 9 Sigil

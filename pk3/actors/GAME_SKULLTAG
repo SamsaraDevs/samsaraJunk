@@ -21,8 +21,8 @@ ACTOR RedArmor : BasicArmorPickup 5040 // Now gold!
     States
     {
       Spawn:
-        ARM3 A 6
-        ARM3 A 6 bright
+        G_AM A 6
+        G_AM A 6 bright
         goto Spawn
     }
 }

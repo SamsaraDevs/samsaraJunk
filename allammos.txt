@@ -1,0 +1,29 @@
+MINI MISSILES
+
+          1  |  2  |  3  |  4
+       .-----+-----+-----+-----
+Doom   |  5  |  2  |  0  |  4
+Chex   |  5  |  2  |  0  |  4
+Corvus |  5  |  2  |  0  |  4
+Blazko | 10  |  0  |  0  |  4
+Parias | 10  |  0  |  0  |  4
+Duke   |  5  |  2  |  0  |  4
+S.O.   |  5  |  2  |  0  |  4
+Ranger |  5  |  2  |  0  |  4
+
+ + Ranger gets 2 lava nails
+
+CRATE OF MISSILES
+
+          1  |  2  |  3  |  4
+       .-----+-----+-----+-----
+Doom   | 20  |  10 |  1  |  10
+Chex   | 20  |  10 |  1  |  10
+Corvus | 20  |  10 |  1  |  10
+Blazko | 45  |  0  |  1  |  10
+Parias | 45  |  0  |  0  |  15
+Duke   | 20  |  10 |  1  |  10
+S.O.   | 20  |  10 |  1  |  10
+Ranger | 20  |  10 |  2  |  10
+
+ + Ranger gets 5 lava nails

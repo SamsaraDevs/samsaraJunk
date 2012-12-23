@@ -71,7 +71,7 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
 {
     ConversationID 181
 
-    Inventory.PickupMessage "Picked up 4/2/1/8 Ammo 1/2/3/4."
+    Inventory.PickupMessage "Picked up 5/2/0/4 Ammo 1/2/3/4."
     Inventory.PickupSound "ammo/mana"
 
     States
@@ -82,41 +82,35 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
         loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
-        TNT1 A 0 A_GiveInventory("Clip", 4)
+        TNT1 A 0 A_GiveInventory("Clip", 5)
         TNT1 A 0 A_GiveInventory("AmmoShell", 2)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
-        TNT1 A 0 A_GiveInventory("Cell", 8)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 0)
+        TNT1 A 0 A_GiveInventory("Cell", 4)
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_GiveInventory("Clip", 4)
-        TNT1 A 0 A_GiveInventory("AmmoShell", 2)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
-        TNT1 A 0 A_GiveInventory("Cell", 8)
         TNT1 A 0 A_SetBlend("Green", 0.4, 4)
         stop
 
       PickupWolfen:
-        TNT1 A 0 A_GiveInventory("Clip", 8)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
-        TNT1 A 0 A_GiveInventory("Cell", 8)
+        TNT1 A 0 A_GiveInventory("Clip", 10)
+        TNT1 A 0 A_GiveInventory("Cell", 4)
         stop
 
       PickupHexen:
-        TNT1 A 0 A_GiveInventory("Clip", 12)
-        TNT1 A 0 A_GiveInventory("Cell", 12)
+        TNT1 A 0 A_GiveInventory("Clip", 10)
+        TNT1 A 0 A_GiveInventory("Cell", 4)
         stop
 
       PickupQuake:
-        TNT1 A 0 A_GiveInventory("Clip", 4)
+        TNT1 A 0 A_GiveInventory("Clip", 5)
         TNT1 A 0 A_GiveInventory("LavaNails", 1)
         TNT1 A 0 A_GiveInventory("AmmoShell", 2)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 2)
-        TNT1 A 0 A_GiveInventory("Cell", 8)
+        TNT1 A 0 A_GiveInventory("Cell", 4)
         stop
     }
 }
@@ -125,53 +119,48 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 {
     ConversationID 182
 
-    Inventory.PickupMessage "Picked up 15/6/3/30 Ammo 1/2/3/4."
+    Inventory.PickupMessage "Picked up 20/10/1/10 Ammo 1/2/3/4."
     Inventory.PickupSound "ammo/mana"
 
     States
     {
       Spawn:
-        AMMD E 20
-        AMMD E 20 bright
+        AMMB J 20
+        AMMB J 20 bright
         loop
 
       Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
-        TNT1 A 0 A_GiveInventory("Clip", 15)
-        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
-        TNT1 A 0 A_GiveInventory("Cell", 30)
+        TNT1 A 0 A_GiveInventory("Clip", 20)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 10)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 10)
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_GiveInventory("Clip", 15)
-        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
-        TNT1 A 0 A_GiveInventory("Cell", 30)
         TNT1 A 0 A_SetBlend("Green", 0.4, 4)
         stop
 
       PickupWolfen:
-        TNT1 A 0 A_GiveInventory("Clip", 30)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
-        TNT1 A 0 A_GiveInventory("Cell", 30)
+        TNT1 A 0 A_GiveInventory("Clip", 45)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("Cell", 10)
         stop
 
       PickupHexen:
         TNT1 A 0 A_GiveInventory("Clip", 45)
-        TNT1 A 0 A_GiveInventory("Cell", 45)
+        TNT1 A 0 A_GiveInventory("Cell", 15)
         stop
 
       PickupQuake:
-        TNT1 A 0 A_GiveInventory("Clip", 15)
-        TNT1 A 0 A_GiveInventory("LavaNails", 4)
-        TNT1 A 0 A_GiveInventory("AmmoShell", 6)
-        TNT1 A 0 A_GiveInventory("RocketAmmo", 6)
-        TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 1)
-        TNT1 A 0 A_GiveInventory("Cell", 30)
+        TNT1 A 0 A_GiveInventory("Clip", 20)
+        TNT1 A 0 A_GiveInventory("LavaNails", 5)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 10)
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 2)
+        TNT1 A 0 A_GiveInventory("Cell", 10)
         stop
     }
 }
