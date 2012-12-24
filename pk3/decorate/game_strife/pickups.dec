@@ -197,7 +197,49 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
     }
 }
 
-actor StrifeHEGrenades: Ammo3Small replaces HEGrenadeRounds { ConversationID 177 }
+actor StrifeHEGrenades: CustomInventory replaces HEGrenadeRounds
+{
+    Inventory.PickupMessage "Picked up 4 rounds of Ammo 3."
+    Inventory.PickupSound "ammo/rocketsmall"
+
+    ConversationID 177
+
+    States
+    {
+      Spawn:
+        AMMD C 20
+        AMMD C 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 4)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell", 4)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo", 0, "PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 4)
+        TNT1 A 0 A_SetBlend("Green", 0.3, 3)
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("RocketAmmo", 7)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 2)
+        stop
+
+      PickupFail:
+        AMMB C 1
+        fail
+    }
+}
+
 actor StrifePHGrenades: Ammo3Big replaces PhosphorusGrenadeRounds { ConversationID 178 }
 
 actor StrifeEnergyPod: Ammo4Small replaces EnergyPod {}

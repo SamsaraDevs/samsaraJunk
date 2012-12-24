@@ -62,7 +62,7 @@ actor DoomguyStrifeZerk: PowerDamage
 {
     Powerup.Duration 0x7FFFFFF
     
-    DamageFactor "DoomFist", 1.39  // 1.39 ** 7 is about 10 (you only get 7 UpgradeAccuracy items)
+    DamageFactor "DoomFist", 1.468  // 1.468 ** 6 is about 10 (you only get 6 UpgradeAccuracy items)
 }
 
 actor DoomguyStrifeZerk1: DoomguyStrifeZerk {}
