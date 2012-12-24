@@ -122,7 +122,7 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("Clip", 5)
-        TNT1 A 0 A_GiveInventory("LavaNails", 1)
+        TNT1 A 0 A_GiveInventory("LavaNails", 2)
         TNT1 A 0 A_GiveInventory("AmmoShell", 2)
         TNT1 A 0 A_GiveInventory("Cell", 4)
         stop
@@ -189,7 +189,7 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("Clip", 20)
-        TNT1 A 0 A_GiveInventory("LavaNails", 5)
+        TNT1 A 0 A_GiveInventory("LavaNails", 7)
         TNT1 A 0 A_GiveInventory("AmmoShell", 10)
         TNT1 A 0 A_GiveInventory("RocketAmmo", 2)
         TNT1 A 0 A_GiveInventory("Cell", 10)
