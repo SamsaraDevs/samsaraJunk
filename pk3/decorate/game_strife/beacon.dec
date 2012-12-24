@@ -37,7 +37,8 @@ actor StrifeBeaconSpawner
     {
       Spawn:
         BEAC A 35
-        BEAC AAAAA 160 ACS_ExecuteAlways(315)
+        BEAC A 160 ACS_ExecuteAlways(315, 0, 1)
+        BEAC AAAA 160 ACS_ExecuteAlways(315)
         stop
 
       WhatAmIDoingWithMyLife:
