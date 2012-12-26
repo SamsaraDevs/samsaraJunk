@@ -1,0 +1,144 @@
+pointlight QuakeRocketLight
+{
+    color 1.0 0.81 0.0
+    size 48
+}
+
+pointlight QuakeTinyRocketLight
+{
+    color 1.0 0.81 0.0
+    size 24
+}
+
+pointlight QExplodeLight1
+{
+    color 1.0 0.81 0.0
+    size 128
+}
+
+pointlight QExplodeLight2
+{
+    color 1.0 0.81 0.0
+    size 105
+}
+
+pointlight QExplodeLight3
+{
+    color 1.0 0.81 0.0
+    size 82
+}
+
+pointlight QExplodeLight4
+{
+    color 1.0 0.81 0.0
+    size 60
+}
+
+pointlight QExplodeLight5
+{
+    color 1.0 0.81 0.0
+    size 38
+}
+
+pointlight QExplodeLight6
+{
+    color 1.0 0.81 0.0
+    size 16
+}
+
+pointlight QTExplodeLight1
+{
+    color 1.0 0.81 0.0
+    size 64
+}
+
+pointlight QTExplodeLight2
+{
+    color 1.0 0.81 0.0
+    size 52
+}
+
+pointlight QTExplodeLight3
+{
+    color 1.0 0.81 0.0
+    size 41
+}
+
+pointlight QTExplodeLight4
+{
+    color 1.0 0.81 0.0
+    size 30
+}
+
+pointlight QTExplodeLight5
+{
+    color 1.0 0.81 0.0
+    size 19
+}
+
+pointlight QTExplodeLight6
+{
+    color 1.0 0.81 0.0
+    size 8
+}
+
+object QuakeExplosion
+{
+    frame QEXPA { light QExplodeLight1 }
+    frame QEXPB { light QExplodeLight2 }
+    frame QEXPC { light QExplodeLight3 }
+    frame QEXPD { light QExplodeLight4 }
+    frame QEXPE { light QExplodeLight5 }
+    frame QEXPF { light QExplodeLight6 }
+}
+
+object QuakeTinyExplosion
+{
+    frame QEXPA { light QTExplodeLight1 }
+    frame QEXPB { light QTExplodeLight2 }
+    frame QEXPC { light QTExplodeLight3 }
+    frame QEXPD { light QTExplodeLight4 }
+    frame QEXPE { light QTExplodeLight5 }
+    frame QEXPF { light QTExplodeLight6 }
+}
+
+object QuakeRocket
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeRocketCoop
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeTinyRocket
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+object QuakeTinyRocketCoop
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+
+object QuakeRocketQuad
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeRocketCoopQuad
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuadTinyRocket
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+object QuadTinyRocketCoop
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
