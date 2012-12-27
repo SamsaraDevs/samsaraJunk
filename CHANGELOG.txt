@@ -22,6 +22,9 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 
 FROM 0.27 TO 0.28
 ========================
+- The realm of Strife has locked in to the Wheel!
+Strife is perhaps the strangest of all the iwads, with the biggest differences in gameplay along with HeXen. Strife focused more on stealth and developing a budding plot, taking part in a rebellion against a tyrannic order hoping to squash all free will. Fight, for the Front and Freedom! Move out!
+
 - The primary and secondary fire of the Security Officer's Assault Rifle are now independent of each other!
 - Same with the Marathon 2 alien weapon! Actually that was done in 0.27, but we forgot to mention it. Whoops.
 - Some of the ACS has been repositioned and readjusted for easier organization.
@@ -38,6 +41,12 @@ FROM 0.27 TO 0.28
 - The Dissolution of Eternity ammo was making things hell to balance, and have been brutally cut in effectiveness. The maximum capacity has been fractioned, multi-rocket impact damage and explosive radius reduced, lava nail is now 150% damage rather than double damage.
 - The Thunderbolt's visuals have been slightly tweaked to be less obtrusive on the screen.
 - Duke Nukem now has his proper Explosive Shotgun ready sprite, thanks to Warhawk!
+- Ranger is now as tall as Doomguy is. Previously he was just a wee bit shorter.
+- The GLDefs have been moved to their own folder for easier organization/additions.
+- Ranger now has GLDefs! Only two more to go...
+- Ranger's Double Shotgun has a slightly wider spread with slightly less damage, to better match Quake.
+- samsara_hexenjump has instead been changed to samsara_jumpmod. Turns out HeXen wasn't the only iwad that required different jumping rules--so did Strife!
+- The Prosperity Rune now properly pauses Ranger's degeneration.
 
 
 FROM 0.26 TO 0.27
