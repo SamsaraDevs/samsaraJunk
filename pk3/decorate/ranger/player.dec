@@ -3,7 +3,7 @@ actor QuakePlayer: PlayerPawn
     Radius 16
     Height 56
     Mass 100
-    Scale 0.19
+    Scale 0.21
     Speed 1
     
     Gravity 0.75
