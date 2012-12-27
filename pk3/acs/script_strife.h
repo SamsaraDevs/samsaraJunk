@@ -83,6 +83,7 @@ script SAMSARA_BEACON (int noloop)
     {
         monTID = unusedTID(14000, 24000);
         success = Spawn(monType, x, y, z, monTID);
+        if (success) { Spawn("TeleportFog", x, y, z); }
 
         if (noloop)
         {
@@ -94,6 +95,4 @@ script SAMSARA_BEACON (int noloop)
 
         Delay(1);
     }
-
-    Spawn("TeleportFog", x, y, z);
 }
