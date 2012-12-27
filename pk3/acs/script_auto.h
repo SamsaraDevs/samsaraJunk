@@ -39,10 +39,6 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_lmsult 0");
         ConsoleCommand("archivecvar samsara_lmsult"); }
         
-        if (!GetCVar("samsara_hexenjump"))
-        {   ConsoleCommand("set samsara_hexenjump 0");
-        ConsoleCommand("archivecvar samsara_hexenjump"); }
-        
         if (!GetCVar("samsara_nocustomgravity"))
         {   ConsoleCommand("set samsara_nocustomgravity 0");
         ConsoleCommand("archivecvar samsara_nocustomgravity"); }
@@ -50,6 +46,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_permault"))
         {   ConsoleCommand("set samsara_permault 0");
         ConsoleCommand("archivecvar samsara_permault"); }
+        
+        if (!GetCVar("samsara_jumpmod"))
+        {   ConsoleCommand("set samsara_jumpmod 0");
+        ConsoleCommand("archivecvar samsara_jumpmod"); }
         
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
@@ -235,22 +235,7 @@ script SAMSARA_SPAWN (int respawning)
         oRegenTimer = regenTimer;
         regenTimer =  CheckInventory("QuakeRegenTimer");
 
-        if (regenTimer == 0)
-        {
-            if (oRegenTimer != 0)
-            {
-                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
-                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
-            }
-
-            if (health < getMaxHealth()) { healthGiven = 0; }
-
-            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
-            {
-                SetActorProperty(0, APROP_Health, health - 1);
-            }
-        }
-        else
+        if (regenTimer != 0)
         {
             if (regenTimer - 35 > oRegenTimer) { AmbientSound("quakeweps/regenannounce", 127); }
 
@@ -299,6 +284,25 @@ script SAMSARA_SPAWN (int respawning)
                 ActivatorSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
             }
         }
+        else if (CheckInventory("RuneProsperity"))
+        {
+            regenTimer = 0;
+        }
+        else
+        {
+            if (oRegenTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
+            }
+
+            if (health < getMaxHealth()) { healthGiven = 0; }
+
+            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
+            {
+                SetActorProperty(0, APROP_Health, health - 1);
+            }
+        }
 
         TakeInventory("QuakeRegenTimer", 1);
         
@@ -312,7 +316,7 @@ script SAMSARA_SPAWN (int respawning)
 
           case CLASS_QUAKE:
             if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
-            else { SetActorProperty(0, APROP_Gravity, 0.6); }
+            else { SetActorProperty(0, APROP_Gravity, 0.75); }
 
             if (UnloadingNow)
             {
@@ -325,15 +329,9 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         pariasMod = 9 * (SamsaraClassNum() == CLASS_HEXEN);
+        i = JumpZFromHeight(32 + pariasMod + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity));
 
-        if (GetCVar("samsara_hexenjump"))
-        {
-            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(41 + pariasMod, GetActorProperty(0, APROP_Gravity)));
-        }
-        else
-        {
-            SetActorProperty(0, APROP_JumpZ, JumpZFromHeight(32 + pariasMod, GetActorProperty(0, APROP_Gravity)));
-        }
+        SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
         if (isDead(0)) { endloop = 1; }
         

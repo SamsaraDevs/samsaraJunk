@@ -61,7 +61,8 @@ actor QuakePlayer: PlayerPawn
         goto Melee2
         
       Melee2:
-        RANG H 6 bright
+        RANG Z 2 bright
+        RANG H 4 bright
         RANG G 12
         Goto Spawn
         

@@ -444,9 +444,9 @@ actor QuakeNailTrail2: BulletPuff
     States
     {
       Spawn:
-        PUFF A 2
-        PUFF A 2 A_FadeOut(0.4)
-        PUFF BCD 4
+        DPUF A 2
+        DPUF A 2 A_FadeOut(0.4)
+        DPUF BCD 4
         stop
     }
 }
