@@ -142,3 +142,55 @@ object QuadTinyRocketCoop
 {
     frame QRKT { light QuakeTinyRocketLight }
 }
+
+
+
+pointlight LightningLight
+{
+    color 0.174 0.2 0.2
+    size 32
+}
+
+pointlight LightningLightSmall
+{
+    color 0.174 0.2 0.2
+    size 16
+}
+
+pointlight LightningLight2
+{
+    color 0.174 0.2 0.2
+    size 24
+}
+
+pointlight LightningLight3
+{
+    color 0.174 0.2 0.2
+    size 16
+}
+
+pointlight LightningLight4
+{
+    color 0.174 0.2 0.2
+    size 12
+}
+
+pointlight LightningLight5
+{
+    color 0.174 0.2 0.2
+    size 8
+}
+
+object LGBeam
+{
+    frame DPLE { light LightningLightSmall }
+}
+
+object LGPuff
+{
+    frame DPLEA { light LightningLight }
+    frame DPLEB { light LightningLight2 }
+    frame DPLEC { light LightningLight3 }
+    frame DPLED { light LightningLight4 }
+    frame DPLEE { light LightningLight5 }
+}
