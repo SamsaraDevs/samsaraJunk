@@ -1,0 +1,223 @@
+// Bullet puff
+flickerlight BPUFF1
+{
+    color 0.5 0.5 0.0
+    size 6
+    secondarySize 8
+    chance 0.8
+}
+
+flickerlight BPUFF2
+{
+    color 0.5 0.5 0.0
+    size 3
+    secondarySize 4
+    chance 0.8
+}
+
+object DoomBulletPuff
+{
+    frame DPFFA { light BPUFF1 }
+    frame DPFFB { light BPUFF2 }
+}
+
+object DoomBulletPuff2
+{
+    frame DPFFA { light BPUFF1 }
+    frame DPFFB { light BPUFF2 }
+}
+
+// Rocket
+pointlight ROCKET
+{
+    color 1.0 0.7 0.0
+    size 56
+}
+
+flickerlight ROCKET_X1
+{
+    color 1.0 0.7 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+
+flickerlight ROCKET_X2
+{
+    color 0.5 0.1 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight ROCKET_X3
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+
+object DoomRocket
+{
+    frame DMSLA { light ROCKET    }
+
+    frame DMSLB { light ROCKET_X1 }
+    frame DMSLC { light ROCKET_X2 }
+    frame DMSLD { light ROCKET_X3 }
+}
+
+object DoomRocket2
+{
+    frame DMSLA { light ROCKET    }
+
+    frame DMSLB { light ROCKET_X1 }
+    frame DMSLC { light ROCKET_X2 }
+    frame DMSLD { light ROCKET_X3 }
+}
+
+// Plasma
+pointlight PLASMABALL
+{
+    color 0.0 0.1 1.0
+    size 56
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.2 0.2 1.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.2 0.2 0.8
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.1 0.1 0.5
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.0 0.0 0.2
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object DoomPlasmaBall
+{
+    frame DPLMA { light PLASMABALL }
+    frame DPLMB { light PLASMABALL }
+
+    frame DPLEA { light PLASMA_X1 }
+    frame DPLEB { light PLASMA_X2 }
+    frame DPLEC { light PLASMA_X2 }
+    frame DPLED { light PLASMA_X3 }
+    frame DPLEE { light PLASMA_X4 }
+}
+
+object DoomPlasmaBall2
+{
+    frame DPLMA { light PLASMABALL }
+    frame DPLMB { light PLASMABALL }
+
+    frame DPLEA { light PLASMA_X1 }
+    frame DPLEB { light PLASMA_X2 }
+    frame DPLEC { light PLASMA_X2 }
+    frame DPLED { light PLASMA_X3 }
+    frame DPLEE { light PLASMA_X4 }
+}
+
+// BFG
+pointlight BFGBALL
+{
+    color 0.0 1.0 0.0
+    size 80
+}
+
+flickerlight BFGBALL_X1
+{
+    color 0.2 1.0 0.2
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight BFGBALL_X2
+{
+    color 0.3 1.0 0.3
+    size 104
+    secondarySize 112
+    chance 0.3
+}
+
+flickerlight BFGBALL_X3
+{
+    color 0.5 1.0 0.5
+    size 120
+    secondarySize 128
+    chance 0.3
+}
+
+flickerlight BFGBALL_X4
+{
+    color 0.2 0.7 0.2
+    size 56
+    secondarySize 64
+    chance 0.3
+}
+
+flickerlight BFGBALL_X5
+{
+    color 0.1 0.3 0.1
+    size 48
+    secondarySize 56
+    chance 0.3
+}
+
+object DoomBFGBall
+{
+    frame DBFSA { light BFGBALL }
+    frame DBFSB { light BFGBALL }
+
+    frame DBFEA { light BFGBALL_X1 }
+    frame DBFEB { light BFGBALL_X2 }
+    frame DBFEC { light BFGBALL_X3 }
+    frame DBFED { light BFGBALL_X1 }
+    frame DBFEE { light BFGBALL_X4 }
+    frame DBFEF { light BFGBALL_X5 }
+}
+
+object DoomBFGBall2
+{
+    frame DBFSA { light BFGBALL }
+    frame DBFSB { light BFGBALL }
+
+    frame DBFEA { light BFGBALL_X1 }
+    frame DBFEB { light BFGBALL_X2 }
+    frame DBFEC { light BFGBALL_X3 }
+    frame DBFED { light BFGBALL_X1 }
+    frame DBFEE { light BFGBALL_X4 }
+    frame DBFEF { light BFGBALL_X5 }
+}
+
+
+object DoomBFGSplash
+{
+    frame DBFPA { light BFGBALL    }
+    frame DBFPB { light BFGBALL_X1 }
+    frame DBFPC { light BFGBALL_X4 }
+    frame DBFPD { light BFGBALL_X5 }
+}
+

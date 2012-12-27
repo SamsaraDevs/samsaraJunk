@@ -1,0 +1,44 @@
+object RedCard2
+{
+    frame RKEY { light REDKEY }
+}
+
+object RedSkull2
+{
+    frame RSKU { light REDKEY }
+}
+
+object BlueCard2
+{
+    frame BKEY { light HEALTHPOTION }
+}
+
+object BlueSkull2
+{
+    frame BSKU { light HEALTHPOTION }
+}
+
+object YellowCard2
+{
+    frame YKEY { light YELLOWKEY }
+}
+
+object YellowSkull2
+{
+    frame YSKU { light YELLOWKEY }
+}
+
+object KeyYellow2
+{
+    frame CKYY { light HYELLOWKEY }
+}
+
+object KeyBlue2
+{
+    frame BKYY { light HBLUEKEY }
+}
+
+object KeyGreen2
+{
+    frame AKYY { light HGREENKEY }
+}
