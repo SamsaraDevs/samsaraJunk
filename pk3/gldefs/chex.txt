@@ -1,0 +1,490 @@
+// Zorch teleport fog
+pointlight ZORCH1
+{
+    color 1.0 0.3 0.3
+    size 34
+}
+
+pointlight ZORCH2
+{
+    color 1.0 0.3 0.3
+    size 28
+}
+
+pointlight ZORCH3
+{
+    color 1.0 0.3 0.3
+    size 22
+}
+
+pointlight ZORCH4
+{
+    color 1.0 0.3 0.3
+    size 16
+}
+
+object ZorchEffectSmall
+{
+    frame ZFOGA { light ZORCH4 }
+    frame ZFOGB { light ZORCH3 }
+    frame ZFOGC { light ZORCH3 }
+    frame ZFOGD { light ZORCH2 }
+    frame ZFOGE { light ZORCH1 }
+    frame ZFOGF { light ZORCH1 }
+    frame ZFOGG { light ZORCH2 }
+    frame ZFOGH { light ZORCH3 }
+    frame ZFOGI { light ZORCH3 }
+    frame ZFOGJ { light ZORCH4 }
+}
+
+object ZorchEffectBossSmall
+{
+    frame ZFOGA { light ZORCH4 }
+    frame ZFOGB { light ZORCH3 }
+    frame ZFOGC { light ZORCH3 }
+    frame ZFOGD { light ZORCH2 }
+    frame ZFOGE { light ZORCH1 }
+    frame ZFOGF { light ZORCH1 }
+    frame ZFOGG { light ZORCH2 }
+    frame ZFOGH { light ZORCH3 }
+    frame ZFOGI { light ZORCH3 }
+    frame ZFOGJ { light ZORCH4 }
+}
+
+pointlight ZORCH5
+{
+    color 1.0 0.3 0.3
+    size 24
+}
+
+pointlight ZORCH6
+{
+    color 1.0 0.3 0.3
+    size 20
+}
+
+pointlight ZORCH7
+{
+    color 1.0 0.3 0.3
+    size 16
+}
+
+pointlight ZORCH8
+{
+    color 1.0 0.3 0.3
+    size 12
+}
+
+object ZorchEffectTiny
+{
+    frame ZFOGA { light ZORCH8 }
+    frame ZFOGB { light ZORCH7 }
+    frame ZFOGC { light ZORCH7 }
+    frame ZFOGD { light ZORCH6 }
+    frame ZFOGE { light ZORCH5 }
+    frame ZFOGF { light ZORCH5 }
+    frame ZFOGG { light ZORCH6 }
+    frame ZFOGH { light ZORCH7 }
+    frame ZFOGI { light ZORCH7 }
+    frame ZFOGJ { light ZORCH8 }
+}
+
+pointlight ZORCH10
+{
+    color 1.0 0.3 0.3
+    size 16
+}
+
+pointlight ZORCH11
+{
+    color 1.0 0.3 0.3
+    size 14
+}
+
+pointlight ZORCH12
+{
+    color 1.0 0.3 0.3
+    size 11
+}
+
+pointlight ZORCH13
+{
+    color 1.0 0.3 0.3
+    size 8
+}
+
+object ZorchEffectSuperTiny
+{
+    frame ZFOGA { light ZORCH13 }
+    frame ZFOGB { light ZORCH12 }
+    frame ZFOGC { light ZORCH12 }
+    frame ZFOGD { light ZORCH11 }
+    frame ZFOGE { light ZORCH10 }
+    frame ZFOGF { light ZORCH10 }
+    frame ZFOGG { light ZORCH11 }
+    frame ZFOGH { light ZORCH12 }
+    frame ZFOGI { light ZORCH12 }
+    frame ZFOGJ { light ZORCH13 }
+}
+
+pointlight ZORCH14
+{
+    color 1.0 0.3 0.3
+    size 46
+}
+
+pointlight ZORCH15
+{
+    color 1.0 0.3 0.3
+    size 38
+}
+
+pointlight ZORCH16
+{
+    color 1.0 0.3 0.3
+    size 30
+}
+
+pointlight ZORCH17
+{
+    color 1.0 0.3 0.3
+    size 22
+}
+
+object ZorchEffectBig
+{
+    frame ZFOGA { light ZORCH17 }
+    frame ZFOGB { light ZORCH16 }
+    frame ZFOGC { light ZORCH16 }
+    frame ZFOGD { light ZORCH15 }
+    frame ZFOGE { light ZORCH14 }
+    frame ZFOGF { light ZORCH14 }
+    frame ZFOGG { light ZORCH15 }
+    frame ZFOGH { light ZORCH16 }
+    frame ZFOGI { light ZORCH16 }
+    frame ZFOGJ { light ZORCH17 }
+}
+
+object ZorchEffectWide
+{
+    frame ZFOGA { light ZORCH17 }
+    frame ZFOGB { light ZORCH16 }
+    frame ZFOGC { light ZORCH16 }
+    frame ZFOGD { light ZORCH15 }
+    frame ZFOGE { light ZORCH14 }
+    frame ZFOGF { light ZORCH14 }
+    frame ZFOGG { light ZORCH15 }
+    frame ZFOGH { light ZORCH16 }
+    frame ZFOGI { light ZORCH16 }
+    frame ZFOGJ { light ZORCH17 }
+}
+
+object ZorchEffectHuge2
+{
+    frame ZFOGA { light ZORCH17 }
+    frame ZFOGB { light ZORCH16 }
+    frame ZFOGC { light ZORCH16 }
+    frame ZFOGD { light ZORCH15 }
+    frame ZFOGE { light ZORCH14 }
+    frame ZFOGF { light ZORCH14 }
+    frame ZFOGG { light ZORCH15 }
+    frame ZFOGH { light ZORCH16 }
+    frame ZFOGI { light ZORCH16 }
+    frame ZFOGJ { light ZORCH17 }
+}
+
+pointlight ZORCH20
+{
+    color 1.0 0.3 0.3
+    size 61
+}
+
+pointlight ZORCH21
+{
+    color 1.0 0.3 0.3
+    size 50
+}
+
+pointlight ZORCH22
+{
+    color 1.0 0.3 0.3
+    size 39
+}
+
+pointlight ZORCH23
+{
+    color 1.0 0.3 0.3
+    size 28
+}
+
+object ZorchEffectHuge
+{
+    frame ZFOGA { light ZORCH23 }
+    frame ZFOGB { light ZORCH22 }
+    frame ZFOGC { light ZORCH22 }
+    frame ZFOGD { light ZORCH21 }
+    frame ZFOGE { light ZORCH20 }
+    frame ZFOGF { light ZORCH20 }
+    frame ZFOGG { light ZORCH21 }
+    frame ZFOGH { light ZORCH22 }
+    frame ZFOGI { light ZORCH22 }
+    frame ZFOGJ { light ZORCH23 }
+}
+
+// Zorch puff
+flickerlight CPUFF1
+{
+    color 0.5 0.0 0.0
+    size 12
+    secondarySize 16
+    chance 0.8
+}
+
+flickerlight CPUFF2
+{
+    color 0.5 0.0 0.0
+    size 9
+    secondarySize 12
+    chance 0.8
+}
+
+object ChexPuff
+{
+    frame CMISD { light CPUFF1 }
+    frame CMISC { light CPUFF2 }
+    frame CMISB { light CPUFF2 }
+}
+
+object ChexPuff2
+{
+    frame CMISD { light CPUFF1 }
+    frame CMISC { light CPUFF2 }
+    frame CMISB { light CPUFF2 }
+}
+
+object ChexSpoonPuff
+{
+    frame CMISD { light CPUFF1 }
+    frame CMISC { light CPUFF2 }
+    frame CMISB { light CPUFF2 }
+}
+
+// Chex Rocket
+pointlight CROCKET
+{
+    color 1.0 0.0 0.0
+    size 56
+}
+
+flickerlight CROCKET_X1
+{
+    color 1.0 0.2 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+
+flickerlight CROCKET_X2
+{
+    color 0.5 0.1 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight CROCKET_X3
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+
+object ChexRocket
+{
+    frame CMISA { light CROCKET    }
+
+    frame CMISB { light CROCKET_X1 }
+    frame CMISC { light CROCKET_X2 }
+    frame CMISD { light CROCKET_X3 }
+}
+
+object ChexRocket2
+{
+    frame CMISA { light CROCKET    }
+
+    frame CMISB { light CROCKET_X1 }
+    frame CMISC { light CROCKET_X2 }
+    frame CMISD { light CROCKET_X3 }
+}
+
+// Phasing Zorch
+pointlight PHASEBALL
+{
+    color 0.8 0.0 0.0
+    size 56
+}
+
+flickerlight PHASE_X1
+{
+    color 1.0 0.2 0.2
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PHASE_X2
+{
+    color 0.8 0.2 0.2
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PHASE_X3
+{
+    color 0.5 0.1 0.1
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PHASE_X4
+{
+    color 0.2 0.0 0.0
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object ChexPlasma
+{
+    frame CLSSA { light PHASEBALL }
+    frame CLSSB { light PHASEBALL }
+
+    frame CLSEA { light PHASE_X1 }
+    frame CLSEB { light PHASE_X2 }
+    frame CLSEC { light PHASE_X2 }
+    frame CLSED { light PHASE_X3 }
+    frame CLSEE { light PHASE_X4 }
+}
+
+object SLZorcherBolt
+{
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
+}
+
+object SLZorcherBoltCoop
+{
+    frame SLZRA { light PHASEBALL }
+    frame SLZRB { light PHASEBALL }
+	
+	frame SLZDA { light PHASE_X1 }
+    frame SLZDB { light PHASE_X2 }
+    frame SLZDC { light PHASE_X2 }
+    frame SLZDD { light PHASE_X3 }
+    frame SLZDE { light PHASE_X3 }
+    frame SLZDF { light PHASE_X4 }
+}
+
+object ChexPlasma2
+{
+    frame CLSSA { light PHASEBALL }
+    frame CLSSB { light PHASEBALL }
+
+    frame CLSEA { light PHASE_X1 }
+    frame CLSEB { light PHASE_X2 }
+    frame CLSEC { light PHASE_X2 }
+    frame CLSED { light PHASE_X3 }
+    frame CLSEE { light PHASE_X4 }
+}
+
+// LAZ Device
+pointlight LAZBALL
+{
+    color 1.0 0.0 0.0
+    size 80
+}
+
+flickerlight LAZBALL_X1
+{
+    color 1.0 0.2 0.2
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight LAZBALL_X2
+{
+    color 1.0 0.3 0.3
+    size 104
+    secondarySize 112
+    chance 0.3
+}
+
+flickerlight LAZBALL_X3
+{
+    color 1.0 0.4 0.4
+    size 120
+    secondarySize 128
+    chance 0.3
+}
+
+flickerlight LAZBALL_X4
+{
+    color 0.8 0.2 0.2
+    size 56
+    secondarySize 64
+    chance 0.3
+}
+
+flickerlight LAZBALL_X5
+{
+    color 0.4 0.1 0.1
+    size 48
+    secondarySize 56
+    chance 0.3
+}
+
+object ChexBFGBall
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexBFGBall2
+{
+    frame CFS1A { light LAZBALL }
+    frame CFS1B { light LAZBALL }
+
+    frame CFE1A { light LAZBALL_X1 }
+    frame CFE1B { light LAZBALL_X2 }
+    frame CFE1C { light LAZBALL_X3 }
+    frame CFE1D { light LAZBALL_X1 }
+    frame CFE1E { light LAZBALL_X4 }
+    frame CFE1F { light LAZBALL_X5 }
+}
+
+object ChexLAZPuff
+{
+    frame CFE2A { light LAZBALL    }
+    frame CFE2B { light LAZBALL_X1 }
+    frame CFE2C { light LAZBALL_X4 }
+    frame CFE2D { light LAZBALL_X5 }
+}
+
