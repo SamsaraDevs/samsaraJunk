@@ -13,12 +13,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
     {
         if (DEBUG) { Print(s:"hpGiven = ", d:hpGiven, s:", startHealth = ", d:startHealth); }
 
-        if (CheckInventory("RuneProsperity"))
-        {
-            break;
-        }
-
-        if (CheckInventory("QuakeRegenTimer"))
+        if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity"))
         {
             Delay(1);
             continue;
