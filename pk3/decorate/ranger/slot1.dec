@@ -1,5 +1,9 @@
 actor "Laser Cannon" : InstantSwitchWeapon
 {
+    //Weapon.BobRangeX 0
+    //Weapon.BobRangeY 0.5
+    //Weapon.BobSpeed 1.1
+    //Weapon.BobStyle Alpha
     Weapon.SlotNumber 1
     Weapon.SelectionOrder 100
 

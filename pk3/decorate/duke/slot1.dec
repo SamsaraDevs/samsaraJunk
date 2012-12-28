@@ -3,6 +3,9 @@ actor DukeThrownPipebomb : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.
 
 actor Pipebombs : Weapon
 {
+    //Weapon.BobRangeX 0.75
+    //Weapon.BobRangeY 0.95
+    //Weapon.BobSpeed 1.1
     Weapon.SlotNumber 1
     Weapon.SelectionOrder 2200
     Weapon.AmmoUse 1
