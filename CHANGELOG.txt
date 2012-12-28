@@ -48,6 +48,8 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - samsara_hexenjump has instead been changed to samsara_jumpmod. Turns out HeXen wasn't the only iwad that required different jumping rules--so did Strife!
 - The Prosperity Rune now properly pauses Ranger's degeneration.
 - The Death Wyvern no longer vigorously and passionately humps the first Ettin it sees on spawn.
+- For ZDoom, Duke Nukem now has his proper weaponbobs. The only thing different is that the bobspeed doesn't depend on Duke's movespeed.
+- Tweaked a few obituaries to be colored properly, and rephrased Ranger's Super Lava Nail obituary to be less awkward.
 
 
 FROM 0.26 TO 0.27
