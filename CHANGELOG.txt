@@ -47,6 +47,7 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - Ranger's Double Shotgun has a slightly wider spread with slightly less damage, to better match Quake.
 - samsara_hexenjump has instead been changed to samsara_jumpmod. Turns out HeXen wasn't the only iwad that required different jumping rules--so did Strife!
 - The Prosperity Rune now properly pauses Ranger's degeneration.
+- The Death Wyvern no longer vigorously and passionately humps the first Ettin it sees on spawn.
 
 
 FROM 0.26 TO 0.27
