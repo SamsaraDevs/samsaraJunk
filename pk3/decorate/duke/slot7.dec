@@ -2,6 +2,9 @@ actor DukeDevastatorFiringSequence : Inventory { -INVBAR +INVENTORY.UNDROPPABLE 
 
 actor Devastator : Weapon
 {
+    //Weapon.BobRangeX 0.75
+    //Weapon.BobRangeY 0.95
+    //Weapon.BobSpeed 1.1
     Weapon.SelectionOrder 2800
     Weapon.SlotNumber 7
     Weapon.AmmoUse 2

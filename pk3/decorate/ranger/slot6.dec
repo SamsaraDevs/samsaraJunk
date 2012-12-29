@@ -1,5 +1,9 @@
 actor "Super Nailgun": Weapon
 {
+    //Weapon.BobRangeX 0
+    //Weapon.BobRangeY 0.5
+    //Weapon.BobSpeed 1.1
+    //Weapon.BobStyle Alpha
     Weapon.Kickback 100
     Weapon.SelectionOrder 4
     Weapon.AmmoUse 2
@@ -231,7 +235,7 @@ actor QuakeSLNail: QuakeLavaNail
 {
     Damage (27)
     DamageType Fire
-    Obituary "%k\cs's penetrator was too hot for \c- %o\cs."  // this sounds so bad but whatever
+    Obituary "%k\cs's penetrated\c- %o\cs and made %h a flamer."  // this sounds so bad but whatever
 }
 
 actor QuakeSLNailCoop: QuakeSLNail

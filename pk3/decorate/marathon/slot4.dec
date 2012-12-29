@@ -7,6 +7,7 @@ actor AssaultFiredS: Counter {}
 actor "MA-75B Assault Rifle" : Weapon// replaces Chaingun
 {
     //Weapon.BobRangeX 0
+    //Weapon.BobStyle Smooth
     Weapon.SelectionOrder 100
     Weapon.SlotNumber 4
     Decal BulletChip
