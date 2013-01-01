@@ -2928,6 +2928,7 @@ actor Korax2 : Korax replaces Korax
     Health 10000
     PainChance 10
     Speed 20
+    +DONTRIP
     +INVULNERABLE
     +NORADIUSDMG
     +NOTDMATCH
