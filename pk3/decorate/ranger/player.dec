@@ -15,7 +15,6 @@ actor QuakePlayer: PlayerPawn
     Species "Player"
     -THRUSPECIES
     -DONTBLAST
-    //+o
     
     Player.SoundClass "ranger"
     Player.Face "RNG"
