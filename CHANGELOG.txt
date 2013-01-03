@@ -52,6 +52,7 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - Tweaked a few obituaries to be colored properly, and rephrased Ranger's Super Lava Nail obituary to be less awkward.
 - Korax is no longer stupidly weak to ripping weapons.
 - The Marathon 2 Alien Weapon no longer jerks and stutters while firing.
+- The Blue Skull no longer crashes the game at rare opportunities.
 
 
 FROM 0.26 TO 0.27
