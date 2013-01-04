@@ -1687,6 +1687,7 @@ actor Snotfolus 16
     +NOINFIGHTING
     +BOSSDEATH
     +NOTDMATCH
+	+DONTRIP
     //+NOBLOODDECALS
     SeeSound "cyber/sight"
     PainSound "cyber/pain"
@@ -2083,5 +2084,276 @@ actor CycloptisBall
       Death:
         BAL2 CDE 6
         Stop
+    }
+}
+
+
+ACTOR FlemoidusMaximus replaces Flembrane
+{
+	Game Chex
+	SpawnID 3
+	Health 2000 // Previously 1000
+	Radius 24
+	Height 64
+	Mass 1000
+	damagefactor "Flem", 0.0
+	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
+    damagefactor "BFG", 0.75
+    damagefactor "BFGSpray", 0.75
+	Speed 12 // Previously 8
+	PainChance 20
+	Monster
+    MinMissileChance 60
+	+FLOORCLIP
+	+DONTGIB
+    +BOSS 
+    +MISSILEMORE
+	+MISSILEEVENMORE
+    +NORADIUSDMG
+	+DONTRIP
+    +DONTMORPH
+    +BOSSDEATH
+    +NOTARGET
+    +NOINFIGHTING
+    +BOSSDEATH
+    +NOTDMATCH
+	//+NOBLOODDECALS
+	SeeSound "baron/sight"
+	PainSound "baron/pain"
+	DeathSound "baron/death"
+	ActiveSound "baron/active"
+	Obituary "$OB_MAXIMUS"
+	States
+	{
+	Spawn:
+		BOSS AB 10 A_Look 
+		Loop
+	See:
+		BOSS AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		BOSS EF 4 A_FaceTarget
+		BOSS G 4 A_CustomMeleeAttack(random[troopattack](1,8)*3, "spectre/melee", "spectre/melee", "flem")
+		FMAX IJ 4 A_FaceTarget
+		FMAX K 4 A_CustomMeleeAttack(random[troopattack](1,8)*3, "spectre/melee", "spectre/melee", "flem")
+		Goto See
+		
+    Missile:
+		TNT1 A 0 A_Jump(202, "RapidFire")
+	ShotgunSlime:
+		BOSS E 4 A_FaceTarget
+	    BOSS F 4 A_FastChase
+	    TNT1 AAAAAA 0 A_CustomMissile("MaximusBall2",52,20,random(-15,15))
+	    BOSS GGE 3 A_FastChase
+        BOSS E 4 A_FaceTarget
+	    BOSS F 4 A_FastChase
+	    TNT1 AAAAAA 0 A_CustomMissile("MaximusBall2",52,20,random(-15,15))
+	    BOSS GGE 3 A_FastChase
+	    TERM A 0 A_Jump(82, "RapidFire")
+	    TNT1 A 0 A_jump(16, "MegaBall", "Grenade")
+        Goto See
+	RapidFire:
+		TNT1 A 0 A_Jump(124, "Grenade")
+        BOSS EF 1 A_Facetarget
+	    TNT1 A 0 A_CustomMissile("MaximusBall2",52,20,random(-5,5))
+	    BOSS G 1
+	    BOSS EF 1 A_Facetarget
+	    TNT1 A 0 A_CustomMissile("MaximusBall2",52,20,random(-5,5))
+	    BOSS G 1
+		TNT1 A 0 A_Jump(26, "ShotgunSlime")
+	    TNT1 A 0 A_Jump(16, "MegaBall", "Grenade")
+        BOSS E 1 A_Spidrefire
+        Goto RapidFire+1
+		
+	// Heavy attacks. These are only jumped to after a light attack.
+    MegaBall:
+        FMAX IJ 4 A_Facetarget
+	    TNT1 A 0 A_CustomMissile("SnotfolusBall", 52, -20, 0, 0)
+	    FMAX KKII 2 A_FastChase
+	    FMAX IJ 4 A_Facetarget
+	    TNT1 A 0 A_CustomMissile("SnotfolusBall", 52, -20, 0, 0)
+	    FMAX KKII 2 A_FastChase
+	    TNT1 A 0 A_Jump(62, "RapidFire", "Missile") // Chance to start all over again.
+        Goto See
+	Grenade:
+        TNT1 A 0 A_Jump(128, "MegaBall")
+        FMAX I 4 A_FastChase
+	    FMAX J 4 A_Facetarget
+	    TNT1 A 0 A_CustomMissile("SlimeGrenade", 52, -20, 0, 0)
+	    FMAX KKII 2 A_FastChase
+	    FMAX J 4 A_Facetarget
+	    FMAX J 4 A_FastChase
+        FMAX K 8 A_CustomMissile("SlimeGrenade", 52, -20, 0, 0)
+	    FMAX J 4 A_Facetarget
+	    FMAX J 4 A_FastChase
+	    TNT1 A 0 A_CustomMissile("SlimeGrenade", 52, -20, 0, 0)
+	    FMAX KKII 2 A_FastChase
+        FMAX I 4 A_Facetarget
+	    FMAX J 4 A_FastChase
+        FMAX K 4 A_CustomMissile("SlimeGrenade", 52, -20, 0, 0)
+		FMAX I 4 A_FaceTarget
+	    TNT1 A 0 A_Jump(62, "Missile", "MegaBall") // Chance to start all over again, or follow up with a MegaBall.
+		goto See
+		
+
+    Pain:
+        BOSS AAAA 0 A_SpawnDebris("FlemoidGib",1)
+        BOSS A 2 A_Pain
+        Goto See
+		
+	Pain.Zorch:
+	Pain.ZorchPistol:
+		BOSS H  1
+		BOSS H  1 A_Pain
+		Goto See
+		
+	Death.Zorch:
+	Death.ZorchPistol:
+		BOSS I  8
+		BOSS J  8 A_Scream
+		BOSS K  8
+		BOSS L  8 A_NoBlocking
+		BOSS MN 8
+		BOSS O -1 A_BossDeath   
+		Stop
+		
+      Death.DukeDamage:
+      Death.MightyBoot:
+      Death.DukeExplosive:
+      Death.DukeIce:
+      Death.DukePistol:
+        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+	Death:
+	XDeath:
+		FMAX A 5 A_FaceTarget
+        TNT1 A 0 A_PlaySound("flemdie")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(16,20),random(56,62),random(-2,2),random(-2,2),random(5,10))
+        TNT1 A 0 A_CustomMissile("MaximusArmRight",48,8,random(-45,-135),2,random(15,90))
+		FMAX B 15
+        TNT1 A 0 A_PlaySound("flemdie")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(-16,-20),random(56,62),random(-2,2),random(-2,2),random(5,10))
+        TNT1 A 0 A_CustomMissile("MaximusArmLeft",48,-8,random(45,135),2,random(15,90))
+		FMAX C 20
+		TNT1 A 0 A_Pain
+		FMAX C 15
+        TNT1 A 0 A_PlaySound("flemdie2")
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-10,10),random(36,46),random(-2,2),random(-2,2),random(5,25))
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-10,10),random(36,46),random(-2,2),random(-2,2),random(5,20))
+		FMAX DEFG 5
+		FMAX H -1 A_BossDeath
+		stop
+		
+	Raise: // You gave them a raise state?! Oh, Jacobi, if only you knew!
+		BOSS O 8
+		BOSS NMLKJI  8
+		Goto See
+	}
+}
+
+ACTOR MaximusBall2 : SnotfolusBall2
+{
+Damage 4
+Scale 0.925
++STRIFEDAMAGE
+}
+
+ACTOR SlimeGrenade
+{
+   Radius 8
+   Height 8
+   Speed 25
+   FastSpeed 35
+   Damage 10
+   +NOBLOCKMAP 
+   +DROPOFF 
+   +MISSILE 
+   +ACTIVATEIMPACT 
+   +ACTIVATEPCROSS
+   +DONTSPLASH
+   +DOOMBOUNCE
+   -EXTREMEDEATH
+   BounceFactor 0.95
+   Scale 0.75
+   BounceCount 4
+   DamageType "Flem"
+   SeeSound "grunt/attack"
+   DeathSound "flemdie"
+   States
+   {
+   Spawn:
+      BAL2 AB 3
+      Loop
+   Death:
+      TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(-1,1),random(-1,1),random(-2,2),random(-2,2),random(5,10))
+      BAL2 C 4 A_Explode(64,96)
+      BAL2 D 4
+      BAL2 E 4
+      Stop
+   }
+}
+
+actor MaximusArmRight
+{
+    radius 2
+    height 2
+    BounceFactor 0.45
+    BounceCount 7
+    Mass 10
+    Speed 8
+    SeeSound "flemsplat"
+    +DOOMBOUNCE
+    PROJECTILE
+    +NOTELEPORT
+    -NOGRAVITY
+    -SOLID
+    +NOBLOCKMAP
+    +MOVEWITHSECTOR
+    +SKYEXPLODE
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+
+      Spawn2:
+        FMXB ABCDEFGH 5
+        loop
+
+      Death:
+        FMXB C -1
+        stop
+    }
+}
+
+actor MaximusArmLeft
+{
+    radius 2
+    height 2
+    BounceFactor 0.45
+    BounceCount 7
+    Mass 10
+    Speed 8
+    SeeSound "flemsplat"
+    +DOOMBOUNCE
+    PROJECTILE
+    +NOTELEPORT
+    -NOGRAVITY
+    -SOLID
+    +NOBLOCKMAP
+    +MOVEWITHSECTOR
+    +SKYEXPLODE
+    +CLIENTSIDEONLY
+    States
+    {
+      Spawn:
+        TNT1 A 0 ThrustThingZ (0, 24, 0, 1)
+
+      Spawn2:
+        FMXA ABCDEFGH 5
+        loop
+
+      Death:
+        FMXA C -1
+        stop
     }
 }
