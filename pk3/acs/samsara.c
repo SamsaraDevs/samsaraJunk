@@ -237,7 +237,7 @@ script SAMSARA_SPAWN (int respawning)
 
         if (quadTimer == -QUAD_THRESHOLD)
         {
-            if (CheckInventory("CantQuad") && !UnloadingNow)
+            if (CheckInventory("CantQuad") && CheckInventory("QuadDamageItem") && !UnloadingNow)
             {
                 ActivatorSound("quakeweps/quadready", 96);
                 SetHudSize(240, 180, 1);
