@@ -41,7 +41,7 @@ global int 0:CommandBitchingDone;
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
-    int quadcount, clipcount;
+    int clipcount;
     int result;
     
     switch (choice)
@@ -79,9 +79,25 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
       
       case 7:
-        quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
-        GiveInventory("QuakeQuadTimer", quadcount);
-        GiveInventory("QuakeQuadTimer", arg1);
+        if (arg2 != 1)
+        {
+            GiveQuad(arg1);
+        }
+        else
+        {
+            if (GetCVar("lastmanstanding"))
+            {
+                GiveInventory("QuadDamageItem", 1);
+                break;
+            }
+
+            GiveQuad(arg1);
+
+            if (GameType() == GAME_SINGLE_PLAYER || GameType() == GAME_NET_COOPERATIVE)
+            {
+                GiveInventory("QuadDamageItem", 1);
+            }
+        }
         break;
 
       case 8:

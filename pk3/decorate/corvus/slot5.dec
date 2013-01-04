@@ -111,7 +111,7 @@ actor PhoenixShot : PhoenixFX1
     -SPECIALFIREDAMAGE
     +FIREDAMAGE
     Decal Scorch
-    Obituary "%k gave %o the bird."
+    Obituary "%k \cqgave\c- %o \cqthe bird.\c-"
 }
 
 actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }

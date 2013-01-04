@@ -2426,7 +2426,7 @@ actor Dragon2 : Dragon replaces Dragon
         DRAG A 5 A_DragonInitFlight
         DRAG B 3 A_DragonFlap
         DRAG BCCDDCCBBAA 3 A_DragonFlight
-        Goto See + 3
+        Goto See2 + 3
     }
 }
 

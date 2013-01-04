@@ -1,5 +1,9 @@
 actor "Grenade Launcher": InstantSwitchWeapon
 {
+    //Weapon.BobRangeX 0
+    //Weapon.BobRangeY 0.5
+    //Weapon.BobSpeed 1.1
+    //Weapon.BobStyle Alpha
     Weapon.SelectionOrder 3
     
     Weapon.AmmoUse 1

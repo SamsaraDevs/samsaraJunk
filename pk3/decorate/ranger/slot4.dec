@@ -1,5 +1,9 @@
 actor "Nailgun": InstantSwitchWeapon
 {
+    //Weapon.BobRangeX 0
+    //Weapon.BobRangeY 0.5
+    //Weapon.BobSpeed 1.1
+    //Weapon.BobStyle Alpha
     Weapon.Kickback 100
     Weapon.SelectionOrder 5
 

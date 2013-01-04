@@ -315,3 +315,14 @@ function int ammoCount(int ammoname)
 
     return GetAmmoCapacity(ammoname); // not the best of defaults but ya gotta have SOMETHING
 }
+
+function int GiveQuad(int toAdd)
+{
+    int quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
+    GiveInventory("QuakeQuadTimer", quadcount);
+    GiveInventory("QuakeQuadTimer", toAdd);
+
+    quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
+
+    return CheckInventory("QuakeQuadTimer") - max(quadcount, 0);
+}
