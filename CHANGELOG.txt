@@ -22,7 +22,7 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 
 FROM 0.27 TO 0.28
 ========================
-- The realm of Strife has locked in to the Wheel!
+- The realm of Strife has opened up to the Wheel!
 Strife is perhaps the strangest of all the iwads, with the biggest differences in gameplay along with HeXen. Strife focused more on stealth and developing a budding plot, taking part in a rebellion against a tyrannic order hoping to squash all free will. Fight, for the Front and Freedom! Move out!
 
 - The primary and secondary fire of the Security Officer's Assault Rifle are now independent of each other!
@@ -30,8 +30,8 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - Some of the ACS has been repositioned and readjusted for easier organization.
 - The start-up console no longer tells you about samsara_sogravity, but rather samsara_nocustomgravity.
 - The BFG and LAZ Device, with sv_bfgfreeaim off, now support Spread.
-- Ranger now has a wimpy death sound in Heretic.
-- The Grenade Launcher's Grenades now properly go up and down lifts.
+- Ranger now no longer has Corvus' wimpy death sound in Heretic.
+- Ranger's Grenade Launcher's Grenades now properly go up and down lifts.
 - Weapon III drops by Riot Shotgunners now properly respect Ranger and give him the Grenade Launcher.
 - The Weapon III drops by Riot Shotgunners now have caught up with the conversion to ACS-based weapon giving.
 - Ranger now gets some Lava Nail and Multi Rocket ammo in Last Man Standing.
@@ -50,9 +50,11 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - The Death Wyvern no longer vigorously and passionately humps the first Ettin it sees on spawn.
 - For ZDoom, Duke Nukem now has his proper weaponbobs. The only thing different is that the bobspeed doesn't depend on Duke's movespeed.
 - Tweaked a few obituaries to be colored properly, and rephrased Ranger's Super Lava Nail obituary to be less awkward.
-- Korax is no longer stupidly weak to ripping weapons.
+- Korax and Snotfolus are no longer stupidly weak to ripping weapons.
 - The Marathon 2 Alien Weapon no longer jerks and stutters while firing.
 - The Blue Skull no longer crashes the game at rare opportunities.
+- The Quad Damage's function has been tweaked. It loses its Quake 2 inventory hold thing when in DM, functioning more like Quake. In Last Man Standing, it no longer activates on spawn.
+- The Flemoid Maximus is now a proper boss in Chex Quest, and now has proper compatibility--splatters and all.
 
 
 FROM 0.26 TO 0.27
