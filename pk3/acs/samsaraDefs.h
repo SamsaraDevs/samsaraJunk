@@ -179,7 +179,7 @@ int Tipboxes[CLASSCOUNT][TIPCOUNT] =
 
 int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
 {
-    {"", "DOOMTIP3"},
+    {"", ""},
     {"", "CHEXTIP3"},
     {"", "HERETIP3"},
     {"", "WOLFTIP3"},

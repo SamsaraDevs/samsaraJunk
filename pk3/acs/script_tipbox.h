@@ -29,6 +29,12 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
     int pln = PlayerNumber();
 
     int i, j, modc, modn, modx, mody, classmod, tipscroll;
+    int isDM;
+
+    if (GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+    {
+        isDM = 1;
+    }
 
     // Comment out for ZDoom
     if (ConsolePlayerNumber() != pln) { terminate; } // Unnecessary but nice to not have assumptions made
@@ -57,7 +63,11 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
             //if (modx < 0) { modx -= 0.6; }
             //else { modx += 0.4; }
 
-            SetFont(Tipboxes[modc][modn]);
+            j = "";
+            if (isDM) { j = DMTipboxes[modc][modn]; }
+            if (j == "") { j = Tipboxes[modc][modn]; }
+
+            SetFont(j);
             HudMessage(s:"A"; HUDMSG_FADEOUT, -6281 + i, CR_UNTRANSLATED, modx, 384.0, 1.0, 0.5);
         }
 
@@ -80,7 +90,6 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
         }
 
         tipclass = mod(tipclass, CLASSCOUNT);
-        Print(f:tipscroll, s:", ", d:classMod, s:", ", d:tipClass);
 
         tipnum -= keyPressed(BT_FORWARD) + keyPressed(BT_LOOKUP);
         tipnum += keyPressed(BT_BACK) + keyPressed(BT_LOOKDOWN);
