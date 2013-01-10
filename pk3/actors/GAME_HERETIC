@@ -105,33 +105,19 @@ Actor HereticStuffDump replaces GoldWandHefty
 		stop
 	}
 }
-Actor HereticAmmoDump replaces MaceAmmo
+Actor HereticAmmoDump : RandomSpawner replaces MaceAmmo
 {
 	DropItem HereticAmmo1Small
 	DropItem HereticAmmo2Small
 	DropItem HereticAmmo3Small
 	DropItem HereticAmmo4Small
-	States
-	{
-	Spawn:
-		ACLO E 1
-		TNTA A 0 A_NoBlocking
-		stop
-	}
 }
-Actor HereticAmmoDump2 replaces MaceHefty
+Actor HereticAmmoDump2 : RandomSpawner replaces MaceHefty
 {
 	DropItem HereticAmmo1Big
 	DropItem HereticAmmo2Big
 	DropItem HereticAmmo3Big
 	DropItem HereticAmmo4Big
-	States
-	{
-	Spawn:
-		ACLO E 1
-		TNTA A 0 A_NoBlocking
-		stop
-	}
 }
 
 Actor HereticHealPack0 : HealPack0 replaces GoldWandAmmo { }
