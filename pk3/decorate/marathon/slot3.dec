@@ -2,7 +2,7 @@ actor FusionChargeLevel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.M
 actor FusionChargan : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 7 }
 actor UsingFusionPistol : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 
-actor "Fusion Pistol" : Weapon// replaces PlasmaRifle
+actor "Fusion Pistol" : Weapon
 {
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
@@ -230,10 +230,10 @@ actor FusionBullet : Ammo
 actor FusionShot
 {
     Decal DoomImpScorch
-    Radius 6
-    Height 8
+    Radius 10
+    Height 12
     Speed 25
-    Damage (30+random(0,10))
+    Damage (random(40,50))
     DamageType "MarathonFusion"
     Scale 0.35
     DeathSound "marathon/fusion/hit"
@@ -255,6 +255,8 @@ actor FusionShot
 
 actor FusionShotCoop : FusionShot
 {
+    Radius 6
+    Height 8
     Speed 20
     +THRUSPECIES
     Species "Player"
@@ -266,7 +268,7 @@ actor FusionShotWater
     Radius 6
     Height 8
     Speed 20
-    Damage 0//(30+random(0,10))
+    Damage 0
     DamageType "MarathonFusion"
     Scale 0.35
     DeathSound "marathon/fusion/hit"
@@ -289,10 +291,10 @@ actor FusionShotWater
 actor FusionSuper
 {
     Decal Scorch
-    Radius 8
-    Height 8
+    Radius 12
+    Height 14
     Speed 35
-    Damage (80+random(0,20))
+    Damage (random(90,120))
     DamageType "MarathonFusion"
     Scale 0.75
     DeathSound "marathon/fusion/hit"
@@ -314,6 +316,8 @@ actor FusionSuper
 
 actor FusionSuperCoop : FusionSuper
 {
+    Radius 10
+    Height 12
     Speed 30
     +THRUSPECIES
     Species "Player"
@@ -342,7 +346,7 @@ actor FusionShotWater2
     Radius 6
     Height 8
     Speed 30
-    Damage 0//(80+random(0,20))
+    Damage 0
     DamageType "MarathonFusion"
     Scale 0.75
     DeathSound "marathon/fusion/hit"
