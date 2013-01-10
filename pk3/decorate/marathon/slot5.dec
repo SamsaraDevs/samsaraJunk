@@ -441,7 +441,7 @@ actor LauncherRocket
         LOOP
 
       Death:
-        RHIT A 5 Bright A_Explode(200+random(0,50),160)//A_Explode(250+random(0,50),96)
+        RHIT A 5 Bright A_Explode(250+random(0,50),192)//A_Explode(250+random(0,50),96)
         RHIT BCD 5 Bright
         STOP
     }
@@ -455,7 +455,7 @@ actor LauncherRocketCoop : LauncherRocket
     States
     {
       Death:
-        RHIT A 5 Bright A_Explode(300+random(0,50),160)//A_Explode(250+random(0,50),96)
+        RHIT A 5 Bright A_Explode(300+random(0,50),192)//A_Explode(250+random(0,50),96)
         RHIT BCD 5 Bright
         STOP
     }
