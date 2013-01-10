@@ -91,17 +91,16 @@ States
      loop
 }}
 Actor HereticAmmoBackpack : AmmoBackpack replaces BagOfHolding { }
-Actor HereticStuffDump replaces GoldWandHefty
+Actor HereticStuffDump : HealPack0 replaces GoldWandHefty
 {
-	DropItem HealPack0
-	DropItem HealPack0
-	DropItem HealPack0
-	DropItem HealPack0
+	Scale 0.3
+  	Inventory.Amount 4
+        Inventory.PickupMessage "Picked up 4 Health."
+        Health.LowMessage 25, "Picked up 4 Health."
 	States
 	{
 	Spawn:
-		ACLO E 1
-		TNTA A 0 A_NoBlocking
+		MEDI V -1 BRIGHT
 		stop
 	}
 }
@@ -124,18 +123,15 @@ Actor HereticHealPack0 : HealPack0 replaces GoldWandAmmo { }
 Actor HereticHealPack1 : HealPack1 replaces CrystalVial { }
 Actor HereticHealPack2 : HealPack2 replaces ArtiHealth { }
 Actor HereticSuperHealth : SuperHealth replaces ArtiSuperHealth { }//Inventory.PickupAnnouncerEntry "" }
-Actor HereticArmorDump replaces ArtiTimeBomb
+Actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
 {
-	DropItem ArmorScrap
-	DropItem ArmorScrap
-	DropItem ArmorScrap
-	DropItem ArmorScrap
-	DropItem ArmorScrap
+	Scale 0.55
+        Armor.Saveamount 5
+    Inventory.Pickupmessage "Picked up 5 Armor."
 	States
 	{
 	Spawn:
-		ACLO E 1
-		TNTA A 0 A_NoBlocking
+		BON3 A -1 bright
 		stop
 	}
 }
