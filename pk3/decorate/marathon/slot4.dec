@@ -330,7 +330,7 @@ actor "MA-75B Assault Rifle" : Weapon// replaces Chaingun
 
 actor MarathonARBullet : FastProjectile
 {
-    Damage (random(9, 15))
+    Damage (15)
     Radius 8
     Height 8
     Speed 100
@@ -364,6 +364,7 @@ actor MarathonARBullet : FastProjectile
 
 actor MarathonARBulletCoop : MarathonARBullet
 {
+    Damage (random(9, 15))
     Radius 1
     Height 1
     Speed 80
