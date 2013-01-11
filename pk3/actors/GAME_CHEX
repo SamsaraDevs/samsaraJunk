@@ -84,23 +84,23 @@ actor FlemoidSplatSpot
         TNT1 A 0 A_Jump(256,"DeathA","DeathB","DeathC","DeathD")
 
       DeathA:
-        BSPT A 1500
-        BSPT AAAAAAAAAA 15 A_FadeOut(0.1)
+        FSPT A 1500
+        FSPT AAAAAAAAAA 15 A_FadeOut(0.1)
         stop
 
       DeathB:
-        BSPT B 1500
-        BSPT BBBBBBBBBB 15 A_FadeOut(0.1)
+        FSPT B 1500
+        FSPT BBBBBBBBBB 15 A_FadeOut(0.1)
         stop
 
       DeathC:
-        BSPT C 1500
-        BSPT CCCCCCCCCC 15 A_FadeOut(0.1)
+        FSPT C 1500
+        FSPT CCCCCCCCCC 15 A_FadeOut(0.1)
         stop
 
       DeathD:
-        BSPT D 1500
-        BSPT DDDDDDDDDD 15 A_FadeOut(0.1)
+        FSPT D 1500
+        FSPT DDDDDDDDDD 15 A_FadeOut(0.1)
         stop
     }
 }
@@ -116,10 +116,10 @@ actor FlemoidGibTrail
     states
     {
       Spawn:
-        BTRL A 4
-        BTRL B 4
-        BTRL C 4
-        BTRL D 4
+        FTRL A 4
+        FTRL B 4
+        FTRL C 4
+        FTRL D 4
         stop
     }
 }
