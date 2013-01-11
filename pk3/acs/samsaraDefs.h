@@ -27,6 +27,10 @@
 #define SAMSARA_CLIENT_CLASS        228
 #define SAMSARA_RECOIL              312
 
+#define SAMSARA_STRIFEACCURACY      313
+#define SAMSARA_CLIENT_ACCURACY     314
+#define SAMSARA_BEACON              315
+
 #define SAMSARA_CL_VERSION          2601
 
 #define CLASSCOUNT          8
@@ -175,7 +179,7 @@ int Tipboxes[CLASSCOUNT][TIPCOUNT] =
 
 int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
 {
-    {"", "DOOMTIP3"},
+    {"", ""},
     {"", "CHEXTIP3"},
     {"", "HERETIP3"},
     {"", "WOLFTIP3"},

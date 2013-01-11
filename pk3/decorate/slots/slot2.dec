@@ -1,5 +1,7 @@
 actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
 {
+    ConversationID 194
+
     States
     {
       IWasDropped:

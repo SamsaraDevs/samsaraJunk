@@ -22,4 +22,6 @@
 #include "actors/GAME_CHAOS"
 #include "actors/GAME_TERRAINCOGNITA"
 
+#include "decorate/game_strife.dec"
+
 #include "actors/KEYS"

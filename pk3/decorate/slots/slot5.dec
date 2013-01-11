@@ -1,5 +1,7 @@
 actor SamsaraSlotFivePickup: SamsaraSlotPickup replaces RocketLauncher
 {
+    ConversationID 195
+
     States
     {
       IWasDropped:
@@ -69,3 +71,5 @@ actor SamsaraSlotFive_Heretic: SamsaraSlotFivePickup replaces PhoenixRod {}
 
 actor SamsaraSlotFive_Hexen1:  SamsaraSlotFivePickup replaces CWeaponPiece3 {}
 actor SamsaraSlotFive_Hexen2:  SamsaraSlotFivePickup replaces MWeaponPiece2 {}
+
+actor SamsaraSlotFive_Strife:  SamsaraSlotFivePickup replaces StrifeGrenadeLauncher {}

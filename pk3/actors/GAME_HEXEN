@@ -400,6 +400,7 @@ Actor PowerQuackQuarterDamage : PowerDamage
   Powerup.Color "00 50 FF", 0.1
   Powerup.Duration -60
   DamageFactor "Pistol", 1.25
+  DamageFactor "DoomFist", 1.25
   DamageFactor "ZorchPistol", 1.25
   DamageFactor "TimonsAxe", 1.25
   DamageFactor "Mace", 1.25
@@ -583,6 +584,7 @@ actor FireDemon2 : FireDemon replaces FireDemon
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 2
     DamageFactor "Pistol", 2
+    DamageFactor "DoomFist", 2
     DamageFactor "ZorchPistol", 2
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -735,6 +737,7 @@ actor Ettin2 : Ettin replaces Ettin
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -896,6 +899,7 @@ actor Centaur2 : Centaur replaces Centaur
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1031,6 +1035,7 @@ actor CentaurLeader2 : CentaurLeader replaces CentaurLeader
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1200,6 +1205,7 @@ actor Demon1B : Demon1 replaces Demon1
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1371,6 +1377,7 @@ actor Demon2B : Demon2 replaces Demon2
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1534,6 +1541,7 @@ actor IceGuy2 : IceGuy replaces IceGuy
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1634,6 +1642,7 @@ actor Serpent2 : Serpent replaces Serpent
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1761,6 +1770,7 @@ actor SerpentLeader2 : SerpentLeader replaces SerpentLeader
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -1894,6 +1904,7 @@ actor Bishop2 : Bishop replaces Bishop
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -2025,6 +2036,7 @@ actor Wraith2 : Wraith replaces Wraith
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -2147,6 +2159,7 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
     DamageFactor "MarathonPistol", 1.5
     DamageFactor "DukePistol", 3
     DamageFactor "Pistol", 3
+    DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
     DamageFactor "TimonsAxe", 1.2
     DamageFactor "Normal", 1.15
@@ -2317,6 +2330,7 @@ actor Dragon2 : Dragon replaces Dragon
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "TimonsAxe", 1.5
     DamageFactor "Normal", 0.9
@@ -2425,6 +2439,7 @@ actor Heresiarch2 : Heresiarch replaces Heresiarch
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "TimonsAxe", 1.1
     DamageFactor "Normal", 1.1
@@ -2541,6 +2556,7 @@ actor FighterBoss2 : FighterBoss replaces FighterBoss
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "TimonsAxe", 1.1
     DamageFactor "Normal", 0.9
@@ -2668,6 +2684,7 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "TimonsAxe", 1.1
     DamageFactor "Normal", 0.9
@@ -2778,6 +2795,7 @@ actor MageBoss2 : MageBoss replaces MageBoss
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "TimonsAxe", 1.1
     DamageFactor "Normal", 0.9
@@ -2897,6 +2915,7 @@ actor Korax2 : Korax replaces Korax
     DamageFactor "MarathonPistol", 1.25
     DamageFactor "DukePistol", 1.5
     DamageFactor "Pistol", 1.75
+    DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
     DamageFactor "BFG", 0.5
     DamageFactor "BFGSpray", 0.5
@@ -2909,6 +2928,7 @@ actor Korax2 : Korax replaces Korax
     Health 10000
     PainChance 10
     Speed 20
+    +DONTRIP
     +INVULNERABLE
     +NORADIUSDMG
     +NOTDMATCH

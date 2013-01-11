@@ -183,8 +183,8 @@ StatusBar Fullscreen
     GameMode OneFlagCTF, CTF, Skulltag, TeamPossession
     {
         DrawNumber 3, INDEXFON, White, KillCountAmountTrue, 70, 170;
-        Drawnumber 2, INDEXFON, brick, teamscore "red", 45, 170;
-        Drawnumber 2, INDEXFON, lightblue, teamscore "blue", 55, 170;
+        //Drawnumber 2, INDEXFON, brick, teamscore "red", 45, 170;
+        //Drawnumber 2, INDEXFON, lightblue, teamscore "blue", 55, 170;
     }
     //Keys
     GameMode Cooperative, SinglePlayer

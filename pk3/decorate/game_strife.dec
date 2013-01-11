@@ -1,0 +1,10 @@
+#include "decorate/game_strife/pickups.dec"
+#include "decorate/game_strife/accuracy.dec"
+
+#include "decorate/game_strife/rebels.dec"
+#include "decorate/game_strife/acolytes.dec"
+#include "decorate/game_strife/crusader.dec"
+#include "decorate/game_strife/templar.dec"
+
+#include "decorate/game_strife/beacon.dec"
+#include "decorate/game_strife/allies.dec"

@@ -1,0 +1,364 @@
+actor StrifeAcolyteDrop: CustomInventory
+{
+    Inventory.PickupMessage "Picked up 5 rounds of Ammo 1."
+    Inventory.PickupSound "ammo/bulletsmall"
+
+    States
+    {
+      Spawn:
+        BLIT A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",5)
+        stop
+
+      PickupFail:
+        CLIP B 1
+        fail
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 1 A_GiveInventory("Clip",10)
+        stop
+    }
+}
+
+actor Acolyte2: Acolyte replaces Acolyte
+{
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+
+    +THRUGHOST
+    +NOTDMATCH
+    +NOICEDEATH
+
+    States
+    {
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+
+      XDeath:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::XDeath"
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        AGRD E 8 A_FaceTarget
+        AGRD FE 4 A_ShootGun
+        AGRD F 6 A_ShootGun
+        Goto See
+
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        AGRD O 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        AGRD O 16 A_Pain
+        Goto See
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        AGRD O 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        AGRD O 3 A_SpawnItem("ZorchEffectSmall")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        AGRD O 3 A_SetTranslucent(0.9,0)
+        AGRD O 0 A_Scream
+        AGRD O 3 A_SetTranslucent(0.8,0)
+        AGRD O 0 A_NoBlocking
+        AGRD O 3 A_SetTranslucent(0.7,0)
+        AGRD O 3 A_SetTranslucent(0.6,0)
+        AGRD O 3 A_SetTranslucent(0.5,0)
+        AGRD O 3 A_SetTranslucent(0.4,0)
+        AGRD O 3 A_SetTranslucent(0.3,0)
+        AGRD O 3 A_SetTranslucent(0.2,0)
+        AGRD O 3 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        //TNT1 A 0 A_NoBlocking
+        //TNT1 A 0 A_SpawnItem("NaziFrozen")
+        AGRD O 0 A_GenericFreezeDeath
+        AGRD O 70 A_UnsetSolid
+        AGRD O 0 A_IceGuyDie
+        AGRD O 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+    }
+}
+
+actor AcolyteTan2: Acolyte2 replaces AcolyteTan
+{
+    ConversationID 53
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    DropItem "ClipOfBullets2"
+}
+
+actor AcolyteRed2: Acolyte2 replaces AcolyteRed
+{
+    ConversationID 54
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "128:143=64:79"
+    DropItem "ClipOfBullets2"
+}
+
+actor AcolyteGold2: Acolyte2 replaces AcolyteGold
+{
+    ConversationID 58
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "128:143=80:95"
+}
+
+actor AcolyteGray2: Acolyte2 replaces AcolyteGray
+{
+    ConversationID 56
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "128:143=16:31"
+}
+
+actor AcolyteDGreen2: Acolyte2 replaces AcolyteDGreen
+{
+    ConversationID 57
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "128:143=53:63"
+}
+
+actor AcolyteLGreen2: Acolyte2 replaces AcolyteLGreen
+{
+    Health 60
+    ConversationID 59
+    Translation "128:143=96:111"
+}
+
+actor AcolyteRust2: Acolyte2 replaces AcolyteRust
+{
+    ConversationID 55
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "128:143=176:191"
+}
+
+actor AcolyteShadow2: Acolyte2 replaces AcolyteShadow
+{
+    ConversationID 61
+    +MISSILEMORE
+
+    States
+    {
+      See:
+        AGRD A 6 A_BeShadowyFoe
+        Goto Super::See+1
+
+      Pain:
+        AGRD O 0 A_SetShadow
+        AGRD O 8 A_Pain
+        Goto See
+    }
+}
+
+actor AcolyteToBe2: Acolyte2 replaces AcolyteToBe
+{
+    ConversationID 29
+    Health 61
+    Radius 20
+    Height 56
+    DeathSound "becoming/death"
+    -COUNTKILL
+    -ISMONSTER
+    States
+    {
+      Spawn:
+        ARMR A -1
+        Stop
+
+      Pain:
+        ARMR A -1 //A_HideDecepticon // Only inherits from AcolyteToBe. Interesting.
+        Stop
+
+      Death:
+        Goto XDeath
+    }
+}
+
+actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives a quest-related item dependant on whether it's a Blue acolyte or not. Interesting.
+{
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    Translation "128:143=144:159"
+    +THRUGHOST
+    +NOTDMATCH
+    +NOICEDEATH
+    
+    States
+    {
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        AGRD G 4
+        AGRD H 4 A_Scream
+        AGRD I 4
+        AGRD J 3
+        AGRD K 3 A_NoBlocking
+        AGRD L 3
+        AGRD M 3 A_AcolyteDie
+        AGRD N -1
+        Stop
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+
+      XDeath:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        GIBS A 5 A_NoBlocking
+        GIBS BC 5 A_TossGib
+        GIBS D 4 A_TossGib
+        GIBS E 4 A_XScream
+        GIBS F 4 A_TossGib
+        GIBS GH 4
+        GIBS I 5
+        GIBS J 5 A_AcolyteDie
+        GIBS K 5
+        GIBS L 1400
+        Stop
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        AGRD E 8 A_FaceTarget
+        AGRD FE 4 A_ShootGun
+        AGRD F 6 A_ShootGun
+        Goto See
+
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        AGRD O 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        AGRD O 16 A_Pain
+        Goto See
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        AGRD O 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        AGRD O 3 A_SpawnItem("ZorchEffectSmall")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        AGRD O 3 A_SetTranslucent(0.9,0)
+        AGRD O 0 A_Scream
+        AGRD O 3 A_SetTranslucent(0.8,0)
+        AGRD O 0 A_NoBlocking
+        AGRD O 3 A_SetTranslucent(0.7,0)
+        AGRD O 3 A_SetTranslucent(0.6,0)
+        AGRD O 3 A_SetTranslucent(0.5,0)
+        AGRD O 3 A_SetTranslucent(0.4,0)
+        AGRD O 3 A_SetTranslucent(0.3,0)
+        AGRD O 3 A_SetTranslucent(0.2,0)
+        AGRD O 3 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        AGRD O 0 A_GenericFreezeDeath
+        AGRD O 70 A_UnsetSolid
+        AGRD O 0 A_IceGuyDie
+        AGRD O 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+    }
+}
+

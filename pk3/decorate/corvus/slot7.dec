@@ -101,6 +101,7 @@ actor PowerTomeProtection : PowerProtection
     Powerup.Duration -90
     damagefactor "normal", 0.55
     damagefactor "Pistol", 0.55
+    DamageFactor "DoomFist", 1.5
     damagefactor "ZorchPistol", 0.55
     damagefactor "TimonsAxe", 0.55
     damagefactor "zorch", 0.55

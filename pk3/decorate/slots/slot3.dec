@@ -1,5 +1,7 @@
 actor SamsaraSlotThreePickup: SamsaraSlotPickup replaces SuperShotgun
 {
+    ConversationID 192
+
     States
     {
       IWasDropped:
@@ -75,3 +77,4 @@ actor SamsaraSlotThreeDrop: SamsaraSlotThreePickup
 actor SamsaraSlotThree_Allmap:  SamsaraSlotThreePickup replaces Allmap {}
 actor SamsaraSlotThree_Chex:    SamsaraSlotThreePickup replaces SuperLargeZorcher {}
 actor SamsaraSlotThree_Hexen:   SamsaraSlotThreePickup replaces CWeapFlame {}
+actor SamsaraSlotThree_Strife:  SamsaraSlotThreePickup replaces MiniMissileLauncher {}

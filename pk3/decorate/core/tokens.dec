@@ -46,7 +46,7 @@ actor WeaponGetYaaaay : Ammo
     states
     {
       Spawn:
-        TNT1 A 35
+        TNT1 A 1
         stop
     }
 }
@@ -67,7 +67,7 @@ actor WeaponGetYaaaay2 : Weapon
     states
     {
       Spawn:
-        TNT1 A -1
+        TNT1 A 1
         stop
 
       Select:

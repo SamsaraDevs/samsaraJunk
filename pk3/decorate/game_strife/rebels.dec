@@ -1,0 +1,141 @@
+actor RebelB : Rebel replaces Rebel
+{
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    //DropItem "ClipOfBullets2"
+    +THRUGHOST
+    +NOTDMATCH
+    +NOICEDEATH
+    states
+    {
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+
+      XDeath:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::XDeath"
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        HMN1 E 10 A_FaceTarget
+        HMN1 F 10 BRIGHT A_ShootGun
+        HMN1 E 10 A_ShootGun
+        Goto See
+
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        HMN1 O 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        HMN1 O 16 A_Pain
+        Goto See
+
+      Death.ZorchPistol:
+
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        HMN1 O 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        HMN1 O 3 A_SpawnItem("ZorchEffectSmall")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        HMN1 O 3 A_SetTranslucent(0.9,0)
+        HMN1 O 0 A_Scream
+        HMN1 O 3 A_SetTranslucent(0.8,0)
+        HMN1 O 0 A_NoBlocking
+        HMN1 O 3 A_SetTranslucent(0.7,0)
+        HMN1 O 3 A_SetTranslucent(0.6,0)
+        HMN1 O 3 A_SetTranslucent(0.5,0)
+        HMN1 O 3 A_SetTranslucent(0.4,0)
+        HMN1 O 3 A_SetTranslucent(0.3,0)
+        HMN1 O 3 A_SetTranslucent(0.2,0)
+        HMN1 O 3 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        //TNT1 A 0 A_NoBlocking
+        //TNT1 A 0 A_SpawnItem("NaziFrozen")
+        HMN1 O 0 A_GenericFreezeDeath
+        HMN1 O 70 A_UnsetSolid
+        HMN1 O 0 A_IceGuyDie
+        HMN1 O 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+    }
+}
+
+actor Rebel1B : RebelB replaces Rebel1
+{
+    ConversationID 43
+    DropItem "StrifeAcolyteDrop"
+}
+
+actor Rebel2B : RebelB replaces Rebel2
+{
+    ConversationID 44
+}
+
+actor Rebel3B : RebelB replaces Rebel3
+{
+    ConversationID 45
+}
+
+actor Rebel4B : RebelB replaces Rebel4
+{
+    ConversationID 46
+}
+
+actor Rebel5B : RebelB replaces Rebel5
+{
+    ConversationID 47
+}
+
+actor Rebel6B : RebelB replaces Rebel6
+{
+    ConversationID 48
+}
+
