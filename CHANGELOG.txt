@@ -57,6 +57,7 @@ Strife is perhaps the strangest of all the iwads, with the biggest differences i
 - The Quad Damage's function has been tweaked. It loses its Quake 2 inventory hold thing when in DM, functioning more like Quake. In Last Man Standing, it no longer activates on spawn.
 - The Flemoid Maximus is now a proper boss in Chex Quest, and now has proper compatibility--splatters and all.
 - The DM tipboxes weren't showing before, for some reason. Now they show properly.
+- Doomguy/Ranger no longer sound like a dubbed anime boy when puzzfail.
 
 
 FROM 0.26 TO 0.27
