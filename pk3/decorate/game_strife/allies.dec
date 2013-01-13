@@ -31,7 +31,7 @@ actor FriendlyDoomImp : DoomImp2
       Melee:
       Missile:
         TRO2 EF 8 A_FaceTarget
-        TRO2 G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, 3 * random(1, 8), "imp/melee")//A_TroopAttack
+        TRO2 G 6 A_CustomComboAttack("FriendlyDoomImpBall", 32, 3 * random(1, 8), "friendlyimp/melee")//A_TroopAttack
         Goto See
 
       Pain:
@@ -227,7 +227,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
       Missile:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         BPFL EF 6 A_FaceTarget // Previously 8 each
-        BPFL E 6 A_CustomComboAttack("FriendlyFlemBall", 32, random[troopattack](1,8)*3, "flem/melee", "flem")
+        BPFL E 6 A_CustomComboAttack("FriendlyFlemBall", 32, random[troopattack](1,8)*3, "friendlyflemoid/shotx", "flem")
         Goto See
     }
 }
@@ -236,8 +236,8 @@ actor FriendlyFlemBall : BipedicusBallV3
 {
     +THRUSPECIES
     Species "Player"
-    SeeSound "flem/attack"
-    DeathSound "flem/shotx"
+    SeeSound "friendlyflemoid/flem"
+    DeathSound "friendlyflemoid/shotx"
     States
     {
       Spawn:

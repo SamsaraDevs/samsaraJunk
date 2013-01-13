@@ -43,6 +43,79 @@ tome/lesser		LESRTOME // Taken from Unreal Tournament 2003
 archvile/resummon	VILESMMN // Taken from Fatal/Fake
 
 ////////////////////
+// Ally sounds for Strife's beacons
+////////////////////
+
+// Imp
+$random friendlyimp/sight	{ imp/sight1  imp/sight2 }
+$random friendlyimp/death	{ imp/death1  imp/death2 }
+friendlyimp/sight1		allies/dimpsit1
+friendlyimp/sight2		allies/dimpsit2
+friendlyimp/active		allies/dimpact
+friendlyimp/pain		allies/dimppain
+friendlyimp/melee		allies/dimpclaw
+friendlyimp/death1		allies/dimpdth1
+friendlyimp/death2		allies/dimpdth2
+friendlyimp/attack		allies/dimpshot
+friendlyimp/shotx		allies/dimpxpl
+$limit friendlyimp/active 6
+
+// Bipedal Flemoid
+$random friendlyflemoid/sight	{ friendlyflemoid/sight1 friendlyflemoid/sight2 friendlyflemoid/sight3 }
+friendlyflemoid/sight1		allies/cflesit1
+friendlyflemoid/sight2		allies/cflesit2
+friendlyflemoid/sight3		allies/cflesit3
+//friendlyflemoid/attack
+friendlyflemoid/pain		allies/cflepain
+$random friendlyflemoid/death	{ friendlyflemoid/zorch1 friendlyflemoid/zorch2 friendlyflemoid/zorch3 }
+friendlyflemoid/zorch1		allies/cfledth1
+friendlyflemoid/zorch2		allies/cfledth2
+friendlyflemoid/zorch3		allies/cfledth3
+//friendlyflemoid/active
+friendlyflemoid/flem		allies/cflemsht
+$random friendlyflemoid/shotx	{ friendlyflemoid/splat1 friendlyflemoid/splat2 friendlyflemoid/splat3 friendlyflemoid/splat4 }
+friendlyflemoid/splat1		allies/cfsplat1
+friendlyflemoid/splat2		allies/cfsplat2
+friendlyflemoid/splat3		allies/cfsplat3
+friendlyflemoid/splat4		allies/cfsplat4
+
+// Nitrogolem
+mummy/sight			allies/mumsit
+mummy/attack1			allies/mumat1
+mummy/attack2			allies/mumat2
+mummy/pain			allies/mumpai
+mummy/death			allies/mumdth
+mummy/active			allies/mumsit
+mummy/head			allies/mumhed
+
+// Nazi
+friendlynazi/sight		allies/nazisit
+friendlynazi/pain		allies/nazipain
+$random friendlynazi/death	{ nazi/die1 nazi/die2 nazi/die3 nazi/die4 nazi/die5 nazi/die6 nazi/die7 }
+friendlynazi/active		silence
+friendlynazi/attack		allies/nazishot
+nazi/die1			allies/nazidie1
+nazi/die2			allies/nazidie2
+nazi/die3			allies/nazidie3
+nazi/die4			allies/nazidie4
+nazi/die5			allies/nazidie5
+nazi/die6			allies/nazidie6
+nazi/die7			allies/nazidie7
+
+// Afrit
+FireDemonActive         	allies/fired5
+FireDemonPain           	allies/fired2
+FireDemonAttack         	allies/spit6
+FireDemonMissileHit     	allies/firedhit
+FireDemonDeath          	allies/fired3
+
+// Alien Trooper
+
+// Pfhor Trooper
+
+// Grunt
+
+////////////////////
 // Doomguy sounds
 ////////////////////
 $playersound	Doomguy	 male	*death			dgdeth
