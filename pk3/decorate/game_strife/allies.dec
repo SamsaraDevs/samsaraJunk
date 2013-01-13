@@ -305,8 +305,8 @@ ACTOR FriendlyNazi
         NGRD I 5
         NGRD J 5 A_Scream
         NGRD K 5 A_NoBlocking
-        NGRD L 5
-        NGRD M -1
+        NGRD LM 5
+        NGRD N -1
         Stop
     }
 }
