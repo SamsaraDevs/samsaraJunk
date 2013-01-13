@@ -49,65 +49,65 @@ archvile/resummon	VILESMMN // Taken from Fatal/Fake
 // Imp
 $random friendlyimp/sight	{ imp/sight1  imp/sight2 }
 $random friendlyimp/death	{ imp/death1  imp/death2 }
-friendlyimp/sight1		allies/dimpsit1
-friendlyimp/sight2		allies/dimpsit2
-friendlyimp/active		allies/dimpact
-friendlyimp/pain		allies/dimppain
-friendlyimp/melee		allies/dimpclaw
-friendlyimp/death1		allies/dimpdth1
-friendlyimp/death2		allies/dimpdth2
-friendlyimp/attack		allies/dimpshot
-friendlyimp/shotx		allies/dimpxpl
+friendlyimp/sight1		sounds/allies/dimpsit1.wav
+friendlyimp/sight2		sounds/allies/dimpsit2.wav
+friendlyimp/active		sounds/allies/dimpact.wav
+friendlyimp/pain		sounds/allies/dimppain.wav
+friendlyimp/melee		sounds/allies/dimpclaw.wav
+friendlyimp/death1		sounds/allies/dimpdth1.wav
+friendlyimp/death2		sounds/allies/dimpdth2.wav
+friendlyimp/attack		sounds/allies/dimpshot.wav
+friendlyimp/shotx		sounds/allies/dimpxpl.wav
 $limit friendlyimp/active 6
 
 // Bipedal Flemoid
 $random friendlyflemoid/sight	{ friendlyflemoid/sight1 friendlyflemoid/sight2 friendlyflemoid/sight3 }
-friendlyflemoid/sight1		allies/cflesit1
-friendlyflemoid/sight2		allies/cflesit2
-friendlyflemoid/sight3		allies/cflesit3
+friendlyflemoid/sight1		sounds/allies/cflesit1.wav
+friendlyflemoid/sight2		sounds/allies/cflesit2.wav
+friendlyflemoid/sight3		sounds/allies/cflesit3.wav
 //friendlyflemoid/attack
-friendlyflemoid/pain		allies/cflepain
+friendlyflemoid/pain		sounds/allies/cflepain.wav
 $random friendlyflemoid/death	{ friendlyflemoid/zorch1 friendlyflemoid/zorch2 friendlyflemoid/zorch3 }
-friendlyflemoid/zorch1		allies/cfledth1
-friendlyflemoid/zorch2		allies/cfledth2
-friendlyflemoid/zorch3		allies/cfledth3
+friendlyflemoid/zorch1		sounds/allies/cfledth1.wav
+friendlyflemoid/zorch2		sounds/allies/cfledth2.wav
+friendlyflemoid/zorch3		sounds/allies/cfledth3.wav
 //friendlyflemoid/active
-friendlyflemoid/flem		allies/cflemsht
+friendlyflemoid/flem		sounds/allies/cflemsht.wav
 $random friendlyflemoid/shotx	{ friendlyflemoid/splat1 friendlyflemoid/splat2 friendlyflemoid/splat3 friendlyflemoid/splat4 }
-friendlyflemoid/splat1		allies/cfsplat1
-friendlyflemoid/splat2		allies/cfsplat2
-friendlyflemoid/splat3		allies/cfsplat3
-friendlyflemoid/splat4		allies/cfsplat4
+friendlyflemoid/splat1		sounds/allies/cfsplat1.wav
+friendlyflemoid/splat2		sounds/allies/cfsplat2.wav
+friendlyflemoid/splat3		sounds/allies/cfsplat3.wav
+friendlyflemoid/splat4		sounds/allies/cfsplat4.wav
 
 // Nitrogolem
-mummy/sight			allies/mumsit
-mummy/attack1			allies/mumat1
-mummy/attack2			allies/mumat2
-mummy/pain			allies/mumpai
-mummy/death			allies/mumdth
-mummy/active			allies/mumsit
-mummy/head			allies/mumhed
+mummy/sight			sounds/allies/mumsit.wav
+mummy/attack1			sounds/allies/mumat1.wav
+mummy/attack2			sounds/allies/mumat2.wav
+mummy/pain			sounds/allies/mumpai.wav
+mummy/death			sounds/allies/mumdth.wav
+mummy/active			sounds/allies/mumsit.wav
+mummy/head			sounds/allies/mumhed.wav
 
 // Nazi
-friendlynazi/sight		allies/nazisit
-friendlynazi/pain		allies/nazipain
+friendlynazi/sight		sounds/allies/nazisit.ogg
+friendlynazi/pain		sounds/allies/nazipain.ogg
 $random friendlynazi/death	{ nazi/die1 nazi/die2 nazi/die3 nazi/die4 nazi/die5 nazi/die6 nazi/die7 }
 friendlynazi/active		silence
-friendlynazi/attack		allies/nazishot
-nazi/die1			allies/nazidie1
-nazi/die2			allies/nazidie2
-nazi/die3			allies/nazidie3
-nazi/die4			allies/nazidie4
-nazi/die5			allies/nazidie5
-nazi/die6			allies/nazidie6
-nazi/die7			allies/nazidie7
+friendlynazi/attack		sounds/allies/nazishot.ogg
+nazi/die1			sounds/allies/nazidie1.ogg
+nazi/die2			sounds/allies/nazidie2.ogg
+nazi/die3			sounds/allies/nazidie3.ogg
+nazi/die4			sounds/allies/nazidie4.ogg
+nazi/die5			sounds/allies/nazidie5.ogg
+nazi/die6			sounds/allies/nazidie6.ogg
+nazi/die7			sounds/allies/nazidie7.ogg
 
 // Afrit
-FireDemonActive         	allies/fired5
-FireDemonPain           	allies/fired2
-FireDemonAttack         	allies/spit6
-FireDemonMissileHit     	allies/firedhit
-FireDemonDeath          	allies/fired3
+FireDemonActive         	sounds/allies/fired5.wav
+FireDemonPain           	sounds/allies/fired2.wav
+FireDemonAttack         	sounds/allies/spit6.wav
+FireDemonMissileHit     	sounds/allies/firedhit.wav
+FireDemonDeath          	sounds/allies/fired3.wav
 
 // Alien Trooper
 

@@ -291,6 +291,7 @@ ACTOR FriendlyNazi
       Missile:
         NGRD H 5 A_FaceTarget
         NGRD H 5 A_FaceTarget
+		TNT1 A 0 A_PlaySound("friendlynazi/attack")
         NGRD I 5 Bright A_CustomMissile("FriendlyNaziBullet",32,0,0,8)
         //NGRD H 1 A_CPosRefire
         Goto See
