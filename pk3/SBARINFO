@@ -244,6 +244,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 223, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 229, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 235, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 242, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 248, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 255, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 223, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 229, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 235, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 242, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 248, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 255, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 223, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 229, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 235, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 242, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 248, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 255, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 223, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 229, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 235, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 242, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 248, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 255, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
@@ -355,6 +380,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
@@ -469,6 +519,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, yellow, ammo Clip, 285, 173;
         drawnumber 3, INDEXFON, yellow, ammo AmmoShell, 285, 179;
@@ -581,6 +656,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, lightblue, ammo Clip, 289, 173;
         //drawnumber 3, INDEXFON, lightblue, ammo AmmoShell, 289, 179;
@@ -713,6 +813,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
         {
@@ -816,6 +941,31 @@ StatusBar normal, forcescaled
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, green, ammo Clip, 289, 174;
         drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 180;
@@ -1600,6 +1750,31 @@ IsSelected not " Alien Weapon " {
                                         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
                                         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
                                         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
                                         drawnumber 3, INDEXFON, green, ammo Clip, 289, 173;
                                         drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 179;
@@ -1731,6 +1906,31 @@ playerclass Ranger
     InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
     InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
     InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
     gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
     {
@@ -1856,6 +2056,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 223, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 229, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 235, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 242, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 248, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 255, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 223, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 229, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 235, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 242, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 248, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 255, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 223, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 229, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 235, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 242, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 248, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 255, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 223, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 229, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 235, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 242, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 248, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 255, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
@@ -1927,6 +2152,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
@@ -2002,6 +2252,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, yellow, ammo Clip, 285, 173;
         drawnumber 3, INDEXFON, yellow, ammo AmmoShell, 285, 179;
@@ -2069,6 +2344,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, lightblue, ammo Clip, 289, 173;
         drawstring SMALLFONT, lightblue, "x", 289, 178;
@@ -2158,6 +2458,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
         {
@@ -2220,6 +2545,31 @@ statusbar Automap
         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, green, ammo Clip, 289, 174;
         drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 180;
@@ -2963,6 +3313,31 @@ IsSelected not " Alien Weapon " {
                                         InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
                                         InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
                                         InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
                                         drawnumber 3, INDEXFON, green, ammo Clip, 289, 173;
                                         drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 179;
@@ -3055,6 +3430,31 @@ playerclass Ranger
     InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
     InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
     InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
     gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
     {
