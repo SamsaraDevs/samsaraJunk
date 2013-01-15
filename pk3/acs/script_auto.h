@@ -326,7 +326,14 @@ script SAMSARA_SPAWN (int respawning)
                 endloop = 1;
             }
             break;
+
+          default:
+            SetActorProperty(0, APROP_Gravity, 1.0);
+            break;
         }
+
+        if (CheckInventory("ForceRangerGravity")) { SetActorProperty(0, APROP_Gravity, 0.75); }
+        if (CheckInventory("ForceSOGravity")) { SetActorProperty(0, APROP_Gravity, 0.15); }
 
         pariasMod = 9 * (SamsaraClassNum() == CLASS_HEXEN);
         i = JumpZFromHeight(32 + pariasMod + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity));

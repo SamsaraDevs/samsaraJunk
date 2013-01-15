@@ -20,6 +20,8 @@ actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}
 actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
+actor ForceRangerGravity: Boolean {}
+actor ForceSOGravity: Boolean {}
 
 actor GotWeapon0: Boolean {}
 actor GotWeapon1: Boolean {}
