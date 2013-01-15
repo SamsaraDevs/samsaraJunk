@@ -77,7 +77,7 @@ actor HellstaffShot
     Radius 12
     Height 8
     Speed 22
-    Damage 3
+    Damage (random(3,35))
     Projectile
     +WINDTHRUST
     -NOBLOCKMAP
