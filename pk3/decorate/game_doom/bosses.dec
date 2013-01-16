@@ -4,6 +4,7 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
     DamageFactor "DragonClaw", 1.6
     DamageFactor "MarathonFusion", 2.0
     DamageFactor "WMCNade", 0.75
+	DamageFactor "CorvusHellstaffTomed", 0.2
     +DONTRIP
     +BOSSDEATH
     +NOTDMATCH
@@ -91,6 +92,7 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
     DamageFactor "DragonClaw", 1.6
     DamageFactor "MarathonFusion", 2.0
     DamageFactor "WMCNade", 0.75
+	DamageFactor "CorvusHellstaffTomed", 0.2
     +DONTRIP
     +BOSSDEATH
     +NOTDMATCH

@@ -174,7 +174,7 @@ actor HellstaffRain
     Mass 10//Original is 5
     Renderstyle Add
     Gravity 12
-    DamageType "CorvusHellstaff"
+    DamageType "CorvusHellstaffTomed"
     Species "Player"
     +THRUSPECIES
     +DONTSPLASH   
@@ -207,6 +207,6 @@ actor HellstaffRain
 
 actor RainPillar2 : RainPillar
 {
-    DamageType "CorvusHellstaff"
+    DamageType "CorvusHellstaffTomed"
     +SPAWNCEILING
 }

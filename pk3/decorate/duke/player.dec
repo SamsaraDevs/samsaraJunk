@@ -43,6 +43,7 @@ actor DukePlayer : PlayerPawn
     DamageFactor "MarathonFusion", 1.1
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "CorvusHellstaff", 1.1
+	DamageFactor "CorvusHellstaffTomed", 1.1
     DamageFactor "MarathonPlasma", 1.1
     DamageFactor "BJSpear", 1.1
     DamageFactor "DoomCacodemon", 1.1

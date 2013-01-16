@@ -44,6 +44,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "DoomPlasma", 0.8
     DamageFactor "CorvusCrossbow", 0.8
     DamageFactor "CorvusHellstaff", 0.8
+	DamageFactor "CorvusHellstaffTomed", 0.8
     DamageFactor "MarathonPlasma", 0.8
     DamageFactor "BJSpear", 0.8
     DamageFactor "DoomCacodemon", 0.8

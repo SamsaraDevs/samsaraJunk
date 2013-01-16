@@ -59,7 +59,10 @@ NOTE: We did not fix Strife co-op. Strife co-op can still be very, very easily b
 - The Flemoid Maximus is now a proper boss in Chex Quest, and now has proper compatibility--splatters and all.
 - The DM tipboxes weren't showing before, for some reason. Now they show properly.
 - Doomguy/Ranger no longer sound like a dubbed anime boy when puzzfail.
-- The Security Officer's SPNKR now has different levels of raise and lowering. What does this mean? You no longer have to lower all the way from the top again if you only slightly scrolled through it!
+- The Security Officer's SPNKR and Wave Motion Cannon now has different levels of raise and lowering. What does this mean? You no longer have to lower all the way from the top again if you only slightly scrolled through it!
+- Corvus' Tome of Power was not buffing the damage of the Ethereal Crossbow or Hellstaff. This has been rectified.
+- The Hellstaff was easily one of Corvus' more pathetic weapons, useful only when Tomed--and even then, doing insane amounts of damage on bosses! Its damage has been increased to be more reminiscent of a Plasma Rifle, buffed from 3-24 to 3-35, and bosses now only take 1/5th damage from its Tomed rain, as it was in Heretic.
+
 
 
 FROM 0.26 TO 0.27

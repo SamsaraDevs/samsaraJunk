@@ -1913,6 +1913,7 @@ DamageFactor "BFG", 0.75
 DamageFactor "BFGSpray", 0.75
 DamageFactor "WMCNade", 0.75
 DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
   DropItem "BlasterAmmo2", 84
   DropItem "ArtiEgg", 51, 0
   States
@@ -2005,6 +2006,7 @@ DamageFactor "BFG", 0.75
 DamageFactor "BFGSpray", 0.75
 DamageFactor "WMCNade", 0.75
 DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
   DropItem "ArtiSuperHealth", 51
   DropItem "PhoenixRodAmmo3", 84
   States
@@ -2076,6 +2078,7 @@ DamageFactor "WMCBeam", 0.75
 DamageFactor "WMCNade", 0.55
 DamageFactor "DragonClaw", 1.5
 	PainChance "MarathonFusion", 0
+	DamageFactor "CorvusHellstaffTomed", 0.2
 +INVULNERABLE
 +DONTRIP
 +NOTDMATCH
@@ -2303,6 +2306,7 @@ DamageFactor "BFGSpray", 0.65
 DamageFactor "WMCBeam", 0.65
 DamageFactor "WMCNade", 0.5
 DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
   +DONTRIP
   +NOTARGET
   +NOINFIGHTING

@@ -1671,6 +1671,7 @@ actor Snotfolus 16
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
     PainChance "MarathonFusion", 0
+	DamageFactor "CorvusHellstaffTomed", 0.2
     Speed 16
     PainChance 10
     Monster
@@ -2100,6 +2101,7 @@ ACTOR FlemoidusMaximus replaces Flembrane
 	damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
     damagefactor "BFG", 0.75
     damagefactor "BFGSpray", 0.75
+	DamageFactor "CorvusHellstaffTomed", 0.2
 	Speed 12 // Previously 8
 	PainChance 20
 	Monster

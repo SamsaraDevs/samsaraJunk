@@ -368,6 +368,7 @@ actor MarathonPlayer : PlayerPawn
         Goto Spawn
         
       Pain.CorvusHellstaff:
+      Pain.CorvusHellstaffTomed:
 
       Pain.HereAxeRed:
         SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red

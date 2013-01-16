@@ -89,6 +89,10 @@ actor PowerGreaterTome : PowerDamage
     DamageFactor "Normal", 1.5
     DamageFactor "DragonClaw", 1.5
     DamageFactor "Fire", 1.5
+	DamageFactor "CorvusHellstaff", 1.5
+	DamageFactor "CorvusHellstaffTomed", 1.5
+	DamageFactor "CorvusCrossbow", 1.5
+
 }
 
 actor PowerGreaterTomeDM : PowerGreaterTome
@@ -130,6 +134,7 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "DoomPlasma", 0.55
     DamageFactor "CorvusCrossbow", 0.55
     DamageFactor "CorvusHellstaff", 0.55
+	DamageFactor "CorvusHellstaffTomed", 0.55
     DamageFactor "MarathonPlasma", 0.55
     DamageFactor "BJSpear", 0.55
     DamageFactor "DoomCacodemon", 0.55
