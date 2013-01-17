@@ -127,3 +127,20 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
     }
 }
 
+script 302 (int changelogshit) NET
+{
+switch (changelogshit)
+{
+        case 1:
+        SetHudSize(1024,768,1);
+        SetFont("CHNGLOG1");
+        HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+        break;
+		
+        case 2:
+        SetHudSize(1024,768,1);
+        SetFont("");
+        HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+        break;
+}
+}
