@@ -520,6 +520,52 @@ script 204 (int bossmonologueshit)
         SetFont("BIGFONT");
         HudMessageBold(s:"Surrender to D'Sparil."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
         break;
+        
+      case 4: // THE ENTITY
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"What is this, I spy?"; HUDMSG_FADEOUT,15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"A tiny speck of a mortal, crawling into the depths of my chambers?"; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Is this the one that has caused so much trouble?"; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Fool."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"There is no way out, from here."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"The doors close behind you. The path goes only ahead."; HUDMSG_FADEOUT,15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"In front of you lies my legions, all craving your blood."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Even my own Sigil, which you have fought so hard for, pulls away at your very soul."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Despair, for every step you take is a step further into my waiting maw."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Despair, for even after death, I will never let you know peace."; HUDMSG_FADEOUT, 15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
+        delay(140);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Despair, for I am the One God."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        break;
     }
 }
 
