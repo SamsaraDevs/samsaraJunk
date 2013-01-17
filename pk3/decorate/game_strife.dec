@@ -8,3 +8,4 @@
 
 #include "decorate/game_strife/beacon.dec"
 #include "decorate/game_strife/allies.dec"
+#include "decorate/game_strife/peasants.dec"

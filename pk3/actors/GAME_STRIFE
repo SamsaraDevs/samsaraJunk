@@ -455,14 +455,6 @@ ACTOR Inquisitor2 : Inquisitor replaces Inquisitor
     }
 }
 
-// Peasants
-//ACTOR PeasantB : Peasant replaces Peasant
-//ACTOR Peasant5B : PeasantB replaces Peasant5 // Derwin. Tear his ear off for the Gubnuh.
-
-//ACTOR Peasant8B : PeasantB replaces Peasant8 // Da Judge. Kill him to free prisoners.
-
-//ACTOR Peasant9B : PeasantB replaces Peasant9 // Beldin. Kill him, take his ring to be a part of the Rebellion.
-
 // Other enemies
 //ACTOR Macil2B : Macil2 replaces Macil2
 //ACTOR StrifeBishop2 : StrifeBishop replaces StrifeBishop
