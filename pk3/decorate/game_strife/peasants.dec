@@ -108,6 +108,13 @@ Translation "128:143=64:79", "48:63=16:31"
 DropItem "Ear"
 }
 
+ACTOR Peasant7B : PeasantB replaces Peasant7 // Warden Montag. Kill him in the Prison for a prison ID.
+{
+ConversationID 12
+Translation "128:143=24:31", "48:63=216:223"
+DropItem "PrisonKey"
+}
+
 ACTOR Peasant8B : PeasantB replaces Peasant8 // Da Judge. Kill him to free prisoners.
 {
 ConversationID 13

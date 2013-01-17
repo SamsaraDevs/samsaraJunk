@@ -103,6 +103,8 @@ script SAMSARA_SPECTRES (int whichSpectre)
 {
     int i,j,k,l, x,y,z;
 
+    GiveInventory("Communicator", 1);
+
     switch (whichSpectre)
     {
       default:
