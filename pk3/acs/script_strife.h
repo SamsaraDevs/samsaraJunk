@@ -1,3 +1,5 @@
+int KilledOracle = 0;
+
 script SAMSARA_STRIFEACCURACY (int which)
 {
     if (which == -1) { which = CheckInventory("StrifeAccuracyCounter"); }
@@ -94,5 +96,92 @@ script SAMSARA_BEACON (int noloop)
         }
 
         Delay(1);
+    }
+}
+
+script SAMSARA_SPECTRES (int whichSpectre)
+{
+    int i,j,k,l, x,y,z;
+
+    switch (whichSpectre)
+    {
+      default:
+        x = GetActorX(0);
+        y = GetActorY(0);
+        z = GetActorZ(0);
+
+        for (i = 0; i < 50; i++)
+        {
+            j = unusedTID(5000, 10000);
+            Spawn("AmmoSatchel", x,y,z, j);
+            k = random(0, 1.0);
+            l = random(0, 1.0);
+
+            SetActorVelocity(j, 35 * FixedMul(cos(k), cos(l)), 35 * FixedMul(sin(k), cos(l)), 35 * sin(l), 0, 0);
+
+            if (i % 4 == 0) { Delay(1); }
+        }
+        break;
+
+      case 1:
+        Floor_LowerToLowest(999, 4);
+        SetActivatorToTarget(0);
+        SendToCommunicator(95, 0, 0, 0);
+        break;
+
+      case 2:
+        SetActivatorToTarget(0);
+        Print(l:"TXT_KILLED_BISHOP");
+        SendToCommunicator(74, 0, 0, 0);
+        break;
+
+      case 3:
+        Door_Open(222, 8);
+        KilledOracle = 1;        
+        SetActivatorToTarget(0);
+        Print(l:"TXT_KILLED_ORACLE");
+        GiveInventory("QuestItem23", 1);
+
+        if (CheckInventory("QuestItem21")) { GiveInventory("QuestItem22", 1); }
+
+        if (CheckInventory("QuestItem24")) { SendToCommunicator(85, 0, 0, 0); }
+        else { SendToCommunicator(87, 0, 0, 0); }
+
+        Delay(35);
+
+        KilledOracle = 0;
+        break;
+      
+      case -3:
+        SetResultValue(KilledOracle);
+        break;
+
+      case 4:
+        SetActivatorToTarget(0);
+        Print(l:"TXT_KILLED_MACIL");
+        GiveInventory("QuestItem24", 1);
+
+        if (CheckInventory("QuestItem25")) { SendToCommunicator(106, 0, 0, 0); }
+        else { SendToCommunicator(79, 0, 0, 0); }
+        break;
+
+      case 5:
+        Floor_LowerToLowest(666, 4);
+        SetActivatorToTarget(0);
+
+        Print(l:"TXT_KILLED_LOREMASTER");
+        GiveInventory("QuestItem26", 1);
+
+        ACS_ExecuteAlways(SAMSARA_STRIFEACCURACY, 0, -1,0,0);
+        GiveInventory("UpgradeStamina", 1);
+
+        if (CheckInventory("QuestItem23") && CheckInventory("QuestItem24") && CheckInventory("QuestItem21"))
+        {
+            SendToCommunicator(85, 0, 0, 0);
+        }
+        else
+        {
+            SendToCommunicator(83, 0, 0, 0);
+        }
     }
 }

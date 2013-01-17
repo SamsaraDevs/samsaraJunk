@@ -1,0 +1,104 @@
+actor SamsaraSpectre1: AlienSpectre1 replaces AlienSpectre1
+{
+    States
+    {
+      Death:
+        AL1P A 6 bright A_SpectreChunkSmall
+        AL1P B 6 bright A_Scream
+        AL1P C 6 bright A_SpectreChunkSmall
+        AL1P DE 6 bright
+        AL1P F 6 bright A_SpectreChunkSmall
+        AL1P G 6 bright
+        AL1P H 6 bright A_SpectreChunkSmall
+        AL1P IJK 6 bright
+        AL1P LM 5 bright
+        AL1P N 5 bright A_SpectreChunkLarge
+        AL1P OPQ 5 bright
+        AL1P R 5 bright ACS_ExecuteAlways(316, 0, 1)
+        stop
+    }
+}
+
+actor SamsaraSpectre2: AlienSpectre2 replaces AlienSpectre2
+{
+    States
+    {
+      Death:
+        AL1P A 6 bright A_SpectreChunkSmall
+        AL1P B 6 bright A_Scream
+        AL1P C 6 bright A_SpectreChunkSmall
+        AL1P DE 6 bright
+        AL1P F 6 bright A_SpectreChunkSmall
+        AL1P G 6 bright
+        AL1P H 6 bright A_SpectreChunkSmall
+        AL1P IJK 6 bright
+        AL1P LM 5 bright
+        AL1P N 5 bright A_SpectreChunkLarge
+        AL1P OPQ 5 bright
+        AL1P R 5 bright ACS_ExecuteAlways(316, 0, 2)
+        stop
+    }
+}
+
+actor SamsaraSpectre3: AlienSpectre3 replaces AlienSpectre3
+{
+    States
+    {
+      Death:
+        AL1P A 6 bright A_SpectreChunkSmall
+        AL1P B 6 bright A_Scream
+        AL1P C 6 bright A_SpectreChunkSmall
+        AL1P DE 6 bright
+        AL1P F 6 bright A_SpectreChunkSmall
+        AL1P G 6 bright
+        AL1P H 6 bright A_SpectreChunkSmall
+        AL1P IJK 6 bright
+        AL1P LM 5 bright
+        AL1P N 5 bright A_SpectreChunkLarge
+        AL1P OPQ 5 bright
+        AL1P R 5 bright ACS_ExecuteAlways(316, 0, 3)
+        stop
+    }
+}
+
+actor SamsaraSpectre4: AlienSpectre4 replaces AlienSpectre4
+{
+    States
+    {
+      Death:
+        AL1P A 6 bright A_SpectreChunkSmall
+        AL1P B 6 bright A_Scream
+        AL1P C 6 bright A_SpectreChunkSmall
+        AL1P DE 6 bright
+        AL1P F 6 bright A_SpectreChunkSmall
+        AL1P G 6 bright
+        AL1P H 6 bright A_SpectreChunkSmall
+        AL1P IJK 6 bright
+        AL1P LM 5 bright
+        AL1P N 5 bright A_SpectreChunkLarge
+        AL1P OPQ 5 bright
+        AL1P R 5 bright ACS_ExecuteAlways(316, 0, 4)
+        stop
+    }
+}
+
+actor SamsaraSpectre5: AlienSpectre5 replaces AlienSpectre5
+{
+    States
+    {
+      Death:
+        AL1P A 6 bright A_SpectreChunkSmall
+        AL1P B 6 bright A_Scream
+        AL1P C 6 bright A_SpectreChunkSmall
+        AL1P DE 6 bright
+        AL1P F 6 bright A_SpectreChunkSmall
+        AL1P G 6 bright
+        AL1P H 6 bright A_SpectreChunkSmall
+        AL1P IJK 6 bright
+        AL1P LM 5 bright
+        AL1P N 5 bright A_SpectreChunkLarge
+        AL1P OPQ 5 bright
+        AL1P R 5 bright ACS_ExecuteAlways(316, 0, 5)
+        stop
+    }
+}

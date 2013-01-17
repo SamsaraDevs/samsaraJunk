@@ -30,6 +30,7 @@
 #define SAMSARA_STRIFEACCURACY      313
 #define SAMSARA_CLIENT_ACCURACY     314
 #define SAMSARA_BEACON              315
+#define SAMSARA_SPECTRES            316
 
 #define SAMSARA_CL_VERSION          2601
 
