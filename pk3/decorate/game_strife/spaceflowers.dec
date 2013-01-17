@@ -113,6 +113,10 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
 
     States
     {
+      Spawn:
+        ALN1 ABCDEFGHIJK 5 ACS_ExecuteWithResult(316, -2)
+        loop
+
       Missile:
         ALN1 F 4 A_FaceTarget
         ALN1 I 4 A_Spectre3Attack
@@ -414,3 +418,25 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
 }
 
 //actor EntitySecond2 : EntitySecond replaces EntitySecond
+
+
+actor SamsaraOracle: Oracle replaces Oracle
+{
+    +NOICEDEATH
+
+    States
+    {
+      Spawn:
+        ORCL A 1 A_JumpIf(ACS_ExecuteWithResult(316, -3) == 1, "Death")
+        loop
+      
+      Death:
+        ORCL BCDEFGHIJK 5
+        ORCL L 5 A_NoBlocking
+        ORCL M 5
+        ORCL N 5 ACS_ExecuteWithResult(316, -1)
+        ORCL OP 5
+        ORCL Q -1
+        stop
+    }
+}

@@ -1,4 +1,6 @@
 int KilledOracle = 0;
+int AwakenSpectres = 0;
+int SpectreTarget;
 
 script SAMSARA_STRIFEACCURACY (int which)
 {
@@ -153,10 +155,6 @@ script SAMSARA_SPECTRES (int whichSpectre)
 
         KilledOracle = 0;
         break;
-      
-      case -3:
-        SetResultValue(KilledOracle);
-        break;
 
       case 4:
         SetActivatorToTarget(0);
@@ -185,5 +183,30 @@ script SAMSARA_SPECTRES (int whichSpectre)
         {
             SendToCommunicator(83, 0, 0, 0);
         }
+        break;
+
+      case -1:
+        SetActivatorToTarget(0);
+        i = defaultTID(-1);
+
+        AwakenSpectres = 1;
+        SpectreTarget = i;
+
+        Delay(35);
+        AwakenSpectres = 0;
+        SpectreTarget = 0;
+        break;
+
+      case -2:
+        if (AwakenSpectres)
+        {
+            Thing_Hate(0, SpectreTarget, 0);
+            SetActorState(0, "See");
+        }
+        break;
+        
+      case -3:
+        SetResultValue(KilledOracle);
+        break;
     }
 }
