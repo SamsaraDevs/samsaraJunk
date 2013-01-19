@@ -6,6 +6,8 @@
 #include "decorate/game_strife/crusader.dec"
 #include "decorate/game_strife/templar.dec"
 #include "decorate/game_strife/spaceflowers.dec"
+#include "decorate/game_strife/others.dec"
+#include "decorate/game_strife/robutts.dec"
 
 #include "decorate/game_strife/beacon.dec"
 #include "decorate/game_strife/allies.dec"
