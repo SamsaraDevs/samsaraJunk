@@ -262,21 +262,17 @@ ACTOR FriendlyNazi
     PainChance 170
     Scale 1.25
     Monster
-
     +FLOORCLIP
-
+    +FRIENDLY
+    -SOLID
     SeeSound "friendlynazi/sight"
     PainSound "friendlynazi/pain"
     DeathSound "friendlynazi/death"
     ActiveSound "friendlynazi/active"
     AttackSound "friendlynazi/attack"
-
     Obituary "%o was somehow killed by a friendly Nazi."
     Dropitem "Clip"
-
     Species "Player"
-    +FRIENDLY
-    -SOLID
 
     States
     {
@@ -356,8 +352,123 @@ actor FriendlyFireDemonMissile : FireDemonMissile
 }
 
 //=================
-// DUKE NUKEM: Alien Trooper.
+// DUKE NUKEM: Assault Trooper.
 // I don't have anything witty to say here.
+
+actor FriendlyAlienTrooper
+{
+	Health 100
+	Radius 16
+	Height 56
+	Speed 6
+	PainChance 64
+	Scale 0.65
+	MONSTER
+	-SOLID
+	+FRIENDLY
+	Species "Player"
+	Obituary "%o was somehow killed by a friendly Assault Trooper."
+	SeeSound "dukealien/sight"
+	PainSound "dukealien/pain"
+	DeathSound "dukealien/death"
+	ActiveSound "dukealien/active"
+	states
+	{
+	Spawn:
+		ALTR A 10 A_Look
+		ALTR B 10 A_Look
+		loop
+	See:
+		ALTR AAABBBCCCDDD 2 A_Chase
+		loop
+	Missile:
+		TNT1 A 0 A_Jump(64,"Missile2")
+		ALTR E 7 A_FaceTarget
+		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		ALTR F 6 bright A_CustomMissile("FriendlyAlienTrooperShot",32,-4,random(-8,8))
+		ALTR E 7
+		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		ALTR F 6 bright A_CustomMissile("FriendlyAlienTrooperShot",32,-4,random(-8,8))
+		goto See
+	Missile2:
+		ALTR G 5 A_FaceTarget
+		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		ALTR H 4 bright A_CustomMissile("FriendlyAlienTrooperShot",28,-4,random(-2,2))
+		ALTR G 4 A_FaceTarget
+		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		ALTR H 4 bright A_CustomMissile("FriendlyAlienTrooperShot",28,-4,random(-2,2))
+		ALTR G 4 A_FaceTarget
+		TNT1 A 0 A_PlayWeaponSound("dukealien/attack")
+		ALTR H 4 bright A_CustomMissile("FriendlyAlienTrooperShot",28,-4,random(-2,2))
+		ALTR G 5 A_FaceTarget
+		goto See
+	Pain:
+		ALTR A 2 A_Pain
+		//ALTR A 0 A_Jump(128,"TeleportAwaaaay") // Removed because they had an annoying tendency to teleport in areas they shouldn't be.
+		goto See
+	Death:
+		ALTR K 6 A_Scream
+		ALTR L 6 A_NoBlocking
+		ALTR MNO 6
+		ALTR O -1
+		stop
+	XDeath:
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        ACLO E 5 A_NoBlocking
+        ACLO E -1
+		stop
+  }
+}
+
+actor FriendlyAlienTrooperShot
+{
+	Speed 30
+	Damage (7)
+	Radius 12
+	Height 8
+	Scale 0.5
+	Species "Player"
+	PROJECTILE
+	+THRUSPECIES
+	States
+	{
+	Spawn:
+		ALTR S 0 A_SpawnItemEx("FriendlyAlienShotTrail",-30,0,0,0,0,0,0,128,0)
+		ALTR S 0 A_SpawnItemEx("FriendlyAlienShotTrail",-25,0,0,0,0,0,0,128,0)
+		ALTR S 0 A_SpawnItemEx("FriendlyAlienShotTrail",-20,0,0,0,0,0,0,128,0)
+		ALTR S 0 A_SpawnItemEx("FriendlyAlienShotTrail",-15,0,0,0,0,0,0,128,0)
+		ALTR S 0 A_SpawnItemEx("FriendlyAlienShotTrail",-10,0,0,0,0,0,0,128,0)
+		ALTR S 1 BRIGHT A_SpawnItemEx("FriendlyAlienShotTrail",-5,0,0,0,0,0,0,128,0)
+		loop
+	Death:
+		ACLO E 1
+		stop
+	}
+}
+
+actor FriendlyAlienShotTrail
+{
+	Speed 0
+	Damage 0
+	Radius 2
+	Height 2
+	Scale 0.5
+	+CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		ALTR S 2 BRIGHT
+		stop
+	}
+}
+
 //=================
 // SECURITY OFFICER: Phfor Trooper.
 // These guys are probably the closest to the actual Rebels.

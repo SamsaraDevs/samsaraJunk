@@ -111,7 +111,14 @@ FireDemonAttack         	sounds/allies/spit6.wav
 FireDemonMissileHit     	sounds/allies/firedhit.wav
 FireDemonDeath          	sounds/allies/fired3.wav
 
-// Alien Trooper
+// Assault Trooper
+dukealien/active1		sounds/allies/altract1.wav
+dukealien/active2		sounds/allies/altract2.wav
+dukealien/sight			sounds/allies/altrsit.wav
+dukealien/pain			sounds/allies/altrpain.wav
+dukealien/attack		sounds/allies/altrshot.wav
+dukealien/death			sounds/allies/altrdie.wav
+$random	dukealien/active	{ dukealien/active1 dukealien/active2 }
 
 // Pfhor Trooper
 
