@@ -414,5 +414,4 @@ ACTOR Programmer2 : Programmer replaces Programmer
 }
 }
 
-// KneelingGuy and Oracle not needed.
-// KneelingGuy is holographic and does nothing except block the way. Oracle just summons a Spectre.
+// KneelingGuy not needed. He's just holographic and does nothing except block the way.
