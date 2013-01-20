@@ -122,6 +122,11 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
             result = 1;
         }
         break;
+
+      case 10:
+        TakeInventory("QuakeExplosionCounter", arg1);
+        result = CheckInventory("QuakeExplosionCounter");
+        break;
     }
     
     SetResultValue(result);
