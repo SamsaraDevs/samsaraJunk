@@ -422,6 +422,8 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
 
 actor SamsaraOracle: Oracle replaces Oracle
 {
+    ConversationID 65
+
     +NOICEDEATH
 
     States

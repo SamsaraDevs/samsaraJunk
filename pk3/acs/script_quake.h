@@ -56,11 +56,12 @@ script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
     if (degrees < 0) { degrees /= -100; }
 
     int qCurve, oldPitch, newPitch, pitchDiff, i;
+    int amplitude = degrees / 2;
 
     if (ticsup > 0)
     {
-        qCurve = degrees / pow(-ticsup, 2);
-        newPitch = qCurve * pow(-ticsup, 2);
+        qCurve = degrees / pow(ticsup, 2);  // this is a
+        newPitch = qCurve * pow(ticsup, 2);
 
         for (i = 0; i < ticsup; i++)
         {
@@ -80,18 +81,36 @@ script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 
     if (ticsdown > 0)
     {
-        qCurve = -degrees / pow(ticsDown, 2);
-        newPitch = qCurve * pow(-ticsdown, 2);
-
-        for (i = 0; i < ticsdown; i++)
+        if (defaultCVar("samsara_cl_sinerecoil", 0) == 0)
         {
-            oldPitch = newPitch;
-            // y = a(x-h)**2 + k
-            newPitch = qCurve * pow((i+1)-ticsdown, 2);
-            pitchDiff = (newPitch - oldPitch) / 360;
+            qCurve = -degrees / pow(ticsdown, 2); // this is also a
+            newPitch = qCurve * pow(ticsdown, 2);
 
-            SetActorPitch(0, GetActorPitch(0) + pitchDiff);
-            Delay(1);
+            for (i = 0; i < ticsdown; i++)
+            {
+                oldPitch = newPitch;
+                // y = a(x-h)**2 + k
+                newPitch = qCurve * pow((i+1)-ticsdown, 2);
+                pitchDiff = (newPitch - oldPitch) / 360;
+
+                SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+                Delay(1);
+            }
+        }
+        else
+        {
+            // y = (a/2) * sin(x) + (a/2)
+            newPitch = 0;
+
+            for (i = 0; i <= ticsdown; i++)
+            {
+                oldPitch = newPitch;
+                newPitch = -FixedMul(amplitude, cos(itof(i) / (ticsdown*2))) + amplitude;
+                pitchDiff = (newPitch - oldPitch) / 360;
+
+                SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+                Delay(1);
+            }
         }
     }
     else

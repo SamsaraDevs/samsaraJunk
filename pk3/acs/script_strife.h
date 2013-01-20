@@ -101,13 +101,15 @@ script SAMSARA_BEACON (int noloop)
     }
 }
 
-script SAMSARA_SPECTRES (int whichSpectre)
+script SAMSARA_SPECTRES (int mode)
 {
     int i,j,k,l, x,y,z;
 
     GiveInventory("Communicator", 1);
 
-    switch (whichSpectre)
+    if (mode != -2 && mode != -3) { PrintBold(s:"Mode is ", d:mode); }
+
+    switch (mode)
     {
       default:
         x = GetActorX(0);
