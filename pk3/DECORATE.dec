@@ -12,16 +12,15 @@
 #include "decorate/slots.dec"
 
 #include "decorate/game_doom.dec"
-#include "decorate/stDummies.dec"
-
 //#include "actors/GAME_DOOM"
 #include "actors/GAME_CHEX"
 #include "actors/GAME_HERETIC"
 #include "actors/GAME_HEXEN"
-#include "actors/GAME_STRIFE"
+#include "decorate/game_strife.dec"
+//#include "actors/GAME_STRIFE"
 #include "actors/GAME_CHAOS"
 #include "actors/GAME_TERRAINCOGNITA"
 
-#include "decorate/game_strife.dec"
+#include "decorate/stDummies.dec"
 
 #include "actors/KEYS"
