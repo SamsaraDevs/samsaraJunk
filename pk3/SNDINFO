@@ -121,6 +121,11 @@ dukealien/death			sounds/allies/altrdie.wav
 $random	dukealien/active	{ dukealien/active1 dukealien/active2 }
 
 // Pfhor Trooper
+pfhor/see				sounds/allies/PHFITSIT.wav
+pfhor/death				sounds/allies/PHFITDIE.wav
+pfhor/active			sounds/allies/PHFITACT.wav
+pfhor/burn				sounds/allies/PHFITTOS.wav
+$Random pfhor/shoot {puff/hit1 puff/hit2 puff/hit3}
 
 // Grunt
 

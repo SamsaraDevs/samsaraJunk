@@ -8,7 +8,7 @@ int BeaconMonsters[CLASSCOUNT] =
     "FriendlyNazi",
     "FriendlyAfrit",
     "FriendlyAlienTrooper",
-    "Backpack",
+    "FriendlyPfhorTrooper",
     "Backpack",
 };
 
