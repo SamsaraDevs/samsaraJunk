@@ -18,6 +18,7 @@ int array_weaponBar[PLAYERMAX];
 int array_pickupswitch[PLAYERMAX];
 int DukeQuoteCooldown[PLAYERMAX];
 int ServerEnterTimes[PLAYERMAX];
+int WolfenEnterTimes[PLAYERMAX];
 int ClientEnterTimes[PLAYERMAX];
 int ClientTipboxes[PLAYERMAX];
 

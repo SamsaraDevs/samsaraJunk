@@ -77,21 +77,16 @@ script SAMSARA_SPAWN (int respawning)
     int endloop;
     int i;
 
+    ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
+    ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
+
+    i = ServerEnterTimes[pln];
     ServerEnterTimes[pln] = startTime;
     
     if (DEBUG) { Print(s:"respawning is ", d:respawning); }
-    
     if (isLMS()) { ApplyLMS(); }
-    
-    if (isSinglePlayer())
-    {
-        SamsaraWepType = samsaraClassNum()+1;
-    }
-
-    if (!respawning)
-    {
-        ClientTipboxes[pln] = 0;
-    }
+    if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
+    if (!respawning) { ClientTipboxes[pln] = 0; }
 
     switch (samsaraClassNum())
     {
@@ -115,7 +110,6 @@ script SAMSARA_SPAWN (int respawning)
     }
 
     pcount = PlayerCount();
-    
     
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
@@ -185,7 +179,7 @@ script SAMSARA_SPAWN (int respawning)
                 HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT, 58102, CR_UNTRANSLATED, 295.2, 190.0, 1.5, 1.0);
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58102, "QuakeBrick", 295.2, 190.0, 1.5, 1.0);
             }
             GiveInventory("QuadDamagePower", 1);
         }
@@ -252,7 +246,7 @@ script SAMSARA_SPAWN (int respawning)
                 HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT, 58104, CR_UNTRANSLATED, 295.2, 165.0, 1.5, 1.0);
+                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 165.0, 1.5, 1.0);
             }
 
             oPulse = regenPulse;
@@ -373,8 +367,6 @@ script SAMSARA_SPAWN (int respawning)
 
     TakeInventory("SynthFireLeft", 0x7FFFFFFF);
     TakeInventory("SynthFireRight", 0x7FFFFFFF);
-
-    if (DEBUG) { Log(n:PlayerNumber()+1, s:"\c- exits SAMSARA_SPAWN (quadTimer was ", d:quadTimer, s:")"); }
 }
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
@@ -388,8 +380,11 @@ script SAMSARA_WOLFMOVE enter
     int velx, vely;
     int moving;
     int fired;
+    int startTime = Timer();
 
-    while (1)
+    WolfenEnterTimes[pln] = startTime;
+
+    while (WolfenEnterTimes[pln] == startTime)
     {
         if (UnloadingNow)
         {
@@ -429,6 +424,8 @@ script SAMSARA_WOLFMOVE enter
             velx = forwardx + sidex;
             vely = forwardy + sidey;
         }
+
+        if (keyDown(BT_CROUCH)) { velx /= 2; vely /= 2; }
         
         if ((velx != 0) || (vely != 0))
         {
@@ -464,7 +461,7 @@ script SAMSARA_OPEN_CLIENT open clientside
     }
 }
 
-script SAMSARA_ENTER_CLIENT enter clientside
+script SAMSARA_ENTER_CLIENT (void) clientside
 {
     int execInt, oExecInt, execStr;
     int class, oClass;
@@ -517,6 +514,8 @@ script SAMSARA_ENTER_CLIENT enter clientside
     DukeQuoteCooldown[pln] = 0; 
 
     if (DEBUG) { PrintBold(s:"Client enter for PLN ", d:pln); }
+
+    Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has spawned (startTime is ", d:startTime, s:")");
     
     while (ClientEnterTimes[pln] == startTime)
     {
@@ -539,7 +538,7 @@ script SAMSARA_ENTER_CLIENT enter clientside
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
         
-        if (isSinglePlayer())
+        if (IsServer)
         {
             array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
             array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
@@ -569,6 +568,8 @@ script SAMSARA_ENTER_CLIENT enter clientside
         
         Delay(1);
     }
+
+    Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has left spawn (", d:startTime, s:" vs. ", d:ClientEnterTimes[pln], s:")");
 }
 
 script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
