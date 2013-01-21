@@ -128,6 +128,12 @@ pfhor/burn				sounds/allies/PHFITTOS.wav
 $Random pfhor/shoot {puff/hit1 puff/hit2 puff/hit3}
 
 // Grunt
+friendlygrunt/sight		sounds/allies/GRNTSIT.wav
+$random friendlygrunt/pain	{ grunt/pain1 grunt/pain2 }
+friendlygrunt/death		sounds/allies/GRNTDETH.wav
+friendlygrunt/active	sounds/allies/GRNTIDLE.wav
+grunt/pain1				sounds/allies/GRNTPN1.wav
+grunt/pain2				sounds/allies/GRNTPN2.wav
 
 ////////////////////
 // Doomguy sounds
