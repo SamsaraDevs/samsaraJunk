@@ -9,7 +9,7 @@ int BeaconMonsters[CLASSCOUNT] =
     "FriendlyAfrit",
     "FriendlyAlienTrooper",
     "FriendlyPfhorTrooper",
-    "Backpack",
+    "FriendlyGrunt",
 };
 
 int AccuracyUniques[CLASSCOUNT][ACCURACYCOUNT] = 
