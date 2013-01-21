@@ -114,7 +114,7 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
     States
     {
       Spawn:
-        ALN1 ABCDEFGHIJK 5 ACS_ExecuteWithResult(316, -2)
+        ACLO E 5 ACS_ExecuteWithResult(316, -2)
         loop
 
       Missile:
