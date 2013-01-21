@@ -1,8 +1,6 @@
 #include "zcommon.acs"
 #library "samsara"
 
-#define DEBUG 0
-
 #include "commonFuncs.h"
 
 #include "samsaraDefs.h"
@@ -61,12 +59,6 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         
       case 4:
         result = isInvasion() || !(isCoop() || isSinglePlayer());
-
-        if (DEBUG)
-        {
-            Log(d:isInvasion(), s:"     ", d:isCoop(), s:"     ", d:isSinglePlayer());
-            Log(d:result);
-        }
         break;
 
       case 5:

@@ -83,7 +83,6 @@ script SAMSARA_SPAWN (int respawning)
     i = ServerEnterTimes[pln];
     ServerEnterTimes[pln] = startTime;
     
-    if (DEBUG) { Print(s:"respawning is ", d:respawning); }
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
     if (!respawning) { ClientTipboxes[pln] = 0; }
@@ -222,7 +221,6 @@ script SAMSARA_SPAWN (int respawning)
 
         TakeInventory("QuakeQuadTimer", 1);
 
-        //if (DEBUG) { Print(d:oQuadTimer, s:" -> ", d:quadTimer); }
         // End quad shit
         
         // Quakeguy regen shit
@@ -441,26 +439,6 @@ script SAMSARA_WOLFMOVE enter
     }
 }
 
-script SAMSARA_OPEN_CLIENT open clientside
-{
-    int i;
-    if (!DEBUG) { terminate; }
-    
-    SetHudSize(1280, 1024, 1);
-    PrintBold(s:"OPEN CLIENTSIDE running now");
-    
-    while (1)
-    {
-        for (i = 0; i < PLAYERMAX; i++)
-        {
-            HudMessageBold(s:"Cooldown (\cd", d:i, s:"\c-): \ck", d:DukeQuoteCooldown[i];
-            HUDMSG_FADEOUT, 8271+i, CR_LIGHTBLUE, 40.1, 20.0 + (8.0 * i), 2.0, 0.5);
-        }
-        
-        Delay(1);
-    }
-}
-
 script SAMSARA_ENTER_CLIENT (void) clientside
 {
     int execInt, oExecInt, execStr;
@@ -513,8 +491,6 @@ script SAMSARA_ENTER_CLIENT (void) clientside
     
     DukeQuoteCooldown[pln] = 0; 
 
-    if (DEBUG) { PrintBold(s:"Client enter for PLN ", d:pln); }
-
     //Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has spawned (startTime is ", d:startTime, s:")");
     
     while (ClientEnterTimes[pln] == startTime)
@@ -554,18 +530,10 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             if (execInt != oExecInt)
             {
                 execStr = StrParam(s:"puke -", d:SAMSARA_PUKE, s:" ", d:execInt, s:" ", d:pln);
-                if (DEBUG) { Print(s:execStr); }
                 ConsoleCommand(execStr);
             }
         }
 
-        if (Timer() % 35 == 0 && DEBUG)
-        {
-            Log(s:"Client enter - SamsaraClientClass is ", d:SamsaraClientClass);
-            Log(s:"Weapons: ", d:SamsaraClientWeps[0], d:SamsaraClientWeps[1], d:SamsaraClientWeps[2], d:SamsaraClientWeps[3], d:SamsaraClientWeps[4],
-                               d:SamsaraClientWeps[5], d:SamsaraClientWeps[6], d:SamsaraClientWeps[7], d:SamsaraClientWeps[8], d:SamsaraClientWeps[9]);
-        }
-        
         Delay(1);
     }
 
@@ -574,8 +542,6 @@ script SAMSARA_ENTER_CLIENT (void) clientside
 
 script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
 {
-    if (DEBUG) { PrintBold(s:"Client disconnect for PLN ", d:pln); }
-
     // Comment out these lines for zdoom
     int cpln = ConsolePlayerNumber();
     if (cpln != pln) { terminate; }
@@ -586,8 +552,6 @@ script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
 
 script SAMSARA_PUKE (int values, int pln) net
 {
-    //if (DEBUG) { PrintBold(s:"Player \"", n:pln+1, s:"\c-\" puked script ", d:SAMSARA_PUKE, s:" (", d:values, s:", ", d:pln, s:")"); }
-    
     array_wolfmove[pln]     = values & 1;
     array_vanillaAnim[pln]  = values & 2;
     array_ballgag[pln]      = values & 4;

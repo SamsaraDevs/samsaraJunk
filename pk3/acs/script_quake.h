@@ -11,8 +11,6 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
     while (1)
     {
-        if (DEBUG) { Print(s:"hpGiven = ", d:hpGiven, s:", startHealth = ", d:startHealth); }
-
         if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity"))
         {
             Delay(1);
@@ -22,8 +20,6 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
         if (UnloadingNow)
         {
             hpToTake = GetActorProperty(0, APROP_Health);
-
-            if (DEBUG) { Print(d:hpToTake, s:", ", d:getMaxHealth(), s:", ", d:hpToTake - hpGiven); }
 
             hpToTake = middle(hpToTake, getMaxHealth(), hpToTake - hpGiven);
             SetActorProperty(0, APROP_Health, hpToTake);

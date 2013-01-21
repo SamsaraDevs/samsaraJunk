@@ -35,8 +35,6 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     {
         if (StrLen(SlotItems[slot])) { GiveInventory(SlotItems[slot], 1); }
 
-        if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
-
         if (giveScript > 0)
         {
             success = ACS_ExecuteWithResult(giveScript, class, slot, dropped);
@@ -279,7 +277,6 @@ function int ConvertClassWeapons(int classnum)
         {
             if (HasClassWeapon(i, j))
             {
-                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:" (", d:i, s:", ", d:j, s:")"); }
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
                 GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
                 ret += 1;

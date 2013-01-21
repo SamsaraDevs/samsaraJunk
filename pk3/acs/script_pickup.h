@@ -74,7 +74,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     if (!IsServer) { terminate; }
     slot = itemToSlot(slot);
     
-    if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
     
     int weaponStay = !!GetCVar("sv_weaponstay");
     int weaponGet  = 0;
@@ -133,12 +132,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
         if ((a1bool && !a1Full) || (a2Bool && !a2Full)) { weaponGet = 1; }
     }
 
-    if (DEBUG)
-    {
-        Print(s:"hasWep -> ", d:hasWep, s:"; hasCheckItem -> ", d:CheckInventory(ClassWeapons[pclass][slot][S_CHECKITEM]),
-            s:"\nweaponGet -> ", d:weaponGet);
-    }
-    
     if (weaponGet && IsServer)
     {
         int success = !_giveclassweapon(pclass, slot, 3, dropped);
@@ -175,7 +168,6 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 script SAMSARA_GIVEUNIQUE (int alt)
 {
     if (!IsServer) { terminate; }
-    if (DEBUG) { Print(s:"running on server tic ", d:Timer(), s:", cpln = ", d:ConsolePlayerNumber()); }
     
     int uniqueGet = 0;
     int pclass = samsaraClassNum();
@@ -203,8 +195,6 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     int i, j, quoteCount = 0;
     int logMsg;
     int pickupsound = ClassPickupSounds[pclass][slot];
-    
-    if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
     if (dropped) { pickupsound = ClassDropSounds[pclass][slot]; }
     
@@ -237,12 +227,6 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
     else { ActivatorSound(pickupsound, 127); }
     
-    if (DEBUG)
-    {
-        Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
-        s:" for ", d:ClassFades[pclass][4], s:" tics");
-    }
-    
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
     
@@ -250,8 +234,6 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     {
         Delay(8);
 
-        if (DEBUG) { Print(s:"cooldown is ", d:DukeQuoteCooldown[pln]); }
-        
         if (!DukeQuoteCooldown[pln])
         {
             if (soundmode == 1) { LocalAmbientSound("duke/weapontaunt", 127); }
@@ -267,8 +249,6 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
     int logMsg;
-    
-    if (DEBUG) { Print(s:"running on local tic ", d:Timer()); }
     
     if (cpln == pln)
     {
@@ -299,12 +279,6 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
     else { ActivatorSound(ClassUniqueSounds[pclass], 127); }
     
-    if (DEBUG)
-    {
-        Print(d:ClassFades[pclass][0], s:", ", d:ClassFades[pclass][1], s:", ", d:ClassFades[pclass][2],
-        s:" for ", d:ClassFades[pclass][4], s:" tics");
-    }
-    
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);
 }
@@ -320,14 +294,6 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int i;
     // The above line is because of the quadupling of ammo capacity with dropped pickups
     // It's a really gross hack. I hate it. But it works.
-    
-    if (DEBUG)
-    {
-        PrintBold(s:"\ca[MARATHON]\c- dropped is ", d:dropped,
-                s:"\ngiveBoth, hasShotty, limited, limit, ammoFull = (",
-                d:giveboth, s:", ", d:hasShotty, s:", ", d:hasBoth, s:", ",
-                d:limited, s:", ", d:limit, s:", ", d:ammoFull, s:")");
-    }
     
     switch (slot)
     {
