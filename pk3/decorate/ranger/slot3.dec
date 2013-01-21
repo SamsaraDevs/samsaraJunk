@@ -163,7 +163,7 @@ actor QuakeGrenade
         QGRN A 0
         QGRN A 0 A_Recoil(-1)  // to stop the "freeze in midair" bug from happening
         QGRN A 0 A_PlaySound("quakeweps/blank", CHAN_VOICE)
-      goto SpawnLoop
+        goto SpawnLoop
 
 
       SpawnLoop:

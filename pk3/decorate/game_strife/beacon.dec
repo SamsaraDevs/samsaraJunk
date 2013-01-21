@@ -2,6 +2,7 @@ actor StrifeBeaconItem: CustomInventory replaces TeleporterBeacon
 {
     Radius 16
     Height 16
+    ConversationID 166
 
     Inventory.MaxAmount 3
     Inventory.PickupMessage "You got a teleporter beacon!"
