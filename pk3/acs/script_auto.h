@@ -515,7 +515,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
 
     if (DEBUG) { PrintBold(s:"Client enter for PLN ", d:pln); }
 
-    Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has spawned (startTime is ", d:startTime, s:")");
+    //Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has spawned (startTime is ", d:startTime, s:")");
     
     while (ClientEnterTimes[pln] == startTime)
     {
@@ -569,7 +569,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         Delay(1);
     }
 
-    Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has left spawn (", d:startTime, s:" vs. ", d:ClientEnterTimes[pln], s:")");
+    //Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has left spawn (", d:startTime, s:" vs. ", d:ClientEnterTimes[pln], s:")");
 }
 
 script SAMSARA_DISCONNECT_CLIENT (int pln) disconnect clientside
