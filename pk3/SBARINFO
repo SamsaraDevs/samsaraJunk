@@ -176,11 +176,11 @@ StatusBar Fullscreen
     //RuneIcon
     DrawImage RuneIcon, 20, 163, Center;
     //Frags
-    GameMode Deathmatch, Possession, Teamplay, TeamLMS, TeamGame
+    GameMode Deathmatch, Possession, Teamplay, TeamGame
     {
         DrawNumber 3, INDEXFON, White, Frags, 70, 170;
     }
-    GameMode OneFlagCTF, CTF, Skulltag, TeamPossession
+    GameMode OneFlagCTF, CTF, Skulltag, TeamPossession, TeamLMS
     {
         DrawNumber 3, INDEXFON, White, KillCountAmountTrue, 70, 170;
         Drawnumber 2, INDEXFON, brick, teamscore "Raktah", 45, 170;
