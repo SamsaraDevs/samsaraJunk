@@ -182,7 +182,7 @@ StatusBar Fullscreen
     }
     GameMode OneFlagCTF, CTF, Skulltag, TeamPossession, TeamLMS
     {
-        DrawNumber 3, INDEXFON, White, KillCountAmountTrue, 70, 170;
+        DrawNumber 3, INDEXFON, White, Frags, 70, 170;
         Drawnumber 2, INDEXFON, brick, teamscore "Raktah", 45, 170;
         Drawnumber 2, INDEXFON, lightblue, teamscore "Nilah", 55, 170;
     }
