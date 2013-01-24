@@ -105,10 +105,6 @@ script SAMSARA_SPECTRES (int mode)
 {
     int i,j,k,l, x,y,z;
 
-    GiveInventory("Communicator", 1);
-
-    if (mode != -2 && mode != -3) { PrintBold(s:"Mode is ", d:mode); }
-
     switch (mode)
     {
       default:
@@ -132,12 +128,14 @@ script SAMSARA_SPECTRES (int mode)
       case 1:
         Floor_LowerToLowest(999, 4);
         SetActivatorToTarget(0);
+        GiveInventory("Communicator", 1);
         SendToCommunicator(95, 0, 0, 0);
         break;
 
       case 2:
         SetActivatorToTarget(0);
         Print(l:"TXT_KILLED_BISHOP");
+        GiveInventory("Communicator", 1);
         SendToCommunicator(74, 0, 0, 0);
         break;
 
@@ -145,6 +143,7 @@ script SAMSARA_SPECTRES (int mode)
         Door_Open(222, 8);
         KilledOracle = 1;        
         SetActivatorToTarget(0);
+        GiveInventory("Communicator", 1);
         Print(l:"TXT_KILLED_ORACLE");
         GiveInventory("QuestItem23", 1);
 
@@ -161,6 +160,7 @@ script SAMSARA_SPECTRES (int mode)
       case 4:
         SetActivatorToTarget(0);
         Print(l:"TXT_KILLED_MACIL");
+        GiveInventory("Communicator", 1);
         GiveInventory("QuestItem24", 1);
 
         if (CheckInventory("QuestItem25")) { SendToCommunicator(106, 0, 0, 0); }
@@ -172,6 +172,7 @@ script SAMSARA_SPECTRES (int mode)
         SetActivatorToTarget(0);
 
         Print(l:"TXT_KILLED_LOREMASTER");
+        GiveInventory("Communicator", 1);
         GiveInventory("QuestItem26", 1);
 
         ACS_ExecuteAlways(SAMSARA_STRIFEACCURACY, 0, -1,0,0);
