@@ -14,6 +14,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 616
 #define SAMSARA_CLIENT_UNIQUEPICKUP 633
 #define SAMSARA_MARATHON            609
+#define SAMSARA_RESONATE            608
 #define SAMSARA_MEGAHEALTH          249
 
 #define SAMSARA_TIPBOX              300
@@ -188,4 +189,11 @@ int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
     {"", "DUKETIP3"},
     {"", "MARATIP3"},
     {"", "QUAKTIP3"},
+};
+
+#define RESCOUNT 2
+int ResonantItems[RESCOUNT][3] =
+{
+    {"UnknownResonator1", 0, 50},
+    {"UnknownResonator2", 0, 50},
 };

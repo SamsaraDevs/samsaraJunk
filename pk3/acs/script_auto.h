@@ -80,7 +80,6 @@ script SAMSARA_SPAWN (int respawning)
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
     ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
 
-    i = ServerEnterTimes[pln];
     ServerEnterTimes[pln] = startTime;
     
     if (isLMS()) { ApplyLMS(); }
@@ -487,6 +486,11 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         if (!GetCVar("samsara_cl_printpickup"))
         {   ConsoleCommand("set samsara_cl_printpickup 0");
         ConsoleCommand("archivecvar samsara_cl_printpickup"); }
+    }
+
+    for (i = 0; i < RESCOUNT; i++)
+    {
+        ACS_ExecuteAlways(SAMSARA_RESONATE, 0, i, 16, 0);
     }
     
     DukeQuoteCooldown[pln] = 0; 

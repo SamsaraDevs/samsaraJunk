@@ -1,6 +1,20 @@
 actor UsingAlienWeapon: Boolean {}
 actor UsingAlienWeapon2: Boolean {}
 
+actor UnknownResonator1: Ammo
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 50
+    +IGNORESKILL
+}
+
+actor UnknownResonator2: Ammo
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 50
+    +IGNORESKILL
+}
+
 actor AlienWeaponFired: Counter {}
 actor AlienWeaponFiredP: Counter {}
 actor AlienWeaponFiredS: Counter {}
@@ -14,7 +28,7 @@ actor "Alien Weapon" : Weapon
     Weapon.SelectionOrder 500
     Weapon.SlotNumber 8
     Inventory.PickupMessage "system error 0xfded"
-    Weapon.AmmoType ""
+    Weapon.AmmoType "UnknownResonator1"
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
 
@@ -23,6 +37,7 @@ actor "Alien Weapon" : Weapon
     Height 12
 
     +NOALERT
+    +AMMO_OPTIONAL
 
     States
     {
@@ -160,11 +175,12 @@ actor " Alien Weapon " : Weapon
     Radius 12
     Height 12
 
-    Weapon.AmmoType ""
+    Weapon.AmmoType "UnknownResonator2"
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
 
-    +INVENTORY.UNDROPPABLE
+    +UNDROPPABLE
+    +AMMO_OPTIONAL
 
     Weapon.SelectionOrder 500
     Weapon.SlotNumber 8

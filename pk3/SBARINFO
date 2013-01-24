@@ -3396,9 +3396,11 @@ playerclass Ranger
 
     drawnumber 3, INDEXFON, darkbrown, ammocapacity AmmoShell, 315, 179;
     drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
-    drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
-	InInventory not PowerInvulnerable {drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;}
-	InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
+    //drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+    drawstring QUAKHUDF, gold, "106", 92, 181;
+    InInventory not PowerInvulnerable {drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;}
+    InInventory PowerInvulnerable, 1 {drawnumber 3, QUAKHUDF, red, 666, 214, 181;}
+
 
     //Doom keys
         InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
