@@ -65,6 +65,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - There is now an abridged changelog in-game for people who ask "What's new?" with every single release. Type "changelog" in the console to see it, and "changelogoff" to get rid of it.
 - Ranger has an option for sine-based recoil instead of parabola-based recoil. If you know what the hell that means, type samsara_cl_sinerecoil 1 to turn it on, and 0 to turn it off.
 - Team LMS fullscreen HUD now shows the team scores rather than personal score.
+- The alien weapons now display ammo in the fullscreen HUD. Well, except the ammo fluctuates extremely wildly.
 
 
 
