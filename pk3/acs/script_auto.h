@@ -66,7 +66,6 @@ script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
-    int pariasMod;
     int quadTimer, oQuadTimer;
     int regenTimer, oRegenTimer;
     int health, regenPulse, oPulse;
@@ -75,6 +74,7 @@ script SAMSARA_SPAWN (int respawning)
     int pcount, opcount;
     int startTime = Timer();
     int endloop;
+    int canbuddha;
     int i;
 
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
@@ -157,7 +157,9 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         // useless but harmless in Zandro - triggers buddha mode when Blazko has an extra life in ZDoom
-        SetPlayerProperty(0, CheckInventory("WolfExtraLife"), 16);
+        if (CheckInventory("WolfExtraLife") && !canbuddha) { SetPlayerProperty(0, 1, 16); }
+        if (!CheckInventory("WolfExtraLife") && canbuddha) { SetPlayerProperty(0, 0, 16); }
+        canbuddha = CheckInventory("WolfExtraLife");
 
         // Quakeguy quad shit
         oQuadTimer = quadTimer;
@@ -326,8 +328,8 @@ script SAMSARA_SPAWN (int respawning)
         if (CheckInventory("ForceRangerGravity")) { SetActorProperty(0, APROP_Gravity, 0.75); }
         if (CheckInventory("ForceSOGravity")) { SetActorProperty(0, APROP_Gravity, 0.15); }
 
-        pariasMod = 9 * (SamsaraClassNum() == CLASS_HEXEN);
-        i = JumpZFromHeight(32 + pariasMod + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity));
+        if (samsaraClassNum() == CLASS_HEXEN) { i = JumpZFromHeight(41 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
+        else { i = JumpZFromHeight(32 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
 
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
