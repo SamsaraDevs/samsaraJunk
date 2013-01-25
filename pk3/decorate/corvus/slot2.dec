@@ -255,6 +255,7 @@ actor " Firemace " : Weapon
         goto Ready
 
       FireTomed:
+	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireTomed")
         MACE B 4
         MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
@@ -272,6 +273,16 @@ actor " Firemace " : Weapon
         MACE D 0 A_FireCustomMissile("MaceFX43")
         MACE D 0 A_TakeInventory("AmmoShell",4)
         MACE D 4//A_FireMacePL2
+        MACE B 4
+        MACE A 4 A_ReFire
+        MACE A 4 A_ClearRefire
+        Goto Ready
+
+      FireTomedSpectral:
+        MACE B 4
+        MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
+        MACE D 0 A_FireCustomMissile("MaceFX44")
+        MACE D 4 //ACS_ExecuteAlways(WhateverTheHealthTakingScriptIs)
         MACE B 4
         MACE A 4 A_ReFire
         MACE A 4 A_ClearRefire
@@ -334,3 +345,5 @@ actor MaceFX42 : MaceFX4 replaces MaceFX4
 }
 
 actor MaceFX43 : MaceFX42 { +THRUSPECIES Species "Player" }
+
+actor MaceFX44 : MaceFX4 { +SPECTRAL }

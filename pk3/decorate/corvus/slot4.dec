@@ -94,8 +94,16 @@ actor "Dragon Claw" : Weapon
         Goto Ready
 
       CoopFireTomed:
+	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
         BLSR D 3 A_FireCustomMissile("BlasterFX1C")
+        BLSR CB 4 A_ClearRefire
+        Goto Ready
+
+      FireTomedSpectral:
+        BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
+	TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptWillBe")
+        BLSR D 3 A_FireCustomMissile("BlasterFX1D",0,0)
         BLSR CB 4 A_ClearRefire
         Goto Ready
     }
@@ -180,6 +188,51 @@ actor Ripper2 : Ripper
     +MISSILE
     -NOCLIP
     +NOBOSSRIP
+    DONTHURTSHOOTER
+    Decal HImpScorch
+}
+
+actor BlasterFX1D : FastProjectile
+{
+    Radius 12
+    Height 8
+    Speed 300
+    Damage 2
+    SeeSound "weapons/blastershoot"
+    DeathSound "weapons/blasterhit"
+    Decal HImpScorch
+    +SPAWNSOUNDSOURCE
+    +NOTIMEFREEZE
+    +SPECTRAL
+    DONTHURTSHOOTER
+    States
+    {
+      Spawn:
+        ACLO E 200
+        Loop
+
+      Death:
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,0,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,45,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,90,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,135,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,180,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,225,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,270,2,0)
+        TNT1 A 0 A_CustomMissile("Ripper3",0,0,315,2,0)
+        FX18 A 3 BRIGHT
+        FX18 B 3 BRIGHT
+        FX18 CDEFG 4 BRIGHT
+        Stop
+    }
+}
+
+actor Ripper3 : Ripper
+{
+    +MISSILE
+    -NOCLIP
+    +NOBOSSRIP
+    +SPECTRAL
     DONTHURTSHOOTER
     Decal HImpScorch
 }
