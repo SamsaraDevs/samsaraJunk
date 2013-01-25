@@ -241,7 +241,7 @@ script SAMSARA_SIGIL (int baseHP)
         if (CheckInventory(SigilSplinters[i])) { splinterCount++; }
     }
 
-    baseHP *= max((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
+    baseHP *= min((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
 
-    DamageThing(baseHP, 0);
+    if (baseHP) DamageThing(baseHP, 0);
 }

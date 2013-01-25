@@ -31,6 +31,27 @@ actor GlobalSigil3Giver: GlobalSigilGiver { Args 3 }
 actor GlobalSigil4Giver: GlobalSigilGiver { Args 4 }
 actor GlobalSigil5Giver: GlobalSigilGiver { Args 5 }
 
+actor MaxSigil: CustomInventory
+{
+    +NOINTERACTION
+    +AUTOACTIVATE
+
+    Inventory.MaxAmount 0
+
+    States
+    {
+      Spawn:
+      Pickup:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, 1, 1)
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, 2, 1)
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, 3, 1)
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, 4, 1)
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, 5, 1)
+        stop
+    }
+}
+
 actor SpectralToggler: CustomInventory
 {
     Inventory.MaxAmount 1
