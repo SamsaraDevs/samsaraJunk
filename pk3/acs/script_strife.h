@@ -101,7 +101,7 @@ script SAMSARA_BEACON (int noloop)
     }
 }
 
-script SAMSARA_SPECTRES (int mode)
+script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
 {
     int i,j,k,l, x,y,z;
 
@@ -126,6 +126,7 @@ script SAMSARA_SPECTRES (int mode)
         break;
 
       case 1:
+        SamsaraGlobal[GLOBAL_SIGILBASE+1] = 1;
         Floor_LowerToLowest(999, 4);
         SetActivatorToTarget(0);
         GiveInventory("Communicator", 1);
@@ -133,6 +134,7 @@ script SAMSARA_SPECTRES (int mode)
         break;
 
       case 2:
+        SamsaraGlobal[GLOBAL_SIGILBASE+2] = 1;
         SetActivatorToTarget(0);
         Print(l:"TXT_KILLED_BISHOP");
         GiveInventory("Communicator", 1);
@@ -140,6 +142,7 @@ script SAMSARA_SPECTRES (int mode)
         break;
 
       case 3:
+        SamsaraGlobal[GLOBAL_SIGILBASE+3] = 1;
         Door_Open(222, 8);
         KilledOracle = 1;        
         SetActivatorToTarget(0);
@@ -158,6 +161,7 @@ script SAMSARA_SPECTRES (int mode)
         break;
 
       case 4:
+        SamsaraGlobal[GLOBAL_SIGILBASE+4] = 1;
         SetActivatorToTarget(0);
         Print(l:"TXT_KILLED_MACIL");
         GiveInventory("Communicator", 1);
@@ -168,6 +172,7 @@ script SAMSARA_SPECTRES (int mode)
         break;
 
       case 5:
+        SamsaraGlobal[GLOBAL_SIGILBASE+5] = 1;
         Floor_LowerToLowest(666, 4);
         SetActivatorToTarget(0);
 
@@ -186,6 +191,16 @@ script SAMSARA_SPECTRES (int mode)
         {
             SendToCommunicator(83, 0, 0, 0);
         }
+        break;
+
+      case 6:
+        if (arg1 < 1 || arg1 > SIGILCOUNT)
+        {
+            Log(s:"\caERROR\c-: Illegal value for sigil splinter given to script ", d:SAMSARA_SPECTRES, s:" (", d:arg1, s:")");
+            break;
+        }
+
+        SamsaraGlobal[GLOBAL_SIGILBASE + arg1] = !!arg2;
         break;
 
       case -1:
@@ -212,4 +227,21 @@ script SAMSARA_SPECTRES (int mode)
         SetResultValue(KilledOracle);
         break;
     }
+}
+
+script SAMSARA_SIGIL (int baseHP)
+{
+    int i, splinterCount = 0;
+    baseHP /= SIGILCOUNT;
+
+    if (!CheckInventory("SpectralFiring")) { terminate; }
+
+    for (i = 0; i < SIGILCOUNT; i++)
+    {
+        if (CheckInventory(SigilSplinters[i])) { splinterCount++; }
+    }
+
+    baseHP *= max((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
+
+    DamageThing(baseHP, 0);
 }

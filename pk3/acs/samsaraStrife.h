@@ -1,4 +1,14 @@
 #define ACCURACYCOUNT   10
+#define SIGILCOUNT      5
+
+int SigilSplinters[SIGILCOUNT] = 
+{
+    "SigilSplinter1",
+    "SigilSplinter2",
+    "SigilSplinter3",
+    "SigilSplinter4",
+    "SigilSplinter5",
+};
 
 int BeaconMonsters[CLASSCOUNT] = 
 {

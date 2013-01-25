@@ -30,7 +30,7 @@ int UnloadingNow = 0;
 int ClientTipboxModifier, ClientTipClassModifier;
 
 
-global int 0:CommandBitchingDone;
+global int 0:SamsaraGlobal[];
 #include "samsaraFuncs.h"
 
 #include "script_auto.h"

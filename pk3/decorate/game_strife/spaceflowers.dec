@@ -1,3 +1,5 @@
+// Admit it, they /are/ space flowers.
+
 actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 {
     Health 1500
@@ -13,6 +15,7 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     +NOICEDEATH
     +GHOST // Maayyyyy be a wee bit overkill.
 
+    DropItem ""
     Args 1
 
     States
@@ -85,8 +88,8 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
     Health 1750
     PainChance 50
     Radius 24
-    DropItem "Sigil2"
 
+    DropItem ""
     Args 2
 
     States
@@ -107,8 +110,8 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
     Radius 24
     +SPAWNCEILING
     Speed 8 // Original has Speed 12, but all animation frames increased to duration 5.
-    DropItem "Sigil3"
 
+    DropItem ""
     Args 3
 
     States
@@ -131,8 +134,8 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
     Health 2250
     PainChance 50
     Radius 24
-    DropItem "Sigil4"
     
+    DropItem ""
     Args 4
 
     States
@@ -152,8 +155,8 @@ actor AlienSpectre5B : AlienSpectre1b replaces AlienSpectre5
     Health 3000
     PainChance 50
     Radius 24
-    DropItem "Sigil5"
 
+    DropItem ""
     Args 5
 
     States

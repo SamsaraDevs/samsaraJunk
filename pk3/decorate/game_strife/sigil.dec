@@ -1,0 +1,25 @@
+actor SigilSplinter1: Boolean { ConversationID 196 }
+actor SigilSplinter2: Boolean { ConversationID 197 }
+actor SigilSplinter3: Boolean { ConversationID 198 }
+actor SigilSplinter4: Boolean { ConversationID 199 }
+actor SigilSplinter5: Boolean { ConversationID 200 }
+actor SpectralFiring: Boolean {}
+
+actor GlobalSigilGiver
+{
+    +NOINTERACTION
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(316, 0, 6, args[0], 1)
+        stop
+    }
+}
+
+actor GlobalSigil1Giver: GlobalSigilGiver { Args 1 }
+actor GlobalSigil2Giver: GlobalSigilGiver { Args 2 }
+actor GlobalSigil3Giver: GlobalSigilGiver { Args 3 }
+actor GlobalSigil4Giver: GlobalSigilGiver { Args 4 }
+actor GlobalSigil5Giver: GlobalSigilGiver { Args 5 }

@@ -32,6 +32,7 @@
 #define SAMSARA_CLIENT_ACCURACY     314
 #define SAMSARA_BEACON              315
 #define SAMSARA_SPECTRES            316
+#define SAMSARA_SIGIL               317
 
 #define SAMSARA_CL_VERSION          2601
 
@@ -66,6 +67,9 @@
 #define REGEN_CENTER_Y      0.6875      // 330 / 480
 
 #define TIP_SCROLLRATE      8
+
+#define GLOBAL_DONEBITCHING     0
+#define GLOBAL_SIGILBASE        1
 
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
