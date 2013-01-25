@@ -3,7 +3,14 @@ actor SigilSplinter2: Boolean { ConversationID 197 }
 actor SigilSplinter3: Boolean { ConversationID 198 }
 actor SigilSplinter4: Boolean { ConversationID 199 }
 actor SigilSplinter5: Boolean { ConversationID 200 }
-actor SpectralFiring: Boolean {}
+
+actor SpectralFiring: PowerDamage
+{
+    DamageFactor "Normal", 1.0
+
+    Powerup.Color "C0 C0 FF", 0.1
+    Powerup.Duration 0x7FFFFFFF
+}
 
 actor GlobalSigilGiver
 {
@@ -23,3 +30,31 @@ actor GlobalSigil2Giver: GlobalSigilGiver { Args 2 }
 actor GlobalSigil3Giver: GlobalSigilGiver { Args 3 }
 actor GlobalSigil4Giver: GlobalSigilGiver { Args 4 }
 actor GlobalSigil5Giver: GlobalSigilGiver { Args 5 }
+
+actor SpectralToggler: CustomInventory
+{
+    Inventory.MaxAmount 1
+
+    +INVBAR
+    +UNDROPPABLE
+
+    States
+    {
+      Use:
+        TNT1 A 0 A_JumpIfInventory("SpectralFiring", 1, "EndSpect")
+        TNT1 A 0 A_PlaySound("weapons/sigilcharge")
+        TNT1 A 0 A_GiveInventory("SpectralFiring")
+        fail
+
+      EndSpect:
+        TNT1 A 0 A_PlaySound("weapons/sigil")
+        TNT1 A 0 A_TakeInventory("SpectralFiring")
+        fail
+    }
+}
+
+actor SpectralToggler1: SpectralToggler { Inventory.Icon "I_SGL1" }
+actor SpectralToggler2: SpectralToggler { Inventory.Icon "I_SGL2" }
+actor SpectralToggler3: SpectralToggler { Inventory.Icon "I_SGL3" }
+actor SpectralToggler4: SpectralToggler { Inventory.Icon "I_SGL4" }
+actor SpectralToggler5: SpectralToggler { Inventory.Icon "I_SGL5" }

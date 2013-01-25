@@ -158,8 +158,17 @@ script SAMSARA_SPAWN (int respawning)
 
         for (i = 0; i < SIGILCOUNT; i++)
         {
-            if (SamsaraGlobal[GLOBAL_SIGILBASE+1+i]) { GiveInventory(SigilSplinters[i], 1); }
-            else { TakeInventory(SigilSplinters[i], 0x7FFFFFFF); }
+            if (SamsaraGlobal[GLOBAL_SIGILBASE+1+i])
+            {
+                if (!SamsaraGlobal[GLOBAL_SIGILBASE+i+2]) { GiveInventory(SpectralTogglers[i], 1); }
+                else { TakeInventory(SpectralTogglers[i], 0x7FFFFFFF); }
+                GiveInventory(SigilSplinters[i], 1);
+            }
+            else
+            {
+                TakeInventory(SigilSplinters[i], 0x7FFFFFFF);
+                TakeInventory(SpectralTogglers[i], 0x7FFFFFFF);
+            }
         }
 
         // useless but harmless in Zandro - triggers buddha mode when Blazko has an extra life in ZDoom

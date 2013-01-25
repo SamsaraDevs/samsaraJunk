@@ -10,6 +10,15 @@ int SigilSplinters[SIGILCOUNT] =
     "SigilSplinter5",
 };
 
+int SpectralTogglers[SIGILCOUNT] = 
+{
+    "SpectralToggler1",
+    "SpectralToggler2",
+    "SpectralToggler3",
+    "SpectralToggler4",
+    "SpectralToggler5",
+};
+
 int BeaconMonsters[CLASSCOUNT] = 
 {
     "FriendlyDoomImp",
