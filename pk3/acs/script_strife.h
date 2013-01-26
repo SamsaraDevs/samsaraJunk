@@ -276,6 +276,7 @@ script SAMSARA_SIGIL (int baseHP)
     }
 
     baseHP *= min((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
+    baseHP = max(1, baseHP);
 
     if (baseHP) DamageThing(baseHP, 0);
 }
