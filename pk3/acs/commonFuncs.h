@@ -749,3 +749,11 @@ function int roundAway(int toround)
     if (i == 0) { return ftoi(toround); }
     return ftoi(toround + (1.0 - i));
 }
+
+function int round(int toround)
+{
+    int i = mod(toround, 1.0);
+
+    if (i < 0.5) { return ftoi(toround); }
+    return ftoi(toround) + 1;
+}

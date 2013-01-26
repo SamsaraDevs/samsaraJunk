@@ -162,6 +162,7 @@ actor "Spectral RL": "  Rocket Launcher  "
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 35)
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
+        TNT1 A 0 A_PlaySound("weapons/sigil", 6)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -4, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -2, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket",  2, 0)

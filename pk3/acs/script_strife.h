@@ -266,7 +266,7 @@ script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
 script SAMSARA_SIGIL (int baseHP)
 {
     int i, splinterCount = 0;
-    baseHP /= SIGILCOUNT;
+    baseHP = itof(baseHP) / SIGILCOUNT;
 
     if (!CheckInventory("SpectralFiring")) { terminate; }
 
@@ -276,7 +276,7 @@ script SAMSARA_SIGIL (int baseHP)
     }
 
     baseHP *= min((SIGILCOUNT - splinterCount) + 1, SIGILCOUNT);
-    baseHP = max(1, baseHP);
+    baseHP = round(baseHP);
 
     if (baseHP) DamageThing(baseHP, 0);
 }
