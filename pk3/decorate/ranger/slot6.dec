@@ -14,7 +14,7 @@ actor "Super Nailgun": Weapon
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "LavaNails"
 
-    Weapon.SlotNumber 6
+    Weapon.SIsterWeapon "Spectral SNG"
 
     +INVENTORY.UNDROPPABLE
     Inventory.Icon "QSNGZ0"
@@ -217,6 +217,49 @@ actor "Super Nailgun": Weapon
     }
 }
 
+actor "Spectral SNG": "Super Nailgun"
+{
+    Weapon.AmmoType ""
+    Weapon.AmmoUse  0
+    Weapon.AmmoGive 0
+
+    Weapon.AmmoType2 ""
+    Weapon.AmmoUse2  0
+    Weapon.AmmoGive2 0
+
+    Weapon.SisterWeapon "Super Nailgun"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        QSNG A 0 ACS_ExecuteAlways(317, 0, 4)
+        QSNG A 0 A_TakeInventory("FiredSLNails")
+        QSNG A 0 A_TakeInventory("UsingDoEAmmo")
+        QSNG A 0 A_GunFlash
+        QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
+        QSNG A 0 A_PlaySound("weapons/sigil", 6)
+        QSNG A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("QNTrail3",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("SpectralSuperNail")
+        goto Fire0
+
+      AltFire:
+        QSNG A 0 ACS_ExecuteAlways(317, 0, 8)
+        QSNG A 0 A_GiveInventory("FiredSLNails")
+        QSNG A 0 A_GiveInventory("UsingDoEAmmo")
+        QSNG A 0 A_GunFlash
+        QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
+        QSNG A 0 A_PlaySound("weapons/sigil", 6)
+        QSNG A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
+        QSNG A 0 A_FireCustomMissile("SpectralSLNail")
+        goto AltFire0
+    }
+}
+
 
 actor QuakeSuperNail: QuakeNail
 {
@@ -253,3 +296,6 @@ actor SNGFrame: Inventory
 }
 
 actor FiredSLNails: Boolean {}
+
+actor SpectralSuperNail: QuakeSuperNailCoop { +SPECTRAL }
+actor SpectralSLNail:    QuakeSLNailCoop    { +SPECTRAL }
