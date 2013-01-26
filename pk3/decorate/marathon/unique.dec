@@ -4,14 +4,14 @@ actor UsingAlienWeapon2: Boolean {}
 actor UnknownResonator1: Ammo
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 50
+    Inventory.MaxAmount 100
     +IGNORESKILL
 }
 
 actor UnknownResonator2: Ammo
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 50
+    Inventory.MaxAmount 100
     +IGNORESKILL
 }
 

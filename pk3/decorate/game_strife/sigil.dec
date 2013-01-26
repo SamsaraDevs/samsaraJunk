@@ -4,12 +4,12 @@ actor SigilSplinter3: Boolean { ConversationID 198 }
 actor SigilSplinter4: Boolean { ConversationID 199 }
 actor SigilSplinter5: Boolean { ConversationID 200 }
 
-actor SpectralFiring: PowerDamage
+actor SpectralFiring: PowerWeaponLevel2
 {
-    DamageFactor "Normal", 1.0
-
     Powerup.Color "C0 C0 FF", 0.1
     Powerup.Duration 0x7FFFFFFF
+
+    Inventory.Icon ""
 }
 
 actor GlobalSigilGiver
@@ -63,6 +63,10 @@ actor SpectralToggler: CustomInventory
     {
       Use:
         TNT1 A 0 A_JumpIfInventory("SpectralFiring", 1, "EndSpect")
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(316, 7) == 1, "StartSpect")
+        fail
+
+      StartSpect:
         TNT1 A 0 A_PlaySound("weapons/sigilcharge")
         TNT1 A 0 A_GiveInventory("SpectralFiring")
         fail

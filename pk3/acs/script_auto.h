@@ -140,6 +140,12 @@ script SAMSARA_SPAWN (int respawning)
         TakeInventory("MacePowered", 1);
         ConvertClassWeapons(-1);
 
+        if (CheckInventory("SpectralFiring"))
+        {
+            TakeInventory("SpectralFiring", 1);
+            GiveInventory("SpectralFiring", 1);
+        }
+
         if (GetCVar("samsara_banjetpack") && CheckInventory("DukePortJetpack"))
         {
             GiveInventory("DukeBootserk", 1);
@@ -176,7 +182,10 @@ script SAMSARA_SPAWN (int respawning)
         if (!CheckInventory("WolfExtraLife") && canbuddha) { SetPlayerProperty(0, 0, 16); }
         canbuddha = CheckInventory("WolfExtraLife");
 
-        // Quakeguy quad shit
+        /*
+         * Quad shit
+         */
+
         oQuadTimer = quadTimer;
         quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
 
@@ -204,6 +213,8 @@ script SAMSARA_SPAWN (int respawning)
             {
                 HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);
                 HudMessage(s:""; HUDMSG_PLAIN, 58102, CR_UNTRANSLATED, 0, 0, 1);
+                TakeInventory("SpectralFiring", 1);   // So ranger can't break the spectral weapons
+                ActivatorSound("weapons/sigil", 127);
             }
             TakeInventory("QuadDamagePower", 1);
         }
@@ -237,9 +248,10 @@ script SAMSARA_SPAWN (int respawning)
 
         TakeInventory("QuakeQuadTimer", 1);
 
-        // End quad shit
-        
-        // Quakeguy regen shit
+        /*
+         * Regen shit
+         */
+
         oRegenTimer = regenTimer;
         regenTimer =  CheckInventory("QuakeRegenTimer");
 
@@ -314,7 +326,10 @@ script SAMSARA_SPAWN (int respawning)
 
         TakeInventory("QuakeRegenTimer", 1);
         
-            
+        /*
+         * Jumping shit
+         */
+
         switch (samsaraClassNum())
         {
           case CLASS_MARATHON:

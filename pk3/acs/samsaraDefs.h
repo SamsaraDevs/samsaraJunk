@@ -198,6 +198,6 @@ int DMTipboxes[CLASSCOUNT][TIPCOUNT] =
 #define RESCOUNT 2
 int ResonantItems[RESCOUNT][3] =
 {
-    {"UnknownResonator1", 0, 50},
-    {"UnknownResonator2", 0, 50},
+    {"UnknownResonator1", 0, 100},
+    {"UnknownResonator2", 0, 100},
 };

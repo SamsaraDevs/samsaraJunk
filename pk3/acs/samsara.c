@@ -245,20 +245,24 @@ script 214 (int dukeshit)
 
 script 202 (void)
 {
-    if (CheckInventory("TomeOfPowerCooldown") > 0)
+    while (CheckInventory("TomeOfPowerCooldown") > 0)
     {
+        Delay(35);
+
         if (CheckInventory("TomeOfPowerCooldown") > 240)
         {
-            delay(35);
             TakeInventory("TomeOfPowerCooldown",1);
-            restart;
         }
         else
         {
-            delay(35);
             TakeInventory("TomeOfPowerCooldown",1);
             TakeInventory("RainTracker",1);
-            restart;
+        }
+
+        if (CheckInventory("TomeOfPowerCooldown") == 160)  // To end the spectral effect when the tome ends
+        {
+            TakeInventory("SpectralFiring", 0x7FFFFFFF);
+            ActivatorSound("weapons/sigil", 127);
         }
     }
 }
@@ -279,54 +283,6 @@ script 203 unloading
     UnloadingNow = 1;
 
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
-}
-
-script 201 (int hereticshit)
-{
-    switch(hereticshit)
-    {
-      case 1:
-        if (GameType () == GAME_NET_COOPERATIVE)
-        {
-            GiveInventory ("PortTomeCoOp",1);
-            Print(s:"You got the Tome of Power! Oh, yes.");
-        }
-        else
-        {
-            if (GameType () == GAME_SINGLE_PLAYER)
-            {
-                GiveInventory ("PortTomeCoOp",1);
-                Print(s:"You got the Tome of Power! Oh, yes.");
-            }
-            else
-            {
-                GiveInventory ("PortTome",1);
-                Print(s:"You got a Tome of Power! Oh, yes.");
-            }
-        }
-        break;
-        
-      case 2:
-        if (GameType () == GAME_NET_COOPERATIVE)
-        {
-            GiveInventory ("ArtiEgg2",1);
-            Print(s:"You got the Morph Ovum!");
-        }
-        else
-        {
-            if (GameType () == GAME_SINGLE_PLAYER)
-            {
-                GiveInventory ("ArtiEgg2",1);
-                Print(s:"You got the Morph Ovum!");
-            }
-            else
-            {
-                GiveInventory ("ArtiEgg3",1);
-                Print(s:"You got the Morph Ovum!");
-            }
-        }
-        break;
-    }
 }
 
 script 212 (int textshit) // This is the shit for different text messages.

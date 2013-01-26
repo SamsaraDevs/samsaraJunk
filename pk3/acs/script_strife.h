@@ -104,6 +104,7 @@ script SAMSARA_BEACON (int noloop)
 script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
 {
     int i,j,k,l, x,y,z;
+    int result;
 
     switch (mode)
     {
@@ -202,6 +203,37 @@ script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
 
         SamsaraGlobal[GLOBAL_SIGILBASE + arg1] = !!arg2;
         break;
+      
+      case 7:
+        result = 1;
+        i = samsaraClassNum();
+
+        switch (i)
+        {
+          case CLASS_QUAKE:
+            if (!CheckInventory("QuadDamagePower"))
+            {
+                Print(s:"You must be quadded to go spectral.");
+                result = 0;
+            }
+            break;
+
+          case CLASS_HERETIC:
+            if (!CheckInventory("PowerHereticTome"))
+            {
+                Print(s:"You must be tomed to go spectral.");
+                result = 0;
+            }
+            break;
+          
+          default:
+            if (!HasClassWeapon(i, 8))
+            {
+                result = 0;
+                Print(s:"You need the \ck", s:ClassWeapons[i][8][S_WEP], s:"\c- to go spectral.");
+            }
+        }
+        break;
 
       case -1:
         SetActivatorToTarget(0);
@@ -224,9 +256,11 @@ script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
         break;
         
       case -3:
-        SetResultValue(KilledOracle);
+        result = KilledOracle;
         break;
     }
+
+    SetResultValue(result);
 }
 
 script SAMSARA_SIGIL (int baseHP)
