@@ -79,7 +79,7 @@ actor BlueCard2 : CustomInventory replaces BlueCard
     }
 }
 
-actor STRedSkull: RedSkullST replaces RedSkullST
+actor STRedSkull: RedSkull//ST replaces RedSkullST
 {
 	Scale 0.35
 	Inventory.PickupMessage "You got the Red Skull!"
@@ -180,7 +180,7 @@ actor YellowSkull2: CustomInventory replaces YellowSkull
     }
 }
 
-actor STBlueSkull: BlueSkullST replaces BlueSkullST
+actor STBlueSkull: BlueSkull//ST replaces BlueSkullST
 {
 	Scale 0.35
 	Inventory.PickupMessage "You got the Blue Skull!"
