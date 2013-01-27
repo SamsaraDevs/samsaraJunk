@@ -262,6 +262,10 @@ chex/plasmaf		chplasma
 $limit chex/plasmaf 				0
 chex/plasmax		chfirxpl
 chex/bfgf			chbfg
+chex/bfgfire		chbfg1
+chex/bfglaunch		chbfg2
+chex/bfghold		chheld1
+chex/bfgquickfire	chbfg3
 chex/bfgx			chrxplod
 chex/slzorcher		chslzrch
 chex/slzorchbounce	chslzrcb
