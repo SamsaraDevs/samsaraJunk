@@ -66,6 +66,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "WMCNade", 0.55
     DamageFactor "QuakePistol", 0.8
     DamageFactor "NotQuadded", 0.8
+    DamageFactor "SpectralNoQuad", 0.8
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"

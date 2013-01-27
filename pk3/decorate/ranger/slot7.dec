@@ -8,6 +8,7 @@ actor QuadDamagePower: PowerDamage
 
     DamageFactor "Normal", 4
     DamageFactor "NotQuadded", 1
+    DamageFactor "SpectralNoQuad", 1
 }
 
 actor QuadDamagePickup: CustomInventory

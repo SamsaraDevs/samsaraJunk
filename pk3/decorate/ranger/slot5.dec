@@ -281,5 +281,5 @@ actor QuadClusterRkCoop: QuadClusterRocket
     Damage (150)
 }
 
-actor SpectralRocket: QuakeRocketCoopQuad { +SPECTRAL }
-actor SpectralClusterRocket: QuadClusterRkCoop { +SPECTRAL }
+actor SpectralRocket: QuakeRocketCoopQuad { DamageType "SpectralNoQuad" }
+actor SpectralClusterRocket: QuadClusterRkCoop { DamageType "SpectralNoQuad" }

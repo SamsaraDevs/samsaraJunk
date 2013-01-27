@@ -203,7 +203,7 @@ actor BlasterFX1D : FastProjectile
     Decal HImpScorch
     +SPAWNSOUNDSOURCE
     +NOTIMEFREEZE
-    +SPECTRAL
+    DamageType "Spectral"
     DONTHURTSHOOTER
     States
     {
@@ -232,7 +232,7 @@ actor Ripper3 : Ripper
     +MISSILE
     -NOCLIP
     +NOBOSSRIP
-    +SPECTRAL
+    DamageType "Spectral"
     DONTHURTSHOOTER
     Decal HImpScorch
 }

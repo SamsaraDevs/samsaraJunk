@@ -98,5 +98,5 @@ actor StaffPuff4 : StaffPuff2
 
 actor StaffPuff5 : StaffPuff4
 {
-+SPECTRAL
+    DamageType "Spectral"
 }

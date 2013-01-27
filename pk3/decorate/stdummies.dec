@@ -19,6 +19,7 @@ actor RedArmor : BasicArmorPickup 5040 // Now gold!
     DamageFactor "DoomHellNoble", 0.125
     DamageFactor "DukeExplosive", 0.125
     DamageFactor "NotQuadded", 0.125
+    DamageFactor "SpectralNoQuad", 0.125
     States
     {
       Spawn:

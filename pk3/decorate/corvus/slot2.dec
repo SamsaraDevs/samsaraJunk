@@ -346,4 +346,4 @@ actor MaceFX42 : MaceFX4 replaces MaceFX4
 
 actor MaceFX43 : MaceFX42 { +THRUSPECIES Species "Player" }
 
-actor MaceFX44 : MaceFX4 { +SPECTRAL }
+actor MaceFX44 : MaceFX4 { DamageType "Spectral" }

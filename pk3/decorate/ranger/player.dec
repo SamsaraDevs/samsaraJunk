@@ -373,7 +373,7 @@ actor QuakeBullet: FastProjectile
 actor QuakeBulletSpectral: QuakeBullet
 {
     -THRUGHOST
-    +SPECTRAL
+    DamageType "Spectral"
 }
 
 actor QuakeBullet2: QuakeBullet

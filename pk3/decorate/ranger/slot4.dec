@@ -537,5 +537,5 @@ actor NailgunFrame: Inventory
 
 actor FiredLavaNails: Boolean {}
 
-actor SpectralNail: QuakeNail { +SPECTRAL }
-actor SpectralLavaNail: QuakeLavaNail { +SPECTRAL }
+actor SpectralNail: QuakeNail { DamageType "Spectral" }
+actor SpectralLavaNail: QuakeLavaNail { DamageType "Spectral" }

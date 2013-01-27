@@ -203,6 +203,6 @@ actor GoldWandFX4 : FastProjectile
 
 actor GoldWandFX42 : GoldWandFX4 { +THRUSPECIES Species "Player" }
 
-actor GoldWandFX43 : GoldWandFX4 { +SPECTRAL }
+actor GoldWandFX43 : GoldWandFX4 { DamageType "Spectral" }
 
-actor GoldWandFX33 : GoldWandFX3 { +SPECTRAL }
+actor GoldWandFX33 : GoldWandFX3 { DamageType "Spectral" }

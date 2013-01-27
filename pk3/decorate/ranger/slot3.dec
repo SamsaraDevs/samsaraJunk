@@ -301,7 +301,7 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     Damage (320)
 }
 
-actor SpectralGrenade: QuakeGrenadeCoopQuad { +SPECTRAL }
+actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
 
 actor QuakeClusterGrenade: QuakeGrenade
 {
@@ -448,7 +448,7 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
 
 actor SpectralClusterGrenade: QuadClusterGrnCoop
 {
-    +SPECTRAL
+    DamageType "SpectralNoQuad"
 
     States
     {
@@ -463,4 +463,4 @@ actor SpectralClusterGrenade: QuadClusterGrnCoop
     }
 }
 
-actor SpectralTinyGrenade: QuadTinyGrnCoop { +SPECTRAL }
+actor SpectralTinyGrenade: QuadTinyGrnCoop { DamageType "SpectralNoQuad" }

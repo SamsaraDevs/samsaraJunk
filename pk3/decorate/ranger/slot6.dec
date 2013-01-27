@@ -297,5 +297,5 @@ actor SNGFrame: Inventory
 
 actor FiredSLNails: Boolean {}
 
-actor SpectralSuperNail: QuakeSuperNailCoop { +SPECTRAL }
-actor SpectralSLNail:    QuakeSLNailCoop    { +SPECTRAL }
+actor SpectralSuperNail: QuakeSuperNailCoop { DamageType "Spectral" }
+actor SpectralSLNail:    QuakeSLNailCoop    { DamageType "Spectral" }

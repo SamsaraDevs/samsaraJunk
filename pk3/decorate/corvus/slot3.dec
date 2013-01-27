@@ -166,6 +166,6 @@ actor CrossbowFX32 : CrossbowFX3
     Decal CrossbowScorch2
 }
 
-actor CrossbowFX23 : CrossbowFX2 { +SPECTRAL }
+actor CrossbowFX23 : CrossbowFX2 { DamageType "Spectral" }
 
-actor CrossbowFX33 : CrossbowFX3 { +SPECTRAL }
+actor CrossbowFX33 : CrossbowFX3 { DamageType "Spectral" }

@@ -622,7 +622,7 @@ actor LGDischarge
     }
 }
 
-actor SpectralLGDischarge: LGDischarge { +SPECTRAL }
+actor SpectralLGDischarge: LGDischarge { DamageType "Spectral" }
 
 actor LGFrame: Inventory
 {
@@ -637,7 +637,7 @@ actor SpectralLGPuff: FastProjectile
     Speed 512
     Damage (30)
 
-    +SPECTRAL
+    DamageType "Spectral"
 
     Alpha 0.5
     RenderStyle Add

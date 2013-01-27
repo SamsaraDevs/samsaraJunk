@@ -229,7 +229,7 @@ actor RainPillar2 : RainPillar
 actor HornRodFX22 : HornRodFX2
 {
     +THRUSPECIES
-    +SPECTRAL
+    DamageType "Spectral"
     Species "Player"
     Alpha 0.9
     SeeSound "weapons/hornrodpowshoot"
@@ -285,4 +285,4 @@ actor HornRodFX22 : HornRodFX2
     }
 }
 
-actor HellstaffRain2 : HellstaffRain { +SPECTRAL }
+actor HellstaffRain2 : HellstaffRain { DamageType "Spectral" }

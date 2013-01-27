@@ -158,4 +158,4 @@ actor LaserCannonBoltCoop : LaserCannonBolt
     Species "Player"
 }
 
-actor SpectralLaserCannonBolt: LaserCannonBoltCoop { +SPECTRAL }
+actor SpectralLaserCannonBolt: LaserCannonBoltCoop { DamageType "Spectral" }

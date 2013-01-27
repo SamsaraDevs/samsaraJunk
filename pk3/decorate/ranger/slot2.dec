@@ -83,7 +83,7 @@ actor "Spectral DSG": "Double Shotgun"
 
         QDBS A 0 A_PlaySound("quakeweps/ssgfire", CHAN_WEAPON)
         QDBS A 0 A_PlaySound("weapons/sigil", 6)
-        QDBS AAAAAAAAAAAAAAAA 0 A_FireCustomMissile("QuakeBulletSpectral", random(-700,700)/100.0, 0, 0, 0, 0, random(-500,500)/100.0)
+        QDBS A 0 A_FireBullets(7, 5, 32, 1, "QuakeSpectralPuff")
         goto Fire2
     }
 }

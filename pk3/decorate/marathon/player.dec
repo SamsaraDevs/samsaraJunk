@@ -362,6 +362,7 @@ actor MarathonPlayer : PlayerPawn
 
       Pain.DukeExplosive:
 
+      Pain.SpectralNoQuad:
       Pain.NotQuadded:
         SOPL Y 4 A_SetBlend("Yellow",0.8,8)
         SOPL Y 4 A_Pain

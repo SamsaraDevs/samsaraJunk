@@ -71,5 +71,5 @@ actor QuakePistolPuff: QuakeBulletPuff
 actor QuakeSpectralPuff: QuakeBulletPuff
 {
     -CLIENTSIDEONLY
-    +SPECTRAL
+    DamageType "Spectral"
 }

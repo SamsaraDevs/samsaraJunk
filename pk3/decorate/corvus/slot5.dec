@@ -151,4 +151,4 @@ actor PhoenixPuff2 : PhoenixPuff replaces PhoenixPuff
     +CLIENTSIDEONLY
 }
 
-actor PhoenixFX22 : PhoenixFX2 { +SPECTRAL }
+actor PhoenixFX22 : PhoenixFX2 { DamageType "Spectral" }
