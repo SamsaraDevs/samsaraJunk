@@ -1,4 +1,4 @@
-actor DukeDevastatorFiringSequence : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor DevastatorSide: Boolean {}
 
 actor Devastator : Weapon
 {
@@ -6,11 +6,13 @@ actor Devastator : Weapon
     //Weapon.BobRangeY 0.95
     //Weapon.BobSpeed 1.1
     Weapon.SelectionOrder 2800
-    Weapon.SlotNumber 7
     Weapon.AmmoUse 2
     Weapon.AmmoGive 30 // Originally 15, increased because of the double ammo usage.
     Weapon.AmmoType "Cell"
     //Obituary "%k devastated %o."
+
+    Weapon.SisterWeapon "Spectral Devastator"
+
     Inventory.Pickupmessage "You got the Devastator!"
     Inventory.PickupSound "duke/weaponget"
     Weapon.UpSound "duke/weaponget"
@@ -24,8 +26,8 @@ actor Devastator : Weapon
         Stop
 
       Ready:
-        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
-        TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
+        TNT1 A 0 A_JumpIfInventory("DukeReady", 1, "IntroTaunt")
+        TNT1 A 0 A_JumpIfInventory("DukeWaiting", 15, "WaitingTaunt")
         DDEV A 1 A_WeaponReady
         Loop
 
@@ -51,7 +53,7 @@ actor Devastator : Weapon
         loop
 
       Select:
-        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt1")
+        TNT1 A 0 A_JumpIfInventory("DukeReady", 1, "IntroTaunt1")
         DDEV A 1 A_Raise
         DDEV A 0 A_Raise
         DDEV A 0 A_Raise
@@ -67,81 +69,77 @@ actor Devastator : Weapon
         Loop
 
       Fire:
+        TNT1 A 0 A_TakeInventory("DukeWaiting", 15)
       FireRight:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireRight")
-        TNT1 A 0 A_JumpIfInventory("DukeDevastatorFiringSequence",1,"FireLeft")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_JumpIfInventory("DevastatorSide", 1, "FireLeft")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFireRight")
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveInventory("DukeDevastatorFiringSequence",1)
+        TNT1 A 0 A_GiveInventory("DevastatorSide", 1)
         DDEV H 1 A_WeaponReady(14)
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-3,3),1,5,0,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
         DDEV I 2 A_WeaponReady(14)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-3,3),1,6,2,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
         DDEV J 1 BRIGHT A_WeaponReady(14)
         DDEV KLMA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
         Goto Ready
 
       FireLeft:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireLeft")
-        TNT1 A 0 A_TakeInventory("DukeDevastatorFiringSequence",1)
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFireLeft")
+        TNT1 A 0 A_TakeInventory("DevastatorSide", 1)
         TNT1 A 0 A_AlertMonsters
         DDEV B 1 A_WeaponReady(14)
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-3,3),1,-5,0,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
         DDEV C 2 A_WeaponReady(14)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-3,3),1,-6,2,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
         DDEV D 1 BRIGHT A_WeaponReady(14)
         DDEV EFGA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
         Goto Ready
 
       CoopFireRight:
-        TNT1 A 0 A_JumpIfInventory("DukeDevastatorFiringSequence",1,"CoopFireLeft")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_AlertMonsters
-        TNT1 A 0 A_GiveInventory("DukeDevastatorFiringSequence",1)
+        TNT1 A 0 A_GiveInventory("DevastatorSide", 1)
         DDEV H 1 A_WeaponReady(14)
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-3,3),1,5,0,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
         DDEV I 2 A_WeaponReady(14)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-3,3),1,6,2,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
         DDEV J 1 BRIGHT A_WeaponReady(14)
         DDEV KLMA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
         Goto Ready
 
       CoopFireLeft:
-        TNT1 A 0 A_TakeInventory("DukeDevastatorFiringSequence",1)
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_TakeInventory("DevastatorSide", 1)
         TNT1 A 0 A_AlertMonsters
         DDEV B 1 A_WeaponReady(14)
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-3,3),1,-5,0,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
         DDEV C 2 A_WeaponReady(14)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-3,3),1,-6,2,0,random(-1,1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
         DDEV D 1 BRIGHT A_WeaponReady(14)
         DDEV EFGA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -154,15 +152,15 @@ actor Devastator : Weapon
         stop
 
       AltFire:
-        TNT1 A 0 A_GiveInventory("DukeKicking",1)
-        TNT1 A 0 ACS_ExecuteAlways(212,0,3)
+        TNT1 A 0 A_GiveInventory("DukeKicking", 1)
+        TNT1 A 0 ACS_ExecuteAlways(212, 0, 3)
         TNT1 A 0 A_GunFlash
         DKBT C 6 A_WeaponReady(14)
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
         DKBT D 9 A_WeaponReady(14)
         DKBT C 3 A_WeaponReady(14)
         TNT1 A 0 A_Refire
-        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        TNT1 A 0 A_TakeInventory("DukeKicking", 9)
         DKBT C 1 A_WeaponReady(14)
         goto Ready
 
@@ -185,18 +183,18 @@ actor Devastator : Weapon
 
       IntroTaunt1:
         TNT1 AAAAAAAAAAAAA 0 A_Raise
-        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt2")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "IntroTaunt2")
         KNUX A 3
         KNUX B 3
-        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt3")
-        TNT1 A 0 A_PlaySoundEX("duke/introtaunt","SoundSlot7",0,0)
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "IntroTaunt3")
+        TNT1 A 0 A_PlaySoundEX("duke/introtaunt", "SoundSlot7", 0, 0)
         KNUX C 3
-        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         KNUX D 3 A_PlayWeaponSound("duke/knuckles")
         KNUX C 3
         KNUX B 3
-        KNUX A 3 A_TakeInventory("DukeReady",1)
+        KNUX A 3 A_TakeInventory("DukeReady", 1)
         TNT1 A 0 A_PlayWeaponSound("duke/weaponget")
         KNUX AAAAAAAAAAAAAA 0 A_Lower
         goto Select
@@ -210,7 +208,7 @@ actor Devastator : Weapon
         KNUX D 3 A_PlayWeaponSound("duke/knuckles")
         KNUX C 3
         KNUX B 3
-        KNUX A 3 A_TakeInventory("DukeReady",1)
+        KNUX A 3 A_TakeInventory("DukeReady", 1)
         TNT1 A 0 A_PlayWeaponSound("duke/weaponget")
         KNUX AAAAAAAAAAAAAA 0 A_Lower
         goto Select
@@ -230,18 +228,18 @@ actor Devastator : Weapon
 
       WaitingTaunt1:
         TNT1 AAAAAAAAAAAAA 0 A_Raise
-        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt2")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "IntroTaunt2")
         KNUX A 3
         KNUX B 3
-        TNT1 A 0 A_JumpIfInventory("DukeBallgag",1,"IntroTaunt3")
-        TNT1 A 0 A_PlaySoundEX("duke/waitingtoolong","SoundSlot7",0,0)
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "IntroTaunt3")
+        TNT1 A 0 A_PlaySoundEX("duke/waitingtoolong", "SoundSlot7", 0, 0)
         KNUX C 3
-        TNT1 A 0 A_GiveInventory("DukeTauntCooldown",5)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         KNUX D 3 A_PlayWeaponSound("duke/knuckles")
         KNUX C 3
         KNUX B 3
-        KNUX A 3 A_TakeInventory("DukeWaiting",15)
+        KNUX A 3 A_TakeInventory("DukeWaiting", 15)
         TNT1 A 0 A_PlayWeaponSound("duke/weaponget")
         KNUX AAAAAAAAAAAAAA 0 A_Lower
         goto Select
@@ -255,11 +253,67 @@ actor Devastator : Weapon
         KNUX D 3 A_PlayWeaponSound("duke/knuckles")
         KNUX C 3
         KNUX B 3
-        KNUX A 3 A_TakeInventory("DukeWaiting",15)
+        KNUX A 3 A_TakeInventory("DukeWaiting", 15)
         TNT1 A 0 A_PlayWeaponSound("duke/weaponget")
         KNUX AAAAAAAAAAAAAA 0 A_Lower
         goto Select
         
+    }
+}
+
+actor "Spectral Devastator": Devastator
+{
+    Weapon.AmmoType ""
+    Weapon.AmmoUse  0
+    Weapon.AmmoGive 0
+
+    Weapon.SisterWeapon "Devastator"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        TNT1 A 0 A_TakeInventory("DukeWaiting", 15)
+      FireRight:
+        TNT1 A 0 A_JumpIfInventory("DevastatorSide", 1, "FireLeft")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_GiveInventory("DevastatorSide", 1)
+        DDEV H 1 A_WeaponReady(14)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlaySound("duke/freezeshot")
+        TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
+        DDEV I 2 A_WeaponReady(14)
+        DDEV J 1 BRIGHT A_WeaponReady(14)
+        TNT1 A 0 A_PlaySound("duke/freezeshot")
+        TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
+        DDEV J 1 BRIGHT A_WeaponReady(14)
+        DDEV KLMA 1 BRIGHT A_WeaponReady(14)
+        TNT1 A 0 A_ReFire
+        Goto Ready
+
+      FireLeft:
+        TNT1 A 0 A_TakeInventory("DevastatorSide", 1)
+        TNT1 A 0 A_AlertMonsters
+        DDEV B 1 A_WeaponReady(14)
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlaySound("duke/freezeshot")
+        TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
+        DDEV C 2 A_WeaponReady(14)
+        DDEV D 1 BRIGHT A_WeaponReady(14)
+        TNT1 A 0 A_PlaySound("duke/freezeshot")
+        TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
+        DDEV D 1 BRIGHT A_WeaponReady(14)
+        DDEV EFGA 1 BRIGHT A_WeaponReady(14)
+        TNT1 A 0 A_ReFire
+        Goto Ready
     }
 }
 
@@ -282,13 +336,15 @@ actor DukeDevastatorRocket
         loop
 
       Death:
-        TNT1 A 0 A_Explode(35,32)
-        TNT1 A 0 A_PlaySoundEx("duke/explosion","Weapon",0,1)
+        TNT1 A 0 A_Explode(35, 32)
+        TNT1 A 0 A_PlaySoundEx("duke/explosion", "Weapon", 0, 1)
         TNT1 A 1 A_SpawnItemEx("DevastatorExplosion")
         Stop
     }
 }
 
 actor DukeDevastatorRocketCoop : DukeDevastatorRocket { +THRUSPECIES Species "Player" }
+
+actor SpectralDevastatorRocket: DukeDevastatorRocketCoop { DamageType "DukeSpectral" }
 
 actor DevastatorExplosion : RPGExplosion { Scale 0.1 +CLIENTSIDEONLY } // ...But this can be clientsided with no problems. WAT.

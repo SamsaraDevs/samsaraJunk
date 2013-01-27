@@ -261,6 +261,7 @@ actor MarathonPlayer : PlayerPawn
         goto Death
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
         goto Death.DukeDamage
 

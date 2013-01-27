@@ -125,6 +125,7 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "WolfenFlamethrower", 0.55
     DamageFactor "DukeDamage", 0.55
     DamageFactor "DukeExplosive", 0.55
+    DamageFactor "DukeSpectral", 0.55
     DamageFactor "MightyBoot", 0.55
     DamageFactor "DukeIce", 0.55
     

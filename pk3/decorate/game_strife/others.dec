@@ -37,6 +37,7 @@ ACTOR Macil2B : Macil2 replaces Macil2
         goto Death
         
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
         
@@ -137,6 +138,7 @@ ACTOR StrifeBishop2 : StrifeBishop replaces StrifeBishop
       Death.DukeDamage:
       Death.DukePistol:
       Death.DukeExplosive:
+      Death.DukeSpectral:
       Death.MightyBoot:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
         goto Death
@@ -240,6 +242,7 @@ ACTOR Loremaster2 : Loremaster replaces Loremaster
       Death.DukeDamage:
       Death.DukePistol:
       Death.DukeExplosive:
+      Death.DukeSpectral:
       Death.MightyBoot:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 
@@ -359,6 +362,7 @@ ACTOR Programmer2 : Programmer replaces Programmer
       Death.DukeDamage:
       Death.DukePistol:
       Death.DukeExplosive:
+      Death.DukeSpectral:
       Death.MightyBoot:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 

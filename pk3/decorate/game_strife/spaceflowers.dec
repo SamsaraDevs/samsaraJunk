@@ -51,8 +51,10 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     DamageFactor "WMCNade", 0
     DamageFactor "QuakePistol", 0
     DamageFactor "NotQuadded", 0
-    DamageFactor "SpectralNoQuad", 1
+
     DamageFactor "Spectral", 1
+    DamageFactor "DukeSpectral", 1
+    DamageFactor "SpectralNoQuad", 1
 
     DropItem ""
     Args 1
@@ -76,6 +78,7 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
       Death.DukeDamage:
       Death.MightyBoot:
       Death.DukeExplosive:
+      Death.DukeSpectral:
       Death.DukePistol:
       Death.DukeIce:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
@@ -167,8 +170,10 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
     DamageFactor "WMCNade", 0
     DamageFactor "QuakePistol", 0
     DamageFactor "NotQuadded", 0
-    DamageFactor "SpectralNoQuad", 1
+
     DamageFactor "Spectral", 1
+    DamageFactor "DukeSpectral", 1
+    DamageFactor "SpectralNoQuad", 1
 
     States
     {
@@ -252,8 +257,10 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
     DamageFactor "WMCNade", 0
     DamageFactor "QuakePistol", 0
     DamageFactor "NotQuadded", 0
-    DamageFactor "SpectralNoQuad", 1
+
     DamageFactor "Spectral", 1
+    DamageFactor "DukeSpectral", 1
+    DamageFactor "SpectralNoQuad", 1
 
     States
     {
@@ -330,8 +337,10 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
     DamageFactor "WMCNade", 0.1
     DamageFactor "QuakePistol", 0.1
     DamageFactor "NotQuadded", 0.1
-    DamageFactor "SpectralNoQuad", 1
+
     DamageFactor "Spectral", 1
+    DamageFactor "DukeSpectral", 1
+    DamageFactor "SpectralNoQuad", 1
 
     States
     {
@@ -504,6 +513,7 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
       Death.MightyBoot:
         
       Death.DukeExplosive:
+      Death.DukeSpectral:
         
       Death.DukePistol:
         

@@ -22,6 +22,7 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHell
         goto See
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 
@@ -142,6 +143,7 @@ actor Hellknight2 : Hellknight replaces Hellknight
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

@@ -35,6 +35,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "WolfenFlamethrower", 0.8
     DamageFactor "DukeDamage", 0.8
     DamageFactor "DukeExplosive", 0.8
+    DamageFactor "DukeSpectral", 0.8
     DamageFactor "MightyBoot", 0.8
     DamageFactor "DukeIce", 0.8
     
@@ -145,6 +146,7 @@ actor ChexWarrior : PlayerPawn
         goto See
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

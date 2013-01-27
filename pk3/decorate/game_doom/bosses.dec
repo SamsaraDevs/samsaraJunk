@@ -30,6 +30,7 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
       Death.MightyBoot:
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
@@ -116,6 +117,7 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
       Death.MightyBoot:
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)

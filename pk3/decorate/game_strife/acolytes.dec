@@ -56,6 +56,7 @@ actor Acolyte2: Acolyte replaces Acolyte
         goto "Super::Death"
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 
@@ -298,6 +299,7 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
 		goto IceFinish
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 

@@ -40,6 +40,7 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "WolfenFlamethrower", 0.25
     DamageFactor "DukeDamage", 0.25
     DamageFactor "DukeExplosive", 0.25
+    DamageFactor "DukeSpectral", 0.25
     DamageFactor "MightyBoot", 0.25
     DamageFactor "DukeIce", 0.25
     

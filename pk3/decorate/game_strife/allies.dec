@@ -157,6 +157,7 @@ actor FriendlyFlemoid : FlemoidusBipedicus2
         Goto See
         
       Death.DukeExplosive:
+      Death.DukeSpectral:
         
       Death.DukeDamage:
         

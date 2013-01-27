@@ -11,6 +11,7 @@ actor Fatso2 : Fatso replaces Fatso
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

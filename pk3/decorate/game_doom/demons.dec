@@ -8,6 +8,7 @@ actor DoomDemon2 : Demon replaces Demon
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 
@@ -182,6 +183,7 @@ actor Spectre2 : Spectre replaces Spectre
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

@@ -25,6 +25,7 @@ actor DoomImp2 : DoomImp replaces DoomImp
         goto "Super::Death"
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 
