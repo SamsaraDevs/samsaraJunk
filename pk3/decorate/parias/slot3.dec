@@ -15,7 +15,7 @@ actor "Timon's Axe" : FWeapAxe
     +WEAPON.AMMO_OPTIONAL
     +WEAPON.MELEEWEAPON
     +INVENTORY.UNDROPPABLE
-    //+PIERCEARMOR
+    +PIERCEARMOR
     States
     {
       Spawn:
