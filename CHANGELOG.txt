@@ -68,7 +68,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - The SO's Alien Weapons now properrly displaayy ammmmmo in the thethe fulfuulffscfr rr eeee ee e x0eee
 - Due to popular demand, the LAZ Device is no longer a direct copy of the BFG9000. It is now its own weapon, taking inspiration from old DEHACKED replications of the BFG--rather than spraying tracers, instead it delivers a lingering explosion over a very large area. Oh and it also shields you if you hold the button down. Neat!
 - The Skulltag monsters now have much, much, MUCH better translations! Add onto that, the Hectebus and Dark Imp now have their own attacks back! Thanks to Repo Man for the EXCELLENT coloring jobs!
-- B.J.'s Rocket Launcher, Spear of Destiny, and SO's TOZT no longer rip bosses, even if they don't have the +DONTRIP flag.
+- B.J.'s Rocket Launcher, Spear of Destiny, SO's TOZT, and Wave Motion Cannon no longer rip bosses, even if they don't have the +DONTRIP flag.
 
 
 

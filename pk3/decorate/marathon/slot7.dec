@@ -801,6 +801,7 @@ actor WMCRailLevel1: FastProjectile
     Projectile
     Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
     +RIPPER
+    +NOBOSSRIP
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +EXTREMEDEATH
@@ -829,6 +830,7 @@ actor WMCRailLevel2: FastProjectile
     Projectile
     Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
     +RIPPER
+    +NOBOSSRIP
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +FORCERADIUSDMG
@@ -873,6 +875,7 @@ actor WMCRailLevel3: FastProjectile
     Projectile
     Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
     +RIPPER
+    +NOBOSSRIP
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +FORCERADIUSDMG
@@ -1178,6 +1181,7 @@ actor WMCRailLevel3Baby: FastProjectile
     Projectile
     Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
     +RIPPER
+    +NOBOSSRIP
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +EXTREMEDEATH
@@ -1283,6 +1287,7 @@ actor WMCBeamMissile
     damage 0
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     -SOLID
     +NOBLOOD
     +CLIENTSIDEONLY
@@ -1358,6 +1363,7 @@ actor WMCBeamMissileBaby
     damage 0
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     -SOLID
     +NOBLOOD
     +CLIENTSIDEONLY
