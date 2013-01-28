@@ -123,6 +123,12 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
         TNT1 A 0 ACS_ExecuteAlways(316, 0, args[0])
         stop
 
+      Missile:
+	ALN1 J 3 Bright A_FaceTarget
+	ALN1 I 3 Bright A_SpotLightning
+	ALN1 H 3 Bright
+	Goto See2
+
       Pain:
 	TNT1 A 0 A_SpectreChunkSmall
 	ALN1 J 1 A_Pain
@@ -155,12 +161,6 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 	ALN1 A 1 A_SetShootable
 	goto See2
 
-      Missile:
-	ALN1 J 3 Bright A_FaceTarget
-	ALN1 I 3 Bright A_SpotLightning
-	ALN1 H 3 Bright
-	Goto See2
-
       SpawnFake:
 	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
 	goto Wandering
@@ -176,6 +176,10 @@ Health 300
 -DONTRIP
 States
 {
+      See:
+	ALN1 A 1
+	goto See 2
+
       Melee:
       Missile:
 	ALN1 J 3 Bright A_FaceTarget
@@ -186,6 +190,45 @@ States
       Pain:
 	ALN1 J 2 A_Pain
 	Goto See2
+        
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        AL1P A 6 bright
+        AL1P B 6 bright A_Scream
+        ALN1 J 4 A_SetTranslucent(0.6,0)
+        SPID I 0 A_Scream
+        ALN1 J 4 A_SetTranslucent(0.5,0)
+        SPID I 0 A_NoBlocking
+        ALN1 J 4 A_SetTranslucent(0.45,0)
+        ALN1 J 4 A_SetTranslucent(0.4,0)
+        ALN1 J 4 A_SetTranslucent(0.3,0)
+        ALN1 J 4 A_SetTranslucent(0.25,0)
+        ALN1 J 4 A_SetTranslucent(0.2,0)
+        ALN1 J 4 A_SetTranslucent(0.1,0)
+        ALN1 J 4 A_SetTranslucent(0.05,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        stop
+        
+      Death.ZorchPistol:
+      Death.Zorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        SPID J 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        ALN1 J 4 A_SpawnItem("ZorchEffectWide")
+        ALN1 J 4 A_SetTranslucent(0.6,0)
+        SPID I 0 A_Scream
+        ALN1 J 4 A_SetTranslucent(0.5,0)
+        SPID I 0 A_NoBlocking
+        ALN1 J 4 A_SetTranslucent(0.45,0)
+        ALN1 J 4 A_SetTranslucent(0.4,0)
+        ALN1 J 4 A_SetTranslucent(0.3,0)
+        ALN1 J 4 A_SetTranslucent(0.25,0)
+        ALN1 J 4 A_SetTranslucent(0.2,0)
+        ALN1 J 4 A_SetTranslucent(0.1,0)
+        ALN1 J 4 A_SetTranslucent(0.05,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        stop
 }
 }
 
@@ -365,7 +408,9 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
 {
     Health 7500
     ConversationID 74
+    PainChance 75
     -SPECTRAL
+    -REFLECTIVE
     
     DamageFactor "PoisonCloud", 0.1
     DamageFactor "TimonsAxe", 0.1
@@ -413,7 +458,31 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         TNT1 A 0 A_SetTranslucent(0,0)
         TNT1 A 80
         TNT1 A 0 ACS_ExecuteAlways(204,0,4)
+        MNAM A 0 A_SetTranslucent(0.05,0)
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
         MNAM A 0 A_SetTranslucent(0.1,0)
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+        MNAM A 0 A_SetTranslucent(0.15,0)
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
@@ -437,7 +506,31 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+        MNAM A 0 A_SetTranslucent(0.25,0)
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
         MNAM A 0 A_SetTranslucent(0.3,0)
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+        MNAM A 0 A_SetTranslucent(0.35,0)
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
@@ -461,7 +554,7 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        MNAM A 0 A_SetTranslucent(0.5,0)
+        MNAM A 0 A_SetTranslucent(0.45,0)
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
@@ -473,62 +566,14 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        MNAM A 0 A_SetTranslucent(0.6,0)
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        MNAM A 0 A_SetTranslucent(0.7,0)
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        MNAM A 0 A_SetTranslucent(0.8,0)
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        MNAM A 0 A_SetTranslucent(0.9,0)
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        MNAM AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        TNT1 A 0 //A_PlaySoundEx("KoraxVoiceGreetings","SoundSlot5",0,2)
+        TNT1 A 0 A_PlaySoundEx("alienspectre/sight","SoundSlot5",0,2)
         MNAM AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
         MNAM AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        MNAM A 100 A_SetTranslucent(1,0)
-        TNT1 A 0 //A_PlaySoundEx("KoraxVoiceReady","SoundSlot5",0,2)
+        MNAM A 100 A_SetTranslucent(0.5,0)
+        TNT1 A 0 A_PlaySoundEx("entity/sight","SoundSlot5",0,2)
         MNAM A 100
         TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
         MNAM A 1 A_Look
@@ -540,11 +585,11 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
         
       See2:
-        MNAL AB 4 Bright A_Chase
+        MNAL AB 4 Bright A_FastChase
         MNAL C 4 Bright A_SentinelBob
-        MNAL DEF 4 Bright A_Chase
+        MNAL DEF 4 Bright A_FastChase
         MNAL G 4 Bright A_SentinelBob
-        MNAL HIJ 4 Bright A_Chase
+        MNAL HIJ 4 Bright A_FastChase
         MNAL K 4 Bright A_SentinelBob
         Loop
         
@@ -557,12 +602,10 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
       Missile:
         MNAL F 3 Bright A_FaceTarget
         MNAL I 3 Bright A_EntityAttack
-        MNAL E 3 Bright
+        MNAL E 3 Bright A_FastChase
+	TNT1 A 0 A_ChangeFlag("REFLECTIVE",0)
+	MNAL A 0 A_SentinelRefire
         Goto See2+10
-        
-      Pain:
-        MNAL J 2 Bright A_Pain
-        Goto See2+6
         
       Death:
         MNAL L 7 Bright A_SpectreChunkSmall
@@ -611,6 +654,45 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         TNT1 A 1 A_SetTranslucent(1,0)
         TNT1 A 1 A_EntityDeath
         stop
+
+      Pain:
+	TNT1 A 0 A_SpectreChunkSmall
+	MNAL J 1 A_Pain
+	MNAL J 1 A_Explode(64,64)
+	TNT1 A 0 A_ChangeFlag("REFLECTIVE",1)
+	TNT1 A 0 A_Jump(128,"Vanish")
+	Goto See+6
+
+      Vanish:
+	TNT1 AAAAA 0 A_SpectreChunkSmall
+	TNT1 A 0 A_UnsetShootable
+	//MNAL J 1 A_SetTranslucent(0.5,1)
+	MNAL J 1 A_SetTranslucent(0.4,1)
+	MNAL J 1 A_SetTranslucent(0.3,1)
+	MNAL J 1 A_SetTranslucent(0.2,1)
+	MNAL J 1 A_SetTranslucent(0.1,1)
+	TNT1 A 1
+
+      Wandering:
+	TNT1 AAAAAAAAAA 1 A_Wander
+	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+	TNT1 A 0 A_Jump(128,"SpawnFake")
+	TNT1 A 0 A_Jump(128,"Wandering")
+	ALN1 J 1 A_Explode(64,64)
+	ALN1 J 1 A_SetTranslucent(0.1,1)
+	ALN1 J 1 A_SetTranslucent(0.2,1)
+	ALN1 J 1 A_SetTranslucent(0.3,1)
+	ALN1 J 1 A_SetTranslucent(0.4,1)
+	ALN1 J 1 A_SetTranslucent(0.5,1)
+	//ALN1 J 1 A_SetTranslucent(0.666,1)
+	ALN1 A 1 A_SetShootable
+	goto See2
+
+      SpawnFake:
+	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
+	goto Wandering
     }
 }
 
