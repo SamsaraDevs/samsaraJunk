@@ -143,6 +143,7 @@ actor SpearShotMini
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     +DOOMBOUNCE
     +NODAMAGETHRUST
     +SKYEXPLODE
@@ -199,6 +200,7 @@ actor SpearShotMini2
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     +STRIFEDAMAGE
     +DOOMBOUNCE
     +NODAMAGETHRUST

@@ -47,6 +47,7 @@ actor WolfRocket
     +RIPPER
     +FORCERADIUSDMG
     +NOEXTREMEDEATH
+    +NOBOSSRIP
     SeeSound "wolfen/missilefire"
     DeathSound "wolfen/missilexplod"
     Obituary "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-"

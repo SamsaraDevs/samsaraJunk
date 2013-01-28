@@ -188,6 +188,8 @@ actor Ripper2 : Ripper
     +MISSILE
     -NOCLIP
     +NOBOSSRIP
+    +THRUSPECIES
+    Species "Player"
     DONTHURTSHOOTER
     Decal HImpScorch
 }
