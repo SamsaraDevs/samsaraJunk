@@ -3,6 +3,7 @@
 actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 {
     Health 1500
+    PainChance 125
     ConversationID 67
     DamageFactor "Mace", 1.15
     DamageFactor "DragonClaw", 1.6
@@ -67,11 +68,11 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
         TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
         
       See2:
-        ALN1 AB 4 Bright A_Chase
+        ALN1 AB 4 Bright A_FastChase
         ALN1 C 4 Bright A_SentinelBob
-        ALN1 DEF 4 Bright A_Chase
+        ALN1 DEF 4 Bright A_FastChase
         ALN1 G 4 Bright A_SentinelBob
-        ALN1 HIJ 4 Bright A_Chase
+        ALN1 HIJ 4 Bright A_FastChase
         ALN1 K 4 Bright A_SentinelBob
         Loop
         
@@ -121,7 +122,71 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
         TNT1 A 1 A_SetTranslucent(1,0)
         TNT1 A 0 ACS_ExecuteAlways(316, 0, args[0])
         stop
+
+      Pain:
+	TNT1 A 0 A_SpectreChunkSmall
+	ALN1 J 1 A_Pain
+	ALN1 J 1 A_Explode(64,64)
+	TNT1 A 0 A_Jump(128,"Vanish")
+	Goto See+6
+
+      Vanish:
+	TNT1 AAAAA 0 A_SpectreChunkSmall
+	TNT1 A 0 A_UnsetShootable
+	ALN1 J 1 A_SetTranslucent(0.5,1)
+	ALN1 J 1 A_SetTranslucent(0.4,1)
+	ALN1 J 1 A_SetTranslucent(0.3,1)
+	ALN1 J 1 A_SetTranslucent(0.2,1)
+	ALN1 J 1 A_SetTranslucent(0.1,1)
+	TNT1 A 1
+
+      Wandering:
+	TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Wander
+	TNT1 A 1 A_Pain
+	TNT1 A 0 A_Jump(64,"SpawnFake")
+	TNT1 A 0 A_Jump(128,"Wandering")
+	ALN1 J 1 A_Explode(64,64)
+	ALN1 J 1 A_SetTranslucent(0.1,1)
+	ALN1 J 1 A_SetTranslucent(0.2,1)
+	ALN1 J 1 A_SetTranslucent(0.3,1)
+	ALN1 J 1 A_SetTranslucent(0.4,1)
+	ALN1 J 1 A_SetTranslucent(0.5,1)
+	ALN1 J 1 A_SetTranslucent(0.666,1)
+	ALN1 A 1 A_SetShootable
+	goto See2
+
+      Missile:
+	ALN1 J 3 Bright A_FaceTarget
+	ALN1 I 3 Bright A_SpotLightning
+	ALN1 H 3 Bright
+	Goto See2
+
+      SpawnFake:
+	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
+	goto Wandering
     }
+}
+
+actor AlienSpectreFake : AlienSpectre1B
+{
+Scale 0.55
+Health 300
+-BOSSDEATH
+-BOSS
+-DONTRIP
+States
+{
+      Melee:
+      Missile:
+	ALN1 J 3 Bright A_FaceTarget
+	ALN1 I 3 Bright A_SkullAttack
+	ALN1 HK 3 Bright
+	Goto Missile+2
+
+      Pain:
+	ALN1 J 2 A_Pain
+	Goto See2
+}
 }
 
 actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
@@ -178,9 +243,9 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
     States
     {
       Missile:
-        ALN1 F 4 A_FaceTarget
-        ALN1 I 4 A_CustomMissile("SpectralLightningH3", 32, 0)
-        ALN1 E 4
+        ALN1 F 3 A_FaceTarget
+        ALN1 I 3 A_CustomMissile("SpectralLightningH3", 32, 0)
+        ALN1 E 3
         Goto See2+10
     }
 }
@@ -204,9 +269,9 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
         loop
 
       Missile:
-        ALN1 F 4 A_FaceTarget
-        ALN1 I 4 A_Spectre3Attack
-        ALN1 E 4
+        ALN1 F 3 A_FaceTarget
+        ALN1 I 3 A_Spectre3Attack
+        ALN1 E 3
         Goto See2+10
     }
 }
@@ -265,9 +330,9 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
     States
     {
       Missile:
-        ALN1 F 4 A_FaceTarget
-        ALN1 I 4 A_CustomMissile("SpectralLightningBigV2", 32, 0)
-        ALN1 E 4
+        ALN1 F 3 A_FaceTarget
+        ALN1 I 3 A_CustomMissile("SpectralLightningBigV2", 32, 0)
+        ALN1 E 3
         Goto See2+10
     }
 }
@@ -286,9 +351,9 @@ actor AlienSpectre5B : AlienSpectre1b replaces AlienSpectre5
     States
     {
       Missile:
-        ALN1 F 4 A_FaceTarget
-        ALN1 I 4 A_CustomMissile("SpectralLightningBigBall2", 32, 0)
-        ALN1 E 4
+        ALN1 F 3 A_FaceTarget
+        ALN1 I 3 A_CustomMissile("SpectralLightningBigBall2", 32, 0)
+        ALN1 E 3
         Goto See2+10
     }
 }
@@ -298,7 +363,7 @@ actor AlienSpectre5B : AlienSpectre1b replaces AlienSpectre5
 // he is no longer immune to other weapons. Instead, they only do 1/10th the damage.
 actor EntityBoss2 : EntityBoss replaces EntityBoss
 {
-    Health 6500
+    Health 7500
     ConversationID 74
     -SPECTRAL
     
@@ -484,15 +549,15 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         Loop
         
       Melee:
-        MNAL J 4 Bright A_FaceTarget
-        MNAL I 4 Bright A_CustomMeleeAttack((random[SpectreMelee](0, 255)&9)*5)
-        MNAL C 4 Bright
+        MNAL J 3 Bright A_FaceTarget
+        MNAL I 3 Bright A_CustomMeleeAttack((random[SpectreMelee](0, 255)&9)*5)
+        MNAL C 3 Bright
         Goto See2+2
         
       Missile:
-        MNAL F 4 Bright A_FaceTarget
-        MNAL I 4 Bright A_EntityAttack
-        MNAL E 4 Bright
+        MNAL F 3 Bright A_FaceTarget
+        MNAL I 3 Bright A_EntityAttack
+        MNAL E 3 Bright
         Goto See2+10
         
       Pain:
