@@ -49,4 +49,4 @@ actor MageWandMissile2 : MageWandMissile replaces MageWandMissile
     DamageType "Pistol"
 }
 
-actor MageWandMissile2 : MageWandMissile2 { Species "Player" +THRUSPECIES }
+actor MageWandMissile3 : MageWandMissile2 { Species "Player" +THRUSPECIES }

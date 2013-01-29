@@ -178,7 +178,7 @@ States
 {
       See:
 	ALN1 A 1
-	goto See 2
+	goto See2
 
       Melee:
       Missile:
