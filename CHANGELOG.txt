@@ -70,6 +70,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - The Skulltag monsters now have much, much, MUCH better translations! Add onto that, the Hectebus and Dark Imp now have their own attacks back! Thanks to Repo Man for the EXCELLENT coloring jobs!
 - B.J.'s Rocket Launcher, Spear of Destiny, SO's TOZT, and Wave Motion Cannon no longer rip bosses, even if they don't have the +DONTRIP flag.
 - BlackFish55 has slaved long and hard underphotoshop, and now the HUDs support widescreen! Everyone give him a hand!
+- BlackFish55 has also provided graphical tweaks for various weapons to make them more widescreen friendly--Timon's Axe, the Hammer of Retribution, and Duke's RPG are now widescreen friendly! Thanks, man!
 
 
 
