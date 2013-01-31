@@ -71,6 +71,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - B.J.'s Rocket Launcher, Spear of Destiny, SO's TOZT, and Wave Motion Cannon no longer rip bosses, even if they don't have the +DONTRIP flag.
 - BlackFish55 has slaved long and hard underphotoshop, and now the HUDs support widescreen! Everyone give him a hand!
 - BlackFish55 has also provided graphical tweaks for various weapons to make them more widescreen friendly--Timon's Axe, the Hammer of Retribution, and Duke's RPG are now widescreen friendly! Thanks, man!
+- The Dissolution of Eternity ammo has been tweaked in how it's used. Alt fire now swaps from ammo type to ammo type, rather than fires it right away. This should be more like Quake, where you had to manually select the weapon, and should give Ranger in DM a little bit of a pause as he goes from weapon to weapon.
 
 
 
