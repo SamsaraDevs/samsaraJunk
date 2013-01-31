@@ -6,7 +6,7 @@ actor MarathonPlayer : PlayerPawn
     scale 0.45
     BloodColor "Red"
     Player.Face "MAR"
-    Player.JumpZ 4//Default is 8
+    Player.JumpZ 4   // I LIED.
     Player.ForwardMove 0.95, 0.925
     Player.SideMove 0.95, 0.925
     Player.DamageScreenColor "Red"//, 0.0
