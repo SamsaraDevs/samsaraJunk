@@ -233,17 +233,46 @@ actor "Nailgun": InstantSwitchWeapon
 
 	  DeselectShit:
 		QNLG A 1
-		TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"SelectTB")
-		TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"SelectQRL")
-		TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"SelectQGL")
-		TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"SelectSNG")
-		//TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"SelectNG")
-		TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"SelectDSG")
-		TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"SelectLasCan")
+		TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
+	  Consider6:
+		TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
+	  Consider5:
+		TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"ConsiderQGL")
+	  Consider4:
+		TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"ConsiderSNG")
+	  Consider3:
+		//TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"ConsiderNG")
+	  Consider2:
+		TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"ConsiderDSG")
+	  Consider1:
+		TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
+	  Consider0:
 		QNLG A 1 A_SelectWeapon("Single Shotgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
 		goto Deselect
+		
+	  ConsiderTB:
+		TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
+		goto Consider6
+	  ConsiderQRL:
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
+		goto Consider5
+	  ConsiderQGL:
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
+		goto Consider4
+	  ConsiderSNG:
+		TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
+		goto Consider3
+	  ConsiderNG:
+		TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectNG")
+		goto Consider2
+	  ConsiderDSG:
+		TNT1 A 0 A_JumpIfInventory("ShellAmmo",1,"SelectDSG")
+		goto Consider1
+	  ConsiderLasCan:
+		TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectLasCan")
+		goto Consider0
 
 	  SelectTB:
 		TNT1 A 0 A_SelectWeapon("Thunderbolt")
