@@ -166,7 +166,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         Stop
 
 	  DeselectShit:
-		QGRL A 1
+		QRKL A 1
 		TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
 	  Consider6:
 		//TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
@@ -181,7 +181,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
 	  Consider1:
 		TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
 	  Consider0:
-		QGRL A 1 A_SelectWeapon("Single Shotgun")
+		QRKL A 1 A_SelectWeapon("Single Shotgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
 		goto Deselect
