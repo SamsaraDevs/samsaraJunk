@@ -6,6 +6,7 @@ actor DukePlayer : PlayerPawn
     Player.StartItem "M1911", 1
     Player.StartItem "Mighty Boot", 1
     Player.StartItem "DukeClass", 1
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
     //Player.StartItem "DukePistolReload", 12
     Player.Soundclass "DukePlayer"

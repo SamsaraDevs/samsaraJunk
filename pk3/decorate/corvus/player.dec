@@ -4,6 +4,7 @@ actor CorvusPlayer : PlayerPawn
     Player.StartItem "Elven Wand", 1
     Player.StartItem " Staff ", 1
     Player.StartItem "CorvusClass", 1
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
     //Player.StartItem "PermaProxyBomb", 1
     Player.StartItem "PermaRemoteBomb", 1

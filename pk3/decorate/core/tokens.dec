@@ -12,6 +12,7 @@ actor Counter: Inventory
     -INVBAR
 }
 
+actor IsSamsaraClass: Boolean {}
 actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}

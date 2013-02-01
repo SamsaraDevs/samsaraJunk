@@ -25,6 +25,7 @@ actor MarathonPlayer : PlayerPawn
     Player.StartItem "RocketAmmo", 10
     Player.StartItem "AmmoShell", 20
     Player.StartItem "Cell", 50
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "MarathonClass", 1
     //Player.StartItem "Allmap", 1
     //Player.StartItem "PowerScanner", 1

@@ -121,6 +121,8 @@ function void ApplyLMS(void)
     int classNum = samsaraClassNum();
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
+
+    if (!CheckInventory("IsSamsaraClass") || classNum == -1) { return; }
     
     GiveInventory("Backpack", 1);
 
