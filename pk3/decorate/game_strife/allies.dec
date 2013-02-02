@@ -241,11 +241,11 @@ actor FriendlyFlemBall : BipedicusBallV3
     States
     {
       Spawn:
-        FBL1 AB 4
+        FLB1 AB 4
         Loop
         
       Death:
-        FBL1 CDE 6
+        FLB1 CDE 6
         Stop
     }
 }
