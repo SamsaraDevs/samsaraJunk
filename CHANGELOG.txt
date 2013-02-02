@@ -72,6 +72,8 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - BlackFish55 has slaved long and hard underphotoshop, and now the HUDs support widescreen! Everyone give him a hand!
 - BlackFish55 has also provided graphical tweaks for various weapons to make them more widescreen friendly--Timon's Axe, the Hammer of Retribution, and Duke's RPG are now widescreen friendly! Thanks, man!
 - The Dissolution of Eternity ammo has been tweaked in how it's used. Alt fire now swaps from ammo type to ammo type, rather than fires it right away. This should be more like Quake, where you had to manually select the weapon, and should give Ranger in DM a little bit of a pause as he goes from weapon to weapon.
+- Parias' damage values have been tweaked for DM. The Serpent Staff's individual bolts have been buffed from 4-20 to 5-25, the Hammer of Retribution was increased from 64 to 98, and the Firestorm's range has been slightly decreased.
+- All characters now have "IsSamsaraClass" as an inventory item, for ACS checks to see if they're actually a Samsara class. That way, if used with any other additional class mod, or for ACS that requires certain classes, Samsara scripts will not target other classes and non-Samsara scripts will not target Samsara chars.
 
 
 
