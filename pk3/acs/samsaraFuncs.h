@@ -17,6 +17,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     int hasWep  = CheckInventory(weapon);
     int success;
 
+    if (class == -1) { return 0; }
+
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
@@ -80,6 +82,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
 function int HasClassWeapon(int class, int slot)
 {
+    if (class == -1) { return 0; }
+
     int weapon = ClassWeapons[class][slot][S_WEP];
     int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
 
@@ -96,6 +100,8 @@ function int HasClassWeapon(int class, int slot)
 function void GiveClassUnique(int class, int which)
 {
     int unique, ammo, amax;
+
+    if (class == -1) { return; }
     
     switch (which)
     {
@@ -122,7 +128,7 @@ function void ApplyLMS(void)
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
 
-    if (!CheckInventory("IsSamsaraClass") || classNum == -1) { return; }
+    if (classNum == -1) { return; }
     
     GiveInventory("Backpack", 1);
 
@@ -192,6 +198,8 @@ function int _giveunique(int cnum, int unum, int ignoreinv)
 {
     int success; 
 
+    if (cnum == -1) { return -1; }
+
     unum *= 2;
     int uanum = unum + 1;
 
@@ -238,12 +246,16 @@ function void TakeUnique(int cnum, int unum)
     unum *= 2;
     int uanum = unum + 1;
 
+    if (cnum == -1) { return; }
+
     int unique = ClassUniques[cnum][unum];
     if (unique != "") { TakeInventory(unique, 0x7FFFFFFF); }
 }
 
 function int HasUnique(int cnum, int unum)
 {
+    if (cnum == -1) { return 0; }
+
     int unique = ClassUniques[cnum][unum*2];
     return (unique != "") && CheckInventory(unique);
 }
@@ -253,6 +265,8 @@ function int ClassWeaponSlot(void)
 {
     int pclass = samsaraClassNum();
     int weapon, i;
+
+    if (pclass == -1) { return -1; }
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
@@ -280,7 +294,7 @@ function int ConvertClassWeapons(int classnum)
             if (HasClassWeapon(i, j))
             {
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
-                GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
+                if (classnum != -1) { GiveInventory(ClassWeapons[classnum][j][S_WEP], 1); }
                 ret += 1;
             }
         }
