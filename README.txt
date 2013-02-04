@@ -1,3 +1,6 @@
+http://zandronum.com/forum/showthread.php?tid=200
+http://forum.zdoom.org/viewtopic.php?f=19&t=33219
+
 Compiling samsara.c:
 
 You'll need a special zspecial.acs, and the latest version of ACC. Since this is
