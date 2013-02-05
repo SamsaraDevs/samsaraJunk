@@ -27,6 +27,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_banjetpack 0");
         ConsoleCommand("archivecvar samsara_banjetpack"); }
         
+        if (!GetCVar("samsara_banwolfmove"))
+        {   ConsoleCommand("set samsara_banwolfmove 0");
+        ConsoleCommand("archivecvar samsara_banwolfmove"); }
+        
         if (!GetCVar("samsara_lmslife"))
         {   ConsoleCommand("set samsara_lmslife 0");
         ConsoleCommand("archivecvar samsara_lmslife"); }
@@ -421,7 +425,8 @@ script SAMSARA_WOLFMOVE enter
             break;
         }
 
-        if (!(CheckInventory("CanWolfMovement") && CheckInventory("WolfenMovement")) )
+        if (!(CheckInventory("CanWolfMovement") && CheckInventory("WolfenMovement"))
+          || GetCVar("samsara_banwolfmove"))
         {
             SetActorProperty(0, APROP_Speed, realspeed);
             Delay(1);
