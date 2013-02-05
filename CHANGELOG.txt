@@ -77,6 +77,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - Parias' Serpent Staff should no longer randomly drain him back to 100 health.
 - HeXen's Dark Servant has been switched from a Megasphere to a variant of Strife's Beacon.
 - In singleplayer and DM, Corvus' maceballs were flying without any gravity. This has been fixed.
+- Included the samsara_banwolfmove cvar--if an admin desires, B.J.'s Retro Movement can now be banned from play.
 
 
 
