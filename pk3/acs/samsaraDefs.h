@@ -74,6 +74,7 @@
 int HELPSTR = 
 "Welcome to the Wheel of Samsara! There are a few optional RCon commands you may want to consider.\n\
 samsara_banjetpack 0/1: Toggles whether Duke is allowed to pick up his jetpack or not.\n\
+samsara_banwolfmove 0/1: Toggles whether Wolfenstein movement is allowed or not.\n\
 samsara_nocustomgravity 0/1: Toggles whether the heroes have custom gravity or use only Doom gravity.\n\
 samsara_jumpmod: Gives the indicated multiplier to jump height. 9 for HeXen, -8 for Strife.\n\
 samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
