@@ -3,7 +3,7 @@
 actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 {
     Health 1500
-    PainChance 125
+    PainChance 75
     ConversationID 67
     DamageFactor "Mace", 1.15
     DamageFactor "DragonClaw", 1.6
@@ -408,7 +408,7 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
 {
     Health 7500
     ConversationID 74
-    PainChance 75
+    PainChance 50
     -SPECTRAL
     -REFLECTIVE
     
