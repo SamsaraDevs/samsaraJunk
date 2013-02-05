@@ -292,6 +292,9 @@ actor " Firemace " : Weapon
 
 actor MaceFX12 : MaceFX1 replaces MaceFX1
 {
+    -NOGRAVITY
+    Gravity 0.125
+    VSpeed 0.5
     DamageType "Mace"
     Damage 2 // Originally 2
     Decal BaronScorch
@@ -310,6 +313,9 @@ actor MaceFX1Coop : MaceFX12
 
 actor MaceFX22 : MaceFX2 replaces MaceFX2
 {
+    -NOGRAVITY
+    Gravity 0.125
+    VSpeed 0.5
     DamageType "Mace"
     Damage 4 // Originally 6
     SeeSound "weapons/maceshoot"

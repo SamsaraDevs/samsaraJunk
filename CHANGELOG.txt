@@ -76,6 +76,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - All characters now have "IsSamsaraClass" as an inventory item, and additional ACS checks to see if they're actually a Samsara class. This means Samsara-specific scripts will not target non-Samsara classes, and scripts in add-ons can be made specifically to target non-Samsara classes.
 - Parias' Serpent Staff should no longer randomly drain him back to 100 health.
 - HeXen's Dark Servant has been switched from a Megasphere to a variant of Strife's Beacon.
+- In singleplayer and DM, Corvus' maceballs were flying without any gravity. This has been fixed.
 
 
 
