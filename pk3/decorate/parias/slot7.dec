@@ -1,7 +1,6 @@
 actor Wraithverge : CWeapWraithverge
 {
     Weapon.SelectionOrder 3000
-    Weapon.SlotNumber 7
     +WEAPON.PRIMARY_USES_BOTH
     +INVENTORY.UNDROPPABLE
     Weapon.AmmoUse1 25
@@ -11,6 +10,9 @@ actor Wraithverge : CWeapWraithverge
     Weapon.KickBack 150
     Weapon.AmmoType1 "Clip"
     Weapon.AmmoType2 "Cell"
+
+    Weapon.SisterWeapon "Spectral Wraithverge"
+
     Obituary "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-"
     Inventory.PickupMessage "You picked up the Wraithverge!"
     Inventory.PickupSound "hexen/weaponget"
@@ -36,20 +38,12 @@ actor Wraithverge : CWeapWraithverge
         CHLY AB 1 bright offset(0, 40)
         CHLY CD 2 bright offset(0, 43)
         CHLY E 2 bright offset(0, 45)
-        CHLY E 0 A_JumpIfInventory("SpectralFiring", 1, "Spectral")
         CHLY F 6 bright offset(0, 48) A_CHolyAttack
         CHLY GG 2 bright offset(0, 40) A_CHolyPalette
         CHLY G 2 offset(0, 36) A_CHolyPalette
         goto FireEnd
         
       Spectral:
-        CHLY F 0 A_SetBlend("80 80 FF", 0.4, 0.33)
-        CHLY F 0 A_PlaySound("weapons/sigil", 6)
-        CHLY F 0 A_PlaySound("HolySymbolFire", CHAN_WEAPON)
-        CHLY F 6 bright offset(0, 48) A_FireCustomMissile("SpectralHolyMissile")
-        CHLY G 4 bright offset(0, 40)
-        CHLY G 2 offset(0, 36)
-        goto FireEnd
         
       FireEnd:
         CHLY A 20
@@ -57,6 +51,36 @@ actor Wraithverge : CWeapWraithverge
         Goto Ready
     }
 }
+
+actor "Spectral Wraithverge": Wraithverge
+{
+    Weapon.AmmoType1 ""
+    Weapon.AmmoType2 ""
+    Weapon.AmmoUse1  0
+    Weapon.AmmoUse2  0
+    Weapon.AmmoGive1 0
+    Weapon.AmmoGive2 0
+
+    Weapon.SisterWeapon "Wraithverge"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        CHLY AB 1 bright offset(0, 40)
+        CHLY CD 2 bright offset(0, 43)
+        CHLY E 2 bright offset(0, 45)
+        CHLY F 0 A_SetBlend("80 80 FF", 0.4, 0.33)
+        CHLY F 0 ACS_ExecuteAlways(317, 0, 8)
+        CHLY F 0 A_PlaySound("weapons/sigil", 6)
+        CHLY F 0 A_PlaySound("HolySymbolFire", CHAN_WEAPON)
+        CHLY F 6 bright offset(0, 48) A_FireCustomMissile("SpectralHolyMissile")
+        CHLY G 4 bright offset(0, 40)
+        CHLY G 2 offset(0, 36)
+        goto FireEnd
+    }
+}
+
 
 actor HolySpirit2 : HolySpirit replaces HolySpirit
 {
