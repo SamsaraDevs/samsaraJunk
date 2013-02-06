@@ -170,7 +170,7 @@ actor "Super Nailgun": Weapon
         QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
-		TNT1 A 0 A_TakeInventory("LavaNails",1)
+		TNT1 A 0 A_TakeInventory("LavaNails",2)
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
         QSNL A 0 A_FireCustomMissile("QuakeSLNail",0,0)
