@@ -139,6 +139,7 @@ script SAMSARA_SPECTRES (int mode, int arg1, int arg2)
         SetActivatorToTarget(0);
         Print(l:"TXT_KILLED_BISHOP");
         GiveInventory("Communicator", 1);
+        GiveInventory("QuestItem21", 1);
         SendToCommunicator(74, 0, 0, 0);
         break;
 

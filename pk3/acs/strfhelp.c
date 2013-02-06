@@ -220,8 +220,7 @@ script << 0 >> (int type, int tag)
         break;
         
       case 186:
-        if (lineside() != LINE_FRONT)
-        break;
+        if (lineside() != LINE_FRONT) { break; }
 
       case 145:
         if (gametype() == GAME_NET_DEATHMATCH)
