@@ -33,14 +33,14 @@ int BeaconMonsters[CLASSCOUNT] =
 
 int AccuracyUniques[CLASSCOUNT][ACCURACYCOUNT] = 
 {
-    {"DoomZerkCounter", "", "", "", "", "", "", "", "", ""},
-    {"ChexSoulsphere",  "", "", "", "", "", "", "", "", ""},
-    {"ArtiEgg2",        "", "", "", "", "", "", "", "", ""},
-    {"WolfExtraLife",   "", "", "", "", "", "", "", "", ""},
-    {"PortMysticAmbit", "", "", "", "", "", "", "", "", ""},
-    {"DukePortJetpack", "", "", "", "", "", "", "", "", ""},
-    {"RandAlienWeapon", "", "", "", "", "", "", "", "", ""},
-    {"Thunderbolt",     "RangerMaxCells", "", "", "", "", "", "", "", ""},
+    {"DoomZerkCounter",  "", "", "", "", "", "", "", "", ""},
+    {"ChexSoulsphere",   "", "", "", "", "", "", "", "", ""},
+    {"ArtiEgg2",         "", "", "", "", "", "", "", "", ""},
+    {"WolfExtraLife",    "", "", "", "", "", "", "", "", ""},
+    {"PortMysticAmbit",  "", "", "", "", "", "", "", "", ""},
+    {"DukeguyStrifeJet", "", "", "", "", "", "", "", "", ""},
+    {"RandAlienWeapon",  "", "", "", "", "", "", "", "", ""},
+    {"Thunderbolt",      "RangerMaxCells", "", "", "", "", "", "", "", ""},
 };
 
 int DoomAccuracyZerks[ACCURACYCOUNT] = 
