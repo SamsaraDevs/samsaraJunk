@@ -1,9 +1,14 @@
 // Admit it, they /are/ space flowers.
 
+// The short of the matter is that since the bosses are tougher and have more HP, HP that the player might not have,
+// or that someone's VII may not be up all the time (in the case of Corvus/Ranger), these guys are no longer immune
+// to other weapons. Instead, they only do 1/5th the damage. This also renders them vulnerable to MDK and Kill
+// Monsters, for testing purposes.
+
 actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 {
     Health 1500
-    PainChance 75
+    PainChance 25
     ConversationID 67
     DamageFactor "Mace", 1.15
     DamageFactor "DragonClaw", 1.6
@@ -17,41 +22,41 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     +GHOST // Maayyyyy be a wee bit overkill.
 
     -SPECTRAL
-    DamageFactor "PoisonCloud", 0
-    DamageFactor "TimonsAxe", 0
-    DamageFactor "Mace", 0
-    DamageFactor "DragonClaw", 0
-    DamageFactor "MarathonPistol", 0
-    DamageFactor "Pistol", 0
-    DamageFactor "DoomFist", 0
-    DamageFactor "ZorchPistol", 0
-    DamageFactor "BFG", 0
-    DamageFactor "BFGSpray", 0
-    DamageFactor "Normal", 0
-    DamageFactor "Zorch", 0
-    DamageFactor "Ice", 0
-    DamageFactor "Fire", 0
-    DamageFactor "Slime", 0
-    DamageFactor "Disintegrate", 0
-    DamageFactor "Poison", 0
-    DamageFactor "WolfenFlamethrower", 0
-    DamageFactor "DukeDamage", 0
-    DamageFactor "DukeExplosive", 0
-    DamageFactor "MightyBoot", 0
-    DamageFactor "DukeIce", 0
-    DamageFactor "DukePistol", 0
-    DamageFactor "Explosive", 0
-    DamageFactor "MarathonFusion", 0
-    DamageFactor "DoomPlasma", 0
-    DamageFactor "CorvusCrossbow", 0
-    DamageFactor "CorvusHellstaff", 0
-    DamageFactor "CorvusHellstaffTomed", 0
-    DamageFactor "MarathonPlasma", 0
-    DamageFactor "BJSpear", 0
-    DamageFactor "WMCBeam", 0
-    DamageFactor "WMCNade", 0
-    DamageFactor "QuakePistol", 0
-    DamageFactor "NotQuadded", 0
+    DamageFactor "PoisonCloud", 0.2
+    DamageFactor "TimonsAxe", 0.2
+    DamageFactor "Mace", 0.2
+    DamageFactor "DragonClaw", 0.2
+    DamageFactor "MarathonPistol", 0.2
+    DamageFactor "Pistol", 0.2
+    DamageFactor "DoomFist", 0.2
+    DamageFactor "ZorchPistol", 0.2
+    DamageFactor "BFG", 0.2
+    DamageFactor "BFGSpray", 0.2
+    DamageFactor "Normal", 0.2
+    DamageFactor "Zorch", 0.2
+    DamageFactor "Ice", 0.2
+    DamageFactor "Fire", 0.2
+    DamageFactor "Slime", 0.2
+    DamageFactor "Disintegrate", 0.2
+    DamageFactor "Poison", 0.2
+    DamageFactor "WolfenFlamethrower", 0.2
+    DamageFactor "DukeDamage", 0.2
+    DamageFactor "DukeExplosive", 0.2
+    DamageFactor "MightyBoot", 0.2
+    DamageFactor "DukeIce", 0.2
+    DamageFactor "DukePistol", 0.2
+    DamageFactor "Explosive", 0.2
+    DamageFactor "MarathonFusion", 0.2
+    DamageFactor "DoomPlasma", 0.2
+    DamageFactor "CorvusCrossbow", 0.2
+    DamageFactor "CorvusHellstaff", 0.2
+    DamageFactor "CorvusHellstaffTomed", 0.2
+    DamageFactor "MarathonPlasma", 0.2
+    DamageFactor "BJSpear", 0.2
+    DamageFactor "WMCBeam", 0.2
+    DamageFactor "WMCNade", 0.2
+    DamageFactor "QuakePistol", 0.2
+    DamageFactor "NotQuadded", 0.2
 
     DamageFactor "Spectral", 1
     DamageFactor "DukeSpectral", 1
@@ -170,7 +175,7 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 actor AlienSpectreFake : AlienSpectre1B
 {
 Scale 0.45
-Health 200
+Health 300
 Renderstyle Add
 -SHADOW
 -BOSSDEATH
@@ -284,7 +289,7 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
 {
     ConversationID 70
     Health 1750
-    PainChance 50
+    PainChance 30
     Radius 24
 
     DropItem ""
@@ -345,7 +350,7 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
 {
     ConversationID 71
     Health 2000
-    PainChance 50
+    PainChance 35
     Radius 24
     +SPAWNCEILING
     Speed 8 // Original has Speed 12, but all animation frames increased to duration 5.
@@ -371,7 +376,7 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
 {
     ConversationID 72
     Health 2250
-    PainChance 50
+    PainChance 40
     Radius 24
     
     DropItem ""
@@ -450,8 +455,6 @@ actor AlienSpectre5B : AlienSpectre1b replaces AlienSpectre5
 }
 
 // The Entity. Right. This is gonna be interesting.
-// The short of the matter is that since the boss is tougher and has more HP, HP that the player might not have
-// he is no longer immune to other weapons. Instead, they only do 1/10th the damage.
 actor EntityBoss2 : EntityBoss replaces EntityBoss
 {
     Health 7500
@@ -460,41 +463,41 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
     -SPECTRAL
     -REFLECTIVE
     
-    DamageFactor "PoisonCloud", 0.1
-    DamageFactor "TimonsAxe", 0.1
-    DamageFactor "Mace", 0.1
-    DamageFactor "DragonClaw", 0.1
-    DamageFactor "MarathonPistol", 0.1
-    DamageFactor "Pistol", 0.1
-    DamageFactor "DoomFist", 0.1 // Sure, you have fun with that
-    DamageFactor "ZorchPistol", 0.1
-    DamageFactor "BFG", 0.1
-    DamageFactor "BFGSpray", 0.1
-    DamageFactor "Normal", 0.1
-    DamageFactor "Zorch", 0.1
-    DamageFactor "Ice", 0.1
-    DamageFactor "Fire", 0.1
-    DamageFactor "Slime", 0.1
-    DamageFactor "Disintegrate", 0.1
-    DamageFactor "Poison", 0.1
-    DamageFactor "WolfenFlamethrower", 0.1
-    DamageFactor "DukeDamage", 0.1
-    DamageFactor "DukeExplosive", 0.1
-    DamageFactor "MightyBoot", 0.1 // Hah hah hah no
-    DamageFactor "DukeIce", 0.1
-    DamageFactor "DukePistol", 0.1
-    DamageFactor "Explosive", 0.1
-    DamageFactor "MarathonFusion", 0.1
-    DamageFactor "DoomPlasma", 0.1
-    DamageFactor "CorvusCrossbow", 0.1
-    DamageFactor "CorvusHellstaff", 0.1
-    DamageFactor "CorvusHellstaffTomed", 0.1
-    DamageFactor "MarathonPlasma", 0.1
-    DamageFactor "BJSpear", 0.1
-    DamageFactor "WMCBeam", 0.1
-    DamageFactor "WMCNade", 0.1
-    DamageFactor "QuakePistol", 0.1
-    DamageFactor "NotQuadded", 0.1
+    DamageFactor "PoisonCloud", 0.2
+    DamageFactor "TimonsAxe", 0.2
+    DamageFactor "Mace", 0.2
+    DamageFactor "DragonClaw", 0.2
+    DamageFactor "MarathonPistol", 0.2
+    DamageFactor "Pistol", 0.2
+    DamageFactor "DoomFist", 0.2 // Sure, you have fun with that
+    DamageFactor "ZorchPistol", 0.2
+    DamageFactor "BFG", 0.2
+    DamageFactor "BFGSpray", 0.2
+    DamageFactor "Normal", 0.2
+    DamageFactor "Zorch", 0.2
+    DamageFactor "Ice", 0.2
+    DamageFactor "Fire", 0.2
+    DamageFactor "Slime", 0.2
+    DamageFactor "Disintegrate", 0.2
+    DamageFactor "Poison", 0.2
+    DamageFactor "WolfenFlamethrower", 0.2
+    DamageFactor "DukeDamage", 0.2
+    DamageFactor "DukeExplosive", 0.2
+    DamageFactor "MightyBoot", 0.2 // Hah hah hah no
+    DamageFactor "DukeIce", 0.2
+    DamageFactor "DukePistol", 0.2
+    DamageFactor "Explosive", 0.2
+    DamageFactor "MarathonFusion", 0.2
+    DamageFactor "DoomPlasma", 0.2
+    DamageFactor "CorvusCrossbow", 0.2
+    DamageFactor "CorvusHellstaff", 0.2
+    DamageFactor "CorvusHellstaffTomed", 0.2
+    DamageFactor "MarathonPlasma", 0.2
+    DamageFactor "BJSpear", 0.2
+    DamageFactor "WMCBeam", 0.2
+    DamageFactor "WMCNade", 0.2
+    DamageFactor "QuakePistol", 0.2
+    DamageFactor "NotQuadded", 0.2
 
     DamageFactor "Spectral", 1
     DamageFactor "DukeSpectral", 1
