@@ -6,6 +6,7 @@
 #define SAMSARA_SPAWN               624
 #define SAMSARA_DISCONNECT          617
 #define SAMSARA_WOLFMOVE            673
+#define SAMSARA_SCHEDULED           674
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215

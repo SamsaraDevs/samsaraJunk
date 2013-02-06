@@ -217,3 +217,23 @@ actor ChexBullet : FastProjectile
         stop
     }
 }
+
+actor ChexUnsolid: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_UnsetSolid
+        stop
+    }
+}
+
+actor ChexSolid: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SetSolid
+        stop
+    }
+}

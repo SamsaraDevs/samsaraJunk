@@ -12,6 +12,12 @@ actor Counter: Inventory
     -INVBAR
 }
 
+actor Trigger: CustomInventory
+{
+    Inventory.MaxAmount 0
+    +AUTOACTIVATE
+}
+
 actor IsSamsaraClass: Boolean {}
 actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}

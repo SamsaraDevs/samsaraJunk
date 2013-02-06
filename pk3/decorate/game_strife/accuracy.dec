@@ -5,7 +5,7 @@ actor StrifeAccuracyCounter: Ammo
     Inventory.MaxAmount 10
 }
 
-actor StrifeAccuracyReplacement: CustomInventory replaces UpgradeAccuracy
+actor StrifeAccuracyReplacement: Trigger replaces UpgradeAccuracy
 {
     ConversationID 307
 
@@ -18,11 +18,8 @@ actor StrifeAccuracyReplacement: CustomInventory replaces UpgradeAccuracy
     }
 }
 
-actor RandAlienWeapon: CustomInventory
+actor RandAlienWeapon: Trigger
 {
-    +AUTOACTIVATE
-    Inventory.MaxAmount 0
-
     States
     {
       Pickup:
@@ -38,11 +35,8 @@ actor RandAlienWeapon: CustomInventory
     }
 }
 
-actor RangerMaxCells: CustomInventory
+actor RangerMaxCells: Trigger
 {
-    +AUTOACTIVATE
-    Inventory.MaxAmount 0
-
     States
     {
       Pickup:
@@ -76,11 +70,8 @@ actor DoomguyStrifeZerk8: DoomguyStrifeZerk {}
 actor DoomguyStrifeZerk9: DoomguyStrifeZerk {}
 actor DoomguyStrifeZerk0: DoomguyStrifeZerk {}
 
-actor DukeguyStrifeJet: CustomInventory
+actor DukeguyStrifeJet: Trigger
 {
-    Inventory.MaxAmount 0
-    +AUTOACTIVATE
-
     States
     {
       Pickup:

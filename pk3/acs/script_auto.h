@@ -88,7 +88,14 @@ script SAMSARA_SPAWN (int respawning)
     
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
-    if (!respawning) { ClientTipboxes[pln] = 0; }
+
+    if (!respawning)
+    {
+        ClientTipboxes[pln] = 0;
+        ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
+    }
+
+    ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
 
     switch (samsaraClassNum())
     {

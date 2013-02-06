@@ -20,6 +20,7 @@ int WolfenEnterTimes[PLAYERMAX];
 int ClientEnterTimes[PLAYERMAX];
 int ClientTipboxes[PLAYERMAX];
 int ResonantTimes[PLAYERMAX][RESCOUNT];
+int ScheduledTimes[PLAYERMAX][3];
 
 int SamsaraWepType, SamsaraClientClass, SamsaraItemFlash;
 int SamsaraClientWeps[SLOTCOUNT] = {0};
@@ -39,6 +40,7 @@ global int 0:SamsaraGlobal[];
 #include "script_quake.h"
 #include "script_tipbox.h"
 #include "script_strife.h"
+#include "script_scheduled.h"
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
