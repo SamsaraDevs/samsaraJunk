@@ -34,21 +34,23 @@ Team "Raktah"
 	LargeSkullHUDIcon "RSKUA0"
 }
 
-/*Team "Haritah"
+Team "Haritah"
 {
 	PlayerColor "00 FF 00"
 	TextColor "Green"
-	SkullItem "GreenSkulltagSkull"
-	//WinnerPic "winergre"
-	//LoserPic "losergre"
+	//SkullItem "GreenSkulltagSkull"
+	WinnerPic "winergre"
+	LoserPic "losergre"
+	PlayerStartThingNumber 5083
 }
 
 Team "Pitah"
 {
 	PlayerColor "FF FF 00"
 	TextColor "Gold"
-	SkullItem "GoldSkulltagSkull"
-	//WinnerPic "wineryel"
-	//LoserPic "loseryel"
-}*/
-// Sure, maybe when people start using three or four teams outside of DM/LMS.
+	//SkullItem "GoldSkulltagSkull"
+	WinnerPic "wineryel"
+	LoserPic "loseryel"
+	PlayerStartThingNumber 5084
+}
+// I'll add the flag/skull things maybe when people start using three or four teams outside of DM/LMS.
