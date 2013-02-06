@@ -3,7 +3,7 @@ Actor ChexAmmoTake : Counter { Inventory.MaxAmount 7 }
 Actor "LAZ Device" : Weapon
 {
     Weapon.SelectionOrder 2800
-    Weapon.SlotNumber 7
+    //Weapon.SlotNumber 7
     Inventory.PickUpSound "chex/weaponget"
     Weapon.AmmoUse 40
     Weapon.AmmoGive 40
@@ -16,6 +16,7 @@ Actor "LAZ Device" : Weapon
     Inventory.PickupMessage "You got the LAZ Device! Woot!"
     Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
     DamageType "ZorchBfg"
+    Weapon.SisterWeapon "Spectral LAZ Device"
     States
     {
 
@@ -46,7 +47,6 @@ Actor "LAZ Device" : Weapon
 		TNT1 A 0 A_Refire
 		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
 		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
-        ACLO E 0 A_JumpIfInventory("SpectralFiring", 1, "Spectral")
         CFGG H 10 A_FireCustomMissile("ChexBFGBall")
 		CFGG H 10 A_ClearRefire
         goto Ready
@@ -75,7 +75,6 @@ Actor "LAZ Device" : Weapon
 		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
 		TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFire2")
 		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
-        ACLO E 0 A_JumpIfInventory("SpectralFiring", 1, "Spectral")
         CFGG H 10 A_FireCustomMissile("ChexBFGBall")
 		CFGG H 10 A_ClearRefire
         goto Ready
@@ -94,14 +93,13 @@ Actor "LAZ Device" : Weapon
 	  NoAimFire2:
         TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimSpread2")
 		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
-        ACLO E 0 A_JumpIfInventory("SpectralFiring", 1, "SpectralNoAim")
         CFGG B 0 A_FireCustomMissile("ChexAmmoWaster")
+		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25)
         CFGG H 10 A_ClearRefire
         goto Ready
 
-      NoAimSpread: // No spectral jump here since I'm fairly sure there'll never be a Sigil and Spread Rune on one map.
+      NoAimSpread:
         TNT1 A 0 //A_GunFlash
 		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
 		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
@@ -199,16 +197,83 @@ Actor "LAZ Device" : Weapon
       Spawn:
         CFUG A -1
         stop
+    }
+}
 
-      Spectral:
-	TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
-        CFGG H 10 A_FireCustomMissile("ChexBFGBall",0,0)
-	CFGG H 10 A_ClearRefire
+actor "Spectral LAZ Device": "LAZ Device"
+{
+    Weapon.AmmoType ""
+    Weapon.AmmoUse  0
+    Weapon.AmmoGive 0
+
+    Weapon.SisterWeapon "LAZ Device"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+      CoopFire:
+		TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
+        CFGG BBBBB 1 bright A_SpawnItemEx("LazShield1",0,96,32,0,0,0,-270,32)
+		CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
+		CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
+		CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimFireCoop")
+        TNT1 A 0
+		CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		TNT1 A 0 A_Refire
+		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        CFGG H 10 A_FireCustomMissile("ChexBFGBall2Spectral",0,0)
+		CFGG H 10 A_ClearRefire
         goto Ready
+		
+	  Hold:
+	  CoopHold:
+		TNT1 A 0 A_JumpIfInventory("ChexAmmoTake",7,"HoldAmmoTake")
+		TNT1 A 0 A_GiveInventory("ChexAmmoTake",1)
+	  Hold2:
+	  CoopHold2:
+		TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
+		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+		CFGG EE 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+		CFGG GG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+		TNT1 A 0 A_Refire
+		TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
+		TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
+		CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+		CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
+		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+		TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFireCoop2")
+		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        CFGG H 10 A_FireCustomMissile("ChexBFGBall2Spectral",0,0)
+		CFGG H 10 A_ClearRefire
+        goto Ready
+		
+	  HoldAmmoTake: // Should it take Cells? Or maybe some Health?
+	    TNT1 A 0 A_TakeInventory("Cell",1)
+		TNT1 A 0 A_TakeInventory("ChexAmmoTake",5)
+		goto Hold2
 
-      SpectralNoAim:
-	TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
-        CFGG H 10 A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25)
+      NoAimFireCoop:
+        TNT1 A 0
+		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+		TNT1 A 0 A_Refire
+	  NoAimFireCoop2:
+		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG H 10 A_SpawnItemEx("ChexBFGBall2Spectral", 0, 0, 32, 25)
         CFGG H 10 A_ClearRefire
         goto Ready
     }
@@ -356,6 +421,8 @@ States
         stop
 	}
 }
+
+actor ChexBFGBall2Spectral : ChexBFGBall2 { Damagetype "Spectral" }
 
 actor ChexAmmoWaster
 {
