@@ -381,6 +381,7 @@ actor ChexBFGExplosionEffect
 	Scale 0.75
 	Speed 0
 	RenderStyle Add
+    Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
     DamageType "Zorch"
 	Alpha 0.1
 	States
