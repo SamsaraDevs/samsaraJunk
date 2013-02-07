@@ -19,7 +19,8 @@ script SAMSARA_OPEN open
         SamsaraGlobal[GLOBAL_DONEBITCHING] = 1;
     }
     
-    while (1)
+    //while (1)
+    while (0)
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
         
@@ -498,7 +499,8 @@ script SAMSARA_ENTER_CLIENT (void) clientside
     
     execInt = 0; oExecInt = 0;
     
-    if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION)
+    //if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION)
+    if (0)
     {
         ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
         ConsoleCommand("archivecvar samsara_cl_exists");
@@ -562,7 +564,8 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             if (j != SamsaraClientWeps[i]) { SamsaraClientWepFlashes[i] = Timer(); }
         }
         
-        if (IsServer)
+        //if (IsServer)
+        if (1)
         {
             array_wolfmove[pln]     = !!GetCVar("samsara_cl_wolfmove");
             array_vanillaAnim[pln]  = !!GetCVar("samsara_cl_vanilladoom");
@@ -570,7 +573,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
             array_weaponBar[pln]    = !!GetCVar("samsara_cl_weaponhud");
             array_pickupswitch[pln] = !!GetCVar("switchonpickup");
         }
-        else
+        /*else
         {
             oExecInt = execInt;
             execInt = SamsaraClientVars();
@@ -580,7 +583,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
                 execStr = StrParam(s:"puke -", d:SAMSARA_PUKE, s:" ", d:execInt, s:" ", d:pln);
                 ConsoleCommand(execStr);
             }
-        }
+        }*/
 
         Delay(1);
     }

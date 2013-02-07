@@ -46,7 +46,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
 script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 {
-    if (defaultCVar("samsara_cl_norecoil", 0) == 1) { terminate; }
+    if (GetCVar("samsara_cl_norecoil") == 1) { terminate; }
 
     degrees = itof(degrees);
     if (degrees < 0) { degrees /= -100; }
@@ -77,7 +77,7 @@ script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 
     if (ticsdown > 0)
     {
-        if (defaultCVar("samsara_cl_sinerecoil", 0) == 0)
+        if (GetCVar("samsara_cl_sinerecoil") == 0)
         {
             qCurve = -degrees / pow(ticsdown, 2); // this is also a
             newPitch = qCurve * pow(ticsdown, 2);

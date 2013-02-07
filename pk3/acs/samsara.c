@@ -98,7 +98,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
 
       case 8:
-        result = defaultCVar("samsara_cl_expparticles", 0);
+        result = GetCVar("samsara_cl_expparticles");
         if (!result) { result = 100; }
 
         result = max(0, result);
