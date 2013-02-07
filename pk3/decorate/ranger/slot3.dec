@@ -21,6 +21,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
     +UNDROPPABLE
     +AMMO_OPTIONAL
     +ALT_AMMO_OPTIONAL
+    +NOALERT
     
     Inventory.Icon "QGRLZ0"
     
@@ -49,6 +50,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
         // 22 tics
       Fire:
+	TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"MultiFire")
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
