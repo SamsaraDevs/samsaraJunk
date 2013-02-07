@@ -1,5 +1,8 @@
 actor "Explosive Shotgun" : Weapon
 {
+    //Weapon.BobRangeX 0.75
+    //Weapon.BobRangeY 0.95
+    //Weapon.BobSpeed 1.1
     Weapon.SlotNumber 3
     Weapon.SelectionOrder 1300
     Weapon.AmmoUse 1
@@ -73,7 +76,7 @@ actor "Explosive Shotgun" : Weapon
         DKXS A 0 A_GunFlash
         TNT1 A 0 A_AlertMonsters
         DKXS A 0 A_PlayWeaponSound("duke/xshotgunfire")
-        DKXS ABCDEF 2 BRIGHT A_WeaponReady(14)
+        DKXS ABCDEA 2 BRIGHT A_WeaponReady(14)
         DKXS F 3 A_WeaponReady(14)
         DKXS A 0 A_CheckReload
         DKXS GHI 2 A_WeaponReady(14)

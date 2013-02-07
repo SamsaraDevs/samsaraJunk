@@ -13,7 +13,7 @@ addkeysection "Samsara: Characters" samsarakeys
 addmenukey "Doomguy: Animations" samsara_cmd_vanilladoomanims
 addmenukey "BJ: Retro Movement" samsara_cmd_bjwalk
 addmenukey "Duke: Ballgag" samsara_cmd_dukestfu
-//addmenukey "Ranger: Recoil" samsara_cmd_norecoil
+addmenukey "Ranger: Recoil" samsara_cmd_norecoil
 
 addkeysection "Samsara: System" samsarasyskeys
 
@@ -32,7 +32,7 @@ alias samsara_id_weaponhud    "set samsara_cl_weaponhud    $samsara_cl_weaponhud
 alias samsara_id_moremessages "set samsara_cl_moremessages $samsara_cl_moremessages; archivecvar samsara_cl_moremessages"
 alias samsara_id_printpickup  "set samsara_cl_printpickup  $samsara_cl_printpickup;  archivecvar samsara_cl_printpickup"
 alias samsara_id_pickupmode   "set samsara_cl_pickupmode   $samsara_cl_pickupmode;   archivecvar samsara_cl_pickupmode"
-alias samsara_id_norecoil     "set samsara_cl_norecoil     $samsara_cl_norecoil;     archivecvar samsara_cl_norecoil"  
+alias samsara_id_norecoil     "set samsara_cl_norecoil     $samsara_cl_norecoil;     archivecvar samsara_cl_norecoil" 
 
 alias samsara_cmd_vanilladoomanims "samsara_id_vanilladoom;  eval != 1 $samsara_cl_vanilladoom samsara_cl_vanilladoom;   showmode \"Vanilla animations\" $samsara_cl_vanilladoom"
 alias samsara_cmd_bjwalk           "samsara_id_wolfmove;     eval != 1 $samsara_cl_wolfmove samsara_cl_wolfmove;         showmode \"Wolfenstein movement\" $samsara_cl_wolfmove"
@@ -50,6 +50,9 @@ alias samsara_tipleft  "puke 227 0 -1"
 alias samsara_tipright "puke 227 0 1"
 alias samsara_tipup    "puke 227 1 -1"
 alias samsara_tipdown  "puke 227 1 1"
+
+alias changelog        "puke 302 1"
+alias changelogoff     "puke 302 2"
 
 alias showmode "test != 0 %2 \"set truth True\" \"set truth False\"; echo %1 is\\cf $truth; unset truth"
 

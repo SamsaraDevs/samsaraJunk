@@ -1,21 +1,21 @@
 actor LavaNails: Ammo
 {
     Inventory.Amount 10
-    Inventory.MaxAmount 200
+    Inventory.MaxAmount 100
 
     Ammo.BackpackAmount 10
-    Ammo.BackpackMaxAmount 400
+    Ammo.BackpackMaxAmount 200
 
     Inventory.Icon "AMSMK0"
 }
 
-actor ClusterRocketAmmo: Ammo
+actor MultiRocketAmmo: Ammo
 {
     Inventory.Amount 1
-    Inventory.MaxAmount 50
+    Inventory.MaxAmount 20
 
     Ammo.BackpackAmount 1
-    Ammo.BackpackMaxAmount 100
+    Ammo.BackpackMaxAmount 40
 
     Inventory.Icon "AMSML0"
 }

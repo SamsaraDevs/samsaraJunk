@@ -12,7 +12,7 @@ actor "Axe": InstantSwitchWeapon
     +UNDROPPABLE
 
     Inventory.Icon "PSTRA0"
-    Obituary "%k \csmet\c- %o \csand became an axe-murderer.\c-"
+    Obituary "%k \csmet\c- %o\cs, and %g met the axe.\c-"
 
     States
     {
@@ -22,22 +22,8 @@ actor "Axe": InstantSwitchWeapon
 
       // 18 tics
       Fire:
-        TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadSound")
-        goto AfterSound
-
-      QuadSound:
-        TNT1 A 0 A_PlaySound("quakeweps/quadfire", 7)
-        goto AfterSound
-
-      AfterSound:
         QAXE A 0 A_PlaySound("quakeweps/axe", CHAN_WEAPON)
-        QAXE A 0 A_Jump(128, "Axe2")
-        goto Axe
-
-      // 18 tics
-
-      Axe:
-        QAXE B 4
+        QAXE B 4 A_Jump(128, "Axe2")
         QAXE C 2
         QAXE A 0 A_CustomPunch(20, 1, 0, "QuakeAxePuff")
         QAXE D 2
@@ -58,13 +44,45 @@ actor "Axe": InstantSwitchWeapon
     }
 }
 
-actor ChainsawShells: RandomSpawner replaces Chainsaw
+actor "Spectral Axe": Axe
 {
-    dropitem "QuakeShellBox"
+    Weapon.SisterWeapon "Axe"
+    +POWERED_UP
+    
+    States
+    {
+      Fire:
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 4)
+        TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+        QAXE A 0 A_PlaySound("quakeweps/axe", CHAN_WEAPON)
+        QAXE B 4 A_Jump(128, "Axe2")
+        QAXE C 2
+        QAXE A 0 A_CustomPunch(20, 1, 0, "SpectralAxePuff")
+        QAXE D 2
+        QAXE E 4
+        goto AxeEnd
+
+      Axe2:
+        QAXE F 4
+        QAXE G 2
+        QAXE A 0 A_CustomPunch(20, 1, 0, "SpectralAxePuff")
+        QAXE G 2
+        QAXE H 4
+        goto AxeEnd
+
+      AxeEnd:
+        QAXE A 6
+        goto Ready
+    }
 }
 
 actor QuakeAxePuff: QuakePistolPuff
 {
     DamageType "Pistol"
     AttackSound "quakeweps/axewall"
+}
+
+actor SpectralAxePuff: QuakeAxePuff
+{
+    DamageType "Spectral"
 }

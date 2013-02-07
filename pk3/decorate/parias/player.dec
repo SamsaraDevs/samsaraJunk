@@ -4,7 +4,8 @@ actor HexenPlayer : PlayerPawn
     Player.StartItem "Sapphire Wand", 1
     Player.StartItem "Mace of Contrition", 1
     Player.StartItem "HexenClass", 1
-   Player.StartItem "TauntButton", 1
+    Player.StartItem "TauntButton", 1
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
     Player.InvulnerabilityMode "Ghost"
     Player.HealRadiusType "Health"
@@ -134,6 +135,7 @@ actor HexenPlayer : PlayerPawn
         goto Death
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
         goto Death.DukeDamage
 

@@ -11,6 +11,7 @@ actor LostSoul2 : LostSoul replaces LostSoul
       Death.DukeIce:
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 
@@ -72,6 +73,7 @@ actor PainElemental2 : PainElemental replaces PainElemental
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

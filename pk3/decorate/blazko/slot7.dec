@@ -1,7 +1,6 @@
 actor "Spear of Destiny": InstantSwitchWeapon
 {
     Weapon.SelectionOrder 2900
-    Weapon.SlotNumber 7
     Inventory.PickUpSound "wolfen/spearget"
     Weapon.AmmoUse 40
     Weapon.AmmoGive 40
@@ -9,8 +8,12 @@ actor "Spear of Destiny": InstantSwitchWeapon
     +DONTBOB
     +INVENTORY.UNDROPPABLE
     +WEAPON.NOAUTOFIRE
+
+    Weapon.SisterWeapon "Spear of Eternity"
+
     Obituary "%k cleansed %o from this world with the Spear of Destiny." 
     Inventory.PickupMessage "You got the Spear of Destiny!"
+
     States
     {
       Spawn:
@@ -22,12 +25,12 @@ actor "Spear of Destiny": InstantSwitchWeapon
         loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"SPFire")
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "SPFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
         WSPR C 15 BRIGHT
         WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
-        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBoltDM",0,1,0,0)
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBoltDM", 0, 1, 0, 0)
         WSPR C 15 BRIGHT
         WSPR B 15
         WSPR A 5 A_Refire
@@ -37,7 +40,7 @@ actor "Spear of Destiny": InstantSwitchWeapon
         WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
         WSPR C 15 BRIGHT
         WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
-        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt",0,1,0,0)
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt", 0, 1, 0, 0)
         WSPR C 15 BRIGHT
         WSPR B 15
         WSPR A 5 A_Refire
@@ -47,10 +50,34 @@ actor "Spear of Destiny": InstantSwitchWeapon
         WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
         WSPR C 15 BRIGHT
         WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
-        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt2",0,1,0,0)
+        WSPR D 15 BRIGHT A_FireCustomMissile("SpearBolt2", 0, 1, 0, 0)
         WSPR C 15 BRIGHT
         WSPR B 15
         WSPR A 5 A_Refire
+        goto Ready
+    }
+}
+
+actor "Spear of Eternity": "Spear of Destiny"
+{
+    Weapon.AmmoType ""
+    Weapon.AmmoUse  0
+    Weapon.AmmoGive 0
+
+    Weapon.SisterWeapon "Spear of Destiny"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        WSPR B 20 A_PlayWeaponSound("wolfen/spearready")
+        WSPR C 16 BRIGHT
+        WSPR C 0 A_PlayWeaponSound("wolfen/spearfire")
+        WSPR C 0 ACS_ExecuteAlways(317, 0, 50)
+        WSPR D 16 BRIGHT A_FireCustomMissile("SpectralSpearBolt")
+        WSPR C 16 BRIGHT
+        WSPR B 8
+        WSPR A 6 A_Refire
         goto Ready
     }
 }
@@ -73,15 +100,15 @@ actor SpearBolt
     States
     {
       Spawn:
-        SPB1 ABABABAB 3 BRIGHT A_SpawnItemEx("SpearShotTrail",0,0,0)
-        Goto Death
+        SPB1 ABABABAB 3 BRIGHT A_SpawnItemEx("SpearShotTrail", 0, 0, 0)
+        goto Death
 
       Death:
         SPX1 A 0 A_Stop
-        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini",0,0,random(-180,180),2,random(-25,25))
-        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2",0,0,random(-180,180),2,random(-25,25))
+        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini", 0, 0, random(-180, 180), 2, random(-25, 25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2", 0, 0, random(-180, 180), 2, random(-25, 25))
         SPX1 A 0 A_Scream
-        SPX1 A 4 BRIGHT A_Explode(120,240,0)
+        SPX1 A 4 BRIGHT A_Explode(120, 240, 0)
         SPX1 BCDEF 4 BRIGHT
         Stop
     }
@@ -95,10 +122,10 @@ actor SpearBoltDM: SpearBolt
     {
       Death:
         SPX1 A 0 A_Stop
-        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMiniDM",0,0,random(-180,180),2,random(-25,25))
-        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2DM",0,0,random(-180,180),2,random(-25,25))
+        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMiniDM", 0, 0, random(-180, 180), 2, random(-25, 25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpearShotMini2DM", 0, 0, random(-180, 180), 2, random(-25, 25))
         SPX1 A 0 A_Scream
-        SPX1 A 4 BRIGHT A_Explode(120,198,0)
+        SPX1 A 4 BRIGHT A_Explode(120, 198, 0)
         SPX1 BCDEF 4 BRIGHT
         Stop
     }
@@ -116,6 +143,7 @@ actor SpearShotMini
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     +DOOMBOUNCE
     +NODAMAGETHRUST
     +SKYEXPLODE
@@ -127,13 +155,13 @@ actor SpearShotMini
     States
     {
       Spawn:
-        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
-        TNT1 A 0 A_Jump(128,"Spawn")
+        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        TNT1 A 0 A_Jump(128, "Spawn")
         goto Death
 
       Death:
         TNT1 A 0 A_Scream
-        SPX3 C 1 A_Explode(64,64,0)
+        SPX3 C 1 A_Explode(64, 64, 0)
         SPX3 C 1
         SPX3 C 4 BRIGHT
         SPX3 D 6 BRIGHT
@@ -149,13 +177,13 @@ actor SpearShotMiniDM: SpearShotMini
     States
     {
       Spawn:
-        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
-        TNT1 A 0 A_Jump(96,"Spawn")
+        SPB3 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        TNT1 A 0 A_Jump(96, "Spawn")
         goto Death
 
       Death:
         TNT1 A 0 A_Scream
-        SPX3 C 1 A_Explode(32,64,0)
+        SPX3 C 1 A_Explode(32, 64, 0)
         SPX3 C 1
         SPX3 C 4 BRIGHT
         SPX3 D 6 BRIGHT
@@ -172,6 +200,7 @@ actor SpearShotMini2
     Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
     PROJECTILE
     +RIPPER
+    +NOBOSSRIP
     +STRIFEDAMAGE
     +DOOMBOUNCE
     +NODAMAGETHRUST
@@ -184,13 +213,13 @@ actor SpearShotMini2
     States
     {
       Spawn:
-        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
-        TNT1 A 0 A_Jump(128,"Spawn")
+        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        TNT1 A 0 A_Jump(128, "Spawn")
         goto Death
 
       Death:
         TNT1 A 0 A_Scream
-        SPX2 AA 2 A_Explode(64,64,0)
+        SPX2 AA 2 A_Explode(64, 64, 0)
         SPX2 BCDE 4 BRIGHT
         Stop
     }
@@ -204,13 +233,13 @@ actor SpearShotMini2DM: SpearShotMini2
     States
     {
       Spawn:
-        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2",0,0,1)
-        TNT1 A 0 A_Jump(96,"Spawn")
+        SPB2 ABABABABAB 10 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0, 0, 1)
+        TNT1 A 0 A_Jump(96, "Spawn")
         goto Death
 
       Death:
         TNT1 A 0 A_Scream
-        SPX2 AA 2 A_Explode(32,64,0)
+        SPX2 AA 2 A_Explode(32, 64, 0)
         SPX2 BCDE 4 BRIGHT
         Stop
     }
@@ -241,3 +270,27 @@ actor SpearShotTrail2: SpearShotTrail
     +CLIENTSIDEONLY
 }
 
+
+actor SpectralSpearBolt: SpearBolt
+{
+    DamageType "Spectral" 
+
+    States
+    {
+      Spawn:
+        SPB1 ABABABAB 3 BRIGHT A_SpawnItemEx("SpearShotTrail", 0, 0, 0)
+        goto Death
+
+      Death:
+        SPX1 A 0 A_Stop
+        SPX1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpectralMiniBolt", 0, 0, random(-180, 180), 6, random(-25, 25))
+        SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SpectralMiniBolt2", 0, 0, random(-180, 180), 6, random(-25, 25))
+        SPX1 A 0 A_Scream
+        SPX1 A 4 BRIGHT A_Explode(120, 240, 0)
+        SPX1 BCDEF 4 BRIGHT
+        stop
+    }
+}
+
+actor SpectralMiniBolt:  SpearShotMini  { DamageType "Spectral" }
+actor SpectralMiniBolt2: SpearShotMini2 { DamageType "Spectral" }

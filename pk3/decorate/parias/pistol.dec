@@ -20,8 +20,16 @@ actor "Sapphire Wand" : MWeapWand
         Loop
 
       Fire:
+	TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         MWND A 6
         MWND B 6 Bright Offset (0, 48) A_FireCustomMissile("MageWandMissile2")
+        MWND A 3 Offset (0, 40)
+        MWND A 3 Offset (0, 36) A_ReFire
+        Goto Ready
+
+      CoopFire:
+        MWND A 6
+        MWND B 6 Bright Offset (0, 48) A_FireCustomMissile("MageWandMissile3")
         MWND A 3 Offset (0, 40)
         MWND A 3 Offset (0, 36) A_ReFire
         Goto Ready
@@ -32,10 +40,13 @@ actor MageWandMissile2 : MageWandMissile replaces MageWandMissile
 {
     Radius 3
     Height 2
-    Obituary "%k \clunwove\c- %o's \cllife force with the Sapphire Wand.\c-"
+    Obituary "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-"
     Decal RailScorchLower
     Damage 1
     +STRIFEDAMAGE
     +SPAWNSOUNDSOURCE
+    +NOBOSSRIP
     DamageType "Pistol"
 }
+
+actor MageWandMissile3 : MageWandMissile2 { Species "Player" +THRUSPECIES }

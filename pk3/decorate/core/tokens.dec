@@ -15,6 +15,13 @@ actor Counter: Inventory
     -INVBAR
 }
 
+actor Trigger: CustomInventory
+{
+    Inventory.MaxAmount 0
+    +AUTOACTIVATE
+}
+
+actor IsSamsaraClass: Boolean {}
 actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}
@@ -23,6 +30,8 @@ actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}
 actor OverMax: Counter { Inventory.MaxAmount 200 }
 actor OverOverMax: Counter { Inventory.MaxAmount 300 }
+actor ForceRangerGravity: Boolean {}
+actor ForceSOGravity: Boolean {}
 
 actor GotWeapon0: Boolean {}
 actor GotWeapon1: Boolean {}
@@ -49,7 +58,7 @@ actor WeaponGetYaaaay : Ammo
     states
     {
       Spawn:
-        TNT1 A 35
+        TNT1 A 1
         stop
     }
 }
@@ -70,7 +79,7 @@ actor WeaponGetYaaaay2 : Weapon
     states
     {
       Spawn:
-        TNT1 A -1
+        TNT1 A 1
         stop
 
       Select:

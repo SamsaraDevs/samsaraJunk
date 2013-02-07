@@ -9,7 +9,7 @@ actor "Serpent Staff" : CWeapStaff
     Weapon.AmmoType1 "Clip"
     Inventory.PickupMessage "You got the Serpent Staff!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \cldrained\c- %o's \clsoul into the Serpent Staff.\c-"
+    Obituary "%k \cldrained\c- %o\cl's soul into the Serpent Staff.\c-"
     +INVENTORY.UNDROPPABLE
     States
     {
@@ -35,7 +35,12 @@ actor "Serpent Staff" : CWeapStaff
         Goto Ready + 2
 
       Fire:
-        CSSF A 1 BRIGHT Offset (0, 45) A_CStaffCheck
+        CSSF A 0 A_TakeInventory("DrainCounter")
+        goto Hold
+
+      Hold:
+        CSSF A 1 BRIGHT Offset (0, 45) A_JumpIfCloser(96, "Drain")
+        CSSF A 0 A_TakeInventory("DrainCounter", 1)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         CSSF J 1 BRIGHT Offset (0, 50) A_CStaffAttack
         CSSF J 2 BRIGHT Offset (0, 50)
@@ -49,10 +54,24 @@ actor "Serpent Staff" : CWeapStaff
         Goto Ready + 2
 
       Drain:
-        //CSSF K 0 A_CustomPunch(random(20,35),1,1,98,0)
-        //CSSF K 0 A_GiveInventory("Health",2)
+        CSSF K 0 A_JumpIfInventory("DrainCounter", 1, "DrainSound0")
+        CSSF K 0 A_GiveInventory("DrainCounter", 3)
+        CSSF K 0 A_PlaySound("ClericCStaffHitThing", 6)
+        goto Drain2
+
+      DrainSound0:
+        CSSF K 0 A_TakeInventory("DrainCounter", 1)
+        CSSF K 0 A_JumpIfInventory("DrainCounter", 2, 1)
+        goto Drain2
+        CSSF K 0 A_PlaySound("ClericCStaffHitThing", 5)
+        goto Drain2
+
+      Drain2:
+        CSSF K 0 A_CustomPunch(random(20,35), 1, 1, "StaffDrainPuff", 98)
+        CSSF K 0 A_GiveInventory("SerpentHealth", random(2,4))
         CSSF K 0 A_GiveInventory("HealthBonus",1)
         CSSF K 8 BRIGHT Offset (0, 36)
+        CSSF K 0 A_Refire
         Goto Ready + 2
 
       CoopFire:
@@ -63,15 +82,23 @@ actor "Serpent Staff" : CWeapStaff
         CSSF J 2 Offset (0, 45)
         CSSF A 2 Offset (0, 40)
         CSSF A 2 Offset (0, 36)
+        CSSF K 0 A_Refire
         Goto Ready + 2
     }
+}
+
+actor DrainCounter: Counter {}
+
+actor SerpentHealth: Health
+{
+    Inventory.Amount 1
 }
 
 actor CStaffMissile2 : CStaffMissile replaces CStaffMissile
 {
     Decal DoomImpScorch
-    Damage (random(4,20))//5
-    Obituary "%k \clmelted\c- %o's \clflesh off with the Serpent's venom.\c-"
+    Damage (random(5,25))//5
+    Obituary "%k \clmelted\c- %o\cl's flesh off with the Serpent's venom.\c-"
 }
 
 actor CStaffMissileCoop : CStaffMissile2
@@ -101,4 +128,11 @@ actor CStaffMissileCoop2 : CStaffMissile2
         CSSF EEDD 1 Bright A_CStaffMissileSlither
         Loop
     }
+}
+
+actor StaffDrainPuff: HammerPuff
+{
+    SeeSound ""
+    AttackSound ""
+    ActiveSound ""
 }

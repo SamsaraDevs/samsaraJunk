@@ -1,7 +1,7 @@
-actor DukeFlying : Boolean {}
-actor DukeVision : Boolean {}
-actor DukeJetpackFuel : Counter { Inventory.MaxAmount 100 }
-actor DukeVisionFuel : Counter { Inventory.MaxAmount 100 }
+actor DukeFlying: Boolean {}
+actor DukeVision: Boolean {}
+actor DukeJetpackFuel: Counter { Inventory.MaxAmount 100 }
+actor DukeVisionFuel: Counter { Inventory.MaxAmount 100 }
 
 actor DukePortJetpack : CustomInventory
 {

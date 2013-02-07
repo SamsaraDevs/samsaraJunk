@@ -7,7 +7,8 @@ actor DoomguyPlayer : PlayerPawn
     Player.StartItem " Pistol ", 1
     Player.StartItem " Fist ", 1
     Player.StartItem "DoomguyClass", 1
-   Player.StartItem "TauntButton", 1
+    Player.StartItem "TauntButton", 1
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
     Player.Soundclass "Doomguy"
     Player.JumpZ 9//Default is 8
@@ -109,6 +110,7 @@ actor DoomguyPlayer : PlayerPawn
         goto Death
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
         goto Death.DukeDamage
 

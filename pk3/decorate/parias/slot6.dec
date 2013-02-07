@@ -62,6 +62,7 @@ actor Firestorm : CWeapFlame
 
 actor CFlameMissileDM : CFlameMissile
 {
+    Speed 150
     States
     {
       Spawn:

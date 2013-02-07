@@ -4,9 +4,9 @@ ACTOR MarathonPlayer : PlayerPawn
 	Gravity 0.15
 	Mass 220
     scale 0.45
-	BloodColor "Red"
-  Player.Face "MAR"
-    Player.JumpZ 4//Default is 8
+    BloodColor "Red"
+    Player.Face "MAR"
+    Player.JumpZ 4   // I LIED.
     Player.ForwardMove 0.95, 0.925
     Player.SideMove 0.95, 0.925
     Player.DamageScreenColor "Red"//, 0.0
@@ -25,6 +25,8 @@ ACTOR MarathonPlayer : PlayerPawn
     Player.StartItem "RocketAmmo", 10
     Player.StartItem "AmmoShell", 20
     Player.StartItem "Cell", 50
+    Player.StartItem "IsSamsaraClass", 1
+    Player.StartItem "TauntButton", 1
     Player.StartItem "MarathonClass", 1
     //Player.StartItem "Allmap", 1
     //Player.StartItem "PowerScanner", 1
@@ -261,6 +263,7 @@ ACTOR MarathonPlayer : PlayerPawn
         goto Death
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
         goto Death.DukeDamage
 
@@ -362,12 +365,14 @@ ACTOR MarathonPlayer : PlayerPawn
 
       Pain.DukeExplosive:
 
+      Pain.SpectralNoQuad:
       Pain.NotQuadded:
         SOPL Y 4 A_SetBlend("Yellow",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
         
       Pain.CorvusHellstaff:
+      Pain.CorvusHellstaffTomed:
 
       Pain.HereAxeRed:
         SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red
@@ -482,13 +487,8 @@ actor MarathonPuff : BulletPuff
     {
       Spawn:
         TNT1 A 0
-        MPUF A 2 Bright A_PlaySound("puff/ric")
-        MPUF B 2 Bright
-        MPUF C 2 Bright
-        MPUF D 2 Bright
-        MPUF E 2 Bright
-        MPUF F 2 Bright
-        MPUF G 2 Bright
-        Stop
+        TNT1 A 0 Bright A_PlaySound("puff/ric")
+        MPFF ABCDEFG 2 Bright
+        stop
     }
 }

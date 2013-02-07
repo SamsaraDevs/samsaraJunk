@@ -3,6 +3,7 @@
  ^- : Doomguy's Falling, Taunt, and Landing sound was taken from Quake III.
  ^- : Doomguy's burning scream was by cdrk.
  ^- : Doomguy's burning sprites by Blox.
+ ^- : Doomguy's puzzfail voice by Roy Conrad.
 - : Corvus, Heretic, and the respective sprites/sounds are property of Raven Software.
  ^- : Corvus' Burn Death, Taunt, and Falling sounds were taken from Heretic II.
 - : Chex Warrior, Chex Quest, and the respective sprites/sounds are property of Digital Cafe.
@@ -67,6 +68,7 @@
 - : Boss monologue introductions inspired by Lioyd_Irving.
 - : Heretic widescreen HUD graphics nicked from Neoworm.
 - : HeXen widescreen HUD graphics nicked from Nash.
+- : All bar HUDs given widescreen support by BlackFish.
 - : Interframes for Doomguy's weapons done by Perkristian.
  ^- : Super Shotgun DECORATE done by Phi108.
 - : B.J.'s bot chatfile written by pkfan2004.

@@ -1,5 +1,8 @@
 actor "  Shotgun  " : Weapon
 {
+    //Weapon.BobRangeX 0.75
+    //Weapon.BobRangeY 0.95
+    //Weapon.BobSpeed 1.1
     Weapon.SlotNumber 2
     Weapon.SelectionOrder 400
     Weapon.AmmoUse 1

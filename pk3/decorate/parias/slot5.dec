@@ -13,7 +13,7 @@ actor "Hammer of Retribution" : FWeapHammer
     Weapon.AmmoType1 "Cell"
     Inventory.PickupMessage "You got the Hammer of Retribution!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \clsplintered\c- %o's \clskull and spine with the Hammer of Retribution.\c-"
+    Obituary "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-"
     States
     {
       Spawn:
@@ -119,7 +119,7 @@ actor HammerMissileDM : HammerMissile
       Death:
         FHFX I 3 Bright A_SetTranslucent(1, 1)
         FHFX J 3 Bright
-        FHFX K 3 Bright A_Explode(64, 128, 0)
+        FHFX K 3 Bright A_Explode(96, 128, 0)
         FHFX LM 3 Bright
         FHFX N 3
         FHFX OPQR 3 Bright

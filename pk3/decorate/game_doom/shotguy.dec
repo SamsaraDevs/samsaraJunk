@@ -1,6 +1,5 @@
 actor ShotgunDrop: SamsaraSlotTwoDrop
 {
-    +BRIGHT
     States
     {
       Spawn:
@@ -38,6 +37,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         goto "Super::Death"
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 

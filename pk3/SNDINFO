@@ -7,12 +7,12 @@ healpack0pickup		HLTH0GET // Taken from Painkiller
 healpack1pickup		HLTH1GET // Taken from Quake III Arena
 healpack2pickup		HLTH2GET // Taken from Quake IV
 megapackpickup		MEGAGET // Taken from Unreal Tournament III
-armor0get			ARMR0GET // Taken from Fatal/Fake
-armor1get			ARMR1GET // Taken from Fatal/Fake
-armor2get			ARMR2GET // Taken from Fatal/Fake
-armor3get			ARMR3GET // Taken from Fatal/Fake
+armor0get		ARMR0GET // Taken from Fatal/Fake
+armor1get		ARMR1GET // Taken from Fatal/Fake
+armor2get		ARMR2GET // Taken from Fatal/Fake
+armor3get		ARMR3GET // Taken from Fatal/Fake
 invisibilityget		NVSIGET // Taken from Fatal/Fake
-invulnget			NVLNGET // Taken from Super Street Fighter IV
+invulnget		NVLNGET // Taken from Super Street Fighter IV
 healpack3pickup		SOULGET // Taken from Super Street Fighter IV
 antisterileget		RADGET // Taken from...uh...I can't remember where...
 lettherebelight		LITEVISR // Taken from Devil May Cry 3
@@ -27,7 +27,7 @@ ammo/rocketbig		AMMROCKB // Taken from Painkiller
 ammo/plasmasmall	AMMPLASS // Taken from Painkiller
 ammo/plasmabig		AMMPLASB // Taken from Unreal Tournament III
 ammo/backpack		AMMBACKP // Taken from Unreal Tournament III
-ammo/mana			AMMOMANA // Taken from Painkiller
+ammo/mana		AMMOMANA // Taken from Painkiller
 
 ammogem/bulletsmall	GEMCLIPS
 ammogem/bulletbig	GEMCLIPB
@@ -38,9 +38,102 @@ ammogem/rocketbig	GEMROCKB
 ammogem/plasmasmall	GEMPLASS
 ammogem/plasmabig	GEMPLASB
 
-tome/lesser			LESRTOME // Taken from Unreal Tournament 2003
+tome/lesser		LESRTOME // Taken from Unreal Tournament 2003
 
 archvile/resummon	VILESMMN // Taken from Fatal/Fake
+
+blackbirdtrustnoone			VOC14 // Haaaaack.
+
+////////////////////
+// Ally sounds for Strife's beacons
+////////////////////
+
+// Imp
+$random friendlyimp/sight	{ imp/sight1  imp/sight2 }
+$random friendlyimp/death	{ imp/death1  imp/death2 }
+friendlyimp/sight1		sounds/allies/dimpsit1.wav
+friendlyimp/sight2		sounds/allies/dimpsit2.wav
+friendlyimp/active		sounds/allies/dimpact.wav
+friendlyimp/pain		sounds/allies/dimppain.wav
+friendlyimp/melee		sounds/allies/dimpclaw.wav
+friendlyimp/death1		sounds/allies/dimpdth1.wav
+friendlyimp/death2		sounds/allies/dimpdth2.wav
+friendlyimp/attack		sounds/allies/dimpshot.wav
+friendlyimp/shotx		sounds/allies/dimpxpl.wav
+$limit friendlyimp/active 6
+
+// Bipedal Flemoid
+$random friendlyflemoid/sight	{ friendlyflemoid/sight1 friendlyflemoid/sight2 friendlyflemoid/sight3 }
+friendlyflemoid/sight1		sounds/allies/cflesit1.wav
+friendlyflemoid/sight2		sounds/allies/cflesit2.wav
+friendlyflemoid/sight3		sounds/allies/cflesit3.wav
+//friendlyflemoid/attack
+friendlyflemoid/pain		sounds/allies/cflepain.wav
+$random friendlyflemoid/death	{ friendlyflemoid/zorch1 friendlyflemoid/zorch2 friendlyflemoid/zorch3 }
+friendlyflemoid/zorch1		sounds/allies/cfledth1.wav
+friendlyflemoid/zorch2		sounds/allies/cfledth2.wav
+friendlyflemoid/zorch3		sounds/allies/cfledth3.wav
+//friendlyflemoid/active
+friendlyflemoid/flem		sounds/allies/cflemsht.wav
+$random friendlyflemoid/shotx	{ friendlyflemoid/splat1 friendlyflemoid/splat2 friendlyflemoid/splat3 friendlyflemoid/splat4 }
+friendlyflemoid/splat1		sounds/allies/cfsplat1.wav
+friendlyflemoid/splat2		sounds/allies/cfsplat2.wav
+friendlyflemoid/splat3		sounds/allies/cfsplat3.wav
+friendlyflemoid/splat4		sounds/allies/cfsplat4.wav
+
+// Nitrogolem
+mummy/sight			sounds/allies/mumsit.wav
+mummy/attack1			sounds/allies/mumat1.wav
+mummy/attack2			sounds/allies/mumat2.wav
+mummy/pain			sounds/allies/mumpai.wav
+mummy/death			sounds/allies/mumdth.wav
+mummy/active			sounds/allies/mumsit.wav
+mummy/head			sounds/allies/mumhed.wav
+
+// Nazi
+friendlynazi/sight		sounds/allies/nazisit.ogg
+friendlynazi/pain		sounds/allies/nazipain.ogg
+$random friendlynazi/death	{ nazi/die1 nazi/die2 nazi/die3 nazi/die4 nazi/die5 nazi/die6 nazi/die7 }
+friendlynazi/active		silence
+friendlynazi/attack		sounds/allies/nazishot.ogg
+nazi/die1			sounds/allies/nazidie1.ogg
+nazi/die2			sounds/allies/nazidie2.ogg
+nazi/die3			sounds/allies/nazidie3.ogg
+nazi/die4			sounds/allies/nazidie4.ogg
+nazi/die5			sounds/allies/nazidie5.ogg
+nazi/die6			sounds/allies/nazidie6.ogg
+nazi/die7			sounds/allies/nazidie7.ogg
+
+// Afrit
+FireDemonActive         	sounds/allies/fired5.wav
+FireDemonPain           	sounds/allies/fired2.wav
+FireDemonAttack         	sounds/allies/spit6.wav
+FireDemonMissileHit     	sounds/allies/firedhit.wav
+FireDemonDeath          	sounds/allies/fired3.wav
+
+// Assault Trooper
+dukealien/active1		sounds/allies/altract1.wav
+dukealien/active2		sounds/allies/altract2.wav
+dukealien/sight			sounds/allies/altrsit.wav
+dukealien/pain			sounds/allies/altrpain.wav
+dukealien/attack		sounds/allies/altrshot.wav
+dukealien/death			sounds/allies/altrdie.wav
+$random	dukealien/active	{ dukealien/active1 dukealien/active2 }
+
+// Pfhor Trooper
+pfhor/see				sounds/allies/PHFITSIT.wav
+pfhor/death				sounds/allies/PHFITDIE.wav
+pfhor/active			sounds/allies/PHFITACT.wav
+pfhor/burn				sounds/allies/PHFITTOS.wav
+$Random pfhor/shoot {puff/hit1 puff/hit2 puff/hit3}
+
+// Grunt
+friendlygrunt/sight		sounds/allies/GRNTSIT.wav
+$random friendlygrunt/pain	{ grunt/pain1 grunt/pain2 }
+friendlygrunt/death		sounds/allies/GRNTDETH.wav
+friendlygrunt/active	sounds/allies/GRNTIDLE.wav
+grunt/pain1				sounds/allies/GRNTPN1.wav
+grunt/pain2				sounds/allies/GRNTPN2.wav
 
 ////////////////////
 // Doomguy sounds
@@ -169,6 +262,10 @@ chex/plasmaf		chplasma
 $limit chex/plasmaf 				0
 chex/plasmax		chfirxpl
 chex/bfgf			chbfg
+chex/bfgfire		chbfg1
+chex/bfglaunch		chbfg2
+chex/bfghold		chheld1
+chex/bfgquickfire	chbfg3
 chex/bfgx			chrxplod
 chex/slzorcher		chslzrch
 chex/slzorchbounce	chslzrcb
@@ -1043,7 +1140,7 @@ $playeralias        Ranger      male    *death          ranger/death
 $playeralias        Ranger      male    *xdeath         ranger/hideath
 $playersound        Ranger      male    *burndeath      dgdethf
 $playeralias        Ranger      male    *crazydeath     ranger/hideath
-$playersound        Ranger      male    *wimpydeath     *death
+$playersounddup     Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib
 $playersound        Ranger      male    *falling        sounds/ranger/falling1.ogg
 $playeralias        Ranger      male    *pain100        ranger/pain100
@@ -1062,6 +1159,7 @@ quakeweps/weaponget             sounds/ranger/w_pkup.wav
 quakeweps/itemget               sounds/ranger/lock4.wav
 quakeweps/megahealth            sounds/ranger/m_health.ogg
 quakeweps/megasphere            sounds/ranger/megasphere.ogg
+quakeweps/doeammochange			sounds/ranger/DoEWeap.wav
 
 quakeweps/gauntlet              sounds/ranger/fstrun.ogg
 quakeweps/gauntlethum           sounds/ranger/fsthum.ogg

@@ -9,6 +9,7 @@ actor Cacodemon2 : Cacodemon replaces Cacodemon
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

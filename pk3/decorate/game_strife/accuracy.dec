@@ -1,0 +1,83 @@
+actor StrifeAccuracyCounter: Ammo
+{
+    +IGNORESKILL
+    Inventory.Amount 1
+    Inventory.MaxAmount 10
+}
+
+actor StrifeAccuracyReplacement: Trigger replaces UpgradeAccuracy
+{
+    ConversationID 307
+    +QUIET
+
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("StrifeAccuracyCounter")
+        TNT1 A 0 ACS_ExecuteWithResult(313, -1)
+        stop
+    }
+}
+
+actor RandAlienWeapon: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_Jump(128, "Pickup2")
+        TNT1 A 0 A_GiveInventory("UnknownAmmo", 50)
+        TNT1 A 0 A_GiveInventory("Alien Weapon")
+        stop
+
+      Pickup2:
+        TNT1 A 0 A_GiveInventory("UnknownAmmo2", 50)
+        TNT1 A 0 A_GiveInventory(" Alien Weapon ")
+        stop
+    }
+}
+
+actor RangerMaxCells: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("Cell", 1200)
+        stop
+    }
+}
+
+actor DoomZerkCounter: Ammo
+{
+    +IGNORESKILL
+    Inventory.Amount 1
+    Inventory.MaxAmount 10
+}
+
+actor DoomguyStrifeZerk: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFF
+    
+    DamageFactor "DoomFist", 1.259   // 1.259 ** 10 is pretty close to 10
+}
+
+actor DoomguyStrifeZerk1: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk2: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk3: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk4: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk5: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk6: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk7: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk8: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk9: DoomguyStrifeZerk {}
+actor DoomguyStrifeZerk0: DoomguyStrifeZerk {}
+
+actor DukeguyStrifeJet: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("DukePortJetpack")
+        TNT1 A 0 A_GiveInventory("DukeJetpackFuel", 100)
+        stop
+    }
+}

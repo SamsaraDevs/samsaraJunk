@@ -11,6 +11,7 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
     states
     {
       Death.DukeExplosive:
+      Death.DukeSpectral:
 
       Death.DukeDamage:
 

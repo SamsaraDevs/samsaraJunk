@@ -255,6 +255,7 @@ actor " Firemace " : Weapon
         goto Ready
 
       FireTomed:
+	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireTomed")
         MACE B 4
         MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
@@ -276,11 +277,24 @@ actor " Firemace " : Weapon
         MACE A 4 A_ReFire
         MACE A 4 A_ClearRefire
         Goto Ready
+
+      FireTomedSpectral:
+        MACE B 4
+        MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
+        MACE D 0 A_FireCustomMissile("MaceFX44")
+        MACE D 4 //ACS_ExecuteAlways(WhateverTheHealthTakingScriptIs)
+        MACE B 4
+        MACE A 4 A_ReFire
+        MACE A 4 A_ClearRefire
+        Goto Ready
     }
 }
 
 actor MaceFX12 : MaceFX1 replaces MaceFX1
 {
+    -NOGRAVITY
+    Gravity 0.125
+    VSpeed 0.5
     DamageType "Mace"
     Damage 2 // Originally 2
     Decal BaronScorch
@@ -299,6 +313,9 @@ actor MaceFX1Coop : MaceFX12
 
 actor MaceFX22 : MaceFX2 replaces MaceFX2
 {
+    -NOGRAVITY
+    Gravity 0.125
+    VSpeed 0.5
     DamageType "Mace"
     Damage 4 // Originally 6
     SeeSound "weapons/maceshoot"
@@ -334,3 +351,5 @@ actor MaceFX42 : MaceFX4 replaces MaceFX4
 }
 
 actor MaceFX43 : MaceFX42 { +THRUSPECIES Species "Player" }
+
+actor MaceFX44 : MaceFX4 { DamageType "Spectral" }

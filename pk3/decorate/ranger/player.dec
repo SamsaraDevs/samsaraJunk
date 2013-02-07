@@ -3,7 +3,7 @@ actor QuakePlayer: PlayerPawn
     Radius 16
     Height 56
     Mass 100
-    Scale 0.19
+    Scale 0.21
     Speed 1
     
     Gravity 0.75
@@ -23,6 +23,7 @@ actor QuakePlayer: PlayerPawn
     
     Player.StartItem "QuakeClass"
     Player.StartItem "Single Shotgun"
+    Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "Clip", 50
     Player.StartItem "Axe"
     Player.StartItem "TauntButton"  // ZDoom
@@ -62,7 +63,8 @@ actor QuakePlayer: PlayerPawn
         goto Melee2
         
       Melee2:
-        RANG H 6 bright
+        RANG Z 2 bright
+        RANG H 4 bright
         RANG G 12
         Goto Spawn
         
@@ -155,6 +157,7 @@ actor QuakePlayer: PlayerPawn
         goto Death
         
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-5,"DukeGibStart")
         goto Death.DukeDamage
         
@@ -342,7 +345,7 @@ actor QuakeBullet: FastProjectile
     Damage (4)
     Radius 1
     Height 1
-    Speed 300
+    Speed 1024
     Projectile
     Renderstyle "Normal"
     Species "Player"
@@ -368,6 +371,12 @@ actor QuakeBullet: FastProjectile
         TNT1 A 1
         stop
     }
+}
+
+actor QuakeBulletSpectral: QuakeBullet
+{
+    -THRUGHOST
+    DamageType "Spectral"
 }
 
 actor QuakeBullet2: QuakeBullet

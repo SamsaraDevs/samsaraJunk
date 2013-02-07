@@ -20,6 +20,70 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 12: ZDoom version has more quit messages.
 
 
+FROM 0.27 TO 0.28
+========================
+- The realm of Strife has opened up to the Wheel!
+Strife is perhaps the strangest of all the iwads, with the biggest differences in gameplay along with HeXen. Strife focused more on stealth and developing a budding plot, taking part in a rebellion against a tyrannic order hoping to squash all free will. Fight, for the Front and Freedom! Move out!
+NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and therefore is still bound to single player.
+NOTE 2: The Spectres and the Entity are no longer invulnerable to everything else, for reasons that will become obvious. Everything but the Sigil only does 1/5th damage, though.
+
+- The Security Officer was suffering pretty badly in PvP, especially in regards to the Fusion Pistol, SPNKR, and Assault Rifle. The Assault Rifle's damage in PvP has been buffed, as has the Fusion Pistol and Spanker. The Fusion Pistol's blasts are also wider to hit people more easily with it, and the SPNKR's explosive radius increased from 160 to 192.
+- The primary and secondary fire of the Security Officer's Assault Rifle are now independent of each other!
+- Same with the Marathon 2 alien weapon! Actually that was done in 0.27, but we forgot to mention it. Whoops.
+- Some of the ACS has been repositioned and readjusted for easier organization.
+- The start-up console no longer tells you about samsara_sogravity, but rather samsara_nocustomgravity.
+- The BFG and LAZ Device, with sv_bfgfreeaim off, now support Spread.
+- Ranger now no longer has Corvus' wimpy death sound in Heretic.
+- Ranger's Grenade Launcher's Grenades now properly go up and down lifts.
+- Weapon III drops by Riot Shotgunners now properly respect Ranger and give him the Grenade Launcher.
+- The Weapon III drops by Riot Shotgunners now have caught up with the conversion to ACS-based weapon giving.
+- Ranger now gets some Lava Nail and Multi Rocket ammo in Last Man Standing.
+- They are called "Multi Rockets", not "Cluster Rockets". All instances of "Cluster Rockets" have been renamed to "Multi Rockets".
+- The Multi-Rocket Launcher's width of fire has been tightened up to match its spread in Dissolution of Eternity.
+- Quadded multi-rockets were getting quadded twice over, dealing 16x damage. Uh. Whoops. This has been fixed.
+- The Dissolution of Eternity ammo was making things hell to balance, and have been brutally cut in effectiveness. The maximum capacity has been fractioned, multi-rocket impact damage and explosive radius reduced, lava nail is now 150% damage rather than double damage.
+- The Thunderbolt's visuals have been slightly tweaked to be less obtrusive on the screen.
+- Duke Nukem now has his proper Explosive Shotgun ready sprite, thanks to Warhawk!
+- Ranger is now as tall as Doomguy is. Previously he was just a wee bit shorter.
+- The GLDefs have been moved to their own folder for easier organization/additions.
+- Ranger now has GLDefs! Only two more to go...
+- Ranger's Double Shotgun has a slightly wider spread with slightly less damage, to better match Quake.
+- samsara_hexenjump has instead been changed to samsara_jumpmod. Turns out HeXen wasn't the only iwad that required different jumping rules--so did Strife! Use 9 for HeXen and -8 for Strife.
+- The Prosperity Rune now properly pauses Ranger's degeneration.
+- The Death Wyvern no longer vigorously and passionately humps the first Ettin it sees on spawn.
+- For ZDoom, Duke Nukem now has his proper weaponbobs. The only thing different is that the bobspeed doesn't depend on Duke's movespeed.
+- Tweaked a few obituaries to be colored properly, and rephrased Ranger's Super Lava Nail obituary to be less awkward.
+- Korax and Snotfolus are no longer stupidly weak to ripping weapons.
+- The Marathon 2 Alien Weapon no longer jerks and stutters while firing.
+- The Blue Skull no longer crashes the game at rare opportunities.
+- The Quad Damage's function has been tweaked. It loses its Quake 2 inventory hold thing when in DM, functioning more like Quake. In Last Man Standing, it no longer activates on spawn.
+- The Flemoid Maximus is now a proper boss in Chex Quest, and now has proper compatibility--splatters and all.
+- The DM tipboxes weren't showing before, for some reason. Now they show properly.
+- Doomguy/Ranger no longer sound like a dubbed anime boy when puzzfail.
+- The Security Officer's SPNKR and Wave Motion Cannon now has different levels of raise and lowering. What does this mean? You no longer have to lower all the way from the top again if you only slightly scrolled through it!
+- Corvus' Tome of Power was not buffing the damage of the Ethereal Crossbow or Hellstaff. This has been rectified.
+- The Hellstaff was easily one of Corvus' more pathetic weapons, useful only when Tomed--and even then, doing insane amounts of damage on bosses! Its damage has been increased to be more reminiscent of a Plasma Rifle, buffed from 3-24 to 3-35, and bosses now only take 1/5th damage from its Tomed rain, as it was in Heretic.
+- There is now an abridged changelog in-game for people who ask "What's new?" with every single release. Type "changelog" in the console to see it, and "changelogoff" to get rid of it.
+- Ranger has an option for sine-based recoil instead of parabola-based recoil. If you know what the hell that means, type samsara_cl_sinerecoil 1 to turn it on, and 0 to turn it off.
+- Team LMS fullscreen HUD now shows the team scores rather than personal score.
+- The SO's Alien Weapons now properrly displaayy ammmmmo in the thethe fulfuulffscfr rr eeee ee e x0eee
+- Due to popular demand, the LAZ Device is no longer a direct copy of the BFG9000. It is now its own weapon, taking inspiration from old DEHACKED replications of the BFG--rather than spraying tracers, instead it delivers a lingering explosion over a very large area. Oh and it also shields you if you hold the button down. Neat!
+- The Skulltag monsters now have much, much, MUCH better translations! Add onto that, the Hectebus and Dark Imp now have their own attacks back! Thanks to Repo Man for the EXCELLENT coloring jobs!
+- B.J.'s Rocket Launcher, Spear of Destiny, SO's TOZT, and Wave Motion Cannon no longer rip bosses, even if they don't have the +DONTRIP flag.
+- BlackFish has slaved long and hard underphotoshop, and now the HUDs support widescreen! Everyone give him a hand!
+- BlackFish has also provided graphical tweaks for various weapons to make them more widescreen friendly--Timon's Axe, the Hammer of Retribution, and Duke's RPG are now widescreen friendly! Thanks, man!
+- The Dissolution of Eternity ammo has been tweaked in how it's used. Alt fire now swaps from ammo type to ammo type, rather than fires it right away. This should be more like Quake, where you had to manually select the weapon, and should give Ranger in DM a little bit of a pause as he goes from weapon to weapon.
+- Parias' damage values have been tweaked for DM. Timon's Axe ignores armor, the Serpent Staff's individual bolts have been buffed from 4-20 to 5-25, the Hammer of Retribution was increased from 64 to 98, and the Firestorm's range has been slightly decreased.
+- All characters now have "IsSamsaraClass" as an inventory item, and additional ACS checks to see if they're actually a Samsara class. This means Samsara-specific scripts will not target non-Samsara classes, and scripts in add-ons can be made specifically to target non-Samsara classes.
+- Parias' Serpent Staff should no longer randomly drain him back to 100 health.
+- HeXen's Dark Servant has been switched from a Megasphere to a variant of Strife's Beacon.
+- In singleplayer and DM, Corvus' maceballs were flying without any gravity. This has been fixed.
+- Included the samsara_banwolfmove cvar--if an admin desires, B.J.'s Retro Movement can now be banned from play.
+- Corvus' Tomed Maceballs have the proper Bounce sound.
+- Chex Warrior for some reason was continuing to get people stuck on spawn in DM or LMS. On Spawn, he is unsolid for a few seconds, then becomes solid a second or two later.
+
+
+
 FROM 0.26 TO 0.27
 ========================
 - Ranger has joined the Wheel of Samsara!

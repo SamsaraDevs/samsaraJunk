@@ -1,0 +1,280 @@
+pointlight QuakeRocketLight
+{
+    color 1.0 0.81 0.0
+    size 48
+}
+
+pointlight QuakeTinyRocketLight
+{
+    color 1.0 0.81 0.0
+    size 24
+}
+
+pointlight QExplodeLight1
+{
+    color 1.0 0.81 0.0
+    size 128
+}
+
+pointlight QExplodeLight2
+{
+    color 1.0 0.81 0.0
+    size 105
+}
+
+pointlight QExplodeLight3
+{
+    color 1.0 0.81 0.0
+    size 82
+}
+
+pointlight QExplodeLight4
+{
+    color 1.0 0.81 0.0
+    size 60
+}
+
+pointlight QExplodeLight5
+{
+    color 1.0 0.81 0.0
+    size 38
+}
+
+pointlight QExplodeLight6
+{
+    color 1.0 0.81 0.0
+    size 16
+}
+
+pointlight QTExplodeLight1
+{
+    color 1.0 0.81 0.0
+    size 64
+}
+
+pointlight QTExplodeLight2
+{
+    color 1.0 0.81 0.0
+    size 52
+}
+
+pointlight QTExplodeLight3
+{
+    color 1.0 0.81 0.0
+    size 41
+}
+
+pointlight QTExplodeLight4
+{
+    color 1.0 0.81 0.0
+    size 30
+}
+
+pointlight QTExplodeLight5
+{
+    color 1.0 0.81 0.0
+    size 19
+}
+
+pointlight QTExplodeLight6
+{
+    color 1.0 0.81 0.0
+    size 8
+}
+
+object QuakeExplosion
+{
+    frame QEXPA { light QExplodeLight1 }
+    frame QEXPB { light QExplodeLight2 }
+    frame QEXPC { light QExplodeLight3 }
+    frame QEXPD { light QExplodeLight4 }
+    frame QEXPE { light QExplodeLight5 }
+    frame QEXPF { light QExplodeLight6 }
+}
+
+object QuakeTinyExplosion
+{
+    frame QEXPA { light QTExplodeLight1 }
+    frame QEXPB { light QTExplodeLight2 }
+    frame QEXPC { light QTExplodeLight3 }
+    frame QEXPD { light QTExplodeLight4 }
+    frame QEXPE { light QTExplodeLight5 }
+    frame QEXPF { light QTExplodeLight6 }
+}
+
+object QuakeRocket
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeRocketCoop
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeTinyRocket
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+object QuakeTinyRocketCoop
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+
+object QuakeRocketQuad
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuakeRocketCoopQuad
+{
+    frame QRKT { light QuakeRocketLight }
+}
+
+object QuadTinyRocket
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+object QuadTinyRocketCoop
+{
+    frame QRKT { light QuakeTinyRocketLight }
+}
+
+
+
+pointlight LightningLight
+{
+    color 0.174 0.2 0.2
+    size 32
+}
+
+pointlight LightningLightSmall
+{
+    color 0.174 0.2 0.2
+    size 16
+}
+
+pointlight LightningLight2
+{
+    color 0.174 0.2 0.2
+    size 24
+}
+
+pointlight LightningLight3
+{
+    color 0.174 0.2 0.2
+    size 16
+}
+
+pointlight LightningLight4
+{
+    color 0.174 0.2 0.2
+    size 12
+}
+
+pointlight LightningLight5
+{
+    color 0.174 0.2 0.2
+    size 8
+}
+
+/*object LGBeam
+{
+    frame DPLE { light LightningLightSmall }
+}*/
+
+object LGPuff
+{
+    frame DPLEA { light LightningLight }
+    frame DPLEB { light LightningLight2 }
+    frame DPLEC { light LightningLight3 }
+    frame DPLED { light LightningLight4 }
+    frame DPLEE { light LightningLight5 }
+}
+
+
+pointlight LavaGlow
+{
+    color 1.0 0.549 0.251
+    size 24
+}
+
+pointlight LavaGlow2
+{
+    color 1.0 0.549 0.251
+    size 32
+}
+
+pointlight LavaGlow3
+{
+    color 1.0 0.549 0.251
+    size 16
+}
+
+pointlight LavaGlow4
+{
+    color 1.0 0.549 0.251
+    size 8
+}
+
+flickerlight2 LavaGlowFlicker
+{
+    color 1.0 0.549 0.251
+    size 8
+    secondarysize 24
+    interval 0.0057
+}
+
+
+object QuakeLavaNail
+{
+    frame QKNL { light LavaGlow }
+}
+
+object QuakeLavaNailCoop
+{
+    frame QKNL { light LavaGlow }
+}
+
+object QuakeSLNail
+{
+    frame QKNL { light LavaGlow }
+}
+
+object QuakeSLNailCoop
+{
+    frame QKNL { light LavaGlow }
+}
+
+object QuakeLavaTrail
+{
+    frame CFFXN { light LavaGlow2 }
+    frame CFFXO { light LavaGlow }
+    frame CFFXP { light LavaGlow3 }
+}
+
+object LavaNailBounce
+{
+    frame CFCFA { light LavaGlowFlicker }
+    frame CFCFC { light LavaGlowFlicker }
+    frame CFCFE { light LavaGlowFlicker }
+    frame CFCFG { light LavaGlowFlicker }
+    frame CFCFI { light LavaGlowFlicker }
+    frame CFCFK { light LavaGlowFlicker }
+    frame CFCFN { light LavaGlow3 }
+    frame CFCFO { light LavaGlow4 }
+}
+
+pointlight RangerFireLight
+{
+    color 1.0 0.945 0.847
+    size 48
+}
+
+object QuakePlayer
+{
+    frame RANGZ { light RangerFireLight }
+}

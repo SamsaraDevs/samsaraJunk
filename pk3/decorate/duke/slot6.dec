@@ -2,6 +2,9 @@ actor DukeFreezethrowerHold : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Invento
 
 actor Freezethrower : Weapon
 {
+    //Weapon.BobRangeX 0.75
+    //Weapon.BobRangeY 0.95
+    //Weapon.BobSpeed 1.1
     Weapon.SlotNumber 6
     Weapon.SelectionOrder 100
     Weapon.AmmoUse 1

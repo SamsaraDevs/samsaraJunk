@@ -89,6 +89,10 @@ actor PowerGreaterTome : PowerDamage
     DamageFactor "Normal", 1.5
     DamageFactor "DragonClaw", 1.5
     DamageFactor "Fire", 1.5
+	DamageFactor "CorvusHellstaff", 1.5
+	DamageFactor "CorvusHellstaffTomed", 1.5
+	DamageFactor "CorvusCrossbow", 1.5
+
 }
 
 actor PowerGreaterTomeDM : PowerGreaterTome
@@ -101,6 +105,7 @@ actor PowerTomeProtection : PowerProtection
     Powerup.Duration -90
     damagefactor "normal", 0.55
     damagefactor "Pistol", 0.55
+    DamageFactor "DoomFist", 1.5
     damagefactor "ZorchPistol", 0.55
     damagefactor "TimonsAxe", 0.55
     damagefactor "zorch", 0.55
@@ -120,6 +125,7 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "WolfenFlamethrower", 0.55
     DamageFactor "DukeDamage", 0.55
     DamageFactor "DukeExplosive", 0.55
+    DamageFactor "DukeSpectral", 0.55
     DamageFactor "MightyBoot", 0.55
     DamageFactor "DukeIce", 0.55
     
@@ -129,6 +135,7 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "DoomPlasma", 0.55
     DamageFactor "CorvusCrossbow", 0.55
     DamageFactor "CorvusHellstaff", 0.55
+	DamageFactor "CorvusHellstaffTomed", 0.55
     DamageFactor "MarathonPlasma", 0.55
     DamageFactor "BJSpear", 0.55
     DamageFactor "DoomCacodemon", 0.55
@@ -148,6 +155,7 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "HexHeresiarchPurple", 0.55
     DamageFactor "QuakePistol", 0.55
     DamageFactor "NotQuadded", 0.55
+    DamageFactor "SpectralNoQuad", 0.55
 }
 
 actor PowerTomeProtectionDM : PowerTomeProtection

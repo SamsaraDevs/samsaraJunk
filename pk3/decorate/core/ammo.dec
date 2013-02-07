@@ -42,7 +42,7 @@ actor Ammo1Small : CustomInventory replaces Clip// replaces Clip
         stop
 
       PickupQuake:
-        TNT1 A 0 A_GiveInventory("LavaNails", 2)
+        TNT1 A 0 A_GiveInventory("LavaNails", 3)
         stop
     }
 }
@@ -75,7 +75,7 @@ actor Ammo1Big : CustomInventory replaces ClipBox// replaces ClipBox
         stop
 
       PickupQuake:
-        TNT1 A 0 A_GiveInventory("LavaNails", 12)
+        TNT1 A 0 A_GiveInventory("LavaNails", 17)
         stop
     }
 }
@@ -92,12 +92,12 @@ actor Ammo2Small : CustomInventory replaces Shell
         loop
 
       Pickup:
-        TNT1 A 0 A_GiveInventory("Shell", 4)
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
         TNT1 A 0 A_GiveInventory("AmmoShell", 4)
+        TNT1 A 0 A_GiveInventory("Shell", 4)
         stop
 
       PickupWolfen:
@@ -113,7 +113,8 @@ actor Ammo2Small : CustomInventory replaces Shell
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("Green", 0.3, 3)
-        TNT1 A 1 A_GiveInventory("AmmoShell", 4)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 4)
+        TNT1 A 0 A_GiveInventory("Shell", 4)
         stop
 
       PickupFail:
@@ -134,12 +135,12 @@ actor Ammo2Big : CustomInventory replaces ShellBox
         loop
 
       Pickup:
-        TNT1 A 1 A_GiveInventory("Shell", 20)
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
         TNT1 A 0 A_GiveInventory("AmmoShell", 20)
+        TNT1 A 0 A_GiveInventory("Shell", 20)
         stop
 
       PickupWolfen:
@@ -155,7 +156,8 @@ actor Ammo2Big : CustomInventory replaces ShellBox
       PickupMarathon:
         TNT1 A 0 A_JumpIfInventory("AmmoShell", 0, "PickupFail")
         TNT1 A 0 A_SetBlend("Green", 0.3, 3)
-        TNT1 A 1 A_GiveInventory("AmmoShell", 20)
+        TNT1 A 0 A_GiveInventory("AmmoShell", 20)
+        TNT1 A 0 A_GiveInventory("Shell", 20)
         stop
 
       PickupFail:
@@ -195,7 +197,7 @@ actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 5)
-        TNT1 A 0 A_GiveInventory("ClusterRocketAmmo", 1)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 1)
         stop
 
       PickupFail:
@@ -235,7 +237,7 @@ actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 10)
-        TNT1 A 0 A_GiveInventory("ClusterRocketAmmo", 2)
+        TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 3)
         stop
 
       PickupFail:
@@ -303,9 +305,12 @@ actor Ammo4Big : CustomInventory replaces Cellpack// replaces Cellpack
 actor AmmoBackpack : CustomInventory replaces Backpack
 {
     Inventory.PickupMessage "Picked up Ammo Expansion Pack."
-    Inventory.PickupSound "nosoundforyoubitch"
+    Inventory.PickupSound "silence"
     +COUNTITEM
     -INVENTORY.ALWAYSPICKUP
+
+    ConversationID 187, 181, 184
+
     States
     {
       Spawn:
@@ -345,8 +350,6 @@ actor AmmoBackpack : CustomInventory replaces Backpack
         fail
     }
 }
-
-
 
 actor PortKraterOfMight : CustomInventory
 {

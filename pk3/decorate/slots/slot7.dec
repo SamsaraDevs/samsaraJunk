@@ -1,5 +1,7 @@
 actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
 {
+    ConversationID 193
+
     States
     {
       IWasDropped:
@@ -45,6 +47,18 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
     }
 }
 
+actor SamsaraSlotSevenPickupF: SamsaraSlotSevenPickup
+{
+    -DROPPED
+
+    States
+    {
+      Spawn:
+        WEPG G 0
+        goto SpawnLoop
+    }
+}
+
 actor SamsaraSlotSevenDrop: SamsaraSlotSevenPickup
 {
     States
@@ -65,6 +79,19 @@ actor SamsaraBFG10kReplace: RandomSpawner replaces BFG10k
 }
 
 actor SamsaraSlotSeven_Chex:    SamsaraSlotSevenPickup replaces LAZDevice {}
-actor SamsaraSlotSeven_Heretic: SamsaraSlotSevenPickup replaces MaceSpawner {}
-
 actor SamsaraSlotSeven_Hexen1:  SamsaraSlotSevenPickup replaces CWeaponPiece1 {}
+actor SamsaraSlotSeven_Strife:  SamsaraSlotSevenPickup replaces Mauler {}
+
+actor SamsaraMaceSpawner: SpecialSpot replaces MaceSpawner
+{
+    +NOBLOCKMAP
+    +NOSECTOR
+
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A -1 A_SpawnSingleItem("SamsaraSlotSevenPickupF", 0, 0, 0)
+        stop
+    }
+}

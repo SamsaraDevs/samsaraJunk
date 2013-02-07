@@ -1,5 +1,7 @@
 actor SamsaraSlotFourPickup: SamsaraSlotPickup replaces Chaingun
 {
+    ConversationID 188
+
     States
     {
       IWasDropped:

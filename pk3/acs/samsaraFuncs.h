@@ -17,6 +17,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     int hasWep  = CheckInventory(weapon);
     int success;
 
+    if (class == -1) { return 0; }
+
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
@@ -34,8 +36,6 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
     if (giveWep)
     {
         if (StrLen(SlotItems[slot])) { GiveInventory(SlotItems[slot], 1); }
-
-        if (DEBUG) { Print(s:"givescript is ", d:giveScript); }
 
         if (giveScript > 0)
         {
@@ -82,6 +82,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
 
 function int HasClassWeapon(int class, int slot)
 {
+    if (class == -1) { return 0; }
+
     int weapon = ClassWeapons[class][slot][S_WEP];
     int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
 
@@ -98,6 +100,8 @@ function int HasClassWeapon(int class, int slot)
 function void GiveClassUnique(int class, int which)
 {
     int unique, ammo, amax;
+
+    if (class == -1) { return; }
     
     switch (which)
     {
@@ -123,6 +127,8 @@ function void ApplyLMS(void)
     int classNum = samsaraClassNum();
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int i;
+
+    if (classNum == -1) { return; }
     
     GiveInventory("Backpack", 1);
 
@@ -133,8 +139,11 @@ function void ApplyLMS(void)
         for (i = 0; i < UNIQUECOUNT; i++) { GiveClassUnique(classNum, i); }
     }
 
-    if (StrLen(LMSItems[classNum])) { GiveInventory(LMSITEMS[classNum], 1); }
+    if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
+
+    GiveInventory("LavaNails",       GetAmmoCapacity("LavaNails"));
+    GiveInventory("MultiRocketAmmo", GetAmmoCapacity("MultiRocketAmmo"));
 
     if (lmsLevel)
     {
@@ -189,6 +198,8 @@ function int _giveunique(int cnum, int unum, int ignoreinv)
 {
     int success; 
 
+    if (cnum == -1) { return -1; }
+
     unum *= 2;
     int uanum = unum + 1;
 
@@ -235,15 +246,16 @@ function void TakeUnique(int cnum, int unum)
     unum *= 2;
     int uanum = unum + 1;
 
-    int unique = ClassUniques[cnum][unum];
-    int unammo = ClassUniques[cnum][uanum];
+    if (cnum == -1) { return; }
 
+    int unique = ClassUniques[cnum][unum];
     if (unique != "") { TakeInventory(unique, 0x7FFFFFFF); }
-    if (unammo != "") { TakeInventory(unammo, 0x7FFFFFFF); }
 }
 
 function int HasUnique(int cnum, int unum)
 {
+    if (cnum == -1) { return 0; }
+
     int unique = ClassUniques[cnum][unum*2];
     return (unique != "") && CheckInventory(unique);
 }
@@ -253,6 +265,8 @@ function int ClassWeaponSlot(void)
 {
     int pclass = samsaraClassNum();
     int weapon, i;
+
+    if (pclass == -1) { return -1; }
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
@@ -279,9 +293,8 @@ function int ConvertClassWeapons(int classnum)
         {
             if (HasClassWeapon(i, j))
             {
-                if (DEBUG) { Print(s:"Taking ", s:ClassWeapons[i][j][S_WEP], s:" (", d:i, s:", ", d:j, s:")"); }
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
-                GiveInventory(ClassWeapons[classnum][j][S_WEP], 1);
+                if (classnum != -1) { GiveInventory(ClassWeapons[classnum][j][S_WEP], 1); }
                 ret += 1;
             }
         }
@@ -292,11 +305,9 @@ function int ConvertClassWeapons(int classnum)
             {
                 k = j;
                 TakeUnique(i, j);
-
-                while (!_giveUnique(classnum, k, 1) && k >= 0) { k--; }
+                while (!_giveunique(classnum, k, 1) && k >= 0) { k--; }
             }
         }
-        
     }
 
     return ret;
@@ -314,4 +325,15 @@ function int ammoCount(int ammoname)
     }
 
     return GetAmmoCapacity(ammoname); // not the best of defaults but ya gotta have SOMETHING
+}
+
+function int GiveQuad(int toAdd)
+{
+    int quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
+    GiveInventory("QuakeQuadTimer", quadcount);
+    GiveInventory("QuakeQuadTimer", toAdd);
+
+    quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
+
+    return CheckInventory("QuakeQuadTimer") - max(quadcount, 0);
 }

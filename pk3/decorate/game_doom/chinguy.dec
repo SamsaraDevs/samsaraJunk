@@ -1,6 +1,5 @@
 actor ChingunDrop: SamsaraSlotFourDrop
 {
-    +BRIGHT
     States
     {
       Spawn:
@@ -38,6 +37,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
         goto "Super::Death"
 
       Death.DukeExplosive:
+      Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 

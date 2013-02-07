@@ -21,6 +21,7 @@ actor WolfLifeProtection : PowerProtection
 {
     damagefactor "normal", 0.25
     damagefactor "Pistol", 0.25
+    DamageFactor "DoomFist", 0.25
     damagefactor "ZorchPistol", 0.25
     damagefactor "TimonsAxe", 0.25
     damagefactor "zorch", 0.25
@@ -40,6 +41,7 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "WolfenFlamethrower", 0.25
     DamageFactor "DukeDamage", 0.25
     DamageFactor "DukeExplosive", 0.25
+    DamageFactor "DukeSpectral", 0.25
     DamageFactor "MightyBoot", 0.25
     DamageFactor "DukeIce", 0.25
     
@@ -49,6 +51,7 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "DoomPlasma", 0.25
     DamageFactor "CorvusCrossbow", 0.25
     DamageFactor "CorvusHellstaff", 0.25
+    DamageFactor "CorvusHellstaffTomed", 0.25
     DamageFactor "MarathonPlasma", 0.25
     DamageFactor "BJSpear", 0.25
     DamageFactor "DoomCacodemon", 0.25
@@ -68,6 +71,7 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "HexHeresiarchPurple", 0.25
     DamageFactor "QuakePistol", 0.25
     DamageFactor "NotQuadded", 0.25
+    DamageFactor "SpectralNoQuad", 0.25
     
     powerup.color Grey 0.1
 }
