@@ -79,6 +79,7 @@ NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and 
 - In singleplayer and DM, Corvus' maceballs were flying without any gravity. This has been fixed.
 - Included the samsara_banwolfmove cvar--if an admin desires, B.J.'s Retro Movement can now be banned from play.
 - Corvus' Tomed Maceballs have the proper Bounce sound.
+- Chex Warrior for some reason was continuing to get people stuck on spawn in DM or LMS. On Spawn, he is unsolid for a few seconds, then becomes solid a second or two later.
 
 
 
