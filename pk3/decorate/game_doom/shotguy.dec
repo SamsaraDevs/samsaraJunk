@@ -1,6 +1,5 @@
 actor ShotgunDrop: SamsaraSlotTwoDrop
 {
-    +BRIGHT
     States
     {
       Spawn:

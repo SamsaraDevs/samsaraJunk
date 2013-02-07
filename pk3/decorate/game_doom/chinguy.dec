@@ -1,6 +1,5 @@
 actor ChingunDrop: SamsaraSlotFourDrop
 {
-    +BRIGHT
     States
     {
       Spawn:
