@@ -112,12 +112,12 @@ object QuakeRocketCoop
     frame QRKT { light QuakeRocketLight }
 }
 
-object QuakeTinyRocket
+object QuakeClusterRocket
 {
     frame QRKT { light QuakeTinyRocketLight }
 }
 
-object QuakeTinyRocketCoop
+object QuakeClusterRkCoop
 {
     frame QRKT { light QuakeTinyRocketLight }
 }
@@ -133,12 +133,12 @@ object QuakeRocketCoopQuad
     frame QRKT { light QuakeRocketLight }
 }
 
-object QuadTinyRocket
+object QuadClusterRocket
 {
     frame QRKT { light QuakeTinyRocketLight }
 }
 
-object QuadTinyRocketCoop
+object QuadClusterRkCoop
 {
     frame QRKT { light QuakeTinyRocketLight }
 }
