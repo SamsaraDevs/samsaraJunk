@@ -8,7 +8,7 @@
 actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
 {
     Health 1500
-    PainChance 25
+    PainChance 15
     ConversationID 67
     DamageFactor "Mace", 1.15
     DamageFactor "DragonClaw", 1.6
@@ -20,6 +20,7 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     +NOTDMATCH
     +NOICEDEATH
     +GHOST // Maayyyyy be a wee bit overkill.
+    -SOLID
 
     -SPECTRAL
     DamageFactor "PoisonCloud", 0.2
@@ -73,11 +74,11 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
         TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
         
       See2:
-        ALN1 AB 4 Bright A_FastChase
+        ALN1 AB 4 Bright A_Chase
         ALN1 C 4 Bright A_SentinelBob
         ALN1 DEF 4 Bright A_FastChase
         ALN1 G 4 Bright A_SentinelBob
-        ALN1 HIJ 4 Bright A_FastChase
+        ALN1 HIJ 4 Bright A_Chase
         ALN1 K 4 Bright A_SentinelBob
         Loop
         
@@ -177,6 +178,7 @@ actor AlienSpectreFake : AlienSpectre1B
 Scale 0.45
 Health 300
 Renderstyle Add
+Painchance 150
 -SHADOW
 -BOSSDEATH
 -BOSS
@@ -289,7 +291,7 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
 {
     ConversationID 70
     Health 1750
-    PainChance 30
+    PainChance 20
     Radius 24
 
     DropItem ""
@@ -350,7 +352,7 @@ actor AlienSpectre3B : AlienSpectre1B replaces AlienSpectre3
 {
     ConversationID 71
     Health 2000
-    PainChance 35
+    PainChance 25
     Radius 24
     +SPAWNCEILING
     Speed 8 // Original has Speed 12, but all animation frames increased to duration 5.
@@ -376,7 +378,7 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
 {
     ConversationID 72
     Health 2250
-    PainChance 40
+    PainChance 30
     Radius 24
     
     DropItem ""
@@ -438,7 +440,7 @@ actor AlienSpectre5B : AlienSpectre1b replaces AlienSpectre5
     Game Strife
     ConversationID 73
     Health 3000
-    PainChance 50
+    PainChance 40
     Radius 24
 
     DropItem ""
@@ -462,6 +464,7 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
     PainChance 50
     -SPECTRAL
     -REFLECTIVE
+    -SOLID
     
     DamageFactor "PoisonCloud", 0.2
     DamageFactor "TimonsAxe", 0.2

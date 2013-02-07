@@ -25,6 +25,7 @@ FROM 0.27 TO 0.28
 - The realm of Strife has opened up to the Wheel!
 Strife is perhaps the strangest of all the iwads, with the biggest differences in gameplay along with HeXen. Strife focused more on stealth and developing a budding plot, taking part in a rebellion against a tyrannic order hoping to squash all free will. Fight, for the Front and Freedom! Move out!
 NOTE: We did not fix Strife co-op. Strife co-op is still completely broken, and therefore is still bound to single player.
+NOTE 2: The Spectres and the Entity are no longer invulnerable to everything else, for reasons that will become obvious. Everything but the Sigil only does 1/5th damage, though.
 
 - The Security Officer was suffering pretty badly in PvP, especially in regards to the Fusion Pistol, SPNKR, and Assault Rifle. The Assault Rifle's damage in PvP has been buffed, as has the Fusion Pistol and Spanker. The Fusion Pistol's blasts are also wider to hit people more easily with it, and the SPNKR's explosive radius increased from 160 to 192.
 - The primary and secondary fire of the Security Officer's Assault Rifle are now independent of each other!
