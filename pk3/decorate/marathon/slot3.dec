@@ -230,8 +230,8 @@ actor FusionBullet : Ammo
 actor FusionShot
 {
     Decal DoomImpScorch
-    Radius 10
-    Height 12
+    Radius 12
+    Height 16
     Speed 25
     Damage (random(40,50))
     DamageType "MarathonFusion"
@@ -291,8 +291,8 @@ actor FusionShotWater
 actor FusionSuper
 {
     Decal Scorch
-    Radius 12
-    Height 14
+    Radius 20
+    Height 24
     Speed 35
     Damage (random(90,120))
     DamageType "MarathonFusion"
