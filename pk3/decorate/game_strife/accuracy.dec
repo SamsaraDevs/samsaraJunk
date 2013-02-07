@@ -8,6 +8,7 @@ actor StrifeAccuracyCounter: Ammo
 actor StrifeAccuracyReplacement: Trigger replaces UpgradeAccuracy
 {
     ConversationID 307
+    +QUIET
 
     States
     {

@@ -151,7 +151,6 @@ Actor SuperShotgunGuy : ChaingunGuy2 5005
 
 actor SuperShotgunPickup : SamsaraSlotThreeDrop
 {
-    +BRIGHT
     states
     {
       Spawn:
