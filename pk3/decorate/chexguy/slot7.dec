@@ -35,78 +35,78 @@ Actor "LAZ Device" : Weapon
       Fire:
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
         CFGG BBBBB 1 bright A_SpawnItemEx("LazShield1",0,96,32,0,0,0,-270,32)
-		CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
-		CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
-		CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
+        CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
+        CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
+        CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
         TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimFire")
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_FireCustomMissile("ChexBFGBall")
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
-		
-	  Hold:
-		TNT1 A 0 A_JumpIfInventory("ChexAmmoTake",7,"HoldAmmoTake")
-		TNT1 A 0 A_GiveInventory("ChexAmmoTake",1)
-	  Hold2:
+        
+      Hold:
+        TNT1 A 0 A_JumpIfInventory("ChexAmmoTake",7,"HoldAmmoTake")
+        TNT1 A 0 A_GiveInventory("ChexAmmoTake",1)
+      Hold2:
         TNT1 A 0 A_JumpIfInventory("SPModeOn", 1, "CoopHold")
-		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
-		TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG EE 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG GG 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		TNT1 A 0 A_Refire
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
-		TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
-		CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFire2")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
+        TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG EE 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG GG 1 bright A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
+        TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
+        CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFire2")
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_FireCustomMissile("ChexBFGBall")
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
-		
-	  HoldAmmoTake:
-	    TNT1 A 0 A_TakeInventory("Cell",1)
-		TNT1 A 0 A_TakeInventory("ChexAmmoTake",5)
-		goto Hold2
+        
+      HoldAmmoTake:
+        TNT1 A 0 A_TakeInventory("Cell",1)
+        TNT1 A 0 A_TakeInventory("ChexAmmoTake",5)
+        goto Hold2
 
       NoAimFire:
         TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimSpread")
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-	  NoAimFire2:
+        CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+      NoAimFire2:
         TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimSpread2")
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
         CFGG B 0 A_FireCustomMissile("ChexAmmoWaster")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25)
         CFGG H 10 A_ClearRefire
         goto Ready
 
       NoAimSpread:
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-	  NoAimSpread2:
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+      NoAimSpread2:
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
         CFGG B 0 A_FireCustomMissile("ChexAmmoWaster")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG B 0  A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25, 0, 0, -15)
         CFGG B 0  A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall", 0, 0, 32, 25, 0, 0,  15)
@@ -114,75 +114,75 @@ Actor "LAZ Device" : Weapon
         goto Ready
 
       CoopFire:
-		/*TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
+        /*TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
         CFGG BCDE 5
         TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimFireCoop")
         CFGG B 10 //A_GunFlash
         CFGG H 20 A_FireCustomMissile("ChexBFGBall2")
         CFGG H 10 A_ReFire
         goto Ready*/
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
         CFGG BBBBB 1 bright A_SpawnItemEx("LazShield1",0,96,32,0,0,0,-270,32)
-		CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
-		CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
-		CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
+        CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
+        CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
+        CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
         TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimFireCoop")
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_FireCustomMissile("ChexBFGBall2")
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
 
-	  CoopHold:
-		TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG EE 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG GG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		TNT1 A 0 A_Refire
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
-		TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
-		CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFireCoop2")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+      CoopHold:
+        TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG EE 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG GG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
+        TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
+        CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFireCoop2")
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_FireCustomMissile("ChexBFGBall2")
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
 
       NoAimFireCoop:
         TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimCoopSpread")
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-	  NoAimFireCoop2:
+        CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+      NoAimFireCoop2:
         TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimCoopSpread2")
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
         CFGG B 0 A_FireCustomMissile("ChexAmmoWaster")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall2", 0, 0, 32, 25)
         CFGG H 10 A_ClearRefire
         goto Ready
 
       NoAimCoopSpread:
         TNT1 A 0 //A_GunFlash
-		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-	  NoAimCoopSpread2:
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+      NoAimCoopSpread2:
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
         CFGG B 0 A_FireCustomMissile("ChexAmmoWaster")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG B 0  A_SpawnItemEx("ChexBFGBall2", 0, 0, 32, 25, 0, 0, -15)
         CFGG B 0  A_SpawnItemEx("ChexBFGBall2", 0, 0, 32, 25)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall2", 0, 0, 32, 25, 0, 0,  15)
@@ -213,66 +213,66 @@ actor "Spectral LAZ Device": "LAZ Device"
     {
       Fire:
       CoopFire:
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgfire")
         CFGG BBBBB 1 bright A_SpawnItemEx("LazShield1",0,96,32,0,0,0,-270,32)
-		CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
-		CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
-		CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
+        CFGG CCCCC 1 bright A_SpawnItemEx("LazShield2",0,96,32,0,0,0,-270,32)
+        CFGG DDDDD 1 bright A_SpawnItemEx("LazShield3",0,96,32,0,0,0,-270,32)
+        CFGG EEEEE 1 bright A_SpawnItemEx("LazShield4",0,96,32,0,0,0,-270,32)
         TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimFireCoop")
         TNT1 A 0
-		CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        CFGG FFFFF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
         CFGG H 10 A_FireCustomMissile("ChexBFGBall2Spectral",0,0)
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
-		
-	  Hold:
-	  CoopHold:
-		TNT1 A 0 A_JumpIfInventory("ChexAmmoTake",7,"HoldAmmoTake")
-		TNT1 A 0 A_GiveInventory("ChexAmmoTake",1)
-	  Hold2:
-	  CoopHold2:
-		TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG EE 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		CFGG GG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
-		TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
-		TNT1 A 0 A_Refire
-		TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
-		TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
-		CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
-		CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFireCoop2")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        
+      Hold:
+      CoopHold:
+        TNT1 A 0 A_JumpIfInventory("ChexAmmoTake",7,"HoldAmmoTake")
+        TNT1 A 0 A_GiveInventory("ChexAmmoTake",1)
+      Hold2:
+      CoopHold2:
+        TNT1 A 0 A_PlaySoundEx("chex/bfghold","soundslot7",0,0)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG EE 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG FF 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        CFGG GG 1 bright A_SpawnItemEx("LazShield5Online",0,96,32,0,0,0,-270,32)
+        TNT1 AA 0 A_SpawnItemEx("ChexBFGTrail2",0,96,random(28,34),random(-1,1),random(-1,1),random(-1,1),random(-290,-250),32)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_PlayWeaponSound("chex/bfgquickfire")
+        TNT1 A 0 A_TakeInventory("ChexAmmoTake",10)
+        CFGG EEE 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFF 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32) 
+        CFGG GGGGG 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim",1,"NoAimFireCoop2")
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
         CFGG H 10 A_FireCustomMissile("ChexBFGBall2Spectral",0,0)
-		CFGG H 10 A_ClearRefire
+        CFGG H 10 A_ClearRefire
         goto Ready
-		
-	  HoldAmmoTake: // Should it take Cells? Or maybe some Health?
-	    TNT1 A 0 A_TakeInventory("Cell",1)
-		TNT1 A 0 A_TakeInventory("ChexAmmoTake",5)
-		goto Hold2
+        
+      HoldAmmoTake: // Should it take Cells? Or maybe some Health?
+        TNT1 A 0 A_TakeInventory("Cell",1)
+        TNT1 A 0 A_TakeInventory("ChexAmmoTake",5)
+        goto Hold2
 
       NoAimFireCoop:
         TNT1 A 0
-		CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
-		TNT1 A 0 A_Refire
-	  NoAimFireCoop2:
-		CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
+        CFGG FFFFF 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        CFGG GGGGG 1 A_SpawnItemEx("LazShield5",0,96,32,0,0,0,-270,32)
+        TNT1 A 0 A_Refire
+      NoAimFireCoop2:
+        CFGG HHH 1 bright A_SpawnItemEx("LazShield5Useless",0,96,32,0,0,0,-270,32)
         CFGG B 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
-		TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
+        TNT1 A 0 A_PlaySoundEx("chex/bfglaunch","soundslot6",0,0)
         CFGG H 10 A_SpawnItemEx("ChexBFGBall2Spectral", 0, 0, 32, 25)
         CFGG H 10 A_ClearRefire
         goto Ready
@@ -295,11 +295,11 @@ actor ChexBFGBall
     +BRIGHT
     +BLOODLESSIMPACT
     +NOEXTREMEDEATH
-	+NODAMAGETHRUST
+    +NODAMAGETHRUST
     +DONTREFLECT
-	+REFLECTIVE
-	//+DONTRIP
-	+FORCERADIUSDMG
+    +REFLECTIVE
+    //+DONTRIP
+    +FORCERADIUSDMG
     States
     {
       Spawn:
@@ -308,97 +308,97 @@ actor ChexBFGBall
         
       Death:
         CFE1 A 4 bright
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 A 0 A_Explode(224,256,0)
-		//TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ChexBFGExplosion2",random(-30,30),random(-30,30),random(-10,30))
-		TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
-		TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffect",0,0,0,0,0,0,0,48)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 A 0 A_Explode(224,256,0)
+        //TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ChexBFGExplosion2",random(-30,30),random(-30,30),random(-10,30))
+        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
+        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffect",0,0,0,0,0,0,0,48)
         CFE1 AAAA 1 bright A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		CFE1 BBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFF 1 bright A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        CFE1 BBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFF 1 bright A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
         stop
     }
 }
 
 actor ChexBFGTrail
 {
-	PROJECTILE
-	+DOOMBOUNCE
-	+NOGRAVITY   
-	+EXPLODEONWATER
-	-CANBOUNCEWATER
-	+CLIENTSIDEONLY
-	+NOINTERACTION
-	-SOLID
-	Scale 0.15
-	Speed 2
-	RenderStyle Add
-	Alpha 0.95
-	States
-	{
-	Spawn:
-		SLZR A 4 bright
-		SLZR B 4 bright A_FadeOut(0.1)
-		loop
-	}
+    PROJECTILE
+    +DOOMBOUNCE
+    +NOGRAVITY   
+    +EXPLODEONWATER
+    -CANBOUNCEWATER
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    -SOLID
+    Scale 0.15
+    Speed 2
+    RenderStyle Add
+    Alpha 0.95
+    States
+    {
+    Spawn:
+        SLZR A 4 bright
+        SLZR B 4 bright A_FadeOut(0.1)
+        loop
+    }
 }
 
 actor ChexBFGTrail2 : ChexBFGTrail
 {
-	Alpha 0.55
-	Scale 0.075
+    Alpha 0.55
+    Scale 0.075
 }
 
 actor ChexBFGExplosion
 {
-	+NOGRAVITY
-	+CLIENTSIDEONLY
-	+NOINTERACTION
-	-SOLID
-	Scale 0.75
-	Speed 0
-	RenderStyle Add
-	Alpha 0.85
-	States
-	{
-	Spawn:
+    +NOGRAVITY
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    -SOLID
+    Scale 0.75
+    Speed 0
+    RenderStyle Add
+    Alpha 0.85
+    States
+    {
+    Spawn:
         CFE1 A 4 bright
-		CFE1 BCDEF 8 bright
+        CFE1 BCDEF 8 bright
         Stop
-	}
+    }
 }
 
 actor ChexBFGExplosionEffect
 {
-	+NOGRAVITY
-	-SOLID
-	+NOEXTREMEDEATH
-	+NODAMAGETHRUST
-	Radius 0
-	Height 0
-	Scale 0.75
-	Speed 0
-	RenderStyle Add
+    +NOGRAVITY
+    -SOLID
+    +NOEXTREMEDEATH
+    +NODAMAGETHRUST
+    Radius 0
+    Height 0
+    Scale 0.75
+    Speed 0
+    RenderStyle Add
     Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
     DamageType "Zorch"
-	Alpha 0.1
-	States
-	{
-	Spawn:
-		TNT1 A 0 A_SetTranslucent(0.1,1)
+    Alpha 0.1
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SetTranslucent(0.1,1)
         CFS3 EE 5 bright A_Explode(192,192,0)
-		TNT1 A 0 A_SetTranslucent(0.25,1)
-		CFS3 EEEE 5 bright A_Explode(192,192,0)//A_Explode(160,160,0)
-		TNT1 A 0 A_SetTranslucent(0.4,1)
-		CFS2 DDDD 5 bright A_Explode(160,160,0)//A_Explode(128,128,0)
-		TNT1 A 0 A_SetTranslucent(0.55,1)
-		CFS2 CCCC 5 bright A_Explode(160,160,0)//A_Explode(96,96,0)
-		CFS2 BBBB 5 bright A_Explode(128,128,0)//A_Explode(64,64,0)
-		CFS2 AAAA 5 bright A_Explode(128,128,0)//A_Explode(32,32,0)
+        TNT1 A 0 A_SetTranslucent(0.25,1)
+        CFS3 EEEE 5 bright A_Explode(192,192,0)//A_Explode(160,160,0)
+        TNT1 A 0 A_SetTranslucent(0.4,1)
+        CFS2 DDDD 5 bright A_Explode(160,160,0)//A_Explode(128,128,0)
+        TNT1 A 0 A_SetTranslucent(0.55,1)
+        CFS2 CCCC 5 bright A_Explode(160,160,0)//A_Explode(96,96,0)
+        CFS2 BBBB 5 bright A_Explode(128,128,0)//A_Explode(64,64,0)
+        CFS2 AAAA 5 bright A_Explode(128,128,0)//A_Explode(32,32,0)
         Stop
-	}
+    }
 }
 
 actor ChexBFGBall2 : ChexBFGBall
@@ -409,18 +409,18 @@ States
 {
       Death:
         CFE1 A 4 bright
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 A 0 A_Explode(896,512,0)
-		//TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ChexBFGExplosion2",random(-30,30),random(-30,30),random(-10,30))
-		TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
-		TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffect",0,0,0,0,0,0,0,48)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 A 0 A_Explode(896,512,0)
+        //TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ChexBFGExplosion2",random(-30,30),random(-30,30),random(-10,30))
+        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
+        TNT1 A 0 A_SpawnItemEx("ChexBFGExplosionEffect",0,0,0,0,0,0,0,48)
         CFE1 AAAA 1 bright A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		CFE1 BBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFF 1 bright A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-		TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        CFE1 BBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFF 1 bright A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
+        TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
         stop
-	}
+    }
 }
 
 actor ChexBFGBall2Spectral : ChexBFGBall2 { Damagetype "Spectral" }
@@ -439,99 +439,99 @@ actor ChexAmmoWaster
 
 actor LazShield1
 {
-	Radius 64
-	Height 32
-	RenderStyle Add
-	Alpha 0.5
-	Species "Player"
-	+THRUSPECIES
-	//+SOLID
-	+SHOOTABLE
-	+NOBLOOD
-	+NOGRAVITY
-	+NOTELEPORT
-	+INVULNERABLE
-	+DONTRIP
-	+NOBLOODDECALS
-	+FLOORCLIP
-	+REFLECTIVE
-	States
-	{
-	Spawn:
-		CFS2 A 2 bright
-		stop
-	}
+    Radius 64
+    Height 32
+    RenderStyle Add
+    Alpha 0.5
+    Species "Player"
+    +THRUSPECIES
+    //+SOLID
+    +SHOOTABLE
+    +NOBLOOD
+    +NOGRAVITY
+    +NOTELEPORT
+    +INVULNERABLE
+    +DONTRIP
+    +NOBLOODDECALS
+    +FLOORCLIP
+    +REFLECTIVE
+    States
+    {
+    Spawn:
+        CFS2 A 2 bright
+        stop
+    }
 }
 
 actor LazShield2 : LazShield1
 {
-	States
-	{
-	Spawn:
-		CFS2 B 2 bright
-		stop
-	}
+    States
+    {
+    Spawn:
+        CFS2 B 2 bright
+        stop
+    }
 }
 
 actor LazShield3 : LazShield1
 {
-	States
-	{
-	Spawn:
-		CFS2 C 2 bright
-		stop
-	}
+    States
+    {
+    Spawn:
+        CFS2 C 2 bright
+        stop
+    }
 }
 
 actor LazShield4 : LazShield1
 {
-	States
-	{
-	Spawn:
-		CFS2 E 2 bright
-		stop
-	}
+    States
+    {
+    Spawn:
+        CFS2 E 2 bright
+        stop
+    }
 }
 
 actor LazShield5 : LazShield1
 {
-	Alpha 0.25
-	States
-	{
-	Spawn:
-		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
-		TNT1 A 1
-		loop
-	Spawn1:
-		CFS3 A 2 bright
-		stop
-	Spawn2:
-		CFS3 B 2 bright
-		stop
-	Spawn3:
-		CFS3 C 2 bright
-		stop
-	Spawn4:
-		CFS3 D 2 bright
-		stop
-	Spawn5:
-		CFS3 E 2 bright
-		stop
-	}
+    Alpha 0.25
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
+        TNT1 A 1
+        loop
+    Spawn1:
+        CFS3 A 2 bright
+        stop
+    Spawn2:
+        CFS3 B 2 bright
+        stop
+    Spawn3:
+        CFS3 C 2 bright
+        stop
+    Spawn4:
+        CFS3 D 2 bright
+        stop
+    Spawn5:
+        CFS3 E 2 bright
+        stop
+    }
 }
 
 actor LazShield5Useless : LazShield5
 {
-	Radius 0
-	Height 0
-	-SOLID
-	+NOINTERACTION
-	+CLIENTSIDEONLY
-	-SHOOTABLE
-	-REFLECTIVE
+    Radius 0
+    Height 0
+    -SOLID
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    -SHOOTABLE
+    -REFLECTIVE
 }
 
 actor LazShield5Online : LazShield5
 {
-	Alpha 0.5
+    Alpha 0.5
 }

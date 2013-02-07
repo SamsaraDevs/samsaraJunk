@@ -479,12 +479,3 @@ object ChexBFGBall2
     frame CFE1E { light LAZBALL_X4 }
     frame CFE1F { light LAZBALL_X5 }
 }
-
-object ChexLAZPuff
-{
-    frame CFE2A { light LAZBALL    }
-    frame CFE2B { light LAZBALL_X1 }
-    frame CFE2C { light LAZBALL_X4 }
-    frame CFE2D { light LAZBALL_X5 }
-}
-
