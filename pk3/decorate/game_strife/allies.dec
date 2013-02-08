@@ -252,7 +252,7 @@ actor FriendlyFlemBall : BipedicusBallV3
 
 //=================
 // B.J. BLAZKOWICZ: Nazi Guard
-// Pretty sure "friendly Nazi" is an oxymoron. How many people are gonna get on our asses for having a Nazi on the heroic side?
+// Pretty sure "friendly Nazi" is an oxymoron. Nazis were bad, folks.
 ACTOR FriendlyNazi
 {
     Health 100
@@ -642,6 +642,11 @@ ACTOR FriendlyGrunt
         QGBA C -1 ThrustThingZ(0, random(14, 20), 0, 1)
         Stop
     }
+}
+
+ACTOR FriendlyGruntHexen : FriendlyGrunt
+{
+Translation "187:202=81:95"
 }
 
 ACTOR GruntBullet : QuakeBullet2

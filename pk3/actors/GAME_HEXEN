@@ -237,7 +237,7 @@ actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
 
 actor HexenArmor5A : CustomInventory
 {
-    //tag "Dragonskin Bracers"
+    tag "Dragonskin Bracers"
     +INVBAR
     Inventory.Icon "ARTIBRAC"
     Inventory.DefMaxAmount
@@ -373,6 +373,11 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
     }
 }
 
+actor ArtiHealingRadius2: ArtiHealingRadius {
+Inventory.MaxAmount 16
+Tag "Mystic Ambit Incant"
+}
+
 Actor QuakeQuarterDamage : PowerupGiver
 {
   +COUNTITEM
@@ -433,8 +438,6 @@ Actor PowerQuackQuarterDamage : PowerDamage
 	DamageFactor "QuakePistol", 1.25
 	DamageFactor "NotQuadded", 1.25
 }
-
-actor ArtiHealingRadius2: ArtiHealingRadius { Inventory.MaxAmount 16 }
 
 actor HexenHealPack0 : HealPack0 replaces ArtiPoisonBag { }
 
@@ -645,11 +648,34 @@ actor HexenBeaconMarathon: HexenBeaconSpawner
     }
 }
 
-actor HexenBeaconQuake: HexenBeaconSpawner
+actor HexenBeaconQuake: HexenBeaconSpawner // A wee bit wonky. Doesn't explode if there's no room anymore.
 {
     States
     {
       Spawn:
+      SpawnLoop:
+        BEAC KK 12
+        BEAC K  11
+      // +35 (0)
+        BEAC K 12 A_SpawnItemEx("FriendlyGruntHeXen",0,0,0,0,0,0,0,48)//ACS_ExecuteAlways(315, 0, 1)
+        BEAC KKKKKKKKKKKK 12
+        BEAC K 4
+      // +160 (1)
+        BEAC K 8 A_SpawnItemEx("FriendlyGruntHeXen",0,0,0,0,0,0,0,48)//ACS_ExecuteAlways(315)
+        BEAC KKKKKKKKKKKK 12
+        BEAC K 8
+      // +160 (2)
+        BEAC K 4 A_SpawnItemEx("FriendlyGruntHeXen",0,0,0,0,0,0,0,48)//ACS_ExecuteAlways(315)
+        BEAC KKKKKKKKKKKKK 12
+      // +160 (3)
+        BEAC K 12 A_SpawnItemEx("FriendlyGruntHeXen",0,0,0,0,0,0,0,48)//ACS_ExecuteAlways(315)
+        BEAC KKKKKKKKKKKK 12
+        BEAC K 4
+      // +160 (4)
+        BEAC K 8 A_SpawnItemEx("FriendlyGruntHeXen",0,0,0,0,0,0,0,48)//ACS_ExecuteAlways(315)
+        BEAC KKKKKKKKKKKK 12
+        BEAC K 8
+        stop
         BEAC K 0
         goto SpawnLoop
     }
