@@ -11,6 +11,7 @@ actor "Double Shotgun": InstantSwitchWeapon
     Weapon.AmmoType "AmmoShell"
 
     +UNDROPPABLE
+    +THRUGHOST
     
     Weapon.SisterWeapon "Spectral DSG"
     Inventory.Icon "QDBSZ0"
