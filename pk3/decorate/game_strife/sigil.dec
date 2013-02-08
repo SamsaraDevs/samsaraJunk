@@ -9,7 +9,7 @@ actor SpectralFiring: PowerWeaponLevel2
     Powerup.Color "C0 C0 FF", 0.1
     Powerup.Duration 0x7FFFFFFF
 
-    Inventory.Icon ""
+    Inventory.Icon "TNT1A0"
 }
 
 actor GlobalSigilGiver
