@@ -1,8 +1,8 @@
 actor RPG : Weapon
 {
-    //Weapon.BobRangeX 0.75
-    //Weapon.BobRangeY 0.95
-    //Weapon.BobSpeed 1.1
+    Weapon.BobRangeX 0.75
+    Weapon.BobRangeY 0.95
+    Weapon.BobSpeed 1.1
     Weapon.SlotNumber 5
     Weapon.SelectionOrder 2500
     Weapon.AmmoUse 1

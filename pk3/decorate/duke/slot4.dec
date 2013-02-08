@@ -2,9 +2,9 @@ actor DukeRipperFiringSequence : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inve
 
 actor "Chaingun Cannon" : Weapon replaces Chaingun
 {
-    //Weapon.BobRangeX 0.75
-    //Weapon.BobRangeY 0.95
-    //Weapon.BobSpeed 1.1
+    Weapon.BobRangeX 0.75
+    Weapon.BobRangeY 0.95
+    Weapon.BobSpeed 1.1
     Weapon.SlotNumber 4
     Weapon.SelectionOrder 700
     Weapon.AmmoUse 1

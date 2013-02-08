@@ -2,9 +2,9 @@ actor DevastatorSide: Boolean {}
 
 actor Devastator : Weapon
 {
-    //Weapon.BobRangeX 0.75
-    //Weapon.BobRangeY 0.95
-    //Weapon.BobSpeed 1.1
+    Weapon.BobRangeX 0.75
+    Weapon.BobRangeY 0.95
+    Weapon.BobSpeed 1.1
     Weapon.SelectionOrder 2800
     Weapon.AmmoUse 2
     Weapon.AmmoGive 30 // Originally 15, increased because of the double ammo usage.
