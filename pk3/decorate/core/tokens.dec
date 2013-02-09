@@ -99,3 +99,43 @@ actor WeaponGetYaaaay2 : Weapon
         goto Ready
     }
 }
+
+actor Fucks: CustomInventory
+{
+    +INVBAR
+    Inventory.Icon "ARTIFELD"
+    Inventory.PickupSound "misc/p_pkup"
+
+    Inventory.MaxAmount 1
+    Inventory.PickupMessage "Why do I suddenly give a fuck?"
+
+    Scale 0.5
+
+    States
+    {
+      Spawn:
+        FELD ABCDCB 4 bright
+        loop
+
+      Use:
+        FELD A 0 A_GiveInventory("FuckHealth")
+        FELD A 0 A_GiveInventory("FuckArmor")
+        stop
+    }
+}
+
+actor FuckHealth: Health
+{
+    Inventory.Amount 10000
+    Inventory.MaxAmount 10000
+    Inventory.PickupMessage "Fuck health."
+}
+
+actor FuckArmor: BasicArmorPickup
+{
+    Armor.SaveAmount 10000
+    Armor.SavePercent 0.5
+
+    Inventory.PickupMessage "Fuck armor."
+    Inventory.Icon "RMR2A0"
+}
