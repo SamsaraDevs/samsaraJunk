@@ -55,7 +55,7 @@ actor MaxSigil: CustomInventory
 actor SpectralToggler: CustomInventory
 {
     Inventory.MaxAmount 1
-
+    tag "Splinter of the Sigil"
     +INVBAR
     +UNDROPPABLE
 

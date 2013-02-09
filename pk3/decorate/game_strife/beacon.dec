@@ -5,6 +5,7 @@ actor StrifeBeaconItem: CustomInventory replaces TeleporterBeacon
     ConversationID 166
 
     Inventory.MaxAmount 3
+    tag "Teleport Beacon"
     Inventory.PickupMessage "You got a teleporter beacon!"
 
     Inventory.Icon "I_BEAC"
