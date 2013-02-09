@@ -39,7 +39,7 @@ actor "Serpent Staff" : CWeapStaff
         goto Hold
 
       Hold:
-        CSSF A 1 BRIGHT Offset (0, 45) A_JumpIfCloser(96, "Drain")
+        CSSF A 1 BRIGHT Offset (0, 45) A_JumpIfCloser(128, "Drain")
         CSSF A 0 A_TakeInventory("DrainCounter", 1)
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         CSSF J 1 BRIGHT Offset (0, 50) A_CStaffAttack
