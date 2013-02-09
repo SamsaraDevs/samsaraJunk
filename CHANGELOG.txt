@@ -37,7 +37,6 @@ NOTE 2: The Spectres and the Entity are no longer invulnerable to everything els
 - Ranger's Grenade Launcher's Grenades now properly go up and down lifts.
 - Weapon III drops by Riot Shotgunners now properly respect Ranger and give him the Grenade Launcher.
 - The Weapon III drops by Riot Shotgunners now have caught up with the conversion to ACS-based weapon giving.
-- Ranger now gets some Lava Nail and Multi Rocket ammo in Last Man Standing.
 - They are called "Multi Rockets", not "Cluster Rockets". All instances of "Cluster Rockets" have been renamed to "Multi Rockets".
 - The Multi-Rocket Launcher's width of fire has been tightened up to match its spread in Dissolution of Eternity.
 - Quadded multi-rockets were getting quadded twice over, dealing 16x damage. Uh. Whoops. This has been fixed.
@@ -81,7 +80,8 @@ NOTE 2: The Spectres and the Entity are no longer invulnerable to everything els
 - Included the samsara_banwolfmove cvar--if an admin desires, B.J.'s Retro Movement can now be banned from play.
 - Corvus' Tomed Maceballs have the proper Bounce sound.
 - Chex Warrior for some reason was continuing to get people stuck on spawn in DM or LMS. On Spawn, he is unsolid for a few seconds, then becomes solid a second or two later.
-
+- Ranger's lava nail and multi rocket count scales in LMS according to how many players are in the game and what samsara_lmslife is.
+- The Thunderbolt now does 5 less damage per shot, putting it at 25. Turns out putting it at 30 put the Thunderbolt's DPS 60 higher than it should've been. WELP.
 
 
 FROM 0.26 TO 0.27

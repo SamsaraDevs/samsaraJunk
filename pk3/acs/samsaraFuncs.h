@@ -142,8 +142,12 @@ function void ApplyLMS(void)
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
 
-    GiveInventory("LavaNails",       GetAmmoCapacity("LavaNails"));
-    GiveInventory("MultiRocketAmmo", GetAmmoCapacity("MultiRocketAmmo"));
+    i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
+
+    TakeInventory("LavaNails",       0x7FFFFFFF);
+    TakeInventory("MultiRocketAmmo", 0x7FFFFFFF);
+    GiveInventory("LavaNails",       ftoi(2.5 * i));
+    GiveInventory("MultiRocketAmmo", ftoi(0.5 * i));
 
     if (lmsLevel)
     {
