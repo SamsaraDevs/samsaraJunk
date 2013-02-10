@@ -279,7 +279,7 @@ actor " Firemace " : Weapon
         Goto Ready
 
       FireTomedSpectral:
-        MACE B 4
+        MACE B 4 ACS_ExecuteAlways(317, 0, 5)
         MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
         MACE D 0 A_FireCustomMissile("MaceFX44")
         MACE D 4 //ACS_ExecuteAlways(WhateverTheHealthTakingScriptIs)

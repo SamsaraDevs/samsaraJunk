@@ -112,14 +112,14 @@ actor "Phoenix Rod" : Weapon
         PHNX C 0 A_FireCustomMissile("PhoenixFX22",random(-2,2),0,0,0,2,2)//,26,2,2)
         PHNX C 1 BRIGHT //A_FirePhoenixPL2
         PHNX B 4 BRIGHT A_ReFire
-        TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        TNT1 A 0  ACS_ExecuteAlways(317, 0, 5)
         TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
         TNT1 A 0 A_StopSoundEx("Weapon")
         goto Ready
 
       PowerdownSpectral:
         TNT1 A 0 A_StopSoundEx("Weapon")
-        TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        TNT1 A 0  ACS_ExecuteAlways(317, 0, 5)
         TNT1 A 0 A_TakeInventory("PhoenixRodCount",360)
         PHNX B 4 A_Refire
         TNT1 A 0 A_ClearRefire

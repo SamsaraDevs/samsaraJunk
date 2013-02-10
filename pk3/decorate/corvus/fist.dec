@@ -56,7 +56,7 @@ actor " Staff " : Weapon
         STFF G 8 A_ReFire
         Goto Ready2
 
-      FireTomed:
+      FireSpectral:
         STFF G 6
         STFF H 8 A_CustomPunch(random(60,120),1,0,"StaffPuff5") // Yeah, good luck meleeing them...
         STFF G 8 A_ReFire
