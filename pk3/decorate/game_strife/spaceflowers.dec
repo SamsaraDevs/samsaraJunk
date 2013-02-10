@@ -186,41 +186,41 @@ Painchance 150
 
 Translation "32:63=1:31", "64:79=1:31", "160:191=1:31", "192:223=1:31", "80:95=1:31", "128:143=1:31"
 
-DamageFactor "PoisonCloud", 0.5
-DamageFactor "TimonsAxe", 0.5
-DamageFactor "Mace", 0.5
-DamageFactor "DragonClaw", 0.5
-DamageFactor "MarathonPistol", 0.5
-DamageFactor "Pistol", 0.5
-DamageFactor "DoomFist", 0.5
-DamageFactor "ZorchPistol", 0.5
-DamageFactor "BFG", 0.5
-DamageFactor "BFGSpray", 0.5
-DamageFactor "Normal", 0.5
-DamageFactor "Zorch", 0.5
-DamageFactor "Ice", 0.5
-DamageFactor "Fire", 0.5
-DamageFactor "Slime", 0.5
-DamageFactor "Disintegrate", 0.5
-DamageFactor "Poison", 0.5
-DamageFactor "WolfenFlamethrower", 0.5
-DamageFactor "DukeDamage", 0.5
-DamageFactor "DukeExplosive", 0.5
-DamageFactor "MightyBoot", 0.5
-DamageFactor "DukeIce", 0.5
-DamageFactor "DukePistol", 0.5
-DamageFactor "Explosive", 0.5
-DamageFactor "MarathonFusion", 0.5
-DamageFactor "DoomPlasma", 0.5
-DamageFactor "CorvusCrossbow", 0.5
-DamageFactor "CorvusHellstaff", 0.5
-DamageFactor "CorvusHellstaffTomed", 0.5
-DamageFactor "MarathonPlasma", 0.5
-DamageFactor "BJSpear", 0.5
-DamageFactor "WMCBeam", 0.5
-DamageFactor "WMCNade", 0.5
-DamageFactor "QuakePistol", 0.5
-DamageFactor "NotQuadded", 0.5
+DamageFactor "PoisonCloud", 0.85
+DamageFactor "TimonsAxe", 0.85
+DamageFactor "Mace", 0.85
+DamageFactor "DragonClaw", 0.85
+DamageFactor "MarathonPistol", 0.85
+DamageFactor "Pistol", 0.85
+DamageFactor "DoomFist", 0.85
+DamageFactor "ZorchPistol", 0.85
+DamageFactor "BFG", 0.85
+DamageFactor "BFGSpray", 0.85
+DamageFactor "Normal", 0.85
+DamageFactor "Zorch", 0.85
+DamageFactor "Ice", 0.85
+DamageFactor "Fire", 0.85
+DamageFactor "Slime", 0.85
+DamageFactor "Disintegrate", 0.85
+DamageFactor "Poison", 0.85
+DamageFactor "WolfenFlamethrower", 0.85
+DamageFactor "DukeDamage", 0.85
+DamageFactor "DukeExplosive", 0.85
+DamageFactor "MightyBoot", 0.85
+DamageFactor "DukeIce", 0.85
+DamageFactor "DukePistol", 0.85
+DamageFactor "Explosive", 0.85
+DamageFactor "MarathonFusion", 0.85
+DamageFactor "DoomPlasma", 0.85
+DamageFactor "CorvusCrossbow", 0.85
+DamageFactor "CorvusHellstaff", 0.85
+DamageFactor "CorvusHellstaffTomed", 0.85
+DamageFactor "MarathonPlasma", 0.85
+DamageFactor "BJSpear", 0.85
+DamageFactor "WMCBeam", 0.85
+DamageFactor "WMCNade", 0.85
+DamageFactor "QuakePistol", 0.85
+DamageFactor "NotQuadded", 0.85
 
 States
 {
@@ -285,6 +285,11 @@ States
         TNT1 A 1 A_SetTranslucent(1,0)
         stop
 }
+}
+
+actor AlienSpectreFake2 : AlienSpectreFake
+{
+Health 125
 }
 
 actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
@@ -745,12 +750,55 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
 	goto See2
 
       SpawnFake:
-	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
+	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake2",0,0,0,0,0,0,0,48)
 	goto Wandering
     }
 }
 
-//actor EntitySecond2 : EntitySecond replaces EntitySecond
+actor EntitySecond2 : EntitySecond replaces EntitySecond
+{
+  ConversationID 75, -1, -1
+	-SPECTRAL
+    DamageFactor "PoisonCloud", 0.2
+    DamageFactor "TimonsAxe", 0.2
+    DamageFactor "Mace", 0.2
+    DamageFactor "DragonClaw", 0.2
+    DamageFactor "MarathonPistol", 0.2
+    DamageFactor "Pistol", 0.2
+    DamageFactor "DoomFist", 0.2
+    DamageFactor "ZorchPistol", 0.2
+    DamageFactor "BFG", 0.2
+    DamageFactor "BFGSpray", 0.2
+    DamageFactor "Normal", 0.2
+    DamageFactor "Zorch", 0.2
+    DamageFactor "Ice", 0.2
+    DamageFactor "Fire", 0.2
+    DamageFactor "Slime", 0.2
+    DamageFactor "Disintegrate", 0.2
+    DamageFactor "Poison", 0.2
+    DamageFactor "WolfenFlamethrower", 0.2
+    DamageFactor "DukeDamage", 0.2
+    DamageFactor "DukeExplosive", 0.2
+    DamageFactor "MightyBoot", 0.2
+    DamageFactor "DukeIce", 0.2
+    DamageFactor "DukePistol", 0.2
+    DamageFactor "Explosive", 0.2
+    DamageFactor "MarathonFusion", 0.2
+    DamageFactor "DoomPlasma", 0.2
+    DamageFactor "CorvusCrossbow", 0.2
+    DamageFactor "CorvusHellstaff", 0.2
+    DamageFactor "CorvusHellstaffTomed", 0.2
+    DamageFactor "MarathonPlasma", 0.2
+    DamageFactor "BJSpear", 0.2
+    DamageFactor "WMCBeam", 0.2
+    DamageFactor "WMCNade", 0.2
+    DamageFactor "QuakePistol", 0.2
+    DamageFactor "NotQuadded", 0.2
+
+    DamageFactor "Spectral", 1
+    DamageFactor "DukeSpectral", 1
+    DamageFactor "SpectralNoQuad", 1
+}
 
 
 actor SamsaraOracle: Oracle replaces Oracle
