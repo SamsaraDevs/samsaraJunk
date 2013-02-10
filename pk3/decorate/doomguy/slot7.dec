@@ -192,12 +192,12 @@ actor "Spectral B.F.G. 9000": "B.F.G. 9000"
       FireMid:
         DBFG B 0 A_GunFlash
         TNT1 A 0 A_JumpIfInventory("DoomNoBFGAim", 1, "NoAimMid")
-        TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 40)
         TNT1 A 0 A_FireCustomMissile("DoomBFGBallSpectral",0,0)
         goto FireEnd
 
       NoAimMid:
-        TNT1 A 0 //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        TNT1 A 0 ACS_ExecuteAlways(317, 0, 40)
         TNT1 A 0 A_SpawnItemEx("DoomBFGBallSpectral", 0, 0, 32, 25)
         goto FireEnd
 
