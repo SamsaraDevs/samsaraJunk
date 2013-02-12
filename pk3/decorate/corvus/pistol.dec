@@ -107,7 +107,7 @@ actor "Elven Wand" : Weapon
         Goto Ready
 
       FireTomedSpectral:
-        GWND B 3 BRIGHT
+        GWND B 3 BRIGHT ACS_ExecuteAlways(317, 0, 5)
         GWND C 0 A_PlayWeaponSound("heretic/wand")
         GWND C 0 A_FireCustomMissile("GoldWandFX43",5.625,0,0,1)
         GWND C 0 A_FireCustomMissile("GoldWandFX43",2.8125,0,0,1)

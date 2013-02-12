@@ -78,7 +78,7 @@ actor Hellstaff : Weapon
         HROD F 3 BRIGHT
         HROD A 0 A_PlayWeaponSound("weapons/hornrodpowshoot")
         HROD G 4 BRIGHT A_FireCustomMissile("HornRodFX22",0,0)
-        HROD F 2 BRIGHT //ACS_ExecuteAlways("WhateverTheHealthScriptIs")
+        HROD F 2 BRIGHT ACS_ExecuteAlways(317, 0, 10)
         HROD E 3
         HROD D 2
         HROD C 2 A_ReFire
