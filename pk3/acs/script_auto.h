@@ -81,6 +81,8 @@ script SAMSARA_SPAWN (int respawning)
     int canbuddha;
     int i;
 
+    if (!CheckInventory("IsSamsaraClass")) { terminate; }
+
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
     ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
 
