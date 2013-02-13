@@ -82,7 +82,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         }
         else
         {
-            if (GetCVar("lastmanstanding"))
+            if (GetCVar("lastmanstanding") || GetCVar("teamlms")) // teamlms doesn't map to lastmanstanding+teamplay, wtf?
             {
                 GiveInventory("QuadDamageItem", 1);
                 break;
