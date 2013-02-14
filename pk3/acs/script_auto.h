@@ -55,6 +55,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_jumpmod 0");
         ConsoleCommand("archivecvar samsara_jumpmod"); }
         
+        if (!GetCVar("samsara_peoplediewhentheyarekilled"))
+        {   ConsoleCommand("set samsara_peoplediewhentheyarekilled 0");
+        ConsoleCommand("archivecvar samsara_peoplediewhentheyarekilled"); }
+        
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
         ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }

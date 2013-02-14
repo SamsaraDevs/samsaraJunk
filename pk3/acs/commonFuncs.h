@@ -190,7 +190,8 @@ function int magnitudeThree(int x, int y, int z)
 
 function int magnitudeThree_f(int x, int y, int z)
 {
-    return sqrt(FixedMul(x, x) + FixedMul(y, y) + FixedMul(z, z));
+    int i = FixedMul(x, x) + FixedMul(y, y) + FixedMul(z, z);
+    return sqrt(i);
 }
 
 
@@ -715,7 +716,11 @@ function int defaultTID(int def)
 {
     int tid = ActivatorTID();
 
-    if (ThingCount(0, tid) == 1) { return tid; }
+    if (ThingCount(0, tid) == 1)
+    {
+        ACS_ExecuteAlways(DEFAULTTID_SCRIPT, 0, tid,0,0);
+        return tid;
+    }
 
     tid = def;
     if (def <= 0) { tid = unusedTID(17000, 27000); }
