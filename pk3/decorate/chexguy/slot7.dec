@@ -423,7 +423,7 @@ States
     }
 }
 
-actor ChexBFGBall2Spectral : ChexBFGBall2 { Damagetype "Spectral" }
+actor ChexBFGBall2Spectral : ChexBFGBall2 { Damagetype "ZorchSpectral" }
 
 actor ChexAmmoWaster
 {

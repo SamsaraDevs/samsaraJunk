@@ -121,6 +121,7 @@ actor ChexWarrior : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         CHEX G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
         CHEX G 3 A_SpawnItem("ZorchEffectSmall")

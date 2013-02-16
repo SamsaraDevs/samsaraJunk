@@ -92,6 +92,7 @@ actor CorvusPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         CORV G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
         CORV G 3 A_SpawnItem("ZorchEffectSmall")

@@ -109,6 +109,7 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
       Death.ZorchPistol:
         
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SPID J 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -266,6 +267,7 @@ States
         
       Death.ZorchPistol:
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SPID J 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -694,6 +696,7 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
       Death.ZorchPistol:
         
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         MNAL J 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)

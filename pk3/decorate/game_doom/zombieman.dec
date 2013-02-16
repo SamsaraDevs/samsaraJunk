@@ -95,6 +95,7 @@ actor Zombieman2 : Zombieman replaces Zombieman
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         POSS G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
