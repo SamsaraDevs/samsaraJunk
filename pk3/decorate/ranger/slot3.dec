@@ -50,8 +50,11 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
         // 22 tics
       Fire:
-	TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"MultiFire")
+        goto NormalFire
+
+      NormalFire:
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
         TNT1 B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
@@ -94,25 +97,6 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QGRL I 0 A_Refire
         Goto Ready
         
-      AltFire:
-        TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"Swap2")
-        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-        TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
-        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
-        QMGL A 5 A_WeaponReady(12)
-        TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
-        QMGL A 10 A_WeaponReady(8)
-        goto MultiReady
-        
-      Swap2:
-        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-        TNT1 A 0 A_TakeInventory("UsingMultiNades",1)
-        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
-        QGRL A 5 A_WeaponReady(12)
-        TNT1 A 0 A_TakeInventory("UsingMultiNades",1)
-        QGRL A 10 A_WeaponReady(8)
-        goto Ready
-        
       MultiFire:
         TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo",1,"MultiFire2")
         goto Swap2
@@ -131,6 +115,10 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QGRL B 0 A_FireCustomMissile("QuadClusterGrenade", 0, 0, 0, 0, 0, 5)
         goto AltFire2
         
+      CoopQuadAlt:
+        QGRL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 0, 0, 0, 0, 5)
+        goto AltFire2
+        
       AfterSoundAlt:
         TNT1 A 0 A_TakeInventory("MultiRocketAmmo",1)
         QGRL A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopAlt")
@@ -140,10 +128,6 @@ actor "Grenade Launcher": InstantSwitchWeapon
         
       CoopAlt:
         QGRL B 0 A_FireCustomMissile("QuakeClusterGrnCoop", 0, 0, 0, 0, 0, 5)
-        goto AltFire2
-        
-      CoopQuadAlt:
-        QGRL B 0 A_FireCustomMissile("QuadClusterGrnCoop", 0, 0, 0, 0, 0, 5)
         goto AltFire2
         
       AltFire2:
@@ -161,9 +145,24 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QMGL I 0 A_Refire
         goto MultiReady
         
-      Spawn:
-        QGRL Z -1
-        Stop
+      AltFire:
+        TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"Swap2")
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
+        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
+        QMGL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_GiveInventory("UsingMultiNades",1)
+        QMGL A 10 A_WeaponReady(8)
+        goto MultiReady
+        
+      Swap2:
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_TakeInventory("UsingMultiNades",1)
+        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
+        QGRL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_TakeInventory("UsingMultiNades",1)
+        QGRL A 10 A_WeaponReady(8)
+        goto Ready
         
       DeselectShit:
         TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
@@ -254,6 +253,11 @@ actor "Grenade Launcher": InstantSwitchWeapon
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
         goto Deselect
+
+        
+      Spawn:
+        QGRL Z -1
+        Stop
     }
 }
 
@@ -273,20 +277,30 @@ actor "Spectral GL": "Grenade Launcher"
     States
     {
       Fire:
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"MultiFire")
+        goto NormalFire
+
+      NormalFire:
+        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 4, 4, 12)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 20)
+
         TNT1 B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
-        
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+
         QGRL B 0 A_FireCustomMissile("SpectralGrenade", 0,0,0,0,0, 5)
         goto Fire2
         
-      AltFire:
+      MultiFire:
+        TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo", 1, 1)
+        goto Swap2
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 35)
+
         QGRL B 0 A_PlaySound("quakeweps/glfire", CHAN_WEAPON)
-        
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+
         QGRL B 0 A_FireCustomMissile("SpectralClusterGrenade", 0,0,0,0,0, 5)
         goto AltFire2
     }

@@ -88,25 +88,6 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         QRKL H 0 A_Refire
         goto Ready
         
-      AltFire:
-        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"Swap2")
-        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
-        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
-        QMRL A 5 A_WeaponReady(12)
-        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
-        QMRL A 10 A_WeaponReady(8)
-        goto MultiReady
-        
-      Swap2:
-        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
-        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
-        QRKL A 5 A_WeaponReady(12)
-        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
-        QRKL A 10 A_WeaponReady(8)
-        goto Ready
-        
       MultiFire:
         TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo",1,"MultiFire2")
         goto Swap2
@@ -162,6 +143,25 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         // 27 tics
         QMRL H 0 A_Refire
         goto MultiReady
+        
+      AltFire:
+        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"Swap2")
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
+        QMRL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
+        QMRL A 10 A_WeaponReady(8)
+        goto MultiReady
+        
+      Swap2:
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
+        QRKL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
+        QRKL A 10 A_WeaponReady(8)
+        goto Ready
         
       Spawn:
         QRKL Z -1
@@ -264,18 +264,26 @@ actor "Spectral RL": "  Rocket Launcher  "
     States
     {
       Fire:
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiFire")
+        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 20)
         QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
         QRKL B 0 A_FireCustomMissile("SpectralRocket")
         goto Fire2
-
-      AltFire:
+        
+      MultiFire:
+        TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo", 1, 1)
+        goto Swap2
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 35)
+
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
+
+        TNT1 A 0 A_TakeInventory("MultiRocketAmmo",1)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -4, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -2, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket",  2, 0)
