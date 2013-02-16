@@ -65,15 +65,15 @@ actor PeopleDieWhenTheyAreKilled
     Projectile
     Speed 0
 
-    Radius 0
-    Height 0
+    Radius 8
+    Height 8
 
     Obituary "%k exploded %o."
 
     States
     {
       Spawn:
-        TNT1 A 1
+        TNT1 A 0
         TNT1 A 280 A_Explode(384, 192)
         stop
     }
@@ -82,6 +82,7 @@ actor PeopleDieWhenTheyAreKilled
 actor DoomguyDiesWhenHeIsKilled: PeopleDieParticle
 {
     RenderStyle Add
+    Scale 2.5
 
     States
     {
@@ -91,5 +92,21 @@ actor DoomguyDiesWhenHeIsKilled: PeopleDieParticle
         MISL C 6 bright
         MISL D 4 bright
         stop
+    }
+}
+
+actor CorvusDiesWhenHeIsKilled: PeopleDieParticle
+{
+    RenderStyle Add
+    Scale 2.5
+    
+    States
+    {
+      Spawn:
+        FX00 A 0 bright
+        FX08 A 6 bright A_PlaySound("weapons/phoenixhit", CHAN_BODY, 1, 0, 0.5)
+        FX08 BC 5 bright
+        FX08 DEFGH 4 bright
+        Stop
     }
 }

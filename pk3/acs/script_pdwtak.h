@@ -25,6 +25,8 @@ script SAMSARA_PDWTAK death
         }
         else
         {
+            Delay(4);
+
             if (yourTID == 0)
             {
                 yourTID = unusedTID(15000, 16999);

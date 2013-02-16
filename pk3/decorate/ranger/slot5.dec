@@ -18,8 +18,8 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
     
     +NOAUTOFIRE
     +UNDROPPABLE
-	+AMMO_OPTIONAL
-	+ALT_AMMO_OPTIONAL
+    +AMMO_OPTIONAL
+    +ALT_AMMO_OPTIONAL
     +NOALERT
     
     Inventory.Icon "QRKLZ0"
@@ -35,22 +35,22 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto Super::Deselect
 
       Ready:
-		TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiReady")
+        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiReady")
         QRKL A 1 A_WeaponReady
-		TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
-		TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
+        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
         Loop
         
       MultiReady:
         QMRL A 1 A_WeaponReady
-		TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
-		TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
+        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
         Loop
         
       Fire:
-	TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiFire")
-		TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiFire")
+        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadFire")
@@ -87,33 +87,33 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         // 27 tics
         QRKL H 0 A_Refire
         goto Ready
-		
-	  AltFire:
-		TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"Swap2")
-		TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-		TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
-		TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
-		QMRL A 5 A_WeaponReady(12)
-		TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
-		QMRL A 10 A_WeaponReady(8)
-		goto MultiReady
-		
-	  Swap2:
-		TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
-		TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
-		TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
-		QRKL A 5 A_WeaponReady(12)
-		TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
-		QRKL A 10 A_WeaponReady(8)
-		goto Ready
+        
+      AltFire:
+        TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"Swap2")
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_GiveInventory("UsingDoEAmmo",1)
+        QMRL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_GiveInventory("UsingMultiRockets",1)
+        QMRL A 10 A_WeaponReady(8)
+        goto MultiReady
+        
+      Swap2:
+        TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
+        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
+        TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
+        QRKL A 5 A_WeaponReady(12)
+        TNT1 A 0 A_TakeInventory("UsingMultiRockets",1)
+        QRKL A 10 A_WeaponReady(8)
+        goto Ready
         
       MultiFire:
-		TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo",1,"MultiFire2")
-		goto Swap2
+        TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo",1,"MultiFire2")
+        goto Swap2
       MultiFire2:
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 4, 15)
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
-		TNT1 A 0 A_TakeInventory("MultiRocketAmmo",1)
+        TNT1 A 0 A_TakeInventory("MultiRocketAmmo",1)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadAlt")
         goto AfterSoundAlt
         
@@ -167,84 +167,84 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         QRKL Z -1
         Stop
 
-	  DeselectShit:
-		QRKL A 1
-		TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
-	  Consider6:
-		//TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
-	  Consider5:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"ConsiderQGL")
-	  Consider4:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"ConsiderSNG")
-	  Consider3:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"ConsiderNG")
-	  Consider2:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"ConsiderDSG")
-	  Consider1:
-		TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
-	  Consider0:
-		QRKL A 1 A_SelectWeapon("Single Shotgun")
+      DeselectShit:
+        QRKL A 1
+        TNT1 A 0 A_JumpIfInventory("Thunderbolt",1,"ConsiderTB")
+      Consider6:
+        //TNT1 A 0 A_JumpIfInventory("GotWeapon5",1,"ConsiderQRL")
+      Consider5:
+        TNT1 A 0 A_JumpIfInventory("GotWeapon3",1,"ConsiderQGL")
+      Consider4:
+        TNT1 A 0 A_JumpIfInventory("GotWeapon6",1,"ConsiderSNG")
+      Consider3:
+        TNT1 A 0 A_JumpIfInventory("GotWeapon4",1,"ConsiderNG")
+      Consider2:
+        TNT1 A 0 A_JumpIfInventory("GotWeapon2",1,"ConsiderDSG")
+      Consider1:
+        TNT1 A 0 A_JumpIfInventory("GotWeapon0",1,"ConsiderLasCan")
+      Consider0:
+        QRKL A 1 A_SelectWeapon("Single Shotgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-		
-	  ConsiderTB:
-		TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
-		goto Consider6
-	  ConsiderQRL:
-		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
-		goto Consider5
-	  ConsiderQGL:
-		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
-		goto Consider4
-	  ConsiderSNG:
-		TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
-		goto Consider3
-	  ConsiderNG:
-		TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectNG")
-		goto Consider2
-	  ConsiderDSG:
-		TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectDSG")
-		goto Consider1
-	  ConsiderLasCan:
-		TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectLasCan")
-		goto Consider0
+        goto Deselect
+        
+      ConsiderTB:
+        TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
+        goto Consider6
+      ConsiderQRL:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
+        goto Consider5
+      ConsiderQGL:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
+        goto Consider4
+      ConsiderSNG:
+        TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
+        goto Consider3
+      ConsiderNG:
+        TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectNG")
+        goto Consider2
+      ConsiderDSG:
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectDSG")
+        goto Consider1
+      ConsiderLasCan:
+        TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectLasCan")
+        goto Consider0
 
-	  SelectTB:
-		TNT1 A 0 A_SelectWeapon("Thunderbolt")
+      SelectTB:
+        TNT1 A 0 A_SelectWeapon("Thunderbolt")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-	  /*SelectQRL:
-		TNT1 A 0 A_SelectWeapon("  Rocket Launcher  ")
+        goto Deselect
+      /*SelectQRL:
+        TNT1 A 0 A_SelectWeapon("  Rocket Launcher  ")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect*/
-	  SelectQGL:
-		TNT1 A 0 A_SelectWeapon("Grenade Launcher")
+        goto Deselect*/
+      SelectQGL:
+        TNT1 A 0 A_SelectWeapon("Grenade Launcher")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-	  SelectSNG:
-		TNT1 A 0 A_SelectWeapon("Super Nailgun")
+        goto Deselect
+      SelectSNG:
+        TNT1 A 0 A_SelectWeapon("Super Nailgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-	  SelectNG:
-		TNT1 A 0 A_SelectWeapon("Nailgun")
+        goto Deselect
+      SelectNG:
+        TNT1 A 0 A_SelectWeapon("Nailgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-	  SelectDSG:
-		TNT1 A 0 A_SelectWeapon("Double Shotgun")
+        goto Deselect
+      SelectDSG:
+        TNT1 A 0 A_SelectWeapon("Double Shotgun")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
-	  SelectLasCan:
-		TNT1 A 0 A_SelectWeapon("Laser Cannon")
+        goto Deselect
+      SelectLasCan:
+        TNT1 A 0 A_SelectWeapon("Laser Cannon")
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Lower
         TNT1 A 1 A_Lower
-		goto Deselect
+        goto Deselect
     }
 }
 
@@ -295,6 +295,7 @@ actor QuakeRocket
     Scale 0.3
     
     Projectile
+    Damage (35)
     
     +RANDOMIZE
     +DEHEXPLOSION
@@ -322,6 +323,7 @@ actor QuakeRocketQuad: QuakeRocket
     Obituary "%k \cssmeared\c- %o \cswith a Quadded Rocket."
     
     DamageType "NotQuadded"
+    Damage (140)
     
     States
     {
@@ -352,6 +354,7 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
 actor QuakeClusterRocket: QuakeRocket
 {
     Obituary "%k \csgave\c- %o \csfour rockets to ride.\c-"
+    Damage (13)
     
     States
     {
@@ -368,13 +371,14 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (38)
+    Damage (28)
 }
 
 actor QuadClusterRocket: QuakeClusterRocket
 {
     DamageType "NotQuadded"
     Obituary "%k \csturned\c- %o \csinto a fine mist.\c-"
+    Damage (52)
     
     States
     {
@@ -391,7 +395,7 @@ actor QuadClusterRkCoop: QuadClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (150)
+    Damage (113)
 }
 
 actor SpectralRocket: QuakeRocketCoopQuad { DamageType "SpectralNoQuad" }
