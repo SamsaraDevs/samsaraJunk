@@ -56,6 +56,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_jumpmod 0");
         ConsoleCommand("archivecvar samsara_jumpmod"); }
         
+        if (!GetCVar("samsara_peoplediewhentheyarekilled"))
+        {   ConsoleCommand("set samsara_peoplediewhentheyarekilled 0");
+        ConsoleCommand("archivecvar samsara_peoplediewhentheyarekilled"); }
+        
         if (!GetCVar("compat_clientssendfullbuttoninfo"))
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
         ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
@@ -81,6 +85,8 @@ script SAMSARA_SPAWN (int respawning)
     int endloop;
     int canbuddha;
     int i;
+
+    if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
     ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
@@ -608,4 +614,11 @@ script SAMSARA_PUKE (int values, int pln) net
     array_ballgag[pln]      = values & 4;
     array_weaponBar[pln]    = values & 8;
     array_pickupswitch[pln] = values & 16;
+}
+
+
+script SAMSARA_DEATH death
+{
+    Delay(1);
+    TakeInventory("QuadDamagePower", 1);
 }

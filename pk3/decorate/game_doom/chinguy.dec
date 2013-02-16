@@ -79,6 +79,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         CPOS G 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)

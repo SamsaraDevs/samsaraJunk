@@ -7,6 +7,7 @@
 #define SAMSARA_DISCONNECT          617
 #define SAMSARA_WOLFMOVE            673
 #define SAMSARA_SCHEDULED           674
+#define SAMSARA_PDWTAK              675
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215
@@ -202,4 +203,59 @@ int ResonantItems[RESCOUNT][3] =
 {
     {"UnknownResonator1", 0, 100},
     {"UnknownResonator2", 0, 100},
+};
+
+
+int PeopleDieParticles[CLASSCOUNT] = 
+{
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    "DoomguysDieParticle",
+    /*
+    "ChexguysDieParticle",
+    "CorvusDiesParticle",
+    "BlazkoDiesParticle",
+    "PariasDiesParticle",
+    "DukeguysDieParticle",
+    "VidBoisDieParticle",
+    "RangersDieParticle",
+    */
+};
+
+int PeopleDiePulses[CLASSCOUNT] = 
+{
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    "DoomguysDiePulse",
+    /*
+    "ChexguysDiePulse",
+    "CorvusDiesPulse",
+    "BlazkoDiesPulse",
+    "PariasDiesPulse",
+    "DukeguysDiePulse",
+    "VidBoisDiePulse",
+    "RangersDiePulse",
+    */
+};
+
+int PeopleDieBlasts[CLASSCOUNT] = 
+{
+    "DoomguyDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
+    "CorvusDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
+    "DoomguyDiesWhenHeIsKilled",
 };

@@ -338,29 +338,46 @@ actor "Spectral SNG": "Super Nailgun"
     States
     {
       Fire:
-        QSNG A 0 ACS_ExecuteAlways(317, 0, 4)
+        TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"LavaAltFire")
+        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
+
+        TNT1 A 0 A_AlertMonsters
         QSNG A 0 A_TakeInventory("FiredSLNails")
         QSNG A 0 A_TakeInventory("UsingDoEAmmo")
         QSNG A 0 A_GunFlash
+
         QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_PlaySound("weapons/sigil", 6)
+
         QSNG A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
         QSNG A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
         QSNG A 0 A_FireCustomMissile("QNTrail3",  0, 0, 0)
+
+        QSNG A 0 ACS_ExecuteAlways(317, 0, 4)
         QSNG A 0 A_FireCustomMissile("SpectralSuperNail")
         goto Fire0
+        
+        
+      LavaAltFire:
+        TNT1 A 0 A_JumpIfInventory("LavaNails", 1, 1)
+        goto Swap2
 
-      AltFire:
-        QSNG A 0 ACS_ExecuteAlways(317, 0, 8)
-        QSNG A 0 A_GiveInventory("FiredSLNails")
-        QSNG A 0 A_GiveInventory("UsingDoEAmmo")
-        QSNG A 0 A_GunFlash
-        QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
+        TNT1 A 0 A_AlertMonsters
+        QSNL A 0 A_GiveInventory("FiredSLNails")
+        GSNL A 0 A_GiveInventory("UsingDoEAmmo")
+        QSNL A 0 A_GunFlash
+
+        QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_PlaySound("weapons/sigil", 6)
-        QSNG A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
-        QSNG A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
-        QSNG A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
-        QSNG A 0 A_FireCustomMissile("SpectralSLNail")
+
+        QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
+        QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
+
+        TNT1 A 0 A_TakeInventory("LavaNails",2)
+
+        QSNG A 0 ACS_ExecuteAlways(317, 0, 8)
+        QSNL A 0 A_FireCustomMissile("SpectralSLNail",0,0)
         goto AltFire0
     }
 }

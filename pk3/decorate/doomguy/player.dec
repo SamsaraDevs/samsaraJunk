@@ -77,6 +77,7 @@ actor DoomguyPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         DGUY G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
         DGUY G 3 A_SpawnItem("ZorchEffectSmall")

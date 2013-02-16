@@ -94,6 +94,7 @@ actor Acolyte2: Acolyte replaces Acolyte
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         AGRD O 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -351,6 +352,7 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchSpectral:
 		TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
 		TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemZorch")
