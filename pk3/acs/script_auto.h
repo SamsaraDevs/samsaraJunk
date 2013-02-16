@@ -612,3 +612,10 @@ script SAMSARA_PUKE (int values, int pln) net
     array_weaponBar[pln]    = values & 8;
     array_pickupswitch[pln] = values & 16;
 }
+
+
+script SAMSARA_DEATH death
+{
+    Delay(1);
+    TakeInventory("QuadDamagePower", 1);
+}
