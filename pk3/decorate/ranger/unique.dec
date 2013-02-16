@@ -494,6 +494,10 @@ actor "Spectral LG": Thunderbolt
     Weapon.SisterWeapon "Thunderbolt"
     +POWERED_UP
 
+    Weapon.AmmoType ""
+    Weapon.AmmoUse 0
+    Weapon.AmmoGive 0
+
     States
     {
       Fire:
