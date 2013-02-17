@@ -4,6 +4,9 @@ script SAMSARA_OPEN open
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
+        if (GameType() == GAME_TITLE_MAP)
+        {
+        }
         if (isSinglePlayer())
         {
             HudMessage(s:HELPSTR;
