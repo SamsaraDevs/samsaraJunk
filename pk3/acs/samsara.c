@@ -125,6 +125,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         TakeInventory("QuakeExplosionCounter", arg1);
         result = CheckInventory("QuakeExplosionCounter");
         break;
+
+      case 15:
+        SetActorProperty(0, APROP_Speed, percFloat(arg1, arg2));
+        break;
     }
     
     SetResultValue(result);

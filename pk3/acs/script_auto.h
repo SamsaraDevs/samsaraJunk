@@ -91,7 +91,7 @@ script SAMSARA_SPAWN (int respawning)
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
-    ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
+    ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, 0, 0,0,0);
 
     ServerEnterTimes[pln] = startTime;
     
@@ -420,7 +420,7 @@ script SAMSARA_SPAWN (int respawning)
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
 
-script SAMSARA_WOLFMOVE enter
+script SAMSARA_WOLFMOVE (void)
 { 
     int pln = PlayerNumber();
     int realspeed = GetActorProperty(0, APROP_Speed);
@@ -437,25 +437,35 @@ script SAMSARA_WOLFMOVE enter
     {
         if (UnloadingNow)
         {
-            SetActorProperty(0, APROP_Speed, realspeed);
+            if (GetActorProperty(0, APROP_Speed) == 0)
+            {
+                SetActorProperty(0, APROP_Speed, realspeed);
+            }
             break;
         }
 
-        if (!(CheckInventory("CanWolfMovement") && CheckInventory("WolfenMovement"))
-          || GetCVar("samsara_banwolfmove"))
+        if (!CheckInventory("CanWolfMovement")) { break; }
+        if (!CheckInventory("WolfenMovement") || GetCVar("samsara_banwolfmove"))
         {
-            SetActorProperty(0, APROP_Speed, realspeed);
+            if (GetActorProperty(0, APROP_Speed) == 0)
+            {
+                SetActorProperty(0, APROP_Speed, realspeed);
+            }
+
             Delay(1);
             continue;
         }
+
         
         if (GetActorProperty(0, APROP_Health) < 1)
         {
+            SetActorProperty(0, APROP_Speed, realspeed);
             velx = 0;
             vely = 0;
         }
         else
         {
+            if (WolfenEnterTimes[pln] != startTime) { break; }
             SetActorProperty(0, APROP_Speed, 0);
             forward = keyDown(BT_FORWARD) - keyDown(BT_BACK);
             forward *= SPEED_FORWARD;
@@ -488,6 +498,11 @@ script SAMSARA_WOLFMOVE enter
         
         SetActorVelocity(0, velx, vely, GetActorVelZ(0), 0, 0);
         Delay(1);
+    }
+
+    if (GetActorProperty(0, APROP_Speed) == 0)
+    {
+        SetActorProperty(0, APROP_Speed, realspeed);
     }
 }
 
