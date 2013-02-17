@@ -8,6 +8,7 @@
 #define SAMSARA_WOLFMOVE            673
 #define SAMSARA_SCHEDULED           674
 #define SAMSARA_PDWTAK              675
+#define SAMSARA_GETSETTINGS         676
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215

@@ -83,7 +83,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         }
         else
         {
-            if (GetCVar("lastmanstanding") || GetCVar("teamlms")) // teamlms doesn't map to lastmanstanding+teamplay, wtf?
+            if (isLMS())
             {
                 GiveInventory("QuadDamageItem", 1);
                 break;
@@ -91,7 +91,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
             GiveQuad(arg1);
 
-            if (GameType() == GAME_SINGLE_PLAYER || GameType() == GAME_NET_COOPERATIVE)
+            if (isCoop())
             {
                 GiveInventory("QuadDamageItem", 1);
             }
@@ -128,6 +128,69 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
     }
     
     SetResultValue(result);
+}
+
+script SAMSARA_GETSETTINGS (void)
+{
+    int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
+    int lmsHP, lmsArmor;
+    int lmsUlt, lmsUnique;
+    int ultStay, highLow;
+
+    if (lmsLevel) { lmsHP    = 100*lmsLevel; lmsArmor = 100*lmsLevel; }
+    else { lmsHP = 100; lmsArmor = 0; }
+
+    if (GetCVar("samsara_lmsunique")) { lmsUnique = "\cdwith"; }
+    else { lmsUnique = "\cgwithout"; }
+
+    if (GetCVar("samsara_lmsult")) { lmsUlt = "\cdwith"; }
+    else { lmsUlt = "\cgwithout"; }
+
+    if (GetCVar("samsara_permault")) { ultStay = "\cdstay"; }
+    else { ultStay = "\cado not stay"; }
+
+    if (GetCVar("samsara_jumpmod") < 0) { highLow = "\calower"; }
+    else { highLow = "\cfhigher"; }
+
+    SetHudSize(640, 480, 1);
+
+    if (isLMS())
+    {
+        HudMessage(s:"Spawning with \ca", d:lmsHP, s:" health\c- and \cd", d:lmsArmor, s:" armor\c-";
+            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
+        
+        HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your slot 7";
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Slot 7 pickups ", s:ultStay, s:"\c- on pickup";
+            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 88.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_jumpmod"))
+    {
+        HudMessage(s:"You jump \cn", d:abs(GetCVar("samsara_jumpmod")), s:"\c- units ", s:highLow, s:"\c- than normal";
+                HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_banjetpack"))
+    {
+        HudMessage(s:"Duke's jetpack is \cgBANNED.";
+                HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_banwolfmove"))
+    {
+        HudMessage(s:"Wolfenstein movement is \cgBANNED.";
+                HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_nocustomgravity"))
+    {
+        HudMessage(s:"Custom gravities are \cadisabled.";
+                HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
+    }
 }
 
 /*

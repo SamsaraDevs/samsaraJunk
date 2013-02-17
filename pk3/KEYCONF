@@ -23,6 +23,7 @@ addmenukey "Pickup Msg. Mode" samsara_cmd_msgmode
 addmenukey "Tipbox: Show"  samsara_tipbox
 addmenukey "Tipbox: Next char" samsara_tipright
 addmenukey "Tipbox: Next page"  samsara_tipdown
+addmenukey "Server Settings" samsara_settings
 
 alias samsara_id_vanilladoom  "set samsara_cl_vanilladoom  $samsara_cl_vanilladoom;  archivecvar samsara_cl_vanilladoom"
 alias samsara_id_wolfmove     "set samsara_cl_wolfmove     $samsara_cl_wolfmove;     archivecvar samsara_cl_wolfmove"   
@@ -42,13 +43,14 @@ alias samsara_cmd_moremessages     "samsara_id_moremessages; eval != 1 $samsara_
 alias samsara_cmd_msgmode          "samsara_id_printpickup;  eval != 1 $samsara_cl_printpickup samsara_cl_printpickup;   showmode \"Print pickup messages\" $samsara_cl_printpickup"
 alias samsara_cmd_weppickups       "samsara_id_pickupmode;   eval %  + $samsara_cl_pickupmode 1 3 samsara_cl_pickupmode; showpickupmode"
 
-alias samsara_tipbox   "puke 300"
-alias samsara_tipleft  "puke 227 0 -1"
-alias samsara_tipright "puke 227 0 1"
-alias samsara_tipup    "puke 227 1 -1"
-alias samsara_tipdown  "puke 227 1 1"
-alias changelog        "puke 302 1"
-alias changelogoff     "puke 302 2"
+alias samsara_settings "puke -676"
+alias samsara_tipbox   "puke -300"
+alias samsara_tipleft  "puke -227 0 -1"
+alias samsara_tipright "puke -227 0 1"
+alias samsara_tipup    "puke -227 1 -1"
+alias samsara_tipdown  "puke -227 1 1"
+alias changelog        "puke -302 1"
+alias changelogoff     "puke -302 2"
 
 alias showmode "test != 0 %2 \"set truth True\" \"set truth False\"; echo %1 is\\cf $truth; unset truth"
 
