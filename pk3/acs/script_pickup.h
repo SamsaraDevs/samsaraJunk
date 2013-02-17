@@ -198,7 +198,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     
     if (dropped) { pickupsound = ClassDropSounds[pclass][slot]; }
     
-    if (cpln == pln)
+    if (cpln == pln && GetCVar("msg") == 0)
     {
         if (GetCVar("samsara_cl_moremessages"))
         {
@@ -250,7 +250,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
     int i, j, quoteCount = 0;
     int logMsg;
     
-    if (cpln == pln)
+    if (cpln == pln && GetCVar("msg") == 0)
     {
         if (GetCVar("samsara_cl_moremessages"))
         {
