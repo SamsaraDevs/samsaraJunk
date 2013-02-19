@@ -48,14 +48,14 @@ actor "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         
         TNT1 A 0 A_GiveInventory("UsingToasty",1)
-	TNT1 A 0 A_JumpIfNoAmmo("Reload2")
+        TNT1 A 0 A_JumpIfNoAmmo("Reload2")
         FLMT A 1 A_Raise
         LOOP
 
       Fire:
         TNT1 A 0 A_JumpIf(waterlevel == 3, "NothingFire")
         TNT1 A 0 A_JumpIfNoAmmo("Reload")
-	TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_FireCustomMissile("FlameShot",0,1,0,3)
         TNT1 A 0 A_PlaySound("marathon/flamethrower/fire")
@@ -108,36 +108,9 @@ actor "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
       Reload2:
         TNT1 A 0 A_TakeInventory("Cell",1)
         TNT1 A 0 A_GiveInventory("NapalmInTank",1)
-        TNT1 A 0 A_JumpIfInventory("NapalmInTank",0,3)
-        TNT1 A 0 A_JumpIfInventory("Cell",1,1)
-        Goto Ready
-        TNT1 A 0
-        Goto Reload2
-        TNT1 A 0
-        FLMT A 1 Offset(0,140)
-        FLMT A 1 Offset(0,135)
-        FLMT A 1 Offset(0,130) // 20
-        FLMT A 1 Offset(0,125)
-        FLMT A 1 Offset(0,120)
-        FLMT A 1 Offset(0,115)
-        FLMT A 1 Offset(0,110)
-        FLMT A 1 Offset(0,105)
-        FLMT A 1 Offset(0,100)
-        FLMT A 1 Offset(0,95)
-        FLMT A 1 Offset(0,90)
-        FLMT A 1 Offset(0,85)
-        FLMT A 1 Offset(0,80) // 10
-        FLMT A 1 Offset(0,75)
-        FLMT A 1 Offset(0,70)
-        FLMT A 1 Offset(0,65)
-        FLMT A 1 Offset(0,60)
-        FLMT A 1 Offset(0,55)
-        FLMT A 1 Offset(0,50)
-        FLMT A 1 Offset(0,45)
-        FLMT A 1 Offset(0,40)
-        FLMT A 1 Offset(0,35)
-        FLMT A 0 Offset(0,32)
-        Goto Ready
+        TNT1 A 0 A_JumpIfInventory("NapalmInTank",0,"Select")
+        TNT1 A 0 A_JumpIfInventory("Cell",1,"Reload2")
+        Goto Select
     }
 }
 
