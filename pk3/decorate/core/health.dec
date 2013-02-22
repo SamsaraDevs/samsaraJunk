@@ -5,6 +5,7 @@ actor HealPack0 : HealthBonus replaces HealthBonus
     Scale 0.25
     +Floatbob
     -Inventory.ALWAYSPICKUP
+    -COUNTITEM
     Inventory.PickupMessage "Picked up 1 Health."
     Health.LowMessage 25, "Picked up 1 Health."
     Inventory.PickupSound "healpack0pickup"

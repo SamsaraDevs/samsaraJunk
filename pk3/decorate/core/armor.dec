@@ -5,6 +5,7 @@ actor ArmorScrap : ArmorBonus replaces ArmorBonus
     Alpha 0.9
     +Floatbob
     -Inventory.ALWAYSPICKUP
+    -COUNTITEM
     Inventory.Pickupmessage "Picked up 1 Armor."
     Inventory.PickupSound "armor0get"
     Armor.Saveamount 1
