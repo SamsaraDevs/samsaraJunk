@@ -73,11 +73,8 @@ actor SamsaraSlotSevenDrop: SamsaraSlotSevenPickup
     }
 }
 
-actor SamsaraBFG10kReplace: RandomSpawner replaces BFG10k
-{
-    dropitem "SamsaraSlotSevenPickup"
-}
 
+actor SamsaraBFG10kReplace:     SamsaraSlotSevenPickup replaces BFG10k {}
 actor SamsaraSlotSeven_Chex:    SamsaraSlotSevenPickup replaces LAZDevice {}
 actor SamsaraSlotSeven_Hexen1:  SamsaraSlotSevenPickup replaces CWeaponPiece1 {}
 actor SamsaraSlotSeven_Strife:  SamsaraSlotSevenPickup replaces Mauler {}
