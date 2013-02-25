@@ -17,7 +17,7 @@ actor DoomguyPlayer : PlayerPawn
     DamageFactor "WMCNade", 0.75
     DamageFactor "Mace", 1.1
     DamageFactor "DragonClaw", 1.1
-    +NOSKIN
+    +NOSKIN         // you are only bones
     -DONTBLAST
     -THRUSPECIES
     Species "Player"
