@@ -88,6 +88,7 @@ script SAMSARA_SPAWN (int respawning)
     int canbuddha;
     int i;
 
+    if (!respawning) { ACS_ExecuteWithResult(SAMSARA_SYNTHFIRE); }
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
@@ -132,12 +133,6 @@ script SAMSARA_SPAWN (int respawning)
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
         health = GetActorProperty(0, APROP_Health);
-
-        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
-        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
-        
-        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
-        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
         
         if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
         else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
@@ -413,6 +408,20 @@ script SAMSARA_SPAWN (int respawning)
 
     quadTimer = CheckInventory("QuakeQuadTimer"); 
     TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
+}
+
+script SAMSARA_SYNTHFIRE (void)
+{
+    while (1)
+    {
+        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
+        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
+        
+        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
+        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+
+        Delay(1);
+    }
 
     TakeInventory("SynthFireLeft", 0x7FFFFFFF);
     TakeInventory("SynthFireRight", 0x7FFFFFFF);

@@ -667,7 +667,7 @@ duke/delay6			DKDELY06
 duke/delay7			DKDELY07
 duke/delay8			DKDELY08
 
-$random duke/introtaunt { duke/intro1 duke/intro2 duke/intro3 duke/intro4 duke/intro5 duke/intro6 duke/intro7 duke/intro8 duke/intro9 duke/intro10 duke/intro11 duke/intro12 duke/intro13 duke/intro14 duke/intro15 duke/intro16 duke/intro17 duke/intro18 duke/intro19 duke/intro20 duke/intro21 duke/intro22 duke/intro23 duke/intro24 duke/intro25 duke/intro26 duke/intro27 duke/intro28 duke/intro29 duke/intro30 duke/intro31 duke/intro32 duke/intro33 duke/intro34 duke/intro35 duke/intro36 duke/intro37 duke/intro38 duke/intro39 duke/intro40 duke/intro41 duke/intro42 duke/intro43 duke/intro44 duke/intro45 duke/intro46 duke/intro47 duke/intro48 duke/intro49 duke/intro50 duke/intro51 duke/intro52 duke/intro53 duke/intro54 duke/intro55 duke/intro56 duke/intro57 duke/intro58 duke/intro59 duke/intro60 duke/intro61 duke/intro62 duke/intro63 duke/intro64 duke/intro65 duke/intro66 duke/intro67 } 
+$random duke/introtaunt { duke/intro1 duke/intro2 duke/intro3 duke/intro4 duke/intro5 duke/intro6 duke/intro7 duke/intro8 duke/intro9 duke/intro10 duke/intro11 duke/intro12 duke/intro13 duke/intro14 duke/intro15 duke/intro16 duke/intro17 duke/intro18 duke/intro19 duke/intro20 duke/intro21 duke/intro22 duke/intro23 duke/intro24 duke/intro25 duke/intro26 duke/intro27 duke/intro28 duke/intro29 duke/intro30 duke/intro31 duke/intro32 duke/intro33 duke/intro34 duke/intro35 duke/intro36 duke/intro37 duke/intro38 duke/intro39 duke/intro40 duke/intro41 duke/intro42 duke/intro43 duke/intro44 duke/intro45 duke/intro46 duke/intro47 duke/intro48 duke/intro49 duke/intro50 duke/intro51 duke/intro52 duke/intro53 duke/intro54 duke/intro55 duke/intro56 duke/intro57 duke/intro58 duke/intro59 duke/intro60 duke/intro61 duke/intro62 duke/intro63 duke/intro64 duke/intro65 duke/intro66 duke/intro67 duke/intro68 } 
 duke/intro1			DKNTRO01
 duke/intro2			DKNTRO02
 duke/intro3			DKNTRO03
@@ -735,6 +735,7 @@ duke/intro64		DKNTRO64
 duke/intro65		DKNTRO65
 duke/intro66		DKNTRO66
 duke/intro67		DKNTRO67
+duke/intro68		DKNTRO68
 
 $random duke/weapontaunt { duke/weaptaunt1 duke/weaptaunt2 duke/weaptaunt3 duke/weaptaunt4 duke/weaptaunt5 duke/weaptaunt6 duke/weaptaunt7 duke/weaptaunt8 duke/weaptaunt9 duke/weaptaunt10 duke/weaptaunt11 duke/weaptaunt12 duke/weaptaunt13 duke/weaptaunt14 duke/weaptaunt15 duke/weaptaunt16 duke/weaptaunt17 duke/weaptaunt18 duke/weaptaunt19 duke/weaptaunt20 duke/weaptaunt21 duke/weaptaunt22 duke/weaptaunt23 duke/weaptaunt24 duke/weaptaunt25 duke/weaptaunt26 duke/weaptaunt27 duke/weaptaunt28 duke/weaptaunt29 duke/weaptaunt30 duke/weaptaunt31 duke/weaptaunt32 duke/weaptaunt33 }
 duke/weaptaunt1		DKWEPN01
