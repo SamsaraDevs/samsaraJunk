@@ -20,6 +20,11 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 12: ZDoom version has more quit messages.
 
 
+FROM 0.28 TO 0.29
+========================
+- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod.
+
+
 FROM 0.27 TO 0.28
 ========================
 - The realm of Strife has opened up to the Wheel!

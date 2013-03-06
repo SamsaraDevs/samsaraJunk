@@ -103,7 +103,7 @@ actor "Phoenix Rod" : Weapon
         TNT1 A 0 A_ClearRefire
         Goto Ready
 
-      HoldTomed:
+      HoldTomedSpectral:
         TNT1 A 0 A_JumpIfInventory("PhoenixRodCount",280,"PowerdownSpectral")
         PHNX C 0 A_JumpIfInventory("PhoenixRodCount",1,1)
         PHNX C 0 A_PlaySoundEx("weapons/phoenixpowshoot","weapon",1,0)
