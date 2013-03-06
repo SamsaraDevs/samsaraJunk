@@ -604,8 +604,8 @@ actor LGPuff: BulletPuff
 
 actor LGDischarge
 {
-    Radius 0
-    Height 0
+    Radius 8
+    Height 8
 
     +NODAMAGETHRUST
     +FORCERADIUSDMG
