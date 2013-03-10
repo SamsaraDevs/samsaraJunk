@@ -22,7 +22,8 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 
 FROM 0.28 TO 0.29
 ========================
-- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod.
+- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.
+- Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.
 
 
 FROM 0.27 TO 0.28
