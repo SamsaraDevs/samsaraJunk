@@ -22,9 +22,11 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 
 FROM 0.28 TO 0.29
 ========================
+- Further separated Samsara character scripts from other non-Samsara chars.
 - Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.
 - Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.
 - Spectre 2 and 4 are no longer immune to every non-Spectral weapon.
+- When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.
 
 
 FROM 0.27 TO 0.28
