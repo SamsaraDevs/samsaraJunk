@@ -78,6 +78,7 @@ actor WolfenPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         BJBL G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)

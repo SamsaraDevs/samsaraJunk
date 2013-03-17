@@ -45,6 +45,7 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         BSPI I 0 A_Stop

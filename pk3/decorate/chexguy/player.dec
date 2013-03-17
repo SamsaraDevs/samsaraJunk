@@ -28,6 +28,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "BFGSpray", 0.8
     DamageFactor "Normal", 0.8
     DamageFactor "Zorch", 0.8
+    DamageFactor "PhasingZorch", 0.8
     DamageFactor "Ice", 0.8
     DamageFactor "Fire", 0.8
     DamageFactor "Slime", 0.8
@@ -121,6 +122,7 @@ actor ChexWarrior : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         CHEX G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)

@@ -176,6 +176,7 @@ actor FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         POSS H 5
         POSS I 5 A_Scream
@@ -270,6 +271,7 @@ actor FlemoidusBipedicus2 : FlemoidusBipedicus replaces FlemoidusBipedicus
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SPOS H 5
         SPOS I 5 A_Scream
@@ -372,6 +374,7 @@ actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TROO I 8
         TROO J 8 A_Scream
@@ -536,6 +539,7 @@ actor Quadrumpus 9057
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         QUAD I 8
         QUAD J 8 A_Scream
@@ -767,6 +771,7 @@ actor FlemoidusStridicus replaces FlemoidusCycloptisCommonus
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SARG I 8
         SARG J 8 A_Scream
@@ -898,6 +903,7 @@ actor FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         CYCL I 8
         CYCL J 8 A_Scream
@@ -1106,6 +1112,7 @@ actor SuperCycloptis 3005
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         HEAD G 8
         HEAD H 8 A_Scream
@@ -1361,6 +1368,7 @@ actor Larva 9050
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         LRVA G 8
         LRVA H 8 A_Scream
@@ -1491,6 +1499,7 @@ actor FlemMine replaces ChexSoul
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SKUL F 6 
         SKUL G 6 A_Scream

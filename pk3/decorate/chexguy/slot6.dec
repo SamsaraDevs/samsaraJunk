@@ -82,7 +82,7 @@ actor ChexPlasma
     SeeSound "chex/plasmaf"
     DeathSound "chex/plasmax"
     Obituary "%k \chphased\c- %o \choff of this planet.\c-"
-    DamageType "Zorch"
+    DamageType "PhasingZorch"
     Decal ChexPlasmaScorch
     States
     {
