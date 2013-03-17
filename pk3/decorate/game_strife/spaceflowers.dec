@@ -305,41 +305,6 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
     Args 2
 
     -SPECTRAL
-    DamageFactor "PoisonCloud", 0
-    DamageFactor "TimonsAxe", 0
-    DamageFactor "Mace", 0
-    DamageFactor "DragonClaw", 0
-    DamageFactor "MarathonPistol", 0
-    DamageFactor "Pistol", 0
-    DamageFactor "DoomFist", 0
-    DamageFactor "ZorchPistol", 0
-    DamageFactor "BFG", 0
-    DamageFactor "BFGSpray", 0
-    DamageFactor "Normal", 0
-    DamageFactor "Zorch", 0
-    DamageFactor "Ice", 0
-    DamageFactor "Fire", 0
-    DamageFactor "Slime", 0
-    DamageFactor "Disintegrate", 0
-    DamageFactor "Poison", 0
-    DamageFactor "WolfenFlamethrower", 0
-    DamageFactor "DukeDamage", 0
-    DamageFactor "DukeExplosive", 0
-    DamageFactor "MightyBoot", 0
-    DamageFactor "DukeIce", 0
-    DamageFactor "DukePistol", 0
-    DamageFactor "Explosive", 0
-    DamageFactor "MarathonFusion", 0
-    DamageFactor "DoomPlasma", 0
-    DamageFactor "CorvusCrossbow", 0
-    DamageFactor "CorvusHellstaff", 0
-    DamageFactor "CorvusHellstaffTomed", 0
-    DamageFactor "MarathonPlasma", 0
-    DamageFactor "BJSpear", 0
-    DamageFactor "WMCBeam", 0
-    DamageFactor "WMCNade", 0
-    DamageFactor "QuakePistol", 0
-    DamageFactor "NotQuadded", 0
 
     DamageFactor "Spectral", 1
     DamageFactor "DukeSpectral", 1
@@ -392,41 +357,6 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
     Args 4
 
     -SPECTRAL
-    DamageFactor "PoisonCloud", 0
-    DamageFactor "TimonsAxe", 0
-    DamageFactor "Mace", 0
-    DamageFactor "DragonClaw", 0
-    DamageFactor "MarathonPistol", 0
-    DamageFactor "Pistol", 0
-    DamageFactor "DoomFist", 0
-    DamageFactor "ZorchPistol", 0
-    DamageFactor "BFG", 0
-    DamageFactor "BFGSpray", 0
-    DamageFactor "Normal", 0
-    DamageFactor "Zorch", 0
-    DamageFactor "Ice", 0
-    DamageFactor "Fire", 0
-    DamageFactor "Slime", 0
-    DamageFactor "Disintegrate", 0
-    DamageFactor "Poison", 0
-    DamageFactor "WolfenFlamethrower", 0
-    DamageFactor "DukeDamage", 0
-    DamageFactor "DukeExplosive", 0
-    DamageFactor "MightyBoot", 0
-    DamageFactor "DukeIce", 0
-    DamageFactor "DukePistol", 0
-    DamageFactor "Explosive", 0
-    DamageFactor "MarathonFusion", 0
-    DamageFactor "DoomPlasma", 0
-    DamageFactor "CorvusCrossbow", 0
-    DamageFactor "CorvusHellstaff", 0
-    DamageFactor "CorvusHellstaffTomed", 0
-    DamageFactor "MarathonPlasma", 0
-    DamageFactor "BJSpear", 0
-    DamageFactor "WMCBeam", 0
-    DamageFactor "WMCNade", 0
-    DamageFactor "QuakePistol", 0
-    DamageFactor "NotQuadded", 0
 
     DamageFactor "Spectral", 1
     DamageFactor "DukeSpectral", 1
