@@ -24,6 +24,7 @@ FROM 0.28 TO 0.29
 ========================
 - Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.
 - Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.
+- Spectre 2 and 4 are no longer immune to every non-Spectral weapon.
 
 
 FROM 0.27 TO 0.28
