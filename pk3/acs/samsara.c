@@ -129,9 +129,73 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 15:
         SetActorProperty(0, APROP_Speed, percFloat(arg1, arg2));
         break;
+        
+      case 16:
+        if (GameType () != GAME_SINGLE_PLAYER)
+        {
+            SetHudSize(400, 300, 0);
+            Hudmessage(s:"Press any button to respawn.";
+            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
+            delay(15);
+            LocalAmbientSound("duke/mpdeath",127);
+            GiveInventory("DukeTauntCooldown",5);
+            ACS_ExecuteAlways(205,0,0);
+        }
+        break;
     }
     
     SetResultValue(result);
+}
+
+script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is the shit for different text messages.
+{
+    SetFont("SMALLFONT");
+    switch (which)
+    {
+      case 1:
+        Print(s:"You cannot use this unless injured.");
+        break;
+        
+      case 2:
+        Print(s:"");
+        break;
+        
+      case 3:
+        SetHudSize(400, 300, 0);
+        Hudmessage(s:"MIGHTY BOOT ENGAGED";
+        HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
+        break;
+
+      case 4:
+        while (1)
+        {
+            if (defaultCVar("samsara_cl_noadditivepickups", 0))
+            {
+                SetActorProperty(0, APROP_RenderStyle, STYLE_Normal);
+                SetActorProperty(0, APROP_Alpha, itof(a1)/100);
+            }
+            else
+            {
+                SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
+                SetActorProperty(0, APROP_Alpha, itof(a2)/100);
+            }
+
+            Delay(35);
+        }
+        break;
+        
+      case 5:
+        Print(s:"You do not have enough fuel!");
+        break;
+        
+      case 6:
+        Print(s:"You do not have enough power!");
+        break;
+        
+      case 7:
+        Print(s:"You are already flying!");
+        break;
+    }
 }
 
 script SAMSARA_GETSETTINGS (void)
@@ -353,52 +417,6 @@ script 203 unloading
     UnloadingNow = 1;
 
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
-}
-
-script 212 (int textshit) // This is the shit for different text messages.
-{
-    SetFont("SMALLFONT");
-    switch(textshit)
-    {
-      case 1:
-        Print(s:"You cannot use this unless injured.");
-        break;
-        
-      case 2:
-        Print(s:"                  ");
-        break;
-        
-      case 3:
-        SetHudSize(400, 300, 0);
-        Hudmessage(s:"MIGHTY BOOT ENGAGED";
-        HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
-        break;
-        
-      case 4:
-        if (GameType () != GAME_SINGLE_PLAYER)
-        {
-            SetHudSize(400, 300, 0);
-            Hudmessage(s:"Press any button to respawn.";
-            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
-            delay(15);
-            LocalAmbientSound("duke/mpdeath",127);
-            GiveInventory("DukeTauntCooldown",5);
-            ACS_ExecuteAlways(205,0,0);
-        }
-        break;
-        
-      case 5:
-        Print(s:"You do not have enough fuel!");
-        break;
-        
-      case 6:
-        Print(s:"You do not have enough power!");
-        break;
-        
-      case 7:
-        Print(s:"You are already flying!");
-        break;
-    }
 }
 
 /////////////////

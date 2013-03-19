@@ -176,7 +176,8 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     States
     {
       Spawn:
-        RMR3 A 1 BRIGHT A_SpawnItemEx("ArmorHexenTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        RMR4 A 0
+        RMR4 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
         loop
     }
 }
@@ -194,7 +195,7 @@ actor ArmorHexenTrail
     States
     {
       Spawn:
-        RMR3 A 1 A_FadeOut(0.05)
+        RMR4 A 1 A_FadeOut(0.05)
         Loop
     }
 }

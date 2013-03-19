@@ -43,8 +43,6 @@ actor Wraithverge : CWeapWraithverge
         CHLY G 2 offset(0, 36) A_CHolyPalette
         goto FireEnd
         
-      Spectral:
-        
       FireEnd:
         CHLY A 20
         CHLY A 5 A_Refire
@@ -93,6 +91,12 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
     DamageType "TimonsAxe"
 }
 
+actor HolyMissilePuff2: HolyMissilePuff replaces HolyMissilePuff
+{
+    -NOBLOCKMAP -NOGRAVITY -DROPOFF -NOTELEPORT
+    +NOINTERACTION +CLIENTSIDEONLY
+}
+
 actor SpectralHolyMissile: HolyMissile
 {
     DamageType "Spectral"
@@ -100,7 +104,7 @@ actor SpectralHolyMissile: HolyMissile
     States
     {
       Spawn:
-        SPIR PPPP 3 bright A_SpawnItemEx("HolyMissilePuff")
+        SPIR PPPP 3 bright A_SpawnItemEx("HolyMissilePuff2")
         goto Death
         
       Death:

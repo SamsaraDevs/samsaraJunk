@@ -8,12 +8,14 @@ actor ArmorScrap : ArmorBonus replaces ArmorBonus
     -COUNTITEM
     Inventory.Pickupmessage "Picked up 1 Armor."
     Inventory.PickupSound "armor0get"
+    Inventory.Icon "RMR1A0"
     Armor.Saveamount 1
     Armor.MaxSaveAmount 200
     States
     {
       Spawn:
-        BON2 A -1 BRIGHT //A_SpawnItemEx("ArmorScrapTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        BON2 A 0 BRIGHT
+        BON2 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
     }
 }
@@ -45,10 +47,12 @@ actor ArmorPack1 : GreenArmor replaces GreenArmor
     Translation "96:111=112:123", "5:8=124:127", "0:0=127:127"
     Inventory.PickupMessage "Picked up 100 Armor."
     Inventory.PickupSound "armor1get"
+    Inventory.Icon "RMR1A0"
     States
     {
       Spawn:
-        RMR1 A 1 BRIGHT //A_SpawnItemEx("ArmorPack1Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        RMR1 A 0 BRIGHT
+        RMR1 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         loop
     }
 }
@@ -79,10 +83,12 @@ actor ArmorPack2 : BlueArmor replaces BlueArmor
     Translation "96:111=200:207", "5:8=241:244", "0:0=245:245"
     Inventory.PickupMessage "Picked up 200 Armor."
     Inventory.PickupSound "armor2get"
+    Inventory.Icon "RMR2A0"
     States
     {
       Spawn:
-        RMR2 A -1 BRIGHT //A_SpawnItemEx("ArmorPack2Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        RMR2 A 0 BRIGHT
+        RMR2 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 98)
         stop
     }
 }
@@ -110,4 +116,62 @@ actor CorvusMegaArmor : BasicArmorBonus
 	Armor.SavePercent 50
     Armor.SaveAmount 100
     Armor.MaxSaveAmount 200
+}
+
+actor RedArmor: BasicArmorPickup 5040
+{
+    Game Doom
+    SpawnID 168
+    Radius 20
+    Height 16
+    Armor.Savepercent 66.66666
+    Armor.Saveamount 250
+    Inventory.Icon "RMR3A0"
+    RenderStyle Add
+    Alpha 0.95
+    +FLOATBOB
+    Inventory.Pickupmessage "Picked up 250 explosive/fire-tempered armor."
+    Inventory.PickupSound "armor3get"
+    Inventory.Icon "RMR3A0"
+    DamageFactor "Fire", 0.125
+    DamageFactor "Explosive", 0.125
+    DamageFactor "DoomTheseGuysAreTheBest", 0.125
+    DamageFactor "DoomHellNoble", 0.125
+    DamageFactor "DukeSpectral", 0.125
+    DamageFactor "DukeExplosive", 0.125
+    DamageFactor "NotQuadded", 0.125
+    DamageFactor "SpectralNoQuad", 0.125
+
+    States
+    {
+      Spawn:
+        RMR3 A 0
+        RMR3 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        loop
+    }
+}
+
+actor SamsaraYellowArmor: BasicArmorPickup 19001
+{
+    Radius 20
+    Height 16
+
+    Armor.Savepercent 40
+    Armor.Saveamount 150
+
+    Inventory.Icon "RMR5A0"
+    RenderStyle Add
+    Alpha 0.95
+    +FLOATBOB
+
+    Inventory.Pickupmessage "Picked up 150 armor."
+    Inventory.PickupSound "armor1get"
+
+    States
+    {
+      Spawn:
+        RMR5 A 0
+        RMR5 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        loop
+    }
 }

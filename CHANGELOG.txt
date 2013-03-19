@@ -27,7 +27,10 @@ FROM 0.28 TO 0.29
 - Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.
 - Spectre 2 and 4 are no longer immune to every non-Spectral weapon.
 - When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.
-
+- Hexen armor is now brown, and red armor is actually red again.
+- You can now see what armor type you have when using hud_althud, as you would expect.
+- Yellow armor is in for any people mapping for Samsara. It gives 150 AP at 40% protection, and its DoomEdNum is 19001.
+- samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.
 
 FROM 0.27 TO 0.28
 ========================

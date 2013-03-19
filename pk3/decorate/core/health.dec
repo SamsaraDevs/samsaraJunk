@@ -12,7 +12,8 @@ actor HealPack0 : HealthBonus replaces HealthBonus
     States
     {
       Spawn:
-        Medi A -1 BRIGHT //A_SpawnItemEx("HealPack0Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        MEDI A 0
+        MEDI A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
     }
 }
@@ -30,7 +31,7 @@ actor HealPack0Trail
     States
     {
       Spawn:
-        Medi A 2 A_FadeOut(0.125)
+        MEDI A 2 A_FadeOut(0.125)
         Loop
     }
 }
@@ -47,7 +48,8 @@ actor HealPack1 : StimPack replaces StimPack
     states
     {
       Spawn:
-        Med2 A -1 BRIGHT //A_SpawnItemEx("HealPack1Trail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        MED2 A 0
+        MED2 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
     }
 }
@@ -65,7 +67,7 @@ actor HealPack1Trail
     States
     {
       Spawn:
-        Med2 A 2 A_FadeOut(0.125)
+        MED2 A 2 A_FadeOut(0.125)
         Loop
     }
 }
@@ -81,7 +83,8 @@ actor HealPack2 : CustomInventory replaces Medikit
     states
     {
       Spawn:
-        Med3 A -1 BRIGHT
+        MED3 A 0
+        MED3 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
       Pickup:
@@ -94,7 +97,7 @@ actor HealPack2 : CustomInventory replaces Medikit
         TNT1 A 0 A_JumpIfHealthLower(100, "PickUpSuccess")
 
       PickupFail:
-        Med3 A 1 BRIGHT
+        MED3 A 1 BRIGHT
         fail
 
       PickUpSuccess:
@@ -131,7 +134,7 @@ actor HealPack2 : CustomInventory replaces Medikit
       PickupMarathon:
         TNT1 A 1 A_JumpIfInventory("RuneProsperity", 1, "PickupMarathonProsperity")
         TNT1 A 0 A_JumpIfHealthLower(100, "PickupMarathonSuccess")
-        Med3 A 1 BRIGHT
+        MED3 A 1 BRIGHT
         fail
 
       PickUpMarathonSuccess:
@@ -142,18 +145,18 @@ actor HealPack2 : CustomInventory replaces Medikit
         
       PickupProsperity:
         TNT1 A 1 A_JumpIfHealthLower(250, "PickUpSuccess")
-        Med3 A 1 BRIGHT
+        MED3 A 1 BRIGHT
         fail
         
       PickupDukeProsperity:
         TNT1 A 0 A_JumpIfHealthLower(25, "PickupDuke2")
         TNT1 A 0 A_JumpIfHealthLower(250, "PickupSuccess")
-        Med3 A 1 BRIGHT
+        MED3 A 1 BRIGHT
         fail
         
       PickupMarathonProsperity:
         TNT1 A 0 A_JumpIfHealthLower(250, "PickupMarathonSuccess")
-        Med3 A 1 BRIGHT
+        MED3 A 1 BRIGHT
         fail
     }
 }
@@ -171,7 +174,7 @@ actor HealPack2Trail
     States
     {
       Spawn:
-        Med3 A 2 A_FadeOut(0.125)
+        MED3 A 2 A_FadeOut(0.125)
         Loop
     }
 }
@@ -190,7 +193,8 @@ actor SuperHealth : CustomInventory replaces Soulsphere
     states
     {
       Spawn:
-        SOUL A -1 BRIGHT //A_SpawnItemEx("SuperHealthTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        SOUL A 0
+        SOUL A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
       Pickup:
@@ -282,12 +286,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
     States
     {
       Spawn:
-        FELD A 4 bright
-        FELD B 4 bright
-        FELD C 4 bright
-        FELD D 4 bright
-        FELD C 4 bright
-        FELD B 4 bright
+        FELD ABCDCB 4 bright
         loop
 
       Pickup:
@@ -415,12 +414,7 @@ actor CorvusMegasphere : CustomInventory
     States
     {
       Spawn:
-        FELD A 4 bright
-        FELD B 4 bright
-        FELD C 4 bright
-        FELD D 4 bright
-        FELD C 4 bright
-        FELD B 4 bright
+        FELD ABCDCB 4 bright
         loop
 
       Use:

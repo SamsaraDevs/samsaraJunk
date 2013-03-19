@@ -73,7 +73,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 {
     if (!IsServer) { terminate; }
     slot = itemToSlot(slot);
-    
+    if (slot == -1) { terminate; }    
     
     int weaponStay = !!GetCVar("sv_weaponstay");
     int weaponGet  = 0;

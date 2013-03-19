@@ -1,34 +1,4 @@
 // Weapon/item spawners for Skulltag-specific maps. Wahey!
-actor RedArmor : BasicArmorPickup 5040 // Now gold!
-{
-    Game Doom
-    SpawnID 168
-    Radius 20
-    Height 16
-    Armor.Savepercent 66.66666
-    Armor.Saveamount 250
-    Inventory.Icon "ARM3A0"
-    RenderStyle Add
-    Alpha 0.95
-    +FLOATBOB
-    Inventory.Pickupmessage "Picked up 250 explosive/fire-tempered armor."
-    Inventory.PickupSound "armor3get"
-    DamageFactor "Fire", 0.125
-    DamageFactor "Explosive", 0.125
-    DamageFactor "DoomTheseGuysAreTheBest", 0.125
-    DamageFactor "DoomHellNoble", 0.125
-    DamageFactor "DukeSpectral", 0.125
-    DamageFactor "DukeExplosive", 0.125
-    DamageFactor "NotQuadded", 0.125
-    DamageFactor "SpectralNoQuad", 0.125
-    States
-    {
-      Spawn:
-        ARM3 A 6
-        ARM3 A 6 bright
-        goto Spawn
-    }
-}
 
 //Actor InvisibilitySphere : PartialInvisibility { }
 actor MaxArmorBonus : ArmorScrap 5091
