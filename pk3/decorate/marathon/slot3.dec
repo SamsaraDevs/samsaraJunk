@@ -1,4 +1,4 @@
-actor FusionChargeLevel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 35 }
+actor FusionChargeLevel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 36 }
 actor FusionChargan : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 7 }
 actor UsingFusionPistol : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 
@@ -176,10 +176,19 @@ actor "Fusion Pistol" : Weapon
         Goto Ready
 
       Chargan:
-        TNT1 A 0 A_JumpIfInventory("FusionChargeLevel",34,"WhoopsieDaisy")
-        TNT1 A 0 A_PlayWeaponSound("marathon/fusion/beep")
-        FUSN E 2 A_TakeInventory("FusionChargan",7)
-        TNT1 A 0 A_GiveInventory("FusionChargeLevel",1)
+        TNT1 A 0 A_TakeInventory("FusionChargan")
+        TNT1 A 0 A_GiveInventory("FusionChargeLevel")
+
+        TNT1 A 0 A_JumpIfInventory("FusionChargeLevel", 0, "WhoopsieDaisy")
+        TNT1 A 0 A_JumpIfInventory("FusionChargeLevel", 2,  "LolBeep")
+        goto LolNoBeep
+
+      LolBeep:
+        FUSN E 2 A_PlayWeaponSound("marathon/fusion/beep")
+        goto AltHold
+
+      LolNoBeep:
+        FUSN E 2
         goto AltHold
 
       WhoopsieDaisy:

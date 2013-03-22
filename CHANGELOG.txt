@@ -37,6 +37,7 @@ FROM 0.28 TO 0.29
 - sv_shotgunstart is now respected.
 - Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).
 - The Fusion Pistol overcharge can no longer be used for griefing, and should you be invulnerable when it overcharges (or somehow survive normally), you lose the Fusion Pistol.
+- The first Fusion Pistol beep is now silent, and you can now charge for one more second.
 
 FROM 0.27 TO 0.28
 ========================
