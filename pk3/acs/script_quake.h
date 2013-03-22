@@ -11,7 +11,8 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
     while (1)
     {
-        if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity"))
+        if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity")
+            || GetCVar("sv_degeneration") > 0)
         {
             Delay(1);
             continue;

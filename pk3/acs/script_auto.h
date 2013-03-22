@@ -103,6 +103,8 @@ script SAMSARA_SPAWN (int respawning)
     {
         ClientTipboxes[pln] = 0;
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
+
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3); }
     }
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
@@ -319,7 +321,7 @@ script SAMSARA_SPAWN (int respawning)
                 ActivatorSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
             }
         }
-        else if (CheckInventory("RuneProsperity"))
+        else if (CheckInventory("RuneProsperity") || GetCVar("sv_degeneration") > 0)
         {
             regenTimer = 0;
         }
