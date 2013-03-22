@@ -20,6 +20,7 @@
 #define SAMSARA_RESONATE            608
 #define SAMSARA_SYNTHFIRE           607
 #define SAMSARA_MEGAHEALTH          249
+#define SAMSARA_QPOWERS             636
 
 #define SAMSARA_TIPBOX              300
 #define SAMSARA_TIPBOX_CLIENT       301
@@ -69,7 +70,7 @@
 #define QUAD_THRESHOLD      1050
 
 #define REGEN_CENTER_X      0.953125    // 610 / 640
-#define REGEN_CENTER_Y      0.6875      // 330 / 480
+#define REGEN_CENTER_Y      0.708333    // 340 / 480
 
 #define TIP_SCROLLRATE      8
 

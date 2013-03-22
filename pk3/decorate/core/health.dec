@@ -352,7 +352,7 @@ actor QuakeRedArmor: BasicArmorPickup
     States
     {
       Spawn:
-        TNT1 A -1
+        RMR3 A -1 bright
         stop
     }
 }

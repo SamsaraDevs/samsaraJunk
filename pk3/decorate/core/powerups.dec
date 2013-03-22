@@ -21,6 +21,7 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         TNT1 A 1 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 1 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_PlaySound("invisibilityget")
         TNT1 A 1 A_GiveInventory("BlurSphere")
         stop
@@ -38,6 +39,10 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
       PickupHexen:
         TNT1 A 0 A_PlaySound("invisibilityget")
         TNT1 A 1 A_GiveInventory("PowerGhost")
+        stop
+
+      PickupQuake: 
+        TNT1 A 0 A_GiveInventory("QuakeInvisTimer", 1050)
         stop
 
       PickupMarathon:
@@ -66,6 +71,8 @@ actor InvisTrail
         Loop
     }
 }
+
+actor QuakeInvisTimer: Counter {}
 
 actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
 {

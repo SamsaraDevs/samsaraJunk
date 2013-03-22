@@ -55,6 +55,7 @@ actor QuadDamageItem: CustomInventory
         fail
 
       NoU:
+        TNT1 A 0 A_PlaySound("quakeweps/usefail")
         TNT1 A 0 A_Print("Quad Damage is recharging")
         fail
     }

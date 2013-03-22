@@ -8,6 +8,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     Weapon.SelectionOrder 7
     
     +UNDROPPABLE
+    +NOALERT
     
     Weapon.SisterWeapon "Spectral SG"
     Inventory.Icon "QSHTZ0"
@@ -26,6 +27,8 @@ actor "Single Shotgun": InstantSwitchWeapon
         
       Fire:
         QSGN A 0 ACS_ExecuteAlways(312, 0, 2, 3, 11)
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
         QSGN A 0 A_PlaySound("quakeweps/shotgunfire", CHAN_WEAPON)
         QSGN A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         QSGN A 0 A_JumpIfInventory("SPModeOn", 1, "SPFire")
