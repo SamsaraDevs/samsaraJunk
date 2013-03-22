@@ -4,6 +4,9 @@
 #define PLAYERMAX 64
 #define DEFAULTTID_SCRIPT 471
 
+function int itof(int x) { return x << 16; }
+function int ftoi(int x) { return x >> 16; }
+
 function int abs(int x)
 {
     if (x < 0) { return -x; }
@@ -62,7 +65,7 @@ function int middle(int x, int y, int z)
 
 function int percFloat(int intg, int frac)
 {
-    return (intg << 16) + ((frac << 16) / 100);
+    return itof(intg) + (itof(frac) / 100);
 }
 
 function int percFloat2(int intg, int frac1, int frac2)
@@ -86,6 +89,14 @@ function int keyDown(int key)
     return 0;
 }
 
+function int keyDown_any(int key)
+{
+    int buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+    if (buttons & key) { return 1; }
+    return 0;
+}
+
 function int keyPressed(int key)
 {
     int buttons     = GetPlayerInput(-1, INPUT_BUTTONS);
@@ -93,6 +104,16 @@ function int keyPressed(int key)
     int newbuttons  = (buttons ^ oldbuttons) & buttons;
 
     if ((newbuttons & key) == key) { return 1; }
+    return 0;
+}
+
+function int keyPressed_any(int key)
+{
+    int buttons     = GetPlayerInput(-1, INPUT_BUTTONS);
+    int oldbuttons  = GetPlayerInput(-1, INPUT_OLDBUTTONS);
+    int newbuttons  = (buttons ^ oldbuttons) & buttons;
+
+    if (newbuttons & key) { return 1; }
     return 0;
 }
 
@@ -190,8 +211,17 @@ function int magnitudeThree(int x, int y, int z)
 
 function int magnitudeThree_f(int x, int y, int z)
 {
-    int i = FixedMul(x, x) + FixedMul(y, y) + FixedMul(z, z);
-    return sqrt(i);
+    int len, ang;
+
+    ang = VectorAngle(x, y);
+    if (((ang + 0.125) % 0.5) > 0.25) { len = FixedDiv(y, sin(ang)); }
+    else { len = FixedDiv(x, cos(ang)); }
+
+    ang = VectorAngle(len, z);
+    if (((ang + 0.125) % 0.5) > 0.25) { len = FixedDiv(z, sin(ang)); }
+    else { len = FixedDiv(len, cos(ang)); }
+
+    return len;
 }
 
 
@@ -233,9 +263,6 @@ function int inRange(int low, int high, int x)
 {
     return ((x >= low) && (x < high));
 }
-
-function int itof(int x) { return x << 16; }
-function int ftoi(int x) { return x >> 16; }
 
 function void AddAmmoCapacity(int type, int add)
 {
@@ -378,6 +405,27 @@ function int sliceString(int string, int start, int end)
 
     return ret;
 }
+
+function int strcmp(int str1, int str2)
+{
+    int i,j,k,l;
+    int len1 = StrLen(str1);
+    int len2 = StrLen(str2);
+    j = max(len1, len2);
+
+    for (i = 0; i < j; i++)
+    {
+        if (i >= len1) { return -1; }
+        if (i >= len2) { return  1; }
+        
+        k = GetChar(str1, i); l = GetChar(str2, i);
+
+        if (k > j) { return  1; }
+        if (k < j) { return -1; }
+    }
+    return 0;
+}
+
 
 // End StrParam
 
@@ -716,11 +764,7 @@ function int defaultTID(int def)
 {
     int tid = ActivatorTID();
 
-    if (ThingCount(0, tid) == 1)
-    {
-        ACS_ExecuteAlways(DEFAULTTID_SCRIPT, 0, tid,0,0);
-        return tid;
-    }
+    if (ThingCount(0, tid) == 1) { return tid; }
 
     tid = def;
     if (def <= 0) { tid = unusedTID(17000, 27000); }
@@ -757,8 +801,50 @@ function int roundAway(int toround)
 
 function int round(int toround)
 {
-    int i = mod(toround, 1.0);
+    return ftoi(toround + 0.5);
+}
 
-    if (i < 0.5) { return ftoi(toround); }
-    return ftoi(toround) + 1;
+function int intFloat(int toround)
+{
+    return itof(ftoi(toround));
+}
+
+function int distance_ftoi(int x1, int y1, int z1, int x2, int y2, int z2)
+{
+    return magnitudeThree(ftoi(x2-x1), ftoi(y2-y1), ftoi(z2-z1));
+}
+
+function void printDebugInfo(void)
+{
+    int classify    = ClassifyActor(0);
+    int fead        = classify & ACTOR_DEAD;
+    int player      = classify & ACTOR_PLAYER;
+    int pln         = PlayerNumber();
+
+    Log(s:" -- DEBUG INFO -- ");
+
+    Log(s:"Executed on tic ", d:Timer(), s:" on map ", d:GetLevelInfo(LEVELINFO_LEVELNUM));
+
+    if (classify & (ACTOR_PLAYER | ACTOR_MONSTER))
+    {
+        Log(s:"Script activator has ", d:GetActorProperty(0, APROP_Health), s:"/", d:getMaxHealth(), s:" HP");
+    }
+
+    if (player)
+    {
+        Log(s:"Is player ", d:pln, s:" (", n:0, s:"\c-) with class number ", d:PlayerClass(pln));
+    }
+
+    Log(s:" -- END DEBUG -- ");
+}
+
+
+function int PlayerTeamCount(int teamNo)
+{
+    int i, ret;
+    for (i = 0; i < PLAYERMAX; i++)
+    {
+        if (GetPlayerInfo(i, PLAYERINFO_TEAM) == teamNO) { ret++; }
+    }
+    return ret;
 }
