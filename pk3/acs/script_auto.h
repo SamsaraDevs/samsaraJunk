@@ -286,10 +286,12 @@ script SAMSARA_SPAWN (int respawning)
                 regenY = ftoi(regenY * REGEN_CENTER_Y);
 
                 SetFont("REGENICO");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.5, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.25, 0.25);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 165.0, 1.5, 1.0);
+                HudMessage(d:(regenTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 165.0, 1.25, 0.25);
+                // the +34 was added so that the regen pulse didn't prematurely lower the seconds display by one
+
             }
 
             oPulse = regenPulse;
@@ -307,7 +309,7 @@ script SAMSARA_SPAWN (int respawning)
 
                 if (GetActorProperty(0, APROP_Health) > health)
                 {
-                    FadeRange(255, 0, 0, 0.2, 255, 0, 0, 0.0, 0.3333);
+                    FadeRange(255, 128, 128, 0.1, 255, 0, 0, 0.0, 0.3333);
                     ActivatorSound("quakeweps/regen", 127);
                     regenPulse = 12;
                 }
