@@ -116,6 +116,8 @@ actor CorvusMegaArmor : BasicArmorBonus
 	Armor.SavePercent 50
     Armor.SaveAmount 100
     Armor.MaxSaveAmount 200
+
+    Inventory.Icon "RMR2A0"
 }
 
 actor RedArmor: BasicArmorPickup 5040

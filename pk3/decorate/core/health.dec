@@ -333,6 +333,8 @@ actor MarathonMegaArmor : BasicArmorPickup
     Armor.SaveAmount 300
     Armor.SavePercent 50
     Armor.MaxFullAbsorb 1
+    Inventory.Icon "RMR2A0"
+
     states
     {
       Spawn:
@@ -345,6 +347,7 @@ actor QuakeRedArmor: BasicArmorPickup
 {
     Armor.SaveAmount 200
     Armor.SavePercent 80
+    Inventory.Icon "RMR3A0"
 
     States
     {
