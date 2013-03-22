@@ -45,7 +45,7 @@ FROM 0.28 TO 0.29
 - The Fusion Pistol overcharge can no longer be used for griefing, and should you be invulnerable when it overcharges (or somehow survive normally), you lose the Fusion Pistol.
 - The first Fusion Pistol beep is now silent, and you can now charge for one more second.
 - The Quad Damage no longer plays weapons/sigil when powering down.
-- The Quad Damage now makes the "no item" sound from Quake 3 when it's recharging.
+- The Quad Damage now makes the "no item" sound from Quake 3 if it's used when it's recharging.
 - Ranger now has invisibility closer to Quake! He's much less visible when picking up a blursphere (10% visibility), and his weapons don't alert monsters.
 
 FROM 0.27 TO 0.28
