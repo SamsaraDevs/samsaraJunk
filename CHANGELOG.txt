@@ -23,6 +23,12 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 FROM 0.28 TO 0.29
 ========================
 - Further separated Samsara character scripts from other non-Samsara chars.
+- Ranger's Spectral weapons no longer use the old DoE ammo switching style.
+- Spectral Laser Cannon no longer flickers.
+- Spectral Thunderbolt no longer uses cells.
+- Spectral LAZ Device zorches properly.
+- Ranger no longer keeps his quadded face when he dies.
+- (ZDoom) The SO's lightamp now does BlueMap, as expected. BlueMap still broken in Zandroland.
 - The Thunderbolt discharge now actually escapes the sector it's in. Apparently low-radius projectiles don't explode properly.
 - sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.
 - Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.
