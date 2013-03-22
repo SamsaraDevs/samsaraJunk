@@ -188,8 +188,10 @@ actor "Fusion Pistol" : Weapon
         TNT1 A 0 A_TakeInventory("FusionBullet",20)
         TNT1 A 0 A_SetBlend("Blue",0.8,35)
         TNT1 A 0 A_PlayWeaponSound("hunter/explode")
-        TNT1 A 0 DamageThing(999)//A_Explode(500,256) - Turns out people can grief and kill each other.
-        Goto Ready
+        TNT1 A 0 A_FireCustomMissile("FusionPistolOvercharge")
+        TNT1 A 0 A_TakeInventory("Fusion Pistol")
+        TNT1 A 0 A_SelectWeapon(".44 Magnum Mega Class A1")
+        goto Deselect
 
       WaterFire1:
         FUSN A 1
@@ -356,13 +358,44 @@ actor FusionShotWater2
     States
     {
       Spawn:
-        CHGB A 2 Bright
+        TNT1 A 0
+        goto Death
 
       Death:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_Explode(random(80,100),128)
-        FHIT ABCD 4 Bright
+        FHIT AB 5 bright
+        FHIT CD 4 bright
         STOP
     }
 }
 
+
+actor FusionPistolOvercharge
+{
+    Radius 8
+    Height 8
+
+    Projectile
+    Speed 0
+    Damage 0
+
+    DamageType "MarathonFusion"
+
+    +FOILINVUL
+
+    Obituary "%k \cnwas too close to \c-%o\cn's meltdown."
+
+    States
+    {
+        Spawn:
+          TNT1 A 0
+          goto Death
+
+        Death:
+          TNT1 A 0 A_Stop
+          TNT1 A 0 A_Explode(512, 256)
+          TNT1 A 1
+          stop
+    }
+}
