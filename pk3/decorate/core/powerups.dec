@@ -13,7 +13,8 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
     states
     {
       Spawn:
-        NVSI A -1 BRIGHT //A_SpawnItemEx("InvisTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        NVSI A 0
+        NVSI A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 75)
         stop
 
       Pickup:
@@ -80,7 +81,8 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
     states
     {
       Spawn:
-        NVLN A -1 BRIGHT //A_SpawnItemEx("InvulnTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        NVLN A 0 
+        NVLN A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 95)
         stop
 
       Pickup:
@@ -144,7 +146,8 @@ actor BioSuit : PowerupGiver replaces RadSuit
     States
     {
       Spawn:
-        RDST A -1 BRIGHT //A_SpawnItemEx("BioTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        RDST A 0 
+        RDST A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 95)
         stop
     }
 }
@@ -178,6 +181,11 @@ actor Visor : CustomInventory replaces Infrared// replaces Infrared
     States
     {
       Spawn:
+        VISR A 0
+        VISR A 0 ACS_ExecuteAlways(212, 0, 4, 100, 85)
+        goto Spawn2
+
+      Spawn2:
         VISR A 20 Bright //A_SpawnItemEx("VisorTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
         VISR A 20
         loop
