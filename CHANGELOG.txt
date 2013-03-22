@@ -35,6 +35,7 @@ FROM 0.28 TO 0.29
 - samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.
 - sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.
 - sv_shotgunstart is now respected.
+- Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).
 
 FROM 0.27 TO 0.28
 ========================
