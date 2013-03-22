@@ -23,6 +23,8 @@ DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
 FROM 0.28 TO 0.29
 ========================
 - Further separated Samsara character scripts from other non-Samsara chars.
+- The Thunderbolt discharge now actually escapes the sector it's in. Apparently low-radius projectiles don't explode properly.
+- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.
 - Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.
 - Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.
 - Spectre 2 and 4 are no longer immune to every non-Spectral weapon.
@@ -31,6 +33,8 @@ FROM 0.28 TO 0.29
 - You can now see what armor type you have when using hud_althud, as you would expect.
 - Yellow armor is in for any people mapping for Samsara. It gives 150 AP at 40% protection, and its DoomEdNum is 19001.
 - samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.
+- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.
+- sv_shotgunstart is now respected.
 
 FROM 0.27 TO 0.28
 ========================
