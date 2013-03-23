@@ -284,7 +284,7 @@ script SAMSARA_QPOWERS (int startTime)
 
         if (invisTimer - 35 > oInvisTimer)
         {
-            AmbientSound("quakeweps/invison", 127);
+            ActivatorSound("quakeweps/invison", 127);
         }
 
         if (invisTimer > 0)
@@ -297,11 +297,16 @@ script SAMSARA_QPOWERS (int startTime)
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
                 HudMessage(d:invisTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58106, "QuakeBrick", 295.2, 150.0, 1.5, 1.0);
+            }
 
-                if (invisTimer/35 <= 5)
-                {
-                    LocalAmbientSound("quakeweps/invisout", PowerOutVols[invisTimer / 35]);
-                }
+            if (invisTimer % 105 == 0)
+            {
+                ActivatorSound("quakeweps/inviswhisper", 127);
+            }
+
+            if (invisTimer == 105)
+            {
+                LocalAmbientSound("quakeweps/invisout", 127);
             }
 
             if (oInvisTimer == 0) { GiveInventory("QuakeInvisibility", 1); }

@@ -1217,7 +1217,8 @@ quakeweps/regenannounce         sounds/ranger/regeneration.ogg
 quakeweps/regen                 sounds/ranger/regen.ogg
 quakeweps/regenout              sounds/ranger/wearoff.ogg
 
-quakeweps/invison               sounds/ranger/invisibility.ogg
-quakeweps/invisout              sounds/ranger/wearoff.ogg
+quakeweps/invison               sounds/ranger/inv1.ogg
+quakeweps/invisout              sounds/ranger/inv2.ogg
+quakeweps/inviswhisper          sounds/ranger/inv3.ogg
 
 quakeweps/usefail               sounds/ranger/use_nothing.wav
