@@ -1221,4 +1221,6 @@ quakeweps/invison               sounds/ranger/inv1.ogg
 quakeweps/invisout              sounds/ranger/inv2.ogg
 quakeweps/inviswhisper          sounds/ranger/inv3.ogg
 
+$rolloff quakeweps/inviswhisper 64 512
+
 quakeweps/usefail               sounds/ranger/use_nothing.wav
