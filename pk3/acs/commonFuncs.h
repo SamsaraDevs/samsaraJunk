@@ -2,6 +2,7 @@
 // They come in handy :>
 
 #define PLAYERMAX 64
+#define TEAMCOUNT 8
 #define DEFAULTTID_SCRIPT 471
 
 function int itof(int x) { return x << 16; }
@@ -526,7 +527,7 @@ function int isFreeForAll(void)
 
 function int isTeamGame(void)
 {
-    int ret = (GetCVar("teamplay") || GetCVar("teamgame"));
+    int ret = (GetCVar("teamplay") || GetCVar("teamgame") || GetCVar("teamlms"));
     return ret;
 }
 
@@ -625,8 +626,9 @@ function int condFalse(int test, int falseRet)
 
 function void saveCVar(int cvar, int val)
 {
-    ConsoleCommand(StrParam(s:"set ", s:cvar, s:" ", d:val));
-    ConsoleCommand(StrParam(s:"archivecvar ", s:cvar));
+    int setStr = StrParam(s:"set ", s:cvar, s:" ", d:val);
+    int arcStr = StrParam(s:"archivecvar ", s:cvar);
+    ConsoleCommand(setStr); ConsoleCommand(arcStr);
 }
 
 function int defaultCVar(int cvar, int defaultVal)
@@ -847,4 +849,16 @@ function int PlayerTeamCount(int teamNo)
         if (GetPlayerInfo(i, PLAYERINFO_TEAM) == teamNO) { ret++; }
     }
     return ret;
+}
+
+function int lower(int chr)
+{
+    if (chr > 64 && chr < 91) { return chr+32; }
+    return chr;
+}
+
+function int upper(int chr)
+{
+    if (chr > 90 && chr < 123) { return chr-32; }
+    return chr;
 }
