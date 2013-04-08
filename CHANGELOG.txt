@@ -48,6 +48,7 @@ FROM 0.28 TO 0.29
 - The Quad Damage no longer plays weapons/sigil when powering down.
 - The Quad Damage now makes the "no item" sound from Quake 3 if it's used when it's recharging.
 - Ranger now has invisibility to Quake's Ring of Shadows! He's much less visible when picking up a blursphere (10% visibility), and his weapons don't alert monsters.
+- B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather than 6.
 
 FROM 0.27 TO 0.28
 ========================
