@@ -4,7 +4,7 @@ actor "Machine Gun": InstantSwitchWeapon
     Weapon.SlotNumber 2
     Inventory.PickUpSound "wolfen/mgunget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 6
+    Weapon.AmmoGive 20
     Weapon.AmmoType "Clip"
     +THRUGHOST
     +DONTBOB
