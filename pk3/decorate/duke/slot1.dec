@@ -476,7 +476,7 @@ actor DukeKaboom : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmoun
 
 actor DukePipebomb
 {
-    SeeSound "duke/pipebomb"
+    BounceSound "duke/pipebomb"
     DamageType "DukeExplosive"
     Speed 16
     Radius 10
