@@ -453,6 +453,43 @@ actor MarathonPlayer : PlayerPawn
         SOPL Y 4 A_SetBlend("228B22",0.8,8) // Muck green
         SOPL Y 4 A_Pain
         Goto Spawn
+
+      Pain.Gray:
+       SOPL Y 4 A_SetBlend("33 33 33",0.8,8)  // Gray
+       SOPL Y 4 A_Pain
+        Goto Spawn
+
+      Pain.Blue:
+        Goto Pain.DragonClaw
+
+      Pain.Red:
+        Goto Pain.Zorch
+
+      Pain.White:
+        Goto Pain.Drowning
+
+      Pain.Yellow:
+        Goto Pain.Explosive
+
+      Pain.Green:
+       SOPL Y 4 A_SetBlend("00 8B 00",0.8,8)
+       SOPL Y 4 A_Pain
+        Goto Spawn
+
+      Pain.Purple:
+       SOPL Y 4 A_SetBlend("82 0B BB",0.8,8) // It's actually more of a violet, but...
+       SOPL Y 4 A_Pain
+        Goto Spawn
+
+      Pain.Brown:
+       SOPL Y 4 A_SetBlend("5C 33 17",0.8,8)
+       SOPL Y 4 A_Pain
+        Goto Spawn
+
+      Pain.Gold:
+       SOPL Y 4 A_SetBlend("8B 75 00",0.8,8)
+       SOPL Y 4 A_Pain
+        Goto Spawn
     }
 }
 
