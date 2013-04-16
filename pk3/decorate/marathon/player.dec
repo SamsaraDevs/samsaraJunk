@@ -419,10 +419,13 @@ actor MarathonPlayer : PlayerPawn
         SOPL Y 4 A_SetBlend("Red",0.8,8)
         SOPL Y 4 A_Pain
         Goto Spawn
-        
-      Pain.WolfenFlamethrower:
 
       Pain.MarathonPlasma:
+        SOPL Y 4 A_SetBlend("FF69AF",0.8,8) // Dry violet-red
+        SOPL Y 4 A_Pain
+        Goto Spawn
+        
+      Pain.WolfenFlamethrower:
 
       Pain.Fire:
         SOPL Y 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
