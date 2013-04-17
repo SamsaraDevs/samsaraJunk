@@ -165,6 +165,9 @@ Log(s:"- Duke's Freezethrower sprites have been adjusted for better Widescreen c
 Log(s:"- The changelog has been changed from a graphic to a textdump.");
 Log(s:"- The SO has been given generic color painflashes for easier add-on compatibility.");
 Log(s:"- The SO no longer gains one cell upon raising the TOZT again.");
+Log(s:"- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.");
+Log(s:"- The SO's Marathon 2 Alien Weapon is now undroppable.");
+Log(s:"- The Hectebus no longer gets locked in firing.");
         break;
 		
         /*case 2:

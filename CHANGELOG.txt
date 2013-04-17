@@ -52,6 +52,9 @@ FROM 0.28 TO 0.29
 - Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.
 - The changelog has been changed from a graphic to a textdump.
 - The SO has been given generic color painflashes for easier add-on compatibility.
+- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.
+- The SO's Marathon 2 Alien Weapon is now undroppable.
+- The Hectebus no longer gets locked in firing.
 
 FROM 0.27 TO 0.28
 ========================
