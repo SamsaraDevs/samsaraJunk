@@ -127,7 +127,7 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
     }
 }
 
-script 302 (int changelogshit) NET
+script 302 (int changelogshit) NET CLIENTSIDE
 {
 switch (changelogshit)
 {
@@ -164,6 +164,7 @@ Log(s:"- B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather t
 Log(s:"- Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.");
 Log(s:"- The changelog has been changed from a graphic to a textdump.");
 Log(s:"- The SO has been given generic color painflashes for easier add-on compatibility.");
+Log(s:"- The SO no longer gains one cell upon raising the TOZT again.");
         break;
 		
         /*case 2:
