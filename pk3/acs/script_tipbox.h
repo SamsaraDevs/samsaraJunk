@@ -168,6 +168,9 @@ Log(s:"- The SO no longer gains one cell upon raising the TOZT again.");
 Log(s:"- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.");
 Log(s:"- The SO's Marathon 2 Alien Weapon is now undroppable.");
 Log(s:"- The Hectebus no longer gets locked in firing.");
+Log(s:"- Weapon pickup messages now take into account msg0color.");
+Log(s:"- BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.");
+Log(s:"- B.J. has had his Clip ammo doubled upon picking up Ammo 2.");
         break;
 		
         /*case 2:
