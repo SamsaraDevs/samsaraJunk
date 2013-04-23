@@ -53,7 +53,7 @@ FROM 0.28 TO 0.29
 - The changelog has been changed from a graphic to a textdump.
 - The SO has been given generic color painflashes for easier add-on compatibility.
 - Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.
-- The SO's Marathon 2 Alien Weapon is now undroppable.
+- The SO's Marathon 2 Alien Weapon can no longer be dropped.
 - The Hectebus no longer gets locked in firing.
 - Weapon pickup messages now take into account msg0color.
 - BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.
