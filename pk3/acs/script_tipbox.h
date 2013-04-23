@@ -127,20 +127,53 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
     }
 }
 
-script 302 (int changelogshit) NET
+script 302 (int changelogshit) NET CLIENTSIDE
 {
 switch (changelogshit)
 {
         case 1:
-        SetHudSize(1024,768,1);
-        SetFont("CHNGLOG1");
-        HudMessage(s:"A";HUDMSG_PLAIN,1,1,512.0,384.0,0);
+		Log(s:"FROM 0.28 TO 0.29");
+Log(s:"========================");
+Log(s:"- Further separated Samsara character scripts from other non-Samsara chars.");
+Log(s:"- Ranger's Spectral weapons no longer use the old DoE ammo switching style.");
+Log(s:"- Spectral Laser Cannon no longer flickers.");
+Log(s:"- Spectral Thunderbolt no longer uses cells.");
+Log(s:"- Spectral LAZ Device zorches properly.");
+Log(s:"- Ranger no longer keeps his quadded face when he dies.");
+Log(s:"- (ZDoom) The SO's lightamp now does BlueMap, as expected. BlueMap still broken in Zandroland.");
+Log(s:"- The Thunderbolt discharge now actually escapes the sector it's in. Apparently low-radius projectiles don't explode properly.");
+Log(s:"- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.");
+Log(s:"- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.");
+Log(s:"- Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.");
+Log(s:"- Spectre 2 and 4 are no longer immune to every non-Spectral weapon.");
+Log(s:"- When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.");
+Log(s:"- Hexen armor is now brown, and red armor is actually red again.");
+Log(s:"- You can now see what armor type you have when using hud_althud, as you would expect.");
+Log(s:"- Yellow armor is in for any people mapping for Samsara. It gives 150 AP at 40% protection, and its DoomEdNum is 19001.");
+Log(s:"- samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.");
+Log(s:"- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.");
+Log(s:"- sv_shotgunstart is now respected.");
+Log(s:"- Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).");
+Log(s:"- The Fusion Pistol overcharge can no longer be used for griefing.");
+Log(s:"- Apparently the Fusion Pistol didn't use ammo when overcharging? Okay then.");
+Log(s:"- The first Fusion Pistol beep is now silent, and you can now charge for one more second.");
+Log(s:"- The Quad Damage no longer plays weapons/sigil when powering down.");
+Log(s:"- The Quad Damage now makes the 'no item' sound from Quake 3 if it's used when it's recharging.");
+Log(s:"- Ranger now has invisibility to Quake's Ring of Shadows! He's much less visible when picking up a blursphere (10% visibility), and his weapons don't alert monsters.");
+Log(s:"- B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather than 6.");
+Log(s:"- Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.");
+Log(s:"- The changelog has been changed from a graphic to a textdump.");
+Log(s:"- The SO has been given generic color painflashes for easier add-on compatibility.");
+Log(s:"- The SO no longer gains one cell upon raising the TOZT again.");
+Log(s:"- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.");
+Log(s:"- The SO's Marathon 2 Alien Weapon is now undroppable.");
+Log(s:"- The Hectebus no longer gets locked in firing.");
         break;
 		
-        case 2:
+        /*case 2:
         SetHudSize(1024,768,1);
         SetFont("");
         HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-        break;
+        break;*/
 }
 }
