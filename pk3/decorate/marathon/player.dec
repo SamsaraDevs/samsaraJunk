@@ -291,10 +291,11 @@ actor MarathonPlayer : PlayerPawn
         TNT1 A 0 A_TakeInventory("ChargeLevel2",99)
         TNT1 A 0 A_TakeInventory("ChargeLevel",99)
         TNT1 A 0 A_TakeInventory("WMCCharge",99)
-        SOPL Z 50 A_GenericFreezeDeath // I'm...really not sure why this isn't automatically applying the palette.
+		TNT1 A 0 A_PlayWeaponSound("misc/freeze")
+        SOPL Z 70 A_NoBlocking//A_GenericFreezeDeath // I'm...really not sure why this isn't automatically applying the palette.
         SOPL Z 0 A_SetTranslucent(0,0)
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
-        SOPL Z 1 A_FreezeDeathChunks // So I had to make new sprites and do all sorts of super-hacky shit. Damn.
+        SOPL Z 1 A_PlayWeaponSound("misc/icebreak")//A_FreezeDeathChunks // So I had to make new sprites and do all sorts of super-hacky shit. Damn.
         SOPL Z -1
         stop
 
