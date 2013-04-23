@@ -86,11 +86,11 @@ script SAMSARA_SPAWN (int respawning)
     if (!respawning) { ACS_ExecuteWithResult(SAMSARA_SYNTHFIRE); }
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
-    ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
-    ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, 0, 0,0,0);
-    ACS_ExecuteWithResult(SAMSARA_QPOWERS,  0, 0,0,0);
-
     ServerEnterTimes[pln] = startTime;
+
+    ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, startTime,0,0);
+    ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, startTime,0,0);
+    ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
