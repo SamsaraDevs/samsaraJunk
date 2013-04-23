@@ -165,9 +165,7 @@ actor HornRodFX2A : HornRodFX2
         ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
         TNT1 A 0 A_JumpIfHealthLower(20,"Death2")
         ACLO EEEEEEEEEE 1 A_SpawnItemEx("HellstaffRain",random(-64,64),random(-64,64),0,0,0,0)
-        ACLO E 1 A_TakeInventory("Health",100)
-        ACLO E 0 A_SkullRodStorm
-        ACLO E 5
+        ACLO E 6 A_TakeInventory("Health",100)
         stop
 
       Death2:

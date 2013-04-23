@@ -1,3 +1,9 @@
+int msgColors[22] = 
+{
+    "\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+    "\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+};
+
 script SAMSARA_CLIENT_CLASS (int slot) clientside
 {
     int toClass = SamsaraClientClass-1;
@@ -221,7 +227,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-        else { Log(s:logMsg); }
+        else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
     
     if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
@@ -273,7 +279,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-        else { Log(s:logMsg); }
+        else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
     
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
