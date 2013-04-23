@@ -188,7 +188,7 @@ actor "Fusion Pistol" : Weapon
         goto AltHold
 
       LolNoBeep:
-        FUSN E 2
+        FUSN A 2
         goto AltHold
 
       WhoopsieDaisy:
