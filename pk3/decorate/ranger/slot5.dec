@@ -138,8 +138,8 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
       AltFire2:
         QRKL A 0 A_GiveInventory("UsingMultiRockets")
         QRKL A 0 A_GiveInventory("UsingDoEAmmo")
-        QMRL B 2 bright
-        QMRL CD 2 bright
+        QMRL B 4 bright
+        QMRL D 2 bright
         QMRL E 4
         QMRL F 5
         QMRL G 5
