@@ -55,6 +55,9 @@ FROM 0.28 TO 0.29
 - Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.
 - The SO's Marathon 2 Alien Weapon is now undroppable.
 - The Hectebus no longer gets locked in firing.
+- Weapon pickup messages now take into account msg0color.
+- BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.
+- B.J. has had his Clip ammo doubled upon picking up Ammo 2.
 
 FROM 0.27 TO 0.28
 ========================
