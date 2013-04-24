@@ -154,8 +154,7 @@ Log(s:"- samsara_cl_noadditivepickups has been added, for those whose bloom make
 Log(s:"- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.");
 Log(s:"- sv_shotgunstart is now respected.");
 Log(s:"- Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).");
-Log(s:"- The Fusion Pistol overcharge can no longer be used for griefing.");
-Log(s:"- Apparently the Fusion Pistol didn't use ammo when overcharging? Okay then.");
+Log(s:"- The Fusion Pistol overcharge now explodes again.");
 Log(s:"- The first Fusion Pistol beep is now silent, and you can now charge for one more second.");
 Log(s:"- The Quad Damage no longer plays weapons/sigil when powering down.");
 Log(s:"- The Quad Damage now makes the 'no item' sound from Quake 3 if it's used when it's recharging.");
@@ -171,6 +170,10 @@ Log(s:"- The Hectebus no longer gets locked in firing.");
 Log(s:"- Weapon pickup messages now take into account msg0color.");
 Log(s:"- BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.");
 Log(s:"- B.J. has had his Clip ammo doubled upon picking up Ammo 2.");
+Log(s:"- Duke's ballgag now respects his death quip.");
+Log(s:"- The SSG zombie's drop now actually exists.");
+Log(s:"- Duke's RPG has been tweaked in widescreen, thanks to Turbo.");
+Log(s:"- The TOZT no longer lifts up instantly and gains an ammo from nowhere on lift-up.");
         break;
 		
         /*case 2:
