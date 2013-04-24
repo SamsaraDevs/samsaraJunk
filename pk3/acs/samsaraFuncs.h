@@ -341,7 +341,5 @@ function int GiveQuad(int toAdd)
 
     quadcount = max(0, CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD);
 
-    Print(s:"yo - quad is ", d:quadcount);
-
     return quadcount;
 }
