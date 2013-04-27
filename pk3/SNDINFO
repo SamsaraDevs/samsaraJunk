@@ -1191,6 +1191,9 @@ quakeweps/nr3                   sounds/ranger/ric3.ogg
 $random quakeweps/nailricochet  { quakeweps/nr1 quakeweps/nr2 quakeweps/nr3 }
 $rolloff quakeweps/nailricochet 64 384
 
+quakeweps/supernailricochet     sounds/ranger/supernailhit.ogg
+$rolloff quakeweps/supernailricochet 64 384
+
 quakeweps/glfire                sounds/ranger/grenade.ogg
 quakeweps/grenadebounce         sounds/ranger/bounce.ogg
 $limit quakeweps/grenadebounce  0

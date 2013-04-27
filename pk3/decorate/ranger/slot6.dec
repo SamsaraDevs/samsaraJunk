@@ -394,6 +394,8 @@ actor QuakeSuperNail: QuakeNail
 {
     Damage (18)
     Obituary "%k \cspenetrated\c- %o\cs."
+
+    DeathSound "quakeweps/supernailricochet"
 }
 
 actor QuakeSuperNailCoop: QuakeSuperNail
@@ -408,6 +410,7 @@ actor QuakeSLNail: QuakeLavaNail
     Damage (27)
     DamageType Fire
     Obituary "%k\cs's penetrated\c- %o\cs and made %h a flamer."  // this sounds so bad but whatever
+    DeathSound "quakeweps/supernailricochet"
 }
 
 actor QuakeSLNailCoop: QuakeSLNail
