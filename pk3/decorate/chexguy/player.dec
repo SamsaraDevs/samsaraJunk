@@ -168,9 +168,16 @@ actor ChexWarrior : PlayerPawn
       Death.HexenIce:
 
       Death.Ice:
-        CHEX G 5 A_GenericFreezeDeath
-        CHEX G 1 A_FreezeDeathChunks
-        Wait
+	TNT1 A 0 A_PlayWeaponSound("misc/freeze")
+        CHEX Z 70 A_NoBlocking//A_GenericFreezeDeath
+        CHEX Z 0 A_SetTranslucent(0,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
+        CHEX Z 1 A_PlayWeaponSound("misc/icebreak")//A_FreezeDeathChunks
+        CHEX Z -1
+        stop
+        //CHEX G 5 A_GenericFreezeDeath
+        //CHEX G 1 A_FreezeDeathChunks
+        //Wait
     }
 }
 

@@ -141,3 +141,13 @@ actor SuperShotgunGuy : ChaingunGuy2 5005
         Goto See
     }
 }
+
+actor SuperShotgunPickup: SamsaraSlotThreeDrop
+{
+    States
+    {
+      Spawn:
+        SGN2 A -1
+        stop
+    }
+}
