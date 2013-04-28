@@ -1,13 +1,15 @@
 script SAMSARA_PDWTAK death
 {
     int bombtimer, yourTID;
+    int pdwtak = GetCVar("samsara_peoplediewhentheyarekilled");
     int myTID = defaultTID(-1);
     int classNum = samsaraClassNum();
     int x,y,z,z2;
     int rVel, rAng, rPit, rTID;
-    int i,j,k;
+    int i,j,k,l;
 
-    if (!GetCVar("samsara_peoplediewhentheyarekilled")) { terminate; }
+    if (!pdwtak) { terminate; }
+    pdwtak = middle(1, pdwtak, PDWTAKCOUNT)-1;
 
     SetActivatorToTarget(0);
 
@@ -25,13 +27,16 @@ script SAMSARA_PDWTAK death
         }
         else
         {
-            Delay(4);
-
             if (yourTID == 0)
             {
                 yourTID = unusedTID(15000, 16999);
                 Thing_ChangeTID(0, yourTID);
             }
+
+            SetActivator(-1);
+
+            Delay(4);
+
 
             x = ftoi(GetActorX(yourTID) - GetActorX(myTID));
             y = ftoi(GetActorY(yourTID) - GetActorY(myTID));
@@ -54,11 +59,10 @@ script SAMSARA_PDWTAK death
         }
     }
 
-    SetActivator(myTID);
-    x  = GetActorX(0);
-    y  = GetActorY(0);
-    z  = GetActorZ(0) + 32.0;
-    z2 = GetActorZ(0);
+    x  = GetActorX(myTID);
+    y  = GetActorY(myTID);
+    z  = GetActorZ(myTID) + 32.0;
+    z2 = GetActorZ(myTID);
 
     for (bombtimer += 0; bombtimer > 0; bombtimer--)
     {
@@ -118,10 +122,7 @@ script SAMSARA_PDWTAK death
     k = GetActorZ(yourTID);
 
     SetActorPosition(yourTID, x,y,z2, 0);
-
-    if (classNum == CLASS_CHEX) { GiveActorInventory(yourTID, "InvPeopleZorch", 1); }
-    else { GiveActorInventory(yourTID, "InvPeopleDie", 1); }
-
+    GiveActorInventory(yourTID, PDWTAKItems[pdwtak][classNum == CLASS_CHEX], 1);
     SetActorPosition(yourTID, i,j,k, 0);
 
 

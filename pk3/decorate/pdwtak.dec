@@ -67,6 +67,26 @@ actor InvPeopleZorch: Trigger
     }
 }
 
+actor InvPeopleDie2: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_FireCustomMissile("PDWTAK2")
+        stop
+    }
+}
+
+actor InvPeopleZorch2: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_FireCustomMissile("PDWTAZ2")
+        stop
+    }
+}
+
 actor PeopleDieWhenTheyAreKilled
 {
     +NOINTERACTION
@@ -85,7 +105,7 @@ actor PeopleDieWhenTheyAreKilled
       Spawn:
       Death:
         TNT1 A 0
-        TNT1 A 280 A_Explode(512, 256)
+        TNT1 A 280 A_Explode(512, 384)
         stop
     }
 }
@@ -94,6 +114,24 @@ actor PeopleDieWhenTheyAreZorched: PeopleDieWhenTheyAreKilled
 {
     DamageType "Zorch"
 }
+
+actor PDWTAK2: PeopleDieWhenTheyAreKilled
+{
+    States
+    {
+      Spawn:
+      Death:
+        TNT1 A 0
+        TNT1 A 280 A_Explode(1024, 768)
+        stop
+    }
+}
+
+actor PDWTAZ2: PDWTAK2
+{
+    DamageType "Zorch"
+}
+
 
 actor DoomguyDiesWhenHeIsKilled: PeopleDieParticle
 {
@@ -104,7 +142,7 @@ actor DoomguyDiesWhenHeIsKilled: PeopleDieParticle
     {
       Spawn:
         MISL B 0 bright
-        MISL B 8 bright A_PlaySound("weapons/rocklx", CHAN_BODY, 1, 0, 0.5)
+        MISL B 8 bright A_PlaySound("weapons/rocklx", CHAN_BODY, 1, 0, ATTN_NONE)
         MISL C 6 bright
         MISL D 4 bright
         stop
@@ -120,7 +158,7 @@ actor CorvusDiesWhenHeIsKilled: PeopleDieParticle
     {
       Spawn:
         FX00 A 0 bright
-        FX08 A 6 bright A_PlaySound("weapons/phoenixhit", CHAN_BODY, 1, 0, 0.5)
+        FX08 A 6 bright A_PlaySound("weapons/phoenixhit", CHAN_BODY, 1, 0, ATTN_NONE)
         FX08 BC 5 bright
         FX08 DEFGH 4 bright
         Stop
@@ -139,7 +177,7 @@ actor ChexguyDiesWhenHeIsKilled: PeopleDieParticle
       Spawn:
         TNT1 A 0 bright
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ChexBFGTrail",0,0,0,random(-2,2),random(-2,2),random(-2,2),random(-180,180),32)//A_CustomMissile("ChexBFGTrail",0,0,random(-180,180),2,random(-180,180))
-        TNT1 A 0 bright A_PlaySound("chex/bfgx", CHAN_BODY, 1, 0, 0.5)
+        TNT1 A 0 bright A_PlaySound("chex/bfgx", CHAN_BODY, 1, 0, ATTN_NONE)
         TNT1 A 0 A_SpawnItemEx("ChexBFGExplosion")
         CFS3 E 8 bright
         CFS3 EEEEDDDDCCCCBBBBAAAA 2 bright A_FadeOut(0.04)
@@ -159,7 +197,7 @@ actor BlazkoDiesWhenHeIsKilled: PeopleDieParticle
       Spawn:
         SPX1 A 0
         SPX1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FakeSpearPopcorn", 0,0,0, random(-25,25)/2.5,0,random(-25,25)/2.5, random(0, 360))
-        SPX1 A 0 A_PlaySound("wolfen/spearexplode1", CHAN_BODY, 1, 0, 0.5)
+        SPX1 A 0 A_PlaySound("wolfen/spearexplode1", CHAN_BODY, 1, 0, ATTN_NONE)
         SPX1 A 4 BRIGHT A_Explode(120, 240, 0)
         SPX1 BCDEF 4 BRIGHT
         Stop
@@ -206,7 +244,7 @@ actor PariasDiesWhenHeIsKilled: PeopleDieParticle
     {
       Spawn:
         FHFX I 0
-        FHFX I 0 A_PlaySound("FighterHammerExplode", CHAN_BODY, 1, 0, 0.5)
+        FHFX I 0 A_PlaySound("FighterHammerExplode", CHAN_BODY, 1, 0, ATTN_NONE)
         FHFX IJKLMNOPQR 3 bright
         stop
     }
@@ -238,7 +276,7 @@ actor ManathorDiesWhenHeIsKilled: PeopleDieParticle
     {
       Spawn:
         RHIT A 0 bright
-        RHIT A 5 bright A_PlaySound("marathon/rocket/hit", CHAN_BODY, 1.0, 0, 0.5)
+        RHIT A 5 bright A_PlaySound("marathon/rocket/hit", CHAN_BODY, 1.0, 0, ATTN_NONE)
         RHIT BCD 5 bright
         stop
     }
@@ -265,7 +303,7 @@ actor RangerDiesWhenHeIsKilled: QuakeExplosion
         loop
         
       Death:
-        QEXP A 4 bright A_PlaySound("quakeweps/explode", CHAN_BODY, 1.0, 0, 0.5)
+        QEXP A 4 bright A_PlaySound("quakeweps/explode", CHAN_BODY, 1.0, 0, ATTN_NONE)
         QEXP B 4 bright
         QEXP CD 3 bright
         QEXP EF 2 bright
