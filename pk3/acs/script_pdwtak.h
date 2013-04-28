@@ -11,6 +11,11 @@ script SAMSARA_PDWTAK death
     if (!pdwtak) { terminate; }
     pdwtak = middle(1, pdwtak, PDWTAKCOUNT)-1;
 
+    x  = GetActorX(myTID);
+    y  = GetActorY(myTID);
+    z  = GetActorZ(myTID) + 32.0;
+    z2 = GetActorZ(myTID);
+
     SetActivatorToTarget(0);
 
     if (PlayerNumber() == -1)
@@ -58,11 +63,6 @@ script SAMSARA_PDWTAK death
             }
         }
     }
-
-    x  = GetActorX(myTID);
-    y  = GetActorY(myTID);
-    z  = GetActorZ(myTID) + 32.0;
-    z2 = GetActorZ(myTID);
 
     for (bombtimer += 0; bombtimer > 0; bombtimer--)
     {
