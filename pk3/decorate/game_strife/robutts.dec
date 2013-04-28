@@ -47,6 +47,7 @@ actor Sentinel2 : Sentinel replaces Sentinel
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -147,6 +148,7 @@ actor Stalker2 : Stalker replaces Stalker
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -227,6 +229,7 @@ actor CeilingTurret2 : CeilingTurret replaces CeilingTurret
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -345,6 +348,7 @@ actor Reaver2 : Reaver replaces Reaver
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -420,6 +424,7 @@ ACTOR Inquisitor2 : Inquisitor replaces Inquisitor
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)

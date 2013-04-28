@@ -74,6 +74,7 @@ ACTOR Macil2B : Macil2 replaces Macil2
         
       Death.ZorchPistol:
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -152,6 +153,7 @@ ACTOR StrifeBishop2 : StrifeBishop replaces StrifeBishop
       Death.ZorchPistol:
         
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -266,6 +268,7 @@ ACTOR Loremaster2 : Loremaster replaces Loremaster
       Death.ZorchPistol:
         
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -391,6 +394,7 @@ ACTOR Programmer2 : Programmer replaces Programmer
       Death.ZorchPistol:
         
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)

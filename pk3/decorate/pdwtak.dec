@@ -98,6 +98,7 @@ actor PeopleDieWhenTheyAreKilled
     Radius 8
     Height 8
 
+    DamageType "Kamikaze"
     Obituary "%k exploded %o."
 
     States
@@ -112,7 +113,7 @@ actor PeopleDieWhenTheyAreKilled
 
 actor PeopleDieWhenTheyAreZorched: PeopleDieWhenTheyAreKilled
 {
-    DamageType "Zorch"
+    DamageType "ZorchKamikaze"
 }
 
 actor PDWTAK2: PeopleDieWhenTheyAreKilled
@@ -129,7 +130,7 @@ actor PDWTAK2: PeopleDieWhenTheyAreKilled
 
 actor PDWTAZ2: PDWTAK2
 {
-    DamageType "Zorch"
+    DamageType "ZorchKamikaze"
 }
 
 

@@ -70,6 +70,9 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "QuakePistol", 0.8
     DamageFactor "NotQuadded", 0.8
     DamageFactor "SpectralNoQuad", 0.8
+
+    DamageFactor "Kamikaze", 1.33333333333
+    DamageFactor "ZorchKamikaze", 1.33333333333
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"
@@ -122,6 +125,7 @@ actor ChexWarrior : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         CHEX G 0 A_Stop

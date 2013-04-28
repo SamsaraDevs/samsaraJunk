@@ -78,6 +78,7 @@ actor WolfenPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         BJBL G 0 A_Stop

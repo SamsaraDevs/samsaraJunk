@@ -92,6 +92,7 @@ actor CorvusPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
         CORV G 0 A_Stop
