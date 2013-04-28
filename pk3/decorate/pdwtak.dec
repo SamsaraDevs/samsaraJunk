@@ -228,6 +228,22 @@ actor DukeDiesWhenHeIsKilled: PeopleDieParticle
     }
 }
 
+actor ManathorDiesWhenHeIsKilled: PeopleDieParticle
+{
+    RenderStyle Add
+    Alpha 0.6
+    Scale 1.75
+
+    States
+    {
+      Spawn:
+        RHIT A 0 bright
+        RHIT A 5 bright A_PlaySound("marathon/rocket/hit", CHAN_BODY, 1.0, 0, 0.5)
+        RHIT BCD 5 bright
+        stop
+    }
+}
+
 actor RangerDiesWhenHeIsKilled: QuakeExplosion
 {
     Alpha 0.8
@@ -249,7 +265,7 @@ actor RangerDiesWhenHeIsKilled: QuakeExplosion
         loop
         
       Death:
-        QEXP A 4 bright A_PlaySound("quakeweps/explode")
+        QEXP A 4 bright A_PlaySound("quakeweps/explode", CHAN_BODY, 1.0, 0, 0.5)
         QEXP B 4 bright
         QEXP CD 3 bright
         QEXP EF 2 bright
