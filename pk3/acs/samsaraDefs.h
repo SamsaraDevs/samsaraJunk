@@ -258,8 +258,8 @@ int PeopleDieBlasts[CLASSCOUNT] =
     "ChexguyDiesWhenHeIsKilled",
     "CorvusDiesWhenHeIsKilled",
     "BlazkoDiesWhenHeIsKilled",
+    "PariasDiesWhenHeIsKilled",
+    "DukeDiesWhenHeIsKilled",
     "DoomguyDiesWhenHeIsKilled",
-    "DoomguyDiesWhenHeIsKilled",
-    "DoomguyDiesWhenHeIsKilled",
-    "DoomguyDiesWhenHeIsKilled",
+    "RangerDiesWhenHeIsKilled",
 };

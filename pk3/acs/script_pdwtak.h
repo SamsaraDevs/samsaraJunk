@@ -3,7 +3,7 @@ script SAMSARA_PDWTAK death
     int bombtimer, yourTID;
     int myTID = defaultTID(-1);
     int classNum = samsaraClassNum();
-    int x,y,z;
+    int x,y,z,z2;
     int rVel, rAng, rPit, rTID;
     int i,j,k;
 
@@ -55,9 +55,10 @@ script SAMSARA_PDWTAK death
     }
 
     SetActivator(myTID);
-    x = GetActorX(0);
-    y = GetActorY(0);
-    z = GetActorZ(0) + 32.0;
+    x  = GetActorX(0);
+    y  = GetActorY(0);
+    z  = GetActorZ(0) + 32.0;
+    z2 = GetActorZ(0);
 
     for (bombtimer += 0; bombtimer > 0; bombtimer--)
     {
@@ -116,16 +117,11 @@ script SAMSARA_PDWTAK death
     j = GetActorY(yourTID);
     k = GetActorZ(yourTID);
 
-    SetActorPosition(yourTID, x,y,z, 0);
+    SetActorPosition(yourTID, x,y,z2, 0);
 
-    if (classNum == CLASS_CHEX)
-    {
-        GiveActorInventory(yourTID, "InvPeopleZorch", 1);
-    }
-    else
-    {
-        GiveActorInventory(yourTID, "InvPeopleDie", 1);
-    }
+    if (classNum == CLASS_CHEX) { GiveActorInventory(yourTID, "InvPeopleZorch", 1); }
+    else { GiveActorInventory(yourTID, "InvPeopleDie", 1); }
+
     SetActorPosition(yourTID, i,j,k, 0);
 
 
