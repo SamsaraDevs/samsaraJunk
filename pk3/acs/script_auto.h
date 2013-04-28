@@ -83,7 +83,6 @@ script SAMSARA_SPAWN (int respawning)
     int canbuddha;
     int i;
 
-    if (!respawning) { ACS_ExecuteWithResult(SAMSARA_SYNTHFIRE); }
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
     ServerEnterTimes[pln] = startTime;
@@ -146,6 +145,12 @@ script SAMSARA_SPAWN (int respawning)
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
         
+        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
+        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
+        
+        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
+        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
         TakeInventory("Mace", 1);
@@ -245,21 +250,6 @@ script SAMSARA_SPAWN (int respawning)
             HudMessage(s:""; HUDMSG_PLAIN, 91029, 0, 0, 0, 0);
         }
         */
-    }
-
-}
-
-script SAMSARA_SYNTHFIRE (void)
-{
-    while (1)
-    {
-        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
-        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
-        
-        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
-        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
-
-        Delay(1);
     }
 
     TakeInventory("SynthFireLeft", 0x7FFFFFFF);

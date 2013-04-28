@@ -18,7 +18,6 @@
 #define SAMSARA_CLIENT_UNIQUEPICKUP 633
 #define SAMSARA_MARATHON            609
 #define SAMSARA_RESONATE            608
-#define SAMSARA_SYNTHFIRE           607
 #define SAMSARA_MEGAHEALTH          249
 #define SAMSARA_QPOWERS             636
 
