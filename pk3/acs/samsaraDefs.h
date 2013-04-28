@@ -255,7 +255,7 @@ int PeopleDiePulses[CLASSCOUNT] =
 int PeopleDieBlasts[CLASSCOUNT] = 
 {
     "DoomguyDiesWhenHeIsKilled",
-    "DoomguyDiesWhenHeIsKilled",
+    "ChexguyDiesWhenHeIsKilled",
     "CorvusDiesWhenHeIsKilled",
     "DoomguyDiesWhenHeIsKilled",
     "DoomguyDiesWhenHeIsKilled",

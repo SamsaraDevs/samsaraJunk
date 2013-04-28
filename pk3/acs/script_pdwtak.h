@@ -117,7 +117,15 @@ script SAMSARA_PDWTAK death
     k = GetActorZ(yourTID);
 
     SetActorPosition(yourTID, x,y,z, 0);
-    GiveActorInventory(yourTID, "InvPeopleDie", 1);
+
+    if (classNum == CLASS_CHEX)
+    {
+        GiveActorInventory(yourTID, "InvPeopleZorch", 1);
+    }
+    else
+    {
+        GiveActorInventory(yourTID, "InvPeopleDie", 1);
+    }
     SetActorPosition(yourTID, i,j,k, 0);
 
 
