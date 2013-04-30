@@ -505,6 +505,11 @@ actor MarathonPlayer : PlayerPawn
        SOPL Y 4 A_SetBlend("FF 6F F2",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
+
+      Pain.Orange:
+       SOPL Y 4 A_SetBlend("FF 66 00",0.8,8)
+       SOPL Y 4 A_Pain
+        Goto Spawn
     }
 }
 
