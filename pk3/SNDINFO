@@ -501,7 +501,7 @@ $playeralias	DukePlayer	male	*usefail		duke/usefail
 $playersound	DukePlayer	male	*puzzfail		dkpuzz
 $playersound	DukePlayer	male	*land			dkland00
 $playeralias	DukePlayer	male	*taunt			duke/singing
-$playersound	DukePlayer	male	*gasp			dksurface
+//$playersound	DukePlayer	male	*gasp			dksurfac
 
 duke/burndeath		DKBURN1
 duke/burndeath2		DKBURN2
