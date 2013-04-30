@@ -137,13 +137,18 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
             Hudmessage(s:"Press any button to respawn.";
             HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
             delay(15);
-        if (CheckInventory("DukeBallgag") == 0)
-        {
-            LocalAmbientSound("duke/mpdeath",127);
-            GiveInventory("DukeTauntCooldown",5);
-            ACS_ExecuteAlways(205,0,0);
+
+            if (!CheckInventory("DukeBallgag"))
+            {
+                LocalAmbientSound("duke/mpdeath",127);
+                GiveInventory("DukeTauntCooldown",5);
+                ACS_ExecuteAlways(205,0,0);
+            }
         }
-        }
+        break;
+
+      case 17:
+        result = GetCVar("sv_weaponstay");
         break;
     }
     
