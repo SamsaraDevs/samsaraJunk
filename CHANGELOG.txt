@@ -64,6 +64,7 @@ FROM 0.28 TO 0.29
 - Everyone Frozen states has been completely reworked. This should fix all of the strange ice-related bugs that keep popping up in DM.
 - samsara_peoplediewhentheyarekilled has been added as an optional cvar. What does it do? Well, call it a Party Mode...
 - Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.
+- Thanks to BlackFish, the Firestorm now has widescreen sprites!
 
 
 FROM 0.27 TO 0.28
