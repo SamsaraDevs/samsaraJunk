@@ -22,7 +22,7 @@ actor WolfLifeProtection : PowerProtection
     damagefactor "Pistol", 0.25
     DamageFactor "DoomFist", 0.25
     damagefactor "ZorchPistol", 0.25
-    damagefactor "TimonsAxe", 0.25
+    damagefactor "Wraithverge", 0.25
     damagefactor "zorch", 0.25
     damagefactor "fire", 0.25
     damagefactor "ice", 0.25

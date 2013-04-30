@@ -39,8 +39,12 @@ actor MarathonPlayer : PlayerPawn
     Player.StartItem "MortarAmmo", 500
     Player.StartItem "NapalmInTank", 500
     Player.StartItem "SpankerAmmo", 2
+    DamageFactor "PoisonCloud", 1.75
+    //DamageFactor "Wraithverge", 0.75
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
+    DamageFactor "Mace", 1.1
+    DamageFactor "DragonClaw", 1.1
     
     States
     {
@@ -459,6 +463,7 @@ actor MarathonPlayer : PlayerPawn
         SOPL Y 4 A_Pain
         Goto Spawn
 
+      Pain.Wraithverge:
       Pain.Gray:
        SOPL Y 4 A_SetBlend("33 33 33",0.8,8)  // Gray
        SOPL Y 4 A_Pain

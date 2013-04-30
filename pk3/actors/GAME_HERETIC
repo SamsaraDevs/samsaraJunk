@@ -264,7 +264,7 @@ Actor PowerLesserTome : PowerDamage
   Powerup.Duration -25
   DamageFactor "Pistol", 1.5
   DamageFactor "ZorchPistol", 1.5
-  DamageFactor "TimonsAxe", 1.5
+  DamageFactor "Wraithverge", 1.5
   DamageFactor "Mace", 1.5
   DamageFactor "DragonClaw", 1.5
   DamageFactor "Normal", 1.5

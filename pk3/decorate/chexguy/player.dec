@@ -17,7 +17,7 @@ actor ChexWarrior : PlayerPawn
     Species "Player"
     DamageFactor "Telefrag", 2.0
     DamageFactor "PoisonCloud", 1.65
-    DamageFactor "TimonsAxe", 0.65
+    DamageFactor "Wraithverge", 0.9
     DamageFactor "Mace", 0.9
     DamageFactor "DragonClaw", 0.9
     DamageFactor "MarathonPistol", 0.8

@@ -15,7 +15,7 @@ actor DukePlayer : PlayerPawn
     Player.JumpZ 10//Default is 8
     Scale 0.725
     DamageFactor "PoisonCloud", 1.9
-    DamageFactor "TimonsAxe", 0.85
+    DamageFactor "Wraithverge", 1.1
     DamageFactor "Mace", 1.2
     DamageFactor "DragonClaw", 1.2
     DamageFactor "PoisonCloud", 1.1
