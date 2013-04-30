@@ -174,6 +174,9 @@ Log(s:"- Duke's ballgag now respects his death quip.");
 Log(s:"- The SSG zombie's drop now actually exists.");
 Log(s:"- Duke's RPG has been tweaked in widescreen, thanks to Turbo.");
 Log(s:"- The TOZT no longer lifts up instantly and gains an ammo from nowhere on lift-up.");
+Log(s:"- Everyone Frozen states has been completely reworked. This should fix all of the strange ice-related bugs that keep popping up in DM.");
+Log(s:"- samsara_peoplediewhentheyarekilled has been added as an optional cvar. What does it do? Well, call it a Party Mode...");
+Log(s:"- Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.");
         break;
 		
         /*case 2:
