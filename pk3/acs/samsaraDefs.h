@@ -209,7 +209,7 @@ int ResonantItems[RESCOUNT][3] =
 };
 
 
-#define PDWTAKCOUNT 2
+#define PDWTAKCOUNT 3
 
 int PeopleDieParticles[CLASSCOUNT] = 
 {
@@ -269,4 +269,5 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
 {
     {"InvPeopleDie",  "InvPeopleZorch"},
     {"InvPeopleDie2", "InvPeopleZorch2"},
+    {"InvPeopleDie3", "InvPeopleZorch3"},
 };

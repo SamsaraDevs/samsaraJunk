@@ -32,35 +32,13 @@ script SAMSARA_PDWTAK death
         }
         else
         {
-            if (yourTID == 0)
-            {
-                yourTID = unusedTID(15000, 16999);
-                Thing_ChangeTID(0, yourTID);
-            }
+            bombtimer = 24;
+        }
 
-            SetActivator(-1);
-
-            Delay(4);
-
-
-            x = ftoi(GetActorX(yourTID) - GetActorX(myTID));
-            y = ftoi(GetActorY(yourTID) - GetActorY(myTID));
-            z = ftoi(GetActorZ(yourTID) - GetActorZ(myTID));
-
-            bombtimer = itof(magnitudeThree(x, y, z));
-
-            if (bombtimer < 128.0)
-            {
-                bombtimer = 98;
-            }
-            else if (bombtimer > 1024.0)
-            {
-                bombtimer = 0;
-            }
-            else
-            {
-                bombtimer = ftoi(98 * FixedDiv(1.0, bombtimer/128));
-            }
+        if (yourTID == 0)
+        {
+            yourTID = unusedTID(15000, 16999);
+            Thing_ChangeTID(0, yourTID);
         }
     }
 
