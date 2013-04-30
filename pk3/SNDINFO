@@ -1159,7 +1159,7 @@ $playersound        Ranger      male    *puzzfail       dgpuzz
 $playersound        Ranger      male    *taunt          sounds/ranger/taunt.ogg
 $playersound        Ranger      male    *dive           sounds/ranger/h2ojump.ogg
 $playersound        Ranger      male    *surface        sounds/ranger/gasp1.ogg
-$playersound        Ranger      male    *gasp           sounds/ranger/gasp2.ogg
+//$playersound        Ranger      male    *gasp           sounds/ranger/gasp2.ogg
 
 quakeweps/blank                 sounds/ranger/blank.ogg
 quakeweps/weaponget             sounds/ranger/w_pkup.wav
