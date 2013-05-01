@@ -21,10 +21,16 @@ script SAMSARA_OPEN open
         
         SamsaraGlobal[GLOBAL_DONEBITCHING] = 1;
     }
+
+    ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
     
     while (1)
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
+        
+        if (!GetCVar("samsara_armormode"))
+        {   ConsoleCommand("set samsara_armormode 0");
+        ConsoleCommand("archivecvar samsara_armormode"); }
         
         if (!GetCVar("samsara_banjetpack"))
         {   ConsoleCommand("set samsara_banjetpack 0");

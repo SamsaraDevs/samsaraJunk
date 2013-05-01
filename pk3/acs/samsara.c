@@ -28,6 +28,7 @@ int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
+int ArmorMode = -1;
 int ClientTipboxModifier, ClientTipClassModifier;
 
 
@@ -150,6 +151,15 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 17:
         result = GetCVar("sv_weaponstay");
         break;
+
+      case 18:
+        if (ArmorMode < 0)
+        {
+            ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+        }
+
+        SetActorState(0, ArmorModeStates[ArmorMode][Timer() != 0]);
+        break;
     }
     
     SetResultValue(result);
@@ -206,7 +216,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
     }
 }
 
-script SAMSARA_GETSETTINGS (void)
+script SAMSARA_GETSETTINGS (void) net
 {
     int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
     int lmsHP, lmsArmor;
@@ -236,12 +246,15 @@ script SAMSARA_GETSETTINGS (void)
             HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
         
         HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your slot 7";
-            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 104.0, 3.0, 1.0);
     }
     else
     {
         HudMessage(s:"Slot 7 pickups ", s:ultStay, s:"\c- on pickup";
-            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 88.0, 3.0, 1.0);
+            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
+
+        HudMessage(s:"Armor mode is \cf", s:ArmorModeNames[ArmorMode];
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
     }
 
     if (GetCVar("samsara_jumpmod"))
@@ -249,10 +262,21 @@ script SAMSARA_GETSETTINGS (void)
         HudMessage(s:"You jump \cn", d:abs(GetCVar("samsara_jumpmod")), s:"\c- units ", s:highLow, s:"\c- than normal";
                 HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
     }
+    else
+    {
+        HudMessage(s:"Jumping is \cbnormal";
+                HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
+    }
+
 
     if (GetCVar("samsara_banjetpack"))
     {
         HudMessage(s:"Duke's jetpack is \cgBANNED.";
+                HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Duke's jetpack is \cdALLOWED.";
                 HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
     }
 
@@ -261,10 +285,20 @@ script SAMSARA_GETSETTINGS (void)
         HudMessage(s:"Wolfenstein movement is \cgBANNED.";
                 HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
     }
+    else
+    {
+        HudMessage(s:"Wolfenstein movement is \cdALLOWED.";
+                HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
+    }
 
     if (GetCVar("samsara_nocustomgravity"))
     {
         HudMessage(s:"Custom gravities are \cadisabled.";
+                HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Custom gravities are \cdenabled.";
                 HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
     }
 }

@@ -343,20 +343,6 @@ actor MarathonMegaArmor : BasicArmorPickup
     }
 }
 
-actor QuakeRedArmor: BasicArmorPickup
-{
-    Armor.SaveAmount 200
-    Armor.SavePercent 80
-    Inventory.Icon "RMR3A0"
-
-    States
-    {
-      Spawn:
-        RMR3 A -1 bright
-        stop
-    }
-}
-
 actor PortQuartzFlask : HealthPickup
 {
     //tag "Quartz Flask"

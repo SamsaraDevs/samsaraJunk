@@ -47,6 +47,7 @@
 #define TIPCOUNT            2
 
 #define LMSMODES            6
+#define ARMORMODES          2
 
 #define CLASS_DOOM      0
 #define CLASS_CHEX      1
@@ -270,4 +271,16 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie",  "InvPeopleZorch"},
     {"InvPeopleDie2", "InvPeopleZorch2"},
     {"InvPeopleDie3", "InvPeopleZorch3"},
+};
+
+int ArmorModeStates[ARMORMODES][2] = 
+{
+    {"Armor1", "Armor1_Drop"},
+    {"Armor2", "Armor2_Drop"},
+};
+
+int ArmorModeNames[ARMORMODES] = 
+{
+    "Normal",
+    "Quake",
 };
