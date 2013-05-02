@@ -203,7 +203,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Look, ma, three fingers.",
             "Push button, recieve carnage.",
             "I hear the balls taste like candy if you eat them. Best to try it on incoming idiots first.",
-            "I dunno, those guys don't seem to phased by it.",
+            "I dunno, those guys don't seem too phased by it.",
             "You're like a futuristic pitching machine.",
             "",
             "",
