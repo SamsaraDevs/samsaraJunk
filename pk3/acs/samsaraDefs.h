@@ -337,4 +337,5 @@ int ChangelogString =
 - Unique items no longer spawn in LMS and TLMS.\n\
 - Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.\n\
 - In DM, the Tomed Firemace has traded in the ability to home on people for the ability to bounce off walls.\n\
-- Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!";
+- Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
+- Chexter's screen now flashes green when slimed or flemmed.";
