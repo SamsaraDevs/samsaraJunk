@@ -12,8 +12,13 @@ actor SamsaraUniquePickup1: CustomInventory
     States
     {
       Spawn:
-        UNIQ B 0
+        UNIQ B 1
+		UNIQ B 1 A_JumpIf((ACS_ExecuteWithResult(230)) == 1, "Nope")
         goto SpawnLoop
+		
+	  Nope:
+	    UNIQ B 1
+		stop
 
       SpawnLoop:      
         "----" A 35 bright ACS_ExecuteAlways(228, 0, -1)

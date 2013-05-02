@@ -686,3 +686,22 @@ script 586 (int divI, int divF, int divF1)
 
     SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
 }
+
+script 230 (void)
+{
+	if(GetCvar("lastmanstanding") == 1)
+	{
+		setresultvalue(1);
+	}
+	else 
+	{
+		if(GetCvar("teamlms") == 1)
+		{
+			setresultvalue(1);
+		}
+		else
+		{
+			setresultvalue(0);
+		}
+	}
+}

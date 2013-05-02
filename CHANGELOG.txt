@@ -67,6 +67,7 @@ FROM 0.28 TO 0.29
 - Thanks to BlackFish, the Firestorm now has widescreen sprites!
 - samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.
 - You can now see what settings the server is using!
+- Unique items no longer spawn in LMS and TLMS.
 
 
 FROM 0.27 TO 0.28

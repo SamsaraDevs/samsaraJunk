@@ -333,4 +333,5 @@ int ChangelogString =
 - Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.\n\
 - Thanks to BlackFish, the Firestorm now has widescreen sprites!\n\
 - samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.\n\
-- You can now see what settings the server is using!";
+- You can now see what settings the server is using!\n\
+- Unique items no longer spawn in LMS and TLMS.";
