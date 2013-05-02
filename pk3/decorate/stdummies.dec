@@ -217,6 +217,7 @@ ACTOR TimeFreezeSphere : CustomInventory 5032
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("PowerTimeFreezer")
+        TNT1 A 1 A_GiveInventory("PowerTimeFreezerColor")
         stop
 
       PickupHeretic:
@@ -240,6 +241,12 @@ actor TimeFreezeSphereHeretic : PowerupGiver
     Inventory.Icon "ARTISTP2"
     Powerup.Type TimeFreezer
 	Powerup.Color GoldMap
+}
+
+actor PowerTimeFreezerColor : Powerup
+{
+	Powerup.Color GoldMap
+	Powerup.Duration -11
 }
 
 ACTOR InvisibilitySphere : CustomInventory 5035
@@ -332,6 +339,7 @@ ACTOR Doomsphere : CustomInventory 5036
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("PowerQuadDamage")
+        TNT1 A 1 A_GiveInventory("PowerDoomsphereColor")
         stop
 
       PickupHeretic:
@@ -357,6 +365,12 @@ actor DoomsphereHeretic : PowerupGiver
 	Powerup.Color RedMap
 }
 
+actor PowerDoomsphereColor : Powerup
+{
+	Powerup.Color RedMap
+	Powerup.Duration -30
+}
+
 ACTOR Guardsphere : CustomInventory 5037
 {
 	Game Doom
@@ -377,6 +391,7 @@ ACTOR Guardsphere : CustomInventory 5037
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
         TNT1 A 1 A_GiveInventory("PowerQuarterDamage")
+        TNT1 A 1 A_GiveInventory("PowerGuardsphereColor")
         stop
 
       PickupHeretic:
@@ -400,4 +415,10 @@ actor GuardsphereHeretic : PowerupGiver
     Inventory.Icon "ARTISTP5"
     Powerup.Type QuarterDamage
 	Powerup.Color GreenMap
+}
+
+actor PowerGuardsphereColor : Powerup
+{
+	Powerup.Color GreenMap
+	Powerup.Duration -30
 }
