@@ -73,6 +73,7 @@ FROM 0.28 TO 0.29
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!
 - Chexter's screen now flashes green when slimed or flemmed.
 - Skulltag monsters now bleed/gib their proper colors.
+- Duke passing the pipe no longer results in a clack.
 
 
 FROM 0.27 TO 0.28
