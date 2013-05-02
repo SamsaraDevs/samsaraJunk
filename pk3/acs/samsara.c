@@ -160,6 +160,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
         SetActorState(0, ArmorModeStates[ArmorMode][Timer() != 0]);
         break;
+
+      case 19:
+        result = isLMS();
+        break;
     }
     
     SetResultValue(result);
@@ -685,23 +689,4 @@ script 586 (int divI, int divF, int divF1)
     int z = GetActorVelZ(0);
 
     SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
-}
-
-script 230 (void)
-{
-	if(GetCvar("lastmanstanding") == 1)
-	{
-		setresultvalue(1);
-	}
-	else 
-	{
-		if(GetCvar("teamlms") == 1)
-		{
-			setresultvalue(1);
-		}
-		else
-		{
-			setresultvalue(0);
-		}
-	}
 }
