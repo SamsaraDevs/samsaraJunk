@@ -335,4 +335,5 @@ int ChangelogString =
 - samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.\n\
 - You can now see what settings the server is using!\n\
 - Unique items no longer spawn in LMS and TLMS.\n\
-- Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.";
+- Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.\n\
+- In DM, the Tomed Firemace has traded in the ability to home on people for the ability to bounce off walls.";
