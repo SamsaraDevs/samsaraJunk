@@ -151,7 +151,6 @@ actor ArmorPack3: BasicArmorPickup
     }
 }
 
-<<<<<<< HEAD
 actor QuakeRedArmor: BasicArmorPickup
 {
     Armor.SaveAmount 200

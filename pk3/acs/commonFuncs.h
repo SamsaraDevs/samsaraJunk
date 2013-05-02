@@ -118,11 +118,7 @@ function int keyPressed(int key)
 
 function int keyPressed_any(int key)
 {
-    int buttons     = GetPlayerInput(-1, INPUT_BUTTONS);
-    int oldbuttons  = GetPlayerInput(-1, INPUT_OLDBUTTONS);
-    int newbuttons  = (buttons ^ oldbuttons) & buttons;
-
-    if (newbuttons & key) { return 1; }
+    if (keysPressed() & key) { return 1; }
     return 0;
 }
 
@@ -880,4 +876,11 @@ function int upper(int chr)
 {
     if (chr > 90 && chr < 123) { return chr-32; }
     return chr;
+}
+
+function int AddActorProperty(int tid, int prop, int amount)
+{
+    int newAmount = GetActorProperty(tid, prop) + amount;
+    SetActorProperty(tid, prop, newAmount);
+    return newAmount;
 }
