@@ -28,10 +28,6 @@ script SAMSARA_OPEN open
     {
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
         
-        if (!GetCVar("samsara_armormode"))
-        {   ConsoleCommand("set samsara_armormode 0");
-        ConsoleCommand("archivecvar samsara_armormode"); }
-        
         if (!GetCVar("samsara_banjetpack"))
         {   ConsoleCommand("set samsara_banjetpack 0");
         ConsoleCommand("archivecvar samsara_banjetpack"); }
@@ -72,6 +68,18 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
         ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
         
+        if (!GetCVar("samsara_armormode"))
+        {   ConsoleCommand("set samsara_armormode 0");
+        ConsoleCommand("archivecvar samsara_armormode"); }
+        
+        if (!GetCVar("samsara_chainsawstart"))
+        {   ConsoleCommand("set samsara_chainsawstart 0");
+        ConsoleCommand("archivecvar samsara_chainsawstart"); }
+        
+        if (!GetCVar("samsara_uniquestart"))
+        {   ConsoleCommand("set samsara_uniquestart 0");
+        ConsoleCommand("archivecvar samsara_uniquestart"); }
+        
         Delay(1);
     }
 }
@@ -99,6 +107,9 @@ script SAMSARA_SPAWN (int respawning)
     
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
+
+    HandleChainsawSpawn(respawning);
+    HandleUniqueSpawn(respawning);
 
     if (!respawning)
     {

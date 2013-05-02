@@ -74,6 +74,8 @@ FROM 0.28 TO 0.29
 - Chexter's screen now flashes green when slimed or flemmed.
 - Skulltag monsters now bleed/gib their proper colors.
 - Duke passing the pipe no longer results in a clack.
+- samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
+- samsara_uniquestart has been added. See the wiki for details.
 
 
 FROM 0.27 TO 0.28

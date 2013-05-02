@@ -198,11 +198,30 @@ function int GiveUnique(int cnum, int unum)
     return _giveunique(cnum, unum, 0);
 }
 
+int TempUniques[UNIQUECOUNT];
+
 function int _giveunique(int cnum, int unum, int ignoreinv)
 {
     int success; 
+    int i, j, tmpcount;
 
     if (cnum == -1) { return -1; }
+
+    if (unum == -1)
+    {
+        tmpcount = 0;
+        for (i = 0; i < UNIQUECOUNT; i++)
+        {
+            j = ClassUniques[cnum][i];
+            if (j == "") { continue; }
+
+            TempUniques[tmpcount++] = i;
+        }
+
+        if (tmpcount == 0) { return -1; }
+
+        unum = TempUniques[random(0, tmpcount-1)];
+    }
 
     unum *= 2;
     int uanum = unum + 1;
@@ -342,4 +361,46 @@ function int GiveQuad(int toAdd)
     quadcount = max(0, CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD);
 
     return quadcount;
+}
+
+function int HandleUniqueSpawn(int respawning)
+{
+    int cs = GetCVar("samsara_uniquestart");
+    int classnum = samsaraClassNum();
+    int i;
+
+    switch (cs)
+    {
+      case 1:
+        if (respawning) { return 0; }
+        // Fallthrough
+
+      case 3:
+        GiveUnique(classnum, -1);
+        break;
+
+      case 2:
+        if (respawning) { return 0; }
+        // Fallthrough
+
+      case 4:
+        for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); }
+        break;
+    }
+
+    return 1;
+}
+
+function int HandleChainsawSpawn(int respawning)
+{
+    int cs = GetCVar("samsara_chainsawstart");
+    int classnum = samsaraClassNum();
+    int ammomode = 3;
+
+    if (cs == 0 || respawning) { return 0; }
+
+    if (cs == 2) { ammomode = 1; }
+
+    GiveClassWeapon(classnum, 1, ammomode);
+    return 1;
 }
