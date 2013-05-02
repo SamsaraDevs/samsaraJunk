@@ -180,7 +180,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         
       case 3:
         SetHudSize(400, 300, 0);
-        Hudmessage(s:"MIGHTY BOOT ENGAGED";
+        Hudmessage(s:"MIGHTY FOOT ENGAGED";
         HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
         break;
 

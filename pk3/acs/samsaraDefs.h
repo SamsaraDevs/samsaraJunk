@@ -334,4 +334,5 @@ int ChangelogString =
 - Thanks to BlackFish, the Firestorm now has widescreen sprites!\n\
 - samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.\n\
 - You can now see what settings the server is using!\n\
-- Unique items no longer spawn in LMS and TLMS.";
+- Unique items no longer spawn in LMS and TLMS.\n\
+- Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.";
