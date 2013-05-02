@@ -151,3 +151,253 @@ actor SuperShotgunPickup: SamsaraSlotThreeDrop
         stop
     }
 }
+
+ACTOR Turbosphere : CustomInventory 5030
+{
+	Game Doom
+	SpawnID 169
+	+COUNTITEM
+	+NOGRAVITY
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$PICKUP_TURBOSPHERE"
+	Inventory.PickupSound "nosoundforyoubitch"
+	Inventory.PickupAnnouncerEntry "turbosphere"
+	States
+	{
+	  Spawn:
+		TURB ABCD 3 Bright
+		Loop
+		
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("Turbosphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("TurbosphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("TurbosphereHeretic")
+        stop
+
+      PickupFail:
+        TURB A 1 Bright
+        fail
+	}
+}
+
+actor TurbosphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP1"
+    Powerup.Type Turbo
+	Powerup.Duration 1050
+}
+
+ACTOR TimeFreezeSphere : CustomInventory 5032
+{
+	Game Doom
+	SpawnID 171
+	+COUNTITEM
+	+NOGRAVITY
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$PICKUP_TIMEFREEZER"
+	Inventory.PickupSound "nosoundforyoubitch"
+	Inventory.PickupAnnouncerEntry "timefreeze"
+	States
+	{
+	  Spawn:
+		TIME ABCD 6 Bright
+		Loop
+		
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("TimeFreezeSphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("TimeFreezeSphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("TimeFreezeSphereHeretic")
+        stop
+
+      PickupFail:
+        TIME A 1 Bright
+        fail
+	}
+}
+
+actor TimeFreezeSphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP2"
+    Powerup.Type TimeFreezer
+	Powerup.Color GoldMap
+}
+
+ACTOR InvisibilitySphere : CustomInventory 5035
+{
+	Game Doom
+	SpawnID 174
+	+COUNTITEM
+	+NOGRAVITY
+	+VISIBILITYPULSE
+	Inventory.MaxAmount 0
+	RenderStyle Translucent
+	Inventory.PickupMessage "$PICKUP_INVISIBILITY"
+	Inventory.PickupSound "nosoundforyoubitch"
+	Inventory.PickupAnnouncerEntry "invisibility"
+	States
+	{
+	  Spawn:
+		SINV ABCD 6 Bright
+		Loop
+		
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 1 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
+        TNT1 A 1 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+		TNT1 A 1 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("InvisibilitySphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("InvisibilitySphereHeretic", 0, "PickupHereticFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("InvisibilitySphereHeretic")
+        stop
+
+      PickupHereticFail:
+        SINV A 1 Bright
+        fail
+
+      PickupHexen:
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("PowerGhost")
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_SetBlend("Green",0.5,6)
+        TNT1 A 0 A_PlaySound("marathon/bigitemget")
+        TNT1 A 1 A_GiveInventory("PowerShadow")
+        TNT1 A 1 A_GiveInventory("PowerShadow")
+        stop
+		
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("QuakeInvisTimer", 1050)
+        stop
+	}
+}
+
+actor InvisibilitySphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP3"
+    Powerup.Type Ghost
+	Powerup.Duration -120
+	//Powerup.Strength 90
+}
+
+ACTOR Doomsphere : CustomInventory 5036
+{
+	Game Doom
+	SpawnID 175
+	+COUNTITEM
+	+NOGRAVITY
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$PICKUP_DOOMSPHERE"
+	Inventory.PickupSound "nosoundforyoubitch"
+	Inventory.PickupAnnouncerEntry "doomsphere"
+	States
+	{
+	  Spawn:
+		DOOM A 10 Bright
+		DOOM B 15 Bright
+		DOOM C 8 Bright
+		DOOM D 6 Bright
+		Loop
+		
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("Doomsphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("DoomsphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("DoomsphereHeretic")
+        stop
+
+      PickupFail:
+        DOOM A 1 Bright
+        fail
+	}
+}
+
+actor DoomsphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP4"
+    Powerup.Type QuadDamage
+	Powerup.Color RedMap
+}
+
+ACTOR Guardsphere : CustomInventory 5037
+{
+	Game Doom
+	SpawnID 0
+	+COUNTITEM
+	+NOGRAVITY
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$PICKUP_GUARDSPHERE"
+	Inventory.PickupSound "nosoundforyoubitch"
+	Inventory.PickupAnnouncerEntry "guardsphere"
+	States
+	{
+	  Spawn:
+		GARD ABCD 6 Bright
+		Loop
+		
+      Pickup:
+        TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
+        TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
+        TNT1 A 1 A_GiveInventory("Guardsphere")
+        stop
+
+      PickupHeretic:
+        TNT1 A 0 A_JumpIfInventory("GuardsphereHeretic", 0, "PickupFail")
+        TNT1 A 0 A_PlaySound("heretic/itemget")
+        TNT1 A 1 A_GiveInventory("GuardsphereHeretic")
+        stop
+
+      PickupFail:
+        GARD A 1 Bright
+        fail
+	}
+}
+
+actor GuardsphereHeretic : PowerupGiver
+{
+    inventory.maxamount 16
+    inventory.usesound "heretic/itemuse"
+    +inventory.undroppable
+    +inventory.hubpower
+    Inventory.Icon "ARTISTP5"
+    Powerup.Type QuarterDamage
+	Powerup.Color GreenMap
+}
