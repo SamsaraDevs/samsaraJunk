@@ -404,3 +404,22 @@ function int HandleChainsawSpawn(int respawning)
     GiveClassWeapon(classnum, 1, ammomode);
     return 1;
 }
+
+function int HandlePunchDrunk(int respawning)
+{
+    int cs = GetCVar("samsara_punchdrunk");
+    int classnum = samsaraClassNum();
+    int i;
+
+    if (cs < 0 || (cs == 1 && respawning)) { return 0; }
+
+    for (i = 0; i < SLOTCOUNT; i++)
+    {
+        TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
+        TakeInventory(ClassWeapons[classnum][i][S_AMMO1], 0x7FFFFFFF);
+        TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);
+    }
+
+    GiveClassWeapon(classnum, 0, 1);
+    return 1;
+}

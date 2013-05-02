@@ -40,9 +40,16 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_lmslife 0");
         ConsoleCommand("archivecvar samsara_lmslife"); }
         
-        if (!GetCVar("samsara_lmsunique"))
-        {   ConsoleCommand("set samsara_lmsunique 0");
-        ConsoleCommand("archivecvar samsara_lmsunique"); }
+        if (GetCVar("samsara_lmsunique"))
+        {
+            ConsoleCommand("unset samsara_lmsunique");
+
+            if (!GetCVar("samsara_uniquestart"))
+            {
+                ConsoleCommand("set samsara_uniquestart 2");
+                ConsoleCommand("archivecvar samsara_uniquestart");
+            }
+        }
         
         if (!GetCVar("samsara_lmsult"))
         {   ConsoleCommand("set samsara_lmsult 0");
@@ -80,6 +87,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_uniquestart 0");
         ConsoleCommand("archivecvar samsara_uniquestart"); }
         
+        if (!GetCVar("samsara_punchdrunk"))
+        {   ConsoleCommand("set samsara_punchdrunk 0");
+        ConsoleCommand("archivecvar samsara_punchdrunk"); }
+        
         Delay(1);
     }
 }
@@ -108,6 +119,7 @@ script SAMSARA_SPAWN (int respawning)
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
+    HandlePunchdrunk(respawning);
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
 

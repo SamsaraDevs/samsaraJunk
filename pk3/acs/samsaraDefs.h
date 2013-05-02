@@ -342,4 +342,5 @@ int ChangelogString =
 - Skulltag monsters now bleed/gib their proper colors.\n\
 - Duke passing the pipe no longer results in a clack.\n\
 - samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
-- samsara_uniquestart has been added. See the wiki for details.";
+- samsara_uniquestart has been added. See the wiki for details.\n\
+- samsara_punchdrunk has been added. If 1, takes all but your slot -1 weapon on enter. If 2, takes all but your slot -1 weapon on any spawn.";
