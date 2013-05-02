@@ -284,3 +284,53 @@ int ArmorModeNames[ARMORMODES] =
     "Normal",
     "Quake",
 };
+
+int ChangelogString = 
+" FROM 0.28 TO 0.29\n\
+========================\n\
+- Further separated Samsara character scripts from other non-Samsara chars.\n\
+- Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
+- Spectral Laser Cannon no longer flickers.\n\
+- Spectral Thunderbolt no longer uses cells.\n\
+- Spectral LAZ Device zorches properly.\n\
+- Ranger no longer keeps his quadded face when he dies.\n\
+- (ZDoom) The SO's lightamp now does BlueMap, as expected. BlueMap still broken in Zandroland.\n\
+- The Thunderbolt discharge now actually escapes the sector it's in. Apparently low-radius projectiles don't explode properly.\n\
+- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.\n\
+- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.\n\
+- Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.\n\
+- Spectre 2 and 4 are no longer immune to every non-Spectral weapon.\n\
+- When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.\n\
+- Hexen armor is now brown, and red armor is actually red again.\n\
+- You can now see what armor type you have when using hud_althud, as you would expect.\n\
+- Yellow armor is in for any people mapping for Samsara. It gives 150 AP at 40% protection, and its DoomEdNum is 28636.\n\
+- samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.\n\
+- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.\n\
+- sv_shotgunstart is now respected.\n\
+- Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).\n\
+- The Fusion Pistol overcharge now explodes again.\n\
+- The first Fusion Pistol beep is now silent, and you can now charge for one more second.\n\
+- The Quad Damage no longer plays weapons/sigil when powering down.\n\
+- The Quad Damage now makes the 'no item' sound from Quake 3 if it's used when it's recharging.\n\
+- Ranger now has invisibility to Quake's Ring of Shadows! He's much less visible when picking up a blursphere (10% visibility), and his weapons don't alert monsters.\n\
+- B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather than 6.\n\
+- Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.\n\
+- The changelog has been changed from a graphic to a textdump.\n\
+- The SO has been given generic color painflashes for easier add-on compatibility.\n\
+- The SO no longer gains one cell upon raising the TOZT again.\n\
+- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.\n\
+- The SO's Marathon 2 Alien Weapon is now undroppable.\n\
+- The Hectebus no longer gets locked in firing.\n\
+- Weapon pickup messages now take into account msg0color.\n\
+- BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.\n\
+- B.J. has had his Clip ammo doubled upon picking up Ammo 2.\n\
+- Duke's ballgag now respects his death quip.\n\
+- The SSG zombie's drop now actually exists.\n\
+- Duke's RPG has been tweaked in widescreen, thanks to Turbo.\n\
+- The TOZT no longer lifts up instantly and gains an ammo from nowhere on lift-up.\n\
+- Everyone Frozen states has been completely reworked. This should fix all of the strange ice-related bugs that keep popping up in DM.\n\
+- samsara_peoplediewhentheyarekilled has been added as an optional cvar. What does it do? Well, call it a Party Mode...\n\
+- Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.\n\
+- Thanks to BlackFish, the Firestorm now has widescreen sprites!\n\
+- samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.\n\
+- You can now see what settings the server is using!";
