@@ -171,7 +171,7 @@ ACTOR Turbosphere : CustomInventory 5030
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
-        TNT1 A 1 A_GiveInventory("Turbosphere")
+        TNT1 A 1 A_GiveInventory("PowerTurbo")
         stop
 
       PickupHeretic:
@@ -216,7 +216,7 @@ ACTOR TimeFreezeSphere : CustomInventory 5032
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
-        TNT1 A 1 A_GiveInventory("TimeFreezeSphere")
+        TNT1 A 1 A_GiveInventory("PowerTimeFreezer")
         stop
 
       PickupHeretic:
@@ -266,7 +266,7 @@ ACTOR InvisibilitySphere : CustomInventory 5035
         TNT1 A 1 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
 		TNT1 A 1 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
-        TNT1 A 1 A_GiveInventory("InvisibilitySphere")
+        TNT1 A 1 A_GiveInventory("PowerTranslucency")
         stop
 
       PickupHeretic:
@@ -331,7 +331,7 @@ ACTOR Doomsphere : CustomInventory 5036
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
-        TNT1 A 1 A_GiveInventory("Doomsphere")
+        TNT1 A 1 A_GiveInventory("PowerQuadDamage")
         stop
 
       PickupHeretic:
@@ -376,7 +376,7 @@ ACTOR Guardsphere : CustomInventory 5037
       Pickup:
         TNT1 A 1 A_JumpIfInventory("CorvusClass", 1, "PickupHeretic")
         TNT1 A 0 A_PlaySound("misc/p_pkup", CHAN_ITEM)
-        TNT1 A 1 A_GiveInventory("Guardsphere")
+        TNT1 A 1 A_GiveInventory("PowerQuarterDamage")
         stop
 
       PickupHeretic:
