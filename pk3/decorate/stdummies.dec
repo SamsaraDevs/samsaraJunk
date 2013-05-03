@@ -276,7 +276,7 @@ actor TimeFreezeSphereHeretic : PowerupGiver
 actor PowerTimeFreezerColor : Powerup
 {
 	Powerup.Color GoldMap
-	Powerup.Duration -11
+	Powerup.Duration -12
 }
 
 ACTOR InvisibilitySphere : CustomInventory 5035
@@ -398,7 +398,7 @@ actor DoomsphereHeretic : PowerupGiver
 actor PowerDoomsphereColor : Powerup
 {
 	Powerup.Color RedMap
-	Powerup.Duration -30
+	Powerup.Duration -25
 }
 
 ACTOR Guardsphere : CustomInventory 5037
@@ -450,5 +450,5 @@ actor GuardsphereHeretic : PowerupGiver
 actor PowerGuardsphereColor : Powerup
 {
 	Powerup.Color GreenMap
-	Powerup.Duration -30
+	Powerup.Duration -25
 }
