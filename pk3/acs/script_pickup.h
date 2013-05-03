@@ -99,7 +99,8 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],      a2bool  = !!StrLen(ammo2);
     int check   = ClassWeapons[pclass][slot][S_CHECKITEM],  chkbool = !!StrLen(check);
     
-    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped))
+    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped)
+        || GetCVar("samsara_punchdrunk") >= 3)
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -177,6 +178,8 @@ script SAMSARA_GIVEUNIQUE (int alt)
     
     int uniqueGet = 0;
     int pclass = samsaraClassNum();
+
+    if (GetCVar("samsara_punchdrunk") >= 3) { terminate; }
     
     while (!uniqueGet && alt >= 0)
     {
