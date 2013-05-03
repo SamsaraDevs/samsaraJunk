@@ -71,6 +71,8 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "QuakePistol", 0.25
     DamageFactor "NotQuadded", 0.25
     DamageFactor "SpectralNoQuad", 0.25
+    DamageFactor "Kamikaze", 1.0
+    DamageFactor "ZorchKamikaze", 1.0
     
     powerup.color Grey 0.1
 }

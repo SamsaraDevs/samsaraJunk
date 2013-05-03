@@ -157,6 +157,8 @@ actor PowerTomeProtection : PowerProtection
     DamageFactor "QuakePistol", 0.55
     DamageFactor "NotQuadded", 0.55
     DamageFactor "SpectralNoQuad", 0.55
+    DamageFactor "Kamikaze", 1.0
+    DamageFactor "ZorchKamikaze", 1.0
 }
 
 actor PowerTomeProtectionDM : PowerTomeProtection
