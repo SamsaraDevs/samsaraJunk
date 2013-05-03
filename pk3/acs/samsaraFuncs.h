@@ -411,7 +411,7 @@ function int HandlePunchDrunk(int respawning)
     int classnum = samsaraClassNum();
     int i;
 
-    if (cs < 0 || (cs == 1 && respawning)) { return 0; }
+    if (cs <= 0 || (cs == 1 && respawning)) { return 0; }
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
