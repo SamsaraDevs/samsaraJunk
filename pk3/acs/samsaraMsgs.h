@@ -530,7 +530,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         {
             "You got the Firestorm!",
             "Literal baptism by fire.",
-            "You wish fireball spells were this manly.",
+            "So manly, your arms spontaneously grow chainmail.",
             "Raise your hands in the air, wave 'em like you just don't care.",
             "Most unnecessarily roundabout damage method in the game.",
             "Inflammable means flammable? What a country!",
@@ -695,7 +695,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "No, you can't actually use the scope. What, you think this is Halo?",
             "You rampant, hacking bastard.",
             "Destiny doesn't cheat.",
-            "",
+            "You probably want to waste the last three bullets in the mag before entering Super Mega Carnage Room.",
             "",
             "",
         },
@@ -733,7 +733,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "",
+            "Oddly, this is familiar to you, as if it were from an old dream, but you can’t exactly remember...",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
@@ -756,7 +756,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Despite all your fancy future tech, fire's still pretty good.",
             "You are really good at killing things. I'm impressed.",
             "Hundreds of years in the future, fire is still hot.",
-            "",
+            "If you're stuck here, you better go ask your mom.",
             "",
         },
         {
