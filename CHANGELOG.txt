@@ -74,9 +74,10 @@ FROM 0.28 TO 0.29
 - Chexter's screen now flashes green when slimed or flemmed.
 - Skulltag monsters now bleed/gib their proper colors.
 - Duke passing the pipe no longer results in a clack.
-- samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
+- samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.
 - samsara_uniquestart has been added. See the wiki for details.
 - samsara_punchdrunk has been added. If 1, takes all but your slot -1 weapon on enter. If 2, takes all but your slot -1 weapon on any spawn.
+- The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!
 
 
 FROM 0.27 TO 0.28
