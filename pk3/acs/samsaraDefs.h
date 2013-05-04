@@ -347,6 +347,7 @@ int ChangelogString =
 - Unique items no longer spawn in LMS and TLMS.\n\
 - Duke passing the pipe no longer results in a clack.\n\
 - The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!\n\
+- The Wings of Wrath have had their gold tint removed, as Hexen made it permanent.\n\
 \cfPOLISH:\c-\n\
 - The changelog has been changed from a graphic to a textdump.\n\
 - Further separated Samsara character scripts from other non-Samsara chars.\n\
