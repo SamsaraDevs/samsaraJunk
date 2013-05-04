@@ -127,7 +127,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "A Super Bootspork! Find some milk!",
-            "I'm pretty sure this wasn't made for boots.",
+            "I'M A FUCKING \cgWAFFLE!",
             "I will scoop out your organs and serve them for breakfast.",
             "Drilling with the sharp and pointy ends doesn't kill. Who knew?",
             "Makes a mess out of soups.",
