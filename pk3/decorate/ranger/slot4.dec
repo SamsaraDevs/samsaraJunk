@@ -13,7 +13,7 @@ actor "Nailgun": InstantSwitchWeapon
 
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "LavaNails"
+    Weapon.AmmoType2 "Cell"
 
     Weapon.SisterWeapon "Spectral NG"
 
@@ -68,7 +68,7 @@ actor "Nailgun": InstantSwitchWeapon
         goto NailLeft
 
       LavaFire:
-		TNT1 A 0 A_JumpIfInventory("LavaNails",1,"LavaFire2")
+		TNT1 A 0 A_JumpIfInventory("Cell",1,"LavaFire2")
 		goto AltFire2
       LavaFire2:
         TNT1 A 0 A_GiveInventory("FiredLavaNails")
@@ -166,7 +166,7 @@ actor "Nailgun": InstantSwitchWeapon
         QNLG A 0 A_FireCustomMissile("QLTrail1",  0, 0, -3)
         QNLG A 0 A_FireCustomMissile("QLTrail2",  0, 0, -3)
         QNLG A 0 A_FireCustomMissile("QLTrail3",  0, 0, -3)
-		TNT1 A 0 A_TakeInventory("LavaNails",1)
+		TNT1 A 0 A_TakeInventory("Cell",2)
         QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "AltLeftCoop")
         QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "AltLeftCoop")
         QNLG A 0 A_FireCustomMissile("QuakeLavaNail", 0, 0, -3)
@@ -181,7 +181,7 @@ actor "Nailgun": InstantSwitchWeapon
         QNLG A 0 A_FireCustomMissile("QLTrail1",  0, 0, 3)
         QNLG A 0 A_FireCustomMissile("QLTrail2",  0, 0, 3)
         QNLG A 0 A_FireCustomMissile("QLTrail3",  0, 0, 3)
-		TNT1 A 0 A_TakeInventory("LavaNails",1)
+		TNT1 A 0 A_TakeInventory("Cell",2)
         QNLG A 0 A_JumpIfInventory("CoopModeOn", 1, "AltRightCoop")
         QNLG A 0 A_JumpIfInventory("SPModeOn", 1, "AltRightCoop")
         QNLG A 0 A_FireCustomMissile("QuakeLavaNail", 0, 0, 3)
@@ -262,10 +262,10 @@ actor "Nailgun": InstantSwitchWeapon
 		TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
 		goto Consider6
 	  ConsiderQRL:
-		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
+		TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQRL")
 		goto Consider5
 	  ConsiderQGL:
-		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
+		TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQGL")
 		goto Consider4
 	  ConsiderSNG:
 		TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
@@ -364,7 +364,7 @@ actor "Spectral NG": "Nailgun"
 
 
       MultiFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails", 1, 1)
+        TNT1 A 0 A_JumpIfInventory("Cell", 1, 1)
         goto Swap2
 
         TNT1 A 0 A_GiveInventory("FiredLavaNails")

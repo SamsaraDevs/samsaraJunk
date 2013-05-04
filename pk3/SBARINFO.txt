@@ -1847,24 +1847,25 @@ playerclass Ranger
     InInventory not UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	}
 
         drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-    }
+    //}
 
     InInventory UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
-
-        drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-        drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
-
-        drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-        drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     }
+        //drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+        //drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
+
+        //drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
+        //drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
+    //}
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
@@ -3372,24 +3373,24 @@ playerclass Ranger
     InInventory not UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
-
+    }
         drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-    }
+    //}
 
     InInventory UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
-
-        drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+    }
+        /*drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
         drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
         drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
-    }
+    }*/
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
