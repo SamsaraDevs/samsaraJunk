@@ -79,6 +79,8 @@ FROM 0.28 TO 0.29
 - samsara_punchdrunk has been added. If 1, takes all but your slot -1 weapon on enter. If 2, takes all but your slot -1 weapon on any spawn.
 - The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!
 - Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.
+- Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.
+- Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.
 
 
 FROM 0.27 TO 0.28
