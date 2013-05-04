@@ -88,6 +88,7 @@ POLISH:
 - Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.
 - Skulltag monsters now bleed/gib their proper colors.
 - The Security Officer's fists now properly alternate when holding both fire buttons.
+- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.
 
 
 
