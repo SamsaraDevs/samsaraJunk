@@ -68,8 +68,9 @@ actor "  Shotgun  " : Weapon
       Fire:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        DKSH A 0 A_FireCustomMissile("DukeShotgunBullet",random(-3.25,3.25),1,0,1,0,random(-2.5,2.5))
-        DKSH AAAAAA 0 A_FireCustomMissile("DukeShotgunBullet",random(-3.25,3.25),0,0,1,0,random(-2.5,2.5)) //A_FireBullets(4,2.5,7,5,"DukeBulletPuff")
+        DKSH A 0 A_FireCustomMissile("DukeShotgunBullet",random(-1,1),1,0,1,0,0)
+        DKSH AA 0 A_FireCustomMissile("DukeShotgunBullet",random(-2,2),0,0,1,0,random(-1,1))
+        DKSH AAAA 0 A_FireCustomMissile("DukeShotgunBullet",random(-3.25,3.25),0,0,1,0,random(-2.5,2.5)) //A_FireBullets(4,2.5,7,5,"DukeBulletPuff")
         DKSH A 0 A_GunFlash
         TNT1 A 0 A_AlertMonsters
         DKSH A 0 A_PlayWeaponSound("duke/mossberg")
@@ -88,8 +89,9 @@ actor "  Shotgun  " : Weapon
 
       CoopFire:
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        DKSH A 0 A_FireCustomMissile("DukeShotgunBulletCoop",random(-3.25,3.25),1,0,1,0,random(-2.5,2.5))
-        DKSH AAAAAA 0 A_FireCustomMissile("DukeShotgunBulletCoop",random(-3.25,3.25),0,0,1,0,random(-2.5,2.5)) //A_FireBullets(4,2.5,7,5,"DukeBulletPuff")
+        DKSH A 0 A_FireCustomMissile("DukeShotgunBulletCoop",random(-1,1),1,0,1,0,0)
+        DKSH AA 0 A_FireCustomMissile("DukeShotgunBulletCoop",random(-2,2),0,0,1,0,random(-1,1))
+        DKSH AAAA 0 A_FireCustomMissile("DukeShotgunBulletCoop",random(-3.25,3.25),0,0,1,0,random(-2.5,2.5)) //A_FireBullets(4,2.5,7,5,"DukeBulletPuff")
         DKSH A 0 A_GunFlash
         TNT1 A 0 A_AlertMonsters
         DKSH A 0 A_PlayWeaponSound("duke/mossberg")

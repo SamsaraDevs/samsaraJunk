@@ -325,6 +325,7 @@ int ChangelogString =
 - In DM, the Tomed Firemace has traded in the ability to home on people for the ability to bounce off walls.\n\
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
 - Chexter's screen now flashes green when slimed or flemmed.\n\
+- Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
