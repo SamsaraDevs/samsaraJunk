@@ -1,6 +1,6 @@
-actor FusionChargeLevel : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 36 }
-actor FusionChargan : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 7 }
-actor UsingFusionPistol : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor FusionChargeLevel: Boolean {}
+actor FusionChargan: Boolean {}
+actor UsingFusionPistol: Boolean {}
 
 actor "Fusion Pistol" : Weapon
 {

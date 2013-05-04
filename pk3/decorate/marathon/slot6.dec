@@ -1,4 +1,4 @@
-actor UsingToasty : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor UsingToasty: Boolean {}
 
 actor "TOZT-7 Napalm Unit" : Weapon// replaces BFG9000
 {

@@ -1,8 +1,8 @@
-actor CanDualShotties : GenericItem {}
-actor LevelLimiter : GenericItem {}
-actor InvasionDualShottyCheck : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor UsingShotguns : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor UsingDualShotguns : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor CanDualShotties: Boolean {}
+actor LevelLimiter: Boolean {}
+actor InvasionDualShottyCheck: Boolean {}
+actor UsingShotguns: Boolean {}
+actor UsingDualShotguns: Boolean {}
 
 actor "WSTE-M5 Combat Shotgun" : Weapon
 {

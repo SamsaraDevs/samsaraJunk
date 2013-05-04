@@ -1,4 +1,4 @@
-actor UsingAssaultRifle : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor UsingAssaultRifle: Boolean {}
 
 actor AssaultFired: Counter {}
 actor AssaultFiredP: Counter {}

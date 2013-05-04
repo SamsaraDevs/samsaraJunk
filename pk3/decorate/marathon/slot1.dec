@@ -1,4 +1,4 @@
-actor UsingSMG : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor UsingSMG: Boolean {}
 
 actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 {

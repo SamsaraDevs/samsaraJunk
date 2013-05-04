@@ -1,7 +1,7 @@
 actor WMCCharge: Counter { Inventory.MaxAmount 2 }
 actor ChargeLevel: Counter { Inventory.MaxAmount 7 }
 actor ChargeLevel2: Counter { Inventory.MaxAmount 7 }
-actor UsingWMC: Counter { Inventory.MaxAmount 1 }
+actor UsingWMC: Boolean {}
 actor WMCVerticalShit: Counter { Inventory.MaxAmount 7 }
 
 actor "ONI-71 Wave Motion Cannon": Weapon// replaces RocketLauncher

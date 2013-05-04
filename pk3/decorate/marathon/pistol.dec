@@ -1,6 +1,6 @@
-actor UsingPistols : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor UsingDualPistols : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor CanDualPistols : GenericItem {}
+actor UsingPistols: Boolean {}
+actor UsingDualPistols: Boolean {}
+actor CanDualPistols: Boolean {}
 
 actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 {
