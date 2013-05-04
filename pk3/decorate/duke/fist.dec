@@ -42,7 +42,7 @@ actor "Mighty Boot" : Weapon
         goto LFire2
 
       NuclearLeft:
-        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, random(4,6))
         goto LFire2
 
       LFire2:
@@ -62,7 +62,7 @@ actor "Mighty Boot" : Weapon
         goto FL2
 
       NuclearLeft2:
-        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -4)
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, random(4,6))
         goto FL2
 
       FL2:
@@ -93,7 +93,7 @@ actor "Mighty Boot" : Weapon
         goto RFire2
 
       NuclearRight:
-        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick")
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -random(4,6))
         goto RFire2
 
       RFire2:
@@ -112,7 +112,7 @@ actor "Mighty Boot" : Weapon
         goto FR2
 
       NuclearRight2:
-        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, 4)
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -random(4,6))
         goto FR2
 
       FR2:

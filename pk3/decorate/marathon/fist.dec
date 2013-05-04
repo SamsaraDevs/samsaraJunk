@@ -1,5 +1,6 @@
-actor UsingFists : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-actor DOUBLEFISTING : GenericItem {}
+actor UsingFists: Boolean {}
+actor DOUBLEFISTING: Boolean {}
+actor GibfistSide: Boolean {}
 
 actor "Steel Knuckles" : Weapon replaces Fist
 {
@@ -62,7 +63,7 @@ actor "Steel Knuckles" : Weapon replaces Fist
         loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("DOUBLEFISTING",1,"LeftFist1")
+        TNT1 A 0 A_JumpIfInventory("DOUBLEFISTING",1,"FistCheck")
         TNT1 A 0 A_JumpIf(momx >= 6,"Fire2")
         TNT1 A 0 A_JumpIf(momx <= -6,"Fire2")
         FIS2 B 3
@@ -78,7 +79,14 @@ actor "Steel Knuckles" : Weapon replaces Fist
         FIS2 A 7
         Goto Ready
 
+      FistCheck:
+        TNT1 A 0 A_JumpIfInventory("SynthFireRight", 1, 1)
+        goto LeftFist1
+        TNT1 A 0 A_JumpIfInventory("GibfistSide", 1, "RightFist1")
+        goto LeftFist1
+
       LeftFist1:
+        FIS4 A 0 A_GiveInventory("GibfistSide")
         TNT1 A 0 A_JumpIf(momx >= 6,"LeftFist2")
         TNT1 A 0 A_JumpIf(momx <= -6,"LeftFist2")
         FIS4 ABC 1
@@ -104,7 +112,14 @@ actor "Steel Knuckles" : Weapon replaces Fist
         TNT1 A 0 A_GiveInventory("DOUBLEFISTING",1)
         goto Ready2
 
+      AltFistCheck:
+        TNT1 A 0 A_JumpIfInventory("SynthFireLeft", 1, 1)
+        goto RightFist1
+        TNT1 A 0 A_JumpIfInventory("GibfistSide", 1, "RightFist1")
+        goto LeftFist1
+
       RightFist1:
+        FIS5 A 0 A_TakeInventory("GibfistSide")
         TNT1 A 0 A_JumpIf(momx >= 6,"RightFist2")
         TNT1 A 0 A_JumpIf(momx <= -6,"RightFist2")
         FIS5 ABC 1

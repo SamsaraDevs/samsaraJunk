@@ -198,7 +198,7 @@ Actor HereticFlightPickup : CustomInventory replaces ArtiFly
 ACTOR PowerFlight2 : PowerFlight
 {
 	+INVENTORY.HUBPOWER
-  Powerup.Color Gold, 0.1
+  //Powerup.Color Gold, 0.1
   Powerup.Duration -60
 }
 

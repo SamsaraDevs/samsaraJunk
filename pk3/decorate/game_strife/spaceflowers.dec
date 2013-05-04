@@ -62,7 +62,9 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     DamageFactor "NotQuadded", 0.2
 
     DamageFactor "Spectral", 1
+    DamageFactor "SpectralLow", 1
     DamageFactor "DukeSpectral", 1
+    DamageFactor "ZorchSpectral", 1
     DamageFactor "SpectralNoQuad", 1
 
     DropItem ""
@@ -315,7 +317,9 @@ actor AlienSpectre2B : AlienSpectre1B replaces AlienSpectre2
     -SPECTRAL
 
     DamageFactor "Spectral", 1
+    DamageFactor "SpectralLow", 1
     DamageFactor "DukeSpectral", 1
+    DamageFactor "ZorchSpectral", 1
     DamageFactor "SpectralNoQuad", 1
 
     States
@@ -367,7 +371,9 @@ actor AlienSpectre4B : AlienSpectre1B replaces AlienSpectre4
     -SPECTRAL
 
     DamageFactor "Spectral", 1
+    DamageFactor "SpectralLow", 1
     DamageFactor "DukeSpectral", 1
+    DamageFactor "ZorchSpectral", 1
     DamageFactor "SpectralNoQuad", 1
 
     States
@@ -450,7 +456,9 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
     DamageFactor "NotQuadded", 0.2
 
     DamageFactor "Spectral", 1
+    DamageFactor "SpectralLow", 1
     DamageFactor "DukeSpectral", 1
+    DamageFactor "ZorchSpectral", 1
     DamageFactor "SpectralNoQuad", 1
 
     States
@@ -743,7 +751,9 @@ actor EntitySecond2 : EntitySecond replaces EntitySecond
     DamageFactor "NotQuadded", 0.2
 
     DamageFactor "Spectral", 1
+    DamageFactor "SpectralLow", 1
     DamageFactor "DukeSpectral", 1
+    DamageFactor "ZorchSpectral", 1
     DamageFactor "SpectralNoQuad", 1
 }
 

@@ -1178,6 +1178,7 @@ quakeweps/laserbounce           sounds/ranger/laserric.ogg
 
 quakeweps/axe                   sounds/ranger/axe.wav
 quakeweps/axewall               sounds/ranger/axewall.wav
+quakeweps/axehit                sounds/ranger/raxehit.ogg
 quakeweps/shotgunfire           sounds/ranger/shotgun.ogg
 quakeweps/ssgfire               sounds/ranger/shotgun2.ogg
 quakeweps/nailgunfire           sounds/ranger/nailgun.ogg

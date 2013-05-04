@@ -1,4 +1,4 @@
-actor UsingSpanker : Boolean { }
+actor UsingSpanker: Boolean {}
 actor SpankerVerticalShit : Counter { Inventory.MaxAmount 7 }
 
 actor "SPNKR-XP SSM Launcher" : Weapon// replaces RocketLauncher

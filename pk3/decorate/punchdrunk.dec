@@ -7,6 +7,13 @@ actor PermaTripleDamage: PowerDamage
 
 actor PunchDrunkZerk: Boolean {}
 
+actor CorvusExtraStaffDamage: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "None", 1.5
+}
+
 actor BJExtraKnifeDamage: PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
@@ -59,7 +66,7 @@ actor CorvusPunchDrunk: Trigger
     States
     {
       Pickup:
-        TNT1 A 0 A_GiveInventory("PermaTripleDamage")
+        TNT1 A 0 A_GiveInventory("CorvusExtraStaffDamage")
         stop
     }
 }

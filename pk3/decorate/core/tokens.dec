@@ -48,6 +48,10 @@ actor OverOverMax: Counter { Inventory.MaxAmount 300 }
 actor ForceRangerGravity: Boolean {}
 actor ForceSOGravity: Boolean {}
 
+actor SynthFireActive:  Boolean {} // enables synthetic-fire system.
+actor SynthFireLeft:    Boolean {} // special refire-trackers for
+actor SynthFireRight:   Boolean {} // synthetic-fire dual-wielding.
+
 actor GotWeapon0: Boolean {}
 actor GotWeapon1: Boolean {}
 actor GotWeapon2: Boolean {}

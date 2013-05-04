@@ -519,22 +519,9 @@ ACTOR MarathonPlayer : PlayerPawn
     }
 }
 
-actor MarathonClass : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
-
-actor GenericItem : Inventory
-{
-    -INVBAR
-    +UNDROPPABLE
-    Inventory.MaxAmount 1
-    Inventory.Icon TNT1A0
-}
-
-actor SynthFireActive : GenericItem {} // enables synthetic-fire system.
-actor SynthFireLeft   : GenericItem {} // special refire-trackers for
-actor SynthFireRight  : GenericItem {} // synthetic-fire dual-wielding.
-
-actor LeftReload : GenericItem {}
-actor RightReload : GenericItem {}
+actor MarathonClass: Boolean {}
+actor LeftReload: Boolean {}
+actor RightReload: Boolean {}
 
 actor MarathonPuff : BulletPuff
 {
