@@ -11,33 +11,42 @@ actor "Mighty Boot" : Weapon
     states
     {
       Select:
-        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt1")
+        TNT1 AA 0 A_Raise
         TNT1 A 1 A_Raise
-        TNT1 A 0 A_Raise
-        TNT1 A 0 A_Raise
         loop
 
       Deselect:
+        TNT1 AA 0 A_Lower
         TNT1 A 1 A_Lower
-        TNT1 A 0 A_Lower
-        TNT1 A 0 A_Lower
         loop
 
       Ready:
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_GiveInventory("SynthFireActive",1)
-        // Left Boot
+        goto LIdle
+
+
+      // Left Boot
       LIdle:
         TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
         TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
         TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
         TNT1 A 1 A_WeaponReady(12)
-        TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
         Loop
 
       LFire:
         TNT1 A 0 A_GiveInventory("DukeKicking",1)
+        TNT1 A 0 A_JumpIfInventory("CalmYoLegsDuke", 1, "FastLeft")
         DKBT A 5 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearLeft")
+        goto LFire2
+
+      NuclearLeft:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick")
+        goto LFire2
+
+      LFire2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
         DKBT B 7 A_WeaponReady(14)
         DKBT A 3 A_WeaponReady(14)
@@ -46,22 +55,70 @@ actor "Mighty Boot" : Weapon
         DKBT A 1 A_WeaponReady(14)
         TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
         Goto LIdle
-        // Right Boot
+
+      FastLeft:
+        DKBT A 3 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearLeft2")
+        goto FL2
+
+      NuclearLeft2:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, -4)
+        goto FL2
+
+      FL2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
+        DKBT B 5 A_WeaponReady(14)
+        DKBT A 2 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT A 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
+        Goto LIdle
+
+
+      // Right Boot
       Flash:
         TNT1 A 1
 
       RIdle:
-        TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
-        TNT1 A 1
-        TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
-        Loop
+        TNT1 A 1 A_JumpIfInventory("SynthFireRight",1,"RFire")
+        loop
 
       RFire:
         TNT1 A 0 A_GiveInventory("DukeKicking",1)
         TNT1 A 0 ACS_ExecuteAlways(212,0,3)
+        TNT1 A 0 A_JumpIfInventory("CalmYoLegsDuke", 1, "FastRight")
         DKBT C 6 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearRight")
+        goto RFire2
+
+      NuclearRight:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick")
+        goto RFire2
+
+      RFire2:
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
         DKBT D 9 A_WeaponReady(14)
+        DKBT C 3 A_WeaponReady(14)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT C 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
+        Goto RIdle
+        
+      FastRight:
+        DKBT C 4 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearRight2")
+        goto FR2
+
+      NuclearRight2:
+        TNT1 A 0 A_FireCustomMissile("DukeNuclearKick", 0,0, 4)
+        goto FR2
+
+      FR2:
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
+        TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
+        DKBT D 5 A_WeaponReady(14)
         DKBT C 3 A_WeaponReady(14)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
@@ -212,6 +269,38 @@ actor DukeKickAttack : FastProjectile
         stop
     }
 }
+
+actor DukeKickAttack2: DukeKickAttack
+{
+    Damage (14)
+}
+
+actor DukeNuclearKick: DukeKickAttack
+{
+    Scale 0.30
+    Speed 15
+    +NODAMAGETHRUST
+
+    DamageType "DukeExplosive"
+
+    States
+    {
+      Spawn:
+        TNT1 A 2
+        TNT1 A 0
+        goto Death
+
+      Death:
+      Crash:
+      XDeath:
+        RPGX B 0 A_Stop
+        RPGX B 0 A_PlaySound("duke/explosion")
+        RPGX B 0 bright A_Explode(24, 80, 0)
+        RPGX BCDEFGHIJKLMNOPQRSTUV 2 BRIGHT
+        Stop
+    }
+}
+
 
 actor DukeBootserk: PowerDamage
 {

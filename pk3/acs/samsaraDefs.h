@@ -358,4 +358,8 @@ int ChangelogString =
 - samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
 - samsara_uniquestart has been added. See the wiki for details.\n\
 - samsara_punchdrunk has been added. If 1, takes all but your slot -1 weapon on enter. If 2, takes all but your slot -1 weapon on any spawn.\n\
-- The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!";
+- The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!\n\
+- Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.\n\
+- Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
+- Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.\n\
+- The Fusion Pistol can now actually bypass player invulnerability, as it should.";

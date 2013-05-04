@@ -51,15 +51,16 @@ actor PermaTimeBomb : CustomInventory
         Loop
 
       Use:
-        TNT1 A 0 A_JumpIfInventory("DiscOfRepulsionCooldown",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("DukeJetpackFuel",1,"UseFail")
         TNT1 A 0 A_PlaySound("heretic/artiuse")
         TNT1 A 0 A_FireCustomMissile("TimeBombOfTheAncients",0,0,0,-24,0,0)
-        TNT1 A 1 ACS_ExecuteAlways(207)
-        TNT1 A 0 A_GiveInventory("DiscOfRepulsionCooldown",2)
+        TNT1 A 0 A_GiveInventory("DukeFlying",1) // Please note that Corvus is neither Duke nor flying.
+        TNT1 A 0 A_GiveInventory("DukeJetpackFuel",1) // Duke is a human. Corvus is a Sidhe Elf.
+        TNT1 A 1 ACS_ExecuteAlways(214,0,1) // Sidhe Elves cannot naturally fly.
         fail
 
       UseFail:
-        TNT1 A 1 A_Print("Only one Time Bomb may be active at a time.")
+        TNT1 A 1 //A_Print("Only one Time Bomb may be active at a time.")
         fail
     }
 }
