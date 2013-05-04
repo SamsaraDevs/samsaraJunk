@@ -108,9 +108,11 @@ script SAMSARA_SPAWN (int respawning)
     int canbuddha;
     int i;
 
+    ServerEnterTimes[pln] = startTime;
+    ACS_ExecuteWithResult(SAMSARA_SYNTHFIRE, startTime);
+
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
-    ServerEnterTimes[pln] = startTime;
 
     ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, startTime,0,0);
     ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, startTime,0,0);
@@ -174,12 +176,6 @@ script SAMSARA_SPAWN (int respawning)
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
         
-        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
-        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
-        
-        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
-        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
-
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
         TakeInventory("Mace", 1);
@@ -279,6 +275,23 @@ script SAMSARA_SPAWN (int respawning)
             HudMessage(s:""; HUDMSG_PLAIN, 91029, 0, 0, 0, 0);
         }
         */
+    }
+
+}
+
+script SAMSARA_SYNTHFIRE (int startTime)
+{
+    int pln = PlayerNumber();
+
+    while (ServerEnterTimes[pln] == startTime)
+    {
+        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
+        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
+        
+        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
+        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+
+        Delay(1);
     }
 
     TakeInventory("SynthFireLeft", 0x7FFFFFFF);
