@@ -455,3 +455,28 @@ actor PowerGuardsphereColor : Powerup
 	Powerup.Color GreenMap
 	Powerup.Duration -25
 }
+
+actor PowerQuadDamage : PowerDamage
+{
+  Powerup.Duration -25
+damagefactor "normal", 4
+}
+
+actor PowerQuarterDamage : PowerProtection
+{
+  Powerup.Duration -25
+damagefactor "normal", 0.25
+}
+
+actor PowerTurbo : PowerSpeed
+{
+  Powerup.Duration -25
+Speed 1.4
+}
+
+Actor PowerTranslucency : PowerInvisibility
+{
++CANTSEEK
+  Powerup.Strength 80
+  Powerup.Mode Translucent
+}
