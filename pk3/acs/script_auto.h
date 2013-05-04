@@ -283,6 +283,7 @@ script SAMSARA_SYNTHFIRE (int startTime)
 {
     int pln = PlayerNumber();
 
+    while (ServerEnterTimes[pln] == startTime)
     {
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
