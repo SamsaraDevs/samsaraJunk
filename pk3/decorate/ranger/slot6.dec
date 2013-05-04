@@ -10,7 +10,6 @@ actor "Super Nailgun": InstantSwitchWeapon
     Weapon.AmmoGive 30
     Weapon.AmmoType "Clip"
 
-    Weapon.AmmoUse2 2
     Weapon.AmmoGive2 0
     Weapon.AmmoType2 "Cell"
 
@@ -164,17 +163,17 @@ actor "Super Nailgun": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
+        QSNL A 0 A_TakeInventory("Cell", 2)
         QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
-        TNT1 A 0 A_TakeInventory("Cell",4)
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
-        QSNL A 0 A_FireCustomMissile("QuakeSLNail",0,0)
+        QSNL A 0 A_FireCustomMissile("QuakeSLNail")
         goto AltFire0
 
       AltFireCoop:
-        QSNL A 0 A_FireCustomMissile("QuakeSLNailCoop",0,0)
+        QSNL A 0 A_FireCustomMissile("QuakeSLNailCoop", 0, 0)
         goto AltFire0
       
       AltFire0:
