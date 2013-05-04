@@ -73,6 +73,8 @@ addslotdefault 1 "Pipebombs"
 addslotdefault 1 "KKV-7 SMG Flechette"
 addslotdefault 1 "Laser Cannon"
 
+addslotdefault 1 "Timmy's Axe"
+
 addslotdefault 1 " Pistol "
 addslotdefault 1 "Elven Wand"
 addslotdefault 1 "Sapphire Wand"

@@ -161,7 +161,7 @@ actor PariasPunchSaw: Trigger
     States
     {
       Pickup:
-        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("PortFlechette")
         stop
     }
 }
@@ -245,7 +245,7 @@ actor PariasPunchUnique: Trigger
     States
     {
       Pickup:
-        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("Timmy's Axe")
         stop
     }
 }
