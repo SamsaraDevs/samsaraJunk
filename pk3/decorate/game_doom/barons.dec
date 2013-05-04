@@ -52,6 +52,8 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHell
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         BOSS H 0 A_Stop
@@ -110,14 +112,39 @@ actor BaronOfHell2 : BaronOfHell replaces BaronOfHell
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoBlocking
-        //TNT1 A 0 A_SpawnItem("BaronOfHellFrozen")
-        BOSS H 0 A_GenericFreezeDeath
-        BOSS H 70 A_UnsetSolid
-        BOSS H 0 A_IceGuyDie
-        BOSS H 1 A_IceGuyDie
+        TNT1 A 0 A_SpawnItemEx("BaronOfHellFrozen",0,0,0,0,0,0,0,32)
+        //BOSS H 0 A_GenericFreezeDeath
+        //BOSS H 70 A_UnsetSolid
+        //BOSS H 0 A_IceGuyDie
+        //BOSS H 1 A_IceGuyDie
         TNT1 A -1 A_BossDeath
         stop
     }
+}
+
+actor BaronOfHellFrozen
+{
+  Health 10
+  Radius 24
+  Height 64
+  Mass 1000
+  Monster
+  +FLOORCLIP
+  +NEVERRESPAWN
+  +NOTELEPORT
+  +NOTARGET
+  States
+  {
+  Spawn:
+    BOSS H 1
+	BOSS H 0 A_GenericFreezeDeath
+    BOSS H 70 A_UnsetSolid
+  Death:
+    BOSS H 0 A_IceGuyDie
+    BOSS H 1 A_IceGuyDie
+	TNT1 A -1
+    stop
+}
 }
 
 actor BaronBall3 : BaronBall
@@ -178,6 +205,8 @@ actor Hellknight2 : Hellknight replaces Hellknight
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         BOS2 H 0 A_Stop

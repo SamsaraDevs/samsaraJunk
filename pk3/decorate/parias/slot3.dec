@@ -139,3 +139,60 @@ actor BlankPuff4 : BlankPuff
 {
     //DamageType "TimonsAxe"
 }
+
+actor "Timmy's Axe": Weapon   // Best weapon name ever
+{
+    Weapon.AmmoType1 ""
+    Weapon.AmmoUse1 0
+    Weapon.AmmoGive1 0
+
+    Weapon.SelectionOrder 1500
+    Weapon.SlotNumber 1
+
+    DamageType "TimonsAxe"
+
+    Inventory.PickupMessage "You got... Timmy's Axe?"
+    Inventory.PickupSound "hexen/weaponget"
+    Obituary "%k \clexecuted\c- %o \clunder Timmy's consent.\c-"
+
+    +CHEATNOTWEAPON
+    +PIERCEARMOR
+    +MELEEWEAPON
+    +UNDROPPABLE
+    +NOALERT
+
+    States
+    {
+      Spawn:
+        WFAX A -1
+        Stop
+
+      Select:
+        FAXE A 1 A_Raise
+        loop
+
+      Deselect:
+        FAXE A 1 A_Lower
+        loop
+
+      Ready:
+        FAXE A 1 A_WeaponReady
+        loop
+
+      Fire:
+        FAXE B 4 Offset (15, 32)
+        FAXE C 3 Offset (15, 32)
+        FAXE D 2 Offset (15, 32)
+        FAXE D 1 Offset (-5, 70) A_CustomPunch(random(70,92),1,1,"AxePuff2",144)
+        FAXE D 2 Offset (-25, 90)
+        FAXE E 1 Offset (15, 32)
+        FAXE E 2 Offset (10, 54)
+        FAXE E 7 Offset (10, 150)
+        FAXE A 1 Offset (0, 60) A_ReFire
+        FAXE A 1 Offset (0, 52)
+        FAXE A 1 Offset (0, 44)
+        FAXE A 1 Offset (0, 36)
+        FAXE A 1
+        Goto Ready
+    }
+}

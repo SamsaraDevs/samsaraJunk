@@ -1,0 +1,282 @@
+actor PermaTripleDamage: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "None", 3
+}
+
+actor PunchDrunkZerk: Boolean {}
+
+actor BJExtraKnifeDamage: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "None", 1.5
+}
+
+actor BJUberKnife: Boolean {}
+actor PopcornStab: Boolean {}
+
+actor DukeExtraFootDamage: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "None", 1.5
+}
+
+actor RangerExtraAxeDamage: PowerDamage
+{
+    Powerup.Duration 0x7FFFFFFF
+
+    DamageFactor "None", 1.5
+}
+
+actor DoomguyPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PermaTripleDamage")
+        stop
+    }
+}
+
+actor ChexguyPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PermaTripleDamage")
+        stop
+    }
+}
+
+actor CorvusPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PermaTripleDamage")
+        stop
+    }
+}
+
+actor BlazkoPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("BJSuperKnife")
+        TNT1 A 0 A_GiveInventory("BJExtraKnifeDamage")
+        stop
+    }
+}
+
+actor PariasPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor DukePunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("DukeExtraFootDamage")
+        stop
+    }
+}
+
+actor ManathorPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor RangerPunchDrunk: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("RangerExtraAxeDamage")
+        stop
+    }
+}
+
+
+
+
+actor DoomguyPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory(" Chainsaw ")
+        stop
+    }
+}
+
+actor ChexguyPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("Super Bootspork")
+        stop
+    }
+}
+
+actor CorvusPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("Gauntlets of the Necromancer")
+        stop
+    }
+}
+
+actor BlazkoPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("BJUberKnife")
+        stop
+    }
+}
+
+actor PariasPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PortFlechette")
+        stop
+    }
+}
+
+actor DukePunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ManathorPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor RangerPunchSaw: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+
+
+
+actor DoomguyPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PowerStrength")
+        TNT1 A 0 A_GiveInventory("PunchDrunkZerk")
+        stop
+    }
+}
+
+actor ChexguyPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("ChexSoulsphere")
+        stop
+    }
+}
+
+actor CorvusPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("ArtiEgg3")
+        stop
+    }
+}
+
+actor BlazkoPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("PopcornStab")
+        stop
+    }
+}
+
+actor PariasPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_GiveInventory("Timmy's Axe")
+        stop
+    }
+}
+
+actor DukePunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor ManathorPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor RangerPunchUnique: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0
+        stop
+    }
+}
+

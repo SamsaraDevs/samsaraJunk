@@ -28,6 +28,7 @@ int SamsaraClientWepFlashes[SLOTCOUNT] = {0};
 int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
+int ArmorMode = -1;
 int ClientTipboxModifier, ClientTipClassModifier;
 
 
@@ -83,7 +84,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         }
         else
         {
-            if (GetCVar("lastmanstanding") || GetCVar("teamlms")) // teamlms doesn't map to lastmanstanding+teamplay, wtf?
+            if (isLMS())
             {
                 GiveInventory("QuadDamageItem", 1);
                 break;
@@ -91,7 +92,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
             GiveQuad(arg1);
 
-            if (GameType() == GAME_SINGLE_PLAYER || GameType() == GAME_NET_COOPERATIVE)
+            if (isCoop())
             {
                 GiveInventory("QuadDamageItem", 1);
             }
@@ -125,9 +126,185 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         TakeInventory("QuakeExplosionCounter", arg1);
         result = CheckInventory("QuakeExplosionCounter");
         break;
+
+      case 15:
+        SetActorProperty(0, APROP_Speed, percFloat(arg1, arg2));
+        break;
+        
+      case 16:
+        if (GameType () != GAME_SINGLE_PLAYER)
+        {
+            SetHudSize(400, 300, 0);
+            Hudmessage(s:"Press any button to respawn.";
+            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
+            delay(15);
+
+            if (!CheckInventory("DukeBallgag"))
+            {
+                LocalAmbientSound("duke/mpdeath",127);
+                GiveInventory("DukeTauntCooldown",5);
+                ACS_ExecuteAlways(205,0,0);
+            }
+        }
+        break;
+
+      case 17:
+        result = GetCVar("sv_weaponstay");
+        break;
+
+      case 18:
+        if (ArmorMode < 0)
+        {
+            ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+        }
+
+        SetActorState(0, ArmorModeStates[ArmorMode][Timer() != 0]);
+        break;
+
+      case 19:
+        result = isLMS();
+        break;
     }
     
     SetResultValue(result);
+}
+
+script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is the shit for different text messages.
+{
+    SetFont("SMALLFONT");
+    switch (which)
+    {
+      case 1:
+        Print(s:"You cannot use this unless injured.");
+        break;
+        
+      case 2:
+        Print(s:"");
+        break;
+        
+      case 3:
+        SetHudSize(400, 300, 0);
+        Hudmessage(s:"MIGHTY FOOT ENGAGED";
+        HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
+        break;
+
+      case 4:
+        while (1)
+        {
+            if (defaultCVar("samsara_cl_noadditivepickups", 0))
+            {
+                SetActorProperty(0, APROP_RenderStyle, STYLE_Normal);
+                SetActorProperty(0, APROP_Alpha, itof(a1)/100);
+            }
+            else
+            {
+                SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
+                SetActorProperty(0, APROP_Alpha, itof(a2)/100);
+            }
+
+            Delay(35);
+        }
+        break;
+        
+      case 5:
+        Print(s:"You do not have enough fuel!");
+        break;
+        
+      case 6:
+        Print(s:"You do not have enough power!");
+        break;
+        
+      case 7:
+        Print(s:"You are already flying!");
+        break;
+    }
+}
+
+script SAMSARA_GETSETTINGS (void) net
+{
+    int lmsLevel = middle(0, GetCVar("samsara_lmslife"), LMSMODES-1);
+    int lmsHP, lmsArmor;
+    int lmsUlt, lmsUnique;
+    int ultStay, highLow;
+
+    if (lmsLevel) { lmsHP    = 100*lmsLevel; lmsArmor = 100*lmsLevel; }
+    else { lmsHP = 100; lmsArmor = 0; }
+
+    if (GetCVar("samsara_lmsunique")) { lmsUnique = "\cdwith"; }
+    else { lmsUnique = "\cgwithout"; }
+
+    if (GetCVar("samsara_lmsult")) { lmsUlt = "\cdwith"; }
+    else { lmsUlt = "\cgwithout"; }
+
+    if (GetCVar("samsara_permault")) { ultStay = "\cdstay"; }
+    else { ultStay = "\cado not stay"; }
+
+    if (GetCVar("samsara_jumpmod") < 0) { highLow = "\calower"; }
+    else { highLow = "\cfhigher"; }
+
+    SetHudSize(640, 480, 1);
+
+    if (isLMS())
+    {
+        HudMessage(s:"Spawning with \ca", d:lmsHP, s:" health\c- and \cd", d:lmsArmor, s:" armor\c-";
+            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
+        
+        HudMessage(s:"You spawn ", s:lmsUnique, s:"\c- your unique and ", s:lmsUlt, s:"\c- your slot 7";
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 104.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Slot 7 pickups ", s:ultStay, s:"\c- on pickup";
+            HUDMSG_FADEOUT, 6761, CR_WHITE, 50.1, 80.0, 3.0, 1.0);
+
+        HudMessage(s:"Armor mode is \cf", s:ArmorModeNames[ArmorMode];
+            HUDMSG_FADEOUT, 6762, CR_WHITE, 50.1, 96.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_jumpmod"))
+    {
+        HudMessage(s:"You jump \cn", d:abs(GetCVar("samsara_jumpmod")), s:"\c- units ", s:highLow, s:"\c- than normal";
+                HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Jumping is \cbnormal";
+                HUDMSG_FADEOUT, 6763, CR_WHITE, 50.1, 112.0, 3.0, 1.0);
+    }
+
+
+    if (GetCVar("samsara_banjetpack"))
+    {
+        HudMessage(s:"Duke's jetpack is \cgBANNED.";
+                HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Duke's jetpack is \cdALLOWED.";
+                HUDMSG_FADEOUT, 6764, CR_WHITE, 50.1, 128.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_banwolfmove"))
+    {
+        HudMessage(s:"Wolfenstein movement is \cgBANNED.";
+                HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Wolfenstein movement is \cdALLOWED.";
+                HUDMSG_FADEOUT, 6765, CR_WHITE, 50.1, 144.0, 3.0, 1.0);
+    }
+
+    if (GetCVar("samsara_nocustomgravity"))
+    {
+        HudMessage(s:"Custom gravities are \cadisabled.";
+                HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
+    }
+    else
+    {
+        HudMessage(s:"Custom gravities are \cdenabled.";
+                HUDMSG_FADEOUT, 6766, CR_WHITE, 50.1, 160.0, 3.0, 1.0);
+    }
 }
 
 /*
@@ -136,7 +313,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
  *
  */
 
-int keys[3][26] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+int keys[3][26] = {{0},
     {"RedCard", "YellowCard", "BlueCard", "RedSkull", "YellowSkull", "BlueSkull", "KeyBlue", "KeyGreen", "KeyYellow", "ChexRedCard", "ChexYellowCard", "ChexBlueCard", "RedFlemKey", "YellowFlemKey", "BlueFlemKey", "KeyAxe", "KeyCastle", "KeyCave", "KeyDungeon", "KeyEmerald", "KeyFire", "KeyHorn", "KeyRusted", "KeySilver", "KeySteel", "KeySwamp"},
 {"\cgRed Keycard", "\ckYellow Keycard", "\chBlue Keycard", "\cgRed Skull", "\ckYellow Skull", "\chBlue Skull", "\chBlue Prism Key", "\cqGreen Prism Key", "\ckYellow Prism Key", "\cgRed Card", "\ckYellow Card", "\chBlue Card", "\cgRed Flem Key", "\ckYellow Flem Key", "\chBlue Flem Key", "\cuAxe Key", "\cfCastle Key", "\csCave Key", "\cuDungeon Key", "\cdEmerald Key", "\cgFire Key", "\ceHorn Key", "\cbRusted Key", "\cuSilver Key", "\cmSteel Key", "\cpSwamp Key"}};
 //0, 1, 2: Doom R/Y/B Keycard. - \cg, \ck, \ch
@@ -181,7 +358,7 @@ script 901 ENTER
 {
     if (!(IsSinglePlayer() || IsCoop())) { terminate; }
 
-    while (PlayerInGame(PlayerNumber()))
+    while (1)
     {
         for (int a = 0; a < 26; a++)
         {
@@ -286,52 +463,6 @@ script 203 unloading
     UnloadingNow = 1;
 
     for (i = 0; i < UNLOADCOUNT; i++) { TakeInventory(UnloadRemove[i], 0x7FFFFFFF); }
-}
-
-script 212 (int textshit) // This is the shit for different text messages.
-{
-    SetFont("SMALLFONT");
-    switch(textshit)
-    {
-      case 1:
-        Print(s:"You cannot use this unless injured.");
-        break;
-        
-      case 2:
-        Print(s:"                  ");
-        break;
-        
-      case 3:
-        SetHudSize(400, 300, 0);
-        Hudmessage(s:"MIGHTY BOOT ENGAGED";
-        HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.0);
-        break;
-        
-      case 4:
-        if (GameType () != GAME_SINGLE_PLAYER)
-        {
-            SetHudSize(400, 300, 0);
-            Hudmessage(s:"Press any button to respawn.";
-            HUDMSG_PLAIN,1,CR_LIGHTBLUE,200.4,9.1,1.75);
-            delay(15);
-            LocalAmbientSound("duke/mpdeath",127);
-            GiveInventory("DukeTauntCooldown",5);
-            ACS_ExecuteAlways(205,0,0);
-        }
-        break;
-        
-      case 5:
-        Print(s:"You do not have enough fuel!");
-        break;
-        
-      case 6:
-        Print(s:"You do not have enough power!");
-        break;
-        
-      case 7:
-        Print(s:"You are already flying!");
-        break;
-    }
 }
 
 /////////////////

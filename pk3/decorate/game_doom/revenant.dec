@@ -54,6 +54,8 @@ actor Revenant2 : Revenant replaces Revenant
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         SKEL L 0 A_Stop

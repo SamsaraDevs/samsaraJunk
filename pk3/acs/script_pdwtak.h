@@ -1,13 +1,20 @@
 script SAMSARA_PDWTAK death
 {
     int bombtimer, yourTID;
+    int pdwtak = GetCVar("samsara_peoplediewhentheyarekilled");
     int myTID = defaultTID(-1);
     int classNum = samsaraClassNum();
-    int x,y,z;
+    int x,y,z,z2;
     int rVel, rAng, rPit, rTID;
-    int i,j,k;
+    int i,j,k,l;
 
-    if (!GetCVar("samsara_peoplediewhentheyarekilled")) { terminate; }
+    if (!pdwtak) { terminate; }
+    pdwtak = middle(1, pdwtak, PDWTAKCOUNT)-1;
+
+    x  = GetActorX(myTID);
+    y  = GetActorY(myTID);
+    z  = GetActorZ(myTID) + 32.0;
+    z2 = GetActorZ(myTID);
 
     SetActivatorToTarget(0);
 
@@ -25,39 +32,15 @@ script SAMSARA_PDWTAK death
         }
         else
         {
-            Delay(4);
+            bombtimer = 24;
+        }
 
-            if (yourTID == 0)
-            {
-                yourTID = unusedTID(15000, 16999);
-                Thing_ChangeTID(0, yourTID);
-            }
-
-            x = ftoi(GetActorX(yourTID) - GetActorX(myTID));
-            y = ftoi(GetActorY(yourTID) - GetActorY(myTID));
-            z = ftoi(GetActorZ(yourTID) - GetActorZ(myTID));
-
-            bombtimer = itof(magnitudeThree(x, y, z));
-
-            if (bombtimer < 128.0)
-            {
-                bombtimer = 98;
-            }
-            else if (bombtimer > 1024.0)
-            {
-                bombtimer = 0;
-            }
-            else
-            {
-                bombtimer = ftoi(98 * FixedDiv(1.0, bombtimer/128));
-            }
+        if (yourTID == 0)
+        {
+            yourTID = unusedTID(15000, 16999);
+            Thing_ChangeTID(0, yourTID);
         }
     }
-
-    SetActivator(myTID);
-    x = GetActorX(0);
-    y = GetActorY(0);
-    z = GetActorZ(0) + 32.0;
 
     for (bombtimer += 0; bombtimer > 0; bombtimer--)
     {
@@ -116,8 +99,8 @@ script SAMSARA_PDWTAK death
     j = GetActorY(yourTID);
     k = GetActorZ(yourTID);
 
-    SetActorPosition(yourTID, x,y,z, 0);
-    GiveActorInventory(yourTID, "InvPeopleDie", 1);
+    SetActorPosition(yourTID, x,y,z2, 0);
+    GiveActorInventory(yourTID, PDWTAKItems[pdwtak][classNum == CLASS_CHEX], 1);
     SetActorPosition(yourTID, i,j,k, 0);
 
 

@@ -23,7 +23,7 @@ actor WolfLifeProtection : PowerProtection
     damagefactor "Pistol", 0.25
     DamageFactor "DoomFist", 0.25
     damagefactor "ZorchPistol", 0.25
-    damagefactor "TimonsAxe", 0.25
+    damagefactor "Wraithverge", 0.25
     damagefactor "zorch", 0.25
     damagefactor "fire", 0.25
     damagefactor "ice", 0.25
@@ -72,6 +72,8 @@ actor WolfLifeProtection : PowerProtection
     DamageFactor "QuakePistol", 0.25
     DamageFactor "NotQuadded", 0.25
     DamageFactor "SpectralNoQuad", 0.25
+    DamageFactor "Kamikaze", 1.0
+    DamageFactor "ZorchKamikaze", 1.0
     
     powerup.color Grey 0.1
 }

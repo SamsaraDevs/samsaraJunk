@@ -13,12 +13,12 @@ actor DoomguyPlayer : PlayerPawn
     Player.Soundclass "Doomguy"
     Player.JumpZ 9//Default is 8
     DamageFactor "PoisonCloud", 1.75
-    DamageFactor "TimonsAxe", 0.75
+    //DamageFactor "Wraithverge", 0.75
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
     DamageFactor "Mace", 1.1
     DamageFactor "DragonClaw", 1.1
-    +NOSKIN
+    +NOSKIN         // you are only bones
     -DONTBLAST
     -THRUSPECIES
     Species "Player"
@@ -77,6 +77,8 @@ actor DoomguyPlayer : PlayerPawn
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         DGUY G 0 A_Stop
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -138,9 +140,16 @@ actor DoomguyPlayer : PlayerPawn
       Death.HexenIce:
 
       Death.Ice:
-        DGUY G 5 A_GenericFreezeDeath
-        DGUY G 1 A_FreezeDeathChunks
-        Wait
+	TNT1 A 0 A_PlayWeaponSound("misc/freeze")
+        DGUY Z 70 A_NoBlocking//A_GenericFreezeDeath
+        DGUY Z 0 A_SetTranslucent(0,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
+        DGUY Z 1 A_PlayWeaponSound("misc/icebreak")//A_FreezeDeathChunks
+        DGUY Z -1
+        stop
+        //DGUY G 5 A_GenericFreezeDeath
+        //DGUY G 1 A_FreezeDeathChunks
+        //Wait
     }
 }
 

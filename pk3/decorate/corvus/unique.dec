@@ -25,6 +25,33 @@ actor ArtiEgg2 : ArtiEgg
     }
 }
 
+actor ArtiEgg3: ArtiEgg
+{
+    //tag "Morph Ovum"
+    +INVENTORY.UNDROPPABLE
+    Inventory.MaxAmount 16
+    inventory.usesound "heretic/itemuse"
+    States
+    {
+      Use:
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopUse")
+        TNT1 A 0 A_FireCustomMissile("EggFX4", -15, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX4", -7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX4", 0, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX4", 7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX4", 15, 0, 0, 0, 1)
+        stop
+
+      CoopUse:
+        TNT1 A 0 A_FireCustomMissile("EggFX2", -15, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", -7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 0, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 7.5, 0, 0, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("EggFX2", 15, 0, 0, 0, 1)
+        stop
+    }
+}
+
 actor EggFX2 : MorphProjectile // Yeah, no more griefing co-op allies.
 {
     Radius 8
@@ -69,6 +96,11 @@ actor EggFX3 : MorphProjectile // This, however, still works funderfully in DM.
     }
 }
 
+actor EggFX4: EggFX2
+{
+    MorphProjectile.PlayerClass "ChickenPlayer3"
+}
+
 actor Chicken2 : Chicken replaces Chicken
 {
     States
@@ -80,6 +112,8 @@ actor Chicken2 : Chicken replaces Chicken
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         CHKN D 0 A_Stop
@@ -121,4 +155,67 @@ actor Chicken2 : Chicken replaces Chicken
         ACLO E -1
         stop
     }
+}
+
+actor ChickenPlayer2 : ChickenPlayer
+{
+    Health 100 // Previously 30
+    ReactionTime 0
+    PainChance 255
+    Radius 8
+    Height 12
+    Speed 1
+    Gravity 0.125
+    +NOSKIN
+    PainSound "chicken/pain"
+    DeathSound "chicken/death"
+    Player.JumpZ 1
+    Player.Viewheight 21
+    Player.ForwardMove 0.85, 0.9//1.22, 1.22
+    Player.SideMove 0.85, 0.9//1.22, 1.22
+    Player.SoundClass "Chicken"
+    Player.DisplayName "Chicken"
+    Player.MorphWeapon "Beak"
+    -PICKUP
+    States
+    {
+      Spawn:
+        CHKN A -1
+        Stop
+
+      See:
+        CHKN ABAB 3
+        Loop
+
+      Melee:
+      Missile:
+        CHKN C 12
+        Goto Spawn
+
+      Pain:
+        CHKN D 4 A_Feathers
+        CHKN C 4 A_Pain
+        Goto Spawn
+
+      Death:
+        CHKN E 6 A_Scream
+        CHKN F 6 A_Feathers
+        CHKN G 6
+        CHKN H 6 A_NoBlocking
+        CHKN IJK 6
+        CHKN L -1
+        Stop
+
+      Death.WolfenFlamethrower:
+        CHKN E 0 A_Scream
+        CHKN EEEEEEE 0 A_Feathers
+        CHKN E 0 A_SpawnItem("WolfensteinChickenLeg")
+        ACLO E -1
+        stop
+    }
+}
+
+actor ChickenPlayer3: ChickenPlayer2
+{
+    Speed 0.75
 }

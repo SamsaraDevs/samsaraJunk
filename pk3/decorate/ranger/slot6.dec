@@ -12,7 +12,7 @@ actor "Super Nailgun": InstantSwitchWeapon
 
     Weapon.AmmoUse2 2
     Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "LavaNails"
+    Weapon.AmmoType2 "Cell"
 
     Weapon.SIsterWeapon "Spectral SNG"
 
@@ -57,6 +57,8 @@ actor "Super Nailgun": InstantSwitchWeapon
         QSNG A 0 A_TakeInventory("FiredSLNails")
         QSNG A 0 A_TakeInventory("UsingDoEAmmo")
         QSNG A 0 A_GunFlash
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
         QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_FireCustomMissile("QNTrail1",  0, 0, 0)
         QSNG A 0 A_FireCustomMissile("QNTrail2",  0, 0, 0)
@@ -154,17 +156,19 @@ actor "Super Nailgun": InstantSwitchWeapon
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails",1,"LavaAltFire2")
+        TNT1 A 0 A_JumpIfInventory("Cell",1,"LavaAltFire2")
         goto Swap2
       LavaAltFire2:
         QSNL A 0 A_GiveInventory("FiredSLNails")
         GSNL A 0 A_GiveInventory("UsingDoEAmmo")
         QSNL A 0 A_GunFlash
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
-        TNT1 A 0 A_TakeInventory("LavaNails",2)
+        TNT1 A 0 A_TakeInventory("Cell",4)
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
         QSNL A 0 A_FireCustomMissile("QuakeSLNail",0,0)
@@ -266,10 +270,10 @@ actor "Super Nailgun": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
         goto Consider6
       ConsiderQRL:
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQRL")
         goto Consider5
       ConsiderQGL:
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
+        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQGL")
         goto Consider4
       ConsiderSNG:
         TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
@@ -346,6 +350,8 @@ actor "Spectral SNG": "Super Nailgun"
         QSNG A 0 A_TakeInventory("UsingDoEAmmo")
         QSNG A 0 A_GunFlash
 
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
         QSNG A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_PlaySound("weapons/sigil", 6)
 
@@ -359,7 +365,7 @@ actor "Spectral SNG": "Super Nailgun"
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails", 1, 1)
+        TNT1 A 0 A_JumpIfInventory("Cell", 1, 1)
         goto Swap2
 
         TNT1 A 0 A_AlertMonsters
@@ -367,6 +373,8 @@ actor "Spectral SNG": "Super Nailgun"
         GSNL A 0 A_GiveInventory("UsingDoEAmmo")
         QSNL A 0 A_GunFlash
 
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
         QSNG A 0 A_PlaySound("weapons/sigil", 6)
 
@@ -374,7 +382,7 @@ actor "Spectral SNG": "Super Nailgun"
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
 
-        TNT1 A 0 A_TakeInventory("LavaNails",2)
+        TNT1 A 0 A_TakeInventory("Cell",4)
 
         QSNG A 0 ACS_ExecuteAlways(317, 0, 8)
         QSNL A 0 A_FireCustomMissile("SpectralSLNail",0,0)
@@ -387,6 +395,8 @@ actor QuakeSuperNail: QuakeNail
 {
     Damage (18)
     Obituary "%k \cspenetrated\c- %o\cs."
+
+    DeathSound "quakeweps/supernailricochet"
 }
 
 actor QuakeSuperNailCoop: QuakeSuperNail
@@ -401,6 +411,7 @@ actor QuakeSLNail: QuakeLavaNail
     Damage (27)
     DamageType Fire
     Obituary "%k\cs's penetrated\c- %o\cs and made %h a flamer."  // this sounds so bad but whatever
+    DeathSound "quakeweps/supernailricochet"
 }
 
 actor QuakeSLNailCoop: QuakeSLNail

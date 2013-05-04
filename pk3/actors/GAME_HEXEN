@@ -176,7 +176,8 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     States
     {
       Spawn:
-        RMR3 A 1 BRIGHT A_SpawnItemEx("ArmorHexenTrail", 0, 0, 2.5, 0, 0, 0, 0, 128)
+        RMR4 A 0
+        RMR4 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
         loop
     }
 }
@@ -194,7 +195,7 @@ actor ArmorHexenTrail
     States
     {
       Spawn:
-        RMR3 A 1 A_FadeOut(0.05)
+        RMR4 A 1 A_FadeOut(0.05)
         Loop
     }
 }
@@ -407,11 +408,12 @@ Actor PowerQuackQuarterDamage : PowerDamage
   DamageFactor "Pistol", 1.25
   DamageFactor "DoomFist", 1.25
   DamageFactor "ZorchPistol", 1.25
-  DamageFactor "TimonsAxe", 1.25
+  DamageFactor "Wraithverge", 1.25
   DamageFactor "Mace", 1.25
   DamageFactor "DragonClaw", 1.25
   DamageFactor "Normal", 1.25
   DamageFactor "Zorch", 1.25
+  DamageFactor "PhasingZorch", 1.25
   DamageFactor "BFG", 1.25
   DamageFactor "BFGSpray", 1.25
   DamageFactor "Fire", 1.25
@@ -783,6 +785,7 @@ actor Pig2 : Pig replaces Pig // Even without the Porkalator, enemies can still 
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -828,11 +831,12 @@ actor FireDemon2 : FireDemon replaces FireDemon
     DamageFactor "Pistol", 2
     DamageFactor "DoomFist", 2
     DamageFactor "ZorchPistol", 2
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -870,6 +874,7 @@ actor FireDemon2 : FireDemon replaces FireDemon
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoGravity
@@ -982,11 +987,12 @@ actor Ettin2 : Ettin replaces Ettin
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1024,6 +1030,7 @@ actor Ettin2 : Ettin replaces Ettin
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1130,6 +1137,7 @@ actor EttinMash2 : Ettin2 replaces EttinMash
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         Stop
     }
@@ -1145,11 +1153,12 @@ actor Centaur2 : Centaur replaces Centaur
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1187,6 +1196,7 @@ actor Centaur2 : Centaur replaces Centaur
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1282,11 +1292,12 @@ actor CentaurLeader2 : CentaurLeader replaces CentaurLeader
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1324,6 +1335,7 @@ actor CentaurLeader2 : CentaurLeader replaces CentaurLeader
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1438,6 +1450,7 @@ actor CentaurMash2 : Centaur2 replaces CentaurMash
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         Stop
     }
@@ -1453,11 +1466,12 @@ actor Demon1B : Demon1 replaces Demon1
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1495,6 +1509,7 @@ actor Demon1B : Demon1 replaces Demon1
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1603,6 +1618,7 @@ actor Demon1Mash2 : Demon1B replaces Demon1Mash
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         Stop
     }
@@ -1626,11 +1642,12 @@ actor Demon2B : Demon2 replaces Demon2
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1668,6 +1685,7 @@ actor Demon2B : Demon2 replaces Demon2
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1776,6 +1794,7 @@ actor Demon2Mash2 : Demon2B replaces Demon2Mash
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         Stop
     }
@@ -1791,11 +1810,12 @@ actor IceGuy2 : IceGuy replaces IceGuy
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1832,6 +1852,7 @@ actor IceGuy2 : IceGuy replaces IceGuy
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -1893,11 +1914,12 @@ actor Serpent2 : Serpent replaces Serpent
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -1939,6 +1961,7 @@ actor Serpent2 : Serpent replaces Serpent
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -2022,11 +2045,12 @@ actor SerpentLeader2 : SerpentLeader replaces SerpentLeader
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -2068,6 +2092,7 @@ actor SerpentLeader2 : SerpentLeader replaces SerpentLeader
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -2157,11 +2182,12 @@ actor Bishop2 : Bishop replaces Bishop
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -2201,6 +2227,7 @@ actor Bishop2 : Bishop replaces Bishop
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_Stop
@@ -2290,11 +2317,12 @@ actor Wraith2 : Wraith replaces Wraith
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -2328,6 +2356,7 @@ actor Wraith2 : Wraith replaces Wraith
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_Stop
@@ -2414,11 +2443,12 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
     DamageFactor "Pistol", 3
     DamageFactor "DoomFist", 3
     DamageFactor "ZorchPistol", 3
-    DamageFactor "TimonsAxe", 1.2
+    DamageFactor "Wraithverge", 1.2
     DamageFactor "Normal", 1.15
     DamageFactor "DragonClaw", 1.45
     DamageFactor "Mace", 1.15
     DamageFactor "Zorch", 1.15
+    DamageFactor "PhasingZorch", 1.15
     DamageFactor "BFG", 1.15
     DamageFactor "BFGSpray", 1.15
     DamageFactor "Fire", 1.15
@@ -2469,6 +2499,7 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_Stop
@@ -2586,11 +2617,12 @@ actor Dragon2 : Dragon replaces Dragon
     DamageFactor "Pistol", 1.75
     DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
-    DamageFactor "TimonsAxe", 1.5
+    DamageFactor "Wraithverge", 1.5
     DamageFactor "Normal", 0.9
     DamageFactor "DragonClaw", 1.2
     DamageFactor "Mace", 0.9
     DamageFactor "Zorch", 0.9
+    DamageFactor "PhasingZorch", 0.9
     DamageFactor "BFG", 0.5
     DamageFactor "BFGSpray", 0.5
     DamageFactor "Fire", 0.9
@@ -2619,6 +2651,7 @@ actor Dragon2 : Dragon replaces Dragon
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
         TNT1 A 0 A_Stop
@@ -2696,11 +2729,12 @@ actor Heresiarch2 : Heresiarch replaces Heresiarch
     DamageFactor "Pistol", 1.75
     DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
-    DamageFactor "TimonsAxe", 1.1
+    DamageFactor "Wraithverge", 1.1
     DamageFactor "Normal", 1.1
     DamageFactor "DragonClaw", 1.4
     DamageFactor "Mace", 1.1
     DamageFactor "Zorch", 1.1
+    DamageFactor "PhasingZorch", 1.1
     DamageFactor "BFG", 0.5
     DamageFactor "BFGSpray", 0.5
     DamageFactor "Fire", 1.1
@@ -2752,6 +2786,7 @@ actor Heresiarch2 : Heresiarch replaces Heresiarch
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -2814,11 +2849,12 @@ actor FighterBoss2 : FighterBoss replaces FighterBoss
     DamageFactor "Pistol", 1.75
     DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
-    DamageFactor "TimonsAxe", 1.1
+    DamageFactor "Wraithverge", 1.1
     DamageFactor "Normal", 0.9
     DamageFactor "DragonClaw", 1.2
     DamageFactor "Mace", 0.9
     DamageFactor "Zorch", 0.9
+    DamageFactor "PhasingZorch", 0.9
     DamageFactor "BFG", 0.5
     DamageFactor "BFGSpray", 0.5
     DamageFactor "Fire", 0.9
@@ -2874,6 +2910,7 @@ actor FighterBoss2 : FighterBoss replaces FighterBoss
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -2943,11 +2980,12 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
     DamageFactor "Pistol", 1.75
     DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
-    DamageFactor "TimonsAxe", 1.1
+    DamageFactor "Wraithverge", 1.1
     DamageFactor "Normal", 0.9
     DamageFactor "DragonClaw", 1.2
     DamageFactor "Mace", 0.9
     DamageFactor "Zorch", 0.9
+    DamageFactor "PhasingZorch", 0.9
     DamageFactor "BFG", 0.75
     DamageFactor "BFGSpray", 0.75
     DamageFactor "Fire", 0.9
@@ -3003,6 +3041,7 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -3055,11 +3094,12 @@ actor MageBoss2 : MageBoss replaces MageBoss
     DamageFactor "Pistol", 1.75
     DamageFactor "DoomFist", 1.75
     DamageFactor "ZorchPistol", 1.75
-    DamageFactor "TimonsAxe", 1.1
+    DamageFactor "Wraithverge", 1.1
     DamageFactor "Normal", 0.9
     DamageFactor "DragonClaw", 1.2
     DamageFactor "Mace", 0.9
     DamageFactor "Zorch", 0.9
+    DamageFactor "PhasingZorch", 0.9
     DamageFactor "BFG", 0.5
     DamageFactor "BFGSpray", 0.5
     DamageFactor "Fire", 0.9
@@ -3115,6 +3155,7 @@ actor MageBoss2 : MageBoss replaces MageBoss
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
@@ -3331,6 +3372,7 @@ actor Korax2 : Korax replaces Korax
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)

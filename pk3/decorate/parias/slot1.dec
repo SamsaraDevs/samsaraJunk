@@ -46,6 +46,7 @@ actor PoisonBagCoop
     +NODAMAGETHRUST
     +DONTSPLASH
     +FOILINVUL
+	+PIERCEARMOR
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
     Obituary "%k \clput\c- %o \clunder the gas.\c-"
@@ -57,16 +58,16 @@ actor PoisonBagCoop
         PSBG C 4 BRIGHT
         TNT1 A 0 A_SetTranslucent(0.7,1)
         PSBG D 1 BRIGHT A_Scream
-        PSBG D 1 BRIGHT A_Explode(4,128,0)
+        PSBG D 1 BRIGHT A_Explode(10,128,0)
 
       Poison:
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
-        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(4,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
+        PSBG EEEFFFGGGHHHIII 2 BRIGHT A_Explode(6,128,0)
 
       Death:
         PSBG HG 7 BRIGHT

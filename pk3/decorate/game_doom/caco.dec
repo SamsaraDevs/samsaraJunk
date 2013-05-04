@@ -43,6 +43,8 @@ actor Cacodemon2 : Cacodemon replaces Cacodemon
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity

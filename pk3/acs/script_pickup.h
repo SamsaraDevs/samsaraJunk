@@ -1,3 +1,9 @@
+int msgColors[22] = 
+{
+    "\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
+    "\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
+};
+
 script SAMSARA_CLIENT_CLASS (int slot) clientside
 {
     int toClass = SamsaraClientClass-1;
@@ -73,7 +79,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 {
     if (!IsServer) { terminate; }
     slot = itemToSlot(slot);
-    
+    if (slot == -1) { terminate; }    
     
     int weaponStay = !!GetCVar("sv_weaponstay");
     int weaponGet  = 0;
@@ -93,7 +99,8 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int ammo2   = ClassWeapons[pclass][slot][S_AMMO2],      a2bool  = !!StrLen(ammo2);
     int check   = ClassWeapons[pclass][slot][S_CHECKITEM],  chkbool = !!StrLen(check);
     
-    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped))
+    if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped)
+        || GetCVar("samsara_punchdrunk") > 0)
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -171,8 +178,13 @@ script SAMSARA_GIVEUNIQUE (int alt)
     
     int uniqueGet = 0;
     int pclass = samsaraClassNum();
-    
-    while (!uniqueGet && alt >= 0)
+
+    if (GetCVar("samsara_punchdrunk") > 0)
+    {
+        uniqueGet = 1;
+        GiveInventory(PunchDrunkItems[pclass][2], 1);
+    }
+    else while (!uniqueGet && alt >= 0)
     {
         uniqueGet = GiveUnique(pclass, alt);
         alt--;
@@ -180,7 +192,7 @@ script SAMSARA_GIVEUNIQUE (int alt)
     
     if (uniqueGet && IsServer)
     {
-        ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
+        ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), GetCVar("samsara_punchdrunk") > 0, 0);
     }
     
     SetResultValue(uniqueGet);
@@ -221,7 +233,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-        else { Log(s:logMsg); }
+        else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
     
     if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
@@ -243,7 +255,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     }
 }
 
-script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
+script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode, int punchdrunk) clientside
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
@@ -256,6 +268,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
         {
             for (i = 0; i < MSGCOUNT; i++)
             {
+                // TODO: Add punchdrunk-specific unique pickup messages
                 j = ClassUniqueMessages[pclass][i];
                 if (!StrLen(j)) { continue; }
                 
@@ -273,7 +286,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
         }
 
         if (GetCVar("samsara_cl_printpickup")) { Print(s:logMsg); }
-        else { Log(s:logMsg); }
+        else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
     
     if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }

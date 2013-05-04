@@ -44,15 +44,13 @@ alias samsara_cmd_msgmode          "samsara_id_printpickup;  eval != 1 $samsara_
 alias samsara_cmd_weppickups       "samsara_id_pickupmode;   eval %  + $samsara_cl_pickupmode 1 3 samsara_cl_pickupmode; showpickupmode"
 
 alias samsara_zdtaunt "use TauntButton"
-
-alias samsara_tipbox   "puke 300"
-alias samsara_tipleft  "puke 227 0 -1"
-alias samsara_tipright "puke 227 0 1"
-alias samsara_tipup    "puke 227 1 -1"
-alias samsara_tipdown  "puke 227 1 1"
-
-alias changelog        "puke 302 1"
-alias changelogoff     "puke 302 2"
+alias samsara_tipbox   "puke -300"
+alias samsara_tipleft  "puke -227 0 -1"
+alias samsara_tipright "puke -227 0 1"
+alias samsara_tipup    "puke -227 1 -1"
+alias samsara_tipdown  "puke -227 1 1"
+alias changelog        "puke -302 1"
+//alias changelogoff     "puke -302 2"
 
 alias showmode "test != 0 %2 \"set truth True\" \"set truth False\"; echo %1 is\\cf $truth; unset truth"
 
@@ -74,6 +72,8 @@ addslotdefault 1 "Super Bootspork"
 addslotdefault 1 "Pipebombs"
 addslotdefault 1 "KKV-7 SMG Flechette"
 addslotdefault 1 "Laser Cannon"
+
+addslotdefault 1 "Timmy's Axe"
 
 addslotdefault 1 " Pistol "
 addslotdefault 1 "Elven Wand"

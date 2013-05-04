@@ -61,6 +61,8 @@ actor DoomImp2 : DoomImp replaces DoomImp
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TROO H 0 A_Stop

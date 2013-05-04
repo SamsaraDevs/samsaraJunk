@@ -61,11 +61,7 @@ actor SamsaraSlotFourDrop: SamsaraSlotFourPickup
     }
 }
 
-actor SamsaraMinigunReplace: RandomSpawner replaces Minigun
-{
-    dropitem "SamsaraSlotFourPickup"
-}
-
+actor SamsaraMinigunReplace:   SamsaraSlotFourPickup replaces Minigun {}
 actor SamsaraSlotFour_Hexen:   SamsaraSlotFourPickup replaces FWeapHammer {}
 actor SamsaraSlotFour_Heretic: SamsaraSlotFourPickup replaces Blaster {}
 actor SamsaraSlotFour_Strife1: SamsaraSlotFourPickup replaces AssaultGun {}

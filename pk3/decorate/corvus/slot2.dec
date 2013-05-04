@@ -256,6 +256,7 @@ actor " Firemace " : Weapon
 
       FireTomed:
 	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFireTomed")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireTomed")
         MACE B 4
         MACE D 0 A_PlayWeaponSound("weapons/maceshoot")
@@ -342,14 +343,49 @@ actor MaceFX32 : MaceFX3 replaces MaceFX3
     Obituary "%k \cqpelted\c- %o \cqwith balls of steel.\c-"
 }
 
-actor MaceFX42 : MaceFX4 replaces MaceFX4
+actor MaceFX42 : MaceFX4// replaces MaceFX4
 {
     DamageType "Mace"
     Decal BFGScorch
     +FOILINVUL
     Obituary "%k \cqcrushed\c- %o \cqwith giant balls.\c-"
+    Radius 12
+    Height 8
+    Speed 7
+    Damage (1000000)//18
+    Gravity 0.125
+    Projectile
+    -NOGRAVITY
+    +TELESTOMP
+    +THRUGHOST
+    -NOTELEPORT
+    +HEXENBOUNCE // Oddly enough, not Heretic bounce.
+    SeeSound "weapons/macestop"
+	BounceCount 8
+	BounceFactor 1.0
+    States
+    {
+    Spawn:
+		TNT1 A 0 //
+        TNT1 A 0 A_PlaySoundEx("silence","voice",0,0)//A_PlaySound("silence", CHAN_VOICE)
+	Spawn2:
+		FX02 E 1
+		Loop
+    Death:
+		TNT1 A 0 A_Stop
+		FX02 C 4 A_PlaySoundEx("weapons/maceexplode","body",0,0)//A_DeathBallImpact
+		FX02 GHIJ 4 Bright
+		Stop
+    }
 }
 
-actor MaceFX43 : MaceFX42 { +THRUSPECIES Species "Player" }
+actor MaceFX43 : MaceFX4
+{
++THRUSPECIES
+Species "Player"
+DamageType "Mace"
+Decal BFGScorch
++FOILINVUL
+}
 
 actor MaceFX44 : MaceFX4 { DamageType "Spectral" }

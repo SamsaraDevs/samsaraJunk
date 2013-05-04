@@ -58,6 +58,8 @@ actor Crusader2 : Crusader replaces Crusader
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop

@@ -21,6 +21,8 @@ script SAMSARA_OPEN open
         
         SamsaraGlobal[GLOBAL_DONEBITCHING] = 1;
     }
+
+    ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
     
     //while (1)
     while (0)
@@ -39,9 +41,16 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_lmslife 0");
         ConsoleCommand("archivecvar samsara_lmslife"); }
         
-        if (!GetCVar("samsara_lmsunique"))
-        {   ConsoleCommand("set samsara_lmsunique 0");
-        ConsoleCommand("archivecvar samsara_lmsunique"); }
+        if (GetCVar("samsara_lmsunique"))
+        {
+            ConsoleCommand("unset samsara_lmsunique");
+
+            if (!GetCVar("samsara_uniquestart"))
+            {
+                ConsoleCommand("set samsara_uniquestart 2");
+                ConsoleCommand("archivecvar samsara_uniquestart");
+            }
+        }
         
         if (!GetCVar("samsara_lmsult"))
         {   ConsoleCommand("set samsara_lmsult 0");
@@ -67,6 +76,22 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set compat_clientssendfullbuttoninfo 1");
         ConsoleCommand("archivecvar compat_clientssendfullbuttoninfo"); }
         
+        if (!GetCVar("samsara_armormode"))
+        {   ConsoleCommand("set samsara_armormode 0");
+        ConsoleCommand("archivecvar samsara_armormode"); }
+        
+        if (!GetCVar("samsara_chainsawstart"))
+        {   ConsoleCommand("set samsara_chainsawstart 0");
+        ConsoleCommand("archivecvar samsara_chainsawstart"); }
+        
+        if (!GetCVar("samsara_uniquestart"))
+        {   ConsoleCommand("set samsara_uniquestart 0");
+        ConsoleCommand("archivecvar samsara_uniquestart"); }
+        
+        if (!GetCVar("samsara_punchdrunk"))
+        {   ConsoleCommand("set samsara_punchdrunk 0");
+        ConsoleCommand("archivecvar samsara_punchdrunk"); }
+        
         Delay(1);
     }
 }
@@ -78,31 +103,35 @@ script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_SPAWN (int respawning)
 {
     int pln = PlayerNumber();
-    int quadTimer, oQuadTimer;
-    int regenTimer, oRegenTimer;
-    int health, regenPulse, oPulse;
-    int regenX, regenY;
-    int healthGiven;
     int pcount, opcount;
     int startTime = Timer();
     int endloop;
     int canbuddha;
     int i;
 
+    ServerEnterTimes[pln] = startTime;
+    ACS_ExecuteWithResult(SAMSARA_SYNTHFIRE, startTime);
+
     if (!CheckInventory("IsSamsaraClass")) { terminate; }
 
-    ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, 0,0,0);
-    ACS_ExecuteAlways(SAMSARA_WOLFMOVE, 0, 0,0,0);
 
-    ServerEnterTimes[pln] = startTime;
+    ACS_ExecuteAlways(SAMSARA_ENTER_CLIENT, 0, startTime,0,0);
+    ACS_ExecuteWithResult(SAMSARA_WOLFMOVE, startTime,0,0);
+    ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
+
+    HandlePunchdrunk(respawning);
+    HandleChainsawSpawn(respawning);
+    HandleUniqueSpawn(respawning);
 
     if (!respawning)
     {
         ClientTipboxes[pln] = 0;
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
+
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3); }
     }
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
@@ -132,13 +161,6 @@ script SAMSARA_SPAWN (int respawning)
     
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
-        health = GetActorProperty(0, APROP_Health);
-
-        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
-        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
-        
-        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
-        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
         
         if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
         else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
@@ -203,149 +225,6 @@ script SAMSARA_SPAWN (int respawning)
         if (!CheckInventory("WolfExtraLife") && canbuddha) { SetPlayerProperty(0, 0, 16); }
         canbuddha = CheckInventory("WolfExtraLife");
 
-        /*
-         * Quad shit
-         */
-
-        oQuadTimer = quadTimer;
-        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
-
-        if (quadTimer - 35 > oQuadTimer)
-        {
-            AmbientSound("quakeweps/quadon", 127);
-        }
-
-        if (quadTimer > 0)
-        {
-            if (quadTimer % 35 == 0)
-            {
-                SetHudSize(640, 480, 1);
-                SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
-                SetHudSize(320, 240, 1);
-                SetFont("QUA3HUDF");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58102, "QuakeBrick", 295.2, 190.0, 1.5, 1.0);
-            }
-            GiveInventory("QuadDamagePower", 1);
-        }
-        else
-        {
-            if (quadTimer == 0)
-            {
-                HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);
-                HudMessage(s:""; HUDMSG_PLAIN, 58102, CR_UNTRANSLATED, 0, 0, 1);
-                TakeInventory("SpectralFiring", 1);   // So ranger can't break the spectral weapons
-                ActivatorSound("weapons/sigil", 127);
-            }
-            TakeInventory("QuadDamagePower", 1);
-        }
-
-        if (quadTimer == 105)
-        {
-            ActivatorSound("quakeweps/quadoff", 127);
-        }
-
-        if ((quadTimer % 35 == 0) && (quadTimer / 35 <= 3) && (quadTimer > 0))
-        {
-            FadeRange(0, 64, 255, 0.25, 0, 64, 255, 0, 0.33);
-        }
-
-        if (quadTimer == -QUAD_THRESHOLD)
-        {
-            if (CheckInventory("CantQuad") && CheckInventory("QuadDamageItem") && !UnloadingNow)
-            {
-                ActivatorSound("quakeweps/quadready", 96);
-                SetHudSize(240, 180, 1);
-                SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 142.0, 0.0, 1.0);
-            }
-
-            TakeInventory("CantQuad", 0x7FFFFFFF);
-        }
-        else
-        {
-            GiveInventory("CantQuad", 1);
-        }
-
-        TakeInventory("QuakeQuadTimer", 1);
-
-        /*
-         * Regen shit
-         */
-
-        oRegenTimer = regenTimer;
-        regenTimer =  CheckInventory("QuakeRegenTimer");
-
-        if (regenTimer != 0)
-        {
-            if (regenTimer - 35 > oRegenTimer) { AmbientSound("quakeweps/regenannounce", 127); }
-
-            regenX = 640 - (regenPulse * 18);
-            regenY = 480 - (regenPulse * 18);
-
-            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0)
-            {
-                SetHudSize(regenX, regenY, 1);
-                regenX = ftoi(regenX * REGEN_CENTER_X);
-                regenY = ftoi(regenY * REGEN_CENTER_Y);
-
-                SetFont("REGENICO");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.5, 1.0);
-                SetHudSize(320, 240, 1);
-                SetFont("QUA3HUDF");
-                HudMessage(d:regenTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 165.0, 1.5, 1.0);
-            }
-
-            oPulse = regenPulse;
-            regenPulse = max(0, regenPulse - 1);
-
-            if (regenTimer % 35 == 18)
-            {
-                if (health >= getMaxHealth()) { giveHealthMax(5, 250); }
-                else if (health + 10 >= getMaxHealth())
-                {
-                    SetActorProperty(0, APROP_Health, getMaxHealth());
-                    giveHealthMax(5, 250);
-                }
-                else { giveHealthMax(15, 250); }
-
-                if (GetActorProperty(0, APROP_Health) > health)
-                {
-                    FadeRange(255, 0, 0, 0.2, 255, 0, 0, 0.0, 0.3333);
-                    ActivatorSound("quakeweps/regen", 127);
-                    regenPulse = 12;
-                }
-
-                healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0);
-                health = GetActorProperty(0, APROP_Health);
-            }
-
-            if (regenTimer % 35 == 0 && regenTimer / 35 < 5)
-            {
-                ActivatorSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
-            }
-        }
-        else if (CheckInventory("RuneProsperity"))
-        {
-            regenTimer = 0;
-        }
-        else
-        {
-            if (oRegenTimer != 0)
-            {
-                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
-                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
-            }
-
-            if (health < getMaxHealth()) { healthGiven = 0; }
-
-            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
-            {
-                SetActorProperty(0, APROP_Health, health - 1);
-            }
-        }
-
-        TakeInventory("QuakeRegenTimer", 1);
         
         /*
          * Jumping shit
@@ -356,19 +235,6 @@ script SAMSARA_SPAWN (int respawning)
           case CLASS_MARATHON:
             if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
             else { SetActorProperty(0, APROP_Gravity, 0.15); }
-            break;
-
-          case CLASS_QUAKE:
-            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
-            else { SetActorProperty(0, APROP_Gravity, 0.75); }
-
-            if (UnloadingNow)
-            {
-                SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
-                health = GetActorProperty(0, APROP_Health);
-                SetActorProperty(0, APROP_Health, max(health, getMaxHealth() / 2));
-                endloop = 1;
-            }
             break;
 
           default:
@@ -412,8 +278,21 @@ script SAMSARA_SPAWN (int respawning)
         */
     }
 
-    quadTimer = CheckInventory("QuakeQuadTimer"); 
-    TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
+}
+
+script SAMSARA_SYNTHFIRE (int startTime)
+{
+    int pln = PlayerNumber();
+
+    {
+        if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
+        else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
+        
+        if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
+        else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+
+        Delay(1);
+    }
 
     TakeInventory("SynthFireLeft", 0x7FFFFFFF);
     TakeInventory("SynthFireRight", 0x7FFFFFFF);
@@ -421,7 +300,7 @@ script SAMSARA_SPAWN (int respawning)
 
 script SAMSARA_CONFIRMCLASS (int which) { SetResultValue(SamsaraWepType == which); }
 
-script SAMSARA_WOLFMOVE enter
+script SAMSARA_WOLFMOVE (void)
 { 
     int pln = PlayerNumber();
     int realspeed = GetActorProperty(0, APROP_Speed);
@@ -438,25 +317,35 @@ script SAMSARA_WOLFMOVE enter
     {
         if (UnloadingNow)
         {
-            SetActorProperty(0, APROP_Speed, realspeed);
+            if (GetActorProperty(0, APROP_Speed) == 0)
+            {
+                SetActorProperty(0, APROP_Speed, realspeed);
+            }
             break;
         }
 
-        if (!(CheckInventory("CanWolfMovement") && CheckInventory("WolfenMovement"))
-          || GetCVar("samsara_banwolfmove"))
+        if (!CheckInventory("CanWolfMovement")) { break; }
+        if (!CheckInventory("WolfenMovement") || GetCVar("samsara_banwolfmove"))
         {
-            SetActorProperty(0, APROP_Speed, realspeed);
+            if (GetActorProperty(0, APROP_Speed) == 0)
+            {
+                SetActorProperty(0, APROP_Speed, realspeed);
+            }
+
             Delay(1);
             continue;
         }
+
         
         if (GetActorProperty(0, APROP_Health) < 1)
         {
+            SetActorProperty(0, APROP_Speed, realspeed);
             velx = 0;
             vely = 0;
         }
         else
         {
+            if (WolfenEnterTimes[pln] != startTime) { break; }
             SetActorProperty(0, APROP_Speed, 0);
             forward = keyDown(BT_FORWARD) - keyDown(BT_BACK);
             forward *= SPEED_FORWARD;
@@ -489,6 +378,11 @@ script SAMSARA_WOLFMOVE enter
         
         SetActorVelocity(0, velx, vely, GetActorVelZ(0), 0, 0);
         Delay(1);
+    }
+
+    if (GetActorProperty(0, APROP_Speed) == 0)
+    {
+        SetActorProperty(0, APROP_Speed, realspeed);
     }
 }
 

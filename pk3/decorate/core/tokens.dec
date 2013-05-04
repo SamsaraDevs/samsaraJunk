@@ -21,6 +21,21 @@ actor Trigger: CustomInventory
     +AUTOACTIVATE
 }
 
+actor ACSSpawnDummy
+{
+    +NOINTERACTION
+
+    Radius 0
+    Height 0
+
+    States
+    {
+      Spawn:
+        TNT1 A -1
+        stop
+    }
+}
+
 actor IsSamsaraClass: Boolean {}
 actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}

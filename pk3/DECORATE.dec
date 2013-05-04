@@ -11,6 +11,7 @@
 
 #include "decorate/slots.dec"
 #Include "decorate/pdwtak.dec"
+#Include "decorate/punchdrunk.dec"
 
 #include "decorate/game_doom.dec"
 //#include "actors/GAME_DOOM"

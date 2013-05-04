@@ -1847,24 +1847,25 @@ playerclass Ranger
     InInventory not UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+	}
 
         drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-    }
+    //}
 
     InInventory UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
-
-        drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-        drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
-
-        drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-        drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     }
+        //drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+        //drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
+
+        //drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
+        //drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
+    //}
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
@@ -1955,12 +1956,12 @@ playerclass Ranger
     //{
     //    drawimage translatable "CLRDOOM", 145, 169;
     //}
-	InInventory not PowerInvisibility {
+	InInventory not QuakeInvisTimer {
 	InInventory not QuadDamagePower {
     drawmugshot "STF", 5, 143, 168;}}
-	InInventory not PowerInvisibility {
+	InInventory not QuakeInvisTimer {
 	InInventory QuadDamagePower, 1 {drawimage "RNGQUAD0", 143, 168;}}
-	InInventory PowerInvisibility, 1 {drawimage "RNGNVSB0", 143, 168;
+	InInventory QuakeInvisTimer, 1 {drawimage "RNGNVSB0", 143, 168;
     InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
 	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
 	// InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}
@@ -3372,24 +3373,24 @@ playerclass Ranger
     InInventory not UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
-
+    }
         drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-    }
+    //}
 
     InInventory UsingDoEAmmo
     {
         drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
-
-        drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+    }
+        /*drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
         drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
 
         drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
         drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
-    }
+    }*/
 
     drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
@@ -3480,12 +3481,12 @@ playerclass Ranger
     //{
     //    drawimage translatable "CLRDOOM", 145, 169;
     //}
-	InInventory not PowerInvisibility {
+	InInventory not QuakeInvisTimer {
 	InInventory not QuadDamagePower {
     drawmugshot "STF", 5, 143, 168;}}
-	InInventory not PowerInvisibility {
+	InInventory not QuakeInvisTimer {
 	InInventory QuadDamagePower, 1 {drawimage "RNGQUAD0", 143, 168;}}
-	InInventory PowerInvisibility, 1 {drawimage "RNGNVSB0", 143, 168;
+	InInventory QuakeInvisTimer, 1 {drawimage "RNGNVSB0", 143, 168;
     InInventory PowerInvulnerable, 1 {drawimage "RNGNVSG0", 143, 168;}
 	InInventory QuadDamagePower, 1 {drawimage "RNGNVSQ0", 143, 168;}
 	// InInventory PowerQuadDamage, 1 {drawimage "RNGNVSD0", 143, 168;}

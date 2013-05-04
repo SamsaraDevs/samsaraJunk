@@ -39,6 +39,7 @@ actor "Alien Weapon" : Weapon
     +NOALERT
     +INVENTORY.UNDROPPABLE
     +AMMO_OPTIONAL
+	+UNDROPPABLE
 
     States
     {

@@ -45,6 +45,8 @@ actor Fatso2 : Fatso replaces Fatso
       Death.ZorchPistol:
 
       Death.Zorch:
+      Death.ZorchKamikaze:
+      Death.PhasingZorch:
       Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         FATT J 0 A_Stop
@@ -103,14 +105,39 @@ actor Fatso2 : Fatso replaces Fatso
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoBlocking
-        //TNT1 A 0 A_SpawnItem("FatsoFrozen")
-        FATT J 0 A_GenericFreezeDeath
-        FATT J 70 A_UnsetSolid
-        FATT J 0 A_IceGuyDie
-        FATT J 1 A_IceGuyDie
+        TNT1 A 0 A_SpawnItemEx("FatsoFrozen",0,0,0,0,0,0,0,32)
+        //FATT J 0 A_GenericFreezeDeath
+        //FATT J 70 A_UnsetSolid
+        //FATT J 0 A_IceGuyDie
+        //FATT J 1 A_IceGuyDie
         TNT1 A -1 A_BossDeath
         stop
     }
+}
+
+actor FatsoFrozen
+{
+  Health 10
+  Radius 48
+  Height 64
+  Mass 1000
+  Monster
+  +FLOORCLIP
+  +NEVERRESPAWN
+  +NOTELEPORT
+  +NOTARGET
+  States
+  {
+  Spawn:
+    FATT A 1
+    FATT J 0 A_GenericFreezeDeath
+    FATT J 70 A_UnsetSolid
+  Death:
+    FATT J 0 A_IceGuyDie
+    FATT J 1 A_IceGuyDie
+    TNT1 A -1
+    stop
+}
 }
 
 actor FatShot2 : FatShot replaces FatShot
@@ -118,4 +145,3 @@ actor FatShot2 : FatShot replaces FatShot
     +THRUGHOST
     +FIREDAMAGE
 }
-

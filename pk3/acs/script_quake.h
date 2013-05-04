@@ -11,7 +11,8 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
     while (1)
     {
-        if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity"))
+        if (CheckInventory("QuakeRegenTimer") || CheckInventory("RuneProsperity")
+            || GetCVar("sv_degeneration") > 0)
         {
             Delay(1);
             continue;
@@ -113,4 +114,232 @@ script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
     {
         SetActorPitch(0, GetActorPitch(0) + (degrees / 360));
     }
+}
+
+script SAMSARA_QPOWERS (int startTime)
+{
+    int pln = PlayerNumber();
+    int quadTimer,  oQuadTimer;
+    int regenTimer, oRegenTimer;
+    int invisTimer, oInvisTimer;
+    int health, regenPulse, oPulse;
+    int regenX, regenY;
+    int healthGiven;
+    
+    if (samsaraClassNum() != CLASS_QUAKE) { terminate; }
+
+    while (ServerEnterTimes[pln] == startTime)
+    {
+        health = GetActorProperty(0, APROP_Health);
+
+        oQuadTimer = quadTimer;
+        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
+
+        if (quadTimer - 35 > oQuadTimer)
+        {
+            AmbientSound("quakeweps/quadon", 127);
+        }
+
+        if (quadTimer > 0)
+        {
+            if (quadTimer % 35 == 0)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58102, "QuakeBrick", 295.2, 190.0, 1.5, 1.0);
+            }
+
+            if (oQuadTimer <= 0) { GiveInventory("QuadDamagePower", 1); }
+        }
+        else
+        {
+            if (quadTimer == 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58102, CR_UNTRANSLATED, 0, 0, 1);
+
+                if (CheckInventory("SpectralFiring"))
+                {
+                    TakeInventory("SpectralFiring", 1);   // So ranger can't break the spectral weapons
+                    LocalAmbientSound("weapons/sigil", 127);
+                }
+            }
+            TakeInventory("QuadDamagePower", 1);
+        }
+
+        if (quadTimer == 105)
+        {
+            LocalAmbientSound("quakeweps/quadoff", 127);
+        }
+
+        if ((quadTimer % 35 == 0) && (quadTimer / 35 <= 3) && (quadTimer > 0))
+        {
+            FadeRange(0, 64, 255, 0.25, 0, 64, 255, 0, 0.33);
+        }
+
+        if (quadTimer == -QUAD_THRESHOLD)
+        {
+            if (CheckInventory("CantQuad") && CheckInventory("QuadDamageItem") && !UnloadingNow)
+            {
+                LocalAmbientSound("quakeweps/quadready", 96);
+                SetHudSize(240, 180, 1);
+                SetFont("QUADICO2");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, 215.4, 142.0, 0.0, 1.0);
+            }
+
+            TakeInventory("CantQuad", 0x7FFFFFFF);
+        }
+        else
+        {
+            GiveInventory("CantQuad", 1);
+        }
+
+        /*
+         * Regen shit
+         */
+
+        oRegenTimer = regenTimer;
+        regenTimer =  CheckInventory("QuakeRegenTimer");
+
+        if (regenTimer != 0)
+        {
+            if (regenTimer - 35 > oRegenTimer) { AmbientSound("quakeweps/regenannounce", 127); }
+
+            regenX = 640 - (regenPulse * 18);
+            regenY = 480 - (regenPulse * 18);
+
+            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0)
+            {
+                SetHudSize(regenX, regenY, 1);
+                regenX = ftoi(regenX * REGEN_CENTER_X);
+                regenY = ftoi(regenY * REGEN_CENTER_Y);
+
+                SetFont("REGENICO");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.25, 0.25);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:(regenTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 170.0, 1.25, 0.25);
+                // the +34 was added so that the regen pulse didn't prematurely lower the seconds display by one
+
+            }
+
+            oPulse = regenPulse;
+            regenPulse = max(0, regenPulse - 1);
+
+            if (regenTimer % 35 == 18)
+            {
+                if (health >= getMaxHealth()) { giveHealthMax(5, 250); }
+                else if (health + 10 >= getMaxHealth())
+                {
+                    SetActorProperty(0, APROP_Health, getMaxHealth());
+                    giveHealthMax(5, 250);
+                }
+                else { giveHealthMax(15, 250); }
+
+                if (GetActorProperty(0, APROP_Health) > health)
+                {
+                    FadeRange(255, 128, 128, 0.1, 255, 0, 0, 0.0, 0.3333);
+                    ActivatorSound("quakeweps/regen", 127);
+                    regenPulse = 12;
+                }
+
+                healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0);
+                health = GetActorProperty(0, APROP_Health);
+            }
+
+            if (regenTimer % 35 == 0 && regenTimer / 35 < 5)
+            {
+                LocalAmbientSound("quakeweps/regenout", PowerOutVols[regenTimer / 35]);
+            }
+        }
+        else if (CheckInventory("RuneProsperity") || GetCVar("sv_degeneration") > 0)
+        {
+            regenTimer = 0;
+        }
+        else
+        {
+            if (oRegenTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58103, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58104, CR_UNTRANSLATED, 0, 0, 1);
+            }
+
+            if (health < getMaxHealth()) { healthGiven = 0; }
+
+            if (Timer() % 35 == 0 && healthGiven > 0 && (health - 1 >= getMaxHealth()))
+            {
+                SetActorProperty(0, APROP_Health, health - 1);
+            }
+        }
+
+        /*
+         * Invis shit
+         */
+
+        oInvisTimer = invisTimer;
+        invisTimer  = CheckInventory("QuakeInvisTimer");
+
+        if (invisTimer - 35 > oInvisTimer)
+        {
+            ActivatorSound("quakeweps/invison", 127);
+        }
+
+        if (invisTimer > 0)
+        {
+            if (invisTimer % 35 == 0)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("INVISICO");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58105, CR_UNTRANSLATED, 610.4, 300.0, 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:invisTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58106, "QuakeBrick", 295.2, 150.0, 1.5, 1.0);
+            }
+
+            if (invisTimer % 105 == 0)
+            {
+                ActivatorSound("quakeweps/inviswhisper", 127);
+            }
+
+            if (invisTimer == 105)
+            {
+                LocalAmbientSound("quakeweps/invisout", 127);
+            }
+
+            if (oInvisTimer == 0) { GiveInventory("QuakeInvisibility", 1); }
+        }
+        else
+        {
+            if (oInvisTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58105, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58106, CR_UNTRANSLATED, 0, 0, 1);
+                GiveInventory("QuakeInvisibilityOff", 1);
+            }
+
+        }
+
+        TakeInventory("QuakeQuadTimer", 1);
+        TakeInventory("QuakeRegenTimer", 1);
+        TakeInventory("QuakeInvisTimer", 1);
+
+        if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
+        else { SetActorProperty(0, APROP_Gravity, 0.75); }
+
+        if (UnloadingNow)
+        {
+            SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
+            health = GetActorProperty(0, APROP_Health);
+            SetActorProperty(0, APROP_Health, max(health, getMaxHealth() / 2));
+            break;
+        }
+
+        Delay(1);
+    }
+
+    quadTimer = CheckInventory("QuakeQuadTimer"); 
+    TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
 }
