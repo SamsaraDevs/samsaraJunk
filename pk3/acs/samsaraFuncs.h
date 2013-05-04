@@ -376,7 +376,8 @@ function int HandleUniqueSpawn(int respawning)
         // Fallthrough
 
       case 3:
-        GiveUnique(classnum, -1);
+        if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][2], 1); }
+        else { GiveUnique(classnum, -1); }
         break;
 
       case 2:
@@ -384,7 +385,8 @@ function int HandleUniqueSpawn(int respawning)
         // Fallthrough
 
       case 4:
-        for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); }
+        if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][2], 1); }
+        else { for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); } }
         break;
     }
 
@@ -401,7 +403,8 @@ function int HandleChainsawSpawn(int respawning)
 
     if (cs == 2) { ammomode = 1; }
 
-    GiveClassWeapon(classnum, 1, ammomode);
+    if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][1], 1); }
+    else { GiveClassWeapon(classnum, 1, ammomode); }
     return 1;
 }
 
@@ -421,5 +424,6 @@ function int HandlePunchDrunk(int respawning)
     }
 
     GiveClassWeapon(classnum, 0, 1);
+    GiveInventory(PunchDrunkItems[classnum][0], 1);
     return 1;
 }

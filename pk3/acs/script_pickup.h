@@ -100,7 +100,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int check   = ClassWeapons[pclass][slot][S_CHECKITEM],  chkbool = !!StrLen(check);
     
     if (!wepbool || (CheckInventory(ClassWeapons[pclass][slot][S_CHECKFAILITEM]) && !dropped)
-        || GetCVar("samsara_punchdrunk") >= 3)
+        || GetCVar("samsara_punchdrunk") > 0)
     {
         SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
         terminate;
@@ -179,9 +179,12 @@ script SAMSARA_GIVEUNIQUE (int alt)
     int uniqueGet = 0;
     int pclass = samsaraClassNum();
 
-    if (GetCVar("samsara_punchdrunk") >= 3) { terminate; }
-    
-    while (!uniqueGet && alt >= 0)
+    if (GetCVar("samsara_punchdrunk") > 0)
+    {
+        uniqueGet = 1;
+        GiveInventory(PunchDrunkItems[pclass][2], 1);
+    }
+    else while (!uniqueGet && alt >= 0)
     {
         uniqueGet = GiveUnique(pclass, alt);
         alt--;
@@ -189,7 +192,7 @@ script SAMSARA_GIVEUNIQUE (int alt)
     
     if (uniqueGet && IsServer)
     {
-        ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), 0, 0);
+        ACS_ExecuteAlways(SAMSARA_CLIENT_UNIQUEPICKUP, 0, GetCVar("compat_silentpickup"), GetCVar("samsara_punchdrunk") > 0, 0);
     }
     
     SetResultValue(uniqueGet);
@@ -252,7 +255,7 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
     }
 }
 
-script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
+script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode, int punchdrunk) clientside
 {
     int pln = PlayerNumber(), cpln = ConsolePlayerNumber();
     int pclass = samsaraClassNum();
@@ -265,6 +268,7 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode) clientside
         {
             for (i = 0; i < MSGCOUNT; i++)
             {
+                // TODO: Add punchdrunk-specific unique pickup messages
                 j = ClassUniqueMessages[pclass][i];
                 if (!StrLen(j)) { continue; }
                 

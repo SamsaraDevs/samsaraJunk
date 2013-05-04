@@ -286,6 +286,19 @@ int ArmorModeNames[ARMORMODES] =
     "Quake",
 };
 
+int PunchDrunkItems[CLASSCOUNT][3] = 
+{
+    {"DoomguyPunchDrunk",   "DoomguyPunchSaw",  "DoomguyPunchUnique"},
+    {"ChexguyPunchDrunk",   "ChexguyPunchSaw",  "ChexguyPunchUnique"},
+    {"CorvusPunchDrunk",    "CorvusPunchSaw",   "CorvusPunchUnique"},
+    {"BlazkoPunchDrunk",    "BlazkoPunchSaw",   "BlazkoPunchUnique"},
+    {"PariasPunchDrunk",    "PariasPunchSaw",   "PariasPunchUnique"},
+    {"DukePunchDrunk",      "DukePunchSaw",     "DukePunchUnique"},
+    {"ManathorPunchDrunk",  "ManathorPunchSaw", "ManathorPunchUnique"},
+    {"RangerPunchDrunk",    "RangerPunchSaw",   "RangerPunchUnique"},
+};
+
+
 int ChangelogString = 
 " FROM 0.28 TO 0.29\n\
 ========================\n\

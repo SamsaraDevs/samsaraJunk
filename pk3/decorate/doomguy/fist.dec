@@ -26,13 +26,18 @@ actor " Fist " : Weapon
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")
         TNT1 A 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "Rage")
         DPUN LBCD 1
-        goto FireNorm
+        goto Fire2
+
+      VanillaFire:
+        DPUN M 4
+        goto Fire2
 
       Rage:
         DPUN LC 2
-        goto FireNorm
+        goto Fire2
 
-      FireNorm:
+      Fire2:
+        DPUN E 0 A_JumpIfInventory("PunchDrunkZerk", 1, "FirePDBerserk")
         DPUN E 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "FireBerserk")
         DPUN E 0 A_CustomPunch(random(1, 10)*2, 1, 0, "DoomPunchPuff")
         goto FireEnd
@@ -41,31 +46,18 @@ actor " Fist " : Weapon
         DPUN E 0 A_CustomPunch(random(10, 20)*12, 1, 0, "DoomPunchPuff2") // Technically should be random(1, 10)*20, but oh well.
         goto FireEnd
 
+      FirePDBerserk:
+        DPUN E 0 A_CustomPunch(random(10, 20)*4, 1, 0, "DoomPunchPuff2") // Punchdrunk triples fist damage already.
+        goto FireEnd
+
       FireEnd:
+        DPUN E 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaEnd")
         DPUN E 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
         DPUN E 1
         DPUN FGHI 2
         DPUN JKL 1
-        DPUN B 5 A_ReFire
+        DPUN A 5 A_ReFire
         goto Ready
-
-      RageEnd:
-        DPUN EFGHIJL 2
-        DPUN B 4 A_ReFire
-        goto Ready
-
-      VanillaFire:
-        DPUN M 4
-        goto VanillaFireNorm
-
-      VanillaFireNorm:
-        DPUN M 0 A_JumpIfInventory("PowerChainsawBerserk", 1, "VanillaFireBerserk")
-        DPUN N 0 A_CustomPunch(random(1, 10)*2, 1, 0, "DoomPunchPuff")
-        goto VanillaEnd
-
-      VanillaFireBerserk:
-        DPUN N 0 A_CustomPunch(random(10, 20)*12, 1, 0, "DoomPunchPuff2")
-        goto VanillaEnd
     
       VanillaEnd:
         DPUN N 4
@@ -73,6 +65,11 @@ actor " Fist " : Weapon
         DPUN N 4
         DPUN M 5 A_ReFire
         Goto Ready
+
+      RageEnd:
+        DPUN EFGHIJL 2
+        DPUN A 4 A_ReFire
+        goto Ready
     }
 }
 
