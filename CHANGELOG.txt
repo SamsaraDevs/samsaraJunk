@@ -81,6 +81,7 @@ FROM 0.28 TO 0.29
 - Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.
+- The Fusion Pistol can now actually bypass player invulnerability, as it should.
 
 
 FROM 0.27 TO 0.28
