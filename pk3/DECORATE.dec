@@ -1,7 +1,8 @@
-const int ARMOR_GREEN   = 0;
-const int ARMOR_YELLOW  = 1;
-const int ARMOR_BLUE    = 2;
-const int ARMOR_RED     = 3;
+const int ARMOR_GREEN           = 0;
+const int ARMOR_YELLOW          = 1;
+const int ARMOR_BLUE            = 2;
+const int ARMOR_BLUE_WITHYELLOW = 3;
+const int ARMOR_RED             = 4;
 
 const int SAMSARA_DECORATE = 215;
 

@@ -274,12 +274,13 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie3", "InvPeopleZorch3"},
 };
 
-#define ARMORCOUNT  4
+#define ARMORCOUNT  5
 
-#define ARMOR_GREEN     0
-#define ARMOR_YELLOW    1
-#define ARMOR_BLUE      2
-#define ARMOR_RED       3
+#define ARMOR_GREEN             0
+#define ARMOR_YELLOW            1
+#define ARMOR_BLUE              2
+#define ARMOR_BLUE_WITHYELLOW   3
+#define ARMOR_RED               4
 
 int ArmorPickups[ARMORCOUNT] = 
 {
@@ -295,21 +296,25 @@ int ArmorItems[ARMORMODES][ARMORCOUNT][2] =
         {"ArmorPack1",          100},
         {"SamsaraYellowArmor",  150},
         {"ArmorPack2",          200},
+        {"ArmorPack2",          200},
         {"ArmorPack3",          250},
     },
     {
         {"QuakeGreenArmor",     100},
         {"QuakeYellowArmor",    150},
-        {"QuakeRedArmor",       200},
-        {"SamsaraSilverArmor",  250},
-    },
-    {
-        {"QuakeYellowArmor",    100},
         {"QuakeYellowArmor",    150},
         {"QuakeRedArmor",       200},
         {"SamsaraSilverArmor",  250},
     },
     {
+        {"QuakeYellowArmor",    150},
+        {"QuakeYellowArmor",    150},
+        {"QuakeRedArmor",       200},
+        {"QuakeRedArmor",       200},
+        {"SamsaraSilverArmor",  250},
+    },
+    {
+        {"NoArmor",             0},
         {"NoArmor",             0},
         {"NoArmor",             0},
         {"NoArmor",             0},
