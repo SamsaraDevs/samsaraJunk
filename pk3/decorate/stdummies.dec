@@ -1,13 +1,16 @@
 // Weapon/item spawners for Skulltag-specific maps. Wahey!
 
-//Actor InvisibilitySphere : PartialInvisibility { }
-actor MaxArmorBonus : ArmorScrap 5091
+//actor InvisibilitySphere : PartialInvisibility { }
+
+//actor MaxArmorBonus : ArmorScrap 5091
+actor MaxArmorBonus2: ArmorScrap replaces MaxArmorBonus
 {
     Game Doom
     SpawnID 167
 }
 
-actor MaxHealthBonus : HealPack0 5090
+//actor MaxHealthBonus : HealPack0 5090
+actor MaxHealthBonus2: HealPack0 replaces MaxHealthBonus
 {
     Game Doom
     SpawnID 166
@@ -105,7 +108,7 @@ actor DukeGibs4B : DukeGibs4 { Translation "30:39=200:207", "40:47=240:247" }
 actor DukeGibs5B : DukeGibs5 { Translation "30:39=200:207", "40:47=240:247" }
 actor DukeGibs6B : DukeGibs6 { Translation "30:39=200:207", "40:47=240:247" }
 
-Actor DarkImpBall : DoomImpBall
+actor DarkImpBall : DoomImpBall
 {
 Translation "176:183=200:207", "184:191=240:247", "168:175=198:199", "210:223=198:203", "233:233=202:202", "231:231=197:197"
 +THRUGHOST
@@ -185,7 +188,8 @@ actor SuperShotgunPickup: SamsaraSlotThreeDrop
     }
 }
 
-ACTOR Turbosphere : CustomInventory 5030
+//actor Turbosphere : CustomInventory 5030
+actor Turbosphere2: CustomInventory replaces Turbosphere
 {
 	Game Doom
 	SpawnID 169
@@ -230,7 +234,8 @@ actor TurbosphereHeretic : PowerupGiver
 	Powerup.Duration 1050
 }
 
-ACTOR TimeFreezeSphere : CustomInventory 5032
+//actor TimeFreezeSphere : CustomInventory 5032
+actor TimeFreezeSphere2: CustomInventory replaces TimeFreezeSphere
 {
 	Game Doom
 	SpawnID 171
@@ -282,7 +287,8 @@ actor PowerTimeFreezerColor : Powerup
 	Powerup.Duration -12
 }
 
-ACTOR InvisibilitySphere : CustomInventory 5035
+//actor InvisibilitySphere : CustomInventory 5035
+actor InvisibilitySphere2: CustomInventory replaces InvisibilitySphere
 {
 	Game Doom
 	SpawnID 174
@@ -349,7 +355,8 @@ actor InvisibilitySphereHeretic : PowerupGiver
 	//Powerup.Strength 90
 }
 
-ACTOR Doomsphere : CustomInventory 5036
+//actor Doomsphere : CustomInventory 5036
+actor Doomsphere2: CustomInventory replaces Doomsphere
 {
 	Game Doom
 	SpawnID 175
@@ -404,7 +411,8 @@ actor PowerDoomsphereColor : Powerup
 	Powerup.Duration -25
 }
 
-ACTOR Guardsphere : CustomInventory 5037
+//actor Guardsphere : CustomInventory 5037
+actor Guardsphere2: CustomInventory replaces Guardsphere
 {
 	Game Doom
 	SpawnID 0
