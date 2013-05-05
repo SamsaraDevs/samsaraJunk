@@ -160,8 +160,6 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         if (MapArmors[0] == -1) { CheckMapArmors(); }
         SetArmorMode();
 
-        PrintBold(s:"Checking ", n:0, s:" (yellow is ", s:cond(MapArmors[ARMOR_YELLOW], "in", "not in"), s:")");
-
         i = Timer() != 0;
 
         if (MapArmors[ARMOR_YELLOW] == 1) { i += 2; }
@@ -191,6 +189,8 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         arg1 = middle(0, arg1, ARMORCOUNT-1);
         i = CheckInventory("Armor");
         j = ArmorItems[ArmorMode][arg1][1];
+
+        if (j == 0) { result = 0; break; }
 
 
         /* If we're adding armor, always follow through
