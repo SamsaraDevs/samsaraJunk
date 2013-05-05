@@ -149,10 +149,10 @@ function void ApplyLMS(void)
     GiveInventory("LavaNails",       ftoi(2.5 * i));
     GiveInventory("MultiRocketAmmo", ftoi(0.5 * i));
 
-    if (lmsLevel)
+    if (lmsLevel > 0)
     {
         SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) + (100 * (lmsLevel-1)));
-        GiveInventory(LMSArmors[lmsLevel], 1);
+        ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_BLUE, -100 * lmsLevel);
     }
 } 
 
@@ -424,4 +424,22 @@ function int HandlePunchDrunk(int respawning)
     GiveClassWeapon(classnum, 0, 1);
     GiveInventory(PunchDrunkItems[classnum][0], 1);
     return 1;
+}
+
+function void CheckMapArmors(void)
+{
+    int i;
+
+    for (i = 0; i < ARMORCOUNT; i++)
+    {
+        MapArmors[i] = ThingCountName(ArmorPickups[i], 0) > 0;
+    }
+}
+
+function void SetArmorMode(void)
+{
+    if (ArmorMode < 0)
+    {
+        ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+    }
 }

@@ -80,6 +80,8 @@ actor QuakeAxePuff: BulletPuff
 {
     +CLIENTSIDEONLY
     +NOINTERACTION
+    +PUFFONACTORS
+
     DamageType "Pistol"
     AttackSound "quakeweps/axewall"
 	SeeSound "quakeweps/axehit"
@@ -91,9 +93,10 @@ actor QuakeAxePuff: BulletPuff
 	    TNT1 A 1
 		TNT1 A 0 A_PlaySound("quakeweps/axewall")
 		goto FallThrough
+
 	  Melee:
-	    TNT1 A 1
-		TNT1 A 0 A_PlaySound("quakeweps/axehit")
+	    TNT1 A 1 A_PlaySound("quakeweps/axehit")
+        stop
 	  
 	  FallThrough:
         TNT1 A 0

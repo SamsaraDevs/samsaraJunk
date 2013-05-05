@@ -23,6 +23,7 @@ script SAMSARA_OPEN open
     }
 
     ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+    CheckMapArmors();
     
     //while (1)
     while (0)
@@ -80,6 +81,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_armormode 0");
         ConsoleCommand("archivecvar samsara_armormode"); }
         
+        if (!GetCVar("samsara_nohealthcap"))
+        {   ConsoleCommand("set samsara_nohealthcap 0");
+        ConsoleCommand("archivecvar samsara_nohealthcap"); }
+        
         if (!GetCVar("samsara_chainsawstart"))
         {   ConsoleCommand("set samsara_chainsawstart 0");
         ConsoleCommand("archivecvar samsara_chainsawstart"); }
@@ -91,6 +96,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunk"))
         {   ConsoleCommand("set samsara_punchdrunk 0");
         ConsoleCommand("archivecvar samsara_punchdrunk"); }
+        
+        if (!GetCVar("samsara_nomonologues"))
+        {   ConsoleCommand("set samsara_nomonologues 0");
+        ConsoleCommand("archivecvar samsara_nomonologues"); }
         
         Delay(1);
     }

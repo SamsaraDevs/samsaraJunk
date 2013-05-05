@@ -134,7 +134,7 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 A_TakeInventory("DukePetjack", 1)
         DUKE I 10 A_TakeInventory("DukeKaboom",1)
         DUKE J 10 A_PlayerScream
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 16)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 16)
         DUKE K 10 A_NoBlocking
         DUKE LM 10
         DUKE N -1
@@ -154,7 +154,7 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 A_SpawnDebris("DukeGibs5")
         TNT1 A 0 A_SpawnDebris("DukeGibs6")
         TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 16)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 16)
         ACLO E 5 A_NoBlocking
         ACLO E -1
         Stop
@@ -177,7 +177,7 @@ actor DukePlayer : PlayerPawn
         DUKE I 0 A_PlayerScream
         DUKE I 3 A_SetTranslucent(0.8,0)
         DUKE I 0 A_NoBlocking
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 16)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 16)
         DUKE I 3 A_SetTranslucent(0.7,0)
         DUKE I 3 A_SetTranslucent(0.6,0)
         DUKE I 3 A_SetTranslucent(0.5,0)
@@ -232,7 +232,7 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 A_TakeInventory("DukeFlying", 1)
         TNT1 A 0 A_TakeInventory("DukePetjack", 1)
         TNT1 A 0 A_TakeInventory("DukeKaboom",1)
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 16)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 16)
 		TNT1 A 0 A_PlayWeaponSound("misc/freeze")
         DUKE Z 70 A_NoBlocking//A_GenericFreezeDeath // You know what my favorite thing in the world is?
         DUKE Z 0 A_SetTranslucent(0,0)
@@ -251,7 +251,7 @@ actor DukePlayer : PlayerPawn
         TNT1 A 0 A_TakeInventory("DukeFlying", 1)
         TNT1 A 0 A_TakeInventory("DukePetjack", 1)
         TNT1 A 0 A_TakeInventory("DukeKaboom",1)
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 16)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 16)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_SpawnItem("BurnDeathDuke")
         ACLO E 1 A_PlaySound("*burndeath")

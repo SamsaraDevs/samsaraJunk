@@ -48,7 +48,7 @@
 #define TIPCOUNT            2
 
 #define LMSMODES            6
-#define ARMORMODES          2
+#define ARMORMODES          4
 
 #define CLASS_DOOM      0
 #define CLASS_CHEX      1
@@ -274,16 +274,68 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie3", "InvPeopleZorch3"},
 };
 
-int ArmorModeStates[ARMORMODES][2] = 
+#define ARMORCOUNT  5
+
+#define ARMOR_GREEN             0
+#define ARMOR_YELLOW            1
+#define ARMOR_BLUE              2
+#define ARMOR_BLUE_WITHYELLOW   3
+#define ARMOR_RED               4
+
+int ArmorPickups[ARMORCOUNT] = 
 {
-    {"Armor1", "Armor1_Drop"},
-    {"Armor2", "Armor2_Drop"},
+    "GreenArmorPickup",
+    "YellowArmorPickup",
+    "BlueArmorPickup",
+    "RedArmor",
+};
+
+int ArmorItems[ARMORMODES][ARMORCOUNT][2] = 
+{
+    {
+        {"ArmorPack1",          100},
+        {"SamsaraYellowArmor",  150},
+        {"ArmorPack2",          200},
+        {"ArmorPack2",          200},
+        {"ArmorPack3",          250},
+    },
+    {
+        {"QuakeGreenArmor",     100},
+        {"QuakeYellowArmor",    150},
+        {"QuakeYellowArmor",    150},
+        {"QuakeRedArmor",       200},
+        {"SamsaraSilverArmor",  250},
+    },
+    {
+        {"QuakeYellowArmor",    150},
+        {"QuakeYellowArmor",    150},
+        {"QuakeRedArmor",       200},
+        {"QuakeRedArmor",       200},
+        {"SamsaraSilverArmor",  250},
+    },
+    {
+        {"NoArmor",             0},
+        {"NoArmor",             0},
+        {"NoArmor",             0},
+        {"NoArmor",             0},
+        {"NoArmor",             0},
+    }
+};
+
+int ArmorModeStates[ARMORMODES][4] = 
+{
+    {"Armor1", "Armor1_Drop", "Armor1_WithYellow", "Armor1_YellowDrop"},
+    {"Armor2", "Armor2_Drop", "Armor2_WithYellow", "Armor2_YellowDrop"},
+    {"Armor3", "Armor3_Drop", "Armor3_WithYellow", "Armor3_YellowDrop"},
+    {"Armor4", "Armor4_Drop", "Armor4_WithYellow", "Armor4_YellowDrop"},
 };
 
 int ArmorModeNames[ARMORMODES] = 
 {
     "Normal",
     "Quake",
+    "Quake (old)",
+    "None",
 };
 
 int PunchDrunkItems[CLASSCOUNT][3] = 
@@ -369,4 +421,6 @@ int ChangelogString =
 - Skulltag monsters now bleed/gib their proper colors.\n\
 - The Security Officer's fists now properly alternate when holding both fire buttons.\n\
 - B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.\n\
-- Due to popular request, the Chicken player now has its own unique HUD.";
+- Due to popular request, the Chicken player now has its own unique HUD.\n\
+- The Icon of Sin now has a boss speech.\n\
+- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.";

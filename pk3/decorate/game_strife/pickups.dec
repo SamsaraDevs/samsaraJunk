@@ -267,7 +267,7 @@ actor StrifeAmmoFillup: CustomInventory replaces AmmoFillup
     States
     {
       Pickup:
-        TNT1 A 0 ACS_ExecuteAlways(215, 0, 9)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE, 0, 9)
         stop
     }
 }

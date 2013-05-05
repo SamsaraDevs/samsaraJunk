@@ -29,10 +29,11 @@ int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
 int ArmorMode = -1;
+int MapArmors[ARMORCOUNT] = {-1};
 int ClientTipboxModifier, ClientTipClassModifier;
 
-
 global int 0:SamsaraGlobal[];
+
 #include "samsaraFuncs.h"
 
 #include "script_auto.h"
@@ -48,6 +49,9 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
     int clipcount;
     int result;
+    int i, j, k;
+    int armorIndex, armorToSet;
+    int pln = PlayerNumber();
     
     switch (choice)
     {
@@ -153,16 +157,92 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
 
       case 18:
-        if (ArmorMode < 0)
-        {
-            ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
-        }
+        if (MapArmors[0] == -1) { CheckMapArmors(); }
+        SetArmorMode();
 
-        SetActorState(0, ArmorModeStates[ArmorMode][Timer() != 0]);
+        i = Timer() != 0;
+
+        if (MapArmors[ARMOR_YELLOW] == 1) { i += 2; }
+
+        SetActorState(0, ArmorModeStates[ArmorMode][i]);
         break;
 
       case 19:
         result = isLMS();
+        break;
+
+      case 20:
+        SetArmorMode();
+
+        armorIndex = -1;
+        armorToSet = arg1;
+
+        for (i = 0; i < ARMORCOUNT; i++)
+        {
+            if (GetArmorType(ArmorItems[ArmorMode][i][0], pln))
+            {
+                armorIndex = i;
+                break;
+            }
+        }
+
+        arg1 = middle(0, arg1, ARMORCOUNT-1);
+        i = CheckInventory("Armor");
+        j = ArmorItems[ArmorMode][arg1][1];
+
+        if (j == 0) { result = 0; break; }
+
+
+        /* If we're adding armor, always follow through
+           Else, if the ending armor count is lower than the current armor count
+           and we're not upgrading our armor, give up now */
+
+        if (arg2 > 0)
+        {
+            if (arg1 <= armorIndex) { armorToSet = armorIndex; }
+        }
+        else if (((arg2 == 0 && i > j) || (arg2 < 0 && i > -arg2)) && (arg1 <= armorIndex))
+        {
+            result = 0;
+            break;
+        }
+
+        if (arg2 <= 0)
+        {
+            TakeInventory("BasicArmor", i);
+            GiveInventory(ArmorItems[ArmorMode][armorToSet][0], 1);
+
+            k = CheckInventory("Armor");
+
+            if (arg2 == 0) { break; }
+
+            TakeInventory("BasicArmor", k-1);
+            GiveInventory("InfiniteArmorBonus", -arg2 - 1);
+        }
+        else
+        {
+            TakeInventory("BasicArmor", i);
+            GiveInventory(ArmorItems[ArmorMode][armorToSet][0], 1);
+
+            k = CheckInventory("Armor");
+            TakeInventory("BasicArmor", k-1);
+
+            GiveInventory("InfiniteArmorBonus", (i + arg2) - 1);
+        }
+
+        result = 1;
+        break;
+
+      case 21:
+        i = CheckInventory("Armor");
+        if (i < arg1) { result = 0; break; }
+
+        TakeInventory("BasicArmor", i-arg1);
+        result = 1;
+        break;
+
+      case 22:
+        result = GetCVar("samsara_nohealthcap");
         break;
     }
     
@@ -474,6 +554,12 @@ script 204 (int bossmonologueshit)
     switch(bossmonologueshit)
     {
       case 1: // KORAX
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"So, you have come."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
@@ -517,9 +603,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"...Are you ready to die?"; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 2: // LORD SNOTFOLUS
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
@@ -563,9 +656,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 3: // D'SPARIL
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"I suppose congratulations are in order."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
@@ -609,9 +709,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Surrender to D'Sparil."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 4: // THE ENTITY
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"What is this, I spy?"; HUDMSG_FADEOUT,15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
@@ -655,6 +762,60 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Despair, for I am the One God."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
+        break;
+		
+      case 5: // THE ICON OF SIN
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"In all my aeons, I have never met one like you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I wonder what your people would call you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Mighty? Great? Savior? Hero?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Who knows how many they would have to sort through to find one for you?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Some fitting word that could suit all the incredible deeds you've done."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Do you know the title I have?"; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"None."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"In all the years of my life, they have never found anything suitable for my power."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Call me Baphomet. Call me Gatekeeper. Satan. Demonlord. Hellfather. The Icon of Sin."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Whichever name you choose for me, only one will truly fit."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(140);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Your doom."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
         break;
     }
 }
