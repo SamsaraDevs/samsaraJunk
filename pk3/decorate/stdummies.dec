@@ -230,7 +230,7 @@ actor TurbosphereHeretic : PowerupGiver
 	Powerup.Duration 1050
 }
 
-ACTOR TimeFreezeSphere : CustomInventory 5032
+ACTOR TimeFreezeSphere2 : CustomInventory replaces TimeFreezeSphere //5032
 {
 	Game Doom
 	SpawnID 171
@@ -282,7 +282,7 @@ actor PowerTimeFreezerColor : Powerup
 	Powerup.Duration -12
 }
 
-ACTOR InvisibilitySphere : CustomInventory 5035
+ACTOR InvisibilitySphere2 : CustomInventory replaces InvisibilitySphere //5035
 {
 	Game Doom
 	SpawnID 174
@@ -349,7 +349,7 @@ actor InvisibilitySphereHeretic : PowerupGiver
 	//Powerup.Strength 90
 }
 
-ACTOR Doomsphere : CustomInventory 5036
+ACTOR Doomsphere2 : CustomInventory replaces Doomsphere //5036
 {
 	Game Doom
 	SpawnID 175
@@ -404,7 +404,7 @@ actor PowerDoomsphereColor : Powerup
 	Powerup.Duration -25
 }
 
-ACTOR Guardsphere : CustomInventory 5037
+ACTOR Guardsphere2 : CustomInventory replaces Guardsphere //5037
 {
 	Game Doom
 	SpawnID 0
