@@ -1,0 +1,10 @@
+Patch File for DeHackEd v3.0
+# Created with WhackEd2 0.60 build 214
+
+# General version information
+Doom version = 21
+Patch format = 6
+
+Ammo 1 (Shells)
+Max ammo = 100
+#Per ammo = 10
