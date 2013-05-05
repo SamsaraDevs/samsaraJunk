@@ -92,6 +92,8 @@ POLISH:
 - The Security Officer's fists now properly alternate when holding both fire buttons.
 - B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.
 - Due to popular request, the Chicken player now has its own unique HUD.
+- The Icon of Sin now has a boss speech.
+- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.
 
 
 

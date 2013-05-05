@@ -587,6 +587,12 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
         MNAM A 1 A_Look
         wait
+		
+	  Idle:
+	    TNT1 A 0 A_SetTranslucent(1,0)
+        TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
+        MNAM A 1 A_Look
+        loop
         
       See:
         TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")

@@ -554,6 +554,12 @@ script 204 (int bossmonologueshit)
     switch(bossmonologueshit)
     {
       case 1: // KORAX
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"So, you have come."; HUDMSG_FADEOUT,15, CR_RED,320.4, 150.0, 5.5, 1.0);
@@ -597,9 +603,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"...Are you ready to die?"; HUDMSG_FADEOUT, 15, CR_RED,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 2: // LORD SNOTFOLUS
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT,15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
@@ -643,9 +656,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Glorp...glorp...glorp..."; HUDMSG_FADEOUT, 15, CR_GREEN,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 3: // D'SPARIL
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"I suppose congratulations are in order."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
@@ -689,9 +709,16 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Surrender to D'Sparil."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
         break;
         
       case 4: // THE ENTITY
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"What is this, I spy?"; HUDMSG_FADEOUT,15, CR_WHITE,320.4, 150.0, 5.5, 1.0);
@@ -735,6 +762,60 @@ script 204 (int bossmonologueshit)
         SetHudSize(640, 400, 0);
         SetFont("BIGFONT");
         HudMessageBold(s:"Despair, for I am the One God."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
+        break;
+		
+      case 5: // THE ICON OF SIN
+	  if (GetCVar("samsara_nomonologues"))
+	  {
+		SetActorState(0,"Idle");
+	  }
+	  else
+	  {
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"In all my aeons, I have never met one like you."; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"I wonder what your people would call you."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Mighty? Great? Savior? Hero?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Who knows how many they would have to sort through to find one for you?"; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Some fitting word that could suit all the incredible deeds you've done."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Do you know the title I have?"; HUDMSG_FADEOUT,15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"None."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"In all the years of my life, they have never found anything suitable for my power."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Call me Baphomet. Call me Gatekeeper. Satan. Demonlord. Hellfather. The Icon of Sin."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(154);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Whichever name you choose for me, only one will truly fit."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+        delay(140);
+        SetHudSize(640, 400, 0);
+        SetFont("BIGFONT");
+        HudMessageBold(s:"Your doom."; HUDMSG_FADEOUT, 15, CR_GOLD,320.4, 150.0, 5.5, 1.0);
+		}
         break;
     }
 }
