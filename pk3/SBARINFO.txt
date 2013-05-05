@@ -3442,8 +3442,6 @@ gamemode cooperative, singleplayer
 {
     drawnumber 4, MARAHUDF, white, KillCountAmountTrue, 213, 179;
 }
-DrawImage RuneIcon, 20, 40, Center;
-//drawselectedinventory alwaysshowcounter, MARAHUDF, 290, 22, 293, 30, untranslated;
 GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
 {
     drawimage translatable "CLRMARA1", 145, 169;
@@ -3560,8 +3558,6 @@ playerclass Ranger
         InInventory KillCountNotch, 8 {drawimage "DOMNOTCH", 135, 176;}
         InInventory KillCountNotch, 9 {drawimage "DOMNOTCH", 140, 176;}
     }
-    DrawImage RuneIcon, 20, 40, Center;
-    drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
     GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
     {
         drawimage translatable "CLRDOOM", 145, 169;
