@@ -434,7 +434,7 @@ function void CheckMapArmors(void)
 
     for (i = 0; i < ARMORCOUNT; i++)
     {
-        MapArmors[i] = ThingCountName(0, ArmorPickups[i]) > 0;
+        MapArmors[i] = ThingCountName(ArmorPickups[i], 0) > 0;
     }
 }
 

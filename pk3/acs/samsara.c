@@ -29,7 +29,7 @@ int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
 int ArmorMode = -1;
-int MapArmors[ARMORCOUNT];
+int MapArmors[ARMORCOUNT] = {-1};
 int ClientTipboxModifier, ClientTipClassModifier;
 
 global int 0:SamsaraGlobal[];
@@ -159,6 +159,8 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 18:
         if (MapArmors[0] == -1) { CheckMapArmors(); }
         SetArmorMode();
+
+        PrintBold(s:"Checking ", n:0, s:" (yellow is ", s:cond(MapArmors[ARMOR_YELLOW], "in", "not in"), s:")");
 
         i = Timer() != 0;
 
