@@ -140,7 +140,7 @@ actor "Super Crossbow" : Weapon
     inventory.pickupmessage "SUPER CROSSBOW"
     weapon.selectionorder 400
     Weapon.SlotNumber 3
-    weapon.ammotype "AmmoShell"
+    weapon.ammotype "Shell"
     weapon.kickback 100
     weapon.ammouse 2
     weapon.ammogive 8
@@ -290,7 +290,7 @@ actor "  Super Crossbow  " : Weapon
     inventory.pickupmessage "SUPER CROSSBOW"
     weapon.selectionorder 400
     Weapon.SlotNumber 3
-    weapon.ammotype "AmmoShell"
+    weapon.ammotype "Shell"
     weapon.kickback 100
     weapon.ammouse 2
     weapon.ammogive 8

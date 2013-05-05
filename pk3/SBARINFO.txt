@@ -271,12 +271,12 @@ StatusBar normal, forcescaled
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 255, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
-        drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
+        drawnumber 3, INDEXFON, gold, ammo Shell, 289, 179;
         drawnumber 3, INDEXFON, gold, ammo RocketAmmo, 289, 185;
         drawnumber 3, INDEXFON, gold, ammo Cell, 289, 191;
 
         drawnumber 3, INDEXFON, gold, ammocapacity Clip, 315, 173;
-        drawnumber 3, INDEXFON, gold, ammocapacity AmmoShell, 315, 179;
+        drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
         drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -407,12 +407,12 @@ StatusBar normal, forcescaled
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
-        drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
+        drawnumber 3, INDEXFON, gold, ammo Shell, 289, 179;
         drawnumber 3, INDEXFON, gold, ammo RocketAmmo, 289, 185;
         drawnumber 3, INDEXFON, gold, ammo Cell, 289, 191;
 
         drawnumber 3, INDEXFON, gold, ammocapacity Clip, 315, 173;
-        drawnumber 3, INDEXFON, gold, ammocapacity AmmoShell, 315, 179;
+        drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
         drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -546,7 +546,7 @@ StatusBar normal, forcescaled
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, yellow, ammo Clip, 285, 173;
-        drawnumber 3, INDEXFON, yellow, ammo AmmoShell, 285, 179;
+        drawnumber 3, INDEXFON, yellow, ammo Shell, 285, 179;
         drawnumber 3, INDEXFON, yellow, ammo RocketAmmo, 285, 185;
         drawnumber 3, INDEXFON, yellow, ammo Cell, 285, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -683,13 +683,13 @@ StatusBar normal, forcescaled
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, lightblue, ammo Clip, 289, 173;
-        //drawnumber 3, INDEXFON, lightblue, ammo AmmoShell, 289, 179;
+        //drawnumber 3, INDEXFON, lightblue, ammo Shell, 289, 179;
         drawstring SMALLFONT, lightblue, "x", 289, 178;
         drawnumber 3, INDEXFON, lightblue, ammo RocketAmmo, 289, 185;
         drawnumber 3, INDEXFON, lightblue, ammo Cell, 289, 191;
 
         drawnumber 3, INDEXFON, lightblue, ammocapacity Clip, 315, 173;
-        //drawnumber 3, INDEXFON, lightblue, ammocapacity AmmoShell, 315, 179;
+        //drawnumber 3, INDEXFON, lightblue, ammocapacity Shell, 315, 179;
         drawstring SMALLFONT, lightblue, "x", 315, 178;
         drawnumber 3, INDEXFON, lightblue, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, lightblue, ammocapacity Cell, 315, 191;
@@ -968,12 +968,12 @@ StatusBar normal, forcescaled
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, green, ammo Clip, 289, 174;
-        drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 180;
+        drawnumber 3, INDEXFON, green, ammo Shell, 289, 180;
         drawnumber 3, INDEXFON, green, ammo RocketAmmo, 289, 186;
         drawnumber 3, INDEXFON, green, ammo Cell, 289, 192;
 
         drawnumber 3, INDEXFON, green, ammocapacity Clip, 315, 174;
-        drawnumber 3, INDEXFON, green, ammocapacity AmmoShell, 315, 180;
+        drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 180;
         drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 186;
         drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 192;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -1777,12 +1777,12 @@ IsSelected not " Alien Weapon " {
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
                                         drawnumber 3, INDEXFON, green, ammo Clip, 289, 173;
-                                        drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 179;
+                                        drawnumber 3, INDEXFON, green, ammo Shell, 289, 179;
                                         drawnumber 3, INDEXFON, green, ammo RocketAmmo, 289, 185;
                                         drawnumber 3, INDEXFON, green, ammo Cell, 289, 191;
 
                                         drawnumber 3, INDEXFON, green, ammocapacity Clip, 315, 173;
-                                        drawnumber 3, INDEXFON, green, ammocapacity AmmoShell, 315, 179;
+                                        drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 179;
                                         drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 185;
                                         drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 191;
                                         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -1867,10 +1867,10 @@ playerclass Ranger
         //drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     //}
 
-    drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
+    drawnumber 3, INDEXFON, darkbrown, ammo Shell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
 
-    drawnumber 3, INDEXFON, darkbrown, ammocapacity AmmoShell, 315, 179;
+    drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
     drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
 
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
@@ -2169,12 +2169,12 @@ statusbar Automap
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 255, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
-        drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
+        drawnumber 3, INDEXFON, gold, ammo Shell, 289, 179;
         drawnumber 3, INDEXFON, gold, ammo RocketAmmo, 289, 185;
         drawnumber 3, INDEXFON, gold, ammo Cell, 289, 191;
 
         drawnumber 3, INDEXFON, gold, ammocapacity Clip, 315, 173;
-        drawnumber 3, INDEXFON, gold, ammocapacity AmmoShell, 315, 179;
+        drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
         drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -2265,12 +2265,12 @@ statusbar Automap
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, gold, ammo Clip, 289, 173;
-        drawnumber 3, INDEXFON, gold, ammo AmmoShell, 289, 179;
+        drawnumber 3, INDEXFON, gold, ammo Shell, 289, 179;
         drawnumber 3, INDEXFON, gold, ammo RocketAmmo, 289, 185;
         drawnumber 3, INDEXFON, gold, ammo Cell, 289, 191;
 
         drawnumber 3, INDEXFON, gold, ammocapacity Clip, 315, 173;
-        drawnumber 3, INDEXFON, gold, ammocapacity AmmoShell, 315, 179;
+        drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
         drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -2365,7 +2365,7 @@ statusbar Automap
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, yellow, ammo Clip, 285, 173;
-        drawnumber 3, INDEXFON, yellow, ammo AmmoShell, 285, 179;
+        drawnumber 3, INDEXFON, yellow, ammo Shell, 285, 179;
         drawnumber 3, INDEXFON, yellow, ammo RocketAmmo, 285, 185;
         drawnumber 3, INDEXFON, yellow, ammo Cell, 285, 191;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -2658,12 +2658,12 @@ statusbar Automap
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
         drawnumber 3, INDEXFON, green, ammo Clip, 289, 174;
-        drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 180;
+        drawnumber 3, INDEXFON, green, ammo Shell, 289, 180;
         drawnumber 3, INDEXFON, green, ammo RocketAmmo, 289, 186;
         drawnumber 3, INDEXFON, green, ammo Cell, 289, 192;
 
         drawnumber 3, INDEXFON, green, ammocapacity Clip, 315, 174;
-        drawnumber 3, INDEXFON, green, ammocapacity AmmoShell, 315, 180;
+        drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 180;
         drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 186;
         drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 192;
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -3426,12 +3426,12 @@ IsSelected not " Alien Weapon " {
 		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
 
                                         drawnumber 3, INDEXFON, green, ammo Clip, 289, 173;
-                                        drawnumber 3, INDEXFON, green, ammo AmmoShell, 289, 179;
+                                        drawnumber 3, INDEXFON, green, ammo Shell, 289, 179;
                                         drawnumber 3, INDEXFON, green, ammo RocketAmmo, 289, 185;
                                         drawnumber 3, INDEXFON, green, ammo Cell, 289, 191;
 
                                         drawnumber 3, INDEXFON, green, ammocapacity Clip, 315, 173;
-                                        drawnumber 3, INDEXFON, green, ammocapacity AmmoShell, 315, 179;
+                                        drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 179;
                                         drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 185;
                                         drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 191;
                                         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
@@ -3477,10 +3477,10 @@ playerclass Ranger
         drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
     }*/
 
-    drawnumber 3, INDEXFON, darkbrown, ammo AmmoShell, 289, 179;
+    drawnumber 3, INDEXFON, darkbrown, ammo Shell, 289, 179;
     drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
 
-    drawnumber 3, INDEXFON, darkbrown, ammocapacity AmmoShell, 315, 179;
+    drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
     drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
     drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
     InInventory not PowerInvulnerable {drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50;}

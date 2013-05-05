@@ -7,7 +7,7 @@ actor "  Shotgun  " : Weapon
     Weapon.SelectionOrder 400
     Weapon.AmmoUse 1
     Weapon.AmmoGive 10
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
     DamageType "DukeDamage"
     +NOALERT
     +INVENTORY.UNDROPPABLE

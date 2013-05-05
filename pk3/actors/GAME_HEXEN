@@ -17,17 +17,17 @@ actor HexenAmmo12Small : CustomInventory replaces Mana1
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
+        TNT1 A 0 A_GiveInventory("Shell",10)
         TNT1 A 0 A_GiveInventory("Clip",10)
         TNT1 A 0 A_GiveInventory("LavaNails",2)
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
         TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
+        TNT1 A 0 A_GiveInventory("Shell",10)
         TNT1 A 0 A_GiveInventory("Clip",10)
         TNT1 A 0 A_SetBlend("Green",0.4,4)
         stop
@@ -44,8 +44,8 @@ actor HexenAmmo12Small : CustomInventory replaces Mana1
         stop
 
       PickupFailCheck2:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",10)
         TNT1 A 0 A_GiveInventory("LavaNails",3)
         stop
 
@@ -128,14 +128,14 @@ actor HexenEverythingAmmo : CustomInventory replaces Mana3
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_GiveInventory("Clip",15)
-        TNT1 A 0 A_GiveInventory("AmmoShell",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
         TNT1 A 0 A_GiveInventory("RocketAmmo",15)
         TNT1 A 0 A_GiveInventory("Cell",15)
         stop
 
       PickupMarathon:
         TNT1 A 0 A_GiveInventory("Clip",15)
-        TNT1 A 0 A_GiveInventory("AmmoShell",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
         TNT1 A 0 A_GiveInventory("RocketAmmo",15)
         TNT1 A 0 A_GiveInventory("Cell",15)
         TNT1 A 0 A_SetBlend("Green",0.4,4)
@@ -155,7 +155,7 @@ actor HexenEverythingAmmo : CustomInventory replaces Mana3
       PickupQuake:
         TNT1 A 0 A_GiveInventory("Clip",15)
         TNT1 A 0 A_GiveInventory("LavaNails",5)
-        TNT1 A 0 A_GiveInventory("AmmoShell",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
         TNT1 A 0 A_GiveInventory("RocketAmmo",15)
         TNT1 A 0 A_GiveInventory("MultiRocketAmmo",5)
         TNT1 A 0 A_GiveInventory("Cell",15)

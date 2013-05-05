@@ -411,14 +411,14 @@ actor CrossbowAmmo2 : CustomInventory//Shell
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("AmmoShell",5)
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",5)
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("AmmoShell",5)
+        TNT1 A 0 A_GiveInventory("Shell",5)
         stop
 
       PickupWolfen:
@@ -447,14 +447,14 @@ actor CrossbowAmmo3 : CustomInventory//Shell
         TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",10)
         stop
 
       PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
         TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
+        TNT1 A 0 A_GiveInventory("Shell",10)
         stop
 
       PickupWolfen:
