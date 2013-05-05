@@ -29,10 +29,11 @@ int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
 int ArmorMode = -1;
+int MapArmors[ARMORCOUNT];
 int ClientTipboxModifier, ClientTipClassModifier;
 
-
 global int 0:SamsaraGlobal[];
+
 #include "samsaraFuncs.h"
 
 #include "script_auto.h"
@@ -48,6 +49,9 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {
     int clipcount;
     int result;
+    int i, j, k;
+    int armorIndex, armorToSet;
+    int pln = PlayerNumber();
     
     switch (choice)
     {
@@ -153,16 +157,86 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
 
       case 18:
-        if (ArmorMode < 0)
-        {
-            ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
-        }
+        if (MapArmors[0] == -1) { CheckMapArmors(); }
+        SetArmorMode();
 
-        SetActorState(0, ArmorModeStates[ArmorMode][Timer() != 0]);
+        i = Timer() != 0;
+
+        if (MapArmors[ARMOR_YELLOW] == 1) { i += 2; }
+
+        SetActorState(0, ArmorModeStates[ArmorMode][i]);
         break;
 
       case 19:
         result = isLMS();
+        break;
+
+      case 20:
+        SetArmorMode();
+
+        armorIndex = -1;
+        armorToSet = arg1;
+
+        for (i = 0; i < ARMORCOUNT; i++)
+        {
+            if (GetArmorType(ArmorItems[ArmorMode][i][0], pln))
+            {
+                armorIndex = i;
+                break;
+            }
+        }
+
+        arg1 = middle(0, arg1, ARMORCOUNT-1);
+        i = CheckInventory("Armor");
+        j = ArmorItems[ArmorMode][arg1][1];
+
+
+        /* If we're adding armor, always follow through
+           Else, if the ending armor count is lower than the current armor count
+           and we're not upgrading our armor, give up now */
+
+        if (arg2 > 0)
+        {
+            if (arg1 <= armorIndex) { armorToSet = armorIndex; }
+        }
+        else if (((arg2 == 0 && i > j) || (arg2 < 0 && i > -arg2)) && (arg1 <= armorIndex))
+        {
+            result = 0;
+            break;
+        }
+
+        if (arg2 <= 0)
+        {
+            TakeInventory("BasicArmor", i);
+            GiveInventory(ArmorItems[ArmorMode][armorToSet][0], 1);
+
+            k = CheckInventory("Armor");
+
+            if (arg2 == 0) { break; }
+
+            TakeInventory("BasicArmor", k-1);
+            GiveInventory("InfiniteArmorBonus", -arg2 - 1);
+        }
+        else
+        {
+            TakeInventory("BasicArmor", i);
+            GiveInventory(ArmorItems[ArmorMode][armorToSet][0], 1);
+
+            k = CheckInventory("Armor");
+            TakeInventory("BasicArmor", k-1);
+
+            GiveInventory("InfiniteArmorBonus", (i + arg2) - 1);
+        }
+
+        result = 1;
+        break;
+
+      case 21:
+        i = CheckInventory("Armor");
+        if (i < arg1) { result = 0; break; }
+
+        TakeInventory("BasicArmor", i-arg1);
+        result = 1;
         break;
     }
     

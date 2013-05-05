@@ -628,8 +628,8 @@ actor LGDischarge
     {
       Spawn:
         TNT1 A 1
-        TNT1 A 0 A_Explode(18 * (ACS_ExecuteWithResult(215, 5)), 4096, 0)
-        TNT1 A 0 A_Explode(17 * (ACS_ExecuteWithResult(215, 5)), 4096)
+        TNT1 A 0 A_Explode(18 * (ACS_ExecuteWithResult(SAMSARA_DECORATE, 5)), 4096, 0)
+        TNT1 A 0 A_Explode(17 * (ACS_ExecuteWithResult(SAMSARA_DECORATE, 5)), 4096)
         TNT1 A 0 A_TakeFromTarget("Cell")
         stop
     }

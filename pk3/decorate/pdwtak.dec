@@ -351,7 +351,7 @@ actor RangerDiesWhenHeIsKilled: QuakeExplosion
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle2", 0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
-        QEXP A 0 ACS_ExecuteWithResult(215, 10, 1)
+        QEXP A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 10, 1)
         loop
         
       Death:

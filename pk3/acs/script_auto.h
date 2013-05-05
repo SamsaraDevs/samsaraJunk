@@ -23,6 +23,7 @@ script SAMSARA_OPEN open
     }
 
     ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+    CheckMapArmors();
     
     while (1)
     {

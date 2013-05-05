@@ -35,7 +35,7 @@ actor SamsaraSlotPickup: CustomInventory
     {
       Spawn:
         TNT1 A 0
-        TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(215, 1) == 1, "IWasDropped")
+        TNT1 A 1 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 1) == 1, "IWasDropped")
         TNT1 A 35 A_JumpIf(1==1, "SpawnLoop")
         wait
 

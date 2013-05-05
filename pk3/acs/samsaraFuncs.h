@@ -427,3 +427,21 @@ function int HandlePunchDrunk(int respawning)
     GiveInventory(PunchDrunkItems[classnum][0], 1);
     return 1;
 }
+
+function void CheckMapArmors(void)
+{
+    int i;
+
+    for (i = 0; i < ARMORCOUNT; i++)
+    {
+        MapArmors[i] = ThingCountName(0, ArmorPickups[i]) > 0;
+    }
+}
+
+function void SetArmorMode(void)
+{
+    if (ArmorMode < 0)
+    {
+        ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
+    }
+}

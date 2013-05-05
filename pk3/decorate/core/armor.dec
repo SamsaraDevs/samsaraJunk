@@ -20,6 +20,11 @@ actor ArmorScrap : ArmorBonus replaces ArmorBonus
     }
 }
 
+actor InfiniteArmorBonus: ArmorScrap
+{
+    Armor.MaxSaveAmount 0x7FFFFFFF
+}
+
 actor ArmorScrapTrail
 {
     Renderstyle Add
@@ -47,6 +52,29 @@ actor ArmorPack1: GreenArmor
     Inventory.PickupMessage "Picked up 100 Armor."
     Inventory.PickupSound "armor1get"
     Inventory.Icon "RMR1A0"
+    States
+    {
+      Spawn:
+        RMR1 A 0 BRIGHT
+        RMR1 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        loop
+    }
+}
+
+actor QuakeGreenArmor: BasicArmorPickup
+{
+    Scale 0.75
+    RenderStyle Add
+    Alpha 0.9
+    +FLOATBOB
+
+    Inventory.PickupMessage "Picked up 100 Armor."
+    Inventory.PickupSound "armor1get"
+    Inventory.Icon "RMR1A0"
+
+    Armor.SaveAmount 100
+    Armor.SavePercent 30
+
     States
     {
       Spawn:
@@ -109,15 +137,6 @@ actor ArmorPack2Trail
     }
 }
 
-actor CorvusMegaArmor : BasicArmorBonus
-{
-	Armor.SavePercent 50
-    Armor.SaveAmount 100
-    Armor.MaxSaveAmount 200
-
-    Inventory.Icon "RMR2A0"
-}
-
 actor ArmorPack3: BasicArmorPickup
 {
     Game Doom
@@ -172,12 +191,37 @@ actor QuakeRedArmor: BasicArmorPickup
     }
 }
 
-actor SamsaraYellowArmor: BasicArmorPickup 28636
+actor SamsaraYellowArmor: BasicArmorPickup
 {
     Radius 20
     Height 16
 
     Armor.Savepercent 40
+    Armor.Saveamount 150
+
+    Inventory.Icon "RMR5A0"
+    RenderStyle Add
+    Alpha 0.95
+    +FLOATBOB
+
+    Inventory.Pickupmessage "Picked up 150 armor."
+    Inventory.PickupSound "armor1get"
+
+    States
+    {
+      Spawn:
+        RMR5 A 0
+        RMR5 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        loop
+    }
+}
+
+actor QuakeYellowArmor: BasicArmorPickup
+{
+    Radius 20
+    Height 16
+
+    Armor.Savepercent 60
     Armor.Saveamount 150
 
     Inventory.Icon "RMR5A0"
@@ -238,26 +282,65 @@ actor GreenArmorPickup replaces GreenArmor
     {
       Spawn:
         RMR1 A 0 bright
-        TNT1 A 35 ACS_ExecuteWithResult(215, 18, 0)
+        TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 0)
         stop
 
       Armor1:
+      Armor1_WithYellow:
         TNT1 A 0 A_SpawnItemEx("GreenArmorNoDrop")
         stop
 
       Armor2:
-        TNT1 A 0 A_SpawnItemEx("YellowArmorNoDrop")
+      Armor2_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("QGreenArmorNoDrop")
         stop
 
       Armor1_Drop:
+      Armor1_YellowDrop:
         TNT1 A 0 A_SpawnItemEx("ArmorPack1")
         stop
 
       Armor2_Drop:
-        TNT1 A 0 A_SpawnItemEx("SamsaraYellowArmor")
+      Armor2_YellowDrop:
+        TNT1 A 0 A_SpawnItemEx("QuakeGreenArmor")
         stop
     }
 }
+
+actor YellowArmorPickup 28636
+{
+    +NOINTERACTION
+
+    States
+    {
+      Spawn:
+        RMR5 A 0 bright
+        TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 1)
+        stop
+
+      Armor1:
+      Armor1_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("YellowArmorNoDrop")
+        stop
+
+      Armor2:
+      Armor2_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("QYellowArmorNoDrop")
+        stop
+
+      Armor1_Drop:
+      Armor1_YellowDrop:
+        TNT1 A 0 A_SpawnItemEx("SamsaraYellowArmor")
+        stop
+
+      Armor2_Drop:
+      Armor2_YellowDrop:
+        TNT1 A 0 A_SpawnItemEx("QuakeYellowArmor")
+        stop
+    }
+}
+        
+
 
 actor BlueArmorPickup replaces BlueArmor
 {
@@ -267,22 +350,33 @@ actor BlueArmorPickup replaces BlueArmor
     {
       Spawn:
         RMR2 A 0 bright
-        TNT1 A 35 ACS_ExecuteWithResult(215, 18, 1)
+        TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 2)
         stop
 
       Armor1:
+      Armor1_WithYellow:
         TNT1 A 0 A_SpawnItemEx("BlueArmorNoDrop")
         stop
 
       Armor2:
-        TNT1 A 0 A_SpawnItemEx("QRedArmorNoDrop")
+        TNT1 A 0 A_SpawnItemEx("QYellowArmorNoDrop")
         stop
 
       Armor1_Drop:
+      Armor1_YellowDrop:
         TNT1 A 0 A_SpawnItemEx("ArmorPack2")
         stop
 
       Armor2_Drop:
+        TNT1 A 0 A_SpawnItemEx("QuakeYellowArmor")
+        stop
+
+
+      Armor2_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("QRedArmorNoDrop")
+        stop
+      
+      Armor2_YellowDrop:
         TNT1 A 0 A_SpawnItemEx("QuakeRedArmor")
         stop
     }
@@ -296,10 +390,11 @@ actor RedArmor 5040
     {
       Spawn:
         RMR3 A 0 bright
-        TNT1 A 35 ACS_ExecuteWithResult(215, 18, 2)
+        TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 3)
         stop
 
       Armor1:
+      Armor1_WithYellow:
         TNT1 A 0 A_SpawnItemEx("RedArmorNoDrop")
         stop
 
@@ -308,16 +403,36 @@ actor RedArmor 5040
         stop
 
       Armor1_Drop:
+      Armor1_YellowDrop:
         TNT1 A 0 A_SpawnItemEx("RedArmor")
         stop
 
       Armor2_Drop:
+        TNT1 A 0 A_SpawnItemEx("QuakeRedArmor")
+        stop
+
+      Armor2_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("SilverArmorNoDrop")
+        stop
+
+      Armor2_YellowDrop:
         TNT1 A 0 A_SpawnItemEx("SamsaraSilverArmor")
         stop
     }
 }
 
 actor GreenArmorNoDrop: ArmorPack1
+{
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("DROPPED", 0)
+        goto Super::Spawn
+    }
+}
+
+actor YellowArmorNoDrop: SamsaraYellowArmor
 {
     States
     {
@@ -351,7 +466,19 @@ actor RedArmorNoDrop: RedArmor
 }
 
 
-actor YellowArmorNoDrop: SamsaraYellowArmor
+
+actor QGreenArmorNoDrop: QuakeGreenArmor
+{
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("DROPPED", 0)
+        goto Super::Spawn
+    }
+}
+
+actor QYellowArmorNoDrop: QuakeYellowArmor
 {
     States
     {

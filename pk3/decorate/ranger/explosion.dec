@@ -12,7 +12,7 @@ actor QuakeExplosion
     {
       Spawn:
         QEXP A 0 bright
-        QEXP A 0 ACS_ExecuteWithResult(215, 8)
+        QEXP A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 8)
         goto SpawnLoop
 
       SpawnLoop:
@@ -21,7 +21,7 @@ actor QuakeExplosion
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle",  0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle2", 0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeExplosionParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
-        QEXP A 0 ACS_ExecuteWithResult(215, 10, 1)
+        QEXP A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 10, 1)
         loop
         
       Death:
@@ -40,7 +40,7 @@ actor QuakeTinyExplosion: QuakeExplosion
     {
       Spawn:
         QEXP A 0 bright
-        QEXP A 0 ACS_ExecuteWithResult(215, 8, 1, 2)
+        QEXP A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 8, 1, 2)
         goto SpawnLoop
 
       SpawnLoop:
@@ -49,7 +49,7 @@ actor QuakeTinyExplosion: QuakeExplosion
         QEXP A 0 A_CustomMissile("QuakeTinyParticle",  0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeTinyParticle2", 0, 0, random(-180, 180), 2, random(-180, 180))
         QEXP A 0 A_CustomMissile("QuakeTinyParticle3", 0, 0, random(-180, 180), 2, random(-180, 180))
-        QEXP A 0 ACS_ExecuteWithResult(215, 10, 1)
+        QEXP A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 10, 1)
         loop
         
       Death:
