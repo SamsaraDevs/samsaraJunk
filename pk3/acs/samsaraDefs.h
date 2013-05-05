@@ -368,4 +368,5 @@ int ChangelogString =
 - Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.\n\
 - Skulltag monsters now bleed/gib their proper colors.\n\
 - The Security Officer's fists now properly alternate when holding both fire buttons.\n\
-- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.";
+- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.\n\
+- Due to popular request, the Chicken player now has its own unique HUD.";
