@@ -1,0 +1,80 @@
+actor StrifeStimpack: CustomInventory replaces MedPatch
+{
+    ConversationID 125
+
+    +FLOORCLIP
+    +AUTOACTIVATE
+
+    Inventory.PickupMessage "$TXT_MEDPATCH" // "You picked up the Med patch."
+    Inventory.MaxAmount -1
+
+    States
+    {
+      Spawn:
+        STMP A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
+        TNT1 A 0 A_GiveInventory("MedPatch")
+        stop
+     
+      Infinite:
+        TNT1 A 0 A_GiveInventory("InfiniteHealth", 10)
+        stop
+    }
+}
+
+actor StrifeMedikit: CustomInventory replaces MedicalKit
+{
+    ConversationID 126
+
+    +FLOORCLIP
+    +AUTOACTIVATE
+
+    Inventory.PickupMessage "$TXT_MEDICALKIT" // "You picked up the Med patch."
+    Inventory.MaxAmount -1
+
+    States
+    {
+      Spawn:
+        MDKT A -1
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
+        TNT1 A 0 A_GiveInventory("MedicalKit")
+        stop
+     
+      Infinite:
+        TNT1 A 0 A_GiveInventory("InfiniteHealth", 25)
+        stop
+    }
+}
+
+actor StrifeSoulsphere: CustomInventory replaces SurgeryKit
+{
+    ConversationID 127
+
+    +FLOORCLIP
+    +AUTOACTIVATE
+
+    Inventory.PickupMessage "$TXT_SURGERYKIT" // "You picked up the Med patch."
+    Inventory.MaxAmount -1
+
+    States
+    {
+      Spawn:
+        FULL AB 35
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
+        TNT1 A 0 A_GiveInventory("SurgeryKit")
+        stop
+     
+      Infinite:
+        TNT1 A 0 A_GiveInventory("InfiniteHealth", 100)
+        stop
+    }
+}

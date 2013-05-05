@@ -1,0 +1,21 @@
+Variables: none
+s/actor \+\([A-Za-z0-9]\+\) *: \+\([A-Za-z0-9]\+\)\( \+[0-9]\+\)\=/\/\/&\ractor \12: \2 replaces \1/
+
+Turns lines such as
+    actor Herp: Derp 92334
+
+into
+    //actor Herp: Derp 92334
+    actor Herp2: Derp replaces Herp
+
+
+
+Variables: dmgFactorName, newDmgName
+s/\( *\)DamageFactor \+\"${dmgFactorName}\", \+\([0-9]\+\(\.[0-9]\+\)\=\)/&\r\1DamageFactor \"${newDmgName}\", \2/
+
+Given {dmgFactorName, newDmgName = "Zorch", "ZorchSpectral"}, turns lines such as
+    DamageFactor "Zorch", 1.5
+
+into
+    DamageFactor "Zorch", 1.5
+    DamageFactor "ZorchSpectral", 1.5

@@ -9,7 +9,7 @@ actor FiniteHealth200: Health
     Inventory.MaxAmount 200
 }
 
-actor FiniteHealth200: Health
+actor FiniteHealth300: Health
 {
     Inventory.Amount 1
     Inventory.MaxAmount 300
