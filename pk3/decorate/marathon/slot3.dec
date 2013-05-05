@@ -313,7 +313,7 @@ actor FusionSuper
     States
     {
       Spawn:
-        CHGB ABC 3 Bright A_SpawnItem("FusionTrail")
+        CHGB AAABBBCCC 1 Bright A_SpawnItem("FusionTrail")
         LOOP
 
       Death:
