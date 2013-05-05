@@ -48,7 +48,7 @@
 #define TIPCOUNT            2
 
 #define LMSMODES            6
-#define ARMORMODES          4
+#define ARMORMODES          5
 
 #define CLASS_DOOM      0
 #define CLASS_CHEX      1
@@ -314,6 +314,13 @@ int ArmorItems[ARMORMODES][ARMORCOUNT][2] =
         {"SamsaraSilverArmor",  250},
     },
     {
+        {"MarathonGreenArmor",  100},
+        {"MarathonYellowArmor", 150},
+        {"MarathonBlueArmor",   200},
+        {"MarathonRedArmor",    300},
+        {"MarathonRedArmor",    300},
+    },
+    {
         {"NoArmor",             0},
         {"NoArmor",             0},
         {"NoArmor",             0},
@@ -328,6 +335,7 @@ int ArmorModeStates[ARMORMODES][4] =
     {"Armor2", "Armor2_Drop", "Armor2_WithYellow", "Armor2_YellowDrop"},
     {"Armor3", "Armor3_Drop", "Armor3_WithYellow", "Armor3_YellowDrop"},
     {"Armor4", "Armor4_Drop", "Armor4_WithYellow", "Armor4_YellowDrop"},
+    {"Armor5", "Armor5_Drop", "Armor5_WithYellow", "Armor5_YellowDrop"},
 };
 
 int ArmorModeNames[ARMORMODES] = 
@@ -335,6 +343,7 @@ int ArmorModeNames[ARMORMODES] =
     "Normal",
     "Quake",
     "Quake (old)",
+    "Marathon",
     "None",
 };
 
