@@ -381,7 +381,7 @@ int ChangelogString =
 - The Fusion Pistol can now actually bypass player invulnerability, as it should.\n\
 - B.J. has had his Clip ammo doubled upon picking up Ammo 2.\n\
 - B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather than 6.\n\
-- samsara_armormode has been added. 0 means nothing changes, 1 means you have more Quake style armor pickups.\n\
+- samsara_armormode has been added. The modes available are Normal, Quake, Quake (old), Marathon, and None.\n\
 - You can now see what settings the server is using!\n\
 - In DM, the Tomed Firemace has traded in the ability to home on people for the ability to bounce off walls.\n\
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
