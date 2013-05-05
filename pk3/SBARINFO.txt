@@ -2006,6 +2006,91 @@ playerclass Ranger
         InInventory QuadDamagePower, 1 {drawimage "WPQUAK7Y", 247, 11;}
     }
 }
+
+//Playerclass Chicken
+InInventory Beak, 1
+    {
+        drawimage "CHKNBAR", 0, 168;
+        drawnumber 3, WOLFHUDF, gold, ammo1, 37, 177, 0, untranslated, 0, untranslated, 20;
+        drawnumber 3, WOLFHUDF, gold, health, 90, 177, red, 25, black, 50;
+        drawnumber 3, WOLFHUDF, gold, armor, 212, 177, 0, untranslated, 0, untranslated, 50;
+
+        //Doom keys
+        InInventory BlueCard, 1 {drawimage "STKEYS0", 226, 175;}
+        InInventory YellowCard, 1 {drawimage "STKEYS1", 238, 175;}
+        InInventory RedCard, 1 {drawimage "STKEYS2", 250, 175;}
+        InInventory BlueSkull, 1 {drawimage "STKEYS3", 226, 186;}
+        InInventory YellowSkull, 1 {drawimage "STKEYS4", 238, 186;}
+        InInventory RedSkull, 1 {drawimage "STKEYS5", 250, 186;}
+        //Chex keys
+        InInventory ChexBlueCard, 1 {drawimage "STKEYS0", 222, 175;}
+        InInventory ChexYellowCard, 1 {drawimage "STKEYS1", 235, 175;}
+        InInventory ChexRedCard, 1 {drawimage "STKEYS2", 248, 175;}
+        InInventory BlueFlemKey, 1 {drawimage "STKEYS3", 222, 186;}
+        InInventory YellowFlemKey, 1 {drawimage "STKEYS4", 235, 186;}
+        InInventory RedFlemKey, 1 {drawimage "STKEYS5", 248, 186;}
+        //Heretic keys
+        InInventory KeyYellow, 1 {drawimage "YKEYICON", 224, 181;}
+        InInventory KeyGreen, 1 {drawimage "GKEYICON", 238, 181;}
+        InInventory KeyBlue, 1 {drawimage "BKEYICON", 251, 181;}
+        //HeXen keys
+        InInventory KeySteel, 1 {drawimage "HEXKEY1", 223, 171;}
+        InInventory KeyCave, 1 {drawimage "HEXKEY2", 223, 181;}
+        InInventory KeyAxe, 1 {drawimage "HEXKEY3", 223, 191;}
+        InInventory KeyFire, 1 {drawimage "HEXKEY4", 233, 171;}
+        InInventory KeyEmerald, 1 {drawimage "HEXKEY5", 233, 181;}
+        InInventory KeyDungeon, 1 {drawimage "HEXKEY6", 233, 191;}
+        InInventory KeySilver, 1 {drawimage "HEXKEY7", 243, 171;}
+        InInventory KeyRusted, 1 {drawimage "HEXKEY8", 243, 181;}
+        InInventory KeyHorn, 1 {drawimage "HEXKEY9", 243, 191;}
+        InInventory KeySwamp, 1 {drawimage "HEXKEYA", 253, 171;}
+        InInventory KeyCastle, 1 {drawimage "HEXKEYB", 253, 181;}
+		//Strife keys
+		InInventory BaseKey, 1 {drawimage "STRIKEY1", 224, 171;}
+		InInventory GovsKey, 1 {drawimage "STRIKEY2", 230, 171;}
+		InInventory PassCard, 1 {drawimage "STRIKEY3", 236, 171;}
+		InInventory IDBadge, 1 {drawimage "STRIKEY4", 243, 171;}
+		InInventory PrisonKey, 1 {drawimage "STRIKEY5", 249, 171;}
+		InInventory SeveredHand, 1 {drawimage "STRIKEY6", 256, 171;}
+		InInventory Power1Key, 1 {drawimage "STRIKEY7", 224, 178;}
+		InInventory Power2Key, 1 {drawimage "STRIKEY8", 230, 178;}
+		InInventory Power3Key, 1 {drawimage "STRIKEY9", 236, 178;}
+		InInventory GoldKey, 1 {drawimage "STRIKEYA", 243, 178;}
+		InInventory IDCard, 1 {drawimage "STRIKEYB", 249, 178;}
+		InInventory SilverKey, 1 {drawimage "STRIKEYC", 256, 178;}
+		InInventory OracleKey, 1 {drawimage "STRIKEYD", 224, 185;}
+		InInventory MilitaryID, 1 {drawimage "STRIKEYE", 230, 185;}
+		InInventory OrderKey, 1 {drawimage "STRIKEYF", 236, 185;}
+		InInventory BrassKey, 1 {drawimage "STRIKEYG", 243, 185;}
+		InInventory RedCrystalKey, 1 {drawimage "STRIKEYH", 249, 185;}
+		InInventory BlueCrystalKey, 1 {drawimage "STRIKEYI", 256, 185;}
+		InInventory ChapelKey, 1 {drawimage "STRIKEYJ", 224, 192;}
+		InInventory CatacombKey, 1 {drawimage "STRIKEYK", 230, 192;}
+		InInventory CoreKey, 1 {drawimage "STRIKEYL", 236, 192;}
+		InInventory MaulerKey, 1 {drawimage "STRIKEYM", 243, 192;}
+		InInventory FactoryKey, 1 {drawimage "STRIKEYN", 249, 192;}
+		InInventory MineKey, 1 {drawimage "STRIKEYO", 256, 192;}
+        gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession
+        {
+            drawnumber 3, WOLFHUDF, black, frags, 138, 177;
+        }
+        gamemode cooperative, singleplayer
+        {
+            drawnumber 3, WOLFHUDF, black, KillCountAmount, 138, 181;
+            InInventory KillCountNotch, 1 {drawimage "WOLFNTCH", 107, 167;}
+            InInventory KillCountNotch, 2 {drawimage "WOLFNTCH", 111, 167;}
+            InInventory KillCountNotch, 3 {drawimage "WOLFNTCH", 115, 167;}
+            InInventory KillCountNotch, 4 {drawimage "WOLFNTCH", 119, 167;}
+            InInventory KillCountNotch, 5 {drawimage "WOLFNTCH", 123, 167;}
+            InInventory KillCountNotch, 6 {drawimage "WOLFNTCH", 127, 167;}
+            InInventory KillCountNotch, 7 {drawimage "WOLFNTCH", 131, 167;}
+            InInventory KillCountNotch, 8 {drawimage "WOLFNTCH", 135, 167;}
+            InInventory KillCountNotch, 9 {drawimage "WOLFNTCH", 139, 167;}
+        }
+        DrawImage RuneIcon, 20, 40, Center;
+        drawselectedinventory alwaysshowcounter, WOLFHUDF, 290, 22, 293, 30, black;
+    }
+
 }
 
 statusbar inventory
