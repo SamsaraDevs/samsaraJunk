@@ -8,7 +8,7 @@ actor "Double Shotgun": InstantSwitchWeapon
     Weapon.SelectionOrder 6
     Weapon.AmmoUse 1
     Weapon.AmmoGive 10
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
 
     +UNDROPPABLE
     +THRUGHOST

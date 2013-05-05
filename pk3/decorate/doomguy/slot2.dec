@@ -1,6 +1,6 @@
 actor " Shotgun " : Shotgun
 {
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
     Decal BulletChip
     Weapon.SlotNumber 2
     +THRUGHOST

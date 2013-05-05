@@ -269,10 +269,10 @@ actor "Super Nailgun": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
         goto Consider6
       ConsiderQRL:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQRL")
+        TNT1 A 0 A_JumpIfInventory("Shell",1,"SelectQRL")
         goto Consider5
       ConsiderQGL:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectQGL")
+        TNT1 A 0 A_JumpIfInventory("Shell",1,"SelectQGL")
         goto Consider4
       ConsiderSNG:
         TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
@@ -281,7 +281,7 @@ actor "Super Nailgun": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectNG")
         goto Consider2
       ConsiderDSG:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectDSG")
+        TNT1 A 0 A_JumpIfInventory("Shell",1,"SelectDSG")
         goto Consider1
       ConsiderLasCan:
         TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectLasCan")

@@ -206,7 +206,7 @@ actor "Grenade Launcher": InstantSwitchWeapon
         goto Consider2
 
       ConsiderDSG:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",1,"SelectDSG")
+        TNT1 A 0 A_JumpIfInventory("Shell",1,"SelectDSG")
         goto Consider1
 
       ConsiderLasCan:

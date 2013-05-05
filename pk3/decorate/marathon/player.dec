@@ -23,7 +23,7 @@ ACTOR MarathonPlayer : PlayerPawn
     Player.StartItem "Steel Knuckles", 1
     Player.StartItem "Clip", 50
     Player.StartItem "RocketAmmo", 10
-    Player.StartItem "AmmoShell", 20
+    Player.StartItem "Shell", 20
     Player.StartItem "Cell", 50
     Player.StartItem "IsSamsaraClass", 1
     Player.StartItem "TauntButton", 1

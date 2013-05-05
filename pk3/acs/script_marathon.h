@@ -5,7 +5,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
     int hasBoth     = CheckInventory("CanDualShotties");
     int limited     = CheckInventory("LevelLimiter");
     int limit       = GetCVar("sv_itemrespawn") || GetCVar("sv_weaponstay");
-    int ammoFull    = CheckInventory("AmmoShell") >= (GetAmmoCapacity("AmmoShell") / ((dropped*3)+1));
+    int ammoFull    = CheckInventory("Shell") >= (GetAmmoCapacity("Shell") / ((dropped*3)+1));
     int i;
     // The above line is because of the quadupling of ammo capacity with dropped pickups
     // It's a really gross hack. I hate it. But it works.
@@ -33,7 +33,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         }
         
         GiveInventory("Shell", 8 / (!!dropped+1));
-        GiveInventory("AmmoShell", 8 / (!!dropped+1));
+        GiveInventory("Shell", 8 / (!!dropped+1));
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
         
         if (giveboth || (hasShotty && !dropped))

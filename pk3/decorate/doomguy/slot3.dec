@@ -1,6 +1,6 @@
 actor "Super Shotgun" : SuperShotgun
 {
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
     Decal BulletChip
     Weapon.SlotNumber 3
     +THRUGHOST

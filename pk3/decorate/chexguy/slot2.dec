@@ -5,7 +5,7 @@ actor "Large Zorcher" : Weapon
     Inventory.PickUpSound "chex/weaponget"
     Weapon.AmmoUse 1
     Weapon.AmmoGive 8
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
     +BLOODLESSIMPACT
     +PUFFONACTORS
     //+AMMO_OPTIONAL

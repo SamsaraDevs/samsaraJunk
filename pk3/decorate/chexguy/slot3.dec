@@ -6,7 +6,7 @@ actor "Super Large Zorcher" : Weapon
     Inventory.PickUpSound "chex/weaponget"
     Weapon.AmmoUse 4
     Weapon.AmmoGive 16
-    Weapon.AmmoType "AmmoShell"
+    Weapon.AmmoType "Shell"
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     DamageType "Zorch"
@@ -20,7 +20,7 @@ actor "Super Large Zorcher" : Weapon
         Loop
 
       Ready2:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",4,"FunReload")
+        TNT1 A 0 A_JumpIfInventory("Shell",4,"FunReload")
         CSLR O 1 A_WeaponReady
         Loop
 
