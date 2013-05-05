@@ -1,2697 +1,2475 @@
 // Heretic spawners for compatibility. Wahey!
-actor Pod2 : Pod replaces Pod { +DONTRIP }
 
-actor HereticAmmo1Small : Ammo1Small replaces BlasterAmmo
+Actor Pod2 : Pod replaces Pod { +DONTRIP }
+
+Actor HereticAmmo1Small : Ammo1Small replaces BlasterAmmo
 {
-    Inventory.PickupSound "ammogem/bulletsmall"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMSM G 20
-        AMSM G 20 BRIGHT
-        loop
-    }
+  Inventory.PickupSound "ammogem/bulletsmall"
++FLOATBOB
+States
+{
+  Spawn:
+     AMSM G 20
+     AMSM G 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo1Big : Ammo1Big replaces BlasterHefty
+{
+  Inventory.PickupSound "ammogem/bulletbig"
++FLOATBOB
+States
+{
+  Spawn:
+     AMMB F 20
+     AMMB F 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo2Small : Ammo2Small replaces CrossbowAmmo
+{
+  Inventory.PickupSound "ammogem/shellsmall"
++FLOATBOB
+States
+{
+  Spawn:
+     AMSM H 20
+     AMSM H 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo2Big : Ammo2Big replaces CrossbowHefty 
+{
+  Inventory.PickupSound "ammogem/shellbig"
++FLOATBOB
+States
+{
+  Spawn:
+     AMMB G 20
+     AMMB G 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo3Small : Ammo3Small replaces PhoenixRodAmmo 
+{
+  Inventory.PickupSound "ammogem/rocketsmall"
++FLOATBOB
+States
+{
+  Spawn:
+     AMSM I 20
+     AMSM I 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo3Big : Ammo3Big replaces PhoenixRodHefty 
+{
+  Inventory.PickupSound "ammogem/rocketbig"
++FLOATBOB
+States
+{
+  Spawn:
+     AMMB H 20
+     AMMB H 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo4Small : Ammo4Small replaces SkullRodAmmo 
+{
+  Inventory.PickupSound "ammogem/plasmasmall"
++FLOATBOB
+States
+{
+  Spawn:
+     AMSM J 20
+     AMSM J 20 BRIGHT
+     loop
+}}
+Actor HereticAmmo4Big : Ammo4Big replaces SkullRodHefty 
+{
+  Inventory.PickupSound "ammogem/plasmabig"
++FLOATBOB
+States
+{
+  Spawn:
+     AMMB I 20
+     AMMB I 20 BRIGHT
+     loop
+}}
+Actor HereticAmmoBackpack : AmmoBackpack replaces BagOfHolding { }
+Actor HereticStuffDump : HealPack0 replaces GoldWandHefty
+{
+	Scale 0.3
+  	Inventory.Amount 4
+        Inventory.PickupMessage "Picked up 4 Health."
+        Health.LowMessage 25, "Picked up 4 Health."
+	States
+	{
+	Spawn:
+		MEDI V -1 BRIGHT
+		stop
+	}
+}
+Actor HereticAmmoDump : RandomSpawner replaces MaceAmmo
+{
+	DropItem HereticAmmo1Small
+	DropItem HereticAmmo2Small
+	DropItem HereticAmmo3Small
+	DropItem HereticAmmo4Small
+}
+Actor HereticAmmoDump2 : RandomSpawner replaces MaceHefty
+{
+	DropItem HereticAmmo1Big
+	DropItem HereticAmmo2Big
+	DropItem HereticAmmo3Big
+	DropItem HereticAmmo4Big
 }
 
-actor HereticAmmo1Big : Ammo1Big replaces BlasterHefty
+Actor HereticHealPack0 : HealPack0 replaces GoldWandAmmo { }
+Actor HereticHealPack1 : HealPack1 replaces CrystalVial { }
+Actor HereticHealPack2 : HealPack2 replaces ArtiHealth { }
+Actor HereticSuperHealth : SuperHealth replaces ArtiSuperHealth { }//Inventory.PickupAnnouncerEntry "" }
+Actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
 {
-    Inventory.PickupSound "ammogem/bulletbig"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMMB F 20
-        AMMB F 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo2Small : Ammo2Small replaces CrossbowAmmo
-{
-    Inventory.PickupSound "ammogem/shellsmall"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMSM H 20
-        AMSM H 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo2Big : Ammo2Big replaces CrossbowHefty 
-{
-    Inventory.PickupSound "ammogem/shellbig"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMMB G 20
-        AMMB G 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo3Small : Ammo3Small replaces PhoenixRodAmmo 
-{
-    Inventory.PickupSound "ammogem/rocketsmall"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMSM I 20
-        AMSM I 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo3Big : Ammo3Big replaces PhoenixRodHefty 
-{
-    Inventory.PickupSound "ammogem/rocketbig"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMMB H 20
-        AMMB H 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo4Small : Ammo4Small replaces SkullRodAmmo 
-{
-    Inventory.PickupSound "ammogem/plasmasmall"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMSM J 20
-        AMSM J 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmo4Big : Ammo4Big replaces SkullRodHefty 
-{
-    Inventory.PickupSound "ammogem/plasmabig"
-    +FLOATBOB
-    States
-    {
-      Spawn:
-        AMMB I 20
-        AMMB I 20 BRIGHT
-        loop
-    }
-}
-
-actor HereticAmmoBackpack : AmmoBackpack replaces BagOfHolding { }
-
-actor HereticStuffDump: HealPack0 replaces GoldWandHefty
-{
-    Scale 0.3
-    Inventory.Amount 4
-    Inventory.PickupMessage "Picked up 4 Health."
-    States
-    {
-      Spawn:
-        MEDI V -1 BRIGHT
-        stop
-        
-      Pickup:
-        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
-        TNT1 A 0 A_GiveInventory("FiniteHealth200", 4)
-        stop
-
-      Infinite:
-        TNT1 A 0 A_GiveInventory("InfiniteHealth", 4)
-        stop
-    }
-}
-
-actor HereticAmmoDump : RandomSpawner replaces MaceAmmo
-{
-    DropItem HereticAmmo1Small
-    DropItem HereticAmmo2Small
-    DropItem HereticAmmo3Small
-    DropItem HereticAmmo4Small
-}
-
-actor HereticAmmoDump2 : RandomSpawner replaces MaceHefty
-{
-    DropItem HereticAmmo1Big
-    DropItem HereticAmmo2Big
-    DropItem HereticAmmo3Big
-    DropItem HereticAmmo4Big
-}
-
-actor HereticHealPack0 : HealPack0 replaces GoldWandAmmo { }
-
-actor HereticHealPack1 : HealPack1 replaces CrystalVial { }
-
-actor HereticHealPack2 : HealPack2 replaces ArtiHealth { }
-
-actor HereticSuperHealth : SuperHealth replaces ArtiSuperHealth { }//Inventory.PickupAnnouncerEntry "" }
-
-actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
-{
-    Scale 0.55
-    Armor.Saveamount 5
+	Scale 0.55
+        Armor.Saveamount 5
     Inventory.Pickupmessage "Picked up 5 Armor."
-    States
-    {
-      Spawn:
-        BON3 A -1 bright
-        stop
-    }
+	States
+	{
+	Spawn:
+		BON3 A -1 bright
+		stop
+	}
 }
-
-actor HereticArmorPack1 : ArmorPack1 replaces SilverShield
+Actor HereticArmorPack1 : ArmorPack1 replaces SilverShield
 {
-    Armor.Savepercent 50
-    Armor.Saveamount 100
+  Armor.Savepercent 50
+  Armor.Saveamount 100
 }
-
-actor HereticArmorPack2 : ArmorPack2 replaces EnchantedShield
+Actor HereticArmorPack2 : ArmorPack2 replaces EnchantedShield
 {
-    Armor.Savepercent 75
-    Armor.Saveamount 200
+  Armor.Savepercent 75
+  Armor.Saveamount 200
 }
 
-actor HereticInvisibility : PartialInvisibility replaces ArtiInvisibility { }//Inventory.PickupAnnouncerEntry "" }
+Actor HereticInvisibility : PartialInvisibility replaces ArtiInvisibility { }//Inventory.PickupAnnouncerEntry "" }
+Actor HereticInvulnerability : InvulnPowerup replaces ArtiInvulnerability { }//Inventory.PickupAnnouncerEntry "" }
+Actor HereticVisor : Visor replaces ArtiTorch { }
 
-actor HereticInvulnerability : InvulnPowerup replaces ArtiInvulnerability { }//Inventory.PickupAnnouncerEntry "" }
-
-actor HereticVisor : Visor replaces ArtiTorch { }
-
-actor HereticFlightPickup : CustomInventory replaces ArtiFly
+Actor HereticFlightPickup : CustomInventory replaces ArtiFly
 {
     //RenderStyle Add
     //Alpha 0.75
     +Floatbob
-    +INVENTORY.BIGPOWERUP
-    +INVENTORY.PICKUPFLASH
-    +INVENTORY.HUBPOWER
-    +COUNTITEM
-    Inventory.PickupMessage "Picked up Flight."
-    Inventory.PickupSound "nosoundforyoubitch"
-    states
-    {
-      Spawn:
-        SOAR ABCB 5 BRIGHT
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("DukePetjack",1,"PickupHereticFail")
-        TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
-        TNT1 A 0 A_PlaySound("dsparil/rise")
-        TNT1 A 1 A_GiveInventory("PowerFlight2")
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_PlaySound("dsparil/rise")
-        TNT1 A 1 A_GiveInventory("PowerFlight2")
-        stop
-
-      PickupHeretic:
-        TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
-        TNT1 A 1 A_GiveInventory("ArtiFly")
-        stop
-
-      PickupHereticFail:
-        SOAR A 5 BRIGHT
-        fail
-
-      PickupHexen:
-        TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
-        TNT1 A 1 A_GiveInventory("ArtiFly")
-        stop
-    }
+	+INVENTORY.BIGPOWERUP
+	+INVENTORY.PICKUPFLASH
+	+INVENTORY.HUBPOWER
+	+COUNTITEM
+	Inventory.PickupMessage "Picked up Flight."
+	Inventory.PickupSound "nosoundforyoubitch"
+	states
+	{
+	Spawn:
+       SOAR ABCB 5 BRIGHT
+       Loop
+    Pickup:
+		TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	   TNT1 A 0 A_JumpIfInventory("DukePetjack",1,"PickupHereticFail")
+       TNT1 A 1 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+       TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+	   TNT1 A 0 A_PlaySound("dsparil/rise")
+	   TNT1 A 1 A_GiveInventory("PowerFlight2")
+	   stop
+	PickupMarathon:
+		TNT1 A 0 A_SetBlend("Green",0.4,4)
+	   TNT1 A 0 A_PlaySound("dsparil/rise")
+	   TNT1 A 1 A_GiveInventory("PowerFlight2")
+	   stop
+    PickupHeretic:
+	   TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
+	   TNT1 A 0 A_PlaySound("heretic/itemget")
+	   TNT1 A 1 A_GiveInventory("ArtiFly")
+	   stop
+	PickupHereticFail:
+	   SOAR A 5 BRIGHT
+	   fail
+    PickupHexen:
+	   TNT1 A 0 A_JumpIfInventory("ArtiFly",0,"PickupHereticFail")
+	   TNT1 A 0 A_PlaySound("hexen/artiget")
+	   TNT1 A 1 A_GiveInventory("ArtiFly")
+	   stop
+	}
 }
 
-actor PowerFlight2 : PowerFlight
+ACTOR PowerFlight2 : PowerFlight
 {
-    +INVENTORY.HUBPOWER
-    //Powerup.Color Gold, 0.1
-    Powerup.Duration -60
+	+INVENTORY.HUBPOWER
+  //Powerup.Color Gold, 0.1
+  Powerup.Duration -60
 }
 
-actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
+Actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
 {
     //RenderStyle Add
     //Alpha 0.75
     +Floatbob
-    +INVENTORY.BIGPOWERUP
-    +INVENTORY.PICKUPFLASH
-    +COUNTITEM
-    +INVENTORY.HUBPOWER
-    Inventory.PickupMessage "Picked up Teleportation."
-    Inventory.PickupSound "nosoundforyoubitch"
-    states
-    {
-      Spawn:
-        ATLP ABCB 4 BRIGHT
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
-        fail
-
-      PickupHeretic:
-        TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("heretic/itemget")
-        TNT1 A 1 A_GiveInventory("ArtiTeleport")
-        stop
-
-      PickupHereticFail:
-        ATLP A 4 BRIGHT
-        fail
-
-      PickupHexen:
-        TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
-        TNT1 A 0 A_PlaySound("hexen/artiget")
-        TNT1 A 1 A_GiveInventory("ArtiTeleport")
-        stop
-    }
+	+INVENTORY.BIGPOWERUP
+	+INVENTORY.PICKUPFLASH
+	+COUNTITEM
+	+INVENTORY.HUBPOWER
+	Inventory.PickupMessage "Picked up Teleportation."
+	Inventory.PickupSound "nosoundforyoubitch"
+	states
+	{
+	Spawn:
+	   ATLP ABCB 4 BRIGHT
+       Loop
+    Pickup:
+       TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+       TNT1 A 0 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+	   fail
+    PickupHeretic:
+	   TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
+	   TNT1 A 0 A_PlaySound("heretic/itemget")
+	   TNT1 A 1 A_GiveInventory("ArtiTeleport")
+	   stop
+	PickupHereticFail:
+	   ATLP A 4 BRIGHT
+	   fail
+    PickupHexen:
+	   TNT1 A 0 A_JumpIfInventory("ArtiTeleport",0,"PickupHereticFail")
+	   TNT1 A 0 A_PlaySound("hexen/artiget")
+	   TNT1 A 1 A_GiveInventory("ArtiTeleport")
+	   stop
+	}
 }
 
-// actor HereticAutomap : Automap replaces Supermap	// Can't be done until the automap gets a replacement!
-actor HereticLesserTome : PowerupGiver replaces ArtiTomeOfPower
+// Actor HereticAutomap : Automap replaces Supermap	// Can't be done until the automap gets a replacement!
+Actor HereticLesserTome : PowerupGiver replaces ArtiTomeOfPower
 {
-    +COUNTITEM
-    +FLOATBOB
-    -INVBAR
-    +INVENTORY.PICKUPFLASH
-    +INVENTORY.AUTOACTIVATE
-    Powerup.Type LesserTome
-    Inventory.PickupAnnouncerEntry "strength"
-    Inventory.PickupSound "tome/lesser"
-    Inventory.PickupMessage "Picked up a Lesser Tome of Power!"
-    States
-    {
-      Spawn:
-        PWBK A -1
-        stop
-    }
+  +COUNTITEM
+  +FLOATBOB
+  -INVBAR
+  +INVENTORY.PICKUPFLASH
+  +INVENTORY.AUTOACTIVATE
+  Powerup.Type LesserTome
+  Inventory.PickupAnnouncerEntry "strength"
+  Inventory.PickupSound "tome/lesser"
+  Inventory.PickupMessage "Picked up a Lesser Tome of Power!"
+  States
+  {
+  Spawn:
+    PWBK A -1
+    stop
+  }
 }
 
-actor PowerLesserTome : PowerDamage
+Actor PowerLesserTome : PowerDamage
 {
-    Powerup.Color Red 0.1
-    Powerup.Duration -25
-    DamageFactor "Pistol", 1.5
-    DamageFactor "ZorchPistol", 1.5
-    DamageFactor "Wraithverge", 1.5
-    DamageFactor "Mace", 1.5
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "Normal", 1.5
-    DamageFactor "Zorch", 1.5
-    DamageFactor "PhasingZorch", 1.5
-    DamageFactor "BFG", 1.5
-    DamageFactor "BFGSpray", 1.5
-    DamageFactor "Fire", 1.5
-    DamageFactor "Ice", 1.5
-    DamageFactor "Disintegrate", 1.5
-    DamageFactor "WolfenFlamethrower", 1.5
-    DamageFactor "DukeDamage", 1.5
-    DamageFactor "DukeExplosive", 1.5
-    DamageFactor "DukeIce", 1.5
-    DamageFactor "MightyBoot", 1.5
-    
-    DamageFactor "DukePistol", 1.5
-    DamageFactor "MarathonPistol", 1.5
-    DamageFactor "Explosive", 1.5
-    DamageFactor "MarathonFusion", 1.5
-    DamageFactor "DoomPlasma", 1.5
-    DamageFactor "CorvusCrossbow", 1.5
-    DamageFactor "CorvusHellstaff", 1.5
-    DamageFactor "MarathonPlasma", 1.5
-    DamageFactor "BJSpear", 1.5
-    DamageFactor "WMCBeam", 1.5
-    DamageFactor "WMCNade", 1.5
-    DamageFactor "NotQuadded", 1.5
-    DamageFactor "QuakePistol", 1.5
+  Powerup.Color Red 0.1
+  Powerup.Duration -25
+  DamageFactor "Pistol", 1.5
+  DamageFactor "ZorchPistol", 1.5
+  DamageFactor "Wraithverge", 1.5
+  DamageFactor "Mace", 1.5
+  DamageFactor "DragonClaw", 1.5
+  DamageFactor "Normal", 1.5
+  DamageFactor "Zorch", 1.5
+  DamageFactor "PhasingZorch", 1.5
+  DamageFactor "BFG", 1.5
+  DamageFactor "BFGSpray", 1.5
+  DamageFactor "Fire", 1.5
+  DamageFactor "Ice", 1.5
+  DamageFactor "Disintegrate", 1.5
+  DamageFactor "WolfenFlamethrower", 1.5
+  DamageFactor "DukeDamage", 1.5
+  DamageFactor "DukeExplosive", 1.5
+  DamageFactor "DukeIce", 1.5
+  DamageFactor "MightyBoot", 1.5
+  
+  DamageFactor "DukePistol", 1.5
+	DamageFactor "MarathonPistol", 1.5
+	DamageFactor "Explosive", 1.5
+	DamageFactor "MarathonFusion", 1.5
+	DamageFactor "DoomPlasma", 1.5
+	DamageFactor "CorvusCrossbow", 1.5
+	DamageFactor "CorvusHellstaff", 1.5
+	DamageFactor "MarathonPlasma", 1.5
+	DamageFactor "BJSpear", 1.5
+	DamageFactor "WMCBeam", 1.5
+	DamageFactor "WMCNade", 1.5
+  DamageFactor "NotQuadded", 1.5
+  DamageFactor "QuakePistol", 1.5
 }
 
 // Dropped ammo replacement!
-actor GoldWandAmmo2 : CustomInventory
+
+Actor GoldWandAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 3 rounds of Ammo 1."
-    Inventory.PickupSound "ammo/bulletsmall"
-    States
-    {
-      Spawn:
-        AMG1 A -1 
-        Stop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",3)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("Clip",3)
-        stop
-
-      PickupFail:
-        AMG1 A 1
-        fail
-    }
+  Inventory.PickupMessage "Picked up 3 rounds of Ammo 1."
+  Inventory.PickupSound "ammo/bulletsmall"
+  States
+  {
+  Spawn:
+    AMG1 A -1 
+    Stop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",3)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("Clip",3)
+	 stop
+  PickupFail:
+	 AMG1 A 1
+	 fail
+  }
 }
 
-actor BlasterAmmo2 : CustomInventory
+Actor BlasterAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 1."
-    Inventory.PickupSound "ammo/bulletsmall"
-    States
-    {
-      Spawn:
-        AMB1 ABC 4
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",10)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("Clip",10)
-        stop
-
-      PickupFail:
-        AMB1 A 1
-        fail
-    }
+  Inventory.PickupMessage "Picked up 10 rounds of Ammo 1."
+  Inventory.PickupSound "ammo/bulletsmall"
+  States
+  {
+  Spawn:
+    AMB1 ABC 4
+    Loop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",10)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("Clip",10)
+	 stop
+  PickupFail:
+	 AMB1 A 1
+	 fail
+  }
 }
 
-actor CrossbowAmmo2 : CustomInventory//Shell
+Actor CrossbowAmmo2 : CustomInventory//Shell
 {
-    //Inventory.Amount 10
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 2."
-    Inventory.PickupSound "ammo/shellsmall"
-    States
-    {
-      Spawn:
-        AMC1 A -1 
-        Stop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("AmmoShell",5)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("AmmoShell",5)
-        stop
-
-      PickupWolfen:
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",5)
-        stop
-
-      PickupFail:
-        AMSM B 1
-        fail
-    }
+  //Inventory.Amount 10
+  Inventory.PickupMessage "Picked up 5 rounds of Ammo 2."
+  Inventory.PickupSound "ammo/shellsmall"
+  States
+  {
+  Spawn:
+     AMC1 A -1 
+     Stop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	 TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+	 TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+     TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("AmmoShell",5)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("AmmoShell",5)
+	 stop
+  PickupWolfen:
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",5)
+	 stop
+  PickupFail:
+	 AMSM B 1
+	 fail
+  }
 }
 
-actor CrossbowAmmo3 : CustomInventory//Shell
+Actor CrossbowAmmo3 : CustomInventory//Shell
 {
-    //Inventory.Amount 20
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 2."
-    Inventory.PickupSound "ammo/shellsmall"
-    States
-    {
-      Spawn:
-        AMC1 A -1 
-        Stop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("AmmoShell",10)
-        stop
-
-      PickupWolfen:
-        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Clip",10)
-        stop
-
-      PickupFail:
-        AMSM B 1
-        fail
-    }
+  //Inventory.Amount 20
+  Inventory.PickupMessage "Picked up 10 rounds of Ammo 2."
+  Inventory.PickupSound "ammo/shellsmall"
+  States
+  {
+  Spawn:
+     AMC1 A -1 
+     Stop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	 TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+	 TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+     TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("AmmoShell",10)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("AmmoShell",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("AmmoShell",10)
+	 stop
+  PickupWolfen:
+     TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Clip",10)
+	 stop
+  PickupFail:
+	 AMSM B 1
+	 fail
+  }
 }
 
-actor PhoenixRodAmmo2 : CustomInventory
+Actor PhoenixRodAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 3."
-    Inventory.PickupSound "ammo/rocketsmall"
-    States
-    {
-      Spawn:
-        AMP1 ABC 4
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
-        stop
-
-      PickupHexen:
-        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",5)
-        stop
-
-      PickupFail:
-        AMP1 A 1
-        fail
-    }
+  Inventory.PickupMessage "Picked up 5 rounds of Ammo 3."
+  Inventory.PickupSound "ammo/rocketsmall"
+  States
+  {
+  Spawn:
+    AMP1 ABC 4
+    Loop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	 TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+     TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+	 stop
+  PickupHexen:
+     TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Cell",5)
+	 stop
+  PickupFail:
+	 AMP1 A 1
+	 fail
+  }
 }
 
-actor PhoenixRodAmmo3 : CustomInventory
+Actor PhoenixRodAmmo3 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 10 rounds of Ammo 3."
-    Inventory.PickupSound "ammo/rocketsmall"
-    States
-    {
-      Spawn:
-        AMP1 ABC 4
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("RocketAmmo",10)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("RocketAmmo",10)
-        stop
-
-      PickupHexen:
-        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",10)
-        stop
-
-      PickupFail:
-        AMP1 A 1
-        fail
-    }
+  Inventory.PickupMessage "Picked up 10 rounds of Ammo 3."
+  Inventory.PickupSound "ammo/rocketsmall"
+  States
+  {
+  Spawn:
+    AMP1 ABC 4
+    Loop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+	 TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+     TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("RocketAmmo",10)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("RocketAmmo",10)
+	 stop
+  PickupHexen:
+     TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Cell",10)
+	 stop
+  PickupFail:
+	 AMP1 A 1
+	 fail
+  }
 }
 
-actor SkullRodAmmo2 : CustomInventory
+Actor SkullRodAmmo2 : CustomInventory
 {
-    Inventory.PickupMessage "Picked up 20 rounds of Ammo 4."
-    Inventory.PickupSound "ammo/plasmasmall"
-    States
-    {
-      Spawn:
-        AMS1 AB 5
-        Loop
-
-      Pickup:
-        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
-        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_GiveInventory("Cell",20)
-        stop
-
-      PickupMarathon:
-        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
-        TNT1 A 0 A_SetBlend("Green",0.4,4)
-        TNT1 A 0 A_GiveInventory("Cell",20)
-        stop
-
-      PickupFail:
-        AMS1 A 1
-        fail
-    }
+  Inventory.PickupMessage "Picked up 20 rounds of Ammo 4."
+  Inventory.PickupSound "ammo/plasmasmall"
+  States
+  {
+  Spawn:
+    AMS1 AB 5
+    Loop
+  Pickup:
+	 TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+     TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+     TNT1 A 0 A_GiveInventory("Cell",20)
+	 stop
+  PickupMarathon:
+     TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+	 TNT1 A 0 A_SetBlend("Green",0.4,4)
+     TNT1 A 0 A_GiveInventory("Cell",20)
+	 stop
+  PickupFail:
+	 AMS1 A 1
+	 fail
+  }
 }
 
 // Whew. Now for the enemies.
-actor HereticImp2 : HereticImp replaces HereticImp
+
+ACTOR HereticImp2 : HereticImp replaces HereticImp
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        IMPX ZYXWVUTS 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+IMPX ZYXWVUTS 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+	TNT1 A 0 A_NoGravity
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	IMPX A 3 A_SetTranslucent(0.2,0)
+    IMPX A 3 A_SetTranslucent(0.3,0)
+    IMPX A 3 A_SetTranslucent(0.4,0)
+    IMPX A 3 A_SetTranslucent(0.5,0)
+    IMPX A 3 A_SetTranslucent(0.6,0)
+    IMPX A 3 A_SetTranslucent(0.7,0)
+    IMPX A 3 A_SetTranslucent(0.8,0)
+    IMPX A 3 A_SetTranslucent(0.9,0)
+    IMPX A 3 A_SetTranslucent(1,0)
+	IMPX A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoGravity
+	IMPX G 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
+	IMPX G 3 A_SpawnItem("ZorchEffectTiny")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    IMPX G 3 A_SetTranslucent(0.9,0)
+	IMPX G 0 A_PlaySound("chex/gargzorch")
+    IMPX G 3 A_SetTranslucent(0.8,0)
+    IMPX G 3 A_SetTranslucent(0.7,0)
+    IMPX G 3 A_SetTranslucent(0.6,0)
+    IMPX G 3 A_SetTranslucent(0.5,0)
+    IMPX G 3 A_SetTranslucent(0.4,0)
+    IMPX G 3 A_SetTranslucent(0.3,0)
+    IMPX G 3 A_SetTranslucent(0.2,0)
+    IMPX G 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(0,0)
+    IMPX G 0 A_NoBlocking
+	TNT1 A 0 A_Gravity
+    TNT1 A -1
+    stop
+  Crash:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
+    IMPX I 7 A_ImpExplode
+    IMPX J 7 A_Scream
+    IMPX K 7
+    IMPX L -1
+    Stop
+  XCrash:
+    IMPX X 7
+    IMPX Y 7
+    IMPX Z -1
+    Stop
+  ZorchCrash:
+    TNT1 A 5 A_SetTranslucent(0,0)
+    TNT1 A 5 A_NoBlocking
+    TNT1 A -1
+	stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_Gravity
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	IMPX G 0 A_UnsetSolid
+    IMPX G 70 A_GenericFreezeDeath
+    IMPX G 0 A_IceGuyDie
+    IMPX G 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    IMPX G 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto XDeath
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_NoGravity
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        IMPX A 3 A_SetTranslucent(0.2,0)
-        IMPX A 3 A_SetTranslucent(0.3,0)
-        IMPX A 3 A_SetTranslucent(0.4,0)
-        IMPX A 3 A_SetTranslucent(0.5,0)
-        IMPX A 3 A_SetTranslucent(0.6,0)
-        IMPX A 3 A_SetTranslucent(0.7,0)
-        IMPX A 3 A_SetTranslucent(0.8,0)
-        IMPX A 3 A_SetTranslucent(0.9,0)
-        IMPX A 3 A_SetTranslucent(1,0)
-        IMPX A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      XDeath:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::XDeath"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoGravity
-        IMPX G 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
-        IMPX G 3 A_SpawnItem("ZorchEffectTiny")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        IMPX G 3 A_SetTranslucent(0.9,0)
-        IMPX G 0 A_PlaySound("chex/gargzorch")
-        IMPX G 3 A_SetTranslucent(0.8,0)
-        IMPX G 3 A_SetTranslucent(0.7,0)
-        IMPX G 3 A_SetTranslucent(0.6,0)
-        IMPX G 3 A_SetTranslucent(0.5,0)
-        IMPX G 3 A_SetTranslucent(0.4,0)
-        IMPX G 3 A_SetTranslucent(0.3,0)
-        IMPX G 3 A_SetTranslucent(0.2,0)
-        IMPX G 3 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(0,0)
-        IMPX G 0 A_NoBlocking
-        TNT1 A 0 A_Gravity
-        TNT1 A -1
-        stop
-
-      Crash:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
-        IMPX I 7 A_ImpExplode
-        IMPX J 7 A_Scream
-        IMPX K 7
-        IMPX L -1
-        Stop
-
-      XCrash:
-        IMPX X 7
-        IMPX Y 7
-        IMPX Z -1
-        Stop
-
-      ZorchCrash:
-        TNT1 A 5 A_SetTranslucent(0,0)
-        TNT1 A 5 A_NoBlocking
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_Gravity
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoBlocking
-        IMPX G 0 A_UnsetSolid
-        IMPX G 70 A_GenericFreezeDeath
-        IMPX G 0 A_IceGuyDie
-        IMPX G 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        IMPX G 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto XDeath
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        IMPX G 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        IMPX G 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	IMPX G 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	IMPX G 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
+ACTOR HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        IMPX ZYXWVUTS 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+IMPX ZYXWVUTS 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+	TNT1 A 0 A_NoGravity
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	IMPX A 3 A_SetTranslucent(0.2,0)
+    IMPX A 3 A_SetTranslucent(0.3,0)
+    IMPX A 3 A_SetTranslucent(0.4,0)
+    IMPX A 3 A_SetTranslucent(0.5,0)
+    IMPX A 3 A_SetTranslucent(0.6,0)
+    IMPX A 3 A_SetTranslucent(0.7,0)
+    IMPX A 3 A_SetTranslucent(0.8,0)
+    IMPX A 3 A_SetTranslucent(0.9,0)
+    IMPX A 3 A_SetTranslucent(1,0)
+	IMPX A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+	TNT1 A 0 A_NoGravity
+	IMPX G 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
+	IMPX G 3 A_SpawnItem("ZorchEffectTiny")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    IMPX G 3 A_SetTranslucent(0.9,0)
+	IMPX G 0 A_PlaySound("chex/gargzorch")
+    IMPX G 3 A_SetTranslucent(0.8,0)
+    IMPX G 3 A_SetTranslucent(0.7,0)
+    IMPX G 3 A_SetTranslucent(0.6,0)
+    IMPX G 3 A_SetTranslucent(0.5,0)
+    IMPX G 3 A_SetTranslucent(0.4,0)
+    IMPX G 3 A_SetTranslucent(0.3,0)
+    IMPX G 3 A_SetTranslucent(0.2,0)
+    IMPX G 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(0,0)
+    IMPX G 0 A_NoBlocking
+	TNT1 A 0 A_Gravity
+    TNT1 A -1
+    stop
+  Crash:
+	TNT1 A 0 A_UnsetSolid
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
+    IMPX I 7 A_ImpExplode
+    IMPX J 7 A_Scream
+    IMPX K 7 A_UnsetSolid
+    IMPX L -1
+    Stop
+  XCrash:
+    IMPX X 7 A_UnsetSolid
+    IMPX Y 7
+    IMPX Z -1
+    Stop
+  ZorchCrash:
+    TNT1 A 5 A_SetTranslucent(0,0)
+    TNT1 A 5 A_NoBlocking
+    TNT1 A -1
+	stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_Gravity
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+	IMPX G 0 A_UnsetSolid
+    IMPX G 70 A_GenericFreezeDeath
+    IMPX G 0 A_IceGuyDie
+    IMPX G 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    IMPX G 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto XDeath
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_NoGravity
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        IMPX A 3 A_SetTranslucent(0.2,0)
-        IMPX A 3 A_SetTranslucent(0.3,0)
-        IMPX A 3 A_SetTranslucent(0.4,0)
-        IMPX A 3 A_SetTranslucent(0.5,0)
-        IMPX A 3 A_SetTranslucent(0.6,0)
-        IMPX A 3 A_SetTranslucent(0.7,0)
-        IMPX A 3 A_SetTranslucent(0.8,0)
-        IMPX A 3 A_SetTranslucent(0.9,0)
-        IMPX A 3 A_SetTranslucent(1,0)
-        IMPX A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      XDeath:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::XDeath"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        TNT1 A 0 A_NoGravity
-        IMPX G 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
-        IMPX G 3 A_SpawnItem("ZorchEffectTiny")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        IMPX G 3 A_SetTranslucent(0.9,0)
-        IMPX G 0 A_PlaySound("chex/gargzorch")
-        IMPX G 3 A_SetTranslucent(0.8,0)
-        IMPX G 3 A_SetTranslucent(0.7,0)
-        IMPX G 3 A_SetTranslucent(0.6,0)
-        IMPX G 3 A_SetTranslucent(0.5,0)
-        IMPX G 3 A_SetTranslucent(0.4,0)
-        IMPX G 3 A_SetTranslucent(0.3,0)
-        IMPX G 3 A_SetTranslucent(0.2,0)
-        IMPX G 3 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(0,0)
-        IMPX G 0 A_NoBlocking
-        TNT1 A 0 A_Gravity
-        TNT1 A -1
-        stop
-
-      Crash:
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
-        IMPX I 7 A_ImpExplode
-        IMPX J 7 A_Scream
-        IMPX K 7 A_UnsetSolid
-        IMPX L -1
-        Stop
-
-      XCrash:
-        IMPX X 7 A_UnsetSolid
-        IMPX Y 7
-        IMPX Z -1
-        Stop
-
-      ZorchCrash:
-        TNT1 A 5 A_SetTranslucent(0,0)
-        TNT1 A 5 A_NoBlocking
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_Gravity
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoBlocking
-        IMPX G 0 A_UnsetSolid
-        IMPX G 70 A_GenericFreezeDeath
-        IMPX G 0 A_IceGuyDie
-        IMPX G 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        IMPX G 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto XDeath
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        IMPX G 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        IMPX G 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	IMPX G 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	IMPX G 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor HereticImpBall2 : HereticImpBall replaces HereticImpBall
+ACTOR HereticImpBall2 : HereticImpBall replaces HereticImpBall
 {
-    +FIREDAMAGE
-    +THRUGHOST
++FIREDAMAGE
++THRUGHOST
 }
 
-actor HereticImpChunk3 : HereticImpChunk1 replaces HereticImpChunk1 // RIGHT, FUCK THESE GIB GLITCHES. SO DAMN TIRED OF 'EM.
+ACTOR HereticImpChunk3 : HereticImpChunk1 replaces HereticImpChunk1 // RIGHT, FUCK THESE GIB GLITCHES. SO DAMN TIRED OF 'EM.
 {
-    +CLIENTSIDEONLY
-    +NOGRAVITY
-    +NOCLIP
-    +NOINTERACTION
-    Renderstyle Translucent
-    Alpha 0
++CLIENTSIDEONLY
++NOGRAVITY
++NOCLIP
++NOINTERACTION
+Renderstyle Translucent
+Alpha 0
 }
 
-actor HereticImpChunk4 : HereticImpChunk2 replaces HereticImpChunk2 // AND GOOD FUCKING RIDDANCE.
+ACTOR HereticImpChunk4 : HereticImpChunk2 replaces HereticImpChunk2 // AND GOOD FUCKING RIDDANCE.
 {
-    +CLIENTSIDEONLY
-    +NOGRAVITY
-    +NOCLIP
-    +NOINTERACTION
-    Renderstyle Translucent
-    Alpha 0
++CLIENTSIDEONLY
++NOGRAVITY
++NOCLIP
++NOINTERACTION
+Renderstyle Translucent
+Alpha 0
 }
 
-actor Mummy2 : Mummy replaces Mummy
+ACTOR Mummy2 : Mummy replaces Mummy
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "GoldWandAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        MUMM PONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "GoldWandAmmo2", 84
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+MUMM PONMLKJI 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	MUMM A 3 A_SetTranslucent(0.2,0)
+    MUMM A 3 A_SetTranslucent(0.3,0)
+    MUMM A 3 A_SetTranslucent(0.4,0)
+    MUMM A 3 A_SetTranslucent(0.5,0)
+    MUMM A 3 A_SetTranslucent(0.6,0)
+    MUMM A 3 A_SetTranslucent(0.7,0)
+    MUMM A 3 A_SetTranslucent(0.8,0)
+    MUMM A 3 A_SetTranslucent(0.9,0)
+    MUMM A 3 A_SetTranslucent(1,0)
+	MUMM A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	MUMM H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	MUMM H 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    MUMM H 3 A_SetTranslucent(0.9,0)
+	MUMM H 0 A_PlaySound("Chex/MummyZorch")
+    MUMM H 3 A_SetTranslucent(0.8,0)
+    TNT1 H 0 A_NoBlocking
+    MUMM H 3 A_SetTranslucent(0.7,0)
+    MUMM H 3 A_SetTranslucent(0.6,0)
+    MUMM H 3 A_SetTranslucent(0.5,0)
+    MUMM H 3 A_SetTranslucent(0.4,0)
+    MUMM H 3 A_SetTranslucent(0.3,0)
+    MUMM H 3 A_SetTranslucent(0.2,0)
+    MUMM H 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	MUMM H 0 A_UnsetSolid
+    MUMM H 70 A_GenericFreezeDeath
+    MUMM H 0 A_IceGuyDie
+    MUMM H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    MUMM H 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        MUMM A 3 A_SetTranslucent(0.2,0)
-        MUMM A 3 A_SetTranslucent(0.3,0)
-        MUMM A 3 A_SetTranslucent(0.4,0)
-        MUMM A 3 A_SetTranslucent(0.5,0)
-        MUMM A 3 A_SetTranslucent(0.6,0)
-        MUMM A 3 A_SetTranslucent(0.7,0)
-        MUMM A 3 A_SetTranslucent(0.8,0)
-        MUMM A 3 A_SetTranslucent(0.9,0)
-        MUMM A 3 A_SetTranslucent(1,0)
-        MUMM A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        MUMM H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        MUMM H 3 A_SpawnItem("ZorchEffectSmall")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        MUMM H 3 A_SetTranslucent(0.9,0)
-        MUMM H 0 A_PlaySound("Chex/MummyZorch")
-        MUMM H 3 A_SetTranslucent(0.8,0)
-        TNT1 H 0 A_NoBlocking
-        MUMM H 3 A_SetTranslucent(0.7,0)
-        MUMM H 3 A_SetTranslucent(0.6,0)
-        MUMM H 3 A_SetTranslucent(0.5,0)
-        MUMM H 3 A_SetTranslucent(0.4,0)
-        MUMM H 3 A_SetTranslucent(0.3,0)
-        MUMM H 3 A_SetTranslucent(0.2,0)
-        MUMM H 3 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        MUMM H 0 A_UnsetSolid
-        MUMM H 70 A_GenericFreezeDeath
-        MUMM H 0 A_IceGuyDie
-        MUMM H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        MUMM H 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        MUMM H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        MUMM H 16 A_Pain
-        Goto See
-
-      Melee:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Melee"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	MUMM H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	MUMM H 16 A_Pain
+	Goto See
+  Melee:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Melee"
+}
 }
 
-actor MummyGhost2 : MummyGhost replaces MummyGhost
+ACTOR MummyGhost2 : MummyGhost replaces MummyGhost
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "GoldWandAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        MUMM PONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "GoldWandAmmo2", 84
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+MUMM PONMLKJI 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.05,0)
+	MUMM A 3 A_SetTranslucent(0.1,0)
+    MUMM A 3 A_SetTranslucent(0.15,0)
+    MUMM A 3 A_SetTranslucent(0.2,0)
+    MUMM A 3 A_SetTranslucent(0.25,0)
+    MUMM A 3 A_SetTranslucent(0.3,0)
+    MUMM A 3 A_SetTranslucent(0.35,0)
+    MUMM A 3 A_SetTranslucent(0.4,0)
+    MUMM A 3 A_SetTranslucent(0.45,0)
+    MUMM A 3 A_SetTranslucent(0.5,0)
+	MUMM A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	MUMM H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	MUMM H 5 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    MUMM H 5 A_SetTranslucent(0.4,0)
+	MUMM H 0 A_PlaySound("Chex/MummyZorch")
+    MUMM H 5 A_SetTranslucent(0.3,0)
+    TNT1 H 0 A_NoBlocking
+    MUMM H 5 A_SetTranslucent(0.2,0)
+    MUMM H 5 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+	TNT1 A 0 A_ChangeFlag("GHOST",0)
+	TNT1 A 0 A_SetTranslucent(1,0)
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	MUMM H 0 A_UnsetSolid
+    MUMM H 70 A_GenericFreezeDeath
+    MUMM H 0 A_IceGuyDie
+    MUMM H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    MUMM H 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.05,0)
-        MUMM A 3 A_SetTranslucent(0.1,0)
-        MUMM A 3 A_SetTranslucent(0.15,0)
-        MUMM A 3 A_SetTranslucent(0.2,0)
-        MUMM A 3 A_SetTranslucent(0.25,0)
-        MUMM A 3 A_SetTranslucent(0.3,0)
-        MUMM A 3 A_SetTranslucent(0.35,0)
-        MUMM A 3 A_SetTranslucent(0.4,0)
-        MUMM A 3 A_SetTranslucent(0.45,0)
-        MUMM A 3 A_SetTranslucent(0.5,0)
-        MUMM A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        MUMM H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        MUMM H 5 A_SpawnItem("ZorchEffectSmall")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        MUMM H 5 A_SetTranslucent(0.4,0)
-        MUMM H 0 A_PlaySound("Chex/MummyZorch")
-        MUMM H 5 A_SetTranslucent(0.3,0)
-        TNT1 H 0 A_NoBlocking
-        MUMM H 5 A_SetTranslucent(0.2,0)
-        MUMM H 5 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_ChangeFlag("GHOST",0)
-        TNT1 A 0 A_SetTranslucent(1,0)
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        MUMM H 0 A_UnsetSolid
-        MUMM H 70 A_GenericFreezeDeath
-        MUMM H 0 A_IceGuyDie
-        MUMM H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        MUMM H 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        MUMM H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        MUMM H 16 A_Pain
-        Goto See
-
-      Melee:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Melee"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	MUMM H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	MUMM H 16 A_Pain
+	Goto See
+  Melee:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Melee"
+}
 }
 
-actor MummyLeader2 : MummyLeader replaces MummyLeader
+ACTOR MummyLeader2 : MummyLeader replaces MummyLeader
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "GoldWandAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        MUMM PONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "GoldWandAmmo2", 84
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+MUMM PONMLKJI 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	MUMM A 3 A_SetTranslucent(0.2,0)
+    MUMM A 3 A_SetTranslucent(0.3,0)
+    MUMM A 3 A_SetTranslucent(0.4,0)
+    MUMM A 3 A_SetTranslucent(0.5,0)
+    MUMM A 3 A_SetTranslucent(0.6,0)
+    MUMM A 3 A_SetTranslucent(0.7,0)
+    MUMM A 3 A_SetTranslucent(0.8,0)
+    MUMM A 3 A_SetTranslucent(0.9,0)
+    MUMM A 3 A_SetTranslucent(1,0)
+	MUMM A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	MUMM H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	MUMM H 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    MUMM H 3 A_SetTranslucent(0.9,0)
+	MUMM H 0 A_PlaySound("Chex/MummyZorch")
+    MUMM H 3 A_SetTranslucent(0.8,0)
+    TNT1 H 0 A_NoBlocking
+    MUMM H 3 A_SetTranslucent(0.7,0)
+    MUMM H 3 A_SetTranslucent(0.6,0)
+    MUMM H 3 A_SetTranslucent(0.5,0)
+    MUMM H 3 A_SetTranslucent(0.4,0)
+    MUMM H 3 A_SetTranslucent(0.3,0)
+    MUMM H 3 A_SetTranslucent(0.2,0)
+    MUMM H 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	MUMM H 0 A_UnsetSolid
+    MUMM H 70 A_GenericFreezeDeath
+    MUMM H 0 A_IceGuyDie
+    MUMM H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    MUMM H 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        MUMM A 3 A_SetTranslucent(0.2,0)
-        MUMM A 3 A_SetTranslucent(0.3,0)
-        MUMM A 3 A_SetTranslucent(0.4,0)
-        MUMM A 3 A_SetTranslucent(0.5,0)
-        MUMM A 3 A_SetTranslucent(0.6,0)
-        MUMM A 3 A_SetTranslucent(0.7,0)
-        MUMM A 3 A_SetTranslucent(0.8,0)
-        MUMM A 3 A_SetTranslucent(0.9,0)
-        MUMM A 3 A_SetTranslucent(1,0)
-        MUMM A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        MUMM H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        MUMM H 3 A_SpawnItem("ZorchEffectSmall")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        MUMM H 3 A_SetTranslucent(0.9,0)
-        MUMM H 0 A_PlaySound("Chex/MummyZorch")
-        MUMM H 3 A_SetTranslucent(0.8,0)
-        TNT1 H 0 A_NoBlocking
-        MUMM H 3 A_SetTranslucent(0.7,0)
-        MUMM H 3 A_SetTranslucent(0.6,0)
-        MUMM H 3 A_SetTranslucent(0.5,0)
-        MUMM H 3 A_SetTranslucent(0.4,0)
-        MUMM H 3 A_SetTranslucent(0.3,0)
-        MUMM H 3 A_SetTranslucent(0.2,0)
-        MUMM H 3 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        MUMM H 0 A_UnsetSolid
-        MUMM H 70 A_GenericFreezeDeath
-        MUMM H 0 A_IceGuyDie
-        MUMM H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        MUMM H 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        MUMM H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        MUMM H 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        //goto "Super::Missile"
-        
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_FaceTarget
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_FaceTarget
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
-        Goto See
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	MUMM H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	MUMM H 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	//goto "Super::Missile"
+	
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_FaceTarget
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_FaceTarget
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
+    Goto See
+}
 }
 
-actor MummyFX2 : MummyFX1 replaces MummyFX1
+ACTOR MummyFX2 : MummyFX1 replaces MummyFX1
 {
-    DamageType "HereNitrogolem"
-    +THRUGHOST
+DamageType "HereNitrogolem"
++THRUGHOST
 }
 
-actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
+ACTOR MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "GoldWandAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        MUMM PONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "GoldWandAmmo2", 84
+  States
+  {
+Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+MUMM PONMLKJI 4
+Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.05,0)
+	MUMM A 3 A_SetTranslucent(0.1,0)
+    MUMM A 3 A_SetTranslucent(0.15,0)
+    MUMM A 3 A_SetTranslucent(0.2,0)
+    MUMM A 3 A_SetTranslucent(0.25,0)
+    MUMM A 3 A_SetTranslucent(0.3,0)
+    MUMM A 3 A_SetTranslucent(0.35,0)
+    MUMM A 3 A_SetTranslucent(0.4,0)
+    MUMM A 3 A_SetTranslucent(0.45,0)
+    MUMM A 3 A_SetTranslucent(0.5,0)
+	MUMM A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	MUMM H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	MUMM H 5 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    MUMM H 5 A_SetTranslucent(0.4,0)
+	MUMM H 0 A_PlaySound("Chex/MummyZorch")
+    MUMM H 5 A_SetTranslucent(0.3,0)
+    TNT1 H 0 A_NoBlocking
+    MUMM H 5 A_SetTranslucent(0.2,0)
+    MUMM H 5 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+	TNT1 A 0 A_ChangeFlag("GHOST",0)
+	TNT1 A 0 A_SetTranslucent(1,0)
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	MUMM H 0 A_UnsetSolid
+    MUMM H 70 A_GenericFreezeDeath
+    MUMM H 0 A_IceGuyDie
+    MUMM H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    MUMM H 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.05,0)
-        MUMM A 3 A_SetTranslucent(0.1,0)
-        MUMM A 3 A_SetTranslucent(0.15,0)
-        MUMM A 3 A_SetTranslucent(0.2,0)
-        MUMM A 3 A_SetTranslucent(0.25,0)
-        MUMM A 3 A_SetTranslucent(0.3,0)
-        MUMM A 3 A_SetTranslucent(0.35,0)
-        MUMM A 3 A_SetTranslucent(0.4,0)
-        MUMM A 3 A_SetTranslucent(0.45,0)
-        MUMM A 3 A_SetTranslucent(0.5,0)
-        MUMM A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        MUMM H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        MUMM H 5 A_SpawnItem("ZorchEffectSmall")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        MUMM H 5 A_SetTranslucent(0.4,0)
-        MUMM H 0 A_PlaySound("Chex/MummyZorch")
-        MUMM H 5 A_SetTranslucent(0.3,0)
-        TNT1 H 0 A_NoBlocking
-        MUMM H 5 A_SetTranslucent(0.2,0)
-        MUMM H 5 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_ChangeFlag("GHOST",0)
-        TNT1 A 0 A_SetTranslucent(1,0)
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        MUMM H 0 A_UnsetSolid
-        MUMM H 70 A_GenericFreezeDeath
-        MUMM H 0 A_IceGuyDie
-        MUMM H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        MUMM H 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        MUMM H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        MUMM H 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        //goto "Super::Missile"
-        
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_FaceTarget
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_FaceTarget
-        MUMM X 5 A_FaceTarget
-        MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
-        Goto See
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	MUMM H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	MUMM H 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	//goto "Super::Missile"
+	
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_FaceTarget
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_FaceTarget
+    MUMM X 5 A_FaceTarget
+    MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
+    Goto See
+}
 }
 
-actor Knight2 : Knight replaces Knight
+ACTOR Knight2 : Knight replaces Knight
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "CrossbowAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        KNIG ONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "CrossbowAmmo2", 84
+  States
+  {
+   Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+    KNIG ONMLKJI 4
+   Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	KNIG A 3 A_SetTranslucent(0.2,0)
+    KNIG A 3 A_SetTranslucent(0.3,0)
+    KNIG A 3 A_SetTranslucent(0.4,0)
+    KNIG A 3 A_SetTranslucent(0.5,0)
+    KNIG A 3 A_SetTranslucent(0.6,0)
+    KNIG A 3 A_SetTranslucent(0.7,0)
+    KNIG A 3 A_SetTranslucent(0.8,0)
+    KNIG A 3 A_SetTranslucent(0.9,0)
+    KNIG A 3 A_SetTranslucent(1,0)
+	KNIG A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoGravity
+	KNIG H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	KNIG H 4 A_SpawnItem("ZorchEffectBig")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    KNIG H 4 A_SetTranslucent(0.9,0)
+	KNIG H 0 A_Pain
+    KNIG H 4 A_SetTranslucent(0.8,0)
+    TNT1 H 0 A_NoBlocking
+    KNIG H 4 A_SetTranslucent(0.7,0)
+    KNIG H 4 A_SetTranslucent(0.6,0)
+    KNIG H 4 A_SetTranslucent(0.5,0)
+    KNIG H 4 A_SetTranslucent(0.4,0)
+    KNIG H 4 A_SetTranslucent(0.3,0)
+    KNIG H 4 A_SetTranslucent(0.2,0)
+    KNIG H 4 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	KNIG H 0 A_UnsetSolid
+    KNIG H 70 A_GenericFreezeDeath
+    KNIG H 0 A_IceGuyDie
+    KNIG H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        KNIG A 3 A_SetTranslucent(0.2,0)
-        KNIG A 3 A_SetTranslucent(0.3,0)
-        KNIG A 3 A_SetTranslucent(0.4,0)
-        KNIG A 3 A_SetTranslucent(0.5,0)
-        KNIG A 3 A_SetTranslucent(0.6,0)
-        KNIG A 3 A_SetTranslucent(0.7,0)
-        KNIG A 3 A_SetTranslucent(0.8,0)
-        KNIG A 3 A_SetTranslucent(0.9,0)
-        KNIG A 3 A_SetTranslucent(1,0)
-        KNIG A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoGravity
-        KNIG H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        KNIG H 4 A_SpawnItem("ZorchEffectBig")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        KNIG H 4 A_SetTranslucent(0.9,0)
-        KNIG H 0 A_Pain
-        KNIG H 4 A_SetTranslucent(0.8,0)
-        TNT1 H 0 A_NoBlocking
-        KNIG H 4 A_SetTranslucent(0.7,0)
-        KNIG H 4 A_SetTranslucent(0.6,0)
-        KNIG H 4 A_SetTranslucent(0.5,0)
-        KNIG H 4 A_SetTranslucent(0.4,0)
-        KNIG H 4 A_SetTranslucent(0.3,0)
-        KNIG H 4 A_SetTranslucent(0.2,0)
-        KNIG H 4 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        KNIG H 0 A_UnsetSolid
-        KNIG H 70 A_GenericFreezeDeath
-        KNIG H 0 A_IceGuyDie
-        KNIG H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeExplosive:
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        KNIG H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        KNIG H 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	KNIG H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	KNIG H 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor KnightGhost2 : KnightGhost replaces KnightGhost
+ACTOR KnightGhost2 : KnightGhost replaces KnightGhost
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "CrossbowAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        KNIG ONMLKJI 4
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "CrossbowAmmo2", 84
+  States
+  {
+   Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+    KNIG ONMLKJI 4
+   Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.05,0)
+	KNIG A 3 A_SetTranslucent(0.1,0)
+    KNIG A 3 A_SetTranslucent(0.15,0)
+    KNIG A 3 A_SetTranslucent(0.2,0)
+    KNIG A 3 A_SetTranslucent(0.25,0)
+    KNIG A 3 A_SetTranslucent(0.3,0)
+    KNIG A 3 A_SetTranslucent(0.35,0)
+    KNIG A 3 A_SetTranslucent(0.4,0)
+    KNIG A 3 A_SetTranslucent(0.45,0)
+    KNIG A 3 A_SetTranslucent(0.5,0)
+	KNIG A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoGravity
+	KNIG H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	KNIG H 6 A_SpawnItem("ZorchEffectBig")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    KNIG H 6 A_SetTranslucent(0.4,0)
+	KNIG H 0 A_Pain
+    KNIG H 6 A_SetTranslucent(0.3,0)
+    TNT1 H 0 A_NoBlocking
+    KNIG H 6 A_SetTranslucent(0.2,0)
+    KNIG H 6 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+	TNT1 A 0 A_ChangeFlag("GHOST",0)
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	KNIG H 0 A_SetTranslucent(1,0)
+	KNIG H 0 A_UnsetSolid
+    KNIG H 70 A_GenericFreezeDeath
+    KNIG H 0 A_IceGuyDie
+    KNIG H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.05,0)
-        KNIG A 3 A_SetTranslucent(0.1,0)
-        KNIG A 3 A_SetTranslucent(0.15,0)
-        KNIG A 3 A_SetTranslucent(0.2,0)
-        KNIG A 3 A_SetTranslucent(0.25,0)
-        KNIG A 3 A_SetTranslucent(0.3,0)
-        KNIG A 3 A_SetTranslucent(0.35,0)
-        KNIG A 3 A_SetTranslucent(0.4,0)
-        KNIG A 3 A_SetTranslucent(0.45,0)
-        KNIG A 3 A_SetTranslucent(0.5,0)
-        KNIG A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoGravity
-        KNIG H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        KNIG H 6 A_SpawnItem("ZorchEffectBig")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        KNIG H 6 A_SetTranslucent(0.4,0)
-        KNIG H 0 A_Pain
-        KNIG H 6 A_SetTranslucent(0.3,0)
-        TNT1 H 0 A_NoBlocking
-        KNIG H 6 A_SetTranslucent(0.2,0)
-        KNIG H 6 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_ChangeFlag("GHOST",0)
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        KNIG H 0 A_SetTranslucent(1,0)
-        KNIG H 0 A_UnsetSolid
-        KNIG H 70 A_GenericFreezeDeath
-        KNIG H 0 A_IceGuyDie
-        KNIG H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeExplosive:
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        KNIG H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        KNIG H 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	KNIG H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	KNIG H 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor KnightAxe2 : KnightAxe replaces KnightAxe
+ACTOR KnightAxe2 : KnightAxe replaces KnightAxe
 {
-    DamageType "HereAxeGreen"
-    +THRUGHOST
+DamageType "HereAxeGreen"
++THRUGHOST
 }
 
-actor RedAxe2 : RedAxe replaces RedAxe
+ACTOR RedAxe2 : RedAxe replaces RedAxe
 {
-    DamageType "HereAxeRed"
-    +THRUGHOST
+DamageType "HereAxeRed"
++THRUGHOST
 }
 
-actor Wizard2 : Wizard replaces Wizard
+ACTOR Wizard2 : Wizard replaces Wizard
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "BlasterAmmo2", 84
-    DropItem "ArtiHealth", 4, 0
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        WZRD MLKJIHGF 4 
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "BlasterAmmo2", 84
+  DropItem "ArtiHealth", 4, 0
+  States
+  {
+  Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+    WZRD MLKJIHGF 4 
+    Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+	TNT1 A 0 A_NoGravity
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	WZRD A 3 A_SetTranslucent(0.2,0)
+    WZRD A 3 A_SetTranslucent(0.3,0)
+    WZRD A 3 A_SetTranslucent(0.4,0)
+    WZRD A 3 A_SetTranslucent(0.5,0)
+    WZRD A 3 A_SetTranslucent(0.6,0)
+    WZRD A 3 A_SetTranslucent(0.7,0)
+    WZRD A 3 A_SetTranslucent(0.8,0)
+    WZRD A 3 A_SetTranslucent(0.9,0)
+    WZRD A 3 A_SetTranslucent(1,0)
+	WZRD A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoGravity
+	WZRD E 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	WZRD E 3 A_SpawnItem("ZorchEffectSmall")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    WZRD E 3 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_Scream
+    WZRD E 3 A_SetTranslucent(0.8,0)
+    TNT1 H 0 A_NoBlocking
+    WZRD E 3 A_SetTranslucent(0.7,0)
+    WZRD E 3 A_SetTranslucent(0.6,0)
+    WZRD E 3 A_SetTranslucent(0.5,0)
+    WZRD E 3 A_SetTranslucent(0.4,0)
+    WZRD E 3 A_SetTranslucent(0.3,0)
+    WZRD E 3 A_SetTranslucent(0.2,0)
+    WZRD E 3 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+	TNT1 A 0 A_Gravity
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	WZRD E 0 A_UnsetSolid
+    WZRD E 70 A_GenericFreezeDeath
+    WZRD E 0 A_IceGuyDie
+    WZRD E 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_NoGravity
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        WZRD A 3 A_SetTranslucent(0.2,0)
-        WZRD A 3 A_SetTranslucent(0.3,0)
-        WZRD A 3 A_SetTranslucent(0.4,0)
-        WZRD A 3 A_SetTranslucent(0.5,0)
-        WZRD A 3 A_SetTranslucent(0.6,0)
-        WZRD A 3 A_SetTranslucent(0.7,0)
-        WZRD A 3 A_SetTranslucent(0.8,0)
-        WZRD A 3 A_SetTranslucent(0.9,0)
-        WZRD A 3 A_SetTranslucent(1,0)
-        WZRD A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoGravity
-        WZRD E 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        WZRD E 3 A_SpawnItem("ZorchEffectSmall")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        WZRD E 3 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_Scream
-        WZRD E 3 A_SetTranslucent(0.8,0)
-        TNT1 H 0 A_NoBlocking
-        WZRD E 3 A_SetTranslucent(0.7,0)
-        WZRD E 3 A_SetTranslucent(0.6,0)
-        WZRD E 3 A_SetTranslucent(0.5,0)
-        WZRD E 3 A_SetTranslucent(0.4,0)
-        WZRD E 3 A_SetTranslucent(0.3,0)
-        WZRD E 3 A_SetTranslucent(0.2,0)
-        WZRD E 3 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A 0 A_Gravity
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        WZRD E 0 A_UnsetSolid
-        WZRD E 70 A_GenericFreezeDeath
-        WZRD E 0 A_IceGuyDie
-        WZRD E 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeExplosive:
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        WZRD E 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        WZRD E 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	WZRD E 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	WZRD E 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor WizardFX2 : WizardFX1 replaces WizardFX1
+ACTOR WizardFX2 : WizardFX1 replaces WizardFX1
 {
-    DamageType "HereWizard"
-    +THRUGHOST
+DamageType "HereWizard"
++THRUGHOST
 }
 
-actor Clink2 : Clink replaces Clink
+ACTOR Clink2 : Clink replaces Clink
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "MarathonFusion", 2.0
-    PainChance "MightyBoot", 255
-    DropItem "SkullRodAmmo2", 84
-    States
-    {
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+DamageFactor "MarathonFusion", 2.0
+PainChance "MightyBoot", 255
+  DropItem "SkullRodAmmo2", 84
+  States
+  {
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	CLNK H 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	CLNK H 4 A_SpawnItem("ZorchEffectBig")
+    CLNK H 4 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_ActiveSound//A_PlaySound("clink/active")
+    CLNK H 4 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    CLNK H 4 A_SetTranslucent(0.7,0)
+    CLNK H 4 A_SetTranslucent(0.6,0)
+    CLNK H 4 A_SetTranslucent(0.5,0)
+    CLNK H 4 A_SetTranslucent(0.4,0)
+    CLNK H 4 A_SetTranslucent(0.3,0)
+    CLNK H 4 A_SetTranslucent(0.2,0)
+    CLNK H 4 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	CLNK H 0 A_UnsetSolid
+    CLNK H 70 A_GenericFreezeDeath
+    CLNK H 0 A_IceGuyDie
+    CLNK H 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        CLNK H 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        CLNK H 4 A_SpawnItem("ZorchEffectBig")
-        CLNK H 4 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_ActiveSound//A_PlaySound("clink/active")
-        CLNK H 4 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        CLNK H 4 A_SetTranslucent(0.7,0)
-        CLNK H 4 A_SetTranslucent(0.6,0)
-        CLNK H 4 A_SetTranslucent(0.5,0)
-        CLNK H 4 A_SetTranslucent(0.4,0)
-        CLNK H 4 A_SetTranslucent(0.3,0)
-        CLNK H 4 A_SetTranslucent(0.2,0)
-        CLNK H 4 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        CLNK H 0 A_UnsetSolid
-        CLNK H 70 A_GenericFreezeDeath
-        CLNK H 0 A_IceGuyDie
-        CLNK H 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeExplosive:
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        CLNK H 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        CLNK H 16 A_Pain
-        Goto See
-
-      Melee:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Melee"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	CLNK H 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	CLNK H 16 A_Pain
+	Goto See
+  Melee:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Melee"
+}
 }
 
-actor Beast2 : Beast replaces Beast
+ACTOR Beast2 : Beast replaces Beast
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "CrossbowAmmo3", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        BEAS ZYXWVUTSR 5
-        Goto See	
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "CrossbowAmmo3", 84
+  States
+  {
+   Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+    BEAS ZYXWVUTSR 5
+   Goto See	
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	BEAS A 3 A_SetTranslucent(0.2,0)
+    BEAS A 3 A_SetTranslucent(0.3,0)
+    BEAS A 3 A_SetTranslucent(0.4,0)
+    BEAS A 3 A_SetTranslucent(0.5,0)
+    BEAS A 3 A_SetTranslucent(0.6,0)
+    BEAS A 3 A_SetTranslucent(0.7,0)
+    BEAS A 3 A_SetTranslucent(0.8,0)
+    BEAS A 3 A_SetTranslucent(0.9,0)
+    BEAS A 3 A_SetTranslucent(1,0)
+	BEAS A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+   XDeath:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::XDeath"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	BEAS G 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	BEAS G 4 A_SpawnItem("ZorchEffectWide")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    BEAS G 4 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySound("chex/weredrzorch")
+    BEAS G 4 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    BEAS G 4 A_SetTranslucent(0.7,0)
+    BEAS G 4 A_SetTranslucent(0.6,0)
+    BEAS G 4 A_SetTranslucent(0.5,0)
+    BEAS G 4 A_SetTranslucent(0.4,0)
+    BEAS G 4 A_SetTranslucent(0.3,0)
+    BEAS G 4 A_SetTranslucent(0.2,0)
+    BEAS G 4 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	BEAS G 0 A_UnsetSolid
+    BEAS G 70 A_GenericFreezeDeath
+    BEAS G 0 A_IceGuyDie
+    BEAS G 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+Death.DukeExplosive:
+	TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+	goto Death.DukeDamage
+DukeGibStart:
+    BEAS G 1
+	TNT1 A 0 A_UnsetSolid
+    TNT1 A 0 A_SpawnDebris("DukeGibs1")
+    TNT1 A 0 A_SpawnDebris("DukeGibs2")
+    TNT1 A 0 A_SpawnDebris("DukeGibs3")
+    TNT1 A 0 A_SpawnDebris("DukeGibs4")
+    TNT1 A 0 A_SpawnDebris("DukeGibs5")
+    TNT1 A 0 A_SpawnDebris("DukeGibs6")
+	TNT1 A 0 A_PlaySound("duke/enemygib")
+    TNT1 A 0 A_Jump(96,"XDeath")
+	TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+	goto XDeath
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        BEAS A 3 A_SetTranslucent(0.2,0)
-        BEAS A 3 A_SetTranslucent(0.3,0)
-        BEAS A 3 A_SetTranslucent(0.4,0)
-        BEAS A 3 A_SetTranslucent(0.5,0)
-        BEAS A 3 A_SetTranslucent(0.6,0)
-        BEAS A 3 A_SetTranslucent(0.7,0)
-        BEAS A 3 A_SetTranslucent(0.8,0)
-        BEAS A 3 A_SetTranslucent(0.9,0)
-        BEAS A 3 A_SetTranslucent(1,0)
-        BEAS A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      XDeath:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::XDeath"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        BEAS G 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        BEAS G 4 A_SpawnItem("ZorchEffectWide")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        BEAS G 4 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySound("chex/weredrzorch")
-        BEAS G 4 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        BEAS G 4 A_SetTranslucent(0.7,0)
-        BEAS G 4 A_SetTranslucent(0.6,0)
-        BEAS G 4 A_SetTranslucent(0.5,0)
-        BEAS G 4 A_SetTranslucent(0.4,0)
-        BEAS G 4 A_SetTranslucent(0.3,0)
-        BEAS G 4 A_SetTranslucent(0.2,0)
-        BEAS G 4 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        BEAS G 0 A_UnsetSolid
-        BEAS G 70 A_GenericFreezeDeath
-        BEAS G 0 A_IceGuyDie
-        BEAS G 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeExplosive:
-        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
-        goto Death.DukeDamage
-
-      DukeGibStart:
-        BEAS G 1
-        TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_SpawnDebris("DukeGibs1")
-        TNT1 A 0 A_SpawnDebris("DukeGibs2")
-        TNT1 A 0 A_SpawnDebris("DukeGibs3")
-        TNT1 A 0 A_SpawnDebris("DukeGibs4")
-        TNT1 A 0 A_SpawnDebris("DukeGibs5")
-        TNT1 A 0 A_SpawnDebris("DukeGibs6")
-        TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
-        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
-        goto XDeath
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        BEAS G 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        BEAS G 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	BEAS G 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	BEAS G 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor BeastBall2 : BeastBall replaces BeastBall
+ACTOR BeastBall2 : BeastBall replaces BeastBall
 {
-    +FIREDAMAGE
-    +THRUGHOST
++FIREDAMAGE
++THRUGHOST
 }
 
-actor Snake2 : Snake replaces Snake
+ACTOR Snake2 : Snake replaces Snake
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MightyBoot", 255
-    DropItem "PhoenixRodAmmo2", 84
-    States
-    {
-      Raise:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
-        SNKE PONMLKJIHG 3
-        Goto See
++NOTDMATCH
++NOICEDEATH
+DamageFactor "Mace", 1.15
+DamageFactor "DragonClaw", 1.5
+PainChance "MightyBoot", 255
+  DropItem "PhoenixRodAmmo2", 84
+  States
+  {
+  Raise:
+	TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+    SNKE PONMLKJIHG 3
+    Goto See
+ZorchRaise:
+    TNT1 A 1 A_UnsetShootable
+	TNT1 A 1 A_SpawnItem("SpawnFire2")
+	TNT1 A 0 A_PlaySound("archvile/resummon")
+    TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+    TNT1 A 0 A_SetTranslucent(0.1,0)
+	SNKE A 3 A_SetTranslucent(0.2,0)
+    SNKE A 3 A_SetTranslucent(0.3,0)
+    SNKE A 3 A_SetTranslucent(0.4,0)
+    SNKE A 3 A_SetTranslucent(0.5,0)
+    SNKE A 3 A_SetTranslucent(0.6,0)
+    SNKE A 3 A_SetTranslucent(0.7,0)
+    SNKE A 3 A_SetTranslucent(0.8,0)
+    SNKE A 3 A_SetTranslucent(0.9,0)
+    SNKE A 3 A_SetTranslucent(1,0)
+	SNKE A 1 A_SetShootable
+    Goto See
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	SNKE E 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+	SNKE E 4 A_SpawnItem("ZorchEffectBig")
+	TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+    SNKE E 4 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySound("chex/ophidzorch")
+    SNKE E 4 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    SNKE E 4 A_SetTranslucent(0.7,0)
+    SNKE E 4 A_SetTranslucent(0.6,0)
+    SNKE E 4 A_SetTranslucent(0.5,0)
+    SNKE E 4 A_SetTranslucent(0.4,0)
+    SNKE E 4 A_SetTranslucent(0.3,0)
+    SNKE E 4 A_SetTranslucent(0.2,0)
+    SNKE E 4 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1
+    stop
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+	SNKE E 0 A_GenericFreezeDeath
+    SNKE E 70 A_UnsetSolid
+    SNKE E 0 A_IceGuyDie
+    SNKE E 1 A_IceGuyDie
+	TNT1 A -1
+	stop
+Death.DukeExplosive:
+Death.DukeDamage:
+  Death.DukePistol:
+    TNT1 A 0 A_Jump(218,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Death
+Death.MightyBoot:
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+    TNT1 A 0 A_Jump(64,"Death")
+	TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+	goto Death
+  Death.DukeIce:
+	TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+	TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+    TNT1 A 0 A_Jump(218,"Ice")
+	TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+	goto Ice
 
-      ZorchRaise:
-        TNT1 A 1 A_UnsetShootable
-        TNT1 A 1 A_SpawnItem("SpawnFire2")
-        TNT1 A 0 A_PlaySound("archvile/resummon")
-        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
-        TNT1 A 0 A_SetTranslucent(0.1,0)
-        SNKE A 3 A_SetTranslucent(0.2,0)
-        SNKE A 3 A_SetTranslucent(0.3,0)
-        SNKE A 3 A_SetTranslucent(0.4,0)
-        SNKE A 3 A_SetTranslucent(0.5,0)
-        SNKE A 3 A_SetTranslucent(0.6,0)
-        SNKE A 3 A_SetTranslucent(0.7,0)
-        SNKE A 3 A_SetTranslucent(0.8,0)
-        SNKE A 3 A_SetTranslucent(0.9,0)
-        SNKE A 3 A_SetTranslucent(1,0)
-        SNKE A 1 A_SetShootable
-        Goto See
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        SNKE E 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
-        SNKE E 4 A_SpawnItem("ZorchEffectBig")
-        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
-        SNKE E 4 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySound("chex/ophidzorch")
-        SNKE E 4 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        SNKE E 4 A_SetTranslucent(0.7,0)
-        SNKE E 4 A_SetTranslucent(0.6,0)
-        SNKE E 4 A_SetTranslucent(0.5,0)
-        SNKE E 4 A_SetTranslucent(0.4,0)
-        SNKE E 4 A_SetTranslucent(0.3,0)
-        SNKE E 4 A_SetTranslucent(0.2,0)
-        SNKE E 4 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1
-        stop
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        SNKE E 0 A_GenericFreezeDeath
-        SNKE E 70 A_UnsetSolid
-        SNKE E 0 A_IceGuyDie
-        SNKE E 1 A_IceGuyDie
-        TNT1 A -1
-        stop
-
-      Death.DukeExplosive:
-      Death.DukeDamage:
-      Death.DukePistol:
-        TNT1 A 0 A_Jump(218,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Death
-
-      Death.MightyBoot:
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        TNT1 A 0 A_Jump(64,"Death")
-        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
-        goto Death
-
-      Death.DukeIce:
-        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
-        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
-        TNT1 A 0 A_Jump(218,"Ice")
-        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
-        goto Ice
-        
-      Pain.MightyBoot:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
-        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
-        SNKE E 2 A_FaceTarget
-        TNT1 A 0 A_Recoil(14)
-        SNKE E 16 A_Pain
-        Goto See
-
-      Missile:
-        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
-        goto "Super::Missile"
-    }
+  Pain.MightyBoot:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+	TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+	SNKE E 2 A_FaceTarget
+	TNT1 A 0 A_Recoil(14)
+	SNKE E 16 A_Pain
+	Goto See
+  Missile:
+	TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+	goto "Super::Missile"
+}
 }
 
-actor SnakeProjA2 : SnakeProjA replaces SnakeProjA
+ACTOR SnakeProjA2 : SnakeProjA replaces SnakeProjA
 {
-    +ICEDAMAGE
++ICEDAMAGE
 }
 
-actor SnakeProjB2 : SnakeProjB replaces SnakeProjB
+ACTOR SnakeProjB2 : SnakeProjB replaces SnakeProjB
 {
-    +FIREDAMAGE
++FIREDAMAGE
 }
 
-actor ZorchEffectHuge2 : ZorchEffectSmall
+Actor ZorchEffectHuge2 : ZorchEffectSmall
 {
-    yscale 1.625
-    xscale 1.825
-    States
-    {
-      Spawn:
-        ZFOG AABBCCDDEEFFGGHHIIJJ 4 BRIGHT A_SpawnItemEx("ZorchSparkle",0,0,random(20,72),random(-9,9),random(-9,9),random(1,3),48,128)
-        stop
-    }
+yscale 1.625
+xscale 1.825
+States
+{
+Spawn:
+	ZFOG AABBCCDDEEFFGGHHIIJJ 4 BRIGHT A_SpawnItemEx("ZorchSparkle",0,0,random(20,72),random(-9,9),random(-9,9),random(1,3),48,128)
+	stop
+	}
 }
 
-actor IronLich2 : IronLich replaces IronLich
+ACTOR IronLich2 : IronLich replaces IronLich
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    +BOSS
-    +DONTRIP
-    DamageFactor "Mace", 1.15
-    DamageFactor "BFG", 0.75
-    DamageFactor "BFGSpray", 0.75
-    DamageFactor "WMCNade", 0.75
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "CorvusHellstaffTomed", 0.2
-    DropItem "BlasterAmmo2", 84
-    DropItem "ArtiEgg", 51, 0
-    States
-    {
-      See:
-        TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
-        TNT1 A 0 A_GiveInventory("DukeBossSee",1)
-        TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
-
-      See2:
-        LICH A 4 A_Chase
-        Loop
-
-      Death.DukeDamage:
-      Death.MightyBoot:
-      Death.DukeExplosive:
-      Death.DukePistol:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        LICH A 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
-        LICH A 8 A_SpawnItem("ZorchEffectHuge2")
-        LICH A 8 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySoundEx("ironlich/sight","soundslot6",0,2)
-        LICH A 8 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        LICH A 8 A_SetTranslucent(0.7,0)
-        LICH A 8 A_SetTranslucent(0.6,0)
-        LICH A 8 A_SetTranslucent(0.5,0)
-        LICH A 8 A_SetTranslucent(0.4,0)
-        LICH A 8 A_SetTranslucent(0.3,0)
-        LICH A 8 A_SetTranslucent(0.2,0)
-        LICH A 8 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1 A_BossDeath
-        stop
-
-      Death.DukeIce:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        LICH A 0 A_PlaySoundEx("freeze/ironlich","soundslot6",0,0)
-        LICH A 0 A_UnsetSolid
-        LICH A 0 A_UnsetShootable
-        LICH A 140 A_GenericFreezeDeath
-        LICH A 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
-        LICH AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
-        LICH A 0 A_IceGuyDie
-        LICH A 1 A_IceGuyDie
-        TNT1 A -1 A_BossDeath
-        stop
-    }
++NOTDMATCH
++NOICEDEATH
+  +BOSS
+  +DONTRIP
+DamageFactor "Mace", 1.15
+DamageFactor "BFG", 0.75
+DamageFactor "BFGSpray", 0.75
+DamageFactor "WMCNade", 0.75
+DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
+  DropItem "BlasterAmmo2", 84
+  DropItem "ArtiEgg", 51, 0
+  States
+  {
+See:
+TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+  See2:
+    LICH A 4 A_Chase
+    Loop
+Death.DukeDamage:
+Death.MightyBoot:
+Death.DukeExplosive:
+  Death.DukePistol:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	LICH A 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
+	LICH A 8 A_SpawnItem("ZorchEffectHuge2")
+    LICH A 8 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySoundEx("ironlich/sight","soundslot6",0,2)
+    LICH A 8 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    LICH A 8 A_SetTranslucent(0.7,0)
+    LICH A 8 A_SetTranslucent(0.6,0)
+    LICH A 8 A_SetTranslucent(0.5,0)
+    LICH A 8 A_SetTranslucent(0.4,0)
+    LICH A 8 A_SetTranslucent(0.3,0)
+    LICH A 8 A_SetTranslucent(0.2,0)
+    LICH A 8 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1 A_BossDeath
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+    LICH A 0 A_PlaySoundEx("freeze/ironlich","soundslot6",0,0)
+	LICH A 0 A_UnsetSolid
+	LICH A 0 A_UnsetShootable
+    LICH A 140 A_GenericFreezeDeath
+    LICH A 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
+	LICH AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
+    LICH A 0 A_IceGuyDie
+    LICH A 1 A_IceGuyDie
+	TNT1 A -1 A_BossDeath
+	stop
+}
 }
 
-actor HeadFX12 : HeadFX1 replaces HeadFX1
+ACTOR HeadFX12 : HeadFX1 replaces HeadFX1
 {
-    +ICEDAMAGE
++ICEDAMAGE
 }
 
-actor HeadFX22 : HeadFX2 replaces HeadFX2
+ACTOR HeadFX22 : HeadFX2 replaces HeadFX2
 {
-    +ICEDAMAGE
++ICEDAMAGE
 }
 
-actor HeadFX32 : HeadFX3 replaces HeadFX3
+ACTOR HeadFX32 : HeadFX3 replaces HeadFX3
 {
-    +FIREDAMAGE
++FIREDAMAGE
 }
 
-actor HeadFX4 : Whirlwind replaces Whirlwind
+ACTOR HeadFX4 : Whirlwind replaces Whirlwind
 {
-    DamageType "HereLichWind"
-    Renderstyle Add
-    Alpha 0.65
+DamageType "HereLichWind"
+Renderstyle Add
+Alpha 0.65
 }
 
-actor Minotaur2 : Minotaur replaces Minotaur
+ACTOR Minotaur2 : Minotaur replaces Minotaur
 {
-    +NOTDMATCH
-    +NOICEDEATH
-    +DONTRIP
-    DamageFactor "Mace", 1.15
-    DamageFactor "BFG", 0.75
-    DamageFactor "BFGSpray", 0.75
-    DamageFactor "WMCNade", 0.75
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "CorvusHellstaffTomed", 0.2
-    DropItem "ArtiSuperHealth", 51
-    DropItem "PhoenixRodAmmo3", 84
-    States
-    {
-      See:
-        TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
-        TNT1 A 0 A_GiveInventory("DukeBossSee",1)
-        TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
-
-      See2:
-        MNTR ABCD 5 A_MinotaurChase
-        Loop
-
-      Death.DukeDamage:
-      Death.MightyBoot:
-      Death.DukeExplosive:
-      Death.DukePistol:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        MNTR E 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
-        MNTR E 8 A_SpawnItem("ZorchEffectHuge")
-        MNTR E 8 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySoundEx("chex/maulozorch","soundslot6",0,2)
-        MNTR E 8 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        MNTR E 8 A_SetTranslucent(0.7,0)
-        MNTR E 8 A_SetTranslucent(0.6,0)
-        MNTR E 8 A_SetTranslucent(0.5,0)
-        MNTR E 8 A_SetTranslucent(0.4,0)
-        MNTR E 8 A_SetTranslucent(0.3,0)
-        MNTR E 8 A_SetTranslucent(0.2,0)
-        MNTR E 8 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1 A_BossDeath
-        stop
-
-      Death.DukeIce:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        //TNT1 A 0 A_NoBlocking
-        MNTR E 0 A_PlaySoundEx("freeze/maulotaur","soundslot6",0,0)
-        MNTR E 0 A_GenericFreezeDeath
-        MNTR E 0 A_UnsetShootable
-        MNTR E 140 A_UnsetSolid
-        MNTR E 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
-        MNTR EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
-        MNTR E 0 A_IceGuyDie
-        MNTR E 1 A_IceGuyDie
-        TNT1 A -1 A_BossDeath
-        stop
-    }
++NOTDMATCH
++NOICEDEATH
++DONTRIP
+DamageFactor "Mace", 1.15
+DamageFactor "BFG", 0.75
+DamageFactor "BFGSpray", 0.75
+DamageFactor "WMCNade", 0.75
+DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
+  DropItem "ArtiSuperHealth", 51
+  DropItem "PhoenixRodAmmo3", 84
+  States
+  {
+See:
+TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+  See2:
+    MNTR ABCD 5 A_MinotaurChase
+    Loop
+Death.DukeDamage:
+Death.MightyBoot:
+Death.DukeExplosive:
+  Death.DukePistol:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	MNTR E 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
+	MNTR E 8 A_SpawnItem("ZorchEffectHuge")
+    MNTR E 8 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySoundEx("chex/maulozorch","soundslot6",0,2)
+    MNTR E 8 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    MNTR E 8 A_SetTranslucent(0.7,0)
+    MNTR E 8 A_SetTranslucent(0.6,0)
+    MNTR E 8 A_SetTranslucent(0.5,0)
+    MNTR E 8 A_SetTranslucent(0.4,0)
+    MNTR E 8 A_SetTranslucent(0.3,0)
+    MNTR E 8 A_SetTranslucent(0.2,0)
+    MNTR E 8 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A -1 A_BossDeath
+    stop
+  Death.DukeIce:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	//TNT1 A 0 A_NoBlocking
+    MNTR E 0 A_PlaySoundEx("freeze/maulotaur","soundslot6",0,0)
+	MNTR E 0 A_GenericFreezeDeath
+	MNTR E 0 A_UnsetShootable
+    MNTR E 140 A_UnsetSolid
+    MNTR E 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
+	MNTR EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
+    MNTR E 0 A_IceGuyDie
+    MNTR E 1 A_IceGuyDie
+	TNT1 A -1 A_BossDeath
+	stop
+}
 }
 
-actor Sorcerer3 : Sorcerer1 replaces Sorcerer1
+ACTOR Sorcerer3 : Sorcerer1 replaces Sorcerer1
 {
-    Health 3500
-    Speed 20
-    DamageFactor "Mace", 1.15
-    DamageFactor "BFG", 0.75
-    DamageFactor "BFGSpray", 0.75
-    DamageFactor "WMCBeam", 0.75
-    DamageFactor "WMCNade", 0.55
-    DamageFactor "DragonClaw", 1.5
-    PainChance "MarathonFusion", 0
-    DamageFactor "CorvusHellstaffTomed", 0.2
-    +INVULNERABLE
-    +DONTRIP
-    +NOTDMATCH
-    +NOICEDEATH
-    States
-    {
-      Spawn:
-        TNT1 A 0 A_SetTranslucent(0,0)
-        TNT1 A 80
-        TNT1 A 0 ACS_ExecuteAlways(204,0,3)
-        SRCR A 0 A_SetTranslucent(0.1,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.2,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.3,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.4,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.5,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.6,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.7,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.8,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        SRCR A 0 A_SetTranslucent(0.9,0)
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
-        TNT1 A 0 A_PlaySoundEx("dsparilserpent/active","SoundSlot5",0,2)
-        SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
-        SRCR A 140 A_SetTranslucent(1,0)
-        TNT1 A 0 A_PlaySoundEx("dsparil/active","SoundSlot5",0,2)
-        SRCR A 100
-        TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
-        SRCR A 1 A_Look
-        wait
-
-      Idle:
-        SRCR A 1 A_Look
-        loop
-
-      See:
-        TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
-        TNT1 A 0 A_GiveInventory("DukeBossSee",1)
-        TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
-
-      See2:
-        SRCR ABCD 5 A_Sor1Chase
-        Loop
-
-      Pain:
-        SRCR Q 1 A_Sor1Pain
-        Goto See
-
-      Missile:
-        SRCR Q 0 A_Jump(256,"StrafeLeft","StrafeRight")
-
-      StrafeLeft:
-        SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
-        goto Fire
-
-      StrafeRight:
-        SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
-        goto Fire
-
-      Fire:
-        SRCR R 6 A_FaceTarget
-        SRCR S 10 A_Srcr1Attack
-        Goto See
-
-      Missile2:
-        SRCR S 5 A_FastChase
-        SRCR Q 0 A_Jump(256,"StrafeLeft2","StrafeRight2")
-
-      StrafeLeft2:
-        SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
-        goto Fire2
-
-      StrafeRight2:
-        SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
-        goto Fire2
-
-      Fire2:
-        SRCR Q 7 A_FaceTarget
-        SRCR R 6 A_FastChase
-        SRCR S 10 A_Srcr1Attack
-        SRCR S 5 A_FastChase
-        SRCR Q 0 A_Jump(256,"StrafeLeft3","StrafeRight3")
-
-      StrafeLeft3:
-        SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
-        goto Fire3
-
-      StrafeRight3:
-        SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
-        goto Fire3
-
-      Fire3:
-        SRCR Q 7 A_FaceTarget
-        SRCR R 6 A_FastChase
-        SRCR S 10 A_Srcr1Attack
-        TNT1 A 0 A_Jump(128,"Missile2")
-        Goto See
-
-      Death.DukeDamage:
-      Death.MightyBoot:
-      Death.DukeExplosive:
-      Death.DukeIce:
-      Death.DukePistol:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        goto "Super::Death"
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        SRCR Q 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
-        SRCR Q 8 A_SpawnItem("ZorchEffectHuge")
-        SRCR Q 8 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySoundEx("dsparilserpent/active","soundslot6",0,2)
-        SRCR Q 8 A_SetTranslucent(0.8,0)
-        SRCR Q 8 A_SetTranslucent(0.7,0)
-        SRCR Q 8 A_SetTranslucent(0.6,0)
-        SRCR Q 8 A_SetTranslucent(0.5,0)
-        SRCR Q 8 A_SetTranslucent(0.4,0)
-        SRCR Q 8 A_SetTranslucent(0.3,0)
-        SRCR Q 8 A_SetTranslucent(0.2,0)
-        SRCR Q 8 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A 15
-        TNT1 A 34 A_PlaySoundEx("dsparil/zap", "body")
-        TNT1 A 41 A_PlaySoundEx("dsparil/zap", "body")
-        TNT1 A 1 A_NoBlocking
-        TNT1 A -1 A_SpawnItem("Sorcerer4")//A_SorcererRise
-        stop
-    }
+Health 3500
+Speed 20
+DamageFactor "Mace", 1.15
+DamageFactor "BFG", 0.75
+DamageFactor "BFGSpray", 0.75
+DamageFactor "WMCBeam", 0.75
+DamageFactor "WMCNade", 0.55
+DamageFactor "DragonClaw", 1.5
+	PainChance "MarathonFusion", 0
+	DamageFactor "CorvusHellstaffTomed", 0.2
++INVULNERABLE
++DONTRIP
++NOTDMATCH
++NOICEDEATH
+  States
+  {
+Spawn:
+	TNT1 A 0 A_SetTranslucent(0,0)
+	TNT1 A 80
+	TNT1 A 0 ACS_ExecuteAlways(204,0,3)
+	SRCR A 0 A_SetTranslucent(0.1,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.2,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.3,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.4,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.5,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.6,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.7,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.8,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	SRCR A 0 A_SetTranslucent(0.9,0)
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 1 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, random(1,4), 0, 129, 0)  
+	TNT1 A 0 A_PlaySoundEx("dsparilserpent/active","SoundSlot5",0,2)
+	SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+	SRCR AAAAAAAAAAAAAA 0 A_SpawnItemEx ("StarSparkle", random(-32, 32), random(-32,32), random(0, 8), 0, 0, 4, 0, 129, 0) 
+	SRCR A 140 A_SetTranslucent(1,0)
+	TNT1 A 0 A_PlaySoundEx("dsparil/active","SoundSlot5",0,2)
+	SRCR A 100
+	TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
+	SRCR A 1 A_Look
+	wait
+Idle:
+	TNT1 A 0 A_SetTranslucent(1,0)
+	TNT1 A 0 A_ChangeFlag("INVULNERABLE",0)
+	SRCR A 1 A_Look
+	loop
+See:
+TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+  See2:
+    SRCR ABCD 5 A_Sor1Chase
+    Loop
+  Pain:
+    SRCR Q 1 A_Sor1Pain
+    Goto See
+  Missile:
+    SRCR Q 0 A_Jump(256,"StrafeLeft","StrafeRight")
+  StrafeLeft:
+	SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
+	goto Fire
+  StrafeRight:
+	SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
+	goto Fire
+  Fire:
+    SRCR R 6 A_FaceTarget
+    SRCR S 10 A_Srcr1Attack
+    Goto See
+  Missile2:
+    SRCR S 5 A_FastChase
+    SRCR Q 0 A_Jump(256,"StrafeLeft2","StrafeRight2")
+  StrafeLeft2:
+	SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
+	goto Fire2
+  StrafeRight2:
+	SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
+	goto Fire2
+  Fire2:
+    SRCR Q 7 A_FaceTarget
+    SRCR R 6 A_FastChase
+    SRCR S 10 A_Srcr1Attack
+    SRCR S 5 A_FastChase
+    SRCR Q 0 A_Jump(256,"StrafeLeft3","StrafeRight3")
+  StrafeLeft3:
+	SRCR Q 7 ThrustThing(angle*256/360+192, 12, 0, 0)
+	goto Fire3
+  StrafeRight3:
+	SRCR Q 7 ThrustThing(angle*256/360+64, 12, 0, 0)
+	goto Fire3
+  Fire3:
+    SRCR Q 7 A_FaceTarget
+    SRCR R 6 A_FastChase
+    SRCR S 10 A_Srcr1Attack
+	TNT1 A 0 A_Jump(128,"Missile2")
+    Goto See
+Death.DukeDamage:
+Death.MightyBoot:
+Death.DukeExplosive:
+Death.DukeIce:
+  Death.DukePistol:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+   Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+     goto "Super::Death"
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+	SRCR Q 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
+	SRCR Q 8 A_SpawnItem("ZorchEffectHuge")
+    SRCR Q 8 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySoundEx("dsparilserpent/active","soundslot6",0,2)
+    SRCR Q 8 A_SetTranslucent(0.8,0)
+    SRCR Q 8 A_SetTranslucent(0.7,0)
+    SRCR Q 8 A_SetTranslucent(0.6,0)
+    SRCR Q 8 A_SetTranslucent(0.5,0)
+    SRCR Q 8 A_SetTranslucent(0.4,0)
+    SRCR Q 8 A_SetTranslucent(0.3,0)
+    SRCR Q 8 A_SetTranslucent(0.2,0)
+    SRCR Q 8 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+    TNT1 A 15
+	TNT1 A 34 A_PlaySoundEx("dsparil/zap", "body")
+	TNT1 A 41 A_PlaySoundEx("dsparil/zap", "body")
+	TNT1 A 1 A_NoBlocking
+	TNT1 A -1 A_SpawnItem("Sorcerer4")//A_SorcererRise
+    stop
+}
 }
 
-actor Sorcerer4 : Sorcerer2 replaces Sorcerer2
+ACTOR Sorcerer4 : Sorcerer2 replaces Sorcerer2
 {
-    Health 5000
-    DamageFactor "Mace", 1.15
-    DamageFactor "BFG", 0.65
-    DamageFactor "BFGSpray", 0.65
-    DamageFactor "WMCBeam", 0.65
-    DamageFactor "WMCNade", 0.5
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "CorvusHellstaffTomed", 0.2
-    +DONTRIP
-    +NOTARGET
-    +NOINFIGHTING
-    +NOTDMATCH
-    +NOICEDEATH
-    States
-    {
-      Spawn:
-        SOR2 LKJI 6
-        TNT1 A 0 A_PlaySoundEx("dsparil/sight", "Body",0,2)
-        SOR2 HG 6
-        Goto See
-
-      Missile:
-        SOR2 R 5 //A_Srcr2Decide
-        SOR2 S 7 A_FaceTarget
-        SOR2 T 8 A_Srcr2Attack
-        TNT1 A 0 A_Srcr2Decide
-        TNT1 A 0 A_Jump(64,"See")
-        SOR2 S 7 A_FaceTarget
-        SOR2 T 8 A_Srcr2Attack
-        TNT1 AA 0 A_Srcr2Decide
-        TNT1 A 0 A_Jump(96,"See")
-        SOR2 S 7 A_FaceTarget
-        SOR2 T 8 A_Srcr2Attack
-        TNT1 AAA 0 A_Srcr2Decide
-        TNT1 A 0 A_Jump(128,"See")
-        SOR2 S 7 A_FaceTarget
-        SOR2 T 8 A_Srcr2Attack
-        TNT1 AAAAA 0 A_Srcr2Decide
-        Goto See
-
-      Death.DukeDamage:
-      Death.MightyBoot:
-      Death.DukeExplosive:
-      Death.DukePistol:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Death:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_SetTranslucent(1,0)
-        SDTH A 8 A_Sor2DthInit
-        SDTH B 8
-        SDTH C 8 A_PlaySoundEx("dsparil/scream", "Body")
-
-      DeathLoop:
-        SDTH DE 7
-        SDTH F 7 A_Sor2DthLoop
-        SDTH G 6 A_PlaySoundEx("dsparil/explode", "Body")
-        SDTH H 6
-        SDTH I 18
-        SDTH J 6 A_NoBlocking
-        SDTH K 6 A_PlaySoundEx("dsparil/bones", "Body")
-        SDTH LMN 6
-        SDTH O -1 A_BossDeath
-        Stop
-
-      Death.ZorchPistol:
-      Death.Zorch:
-      Death.PhasingZorch:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_SetTranslucent(1,0)
-        SOR2 Q 0 A_Stop
-        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
-        TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
-        SOR2 Q 8 A_SpawnItem("ZorchEffectHuge2")
-        SOR2 Q 8 A_SetTranslucent(0.9,0)
-        TNT1 A 0 A_PlaySoundEx("chex/dsparilzorch","soundslot6",0,2)
-        SOR2 Q 8 A_SetTranslucent(0.8,0)
-        TNT1 A 0 A_NoBlocking
-        SOR2 Q 8 A_SetTranslucent(0.7,0)
-        SOR2 Q 8 A_SetTranslucent(0.6,0)
-        SOR2 Q 8 A_SetTranslucent(0.5,0)
-        SOR2 Q 8 A_SetTranslucent(0.4,0)
-        SOR2 Q 8 A_SetTranslucent(0.3,0)
-        SOR2 Q 8 A_SetTranslucent(0.2,0)
-        SOR2 Q 8 A_SetTranslucent(0.1,0)
-        TNT1 A 1 A_SetTranslucent(1,0)
-        TNT1 A -1 A_BossDeath
-        stop
-
-      Teleport:
-        TNT1 A 0 A_Jump(256,"GhostOn","GhostOff")
-
-      GhostOn:
-        TNT1 A 0 A_SetTranslucent(0.5,0)
-        TNT1 A 0 A_ChangeFlag("GHOST",1)
-        goto TeleportIn
-
-      GhostOff:
-        TNT1 A 0 A_SetTranslucent(1,0)
-        TNT1 A 0 A_ChangeFlag("GHOST",0)
-        goto TeleportIn
-
-      TeleportIn:
-        SOR2 LKJIHG 6
-        Goto See
-
-      Death.DukeIce:
-        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
-
-      Ice:
-      Death.HexenIce:
-      Death.Ice:
-        TNT1 A 0 A_GiveToTarget("KillCount",1)
-        TNT1 A 0 A_NoBlocking
-        SOR2 Q 0 A_PlaySoundEx("freeze/dsparil","soundslot6",0,0)
-        SOR2 Q 0 A_GenericFreezeDeath
-        SOR2 Q 0 A_UnsetShootable
-        SOR2 Q 140 A_UnsetSolid
-        SOR2 Q 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
-        SOR2 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
-        SOR2 Q 0 A_IceGuyDie
-        SOR2 Q 1 A_IceGuyDie
-        TNT1 A -1 A_BossDeath
-        stop
-    }
+Health 5000
+DamageFactor "Mace", 1.15
+DamageFactor "BFG", 0.65
+DamageFactor "BFGSpray", 0.65
+DamageFactor "WMCBeam", 0.65
+DamageFactor "WMCNade", 0.5
+DamageFactor "DragonClaw", 1.5
+	DamageFactor "CorvusHellstaffTomed", 0.2
+  +DONTRIP
+  +NOTARGET
+  +NOINFIGHTING
++NOTDMATCH
++NOICEDEATH
+  States
+  {
+  Spawn:
+    SOR2 LKJI 6
+	TNT1 A 0 A_PlaySoundEx("dsparil/sight", "Body",0,2)
+	SOR2 HG 6
+    Goto See
+  Missile:
+    SOR2 R 5 //A_Srcr2Decide
+    SOR2 S 7 A_FaceTarget
+    SOR2 T 8 A_Srcr2Attack
+	TNT1 A 0 A_Srcr2Decide
+	TNT1 A 0 A_Jump(64,"See")
+    SOR2 S 7 A_FaceTarget
+    SOR2 T 8 A_Srcr2Attack
+	TNT1 AA 0 A_Srcr2Decide
+	TNT1 A 0 A_Jump(96,"See")
+    SOR2 S 7 A_FaceTarget
+    SOR2 T 8 A_Srcr2Attack
+	TNT1 AAA 0 A_Srcr2Decide
+	TNT1 A 0 A_Jump(128,"See")
+    SOR2 S 7 A_FaceTarget
+    SOR2 T 8 A_Srcr2Attack
+	TNT1 AAAAA 0 A_Srcr2Decide
+    Goto See
+Death.DukeDamage:
+Death.MightyBoot:
+Death.DukeExplosive:
+  Death.DukePistol:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+  Death:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+    TNT1 A 0 A_SetTranslucent(1,0)
+    SDTH A 8 A_Sor2DthInit
+    SDTH B 8
+    SDTH C 8 A_PlaySoundEx("dsparil/scream", "Body")
+  DeathLoop:
+    SDTH DE 7
+    SDTH F 7 A_Sor2DthLoop
+    SDTH G 6 A_PlaySoundEx("dsparil/explode", "Body")
+    SDTH H 6
+    SDTH I 18
+    SDTH J 6 A_NoBlocking
+    SDTH K 6 A_PlaySoundEx("dsparil/bones", "Body")
+    SDTH LMN 6
+    SDTH O -1 A_BossDeath
+    Stop
+Death.ZorchPistol:
+  Death.Zorch:
+  Death.PhasingZorch:
+     TNT1 A 0 A_GiveToTarget("KillCount",1)
+    TNT1 A 0 A_SetTranslucent(1,0)
+	SOR2 Q 0 A_Stop
+	TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+	TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
+	SOR2 Q 8 A_SpawnItem("ZorchEffectHuge2")
+    SOR2 Q 8 A_SetTranslucent(0.9,0)
+	TNT1 A 0 A_PlaySoundEx("chex/dsparilzorch","soundslot6",0,2)
+    SOR2 Q 8 A_SetTranslucent(0.8,0)
+    TNT1 A 0 A_NoBlocking
+    SOR2 Q 8 A_SetTranslucent(0.7,0)
+    SOR2 Q 8 A_SetTranslucent(0.6,0)
+    SOR2 Q 8 A_SetTranslucent(0.5,0)
+    SOR2 Q 8 A_SetTranslucent(0.4,0)
+    SOR2 Q 8 A_SetTranslucent(0.3,0)
+    SOR2 Q 8 A_SetTranslucent(0.2,0)
+    SOR2 Q 8 A_SetTranslucent(0.1,0)
+	TNT1 A 1 A_SetTranslucent(1,0)
+	TNT1 A -1 A_BossDeath
+    stop
+  Teleport:
+    TNT1 A 0 A_Jump(256,"GhostOn","GhostOff")
+  GhostOn:
+    TNT1 A 0 A_SetTranslucent(0.5,0)
+	TNT1 A 0 A_ChangeFlag("GHOST",1)
+	goto TeleportIn
+  GhostOff:
+    TNT1 A 0 A_SetTranslucent(1,0)
+	TNT1 A 0 A_ChangeFlag("GHOST",0)
+	goto TeleportIn
+  TeleportIn:
+	SOR2 LKJIHG 6
+    Goto See
+  Death.DukeIce:
+	TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+Ice:
+Death.HexenIce:
+Death.Ice:
+    TNT1 A 0 A_GiveToTarget("KillCount",1)
+	TNT1 A 0 A_NoBlocking
+    SOR2 Q 0 A_PlaySoundEx("freeze/dsparil","soundslot6",0,0)
+	SOR2 Q 0 A_GenericFreezeDeath
+	SOR2 Q 0 A_UnsetShootable
+    SOR2 Q 140 A_UnsetSolid
+    SOR2 Q 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
+	SOR2 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
+    SOR2 Q 0 A_IceGuyDie
+    SOR2 Q 1 A_IceGuyDie
+	TNT1 A -1 A_BossDeath
+	stop
+}
 }
 
-actor Sorcerer2FX3 : Sorcerer2FX1 replaces Sorcerer2FX1
+Actor Sorcerer2FX3 : Sorcerer2FX1 replaces Sorcerer2FX1
 {
-    DamageType "HereDsparil"
-    Speed 30
-    FastSpeed 35
+  DamageType "HereDsparil"
+  Speed 30
+  FastSpeed 35
 }
 
-actor Teleglitter1B : Teleglitter1 replaces Teleglitter1
+Actor Teleglitter1B : Teleglitter1 replaces Teleglitter1
 {
-    +CLIENTSIDEONLY
-    +SKYEXPLODE
-    Alpha 0.9
-    States
-    {
-      Spawn:
-        TGLT A 2 BRIGHT A_FadeOut(0.05)
-        TGLT B 2 BRIGHT A_AccTeleGlitter
-        TGLT C 2 BRIGHT
-        TGLT D 2 BRIGHT A_AccTeleGlitter
-        TGLT E 2 BRIGHT
-        Loop
-    }
+  +CLIENTSIDEONLY
+  +SKYEXPLODE
+  Alpha 0.9
+  States
+  {
+  Spawn:
+    TGLT A 2 BRIGHT A_FadeOut(0.05)
+    TGLT B 2 BRIGHT A_AccTeleGlitter
+    TGLT C 2 BRIGHT
+    TGLT D 2 BRIGHT A_AccTeleGlitter
+    TGLT E 2 BRIGHT
+    Loop
+  }
 }
 
-actor Teleglitter2B : Teleglitter2 replaces Teleglitter2
+Actor Teleglitter2B : Teleglitter2 replaces Teleglitter2
 {
-    +CLIENTSIDEONLY
-    +SKYEXPLODE
-    Alpha 0.9
-    States
-    {
-      Spawn:
-        TGLT F 2 BRIGHT A_FadeOut(0.05)
-        TGLT G 2 BRIGHT A_AccTeleGlitter
-        TGLT H 2 BRIGHT
-        TGLT I 2 BRIGHT A_AccTeleGlitter
-        TGLT J 2 BRIGHT
-        Loop
-    }
+  +CLIENTSIDEONLY
+  +SKYEXPLODE
+  Alpha 0.9
+  States
+  {
+  Spawn:
+    TGLT F 2 BRIGHT A_FadeOut(0.05)
+    TGLT G 2 BRIGHT A_AccTeleGlitter
+    TGLT H 2 BRIGHT
+    TGLT I 2 BRIGHT A_AccTeleGlitter
+    TGLT J 2 BRIGHT
+    Loop
+  }
 }
