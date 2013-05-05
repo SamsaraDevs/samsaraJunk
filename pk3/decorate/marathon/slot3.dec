@@ -1,5 +1,5 @@
-actor FusionChargeLevel: Boolean {}
-actor FusionChargan: Boolean {}
+actor FusionChargeLevel: Counter { Inventory.MaxAmount 36 }
+actor FusionChargan: Counter { Inventory.MaxAmount 7 }
 actor UsingFusionPistol: Boolean {}
 
 actor "Fusion Pistol" : Weapon
