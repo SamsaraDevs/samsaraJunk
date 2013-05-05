@@ -46,6 +46,8 @@ GAMEPLAY:
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!
 - Chexter's screen now flashes green when slimed or flemmed.
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.
+- The Dehacked has been implemented back in. It was a nice idea, but practically no wads with Dehacked were behaving properly, and the shell ammo problems it brought back up were terrible.
+- samsara_nohealthcap has been implemented as an optional cvar. True to its name, it gives practically no limit to maximum health, which should make survival/DM games more interesting.
 
 BUGFIXES:
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.
@@ -71,6 +73,7 @@ BUGFIXES:
 - The Wings of Wrath have had their gold tint removed, as Hexen made it permanent.
 - Freezing the Programmer no longer breaks Strife.
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.
+- The SO's/Ranger's automap HUD no longer show inventory and runes.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
