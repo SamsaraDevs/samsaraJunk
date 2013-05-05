@@ -420,4 +420,7 @@ int ChangelogString =
 - Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.\n\
 - Skulltag monsters now bleed/gib their proper colors.\n\
 - The Security Officer's fists now properly alternate when holding both fire buttons.\n\
-- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.";
+- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.\n\
+- Due to popular request, the Chicken player now has its own unique HUD.\n\
+- The Icon of Sin now has a boss speech.\n\
+- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.";
