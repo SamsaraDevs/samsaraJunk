@@ -271,16 +271,16 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
       case 4:
         while (1)
         {
-            if (GetCVar("samsara_cl_noadditivepickups") == 0)
+            if (GetCVar("samsara_cl_noadditivepickups"))
             {
                 SetActorProperty(0, APROP_RenderStyle, STYLE_Normal);
                 SetActorProperty(0, APROP_Alpha, itof(a1)/100);
             }
-            //else
-            //{
-            //    SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
-            //    SetActorProperty(0, APROP_Alpha, itof(a2)/100);
-            //}
+            else
+            {
+                SetActorProperty(0, APROP_RenderStyle, STYLE_Add);
+                SetActorProperty(0, APROP_Alpha, itof(a2)/100);
+            }
 
             Delay(35);
         }
