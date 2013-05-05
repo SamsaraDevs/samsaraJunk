@@ -35,7 +35,6 @@ actor StrifeElectricBolts: CustomInventory replaces ElectricBolts
         loop
 
       Pickup:
-        TNT1 A 1 A_GiveInventory("Shell", 12)
         TNT1 A 0 A_JumpIfInventory("HexenClass", 1, "PickupHexen")
         TNT1 A 0 A_JumpIfInventory("WolfenClass", 1, "PickupWolfen")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
