@@ -240,6 +240,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         TakeInventory("BasicArmor", i-arg1);
         result = 1;
         break;
+
+      case 22:
+        result = GetCVar("samsara_nohealthcap");
+        break;
     }
     
     SetResultValue(result);

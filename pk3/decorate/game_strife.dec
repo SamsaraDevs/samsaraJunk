@@ -1,4 +1,5 @@
 #include "decorate/game_strife/pickups.dec"
+#include "decorate/game_strife/health.dec"
 #include "decorate/game_strife/sigil.dec"
 #include "decorate/game_strife/accuracy.dec"
 

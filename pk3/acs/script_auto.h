@@ -80,6 +80,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_armormode 0");
         ConsoleCommand("archivecvar samsara_armormode"); }
         
+        if (!GetCVar("samsara_nohealthcap"))
+        {   ConsoleCommand("set samsara_nohealthcap 0");
+        ConsoleCommand("archivecvar samsara_nohealthcap"); }
+        
         if (!GetCVar("samsara_chainsawstart"))
         {   ConsoleCommand("set samsara_chainsawstart 0");
         ConsoleCommand("archivecvar samsara_chainsawstart"); }
