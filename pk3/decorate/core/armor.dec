@@ -281,7 +281,7 @@ actor MarathonGreenArmor: BasicArmorPickup
     Armor.Savepercent 100
     Armor.Saveamount 100
 
-    Inventory.Icon "RMR3A0"
+    Inventory.Icon "RMR0A0"
     RenderStyle Add
     Alpha 0.95
     +FLOATBOB
@@ -292,8 +292,8 @@ actor MarathonGreenArmor: BasicArmorPickup
     States
     {
       Spawn:
-        RMR3 A 0
-        RMR3 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
+        RMR0 A 0
+        RMR0 A -1 bright ACS_ExecuteAlways(212, 0, 4, 100, 90)
         loop
     }
 }
