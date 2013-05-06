@@ -1144,7 +1144,7 @@ $random ranger/gib          { ranger/gib1 ranger/gib2 }
 
 $playeralias        Ranger      male    *death          ranger/death
 $playeralias        Ranger      male    *xdeath         ranger/hideath
-$playersound        Ranger      male    *burndeath      dgdethf
+$playersound        Ranger      male    *burndeath      rburn
 $playeralias        Ranger      male    *crazydeath     ranger/hideath
 $playersounddup     Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib

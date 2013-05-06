@@ -222,6 +222,22 @@ actor QuakePlayer: PlayerPawn
         TNT1 A 0 A_Recoil(12)
         RANG F 6 A_Pain
         Goto See
+		
+	  Death.HexGreenFire:
+	  Burn:
+        RBRN I 1 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(12,42),random(-2,2),random(-2,2),random(0,3),random(-180,180),32)
+        RBRN I 1 A_PlaySound("*burndeath")
+		RBRN IIII 1 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(11,37),random(-2,2),random(-2,2),random(0,3),random(-180,180),32)
+        RBRN J 1 A_NoBlocking
+		RBRN JJJJ 1 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(10,32),random(-2,2),random(-2,2),random(0,3),random(-180,180),32)
+        RBRN KKKKLLLLMMMM 1 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(8,22),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+		RBRN NNNNNNNNNNNN 2 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(5,12),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+		RBRN NNNNNNNNNNNN 3 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(5,12),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+		RBRN NNNNNNNNNNNN 4 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(5,12),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+		RBRN NNNNNNNNNNNN 5 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(5,12),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+		RBRN NNNNNNNNNNNN 6 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(5,12),random(-1,1),random(-1,1),random(0,2),random(-180,180),32)
+        RBRN N -1
+        Stop
     }
 }
 
@@ -446,4 +462,22 @@ actor QuakeInvisibilityOff: CustomInventory
         TNT1 A 0 A_ChangeFlag("SHADOW", 0)
         stop
     }
+}
+
+actor QuakeBurn
+{
+    Alpha 0.5
+    Scale 0.25
+
+    RenderStyle Add
+
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+	
+States
+{
+      Spawn:
+        CFFX CDEFGHIJ 2 bright A_FadeOut(0.025)
+        loop
+}
 }
