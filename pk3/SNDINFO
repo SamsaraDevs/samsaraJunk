@@ -1034,6 +1034,8 @@ bob/pain2	MTBOBPN2
 
 
 marathon/fist/hit	MTPUNCH
+marathon/knife/wall	MRNFWALL
+marathon/knife/hit	MRNFHIT
 
 $Random marathon/pistol/fire {marathon/pistol/fire1 marathon/pistol/fire2}
 marathon/pistol/fire1		MTPISTS1

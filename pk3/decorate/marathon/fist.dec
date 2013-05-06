@@ -4,6 +4,8 @@ actor GibfistSide: Boolean {}
 
 actor "Talon Ceramic Combat Blade" : Weapon
 {
+    //Weapon.BobRangeX 0
+    //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700
@@ -47,9 +49,8 @@ actor "Talon Ceramic Combat Blade" : Weapon
 		
 	  Fire:
         MRNF BCD 2
-		MRNF D 3
-		MRNF EF 1
-		MRNF G 1 A_CustomPunch(random(50,54),1,0,"BlankPuffMarathon",96)
+		MRNF DEF 1
+		MRNF G 1 A_CustomPunch(random(100,120),1,0,"MarathonKnifePuff",96)
 		MRNF H 1
 		TNT1 A 10
         TNT1 AAAAAAAAAAA 0 A_Lower
@@ -208,6 +209,30 @@ actor BlankPuffMarathon : BulletPuff
     DamageType "Pistol"
     States
     {
+      Melee:
+      Spawn:
+        TNT1 A 1 //A_PlaySound("marathon/fist/hit")
+        Stop
+    }
+}
+
+actor MarathonKnifePuff : BulletPuff
+{
+    +CLIENTSIDEONLY
+    +PUFFONACTORS
+    //+NOBLOOD
+	+NOEXTREMEDEATH
+	Scale 0.25
+    //ActiveSound "marathon/fist/hit"
+    AttackSound "marathon/knife/wall"
+    SeeSound "marathon/knife/hit"
+    DamageType "Pistol"
+    States
+    {
+	  Crash:
+        MPFF ABCDEFG 2 Bright
+        stop
+		
       Melee:
       Spawn:
         TNT1 A 1 //A_PlaySound("marathon/fist/hit")
