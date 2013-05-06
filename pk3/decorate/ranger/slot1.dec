@@ -147,7 +147,7 @@ actor LaserCannonBolt
         
       Death:
         LSCL A 1 bright
-        TNT1 A 1 A_SpawnItemEx("QuakeAxePuff")
+        TNT1 A 1 A_SpawnItemEx("QuakeBulletPuff")
         stop
         
       Crash:

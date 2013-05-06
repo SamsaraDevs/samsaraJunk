@@ -47,13 +47,23 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 
 script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 {
-    if (defaultCVar("samsara_cl_norecoil", 0) == 1) { terminate; }
+    if (degrees == 0) { terminate; }
+    if (defaultCVar("samsara_cl_norecoil", 0) == 1 && ticsup > 0) { terminate; }
+    if (GetCVar("sv_nofreelook")) { terminate; }
 
     degrees = itof(degrees);
     if (degrees < 0) { degrees /= -100; }
 
     int qCurve, oldPitch, newPitch, pitchDiff, i;
     int amplitude = degrees / 2;
+    int doDownRecoil = 1;
+    ticsup = abs(ticsup);
+
+    if (ticsdown < 0)
+    {
+        if (GetCVar("freelook")) { doDownRecoil = 0; }
+        else { ticsdown = -ticsdown; }
+    }
 
     if (ticsup > 0)
     {
@@ -76,43 +86,46 @@ script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
         SetActorPitch(0, GetActorPitch(0) - (degrees / 360));
     }
 
-    if (ticsdown > 0)
+    if (doDownRecoil)
     {
-        if (defaultCVar("samsara_cl_sinerecoil", 0) == 0)
+        if (ticsdown > 0)
         {
-            qCurve = -degrees / pow(ticsdown, 2); // this is also a
-            newPitch = qCurve * pow(ticsdown, 2);
-
-            for (i = 0; i < ticsdown; i++)
+            if (defaultCVar("samsara_cl_sinerecoil", 0) == 0)
             {
-                oldPitch = newPitch;
-                // y = a(x-h)**2 + k
-                newPitch = qCurve * pow((i+1)-ticsdown, 2);
-                pitchDiff = (newPitch - oldPitch) / 360;
+                qCurve = -degrees / pow(ticsdown, 2); // this is also a
+                newPitch = qCurve * pow(ticsdown, 2);
 
-                SetActorPitch(0, GetActorPitch(0) + pitchDiff);
-                Delay(1);
+                for (i = 0; i < ticsdown; i++)
+                {
+                    oldPitch = newPitch;
+                    // y = a(x-h)**2 + k
+                    newPitch = qCurve * pow((i+1)-ticsdown, 2);
+                    pitchDiff = (newPitch - oldPitch) / 360;
+
+                    SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+                    Delay(1);
+                }
+            }
+            else
+            {
+                // y = (a/2) * sin(x) + (a/2)
+                newPitch = 0;
+
+                for (i = 0; i <= ticsdown; i++)
+                {
+                    oldPitch = newPitch;
+                    newPitch = -FixedMul(amplitude, cos(itof(i) / (ticsdown*2))) + amplitude;
+                    pitchDiff = (newPitch - oldPitch) / 360;
+
+                    SetActorPitch(0, GetActorPitch(0) + pitchDiff);
+                    Delay(1);
+                }
             }
         }
         else
         {
-            // y = (a/2) * sin(x) + (a/2)
-            newPitch = 0;
-
-            for (i = 0; i <= ticsdown; i++)
-            {
-                oldPitch = newPitch;
-                newPitch = -FixedMul(amplitude, cos(itof(i) / (ticsdown*2))) + amplitude;
-                pitchDiff = (newPitch - oldPitch) / 360;
-
-                SetActorPitch(0, GetActorPitch(0) + pitchDiff);
-                Delay(1);
-            }
+            SetActorPitch(0, GetActorPitch(0) + (degrees / 360));
         }
-    }
-    else
-    {
-        SetActorPitch(0, GetActorPitch(0) + (degrees / 360));
     }
 }
 

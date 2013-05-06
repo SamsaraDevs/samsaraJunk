@@ -1,0 +1,23 @@
+actor Mjolnir: InstantSwitchWeapon
+{
+    Weapon.SlotNumber 2
+    +CHEATNOTWEAPON
+
+    Obituary "%k \csdropped the hammer on \c-%o\cs."
+
+
+    States
+    {
+      Ready:
+        QMJL A 1 A_WeaponReady
+        loop
+
+      Fire:
+        QMJL B 5
+        QMJL C 4
+        QMJL D 4
+        QMJL E 24
+        QMJL A 0 A_Refire
+        goto Ready
+    }
+}
