@@ -1665,7 +1665,7 @@ StatusBar normal, forcescaled
     }
 
 //Playerclass Chicken
-    InInventory Beak, 1
+    IsSelected " Beak "
     {
         drawimage "CHKNBAR", 0, 168;
         drawnumber 3, WOLFHUDF, gold, ammo1, 37, 177, 0, untranslated, 0, untranslated, 20;
@@ -2826,7 +2826,7 @@ statusbar Automap
             InInventory KillCountNotch, 9 { drawimage "DOMNOTCH", 140, 176; }
         }
         //DrawImage RuneIcon, 20, 40, Center;
-        drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
+        //drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
         /*GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDOOM", 145, 169; } */
         InInventory not QuakeInvisTimer
         {

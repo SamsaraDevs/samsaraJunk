@@ -1034,6 +1034,8 @@ bob/pain2	MTBOBPN2
 
 
 marathon/fist/hit	MTPUNCH
+marathon/knife/wall	MRNFWALL
+marathon/knife/hit	MRNFHIT
 
 $Random marathon/pistol/fire {marathon/pistol/fire1 marathon/pistol/fire2}
 marathon/pistol/fire1		MTPISTS1
@@ -1142,7 +1144,7 @@ $random ranger/gib          { ranger/gib1 ranger/gib2 }
 
 $playeralias        Ranger      male    *death          ranger/death
 $playeralias        Ranger      male    *xdeath         ranger/hideath
-$playersound        Ranger      male    *burndeath      dgdethf
+$playersound        Ranger      male    *burndeath      rburn
 $playeralias        Ranger      male    *crazydeath     ranger/hideath
 $playersounddup     Ranger      male    *wimpydeath     *death
 $playeralias        Ranger      male    *gibbed         ranger/gib

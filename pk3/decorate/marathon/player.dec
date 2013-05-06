@@ -6,7 +6,7 @@ ACTOR MarathonPlayer : PlayerPawn
     scale 0.45
     BloodColor "Red"
     Player.Face "MAR"
-    Player.JumpZ 4   // I LIED.
+    Player.JumpZ 4
     Player.ForwardMove 0.95, 0.925
     Player.SideMove 0.95, 0.925
     Player.DamageScreenColor "Red"//, 0.0
@@ -44,6 +44,7 @@ ACTOR MarathonPlayer : PlayerPawn
     //DamageFactor "Wraithverge", 0.75
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
+    DamageFactor "MightyBoot", 1.5
     DamageFactor "Mace", 1.1
     DamageFactor "DragonClaw", 1.1
     
@@ -386,8 +387,6 @@ ACTOR MarathonPlayer : PlayerPawn
         SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red
         SOPL Y 4 A_Pain
         Goto Spawn
-        
-      Pain.MightyBoot:
 
       Pain.Mace:
 
@@ -516,6 +515,14 @@ ACTOR MarathonPlayer : PlayerPawn
        SOPL Y 4 A_SetBlend("FF AA 00",0.8,8)
        SOPL Y 4 A_Pain
         Goto Spawn
+
+      Pain.MightyBoot:
+	    SOPL Y 1 ACS_ExecuteAlways(312, 0, 25, 5, 24)
+		TNT1 A 0 A_SetBlend("E3170D",0.8,8) // Cadmium red
+        SOPL Y 1 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Recoil(12)
+        SOPL Y 6 A_Pain
+        Goto See
     }
 }
 

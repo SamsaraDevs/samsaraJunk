@@ -128,7 +128,7 @@ actor FlameShot
     Radius 6
     Height 8
     Speed 50
-    Damage (random(8,12))
+    Damage (random(6,10))
     DamageType Fire
     Scale 0.85
     DeathSound ""
@@ -150,4 +150,9 @@ actor FlameShot
     }
 }
 
-actor FlameShot2 : Flameshot { Species "Player" +THRUSPECIES }
+actor FlameShot2 : Flameshot
+{
+Species "Player"
++THRUSPECIES
+Damage (random(8,12))
+}

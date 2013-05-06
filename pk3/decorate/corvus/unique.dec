@@ -175,7 +175,7 @@ actor ChickenPlayer2 : ChickenPlayer
     Player.SideMove 0.85, 0.9//1.22, 1.22
     Player.SoundClass "Chicken"
     Player.DisplayName "Chicken"
-    Player.MorphWeapon "Beak"
+    Player.MorphWeapon " Beak "
     -PICKUP
     States
     {
@@ -213,6 +213,11 @@ actor ChickenPlayer2 : ChickenPlayer
         ACLO E -1
         stop
     }
+}
+
+actor " Beak " : Beak replaces Beak
+{
++CHEATNOTWEAPON
 }
 
 actor ChickenPlayer3: ChickenPlayer2
