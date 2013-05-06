@@ -387,6 +387,7 @@ int ChangelogString =
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
 - Chexter's screen now flashes green when slimed or flemmed.\n\
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
+- Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
@@ -432,4 +433,7 @@ int ChangelogString =
 - B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.\n\
 - Due to popular request, the Chicken player now has its own unique HUD.\n\
 - The Icon of Sin now has a boss speech.\n\
-- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.";
+- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.\n\
+- Sounds have been arranged and sorted into neat little folders.\n\
+- Ranger now has a sound for hitting things with the axe, due to popular request.\n\
+- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.";

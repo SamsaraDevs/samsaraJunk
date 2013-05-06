@@ -18,6 +18,7 @@ actor CorvusPlayer : PlayerPawn
     //DamageFactor "Wraithverge", 0.75
     DamageFactor "Mace", 1.1
     DamageFactor "DragonClaw", 1.1
+    DamageFactor "MightyBoot", 1.5
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
     +NOSKIN
@@ -165,6 +166,13 @@ actor CorvusPlayer : PlayerPawn
         //CORV G 5 A_GenericFreezeDeath
         //CORV G 1 A_FreezeDeathChunks
         //Wait
+
+      Pain.MightyBoot:
+	    CORV G 1 ACS_ExecuteAlways(312, 0, 25, 5, 24)
+        CORV G 1 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Recoil(12)
+        CORV G 6 A_Pain
+        Goto See
     }
 }
 
