@@ -48,6 +48,7 @@ GAMEPLAY:
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.
 - The Dehacked has been implemented back in. It was a nice idea, but practically no wads with Dehacked were behaving properly, and the shell ammo problems it brought back up were terrible.
 - samsara_nohealthcap has been implemented as an optional cvar. True to its name, it gives practically no limit to maximum health, which should make survival/DM games more interesting.
+- Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.
 
 BUGFIXES:
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.
@@ -97,6 +98,9 @@ POLISH:
 - Due to popular request, the Chicken player now has its own unique HUD.
 - The Icon of Sin now has a boss speech.
 - For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.
+- Sounds have been arranged and sorted into neat little folders.
+- Ranger now has a sound for hitting things with the axe, due to popular request.
+- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
 
 
 
