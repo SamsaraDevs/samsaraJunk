@@ -2,7 +2,7 @@ actor MarathonPlayer : PlayerPawn
 {
     Player.DisplayName "SecurityOfficer"
     Gravity 0.15
-    Mass 440
+    Mass 220
     scale 0.45
     BloodColor "Red"
     Player.Face "MAR"
