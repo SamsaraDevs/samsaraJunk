@@ -147,13 +147,30 @@ actor LaserCannonBolt
         
       Death:
         LSCL A 1 bright
-        TNT1 A 1 A_SpawnItemEx("QuakeAxePuff")
+        TNT1 A 1 A_SpawnItemEx("QuakeLaserPuff")
         stop
         
       Crash:
       XDeath:
         TNT1 A 1
         stop
+    }
+}
+
+actor QuakeLaserPuff: BulletPuff
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    +PUFFONACTORS
+
+	States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff2",random(-7,7),random(-7,7),random(-3,1),0,0,random(-10,1)/10)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("QuakeBulletPuff3",random(-7,7),random(-7,7),random(-3,1),0,0,random(-10,1)/10)
+        TNT1 AAAAA 0 A_SpawnItemEx("QuakeBulletPuff4",random(-7,7),random(-7,7),random(-3,1),0,0,random(-10,1)/10)
+        Stop
     }
 }
 
