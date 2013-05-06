@@ -10,17 +10,9 @@ COMPETITIVE SHIT:
   use the sasmara_lmsult cvar. sasmara_lmsult 1 enables Ultimates, sasmara_lmsult 0
   disables it.
 
-- In Last Man Standing, to have characters spawn with their Unique item as well,
-  use the samsara_lmsunique cvar. samsara_lmsunique 1 enables, samsara_lmsunique 0
-  disables it.
-
 
 
 COOPERATIVE SHIT:
-
-- If players aren't being challenged with UV-Fast, please consider using the new
-  Skill 4. If you would like to use the old Skill 4, it can be replicated with the
-  command lines "skill 3", "sv_monsterrespawn 1", and "sv_fastmonsters 1".
 
 - In co-op, characters can shoot through each other.
 
@@ -31,24 +23,64 @@ COOPERATIVE SHIT:
 
 UNIVERSAL SHIT:
 
-- HeXen's emphasis on platforming requires a higher jumpheight for characters.
-  samsara_hexenjump cvar will increase everybody's jumpheight so as to accomodate
-  it.
+- Samsara is compatible with sv_shotgunstart, in case players need an extra bit
+  of oomph at the start. In the same vein, samsara_chainsawstart gives everyone
+  their slot I on entry.
+
+- Offline in Zandronum, Ranger cannot be selected in the char select screen.
+  This is an engine limitation.
+
+- HeXen's emphasis on platforming requires a higher jumpheight for characters, and
+  Strife's jumping system was a bit lower. samsara_jumpmod cvar will adjust
+  everybody's jumpheight so as to accomodate it, use 9 for HeXen and -8 for Strife.
 
 - Please consider disabling Weapon Drop On Death, as with it players will be able
   to pick up and use other characters' weapons.
 
-- You can disable Duke's jetpack with sasmara_banjetpack 1.
+- You can disable Duke's jetpack with sasmara_banjetpack 1. He will recieve 8x
+  boot damage instead.
 
 - You can tweak whether the Security Officer has Marathon-esque gravity or normal
-  gravity with sasmara_sogravity 1 (Doom gravity) or 0 (Marathon gravity).
+  gravity with sasmara_nocustomgravity 1 (Doom gravity) or 0 (Marathon gravity).
+  This also affects Ranger, though not as much.
   
 - Weapon VII can be toggled to be persistent or vanish on pickup by sasmara_permault
   1 or 0. 0 has it vanish on pickup, 1 has it stay persistent. Note that it acts
   as a big powerup, so its respawn timer is much longer than others.
 
-- Heretic and HeXen's palettes are different from Doom's, and thus use different
-  color ranges, and thus put color splotches in odd places.
+- Heretic's/HeXen's/Strife's palettes are different from Doom's, and thus use
+  different color ranges, and thus put color splotches in odd places.
   
 - Samsara makes use of Scripts 200-225. Levelsets using these script ranges make
-  create odd behavior.
+  create odd behavior
+
+- Samsara was designed with Zandronum in mind, particularly making extensive use
+  of the ConsoleCommand ACS function. In ZDoom, this does not exist--some cvars need
+  to be manually set and archived in order to be used. For example, if you plan on
+  using samsara_jumpmod, please add "set" in front of it, like so:
+  "set samsara_jumpmod 9".
+
+
+
+FOR FUN SHIT:
+
+- If players aren't being challenged with UV-Fast, please consider using the new
+  Skill 4. This removes monster respawn and instead dramatically amplifies monster
+  aggression, as well as enhances their speed and damage--if you would like to use
+  the old Skill 4, it can be replicated with the command lines "skill 3",
+  "sv_monsterrespawn 1", "sv_doubleammo 1", and "sv_fastmonsters 1".
+
+- Want to make things just a little bit more interesting? There's a Party Mode! The
+  samsara_peoplediewhentheyarekilled cvar causes players to explode on death. If it
+  is a suicide, the explosion happens immediately, if they are killed, then there is
+  a delay. Increasing the cvar to further levels (maximum 3), increases the radius
+  and damage.
+
+- Want to settle things the gentleman's way in DM? samsara_punchdrunk engages the
+  Gentleman Mode, in which everyone is forced to use only their melee weapons.
+  samsara_chainsawstart and samsara_uniquestart also work with this mode, and may
+  provide even more interesting effects.
+
+- Want to change up player defenses? samsara_armormode changes the way armor spawns
+  in-game. 1 changes it up to Quake style armor, 2 changes it up to armor with more
+  protection, 3 changes it to Marathon-style armor, 4 has no armor spawn at all.

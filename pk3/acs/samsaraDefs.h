@@ -87,7 +87,9 @@ samsara_jumpmod: Gives the indicated multiplier to jump height. 9 for HeXen, -8 
 samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes on pickup.\n\
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
-samsara_lmsunique 0/1: Toggles whether players get their unique in LMS.";
+samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
+samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
+samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.";
 
 int LMSArmors[LMSMODES] = 
 {
