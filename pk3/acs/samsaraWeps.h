@@ -15,6 +15,19 @@
 #define U_UNIQUE2           2
 #define U_AMMO2             3
 
+#define SLOT_FIST           0
+#define SLOT_CHAINSAW       1
+#define SLOT_PISTOL         2
+#define SLOT_SHOTGUN        3
+#define SLOT_SUPERSHOTGUN   4
+#define SLOT_SSG            4
+#define SLOT_CHAINGUN       5
+#define SLOT_ROCKETLAUNCHER 6
+#define SLOT_PLASMARIFLE    7
+#define SLOT_BFG9000        8
+#define SLOT_BFG            8
+#define SLOT_PUNCHDRUNKSAW  9
+
 int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] = 
 {
     {"DoomguyBerserker",    "",                 "", ""},
@@ -59,36 +72,39 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {" Fist ",                          "",             "",             "", ""},
         {" Chainsaw ",                      "",             "",             "", ""},
         {" Pistol ",                        "",             "",             "", ""},
-        {" Shotgun ",                       "Shell",    "",             "", ""},
-        {"Super Shotgun",                   "Shell",    "",             "", ""},
+        {" Shotgun ",                       "Shell",        "",             "", ""},
+        {"Super Shotgun",                   "Shell",        "",             "", ""},
         {" Chaingun ",                      "Clip",         "",             "", ""},
         {"Rocket Launcher",                 "RocketAmmo",   "",             "", ""},
         {"Plasma Rifle",                    "Cell",         "",             "", ""},
         {"B.F.G. 9000",                     "Cell",         "",             "", ""},
+        {" Chainsaw ",                      "",             "",             "", ""},
     },
 
     {   // Chexguy
         {" Bootspoon ",                     "",             "",             "", ""},
         {"Super Bootspork",                 "",             "",             "", ""},
         {"Mini-Zorcher",                    "",             "",             "", ""},
-        {"Large Zorcher",                   "Shell",    "",             "", ""},
-        {"Super Large Zorcher",             "Shell",    "",             "", ""},
+        {"Large Zorcher",                   "Shell",        "",             "", ""},
+        {"Super Large Zorcher",             "Shell",        "",             "", ""},
         {"Rapid Zorcher",                   "Clip",         "",             "", ""},
         {"Zorch Propulsor",                 "RocketAmmo",   "",             "", ""},
         {"Phasing Zorcher",                 "Cell",         "",             "", ""},
         {"LAZ Device",                      "Cell",         "",             "", ""},
+        {"Super Bootspork",                 "",             "",             "", ""},
     },
 
     {   // Corvus
         {" Staff ",                         "",             "",             "", ""},
         {"Gauntlets of the Necromancer",    "",             "",             "", ""},
         {"Elven Wand",                      "",             "",             "", ""},
-        {" Firemace ",                      "Shell",    "",             "", ""},
-        {"Ethereal Crossbow",               "Shell",    "",             "", ""},
+        {" Firemace ",                      "Shell",        "",             "", ""},
+        {"Ethereal Crossbow",               "Shell",        "",             "", ""},
         {"Dragon Claw",                     "Clip",         "",             "", ""},
         {"Phoenix Rod",                     "RocketAmmo",   "",             "", ""},
         {"Hellstaff",                       "Cell",         "",             "", ""},
         {"PortTomeCoop",                    "",             "",             "", ""},
+        {"Gauntlets of the Necromancer",    "",             "",             "", ""},
     },
 
     {   // B.J.
@@ -101,6 +117,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {" Rocket Launcher ",               "RocketAmmo",   "",             "", ""},
         {" Flamethrower ",                  "Cell",         "",             "", ""},
         {"Spear of Destiny",                "Cell",         "",             "", ""},
+        {"BJUberKnife",                     "",             "",             "", ""},
     },
 
     {   // Parias
@@ -113,52 +130,56 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Hammer of Retribution",           "Cell",         "",             "", ""},
         {"Firestorm",                       "Cell",         "",             "", ""},
         {"Wraithverge",                     "Cell",         "",             "", ""},
+        {"PortFlechette",                   "",             "",             "", ""},
     },
 
     {   // Duke
         {"Mighty Boot",                     "",             "",             "", ""},
         {"Pipebombs",                       "RocketAmmo",   "",             "", ""},
         {"M1911",                           "",             "",             "", ""},
-        {"  Shotgun  ",                     "Shell",    "",             "", ""},
+        {"  Shotgun  ",                     "Shell",        "",             "", ""},
         {"Explosive Shotgun",               "RocketAmmo",   "",             "", ""},
         {"Chaingun Cannon",                 "Clip",         "",             "", ""},
         {"RPG",                             "RocketAmmo",   "",             "", ""},
         {"Freezethrower",                   "Cell",         "",             "", ""},
         {"Devastator",                      "Cell",         "",             "", ""},
+        {"CalmYoLegsDuke",                  "",             "",             "", ""},
     },
 
     {   // Security Officer
         {"Steel Knuckles",                  "",             "",             "",                 ""},
         {"KKV-7 SMG Flechette",             "Clip",         "",             "CanDualPistols",   ""},
         {".44 Magnum Mega Class A1",        "",             "",             "",                 ""},
-        {"WSTE-M5 Combat Shotgun",          "Shell",    "",             "CanDualShotties",  "LevelLimiter"},
+        {"WSTE-M5 Combat Shotgun",          "Shell",        "",             "CanDualShotties",  "LevelLimiter"},
         {"Fusion Pistol",                   "FusionBullet", "Cell",         "",                 ""},
         {"MA-75B Assault Rifle",            "RifleBullet",  "Clip",         "",                 ""},
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
         {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
+        {"",                                "",             "",             "",                 ""},
     },
     {   // Ranger
         {"Axe",                             "",             "",             "", ""},
         {"Laser Cannon",                    "Cell",         "",             "", ""},
         {"Single Shotgun",                  "",             "",             "", ""},
-        {"Double Shotgun",                  "Shell",    "",             "", ""},
+        {"Double Shotgun",                  "Shell",        "",             "", ""},
         {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
         {"Super Nailgun",                   "Clip",         "",             "", ""},
         {"QuadDamagePickup",                "",             "",             "", "QuakeQuadTimer"},
+        {"",                                "",             "",             "", ""},
     },
 };
 
 int ClassScripts[CLASSCOUNT][SLOTCOUNT] = 
 {
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,0,                   0,  0,0,0,0,0,0},
-    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON},
-    {0,0,                   0,  0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,0},
+    {0,0,                   0,  0,0,0,0,0,0,0},
 };

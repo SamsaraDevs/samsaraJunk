@@ -183,7 +183,7 @@ actor "Timmy's Axe": Weapon   // Best weapon name ever
         FAXE B 4 Offset (15, 32)
         FAXE C 3 Offset (15, 32)
         FAXE D 2 Offset (15, 32)
-        FAXE D 1 Offset (-5, 70) A_CustomPunch(random(70,92),1,1,"AxePuff2",144)
+        FAXE D 1 Offset (-5, 70) A_CustomPunch(random(80,96),1,1,"AxePuff2",144)
         FAXE D 2 Offset (-25, 90)
         FAXE E 1 Offset (15, 32)
         FAXE E 2 Offset (10, 54)

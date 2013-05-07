@@ -214,8 +214,9 @@ actor DoomguyPunchUnique: Trigger
     States
     {
       Pickup:
+        TNT1 A 0 A_TakeInventory("PermaTripleDamage")
         TNT1 A 0 A_GiveInventory("PowerStrength")
-        TNT1 A 0 A_GiveInventory("PunchDrunkZerk")
+        TNT1 A 0 A_GiveInventory("PowerChainsawBerserk")
         stop
     }
 }
@@ -275,7 +276,7 @@ actor ManathorPunchUnique: Trigger
     States
     {
       Pickup:
-        TNT1 A 0
+        TNT1 A 0 A_GiveInventory("Talon Ceramic Combat Blade")
         stop
     }
 }

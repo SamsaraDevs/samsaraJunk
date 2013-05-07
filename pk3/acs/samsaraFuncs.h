@@ -1,9 +1,9 @@
 function int GiveClassWeapon(int class, int slot, int ammoMode)
 {
-    return _giveclassweapon(class, slot, ammoMode, 0);
+    return _giveclassweapon(class, slot, ammoMode, 0, 0);
 }
 
-function int _giveclassweapon(int class, int slot, int ammoMode, int dropped)
+function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, int nopd)
 {
     int weapon = ClassWeapons[class][slot][S_WEP];
     int ammo1  = ClassWeapons[class][slot][S_AMMO1];
@@ -132,7 +132,7 @@ function void ApplyLMS(void)
     
     GiveInventory("Backpack", 1);
 
-    for (i = 0; i < SLOTCOUNT-1; i++) { GiveClassWeapon(classNum, i, 1); }
+    for (i = 0; i < SLOT_BFG9000; i++) { GiveClassWeapon(classNum, i, 1); }
 
     if (GetCVar("samsara_lmsunique"))
     {
@@ -140,7 +140,7 @@ function void ApplyLMS(void)
     }
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
-    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOTCOUNT-1, 2); }
+    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 2); }
 
     i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
 
@@ -195,17 +195,23 @@ function int SamsaraClientVars(void)
 
 function int GiveUnique(int cnum, int unum)
 {
-    return _giveunique(cnum, unum, 0);
+    return _giveunique(cnum, unum, 0, 0);
 }
 
 int TempUniques[UNIQUECOUNT];
 
-function int _giveunique(int cnum, int unum, int ignoreinv)
+function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
 {
     int success; 
     int i, j, tmpcount;
 
     if (cnum == -1) { return -1; }
+
+    if ((GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) && !nopd)
+    {
+        GiveInventory(PunchdrunkItems[cnum][2], 1);
+        return 1;
+    }
 
     if (unum == -1)
     {
@@ -329,7 +335,7 @@ function int ConvertClassWeapons(int classnum)
                 k = j;
                 TakeUnique(i, j);
 
-                while (!_giveunique(classnum, k, 1) && k >= 0) { k--; }
+                while (!_giveunique(classnum, k, 1, 0) && k >= 0) { k--; }
             }
         }
     }
@@ -376,8 +382,7 @@ function int HandleUniqueSpawn(int respawning)
         // Fallthrough
 
       case 3:
-        if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][2], 1); }
-        else { GiveUnique(classnum, -1); }
+        GiveUnique(classnum, -1);
         break;
 
       case 2:
@@ -385,8 +390,7 @@ function int HandleUniqueSpawn(int respawning)
         // Fallthrough
 
       case 4:
-        if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][2], 1); }
-        else { for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); } }
+        for (i = 0; i < UNIQUECOUNT; i++) { GiveUnique(classnum, i); }
         break;
     }
 

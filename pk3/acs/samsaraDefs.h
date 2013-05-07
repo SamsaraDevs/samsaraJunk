@@ -44,7 +44,7 @@
 
 #define CLASSCOUNT          8
 #define UNIQUECOUNT         2
-#define SLOTCOUNT           9
+#define SLOTCOUNT           10
 #define TIPCOUNT            2
 
 #define LMSMODES            6
@@ -127,7 +127,7 @@ int PickupStates[CLASSCOUNT][5] =
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
-int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7};
+int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7, -1};
 
 int ClassFades[CLASSCOUNT][5] =
 {
@@ -152,6 +152,7 @@ int SlotItems[SLOTCOUNT] =
     "GotWeapon5",
     "GotWeapon6",
     "GotWeapon7",
+    "",
 };
 
 int LMSItems[CLASSCOUNT] =
