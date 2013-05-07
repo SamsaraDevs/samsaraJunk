@@ -391,6 +391,9 @@ int ChangelogString =
 - Chexter's screen now flashes green when slimed or flemmed.\n\
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
 - Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.\n\
+- In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.\n\
+- In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
+- In DM, the TOZT has had its damage slightly reduced.\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
