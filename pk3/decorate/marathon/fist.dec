@@ -55,6 +55,80 @@ actor "Talon Ceramic Combat Blade" : Weapon
 		TNT1 A 10
         TNT1 AAAAAAAAAAA 0 A_Lower
         Goto Select
+		
+	  AltFire:
+        MRNT ABC 2
+		TNT1 A 0 A_PlayWeaponSound("marathon/knife/throw")
+		MRNT CDE 1
+		MRNT F 1 A_FireCustomMissile("TCCBThrown",0,0,0,2)//(random(100,120),1,0,"MarathonKnifePuff",96)
+		MRNT GHI 1 A_TakeInventory("Talon Ceramic Combat Blade")
+		TNT1 A 10 A_SelectWeapon("Steel Knuckles")
+        TNT1 AAAAAAAAAAA 0 A_Lower
+        Goto Select
+	}
+}
+
+ACTOR TCCBThrown
+{
+   PROJECTILE
+   +NOEXTREMEDEATH
+   +RIPPER
+   +DOOMBOUNCE
+   +NOGRAVITY
+   Speed 50
+   Height 12
+   Radius 12
+   Damage (random(20,24))
+   Scale 0.65
+   BounceCount 12
+   BounceFactor 1.0
+   WallBounceFactor 1.0
+   DeathSound "marathon/knife/wall"
+   SeeSound "marathon/knife/bounce"
+   DropItem TCCBPickup
+   States
+   {
+   Spawn:
+    TNT1 A 0
+	TNT1 A 0 A_PlaySoundEx("silence","voice",0,0)
+   Spawn2:
+    MRKN A 1
+	loop
+   Death:
+    MRKN A 1
+    TNT1 A 0 A_NoBlocking
+    Stop
+   Crash:
+    MRKN A 1
+    TNT1 A 0 A_NoBlocking
+    Stop
+   }
+}
+
+actor TCCBPickup : CustomInventory
+{
+    Inventory.PickupMessage "You picked up the Talon Ceramic Combat Blade!"
+	Inventory.PickupSound "marathon/itemget"
+    Scale 0.65
+    -INVENTORY.ALWAYSPICKUP
+    -COUNTITEM
+	States
+	{
+	Spawn:
+	  MRKN A 1
+	  loop
+	Pickup:
+	  TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupCheck")
+	  MRKN A 1
+	  goto PickupFail
+	PickupCheck:
+	  TNT1 A 0 A_JumpIfInventory("Talon Ceramic Combat Blade",1,"PickupFail")
+	  TNT1 A 0 A_SetBlend("Green", 0.4, 5)
+	  TNT1 A 1 A_GiveInventory("Talon Ceramic Combat Blade",1)
+	  stop
+	PickupFail:
+	  MRKN A 1
+	  goto Spawn
 	}
 }
 
