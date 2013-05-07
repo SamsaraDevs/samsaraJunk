@@ -11,7 +11,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int oldslot = slot;
     slot = itemToSlot(slot);
     int hasSlot = SamsaraClientWeps[slot];
-    
+
+    if (GetCVar("samsara_punchdrunk") && slot != SLOT_CHAINSAW)
+    {
+        SetActorState(0, "Invis");
+        terminate;
+    }
+
     if (displaymode != 0)
     {
         if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 35))
@@ -42,11 +48,8 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             SetActorState(0, PickupStates[toClass][0]);
             break;
         }
-        
-        terminate;
     }
-    
-    switch (displaymode)
+    else switch (displaymode)
     {
       case 0:
         SetActorState(0, "NoGuy");
@@ -58,8 +61,16 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
         
-        if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
-        else         { SetActorState(0, PickupStates[toClass][2]); }
+        if (GetCVar("samsara_punchdrunk"))
+        {
+            if (hasSlot) { SetActorState(0, PickupStates[toClass][4]); }
+            else         { SetActorState(0, PickupStates[toClass][5]); }
+        }
+        else
+        {
+            if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
+            else         { SetActorState(0, PickupStates[toClass][2]); }
+        }
         break;
         
       case 2:

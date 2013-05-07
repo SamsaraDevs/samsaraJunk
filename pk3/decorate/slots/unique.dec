@@ -45,7 +45,6 @@ actor SamsaraUniquePickup1: CustomInventory
         QuakeSpecial: 	  UNIQ J 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
-        //TNT1 A 0 A_Print("lol ur a faget")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(231), "PickupSuccess")
         goto PickupFailure
 
@@ -68,7 +67,6 @@ actor SamsaraUniquePickup2: SamsaraUniquePickup1
         goto SpawnLoop
         
       Pickup:
-        //TNT1 A 0 A_Print("lol ur a faget")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(231, 1), "PickupSuccess")
         goto PickupFailure
     }

@@ -88,6 +88,11 @@ FOR FUN SHIT:
   samsara_chainsawstart and samsara_uniquestart also work with this mode, and may
   provide even more interesting effects.
 
+- You don't care for the gentleman's way, but like their heavy hitters? No
+  problem! Use samsara_punchdrunkuniques, and your uniques will change from
+  their normal items to the Punchdrunk items, as if a genie was in the pickups.
+  (No genies were harmed in the making of Gentleman Mode.)
+
 - Want to change up player defenses? samsara_armormode changes the way armor spawns
   in-game. 1 changes it up to Quake style armor, 2 changes it up to armor with more
   protection, 3 changes it to Marathon-style armor, 4 has no armor spawn at all.

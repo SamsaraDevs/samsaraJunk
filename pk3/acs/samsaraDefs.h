@@ -88,8 +88,9 @@ samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes o
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
 samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
-samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
 samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.\n\
+samsara_punchdrunkuniques 0/1: Toggles whether Gentleman Mode's uniques are present in normal play.\n\
+samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
 samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, or infinity.";
 
 int LMSArmors[LMSMODES] = 
@@ -114,16 +115,16 @@ int ClassItems[CLASSCOUNT] =
     "QuakeClass",
 };
 
-int PickupStates[CLASSCOUNT][5] = 
+int PickupStates[CLASSCOUNT][6] = 
 {
-    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomSpecial2"},
-    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexSpecial2"},
-    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticSpecial2"},
-    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfSpecial2"},
-    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
-    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
-    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
-    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakeSpecial2"},   
+    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomPDFull",       "DoomPDEmpty"},
+    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexPDFull",       "ChexPDEmpty"},
+    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticPDFull",    "HereticPDEmpty"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfPDFull",       "WolfPDEmpty"},
+    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenPDFull",      "HexenPDEmpty"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukePDFull",       "DukePDEmpty"},
+    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonPDFull",   "MarathonPDEmpty"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePDFull",      "QuakePDEmpty"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
