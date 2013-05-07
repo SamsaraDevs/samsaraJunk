@@ -138,6 +138,7 @@ actor FlameShot
     +RIPPER
     +NOBLOOD
     +NOBOSSRIP
+    +BLOODLESSIMPACT
     States
     {
       Spawn:
