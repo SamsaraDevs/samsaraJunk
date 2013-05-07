@@ -28,6 +28,7 @@ actor Mjolnir: InstantSwitchWeapon
 
       FireSlam:
         QMJL D 2
+        QMJL A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         QMJL D 0 A_AlertMonsters
         QMJL D 0 A_PlaySound("quakeweps/mjolnirhit", 5)
         QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuff")

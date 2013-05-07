@@ -25,7 +25,8 @@ UNIVERSAL SHIT:
 
 - Samsara is compatible with sv_shotgunstart, in case players need an extra bit
   of oomph at the start. In the same vein, samsara_chainsawstart gives everyone
-  their slot I on entry.
+  their slot I on entry, and samsara_uniquestart gives everyone their unique
+  pickup(s) on entry.
 
 - Offline in Zandronum, Ranger cannot be selected in the char select screen.
   This is an engine limitation.
@@ -51,8 +52,8 @@ UNIVERSAL SHIT:
 - Heretic's/HeXen's/Strife's palettes are different from Doom's, and thus use
   different color ranges, and thus put color splotches in odd places.
   
-- Samsara makes use of Scripts 200-225. Levelsets using these script ranges make
-  create odd behavior
+- Samsara makes use of Scripts 200-225. Levelsets using these script ranges may,
+  and almost definitely will, create odd behavior.
 
 - Samsara was designed with Zandronum in mind, particularly making extensive use
   of the ConsoleCommand ACS function. In ZDoom, this does not exist--some cvars need
