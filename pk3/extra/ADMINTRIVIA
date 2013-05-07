@@ -70,6 +70,12 @@ FOR FUN SHIT:
   the old Skill 4, it can be replicated with the command lines "skill 3",
   "sv_monsterrespawn 1", "sv_doubleammo 1", and "sv_fastmonsters 1".
 
+- Want to see just how healthy you can get? samsara_nohealthcap disables the 100/200
+  health cap on characters, instead going as high as the sky. Enable this if you
+  want to be a hulking behemoth, or just want to last a little longer!
+  (NOTE: In this mode, Parias'/Corvus' health items are not carried in the inventory.
+  For obvious reasons)
+
 - Want to make things just a little bit more interesting? There's a Party Mode! The
   samsara_peoplediewhentheyarekilled cvar causes players to explode on death. If it
   is a suicide, the explosion happens immediately, if they are killed, then there is
@@ -84,3 +90,6 @@ FOR FUN SHIT:
 - Want to change up player defenses? samsara_armormode changes the way armor spawns
   in-game. 1 changes it up to Quake style armor, 2 changes it up to armor with more
   protection, 3 changes it to Marathon-style armor, 4 has no armor spawn at all.
+
+- Sick and tired of the boss monologues, just want to jump right into action? No
+  problem! samsara_nomonologues, and your day is free!

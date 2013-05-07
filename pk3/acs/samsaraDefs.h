@@ -89,7 +89,8 @@ samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/re
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
 samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
 samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
-samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.";
+samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.\n\
+samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, or infinity.";
 
 int LMSArmors[LMSMODES] = 
 {
