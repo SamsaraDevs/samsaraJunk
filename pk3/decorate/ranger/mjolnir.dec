@@ -43,8 +43,6 @@ actor MjolnirCheckPuff: BulletPuff
 {
     VSpeed 0
 
-    ActiveSound "quakeweps/mjolnirmiss"
-
     +PUFFONACTORS
     +PUFFGETSOWNER
     +BLOODLESSIMPACT
@@ -68,6 +66,8 @@ actor MjolnirPuff: BulletPuff
 
     SeeSound "quakeweps/mjolnirwhack"
     AttackSound "quakeweps/mjolnirwall"
+    ActiveSound "quakeweps/mjolnirmiss"
+
 
     States
     {
