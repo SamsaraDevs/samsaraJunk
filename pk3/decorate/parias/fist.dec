@@ -46,7 +46,7 @@ actor "Mace of Contrition" : CWeapMace
     }
 }
 
-actor "Spiked Gauntlet of Baratus" : FWeapFist
+actor "Spiked Gauntlet" : FWeapFist
 {
   Weapon.SelectionOrder 3400
   Weapon.KickBack 150
@@ -55,6 +55,7 @@ actor "Spiked Gauntlet of Baratus" : FWeapFist
   +MELEEWEAPON
   +NOALERT
   +INVENTORY.UNDROPPABLE
+  +CHEATNOTWEAPON
   Inventory.PickupMessage "You got the Spiked Gauntlet of Baratus!"
   Inventory.PickupSound "hexen/weaponget"
   Obituary "%k \cgsnapped\c- %o\cg's neck with a brutal punch."
