@@ -434,6 +434,8 @@ $playersound	HexenPlayer	male	*puzzfail		clhmm
 $playersound	HexenPlayer	male	*falling		clfall1
 $playersound	HexenPlayer	male	*taunt			cltaunt
 
+parias/explode			PABOOM
+
 $random clerXdeath { PlayerClericExtreme1Death PlayerClericExtreme2Death PlayerClericExtreme3Death }
 PlayerClericExtreme1Death       clxdth1
 PlayerClericExtreme2Death       clxdth2

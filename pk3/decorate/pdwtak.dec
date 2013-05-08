@@ -296,7 +296,7 @@ actor PariasDiesWhenHeIsKilled: PeopleDieParticle
     {
       Spawn:
         FHFX I 0
-        FHFX I 0 A_PlaySound("HolySymbolFire", CHAN_BODY, 1, 0, ATTN_NONE)
+        FHFX I 0 A_PlaySound("parias/explode", CHAN_BODY, 1, 0, ATTN_NONE)
         FHFX IJKLMNOPQR 3 bright
         stop
     }
