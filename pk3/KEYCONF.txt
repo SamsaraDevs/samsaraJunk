@@ -73,7 +73,6 @@ addslotdefault 1 "Pipebombs"
 addslotdefault 1 "KKV-7 SMG Flechette"
 addslotdefault 1 "Laser Cannon"
 
-addslotdefault 1 "Timmy's Axe"
 
 addslotdefault 1 " Pistol "
 addslotdefault 1 "Elven Wand"
@@ -84,6 +83,9 @@ addslotdefault 1 "M1911"
 addslotdefault 1 ".44 Magnum Mega Class A1"
 addslotdefault 1 "Single Shotgun"
 
+addslotdefault 1 "Timmy's Axe"
+addslotdefault 1 "Gauntlet"
+
 addslotdefault 2 " Shotgun "
 addslotdefault 2 " Firemace "
 addslotdefault 2 "Frost Shards"
@@ -92,6 +94,8 @@ addslotdefault 2 "Machine Gun"
 addslotdefault 2 "  Shotgun  "
 addslotdefault 2 "WSTE-M5 Combat Shotgun"
 addslotdefault 2 "Double Shotgun"
+
+addslotdefault 2 "Mjolnir"
 
 addslotdefault 3 "Super Shotgun"
 addslotdefault 3 "Ethereal Crossbow"

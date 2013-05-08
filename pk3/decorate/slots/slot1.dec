@@ -48,7 +48,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         HexenPunchdrunk:    PSBG A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         DukePunchdrunk:  WPBM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonPunchdrunk: FSMG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakePunchdrunk:    QLSC Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakePunchdrunk:    QGNT Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomPDFull:      PSAW B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexPDFull:      PBSP B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
