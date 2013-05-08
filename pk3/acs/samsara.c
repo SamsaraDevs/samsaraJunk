@@ -50,6 +50,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
     int clipcount;
     int result;
     int i, j, k;
+    int x, y, z;
     int armorIndex, armorToSet;
     int pln = PlayerNumber();
     
@@ -243,6 +244,17 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
       case 22:
         result = GetCVar("samsara_nohealthcap");
+        break;
+
+      case 23:
+        x = GetActorX(0); y = GetActorY(0); z = GetActorZ(0);
+        i = GetActorPitch(0);
+        j = GetActorAngle(0);
+        k = unusedTID(4000, 14000);
+
+        z += itof(cond(keyDown(BT_CROUCH), random(10, 14), random(30, 34)));
+        Spawn("GauntletSparks", x + FixedMul(cos(i), 16 * cos(j)), y + FixedMul(cos(i), 16 * sin(j)), z - (16 * sin(i)), k);
+        SetActorVelocity(k, GetActorVelX(0), GetActorVelY(0), GetActorVelZ(0), 0,0);
         break;
     }
     

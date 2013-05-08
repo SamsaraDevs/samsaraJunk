@@ -102,7 +102,7 @@ actor "Spear of Longinus" : InstantSwitchWeapon
 {
     Weapon.Kickback 0
     Weapon.SelectionOrder 2200
-    Weapon.SlotNumber 0
+    Weapon.SlotNumber 2
     Inventory.PickUpSound "wolfen/knifeget"
     Inventory.PickupMessage "You got the Spear of...Destiny?"
     Obituary "%k \cjput\c- %o \cjout of %p misery.\c-"

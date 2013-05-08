@@ -1,4 +1,4 @@
-ï»¿#define MSGCOUNT 10
+#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
