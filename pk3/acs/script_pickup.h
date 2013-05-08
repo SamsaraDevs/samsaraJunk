@@ -12,7 +12,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     slot = itemToSlot(slot);
     int hasSlot = SamsaraClientWeps[slot];
 
-    if (GetCVar("samsara_punchdrunk") && slot != SLOT_CHAINSAW)
+    if (GetCVar("samsara_punchdrunk") && slot != SLOT_CHAINSAW && slot != -1)
     {
         SetActorState(0, "Invis");
         terminate;
@@ -41,11 +41,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             break;
             
           case 1:
-            SetActorState(0, PickupStates[toClass][3]);
+            if (GetCVar("samsara_punchdrunk")) { SetActorState(0, PickupStates[toClass][7]); }
+            else { SetActorState(0, PickupStates[toClass][3]); }
             break;
             
           case 2:
-            SetActorState(0, PickupStates[toClass][0]);
+            if (GetCVar("samsara_punchdrunk")) { SetActorState(0, PickupStates[toClass][4]); }
+            else { SetActorState(0, PickupStates[toClass][0]); }
             break;
         }
     }
@@ -63,8 +65,8 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         
         if (GetCVar("samsara_punchdrunk"))
         {
-            if (hasSlot) { SetActorState(0, PickupStates[toClass][4]); }
-            else         { SetActorState(0, PickupStates[toClass][5]); }
+            if (hasSlot) { SetActorState(0, PickupStates[toClass][5]); }
+            else         { SetActorState(0, PickupStates[toClass][6]); }
         }
         else
         {
@@ -74,7 +76,8 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         break;
         
       case 2:
-        SetActorState(0, PickupStates[toClass][0]);
+        if (GetCVar("samsara_punchdrunk")) { SetActorState(0, PickupStates[toClass][4]); }
+        else { SetActorState(0, PickupStates[toClass][0]); }
         break;
     }
 }
@@ -279,6 +282,10 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode, int punchdrunk) clientside
     int pclass = samsaraClassNum();
     int i, j, quoteCount = 0;
     int logMsg;
+    int pickupsound;
+
+    if (punchdrunk) { pickupsound = PunchdrunkUniqueSounds[pclass]; }
+    else { pickupsound = ClassUniqueSounds[pclass]; }
     
     if (cpln == pln && GetCVar("msg") == 0)
     {
@@ -307,8 +314,8 @@ script SAMSARA_CLIENT_UNIQUEPICKUP (int soundmode, int punchdrunk) clientside
         else { Log(s:msgColors[GetCVar("msg0color")], s:logMsg); }
     }
     
-    if (soundmode == 1) { LocalAmbientSound(ClassUniqueSounds[pclass], 127); }
-    else { ActivatorSound(ClassUniqueSounds[pclass], 127); }
+    if (soundmode == 1) { LocalAmbientSound(pickupsound, 127); }
+    else { ActivatorSound(pickupsound, 127); }
     
     FadeRange(ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], ClassFades[pclass][3],
     ClassFades[pclass][0], ClassFades[pclass][1], ClassFades[pclass][2], 0.0, itof(ClassFades[pclass][4]) / 35);

@@ -49,6 +49,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "wolfen/knifeget",
     },
     {
+        "hexen/artiget",
         "hexen/weaponget",
         "hexen/weaponget",
         "hexen/weaponget",
@@ -57,8 +58,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "hexen/weaponget",
         "hexen/weaponget",
         "hexen/weaponget",
-        "hexen/weaponget",
-        "hexen/weaponget",
+        "hexen/artiget",
     },
     {
         "duke/weaponget",

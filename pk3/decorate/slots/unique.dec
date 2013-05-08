@@ -44,6 +44,24 @@ actor SamsaraUniquePickup1: CustomInventory
         MarathonSpecial:  UNIQ I 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         QuakeSpecial: 	  UNIQ J 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
+        DoomguyPunchdrunk:  PSTR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        ChexguyPunchdrunk:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HereticPunchdrunk:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+        WolfguyPunchdrunk:  WKNP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HexenPunchdrunk:    WFAX A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DukeguyPunchdrunk:  DKJT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        MarathonPunchdrunk: AWPN A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakePunchdrunk:    QLTG Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        
+        DoomPDSpecial:      UNIQ D 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        ChexPDSpecial:      UNIQ C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HereticPDSpecial:   UNIQ F 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        WolfPDSpecial:      UNIQ H 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HexenPDSpecial:     UNIQ G 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DukePDSpecial:      UNIQ E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        MarathonPDSpecial:  UNIQ I 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakePDSpecial: 	UNIQ J 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        
       Pickup:
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(231), "PickupSuccess")
         goto PickupFailure

@@ -115,16 +115,16 @@ int ClassItems[CLASSCOUNT] =
     "QuakeClass",
 };
 
-int PickupStates[CLASSCOUNT][6] = 
+int PickupStates[CLASSCOUNT][8] = 
 {
-    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomPDFull",       "DoomPDEmpty"},
-    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexPDFull",       "ChexPDEmpty"},
-    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticPDFull",    "HereticPDEmpty"},
-    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfPDFull",       "WolfPDEmpty"},
-    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenPDFull",      "HexenPDEmpty"},
-    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukePDFull",       "DukePDEmpty"},
-    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonPDFull",   "MarathonPDEmpty"},
-    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePDFull",      "QuakePDEmpty"},   
+    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomPunchdrunk",      "DoomPDFull",       "DoomPDEmpty",      "DoomPDSpecial"},
+    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexPunchdrunk",      "ChexPDFull",       "ChexPDEmpty",      "ChexPDSpecial"},
+    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticPunchdrunk",   "HereticPDFull",    "HereticPDEmpty",   "HereticPDSpecial"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfPunchdrunk",      "WolfPDFull",       "WolfPDEmpty",      "WolfPDSpecial"},
+    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenPunchdrunk",     "HexenPDFull",      "HexenPDEmpty",     "HexenPDSpecial"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukePunchdrunk",      "DukePDFull",       "DukePDEmpty",      "DukePDSpecial"},
+    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonPunchdrunk",  "MarathonPDFull",   "MarathonPDEmpty",  "MarathonPDSpecial"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePunchdrunk",     "QuakePDFull",      "QuakePDEmpty",     "QuakePDSpecial"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
