@@ -1,4 +1,4 @@
-#define MSGCOUNT 10
+﻿#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
@@ -973,9 +973,9 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Also doubles as a high-risk pizza cutter.",
             "Maybe strapping this onto your arm wasn't the best of ideas.",
             "Wait 'til you see the belt sander in the thigh pads.",
-            "",
-            "",
-            "",
+            "It's not the best boxing glove in the world, but it's trying.",
+            "Great for the kitchen, too.",
+            "Brass knuckles? Real men use stainless serrated steel buzzsaws.",
         },
     }
 };
@@ -1132,16 +1132,16 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "",
     },
     {
-        "TIMMY'S AXE",
-        "Maybe you need to swap the batteries out.",
-        "Easier than finding new sprites to use.",
-        "It makes an amazing bread knife.",
-        "Well, you're a cleric of metal. Gotta have another axe.",
-        "Now dual wield them.",
-        "",
-        "",
-        "",
-        "",
+        "GAUNTLET OF BARATUS",
+        "Sure was nice of the guy to lend a hand.",
+        "Swear to God, first person who makes a 'throwing the gauntlet' pun...",
+        "Rule with this.",
+        "Well, you're a cleric of metal. Gotta head-bang.",
+        "Axe in one hand, gauntlet in the oth--wait, what do you mean I can't?!",
+        "I like the church that gives their priests punching lessons.",
+        "I love the Power Glove. It's so bad.",
+        "God power keeps my pimp hand strong!",
+        "Hand, awesome power, burning grip, etc.",
     },
     {
         "NUKEBOOT!",
@@ -1161,19 +1161,19 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "It makes a terrible butter knife.",
         "Thousands of years into the future, sharp things still hurt.",
         "You'll put an eye out with it.",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "So, how indebted are we to Hopper by now?",
+        "Don't ask the probabilities of a knife bouncing like this.",
+        "I set my blenders to 'juicy'.",
+        "A murderer has been chosen... \cf...AND IT'S YOU!",
+        "Thousands of years in the future, bathroom tiling makes the best weapons.",
     },
     {
         "You got Mjolnir!",
-        "omg im thor",
+        "You got a Hammer that shoots lightning. omg thor",
         "The lightning works best when it's inside a wall.",
         "You never did take that athpirin, did you.",
-        "",
-        "",
+        "So, uh, whose bone is that anyway?",
+        "It makes a terrible letter-opener.",
         "",
         "",
         "",

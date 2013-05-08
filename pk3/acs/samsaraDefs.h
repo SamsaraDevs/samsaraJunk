@@ -396,6 +396,7 @@ int ChangelogString =
 - In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.\n\
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
 - In DM, the TOZT has had its damage slightly reduced.\n\
+- BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
@@ -444,4 +445,5 @@ int ChangelogString =
 - For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.\n\
 - Sounds have been arranged and sorted into neat little folders.\n\
 - Ranger now has a sound for hitting things with the axe, due to popular request.\n\
-- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.";
+- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.\n\
+- The TOZT's death frames are now more accurate to Marathon.";
