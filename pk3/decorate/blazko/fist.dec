@@ -73,7 +73,7 @@ actor KnifePopcorn: BulletPuff
     Height 4
     VSpeed 0
 
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Knife of Punchdrunk.\c-" 
+    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Butterknife.\c-" 
 
     DamageType "Pistol"
     DeathSound "wolfen/spearexplode2"
@@ -95,5 +95,37 @@ actor KnifePopcorn: BulletPuff
         SPX2 AA 2 A_Explode(12, 80, 0)
         SPX2 BCDE 4 BRIGHT
         Stop
+    }
+}
+
+actor "Spear of Longinus" : InstantSwitchWeapon
+{
+    Weapon.Kickback 0
+    Weapon.SelectionOrder 2200
+    Weapon.SlotNumber 0
+    Inventory.PickUpSound "wolfen/knifeget"
+    Inventory.PickupMessage "You got the Spear of...Destiny?"
+    Obituary "%k \cjput\c- %o \cjout of %p misery.\c-"
+    +WEAPON.MELEEWEAPON
+    +DONTBOB
+    +NOALERT
+    +INVENTORY.UNDROPPABLE
+    Weapon.YAdjust 16
+    States
+    {
+      Spawn:
+        UNIQ R -1
+        stop
+
+      Ready:
+        WSPR F 1 A_WeaponReady
+        loop
+
+      Fire:
+        WSPR GHI 3 A_CustomPunch(10,1,0,"BlankPuff2",98)
+        WSPR I 3 A_PlayWeaponSound ("wolfen/knife2")
+        WSPR I 0
+        WSPR H 1
+        goto Ready
     }
 }
