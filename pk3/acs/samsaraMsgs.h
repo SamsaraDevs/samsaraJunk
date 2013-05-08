@@ -967,7 +967,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
         },
         {
             "You got the gauntlet!",
-            "This is from Quake 3, you poopooheads. My immersion is now ruined forever.",
+            "This is from Quake 3, you poo-poo bums. My immersion is now ruined forever.",
             "It came back ;_;",
             "But can it blend?",
             "Also doubles as a high-risk pizza cutter.",
