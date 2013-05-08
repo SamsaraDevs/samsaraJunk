@@ -1,4 +1,4 @@
-﻿#define MSGCOUNT 10
+#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
@@ -805,7 +805,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "Oddly, this is familiar to you, as if it were from an old dream, but you can’t exactly remember...",
+            "Oddly, this is familiar to you, as if it were from an old dream, but you canÃ¢ÂÂt exactly remember...",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
@@ -1132,8 +1132,8 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "",
     },
     {
-        "GAUNTLET OF BARATUS",
-        "Sure was nice of the guy to lend a hand.",
+        "SPIKED GAUNTLET",
+        "Sure was nice of Baratus to lend a hand.",
         "Swear to God, first person who makes a 'throwing the gauntlet' pun...",
         "Rule with this.",
         "Well, you're a cleric of metal. Gotta head-bang.",

@@ -46,7 +46,7 @@ actor "Mace of Contrition" : CWeapMace
     }
 }
 
-actor "Spiked Gauntlet of Baratus" : FWeapFist
+actor "Spiked Gauntlet" : FWeapFist
 {
   Weapon.SelectionOrder 3400
   Weapon.KickBack 150
