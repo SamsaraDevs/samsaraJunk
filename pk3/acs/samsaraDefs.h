@@ -352,16 +352,16 @@ int ArmorModeNames[ARMORMODES] =
     "None",
 };
 
-int PunchDrunkItems[CLASSCOUNT][3] = 
+int PunchDrunkItems[CLASSCOUNT][2] = 
 {
-    {"DoomguyPunchDrunk",   "DoomguyPunchSaw",  "DoomguyPunchUnique"},
-    {"ChexguyPunchDrunk",   "ChexguyPunchSaw",  "ChexguyPunchUnique"},
-    {"CorvusPunchDrunk",    "CorvusPunchSaw",   "CorvusPunchUnique"},
-    {"BlazkoPunchDrunk",    "BlazkoPunchSaw",   "BlazkoPunchUnique"},
-    {"PariasPunchDrunk",    "PariasPunchSaw",   "PariasPunchUnique"},
-    {"DukePunchDrunk",      "DukePunchSaw",     "DukePunchUnique"},
-    {"ManathorPunchDrunk",  "ManathorPunchSaw", "ManathorPunchUnique"},
-    {"RangerPunchDrunk",    "RangerPunchSaw",   "RangerPunchUnique"},
+    {"DoomguyPunchDrunk",   "DoomguyPunchUnique"},
+    {"ChexguyPunchDrunk",   "ChexguyPunchUnique"},
+    {"CorvusPunchDrunk",    "CorvusPunchUnique"},
+    {"BlazkoPunchDrunk",    "BlazkoPunchUnique"},
+    {"PariasPunchDrunk",    "PariasPunchUnique"},
+    {"DukePunchDrunk",      "DukePunchUnique"},
+    {"ManathorPunchDrunk",  "ManathorPunchUnique"},
+    {"RangerPunchDrunk",    "RangerPunchUnique"},
 };
 
 

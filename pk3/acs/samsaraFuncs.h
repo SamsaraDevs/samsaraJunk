@@ -209,7 +209,7 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
 
     if ((GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) && !nopd)
     {
-        GiveInventory(PunchdrunkItems[cnum][2], 1);
+        GiveInventory(PunchdrunkItems[cnum][1], 1);
         return 1;
     }
 
@@ -407,8 +407,7 @@ function int HandleChainsawSpawn(int respawning)
 
     if (cs == 2) { ammomode = 1; }
 
-    if (GetCVar("samsara_punchdrunk") > 0) { GiveInventory(PunchDrunkItems[classnum][1], 1); }
-    else { GiveClassWeapon(classnum, 1, ammomode); }
+    GiveClassWeapon(classnum, 1, ammomode);
     return 1;
 }
 
