@@ -48,7 +48,7 @@ actor SamsaraUniquePickup1: CustomInventory
         ChexPunchdrunk:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         HereticPunchdrunk:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         WolfPunchdrunk:  UNIQ R 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        HexenPunchdrunk:    WFAX A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        HexenPunchdrunk:    UNIQ S 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukePunchdrunk:  UNIQ N 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonPunchdrunk: MRNF Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         QuakePunchdrunk:    UNIQ P 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
