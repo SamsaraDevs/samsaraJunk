@@ -42,6 +42,7 @@ actor Mjolnir: InstantSwitchWeapon
         QMJL D 2
         QMJL A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         QMJL D 0 A_AlertMonsters
+        QMJL D 0 A_JumpIf(waterlevel > 1, "Discharge")
         QMJL D 0 A_PlaySound("quakeweps/mjolnirhit", 5)
         QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuff")
         QMJL D 0 A_FireCustomMissile("MjolnirLightning")
@@ -49,6 +50,13 @@ actor Mjolnir: InstantSwitchWeapon
         QMJL D 3
         QMJL A 26   // I had to fudge this :\
         goto Ready
+      
+      Discharge:
+        GMJL A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        GMJL A 0 A_AlertMonsters
+        GMJL A 0 A_PlaySound("quakeweps/lightningdischarge", 6, 1, 0, ATTN_NONE)
+        GMJL A 1 A_FireCustomMissile("LGDischarge")
+        goto Ready  // you're probably dead now
     }
 }
 

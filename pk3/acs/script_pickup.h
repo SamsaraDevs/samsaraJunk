@@ -15,7 +15,6 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     {
         if (slot == SLOT_CHAINSAW)
         {
-            PrintBold(s:"lolsaw");
             slot = SLOT_PUNCHDRUNKSAW;
         }
         else if (slot != SLOT_UNIQUE)
