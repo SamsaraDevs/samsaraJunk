@@ -137,8 +137,8 @@ actor FlameShot
     Obituary "%k \cnmade\c- %o \cnall TOZT.\c-"
     +RANDOMIZE
     +RIPPER
-    +NOBLOOD
     +NOBOSSRIP
+    +BLOODLESSIMPACT
     States
     {
       Spawn:
