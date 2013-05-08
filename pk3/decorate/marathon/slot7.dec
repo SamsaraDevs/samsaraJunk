@@ -923,6 +923,7 @@ actor WMCRailLevel1: FastProjectile
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +EXTREMEDEATH
+    +BLOODLESSIMPACT
     RenderStyle Add
     Alpha 0.9
     Decal BFGScorch
@@ -953,6 +954,7 @@ actor WMCRailLevel2: FastProjectile
     +NOTIMEFREEZE
     +FORCERADIUSDMG
     +EXTREMEDEATH
+    +BLOODLESSIMPACT
     RenderStyle Add
     Alpha 0.9
     Decal BFGScorch
@@ -998,6 +1000,7 @@ actor WMCRailLevel3: FastProjectile
     +NOTIMEFREEZE
     +FORCERADIUSDMG
     +EXTREMEDEATH
+    +BLOODLESSIMPACT
     RenderStyle Add
     Alpha 0.9
     Decal BFGScorch
@@ -1132,6 +1135,7 @@ actor WMCGrenade
     -NOGRAVITY
     +LOWGRAVITY
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     //+GRENADETRAIL
     States
     {
@@ -1187,6 +1191,7 @@ actor WMCGrenade2
     -NOGRAVITY
     +LOWGRAVITY
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     //+GRENADETRAIL
     States
     {
@@ -1325,6 +1330,7 @@ actor WMCRailLevel3Baby: FastProjectile
     +NOTIMEFREEZE
     +EXTREMEDEATH
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     -SOLID
     DamageType "WMCBeam"
     DONTHURTSHOOTER
@@ -1384,6 +1390,7 @@ actor WMCBeamExplode: FastProjectile
     -BLOODSPLATTER
     +NOTIMEFREEZE
     +EXTREMEDEATH
+    +BLOODLESSIMPACT
     DamageType "WMCBeam"
     DONTHURTSHOOTER
     Decal Scorch

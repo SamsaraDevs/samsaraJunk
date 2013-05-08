@@ -13,3 +13,4 @@
 #include "decorate/ranger/slot7.dec"
 #include "decorate/ranger/unique.dec"
 #include "decorate/ranger/mjolnir.dec"
+#include "decorate/ranger/gauntlet.dec"

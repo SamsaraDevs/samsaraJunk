@@ -506,6 +506,7 @@ actor LauncherRocket
     Projectile
     +RANDOMIZE
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     States
     {
       Spawn:

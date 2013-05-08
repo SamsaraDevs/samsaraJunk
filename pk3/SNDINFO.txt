@@ -405,6 +405,7 @@ wolfen/spearfire			bjsprsht // Original sound by as3sfxr
 wolfen/spearbounce			bjsprbnc // Original sound by as3sfxr
 wolfen/spearexplode1		bjsprex1 // Original sound by as3sfxr
 wolfen/spearexplode2		bjsprex2 // Original sound by as3sfxr
+wolfen/spearstab			bjsprstb // Original sound by as3sfxr
 $limit  wolfen/machinegun	 		0
 $limit  wolfen/chaingun		 		0
 $limit  wolfen/flamethrower	 		0
@@ -425,6 +426,7 @@ $playersounddup	HexenPlayer	male	*pain75			*pain100
 $playersounddup	HexenPlayer	male	*pain50			*pain100
 $playersounddup	HexenPlayer	male	*pain25			*pain100
 $playersound	HexenPlayer	male	*grunt			clgrunt1
+$playersound	HexenPlayer	male	*fistgrunt		gntmis1
 $playersounddup	HexenPlayer	male	*usefail		*grunt
 $playersound	HexenPlayer	male	*land			clfeet4
 $playersound	HexenPlayer	male	*evillaugh		cllaugh
@@ -437,6 +439,9 @@ PlayerClericExtreme1Death       clxdth1
 PlayerClericExtreme2Death       clxdth2
 PlayerClericExtreme3Death       clxdth3
 
+FighterPunchMiss        punchmis
+FighterPunchHitWall     punch8
+FighterPunchHitThing    mumpun5
 MageWandFire            wand4
 MageShardsFire          cone3
 MageShardsExplode       shards1b
@@ -1036,6 +1041,8 @@ bob/pain2	MTBOBPN2
 marathon/fist/hit	MTPUNCH
 marathon/knife/wall	MRNFWALL
 marathon/knife/hit	MRNFHIT
+marathon/knife/throw MRNFTHRW
+marathon/knife/bounce MRNFDING
 
 $Random marathon/pistol/fire {marathon/pistol/fire1 marathon/pistol/fire2}
 marathon/pistol/fire1		MTPISTS1
@@ -1233,3 +1240,8 @@ quakeweps/inviswhisper          sounds/ranger/inv3.ogg
 $rolloff quakeweps/inviswhisper 64 512
 
 quakeweps/usefail               sounds/ranger/use_nothing.wav
+
+quakeweps/mjolnirmiss           sounds/ranger/mjolnir_miss.wav
+quakeweps/mjolnirhit            sounds/ranger/mjolnir_hit.wav
+quakeweps/mjolnirwhack          sounds/ranger/mjolnir_whack.wav
+quakeweps/mjolnirwall           sounds/ranger/mjolnir_wall.wav

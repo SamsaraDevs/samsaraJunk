@@ -294,6 +294,7 @@ actor DukeNuclearKick: DukeKickAttack
       Crash:
       XDeath:
         RPGX B 0 A_Stop
+        RPGX B 0 A_AlertMonsters
         RPGX B 0 A_PlaySound("duke/explosion")
         RPGX B 0 bright A_Explode(24, 80, 0)
         RPGX BCDEFGHIJKLMNOPQRSTUV 2 BRIGHT

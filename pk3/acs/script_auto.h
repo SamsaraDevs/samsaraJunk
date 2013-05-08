@@ -101,6 +101,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_nomonologues 0");
         ConsoleCommand("archivecvar samsara_nomonologues"); }
         
+        if (!GetCVar("samsara_punchdrunkuniques"))
+        {   ConsoleCommand("set samsara_punchdrunkuniques 0");
+        ConsoleCommand("archivecvar samsara_punchdrunkuniques"); }
+        
         Delay(1);
     }
 }

@@ -45,3 +45,47 @@ actor "Mace of Contrition" : CWeapMace
         Goto Ready
     }
 }
+
+actor "Spiked Gauntlet of Baratus" : FWeapFist
+{
+  Weapon.SelectionOrder 3400
+  Weapon.KickBack 150
+  Weapon.SlotNumber 0
+  +WIMPY_WEAPON
+  +MELEEWEAPON
+  +NOALERT
+  +INVENTORY.UNDROPPABLE
+  Inventory.PickupMessage "You got the Spiked Gauntlet of Baratus!"
+  Inventory.PickupSound "hexen/weaponget"
+  Obituary "%k \cgsnapped\c- %o\cg's neck with a brutal punch."
+  States
+  {
+  Select:
+    FPCH A 1 A_Raise
+    Loop
+  Deselect:
+    FPCH A 1 A_Lower
+    Loop
+  Ready:
+    FPCH A 1 A_WeaponReady
+    Loop
+  Fire:
+    FPCH B 5 Offset(5, 40)
+    FPCH C 4 Offset(5, 40)
+	TNT1 A 0 A_CustomPunch(random(15,20),1,0,"BlankPuff4",84)
+    FPCH D 4 Offset(5, 40) A_FPunchAttack
+    FPCH C 4 Offset(5, 40)
+    FPCH B 5 Offset(5, 40) A_ReFire
+    Goto Ready
+  Fire2:
+    FPCH DE 4 Offset(5, 40)
+    FPCH E 1 Offset(15, 50)
+    FPCH E 1 Offset(25, 60)
+    FPCH E 1 Offset(35, 70)
+    FPCH E 1 Offset(45, 80)
+    FPCH E 1 Offset(55, 90)
+    FPCH E 1 Offset(65, 90)
+    FPCH E 10 Offset(0, 150)
+    Goto Ready
+  }
+}

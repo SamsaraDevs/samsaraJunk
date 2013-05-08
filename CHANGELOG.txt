@@ -49,6 +49,10 @@ GAMEPLAY:
 - The Dehacked has been implemented back in. It was a nice idea, but practically no wads with Dehacked were behaving properly, and the shell ammo problems it brought back up were terrible.
 - samsara_nohealthcap has been implemented as an optional cvar. True to its name, it gives practically no limit to maximum health, which should make survival/DM games more interesting.
 - Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.
+- In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.
+- In DM, the LAZ Device's zorch radius has been expanded by 64 units.
+- In DM, the TOZT has had its damage slightly reduced.
+- BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.
 
 BUGFIXES:
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.
@@ -101,6 +105,7 @@ POLISH:
 - Sounds have been arranged and sorted into neat little folders.
 - Ranger now has a sound for hitting things with the axe, due to popular request.
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
+- The TOZT's death frames are now more accurate to Marathon.
 
 
 

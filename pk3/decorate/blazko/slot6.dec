@@ -64,11 +64,11 @@ actor WolfenFire
     States
     {
       Spawn:
-        BAL3 AB 6 bright
+        WFLB AB 6 bright
         loop
 
       Death:
-        BAL3 CDE 6 bright
+        WFLB CDE 6 bright
         stop
     }
 }

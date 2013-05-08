@@ -247,6 +247,7 @@ actor FusionShot
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +PIERCEARMOR
+    +BLOODLESSIMPACT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -281,6 +282,7 @@ actor FusionShotWater
     Scale 0.35
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
+    +BLOODLESSIMPACT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -308,6 +310,7 @@ actor FusionSuper
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +PIERCEARMOR
+    +BLOODLESSIMPACT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -359,6 +362,7 @@ actor FusionShotWater2
     Scale 0.75
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
+    +BLOODLESSIMPACT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -389,6 +393,7 @@ actor FusionPistolOvercharge
     DamageType "MarathonFusion"
 
     +FOILINVUL
+    +BLOODLESSIMPACT
 
     Obituary "%k \cnwas too close to \c-%o\cn's meltdown."
 

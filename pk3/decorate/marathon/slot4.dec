@@ -372,7 +372,6 @@ actor MarathonARBulletCoop : MarathonARBullet
     Species "Player"
 }
 
-//*****Assault Rifle*****
 actor 32mmCasingSpawner
 {
     Radius 1
@@ -446,6 +445,7 @@ actor MarathonGrenade
     -NOGRAVITY
     +LOWGRAVITY
     +FORCERADIUSDMG
+    +BLOODLESSIMPACT
     //+GRENADETRAIL
     States
     {

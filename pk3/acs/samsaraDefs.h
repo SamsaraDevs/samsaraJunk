@@ -44,7 +44,7 @@
 
 #define CLASSCOUNT          8
 #define UNIQUECOUNT         2
-#define SLOTCOUNT           9
+#define SLOTCOUNT           10
 #define TIPCOUNT            2
 
 #define LMSMODES            6
@@ -88,8 +88,10 @@ samsara_permault 0/1: Toggles whether the Weapon VII is persistent or vanishes o
 samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/respawn.\n\
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
 samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
+samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.\n\
+samsara_punchdrunkuniques 0/1: Toggles whether Gentleman Mode's uniques are present in normal play.\n\
 samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
-samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.";
+samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, or infinity.";
 
 int LMSArmors[LMSMODES] = 
 {
@@ -113,20 +115,20 @@ int ClassItems[CLASSCOUNT] =
     "QuakeClass",
 };
 
-int PickupStates[CLASSCOUNT][5] = 
+int PickupStates[CLASSCOUNT][8] = 
 {
-    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomSpecial2"},
-    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexSpecial2"},
-    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticSpecial2"},
-    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfSpecial2"},
-    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenSpecial2"},
-    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukeSpecial2"},
-    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonSpecial2"},
-    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakeSpecial2"},   
+    {"Doomguy", "DoomFull",     "DoomEmpty",        "DoomSpecial",      "DoomPunchdrunk",      "DoomPDFull",       "DoomPDEmpty",      "DoomPDSpecial"},
+    {"Chexguy", "ChexFull",     "ChexEmpty",        "ChexSpecial",      "ChexPunchdrunk",      "ChexPDFull",       "ChexPDEmpty",      "ChexPDSpecial"},
+    {"Heretic", "HereticFull",  "HereticEmpty",     "HereticSpecial",   "HereticPunchdrunk",   "HereticPDFull",    "HereticPDEmpty",   "HereticPDSpecial"},
+    {"Wolfguy", "WolfFull",     "WolfEmpty",        "WolfSpecial",      "WolfPunchdrunk",      "WolfPDFull",       "WolfPDEmpty",      "WolfPDSpecial"},
+    {"Hexen",   "HexenFull",    "HexenEmpty",       "HexenSpecial",     "HexenPunchdrunk",     "HexenPDFull",      "HexenPDEmpty",     "HexenPDSpecial"},
+    {"Dukeguy", "DukeFull",     "DukeEmpty",        "DukeSpecial",      "DukePunchdrunk",      "DukePDFull",       "DukePDEmpty",      "DukePDSpecial"},
+    {"Marathon","MarathonFull", "MarathonEmpty",    "MarathonSpecial",  "MarathonPunchdrunk",  "MarathonPDFull",   "MarathonPDEmpty",  "MarathonPDSpecial"},
+    {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePunchdrunk",     "QuakePDFull",      "QuakePDEmpty",     "QuakePDSpecial"},   
 };
 
 int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
-int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7};
+int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7, -1};
 
 int ClassFades[CLASSCOUNT][5] =
 {
@@ -151,6 +153,7 @@ int SlotItems[SLOTCOUNT] =
     "GotWeapon5",
     "GotWeapon6",
     "GotWeapon7",
+    "",
 };
 
 int LMSItems[CLASSCOUNT] =
@@ -349,16 +352,16 @@ int ArmorModeNames[ARMORMODES] =
     "None",
 };
 
-int PunchDrunkItems[CLASSCOUNT][3] = 
+int PunchDrunkItems[CLASSCOUNT][2] = 
 {
-    {"DoomguyPunchDrunk",   "DoomguyPunchSaw",  "DoomguyPunchUnique"},
-    {"ChexguyPunchDrunk",   "ChexguyPunchSaw",  "ChexguyPunchUnique"},
-    {"CorvusPunchDrunk",    "CorvusPunchSaw",   "CorvusPunchUnique"},
-    {"BlazkoPunchDrunk",    "BlazkoPunchSaw",   "BlazkoPunchUnique"},
-    {"PariasPunchDrunk",    "PariasPunchSaw",   "PariasPunchUnique"},
-    {"DukePunchDrunk",      "DukePunchSaw",     "DukePunchUnique"},
-    {"ManathorPunchDrunk",  "ManathorPunchSaw", "ManathorPunchUnique"},
-    {"RangerPunchDrunk",    "RangerPunchSaw",   "RangerPunchUnique"},
+    {"DoomguyPunchDrunk",   "DoomguyPunchUnique"},
+    {"ChexguyPunchDrunk",   "ChexguyPunchUnique"},
+    {"CorvusPunchDrunk",    "CorvusPunchUnique"},
+    {"BlazkoPunchDrunk",    "BlazkoPunchUnique"},
+    {"PariasPunchDrunk",    "PariasPunchUnique"},
+    {"DukePunchDrunk",      "DukePunchUnique"},
+    {"ManathorPunchDrunk",  "ManathorPunchUnique"},
+    {"RangerPunchDrunk",    "RangerPunchUnique"},
 };
 
 
@@ -390,6 +393,10 @@ int ChangelogString =
 - Chexter's screen now flashes green when slimed or flemmed.\n\
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
 - Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.\n\
+- In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.\n\
+- In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
+- In DM, the TOZT has had its damage slightly reduced.\n\
+- BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
@@ -438,4 +445,5 @@ int ChangelogString =
 - For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.\n\
 - Sounds have been arranged and sorted into neat little folders.\n\
 - Ranger now has a sound for hitting things with the axe, due to popular request.\n\
-- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.";
+- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.\n\
+- The TOZT's death frames are now more accurate to Marathon.";

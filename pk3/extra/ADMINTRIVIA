@@ -25,7 +25,8 @@ UNIVERSAL SHIT:
 
 - Samsara is compatible with sv_shotgunstart, in case players need an extra bit
   of oomph at the start. In the same vein, samsara_chainsawstart gives everyone
-  their slot I on entry.
+  their slot I on entry, and samsara_uniquestart gives everyone their unique
+  pickup(s) on entry.
 
 - Offline in Zandronum, Ranger cannot be selected in the char select screen.
   This is an engine limitation.
@@ -51,8 +52,8 @@ UNIVERSAL SHIT:
 - Heretic's/HeXen's/Strife's palettes are different from Doom's, and thus use
   different color ranges, and thus put color splotches in odd places.
   
-- Samsara makes use of Scripts 200-225. Levelsets using these script ranges make
-  create odd behavior
+- Samsara makes use of Scripts 200-225. Levelsets using these script ranges may,
+  and almost definitely will, create odd behavior.
 
 - Samsara was designed with Zandronum in mind, particularly making extensive use
   of the ConsoleCommand ACS function. In ZDoom, this does not exist--some cvars need
@@ -70,6 +71,12 @@ FOR FUN SHIT:
   the old Skill 4, it can be replicated with the command lines "skill 3",
   "sv_monsterrespawn 1", "sv_doubleammo 1", and "sv_fastmonsters 1".
 
+- Want to see just how healthy you can get? samsara_nohealthcap disables the 100/200
+  health cap on characters, instead going as high as the sky. Enable this if you
+  want to be a hulking behemoth, or just want to last a little longer!
+  (NOTE: In this mode, Parias'/Corvus' health items are not carried in the inventory.
+  For obvious reasons)
+
 - Want to make things just a little bit more interesting? There's a Party Mode! The
   samsara_peoplediewhentheyarekilled cvar causes players to explode on death. If it
   is a suicide, the explosion happens immediately, if they are killed, then there is
@@ -81,6 +88,14 @@ FOR FUN SHIT:
   samsara_chainsawstart and samsara_uniquestart also work with this mode, and may
   provide even more interesting effects.
 
+- You don't care for the gentleman's way, but like their heavy hitters? No
+  problem! Use samsara_punchdrunkuniques, and your uniques will change from
+  their normal items to the Punchdrunk items, as if a genie was in the pickups.
+  (No genies were harmed in the making of Gentleman Mode.)
+
 - Want to change up player defenses? samsara_armormode changes the way armor spawns
   in-game. 1 changes it up to Quake style armor, 2 changes it up to armor with more
   protection, 3 changes it to Marathon-style armor, 4 has no armor spawn at all.
+
+- Sick and tired of the boss monologues, just want to jump right into action? No
+  problem! samsara_nomonologues, and your day is free!

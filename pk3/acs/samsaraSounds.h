@@ -10,6 +10,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "doomguy/weaponget",
         "doomguy/weaponget",
         "doomguy/weaponget",
+        "doomguy/weaponget",
     },
     {
         "chex/weaponget",
@@ -21,8 +22,10 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "chex/weaponget",
         "chex/weaponget",
         "chex/weaponget",
+        "chex/weaponget",
     },
     {
+        "heretic/weaponget",
         "heretic/weaponget",
         "heretic/weaponget",
         "heretic/weaponget",
@@ -43,8 +46,10 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "wolfen/rocketget",
         "wolfen/flameget",
         "wolfen/spearget",
+        "wolfen/knifeget",
     },
     {
+        "hexen/artiget",
         "hexen/weaponget",
         "hexen/weaponget",
         "hexen/weaponget",
@@ -53,7 +58,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "hexen/weaponget",
         "hexen/weaponget",
         "hexen/weaponget",
-        "hexen/weaponget",
+        "hexen/artiget",
     },
     {
         "duke/weaponget",
@@ -65,6 +70,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "duke/weaponget",
         "duke/weaponget",
         "duke/weaponget",
+        "duke/itemget",
     },
     {
         "marathon/itemget",
@@ -76,6 +82,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "marathon/itemget",
         "marathon/itemget",
         "marathon/bigitemget",
+        "marathon/itemget",
     },
     {
         "quakeweps/weaponget",
@@ -87,6 +94,7 @@ int ClassPickupSounds[CLASSCOUNT][SLOTCOUNT] =
         "quakeweps/weaponget",
         "quakeweps/weaponget",
         "quakeweps/quadget",
+        "quakeweps/weaponget",
     },
 };
 
@@ -102,6 +110,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "doomguy/weaponget",
         "doomguy/weaponget",
         "doomguy/weaponget",
+        "doomguy/weaponget",
     },
     {
         "chex/weaponget",
@@ -113,6 +122,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "chex/weaponget",
         "chex/weaponget",
         "chex/weaponget",
+        "chex/weaponget",
     },
     {
         "heretic/ammoget",
@@ -124,6 +134,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "heretic/ammoget",
         "heretic/ammoget",
         "heretic/ammoget",
+        "heretic/ammoget",
     },
     {
         "wolfen/itemget",
@@ -135,6 +146,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "wolfen/itemget",
         "wolfen/itemget",
         "wolfen/itemget",
+        "wolfen/itemget",
     },
     {
         "hexen/itemget",
@@ -146,8 +158,10 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "hexen/itemget",
         "hexen/itemget",
         "hexen/itemget",
+        "hexen/itemget",
     },
     {
+        "duke/itemget",
         "duke/itemget",
         "duke/itemget",
         "duke/itemget",
@@ -168,6 +182,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "marathon/itemget",
         "marathon/itemget",
         "marathon/bigitemget",
+        "marathon/itemget",
     },
     {
         "quakeweps/itemget",
@@ -179,6 +194,7 @@ int ClassDropSounds[CLASSCOUNT][SLOTCOUNT] =
         "quakeweps/itemget",
         "quakeweps/itemget",
         "quakeweps/quadget",
+        "quakeweps/itemget",
     },
 };
 
@@ -189,6 +205,18 @@ int ClassUniqueSounds[CLASSCOUNT] =
     "heretic/itemget",
     "wolfen/lifeget",
     "hexen/artiget",
+    "duke/itemget",
+    "marathon/itemget",
+    "quakeweps/weaponget",
+};
+
+int PunchDrunkUniqueSounds[CLASSCOUNT] = 
+{
+    "doomguy/itemget",
+    "chex/weaponget",
+    "heretic/itemget",
+    "wolfen/lifeget",
+    "hexen/weaponget",
     "duke/itemget",
     "marathon/itemget",
     "quakeweps/weaponget",
