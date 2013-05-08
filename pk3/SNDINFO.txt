@@ -426,6 +426,7 @@ $playersounddup	HexenPlayer	male	*pain75			*pain100
 $playersounddup	HexenPlayer	male	*pain50			*pain100
 $playersounddup	HexenPlayer	male	*pain25			*pain100
 $playersound	HexenPlayer	male	*grunt			clgrunt1
+$playersound	HexenPlayer	male	*fistgrunt		gntmis1
 $playersounddup	HexenPlayer	male	*usefail		*grunt
 $playersound	HexenPlayer	male	*land			clfeet4
 $playersound	HexenPlayer	male	*evillaugh		cllaugh
@@ -438,6 +439,9 @@ PlayerClericExtreme1Death       clxdth1
 PlayerClericExtreme2Death       clxdth2
 PlayerClericExtreme3Death       clxdth3
 
+FighterPunchMiss        punchmis
+FighterPunchHitWall     punch8
+FighterPunchHitThing    mumpun5
 MageWandFire            wand4
 MageShardsFire          cone3
 MageShardsExplode       shards1b
