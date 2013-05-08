@@ -630,7 +630,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Enjoy \cathis\c- present.",
             "Weren't expecting this in the mail, were you?",
             "I'm sure you really like your alt-fire being a kick right now.",
-            "I'll make the Unabomber look like a pussy.",
+            "Illegal in about 37 states, but we'll make an exception for you.",
             "No givesies no backsies for life!",
             "And boom goes the dynamite.",
             "No longer bounces in midair.",
