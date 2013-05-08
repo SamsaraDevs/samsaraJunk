@@ -110,6 +110,8 @@ actor "Spear of Longinus" : InstantSwitchWeapon
     +DONTBOB
     +NOALERT
     +INVENTORY.UNDROPPABLE
+    +CHEATNOTWEAPON
+
     Weapon.YAdjust 16
     States
     {

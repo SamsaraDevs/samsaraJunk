@@ -85,6 +85,7 @@ addslotdefault 1 "Single Shotgun"
 
 addslotdefault 1 "Timmy's Axe"
 addslotdefault 1 "Gauntlet"
+addslotdefault 1 "Spear of Longinus"
 
 addslotdefault 2 " Shotgun "
 addslotdefault 2 " Firemace "
