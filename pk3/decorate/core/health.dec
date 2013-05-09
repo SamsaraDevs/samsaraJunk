@@ -180,7 +180,6 @@ actor HealPack2 : CustomInventory replaces Medikit
         
 
       HereticSound:
-        TNT1 A 0 A_Print("yo")
         TNT1 A 0 A_PlaySound("heretic/itemget")
         stop
 
