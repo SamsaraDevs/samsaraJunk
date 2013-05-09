@@ -630,7 +630,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Enjoy \cathis\c- present.",
             "Weren't expecting this in the mail, were you?",
             "I'm sure you really like your alt-fire being a kick right now.",
-            "I'll make the Unabomber look like a pussy.",
+            "Illegal in about 37 states, but we'll make an exception for you.",
             "No givesies no backsies for life!",
             "And boom goes the dynamite.",
             "No longer bounces in midair.",
@@ -805,7 +805,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "Oddly, this is familiar to you, as if it were from an old dream, but you canÃ¢ÂÂt exactly remember...",
+            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",

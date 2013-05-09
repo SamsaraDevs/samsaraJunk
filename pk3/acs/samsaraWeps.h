@@ -15,6 +15,7 @@
 #define U_UNIQUE2           2
 #define U_AMMO2             3
 
+#define SLOT_UNIQUE        -1
 #define SLOT_FIST           0
 #define SLOT_CHAINSAW       1
 #define SLOT_PISTOL         2
