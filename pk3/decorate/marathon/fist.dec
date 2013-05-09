@@ -7,7 +7,7 @@ actor "Talon Ceramic Combat Blade" : Weapon
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
-    Weapon.SlotNumber 2
+    Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700
     Obituary "%k \cndug through\c- %o \cninto the spine.\c-"
     Weapon.Kickback 300
@@ -118,7 +118,8 @@ actor TCCBPickup : CustomInventory
     States
     {
       Spawn:
-        MRNF Z 1 BRIGHT
+        MRNF Z 5 BRIGHT
+        MRNF Z 15
         loop
         
       Pickup:
@@ -135,6 +136,140 @@ actor TCCBPickup : CustomInventory
         MRNF Z 1
         fail
     }
+}
+
+actor "Tech.50 Pacifier" : Weapon
+{
+    //Weapon.BobRangeX 0
+    //Weapon.BobStyle Smooth
+    Weapon.PreferredSkin "SOFusionSkin"
+    Weapon.SelectionOrder 1300
+    Weapon.SlotNumber 1
+    Inventory.PickupMessage "You picked up a Tech.50 Pacifier Security Handgun!"
+    Scale 0.35
+    +NOALERT
+    +INVENTORY.UNDROPPABLE
+    States
+    {
+      Spawn:
+        FUSP A -1
+        STOP
+
+      Ready:
+        MRTK A 1 A_WeaponReady
+		loop
+		
+	  Select:
+        MRTK A 1 A_Raise
+        loop
+		
+	  Deselect:
+        MRTK A 1 A_Lower
+        loop
+
+      Fire:
+        TNT1 A 0 A_JumpIf(waterlevel == 3, "WaterFire1")
+        MRTK A 1
+        TNT1 A 0 A_AlertMonsters//,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("Tech50Shot",1,0,5,6,0,0)
+        TNT1 A 0 A_FireCustomMissile("Tech50Shot",-1,0,-5,6,0,0)
+        TNT1 A 0 A_PlaySound("marathon/tech50/fire")
+        MRTK A 2 A_Light2
+        MRTK B 2 Bright A_Light1 
+        MRTK D 2 A_Light0
+        MRTK C 3
+        MRTK A 10
+        Goto Reload
+
+      WaterFire1:
+        MRTK A 1
+        TNT1 A 0 A_AlertMonsters//,0,0,0,0)
+        TNT1 A 0 A_FireCustomMissile("Tech50ShotUnderwater",1,0,5,6,0,0)
+        TNT1 A 0 A_FireCustomMissile("Tech50ShotUnderwater",-1,0,-5,6,0,0)
+        TNT1 A 0 A_PlaySound("marathon/tech50/fire")
+        MRTK A 2 A_Light2
+        MRTK B 2 Bright A_Light1 
+        MRTK D 2 A_Light0
+        MRTK C 3
+        MRTK A 10
+		
+	  Reload:
+        MRTK A 0 Offset(0,32)
+        MRTK A 1 Offset(0,35)
+        MRTK A 1 Offset(0,40)
+        MRTK A 1 Offset(0,45)
+        MRTK A 1 Offset(0,50)
+        MRTK A 1 Offset(0,55)
+        MRTK A 1 Offset(0,60)
+        MRTK A 1 Offset(0,65)
+        MRTK A 1 Offset(0,70)
+        MRTK A 1 Offset(0,75)
+        MRTK A 1 Offset(0,80) // 10
+        MRTK A 1 Offset(0,85)
+        MRTK A 1 Offset(0,90)
+        MRTK A 1 Offset(0,95)
+        MRTK A 1 Offset(0,100)
+        MRTK A 1 Offset(0,105)
+        MRTK A 1 Offset(0,110)
+        MRTK A 1 Offset(0,115)
+        MRTK A 1 Offset(0,120)
+        MRTK A 1 Offset(0,125)
+        MRTK A 1 Offset(0,130) // 20
+        MRTK A 1 Offset(0,135)
+        MRTK A 1 Offset(0,140)
+        MRTK A 35
+		goto Select
+	}
+}
+
+actor Tech50Shot
+{
+    Decal RailScorch
+    Radius 8
+    Height 10
+    Speed 50
+    Damage (1)
+    DamageType "MarathonStun"
+    Scale 0.35
+    //DeathSound "marathon/tech50/stun"
+    +FOILINVUL
+    +PIERCEARMOR
+    +BLOODLESSIMPACT
+    Obituary "%k \cnbrought\c- %o \cnin for resisting security.\c-"
+    Projectile
+    States
+    {
+      Spawn:
+		TNT1 A 1
+	    DPLE B 1 BRIGHT
+		TNT1 A 1
+		DPLE C 1 BRIGHT
+		TNT1 A 1
+		DPLE D 1 BRIGHT
+        stop
+
+      Death:
+        TNT1 A 1
+		stop
+    }
+}
+
+actor Tech50ShotUnderwater : Tech50Shot
+{
+    States
+    {
+      Spawn:
+	    DPLE B 1
+      Death:
+        TNT1 A 1 A_Explode(64,96)
+		stop
+    }
+}
+
+actor NothingSpeed : PowerSpeed
+{
+  Powerup.Duration -3
+  Speed 0.1
 }
 
 actor "Steel Knuckles" : Weapon replaces Fist

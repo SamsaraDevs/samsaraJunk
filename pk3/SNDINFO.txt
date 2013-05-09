@@ -1046,6 +1046,9 @@ marathon/knife/hit	MRNFHIT
 marathon/knife/throw MRNFTHRW
 marathon/knife/bounce MRNFDING
 
+marathon/tech50/fire MR50FIR
+marathon/tech50/stun MRSTUN // Probably the only non-Marathon sound here. Taken from Devil May Cry 3.
+
 $Random marathon/pistol/fire {marathon/pistol/fire1 marathon/pistol/fire2}
 marathon/pistol/fire1		MTPISTS1
 marathon/pistol/fire2		MTPISTS2
