@@ -448,4 +448,5 @@ int ChangelogString =
 - Sounds have been arranged and sorted into neat little folders.\n\
 - Ranger now has a sound for hitting things with the axe, due to popular request.\n\
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.\n\
-- The TOZT's death frames are now more accurate to Marathon.";
+- The TOZT's death frames are now more accurate to Marathon.\n\
+- The Marathon weapons now all properly reload on select.";

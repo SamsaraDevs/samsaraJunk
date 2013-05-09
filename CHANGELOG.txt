@@ -108,6 +108,7 @@ POLISH:
 - Ranger now has a sound for hitting things with the axe, due to popular request.
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
 - The TOZT's death frames are now more accurate to Marathon.
+- The Marathon weapons now all properly reload on select.
 
 
 
