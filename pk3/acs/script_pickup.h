@@ -120,7 +120,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int pclass = samsaraClassNum();
     int hasWep = HasClassWeapon(pclass, slot);
     
-    if (slot == SLOT_BFG9000) { weaponStay &= !!GetCVar("samsara_permault"); }
+    if (slot == SLOT_BFG9000) { weaponStay = !!GetCVar("samsara_permault"); }
     
     int a1cnt  = 0, a2cnt = 0;
     int a1max  = 0, a2max = 0;

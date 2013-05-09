@@ -88,15 +88,17 @@ function int HasClassWeapon(int class, int slot)
 
     int weapon = ClassWeapons[class][slot][S_WEP];
     int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
+    int failitem = ClassWeapons[class][slot][S_CHECKFAILITEM];
 
-    int hasWep, hasItem;
+    int hasWep, hasItem, hasFail;
 
     if (!StrLen(weapon)) { return 0; }
 
     hasWep  = CheckInventory(weapon);
     hasItem = StrLen(checkitem) && CheckInventory(checkitem);
+    hasFail = StrLen(failitem) && CheckInventory(failitem);
 
-    return hasWep || hasItem;
+    return hasWep || hasItem || hasFail;
 }
 
 function void GiveClassUnique(int class, int which)
@@ -365,6 +367,11 @@ function int GiveQuad(int toAdd)
     int quadcount = QUAD_THRESHOLD - CheckInventory("QuakeQuadTimer");
     GiveInventory("QuakeQuadTimer", quadcount);
     GiveInventory("QuakeQuadTimer", toAdd);
+
+    if (GetCVar("samsara_permault"))
+    {
+        GiveInventory("DoNotQuad", 1);   // nasty hack
+    }
 
     quadcount = max(0, CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD);
 

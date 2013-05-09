@@ -166,9 +166,22 @@ script SAMSARA_QPOWERS (int startTime)
             }
 
             if (oQuadTimer <= 0) { GiveInventory("QuadDamagePower", 1); }
+
+            switch (GetCVar("samsara_permault"))
+            {
+              case 0:
+                if (CheckInventory("DoNotQuad")) { TakeInventory("DoNotQuad", 1); }
+                break;
+              
+              case 1:
+                if (!CheckInventory("DoNotQuad")) { GiveInventory("DoNotQuad", 1); }
+                break;
+            }
         }
         else
         {
+            if (CheckInventory("DoNotQuad")) { TakeInventory("DoNotQuad", 1); }
+
             if (quadTimer == 0)
             {
                 HudMessage(s:""; HUDMSG_PLAIN, 58101, CR_UNTRANSLATED, 0, 0, 1);

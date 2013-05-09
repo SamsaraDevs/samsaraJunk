@@ -168,7 +168,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
         {"Super Nailgun",                   "Clip",         "",             "", ""},
-        {"QuadDamagePickup",                "",             "",             "", "QuakeQuadTimer"},
+        {"QuadDamagePickup",                "",             "",             "", "DoNotQuad"},
         {"Gauntlet",                        "",             "",             "", ""},
     },
 };

@@ -19,7 +19,7 @@
 #define SAMSARA_MARATHON            609
 #define SAMSARA_RESONATE            608
 #define SAMSARA_SYNTHFIRE           607
-#define SAMSARA_MEGAHEALTH          249
+#define SAMSARA_MEGAHEALTH          259
 #define SAMSARA_QPOWERS             636
 
 #define SAMSARA_TIPBOX              300
