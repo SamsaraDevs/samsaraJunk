@@ -90,3 +90,4 @@ actor "Spiked Gauntlet" : FWeapFist
     FPCH E 10 Offset(0, 150)
     Goto Ready
   }
+}
