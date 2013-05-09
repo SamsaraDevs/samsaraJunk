@@ -11,7 +11,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int oldslot = slot;
     slot = itemToSlot(slot);
 
-    if (GetCVar("samsara_punchdrunk"))
+    if (IsPunchdrunk)
     {
         if (slot == SLOT_CHAINSAW)
         {

@@ -1,6 +1,7 @@
 script SAMSARA_OPEN open
 {
     IsServer = 1;
+    int opd, pd;
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -103,6 +104,15 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunkuniques"))
         {   ConsoleCommand("set samsara_punchdrunkuniques 0");
         ConsoleCommand("archivecvar samsara_punchdrunkuniques"); }
+
+        opd = pd;
+        pd = !!GetCVar("samsara_punchdrunk");
+
+        if (pd != opd)
+        {
+            IsPunchdrunk = pd;
+            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 9, pd);
+        }
         
         Delay(1);
     }

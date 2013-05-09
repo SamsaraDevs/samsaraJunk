@@ -29,6 +29,7 @@ int IsServer = 0;
 int LMSMessaged = 0;
 int UnloadingNow = 0;
 int ArmorMode = -1;
+int IsPunchdrunk = 0;
 int MapArmors[ARMORCOUNT] = {-1};
 int ClientTipboxModifier, ClientTipClassModifier;
 
@@ -308,6 +309,11 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         
       case 7:
         Print(s:"You are already flying!");
+        break;
+
+      case 8:
+        if (IsServer) { terminate; }
+        IsPunchdrunk = a1;
         break;
     }
 }

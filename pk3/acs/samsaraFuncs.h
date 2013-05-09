@@ -5,6 +5,8 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, int nopd)
 {
+    if (GetCVar("samsara_punchdrunk") && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+
     int weapon = ClassWeapons[class][slot][S_WEP];
     int ammo1  = ClassWeapons[class][slot][S_AMMO1];
     int ammo2  = ClassWeapons[class][slot][S_AMMO2];
@@ -378,7 +380,7 @@ function int HandleUniqueSpawn(int respawning)
     switch (cs)
     {
       case 1:
-        if (respawning) { return 0; }
+        if (respawning && isCoop()) { return 0; }
         // Fallthrough
 
       case 3:
@@ -386,7 +388,7 @@ function int HandleUniqueSpawn(int respawning)
         break;
 
       case 2:
-        if (respawning) { return 0; }
+        if (respawning && isCoop()) { return 0; }
         // Fallthrough
 
       case 4:
@@ -403,11 +405,11 @@ function int HandleChainsawSpawn(int respawning)
     int classnum = samsaraClassNum();
     int ammomode = 3;
 
-    if (cs == 0 || respawning) { return 0; }
+    if (cs == 0 || (respawning && isCoop())) { return 0; }
 
     if (cs == 2) { ammomode = 1; }
 
-    GiveClassWeapon(classnum, 1, ammomode);
+    GiveClassWeapon(classnum, SLOT_CHAINSAW, ammomode);
     return 1;
 }
 
@@ -417,7 +419,7 @@ function int HandlePunchDrunk(int respawning)
     int classnum = samsaraClassNum();
     int i;
 
-    if (cs <= 0 || (cs == 1 && respawning)) { return 0; }
+    if (cs <= 0) { return 0; }
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
