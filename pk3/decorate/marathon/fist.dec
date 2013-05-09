@@ -334,8 +334,7 @@ actor "Steel Knuckles" : Weapon replaces Fist
         
       Fire:
         TNT1 A 0 A_JumpIfInventory("DOUBLEFISTING",1,"FistCheck")
-        TNT1 A 0 A_JumpIf(momx >= 6,"Fire2")
-        TNT1 A 0 A_JumpIf(momx <= -6,"Fire2")
+        TNT1 A 0 A_JumpIf((momx*momx) + (momy*momy) >= 49,"Fire2")
         FIS2 B 3
         FIS2 C 4 A_CustomPunch(random(12,14),1,0,"BlankPuffMarathon",96)
         FIS2 B 3
