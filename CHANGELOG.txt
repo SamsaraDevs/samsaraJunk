@@ -79,6 +79,7 @@ BUGFIXES:
 - Freezing the Programmer no longer breaks Strife.
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.
 - The SO's/Ranger's automap HUD no longer show inventory and runes.
+- The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.

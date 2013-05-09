@@ -397,6 +397,7 @@ int ChangelogString =
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
 - In DM, the TOZT has had its damage slightly reduced.\n\
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
+- The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
