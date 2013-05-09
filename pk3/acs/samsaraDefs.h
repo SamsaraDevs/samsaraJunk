@@ -397,7 +397,6 @@ int ChangelogString =
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
 - In DM, the TOZT has had its damage slightly reduced.\n\
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
-- The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
 \cfBUGFIXES:\c-\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
@@ -422,6 +421,7 @@ int ChangelogString =
 - The Wings of Wrath have had their gold tint removed, as Hexen made it permanent.\n\
 - Freezing the Programmer no longer breaks Strife.\n\
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.\n\
+- The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
 \cfPOLISH:\c-\n\
 - The changelog has been changed from a graphic to a textdump.\n\
 - Further separated Samsara character scripts from other non-Samsara chars.\n\
