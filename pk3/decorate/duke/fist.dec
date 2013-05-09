@@ -81,8 +81,13 @@ actor "Mighty Boot" : Weapon
         TNT1 A 1
 
       RIdle:
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
         TNT1 A 1 A_JumpIfInventory("SynthFireRight",1,"RFire")
         loop
+
+      RDone:
+        TNT1 A 0
+        goto LightDone
 
       RFire:
         TNT1 A 0 A_GiveInventory("DukeKicking",1)
@@ -103,6 +108,7 @@ actor "Mighty Boot" : Weapon
         TNT1 A 0 A_Refire
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
         DKBT C 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
         TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
         Goto RIdle
         
@@ -123,6 +129,7 @@ actor "Mighty Boot" : Weapon
         TNT1 A 0 A_Refire
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
         DKBT C 1 A_WeaponReady(14)
+        TNT1 A 0 A_JumpIfHealthLower(1, "RDone")
         TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
         Goto RIdle
         
