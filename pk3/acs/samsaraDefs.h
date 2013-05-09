@@ -380,6 +380,7 @@ int ChangelogString =
 - samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
 - samsara_uniquestart has been added. See the wiki for details.\n\
 - A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use 'samsara_punchdrunk 1' to turn it on.\n\
+- In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.\n\
 - Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.\n\
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.\n\
