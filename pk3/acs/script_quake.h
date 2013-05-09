@@ -137,7 +137,7 @@ script SAMSARA_QPOWERS (int startTime)
     int invisTimer, oInvisTimer;
     int health, regenPulse, oPulse;
     int regenX, regenY;
-    int healthGiven;
+    int healthGiven, healthMax;
     
     if (samsaraClassNum() != CLASS_QUAKE) { terminate; }
 
@@ -155,7 +155,7 @@ script SAMSARA_QPOWERS (int startTime)
 
         if (quadTimer > 0)
         {
-            if (quadTimer % 35 == 0)
+            if (quadTimer % 35 == 0 || oQuadTimer < quadTimer)
             {
                 SetHudSize(640, 480, 1);
                 SetFont("QUADICO2");
@@ -224,7 +224,7 @@ script SAMSARA_QPOWERS (int startTime)
             regenX = 640 - (regenPulse * 18);
             regenY = 480 - (regenPulse * 18);
 
-            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0)
+            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0 || oRegenTimer < regenTimer)
             {
                 SetHudSize(regenX, regenY, 1);
                 regenX = ftoi(regenX * REGEN_CENTER_X);
@@ -244,13 +244,15 @@ script SAMSARA_QPOWERS (int startTime)
 
             if (regenTimer % 35 == 18)
             {
-                if (health >= getMaxHealth()) { giveHealthMax(5, 250); }
+                healthMax = cond(GetCVar("samsara_nohealthcap"), 0x7FFFFFFF, 150+getMaxHealth());
+
+                if (health >= getMaxHealth()) { giveHealthMax(5, healthMax); }
                 else if (health + 10 >= getMaxHealth())
                 {
                     SetActorProperty(0, APROP_Health, getMaxHealth());
-                    giveHealthMax(5, 250);
+                    giveHealthMax(5, healthMax);
                 }
-                else { giveHealthMax(15, 250); }
+                else { giveHealthMax(15, healthMax); }
 
                 if (GetActorProperty(0, APROP_Health) > health)
                 {
@@ -259,7 +261,7 @@ script SAMSARA_QPOWERS (int startTime)
                     regenPulse = 12;
                 }
 
-                healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0);
+                if (!GetCVar("samsara_nohealthcap")) { healthGiven += max(GetActorProperty(0, APROP_Health) - health, 0); }
                 health = GetActorProperty(0, APROP_Health);
             }
 
@@ -302,7 +304,7 @@ script SAMSARA_QPOWERS (int startTime)
 
         if (invisTimer > 0)
         {
-            if (invisTimer % 35 == 0)
+            if (invisTimer % 35 == 0 || oInvisTimer < invisTimer)
             {
                 SetHudSize(640, 480, 1);
                 SetFont("INVISICO");

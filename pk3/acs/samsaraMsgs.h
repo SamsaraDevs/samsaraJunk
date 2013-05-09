@@ -1164,7 +1164,7 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "So, how indebted are we to Hopper by now?",
         "Don't ask the probabilities of a knife bouncing like this.",
         "I set my blenders to 'juicy'.",
-        "A murderer has been chosen... \cf...AND IT'S YOU!",
+        "A murderer has been chosen... \cg...AND IT'S YOU!",
         "Thousands of years in the future, bathroom tiling makes the best weapons.",
     },
     {
