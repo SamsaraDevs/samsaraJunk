@@ -9,7 +9,7 @@ actor Mjolnir: InstantSwitchWeapon
 
     //Weapon.AmmoType "Cell"
     //Weapon.AmmoUse 20
-    Weapon.AmmoGive 160
+    //Weapon.AmmoGive 160
 
     Obituary "%k \cshammered \c-%o\cs without %p consent."
 
