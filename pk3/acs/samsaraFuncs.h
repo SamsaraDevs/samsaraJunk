@@ -430,7 +430,8 @@ function int HandlePunchDrunk(int respawning)
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
-        if (i == SLOT_FIST || i == SLOT_PUNCHDRUNKSAW) { continue; }
+        if (ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_FIST][S_WEP]
+         || ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_PUNCHDRUNKSAW][S_WEP]) { continue; }
         if (i == SLOT_PISTOL)
         {
             if (isCoop()) { continue; }
