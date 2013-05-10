@@ -24,6 +24,7 @@ actor "Gauntlet": InstantSwitchWeapon
         stop
 
       Deselect:
+        QGNT A 0 A_PlaySound("silence", 6)
         QGNT A 0 A_StopSound(6)
         goto Super::Deselect
 
@@ -35,7 +36,7 @@ actor "Gauntlet": InstantSwitchWeapon
       Fire:
         QGNT A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         QGNT A 0 A_AlertMonsters
-        QGNT A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 23)
+        QGNT A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 9)
         QGNT A 0 A_PlaySound("quakeweps/gauntlet", 6, 1, 1)
         QGNT D 0 A_CustomPunch(25, 1, 0, "GauntletPuff")
         QGNT D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageHold")
