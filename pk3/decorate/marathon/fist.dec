@@ -17,7 +17,7 @@ actor "Talon Ceramic Combat Blade" : Weapon
     Weapon.SelectionOrder 3700
     Obituary "%k \cndug into\c- %o\cn's spine.\c-"
     Weapon.AmmoType		"KnifeAmmo"
-    Weapon.AmmoGive		0
+    Weapon.AmmoGive		1
     Weapon.AmmoUse		0
     Weapon.Kickback 300
     +MELEEWEAPON
@@ -149,6 +149,7 @@ actor TCCBPickup : CustomInventory
         TNT1 A 0 A_JumpIfInventory("Talon Ceramic Combat Blade",1,"PickupCheck2")
         TNT1 A 0 A_SetBlend("Green", 0.4, 5)
         TNT1 A 1 A_GiveInventory("Talon Ceramic Combat Blade",1)
+		TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"GrossHack")
         stop
 		
 	  PickupCheck2:
@@ -156,6 +157,10 @@ actor TCCBPickup : CustomInventory
         TNT1 A 0 A_SetBlend("Green", 0.4, 5)
         TNT1 A 1 A_GiveInventory("KnifeAmmo",1)
         stop
+		
+	  GrossHack:
+	    TNT1 A 0 A_TakeInventory("KnifeAmmo",1)
+		stop
         
       PickupFail:
         MRNF Z 1
