@@ -423,6 +423,9 @@ int ChangelogString =
 - Freezing the Programmer no longer breaks Strife.\n\
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.\n\
 - The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
+- samsara_permault was apparently relying on sv_weaponstay--meaning if sv_weaponstay was 0, samsara_permault 1 would have no effect. Whoops x2!\n\
+- Duke no longer has an undying left foot.\n\
+- The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.\n\
 \cfPOLISH:\c-\n\
 - The changelog has been changed from a graphic to a textdump.\n\
 - Further separated Samsara character scripts from other non-Samsara chars.\n\

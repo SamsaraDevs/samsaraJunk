@@ -81,6 +81,9 @@ BUGFIXES:
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.
 - The SO's/Ranger's automap HUD no longer show inventory and runes.
 - The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!
+- samsara_permault was apparently relying on sv_weaponstay--meaning if sv_weaponstay was 0, samsara_permault 1 would have no effect. Whoops x2!
+- Duke no longer has an undying left foot.
+- The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
