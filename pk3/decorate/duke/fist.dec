@@ -57,7 +57,7 @@ actor "Mighty Boot" : Weapon
         Goto LIdle
 
       FastLeft:
-        DKBT A 3 A_WeaponReady(14)
+        DKBT A 4 A_WeaponReady(14)
         TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearLeft2")
         goto FL2
 
@@ -67,7 +67,7 @@ actor "Mighty Boot" : Weapon
 
       FL2:
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
-        DKBT B 5 A_WeaponReady(14)
+        DKBT B 6 A_WeaponReady(14)
         DKBT A 2 A_WeaponReady(14)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
@@ -113,7 +113,7 @@ actor "Mighty Boot" : Weapon
         Goto RIdle
         
       FastRight:
-        DKBT C 4 A_WeaponReady(14)
+        DKBT C 5 A_WeaponReady(14)
         TNT1 A 0 A_JumpIfInventory("NuclearKicks", 1, "NuclearRight2")
         goto FR2
 
@@ -124,8 +124,8 @@ actor "Mighty Boot" : Weapon
       FR2:
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
         TNT1 A 0 A_FireCustomMissile("DukeKickAttack2")
-        DKBT D 5 A_WeaponReady(14)
-        DKBT C 3 A_WeaponReady(14)
+        DKBT D 7 A_WeaponReady(14)
+        DKBT C 2 A_WeaponReady(14)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
         DKBT C 1 A_WeaponReady(14)
