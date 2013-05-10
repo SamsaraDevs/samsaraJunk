@@ -129,6 +129,7 @@ script SAMSARA_SPAWN (int respawning)
     int startTime = Timer();
     int endloop;
     int canbuddha;
+    int wsteSide;
     int i;
 
     ServerEnterTimes[pln] = startTime;
@@ -247,7 +248,41 @@ script SAMSARA_SPAWN (int respawning)
         if (!CheckInventory("WolfExtraLife") && canbuddha) { SetPlayerProperty(0, 0, 16); }
         canbuddha = CheckInventory("WolfExtraLife");
 
-        
+        i = CheckInventory("Shell");
+
+        if (CheckInventory("RWastemUnloaded")) { wsteSide = 1; }
+        if (CheckInventory("LWastemUnloaded")) { wsteSide = 0; }
+
+        if (i < 2)
+        {
+            if (!CheckInventory("WastemEmpty"))  { GiveInventory("WastemEmpty", 1); };
+            if (!CheckInventory("LWastemEmpty")) { GiveInventory("LWastemEmpty", 1); };
+            if (!CheckInventory("RWastemEmpty")) { GiveInventory("RWastemEmpty", 1); };
+        }
+        else
+        {
+            if (CheckInventory("WastemEmpty"))  { TakeInventory("WastemEmpty", 0x7FFFFFFF); };
+            if (CheckInventory("LWastemEmpty") && !wsteSide) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
+            if (CheckInventory("RWastemEmpty") &&  wsteSide) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
+        }
+
+        if (i < 4)
+        {
+            if (!wsteSide)
+            {
+                if (!CheckInventory("LWastemEmpty")) { GiveInventory("LWastemEmpty", 1); };
+            }
+            else
+            {
+                if (!CheckInventory("RWastemEmpty")) { GiveInventory("RWastemEmpty", 1); };
+            }
+        }
+        else
+        {
+            if (CheckInventory("RWastemEmpty")) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
+            if (CheckInventory("LWastemEmpty")) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
+        }
+
         /*
          * Jumping shit
          */

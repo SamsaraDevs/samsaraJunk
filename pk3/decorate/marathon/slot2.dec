@@ -3,11 +3,15 @@ actor LevelLimiter: Boolean {}
 actor InvasionDualShottyCheck: Boolean {}
 actor UsingShotguns: Boolean {}
 actor UsingDualShotguns: Boolean {}
-actor WastemUnloaded : Boolean {}
-actor RWastemUnloaded : Boolean {}
-actor LWastemUnloaded : Boolean {}
+actor WastemUnloaded: Boolean {}
+actor RWastemUnloaded: Boolean {}
+actor LWastemUnloaded: Boolean {}
 
-actor "WSTE-M5 Combat Shotgun" : Weapon
+actor WastemEmpty: Boolean {}
+actor RWastemEmpty: Boolean {}
+actor LWastemEmpty: Boolean {}
+
+actor "WSTE-M5 Combat Shotgun": Weapon
 {
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
@@ -266,7 +270,7 @@ actor "WSTE-M5 Combat Shotgun" : Weapon
     }
 }
 
-actor MarathonShotgunBullet : FastProjectile
+actor MarathonShotgunBullet: FastProjectile
 {
     Speed 100
     Damage (random(8,10))
@@ -300,7 +304,7 @@ actor MarathonShotgunBullet : FastProjectile
     }
 }
 
-actor MarathonShotgunBulletCoop : MarathonShotgunBullet
+actor MarathonShotgunBulletCoop: MarathonShotgunBullet
 {
     Radius 1
     Height 1

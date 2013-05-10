@@ -362,14 +362,12 @@ actor "SPNKR-XP SSM Launcher" : Weapon// replaces RocketLauncher
         RCKT A 20 Offset(0,163) // 45
 
       Reload2:
-        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
-        TNT1 A 0 A_GiveInventory("SpankerAmmo",1)
-        TNT1 A 0 A_JumpIfInventory("SpankerAmmo",2,"ReloadFinish")
+        TNT1 A 0 A_JumpIfInventory("SpankerAmmo",0,"ReloadFinish")
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
         Goto ReloadFinish
-        TNT1 A 0
-        TNT1 A 0
-        Goto Reload2
+        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
+        TNT1 A 0 A_GiveInventory("SpankerAmmo",1)
+        loop
 
       ReloadFinish:
         RCKT A 1 Offset(0,163)
@@ -481,8 +479,12 @@ actor "SPNKR-XP SSM Launcher" : Weapon// replaces RocketLauncher
         Goto Ready
 
       ReloadSelect:
-        RCKT A 1 Offset(0,136) A_JumpIfInventory("RocketAmmo",1,"Reload2")
-        goto ReloadFinish
+        TNT1 A 0 A_JumpIfInventory("SpankerAmmo",0,"Select0")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+        Goto Select0
+        TNT1 A 0 A_TakeInventory("RocketAmmo",1)
+        TNT1 A 0 A_GiveInventory("SpankerAmmo",1)
+        loop
     }
 }
 

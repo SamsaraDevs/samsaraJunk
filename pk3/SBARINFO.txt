@@ -1189,26 +1189,56 @@ StatusBar normal, forcescaled
         IsSelected "WSTE-M5 Combat Shotgun"
         {
             drawimage "STY2NUM2", 268, 179;
-		InInventory not UsingDualShotguns, 1 {
-            DrawImage "MARSHTAM", 7, 179;
-            DrawImage "MARSHTAM", 14, 179;
-			InInventory WastemUnloaded, 1 { 
-            DrawImage "MARSHTEM", 7, 179;
-            DrawImage "MARSHTEM", 14, 179; }}
-		InInventory UsingDualShotguns, 1 {
-            DrawImage "MARSHTAM", 7, 186;
-            DrawImage "MARSHTAM", 14, 186;
-            DrawImage "MARSHTAM", 7, 175;
-            DrawImage "MARSHTAM", 14, 175;
-			
-			InInventory RWastemUnloaded, 1 { 
-            DrawImage "MARSHTEM", 7, 186;
-            DrawImage "MARSHTEM", 14, 186; }
-			InInventory LWastemUnloaded, 1 { 
-            DrawImage "MARSHTEM", 7, 175;
-            DrawImage "MARSHTEM", 14, 175; }}
+            InInventory not UsingDualShotguns, 1
+            {
+                DrawImage "MARSHTAM", 7, 179;
+                DrawImage "MARSHTAM", 14, 179;
+
+                InInventory WastemUnloaded, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 179;
+                    DrawImage "MARSHTEM", 14, 179;
+                }
+
+                InInventory WastemEmpty, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 179;
+                    DrawImage "MARSHTEM", 14, 179;
+                }
+            }
+            InInventory UsingDualShotguns, 1
+            {
+                DrawImage "MARSHTAM", 7, 186;
+                DrawImage "MARSHTAM", 14, 186;
+                DrawImage "MARSHTAM", 7, 175;
+                DrawImage "MARSHTAM", 14, 175;
+                
+                InInventory RWastemUnloaded, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 186;
+                    DrawImage "MARSHTEM", 14, 186;
+                }
+
+                InInventory LWastemUnloaded, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 175;
+                    DrawImage "MARSHTEM", 14, 175;
+                }
+                
+                InInventory RWastemEmpty, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 186;
+                    DrawImage "MARSHTEM", 14, 186;
+                }
+
+                InInventory LWastemEmpty, 1
+                { 
+                    DrawImage "MARSHTEM", 7, 175;
+                    DrawImage "MARSHTEM", 14, 175;
+                }
+            }
             drawnumber 3, MARAHUDF, untranslated, ammo1, 42, 180;
-        }                       //, 0, white, 0, white, 20;
+        }
 
         IsSelected "MA-75B Assault Rifle"
         {
