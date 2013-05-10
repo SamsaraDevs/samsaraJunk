@@ -108,10 +108,10 @@ script SAMSARA_OPEN open
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
 
-        if (pd != opd)
+        if (pd != opd || Timer() % 18 == 0)
         {
             IsPunchdrunk = pd;
-            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 9, pd);
+            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, pd);
         }
         
         Delay(1);
