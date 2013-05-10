@@ -5,6 +5,8 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, int nopd)
 {
+    if (GetCVar("samsara_punchdrunk") && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+
     int weapon = ClassWeapons[class][slot][S_WEP];
     int ammo1  = ClassWeapons[class][slot][S_AMMO1];
     int ammo2  = ClassWeapons[class][slot][S_AMMO2];
@@ -86,15 +88,17 @@ function int HasClassWeapon(int class, int slot)
 
     int weapon = ClassWeapons[class][slot][S_WEP];
     int checkitem = ClassWeapons[class][slot][S_CHECKITEM];
+    int failitem = ClassWeapons[class][slot][S_CHECKFAILITEM];
 
-    int hasWep, hasItem;
+    int hasWep, hasItem, hasFail;
 
     if (!StrLen(weapon)) { return 0; }
 
     hasWep  = CheckInventory(weapon);
     hasItem = StrLen(checkitem) && CheckInventory(checkitem);
+    hasFail = StrLen(failitem) && CheckInventory(failitem);
 
-    return hasWep || hasItem;
+    return hasWep || hasItem || hasFail;
 }
 
 function void GiveClassUnique(int class, int which)
@@ -363,6 +367,11 @@ function int GiveQuad(int toAdd)
     GiveInventory("QuakeQuadTimer", quadcount);
     GiveInventory("QuakeQuadTimer", toAdd);
 
+    if (GetCVar("samsara_permault"))
+    {
+        GiveInventory("DoNotQuad", 1);   // nasty hack
+    }
+
     quadcount = max(0, CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD);
 
     return quadcount;
@@ -377,7 +386,7 @@ function int HandleUniqueSpawn(int respawning)
     switch (cs)
     {
       case 1:
-        if (respawning) { return 0; }
+        if (respawning && isCoop()) { return 0; }
         // Fallthrough
 
       case 3:
@@ -385,7 +394,7 @@ function int HandleUniqueSpawn(int respawning)
         break;
 
       case 2:
-        if (respawning) { return 0; }
+        if (respawning && isCoop()) { return 0; }
         // Fallthrough
 
       case 4:
@@ -402,11 +411,11 @@ function int HandleChainsawSpawn(int respawning)
     int classnum = samsaraClassNum();
     int ammomode = 3;
 
-    if (cs == 0 || respawning) { return 0; }
+    if (cs == 0 || (respawning && isCoop())) { return 0; }
 
     if (cs == 2) { ammomode = 1; }
 
-    GiveClassWeapon(classnum, 1, ammomode);
+    GiveClassWeapon(classnum, SLOT_CHAINSAW, ammomode);
     return 1;
 }
 
@@ -416,10 +425,21 @@ function int HandlePunchDrunk(int respawning)
     int classnum = samsaraClassNum();
     int i;
 
-    if (cs <= 0 || (cs == 1 && respawning)) { return 0; }
+    if (cs <= 0) { return 0; }
 
     for (i = 0; i < SLOTCOUNT; i++)
     {
+        if (ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_FIST][S_WEP]
+         || ClassWeapons[classnum][i][S_WEP] == ClassWeapons[classnum][SLOT_PUNCHDRUNKSAW][S_WEP]) { continue; }
+        if (i == SLOT_PISTOL)
+        {
+            if (isCoop()) { continue; }
+            else
+            {
+                GiveInventory(ClassWeapons[classnum][i][S_WEP], 1);
+            }
+        }
+
         TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO1], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);

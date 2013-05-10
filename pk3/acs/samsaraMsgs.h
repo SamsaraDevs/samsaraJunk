@@ -1,4 +1,4 @@
-#define MSGCOUNT 10
+﻿#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
@@ -805,7 +805,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
+            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
@@ -844,11 +844,11 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "P.S. If things around here aren't working, it's because I'm laughing so hard.",
         },
         {
-            "Who even knows man.",
-            "",
-            "",
-            "",
-            "",
+            "You got the Tech.50 Pacifier!",
+            "It does \canot\c- go in your mouth.",
+            "I dunno, it sure doesn't pacify me.",
+            "The only weapon a security officer would reasonably have!",
+            "Looks like a funky fusion pistol.",
             "",
             "",
             "",
@@ -1164,7 +1164,7 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "So, how indebted are we to Hopper by now?",
         "Don't ask the probabilities of a knife bouncing like this.",
         "I set my blenders to 'juicy'.",
-        "A murderer has been chosen... \cf...AND IT'S YOU!",
+        "A murderer has been chosen... \cg...AND IT'S YOU!",
         "Thousands of years in the future, bathroom tiling makes the best weapons.",
     },
     {

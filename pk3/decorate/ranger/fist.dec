@@ -11,7 +11,7 @@ actor "Axe": InstantSwitchWeapon
     +WEAPON.MELEEWEAPON
     +UNDROPPABLE
 
-    Inventory.Icon "PSTRA0"
+    Inventory.Icon "TNT1A0"
     Obituary "%k \csmet\c- %o\cs, and %g met the axe.\c-"
 
     States

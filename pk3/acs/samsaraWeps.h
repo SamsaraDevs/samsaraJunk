@@ -157,7 +157,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"SPNKR-XP SSM Launcher",           "SpankerAmmo",  "RocketAmmo",   "",                 ""},
         {"TOZT-7 Napalm Unit",              "NapalmInTank", "Cell",         "",                 ""},
         {"ONI-71 Wave Motion Cannon",       "Cell",         "RocketAmmo",   "",                 ""},
-        {"",                                "",             "",             "",                 ""},
+        {"Tech.50 Pacifier",                "",             "",             "",                 ""},
     },
     {   // Ranger
         {"Axe",                             "",             "",             "", ""},
@@ -168,7 +168,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
         {"Super Nailgun",                   "Clip",         "",             "", ""},
-        {"QuadDamagePickup",                "",             "",             "", "QuakeQuadTimer"},
+        {"QuadDamagePickup",                "",             "",             "", "DoNotQuad"},
         {"Gauntlet",                        "",             "",             "", ""},
     },
 };

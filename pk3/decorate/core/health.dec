@@ -180,7 +180,6 @@ actor HealPack2 : CustomInventory replaces Medikit
         
 
       HereticSound:
-        TNT1 A 0 A_Print("yo")
         TNT1 A 0 A_PlaySound("heretic/itemget")
         stop
 
@@ -281,7 +280,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
 
       PickupQuake:
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
-        TNT1 A 0 ACS_ExecuteAlways(249, 0, 100, 1, 175)
+        TNT1 A 0 ACS_ExecuteAlways(259, 0, 100, 1, 175)
         goto PickupSound
 
       PickupSound:
