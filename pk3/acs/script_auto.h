@@ -144,10 +144,6 @@ script SAMSARA_SPAWN (int respawning)
     if (isLMS()) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
-    HandlePunchdrunk(respawning);
-    HandleChainsawSpawn(respawning);
-    HandleUniqueSpawn(respawning);
-
     if (!respawning)
     {
         ClientTipboxes[pln] = 0;
@@ -155,6 +151,10 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3); }
     }
+
+    HandlePunchdrunk(respawning);
+    HandleChainsawSpawn(respawning);
+    HandleUniqueSpawn(respawning);
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
 

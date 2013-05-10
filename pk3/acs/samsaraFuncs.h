@@ -431,6 +431,15 @@ function int HandlePunchDrunk(int respawning)
     for (i = 0; i < SLOTCOUNT; i++)
     {
         if (i == SLOT_FIST || i == SLOT_PUNCHDRUNKSAW) { continue; }
+        if (i == SLOT_PISTOL)
+        {
+            if (isCoop()) { continue; }
+            else
+            {
+                GiveInventory(ClassWeapons[classnum][i][S_WEP], 1);
+            }
+        }
+
         TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO1], 0x7FFFFFFF);
         TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);
