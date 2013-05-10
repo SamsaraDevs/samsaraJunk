@@ -135,6 +135,7 @@ script SAMSARA_QPOWERS (int startTime)
     int quadTimer,  oQuadTimer;
     int regenTimer, oRegenTimer;
     int invisTimer, oInvisTimer;
+    int pentTimer,  oPentTimer;
     int health, regenPulse, oPulse;
     int regenX, regenY;
     int healthGiven, healthMax;
@@ -350,9 +351,56 @@ script SAMSARA_QPOWERS (int startTime)
 
         }
 
+        /*
+         * Pentagram shit
+         */
+
+        oPentTimer = pentTimer;
+        pentTimer  = CheckInventory("QuakePentTimer");
+
+        if (pentTimer - 35 > oPentTimer)
+        {
+            AmbientSound("quakeweps/pentagramon", 127);
+        }
+
+        if (pentTimer > 0)
+        {
+            if (pentTimer % 35 == 0 || oPentTimer < pentTimer)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("PENTICON");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58107, CR_UNTRANSLATED, 610.4, 260.0, 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:pentTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58108, "QuakeBrick", 295.2, 130.0, 1.5, 1.0);
+            }
+
+            if (pentTimer % 35 == 0 && pentTimer / 35 < 5)
+            {
+                LocalAmbientSound("quakeweps/pentagramout", PowerOutVols[regenTimer / 35]);
+            }
+            else if (Timer() % 140 == 0)
+            {
+                ActivatorSound("quakeweps/pentagram", 96);
+            }
+
+            if (oPentTimer == 0) { GiveInventory("QuakePentagram", 1); }
+        }
+        else
+        {
+            if (oPentTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58107, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58108, CR_UNTRANSLATED, 0, 0, 1);
+                TakeInventory("QuakePentagram", 0x7FFFFFFF);
+            }
+
+        }
+
         TakeInventory("QuakeQuadTimer", 1);
         TakeInventory("QuakeRegenTimer", 1);
         TakeInventory("QuakeInvisTimer", 1);
+        TakeInventory("QuakePentTimer", 1);
 
         if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
         else { SetActorProperty(0, APROP_Gravity, 0.75); }
