@@ -249,13 +249,14 @@ actor "Tech.50 Pacifier" : Weapon
 
 actor Tech50Shot
 {
-    Decal RailScorch
+    Decal DoomImpScorch
     Radius 8
     Height 10
     Speed 50
     Damage (5)
+	RenderStyle Add
     DamageType "MarathonStun"
-    Scale 0.35
+    Scale 0.075
     //DeathSound "marathon/tech50/stun"
     +FOILINVUL
     +PIERCEARMOR
@@ -266,11 +267,11 @@ actor Tech50Shot
     {
       Spawn:
 		TNT1 A 1
-	    DPLE B 1 BRIGHT
+	    MRTK E 1 BRIGHT
 		TNT1 A 1
-		DPLE C 1 BRIGHT
+		MRTK F 1 BRIGHT
 		TNT1 A 1
-		DPLE D 1 BRIGHT
+		MRTK G 1 BRIGHT
         stop
 
       Death:
