@@ -49,6 +49,7 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         
         TNT1 A 0 A_GiveInventory("UsingSMG",1)
+		TNT1 A 0 A_JumpIfNoAmmo("SelectReload")
         TNT1 A 0 A_Raise
         HSMG A 1 A_Raise
         LOOP
@@ -128,6 +129,26 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         TNT1 A 0
         HSMG A 1
         Goto Ready
+		
+	  SelectReload:
+	    TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectReload2")
+		goto FinishSelect
+	  SelectReload2:
+        TNT1 A 0 A_TakeInventory("Clip",1)
+        TNT1 A 0 A_GiveInventory("SmgBullet",1)
+        TNT1 A 0 A_JumpIfInventory("SmgBullet",0,3)
+        TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+        Goto FinishSelect
+        TNT1 A 0
+        Goto SelectReload2
+        TNT1 A 0
+        HSMG A 1
+        Goto FinishSelect
+		
+	  FinishSelect:
+        TNT1 A 0 A_Raise
+        HSMG A 1 A_Raise
+        LOOP
     }
 }
 
