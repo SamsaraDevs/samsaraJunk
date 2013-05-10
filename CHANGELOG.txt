@@ -62,6 +62,7 @@ BUGFIXES:
 - samsara_permault was apparently relying on sv_weaponstay--meaning if sv_weaponstay was 0, samsara_permault 1 would have no effect. Whoops x2!
 - Duke no longer has an undying left foot.
 - The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.
+- Chickens were immune to booting and zorching. This has been fixed.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
@@ -90,6 +91,8 @@ POLISH:
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
 - The TOZT's death frames are now more accurate to Marathon.
 - The Marathon weapons now all properly reload on select.
+- The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.
+- The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.
 
 
 

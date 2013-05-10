@@ -1052,24 +1052,44 @@ StatusBar normal, forcescaled
 
         IsSelected ".44 Magnum Mega Class A1"
         {
-            DrawImage "MARPISEM", 5, 173;
-            DrawImage "MARPISEM", 10, 173;
-            DrawImage "MARPISEM", 15, 173;
-            DrawImage "MARPISEM", 20, 173;
-            DrawImage "MARPISEM", 25, 173;
-            DrawImage "MARPISEM", 30, 173;
-            DrawImage "MARPISEM", 35, 173;
-            DrawImage "MARPISEM", 40, 173;
-            InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 173; }
-            InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 173; }
-            InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 173; }
-            InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 173; }
-            InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 173; }
-            InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
-            InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
-            InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
+		    InInventory not UsingDualPistols, 1
+			{
+            DrawImage "MARPISEM", 5, 178;
+            DrawImage "MARPISEM", 10, 178;
+            DrawImage "MARPISEM", 15, 178;
+            DrawImage "MARPISEM", 20, 178;
+            DrawImage "MARPISEM", 25, 178;
+            DrawImage "MARPISEM", 30, 178;
+            DrawImage "MARPISEM", 35, 178;
+            DrawImage "MARPISEM", 40, 178;
+            InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 178; }
+            InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 178; }
+            InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 178; }
+            InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 178; }
+            InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 178; }
+            InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 178; }
+            InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 178; }
+            InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 178; }
+			}
             InInventory SynthFireActive, 1
             {
+                DrawImage "MARPISEM", 5, 173;
+                DrawImage "MARPISEM", 10, 173;
+                DrawImage "MARPISEM", 15, 173;
+                DrawImage "MARPISEM", 20, 173;
+                DrawImage "MARPISEM", 25, 173;
+                DrawImage "MARPISEM", 30, 173;
+                DrawImage "MARPISEM", 35, 173;
+                DrawImage "MARPISEM", 40, 173;
+                InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 173; }
+                InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 173; }
+                InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 173; }
+                InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 173; }
+                InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 173; }
+                InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
+                InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
+                InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
+			
                 DrawImage "MARPISEM", 5, 185;
                 DrawImage "MARPISEM", 10, 185;
                 DrawImage "MARPISEM", 15, 185;
@@ -1169,8 +1189,24 @@ StatusBar normal, forcescaled
         IsSelected "WSTE-M5 Combat Shotgun"
         {
             drawimage "STY2NUM2", 268, 179;
+		InInventory not UsingDualShotguns, 1 {
             DrawImage "MARSHTAM", 7, 179;
             DrawImage "MARSHTAM", 14, 179;
+			InInventory WastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 179;
+            DrawImage "MARSHTEM", 14, 179; }}
+		InInventory UsingDualShotguns, 1 {
+            DrawImage "MARSHTAM", 7, 186;
+            DrawImage "MARSHTAM", 14, 186;
+            DrawImage "MARSHTAM", 7, 175;
+            DrawImage "MARSHTAM", 14, 175;
+			
+			InInventory RWastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 186;
+            DrawImage "MARSHTEM", 14, 186; }
+			InInventory LWastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 175;
+            DrawImage "MARSHTEM", 14, 175; }}
             drawnumber 3, MARAHUDF, untranslated, ammo1, 42, 180;
         }                       //, 0, white, 0, white, 20;
 
@@ -2323,24 +2359,44 @@ statusbar Automap
 
         IsSelected ".44 Magnum Mega Class A1"
         {
-            DrawImage "MARPISEM", 5, 173;
-            DrawImage "MARPISEM", 10, 173;
-            DrawImage "MARPISEM", 15, 173;
-            DrawImage "MARPISEM", 20, 173;
-            DrawImage "MARPISEM", 25, 173;
-            DrawImage "MARPISEM", 30, 173;
-            DrawImage "MARPISEM", 35, 173;
-            DrawImage "MARPISEM", 40, 173;
-            InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 173; }
-            InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 173; }
-            InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 173; }
-            InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 173; }
-            InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 173; }
-            InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
-            InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
-            InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
+		    InInventory not UsingDualPistols, 1
+			{
+            DrawImage "MARPISEM", 5, 178;
+            DrawImage "MARPISEM", 10, 178;
+            DrawImage "MARPISEM", 15, 178;
+            DrawImage "MARPISEM", 20, 178;
+            DrawImage "MARPISEM", 25, 178;
+            DrawImage "MARPISEM", 30, 178;
+            DrawImage "MARPISEM", 35, 178;
+            DrawImage "MARPISEM", 40, 178;
+            InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 178; }
+            InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 178; }
+            InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 178; }
+            InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 178; }
+            InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 178; }
+            InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 178; }
+            InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 178; }
+            InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 178; }
+			}
             InInventory SynthFireActive, 1
             {
+                DrawImage "MARPISEM", 5, 173;
+                DrawImage "MARPISEM", 10, 173;
+                DrawImage "MARPISEM", 15, 173;
+                DrawImage "MARPISEM", 20, 173;
+                DrawImage "MARPISEM", 25, 173;
+                DrawImage "MARPISEM", 30, 173;
+                DrawImage "MARPISEM", 35, 173;
+                DrawImage "MARPISEM", 40, 173;
+                InInventory MagnumBullet, 1 { DrawImage "MARPISAM", 5, 173; }
+                InInventory MagnumBullet, 2 { DrawImage "MARPISAM", 10, 173; }
+                InInventory MagnumBullet, 3 { DrawImage "MARPISAM", 15, 173; }
+                InInventory MagnumBullet, 4 { DrawImage "MARPISAM", 20, 173; }
+                InInventory MagnumBullet, 5 { DrawImage "MARPISAM", 25, 173; }
+                InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
+                InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
+                InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
+			
                 DrawImage "MARPISEM", 5, 185;
                 DrawImage "MARPISEM", 10, 185;
                 DrawImage "MARPISEM", 15, 185;
@@ -2440,10 +2496,26 @@ statusbar Automap
         IsSelected "WSTE-M5 Combat Shotgun"
         {
             drawimage "STY2NUM2", 268, 179;
+		InInventory not UsingDualShotguns, 1 {
             DrawImage "MARSHTAM", 7, 179;
             DrawImage "MARSHTAM", 14, 179;
+			InInventory WastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 179;
+            DrawImage "MARSHTEM", 14, 179; }}
+		InInventory UsingDualShotguns, 1 {
+            DrawImage "MARSHTAM", 7, 186;
+            DrawImage "MARSHTAM", 14, 186;
+            DrawImage "MARSHTAM", 7, 175;
+            DrawImage "MARSHTAM", 14, 175;
+			
+			InInventory RWastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 186;
+            DrawImage "MARSHTEM", 14, 186; }
+			InInventory LWastemUnloaded, 1 { 
+            DrawImage "MARSHTEM", 7, 175;
+            DrawImage "MARSHTEM", 14, 175; }}
             drawnumber 3, MARAHUDF, untranslated, ammo1, 42, 180;
-        }                       //, 0, white, 0, white, 20;
+        }   
 
         IsSelected "MA-75B Assault Rifle"
         {
