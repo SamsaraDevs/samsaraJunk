@@ -805,7 +805,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
+            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
