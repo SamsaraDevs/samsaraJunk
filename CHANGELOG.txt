@@ -1,25 +1,3 @@
-DIFFERENCES FROM ZANDRONUM/ZDOOM VERSIONS:
-1: Zdoom has the TauntButton custominventory to allow players to taunt
- ^- : DON'T FORGET THE KEYCONF ENTRIES
-2: Script 209 doesn't work and is commented out
-3: SBarInfo is modified to get rid of the multiplayer shit
-4: Items have the Tag property to say what they really are
- A: Corvus
- B: B.J. Blazkowicz
- C: Parias
- D: Duke
- E: HeXen's alternate Mystic Ambit Incant for Corvus
- F: HeXen's Dragonskin Bracers
-5: Decrease amount of life B.J. needs to activate extra life, from 20 to 5.
-6: Give +INVENTORY.PERSISTENTPOWER to B.J.'s Extra Life.
-7: Remove RuneProsperity from the Medikit (making it a boolean works just as well, I noticed)
-8: Give the SO his BlueMap for infrared.
-9: Change the ACS from its reliance on ConsoleCommands, due to ZDoom not supporting it.
-10: Uncomment the Weapon.BobRangeX / Weapon.BobStyle Smooth bits on the SO's weapons.
-11: Change the SO's reliance on Weapon.PreferredSkin to A_JumpIfInInventory.
-12: ZDoom version has more quit messages.
-
-
 FROM 0.28 TO 0.29
 ========================
 GAMEPLAY:
