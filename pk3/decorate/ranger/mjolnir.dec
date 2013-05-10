@@ -7,8 +7,8 @@ actor Mjolnir: InstantSwitchWeapon
     +NOALERT
     +AMMO_OPTIONAL
 
-    Weapon.AmmoType "Cell"
-    Weapon.AmmoUse 20
+    //Weapon.AmmoType "Cell"
+    //Weapon.AmmoUse 20
     Weapon.AmmoGive 160
 
     Obituary "%k \cshammered \c-%o\cs without %p consent."
@@ -233,7 +233,7 @@ actor MJTrail: BulletPuff
 actor MJBeam: FastProjectile
 {
     Speed 192
-    Damage (15)
+    Damage (10)//Previously 15
 
     VSpeed 0
     Scale 0.4
@@ -243,7 +243,7 @@ actor MJBeam: FastProjectile
 
     +NODAMAGETHRUST
 
-    Obituary "%o \csaccepts\c- %k's \cspurple wand.\c-"
+    Obituary "%k \csshocked\c- %o \cswith a purple wand.\c-"
 
     States
     {
