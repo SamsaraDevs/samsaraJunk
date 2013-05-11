@@ -9,7 +9,7 @@ actor "Thunderbolt": InstantSwitchWeapon
     Weapon.Kickback 100
     Weapon.SelectionOrder 1
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 15
+    Weapon.AmmoGive 60
     Weapon.AmmoType "Cell"
 
     +NOALERT

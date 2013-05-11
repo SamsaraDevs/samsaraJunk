@@ -69,7 +69,7 @@
 #define P_QUAD  0
 #define P_REGEN 1
 
-#define QUAD_THRESHOLD      1050
+#define QUAD_THRESHOLD      2100   // one minute
 
 #define REGEN_CENTER_X      0.953125    // 610 / 640
 #define REGEN_CENTER_Y      0.708333    // 340 / 480
