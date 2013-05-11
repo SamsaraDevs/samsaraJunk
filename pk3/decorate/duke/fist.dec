@@ -10,15 +10,9 @@ actor "Mighty Boot" : InstantSwitchWeapon
     +INVENTORY.UNDROPPABLE
     states
     {
-      /*Select:
-        TNT1 AA 0 A_Raise
-        TNT1 A 1 A_Raise
-        loop
-
-      Deselect:
-        TNT1 AA 0 A_Lower
-        TNT1 A 1 A_Lower
-        loop*/
+      Select:
+        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt1")
+        goto "Super::Select"
 
       Ready:
         TNT1 A 0 A_GunFlash
@@ -148,7 +142,7 @@ actor "Mighty Boot" : InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeReady",1)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto Select
+        goto "Super::Select"
 
       IntroTaunt2:
         KNUX A 3
@@ -161,7 +155,7 @@ actor "Mighty Boot" : InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeReady",1)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto Select
+        goto "Super::Select"
         
       WaitingTaunt:
       WaitingTaunt1:
@@ -178,7 +172,7 @@ actor "Mighty Boot" : InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeWaiting",15)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto Select
+        goto "Super::Select"
 
       WaitingTaunt2:
         KNUX A 3
@@ -191,7 +185,7 @@ actor "Mighty Boot" : InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeWaiting",15)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto Select
+        goto "Super::Select"
         
       Fire:
         TNT1 A 0
