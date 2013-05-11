@@ -128,7 +128,7 @@ actor LaserCannonBolt
     Speed 50
 
     Projectile
-    Damage (6) //Original was 18 per shot.
+    Damage (12)
 
     +HEXENBOUNCE
     +BLOODSPLATTER
@@ -161,7 +161,6 @@ actor LaserCannonBoltCoop : LaserCannonBolt
 {
     +THRUSPECIES
     Species "Player"
-    Damage (9)
 }
 
 actor SpectralLaserCannonBolt: LaserCannonBoltCoop { DamageType "Spectral" }

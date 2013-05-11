@@ -1069,15 +1069,15 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
     },
     {
         "You got the laser cannon!",
-        "Oh god dammit even the \cachainsaw replacement\c- is ranged.",
-        "Wasn't this a saw blade thing?",
-        "Shouldn't this be a hammer?",
         "This sounds like a weapon for soldiers who can't shoot straight.", // stormtroopers!
         "This makes, what, five or six rapid fire weapons for Ranger?",
         "Bouncy red death!",
-        "You'll find so much ammo for this at the start of the game.",
         "Pewpewlasers!",
         "What is this, Star Wars?",
+        "",
+        "",
+        "",
+        "",
     },
 };
 
