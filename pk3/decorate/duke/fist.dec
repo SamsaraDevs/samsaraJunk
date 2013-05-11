@@ -1,6 +1,6 @@
 actor DukeKicking : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
 
-actor "Mighty Boot" : Weapon
+actor "Mighty Boot" : InstantSwitchWeapon
 {
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700
@@ -10,7 +10,7 @@ actor "Mighty Boot" : Weapon
     +INVENTORY.UNDROPPABLE
     states
     {
-      Select:
+      /*Select:
         TNT1 AA 0 A_Raise
         TNT1 A 1 A_Raise
         loop
@@ -18,7 +18,7 @@ actor "Mighty Boot" : Weapon
       Deselect:
         TNT1 AA 0 A_Lower
         TNT1 A 1 A_Lower
-        loop
+        loop*/
 
       Ready:
         TNT1 A 0 A_GunFlash
