@@ -66,6 +66,8 @@ addslotdefault 0 "Mighty Boot"
 addslotdefault 0 "Steel Knuckles"
 addslotdefault 0 "Axe"
 
+addslotdefault 0 "Gauntlet"
+
 addslotdefault 1 " Chainsaw "
 addslotdefault 1 "Gauntlets of the Necromancer"
 addslotdefault 1 "Super Bootspork"
@@ -81,8 +83,6 @@ addslotdefault 1 "Luger"
 addslotdefault 1 "M1911"
 addslotdefault 1 ".44 Magnum Mega Class A1"
 addslotdefault 1 "Single Shotgun"
-
-addslotdefault 1 "Gauntlet"
 
 addslotdefault 2 " Shotgun "
 addslotdefault 2 " Firemace "
