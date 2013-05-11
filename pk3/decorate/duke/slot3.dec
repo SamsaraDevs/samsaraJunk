@@ -279,7 +279,7 @@ actor DukeExplosiveShotgunBullet : FastProjectile
       XDeath:
       Death:
         TNT1 A 1 A_PlaySound("duke/xshotgunxplod")
-        TNT1 A 0 A_Explode((32),96) // Seven x 25 = 175 damage. 175+42=217. Seven x 35 = 245 damage. 245+42 = 287 damage total.
+        TNT1 A 0 A_Explode((35),96) // Seven x 25 = 175 damage. 175+42=217. Seven x 35 = 245 damage. 245+42 = 287 damage total.
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosiveFireSpark",0,0,Random(-200,200),2,Random(-200,200))//TNT1 AAAAAA 0 A_SpawnDebris("ExplosiveFireSpark")
         DKSX ABCDEF 2
         DKSX GHIJKL 1
