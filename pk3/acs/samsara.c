@@ -155,7 +155,8 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
 
       case 17:
-        result = GetCVar("sv_weaponstay");
+        if (arg1) { result = GetCVar("samsara_permault"); }
+        else { result = GetCVar("sv_weaponstay"); }
         break;
 
       case 18:

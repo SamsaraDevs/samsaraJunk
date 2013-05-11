@@ -245,7 +245,7 @@ script SAMSARA_QPOWERS (int startTime)
             oPulse = regenPulse;
             regenPulse = max(0, regenPulse - 1);
 
-            if (regenTimer % 35 == 18)
+            if (regenTimer % 35 == 18 && !isDead(0))
             {
                 healthMax = cond(GetCVar("samsara_nohealthcap"), 0x7FFFFFFF, 150+getMaxHealth());
 
@@ -455,7 +455,6 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
             GiveInventory("Thunderbolt", 1);
         }
 
-        Print(s:"yo");
         SetResultValue(givingQuad || givingLG);
         break;
     }

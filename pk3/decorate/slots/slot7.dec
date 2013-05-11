@@ -21,7 +21,10 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         Hexen:    WWRT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Dukeguy:  DEVP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: WMCP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        Quake:    QUDD A 35 bright A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
+      Quake:
+        QUDD A 0 bright A_ChangeFlag("FLOATBOB", 1)
+        QUDD A 35 bright A_SpawnItemEx("ThunderboltDummy", 0.1, 0.1)
+        goto SpawnLoop
         
         DoomFull:      PBFG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexFull:      PLZD B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -90,5 +93,30 @@ actor SamsaraMaceSpawner: SpecialSpot replaces MaceSpawner
         TNT1 A 0
         TNT1 A -1 A_SpawnSingleItem("SamsaraSlotSevenPickupF", 0, 0, 0)
         stop
+    }
+}
+
+actor ThunderboltDummy: CustomInventory
+{
+    +QUIET
+    +AUTOACTIVATE
+    +FLOORHUGGER
+
+    Inventory.PickupMessage ""
+    Inventory.MaxAmount 0
+
+    States
+    {
+      Spawn:
+        QLTG Z 38
+        stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 17, 1), "PickupFail")
+        stop
+
+      PickupFail:
+        TNT1 A 0
+        fail
     }
 }
