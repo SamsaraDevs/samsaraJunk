@@ -143,4 +143,4 @@ addslotdefault 8 "Alien Weapon"
 addslotdefault 8 " Alien Weapon "
 addslotdefault 8 "Laser Cannon"
 
-addslotdefault 8 "Mjolnir"
+addslotdefault 9 "Mjolnir"
