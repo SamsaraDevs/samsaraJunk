@@ -147,7 +147,7 @@ script SAMSARA_QPOWERS (int startTime)
         health = GetActorProperty(0, APROP_Health);
 
         oQuadTimer = quadTimer;
-        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
+        quadTimer = CheckQuad();
 
         if (quadTimer - 35 > oQuadTimer)
         {
@@ -167,17 +167,6 @@ script SAMSARA_QPOWERS (int startTime)
             }
 
             if (oQuadTimer <= 0) { GiveInventory("QuadDamagePower", 1); }
-
-            switch (GetCVar("samsara_permault"))
-            {
-              case 0:
-                if (CheckInventory("DoNotQuad")) { TakeInventory("DoNotQuad", 1); }
-                break;
-              
-              case 1:
-                if (!CheckInventory("DoNotQuad")) { GiveInventory("DoNotQuad", 1); }
-                break;
-            }
         }
         else
         {
@@ -427,10 +416,17 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
     int stay = GetCVar("sv_weaponstay") && !dropped;
     int ultStay = GetCVar("samsara_permault") && !dropped;
 
+    int doquad = 1;
+
+    if (GetCVar("samsara_permault") && CheckQuad() > 0)
+    {
+        doquad = 0;
+    }
+
     switch (slot)
     {
       case SLOT_BFG9000:
-        if (!CheckInventory("DoNotQuad"))
+        if (doquad)
         {
             if (isLMS())
             {
