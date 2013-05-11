@@ -478,4 +478,5 @@ POLISH:\n\
 - The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.\n\
 - The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.\n\
 - The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.\n\
-- The weapon pickup sparkles have had their lifespan shortened and count reduced, to hopefully ease lag issues.";
+- The weapon pickup sparkles have had their lifespan shortened and count reduced, to hopefully ease lag issues.\n\
+- The powerup timers with Ranger no longer have gaps between them; they move up and down as powerups start and stop.";
