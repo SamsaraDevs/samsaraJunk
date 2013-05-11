@@ -24,7 +24,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
-    if (!CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
+    if (ClassWeapons[class][slot][S_CHECKITEM] == "ForceCheck"
+     || !CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
 
     if (StrLen(ammo1)) { hasAmmo |= 1; }
     if (StrLen(ammo2)) { hasAmmo |= 2; }
@@ -327,7 +328,7 @@ function int ConvertClassWeapons(int classnum)
             if (HasClassWeapon(i, j))
             {
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
-                if (classnum != -1) { GiveInventory(ClassWeapons[classnum][j][S_WEP], 1); }
+                if (classnum != -1) { GiveClassWeapon(classnum, j, 1); }
                 ret += 1;
             }
         }
