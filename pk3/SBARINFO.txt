@@ -138,7 +138,6 @@ StatusBar Fullscreen
         }
         InInventory DiscOfRepulsionCooldown, 9 { drawimage "STY2NUM1", 126, 10; }
         IsSelected "Mjolnir" { drawimage "STY2NUM1", 126, 10; }
-        IsSelected "Lesser Mjolnir" { drawimage "STY2NUM1", 126, 10; }
 
         DrawSwitchableImage WeaponSlot 2, "", "STYSNUM2", 136, 10;
         IsSelected " Shotgun " { drawimage "STY2NUM2", 136, 10; }
@@ -1708,8 +1707,6 @@ StatusBar normal, forcescaled
             InInventory GotWeapon0, 1 { drawimage "WPQUAK1N", 49, 11; }
             IsSelected "Mjolnir" { drawimage "WEPSELY1", 54, 0; }
             IsSelected "Mjolnir" { drawimage "WPQUAK1Y", 49, 11; }
-            IsSelected "Lesser Mjolnir" { drawimage "WEPSELY1", 54, 0; }
-            IsSelected "Lesser Mjolnir" { drawimage "WPQUAK1Y", 49, 11; }
 
             InInventory GotWeapon2, 1 { drawimage "WEPSELN2", 87, 0; }
             InInventory GotWeapon2, 1 { drawimage "WPQUAK2N", 82, 11; }

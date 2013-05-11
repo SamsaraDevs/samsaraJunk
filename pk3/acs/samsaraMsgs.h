@@ -870,7 +870,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "",
         },
         {
-            "A lesser Mjolnir! Find some grunts!",
+            "Mjolnir! Find some grunts!",
             "You got a Hammer that shoots lightning. omg thor",
             "The lightning works best when it's inside a wall.",
             "You never did take that athpirin, did you.",

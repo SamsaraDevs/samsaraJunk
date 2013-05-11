@@ -38,7 +38,7 @@ actor RangerExtraAxeDamage: PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
 
-    DamageFactor "None", 1.5
+    DamageFactor "Pistol", 1.5
 }
 
 actor DoomguyPunchDrunk: Trigger
@@ -203,6 +203,7 @@ actor RangerPunchUnique: Trigger
     {
       Pickup:
         TNT1 A 0 A_GiveInventory("Mjolnir")
+        TNT1 A 0 A_GiveInventory("StrongerMjolnir")
         stop
     }
 }
