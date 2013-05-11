@@ -38,7 +38,7 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"Thunderbolt",         "Cell",             "", ""},
+    {"Laser Cannon",        "Cell",             "", ""},
 };
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
@@ -161,7 +161,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     },
     {   // Ranger
         {"Axe",                             "",             "",             "", ""},
-        {"Laser Cannon",                    "Cell",         "",             "", ""},
+        {"Lesser Mjolnir",                  "",             "",             "", ""},
         {"Single Shotgun",                  "",             "",             "", ""},
         {"Double Shotgun",                  "Shell",        "",             "", ""},
         {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},

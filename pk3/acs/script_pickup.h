@@ -174,7 +174,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 
     if (weaponGet && IsServer)
     {
-        int success = !_giveclassweapon(pclass, slot, 3, dropped, 0);
+        int success = _giveclassweapon(pclass, slot, 3, dropped, 0);
 
         if (!silent && success)
         {
