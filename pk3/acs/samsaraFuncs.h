@@ -149,6 +149,11 @@ function void ApplyLMS(void)
 
     i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
 
+    GiveInventory("Clip",       GetAmmoCapacity("Clip")         - CheckInventory("Clip"));
+    GiveInventory("Shell",      GetAmmoCapacity("Shell")        - CheckInventory("Shell"));
+    GiveInventory("RocketAmmo", GetAmmoCapacity("RocketAmmo")   - CheckInventory("RocketAmmo"));
+    GiveInventory("Cell",       GetAmmoCapacity("Cell")         - CheckInventory("Cell"));
+
     TakeInventory("LavaNails",       0x7FFFFFFF);
     TakeInventory("MultiRocketAmmo", 0x7FFFFFFF);
     GiveInventory("LavaNails",       ftoi(2.5 * i));

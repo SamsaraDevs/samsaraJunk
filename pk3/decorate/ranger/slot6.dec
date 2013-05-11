@@ -153,7 +153,7 @@ actor "Super Nailgun": InstantSwitchWeapon
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails",1,"LavaAltFire2")
+        TNT1 A 0 A_JumpIfInventory("LavaNails",2,"LavaAltFire2")
         goto Swap2
       LavaAltFire2:
         QSNL A 0 A_GiveInventory("FiredSLNails")
@@ -168,7 +168,7 @@ actor "Super Nailgun": InstantSwitchWeapon
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
-        QSNL A 0 A_FireCustomMissile("QuakeSLNail")
+        QSNL A 0 A_FireCustomMissile("QuakeSLNail", 0, 0)
         goto AltFire0
 
       AltFireCoop:

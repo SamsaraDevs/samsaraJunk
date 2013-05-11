@@ -217,12 +217,12 @@ actor ChangeSparkle
     States
     {
       Spawn:
-        WPFG AB 3 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
-        WPFG C 4 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
-        WPFG D 6 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
-        WPFG E 6 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
-        WPFG F 4 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
-        WPFG GH 3 bright
+        WPFG AB 2 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG C 3 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG D 5 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG E 5 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG F 3 bright ThrustThingZ(0, random(0, 8) / 10.0, 0, 1)
+        WPFG GH 2 bright
         stop
     }
 }
