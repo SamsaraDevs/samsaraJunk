@@ -3,7 +3,6 @@ actor StrongerMjolnir: Boolean {}
 
 actor Mjolnir: InstantSwitchWeapon
 {
-    Weapon.SlotNumber 2
     +CHEATNOTWEAPON
     +NOALERT
     +AMMO_OPTIONAL
@@ -13,6 +12,8 @@ actor Mjolnir: InstantSwitchWeapon
     //Weapon.AmmoGive 160
 
     Obituary "%k \cshammered \c-%o\cs without %p consent."
+
+    Weapon.SisterWeapon "Spectral Mjolnir"
 
     States
     {
@@ -42,12 +43,12 @@ actor Mjolnir: InstantSwitchWeapon
         QMJL D 0 A_PlaySound("quakeweps/mjolnirhit", 5)
         QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuff")
         QMJL D 0 A_JumpIfInventory("StrongerMjolnir", 1, "FireSlamStrong")
-        QMJL D 0 A_FireCustomMissile("MjolnirLightningWeak")
+        QMJL D 0 A_FireCustomMissile("MJLightningWeak")
         goto FireSlam2
 
 
       FireSlamStrong:
-        QMJL D 0 A_FireCustomMissile("MjolnirLightning")
+        QMJL D 0 A_FireCustomMissile("MJLightning")
         goto FireSlam2
 
       FireSlam2:
@@ -62,6 +63,43 @@ actor Mjolnir: InstantSwitchWeapon
         GMJL A 0 A_PlaySound("quakeweps/lightningdischarge", 6, 1, 0, ATTN_NONE)
         GMJL A 1 A_FireCustomMissile("LGDischarge")
         goto Ready  // you're probably dead now
+    }
+}
+
+actor "Spectral Mjolnir": Mjolnir
+{
+    Weapon.SisterWeapon "Mjolnir"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        QMJL C 2 A_TakeInventory("MjolnirCrash")
+        QMJL B 4
+        QMJL C 2
+        QMJL D 1
+        QMJL D 0 A_FireBullets(0, 0, 1, 0, "MjolnirCheckPuff", 0, 112)
+        QMJL D 1
+        QMJL D 0 A_JumpIfInventory("MjolnirCrash", 1, "FireSlam")
+        QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuffSpectral")
+        QMJL E 12
+        QMJL D 3
+        goto Ready
+
+      FireSlam:
+        QMJL D 0 A_JumpIf(waterlevel > 1, "Discharge")
+        QMJL D 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        QMJL D 0 A_AlertMonsters
+
+        QMJL D 0 A_PlaySound("quakeweps/mjolnirhit", 5)
+        QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuffSpectral")
+        QMJL D 0 A_JumpIfInventory("StrongerMjolnir", 1, "FireSlamStrong")
+        QMJL D 0 A_FireCustomMissile("MJLightningWeakSpectral")
+        goto FireSlam2
+
+      FireSlamStrong:
+        QMJL D 0 A_FireCustomMissile("MJLightningSpectral")
+        goto FireSlam2
     }
 }
 
@@ -104,7 +142,12 @@ actor MjolnirPuff: BulletPuff
     }
 }
 
-actor MjolnirLightning
+actor MjolnirPuffSpectral: MjolnirPuff
+{
+    DamageType "Spectral"
+}
+
+actor MJLightning
 {
     Radius 4
     Height 4
@@ -123,29 +166,29 @@ actor MjolnirLightning
         DPLE B 0
         DPLS B 1 bright ThrustThingZ(0, 32, 1, 0)
         DPLE B 0 A_Stop
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 4 bright A_CustomMissile("MjolnirLightningShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
         stop
     }
 }
 
-actor MjolnirLightningWeak: MjolnirLightning
+actor MJLightningWeak: MJLightning
 {
     States
     {
@@ -154,30 +197,102 @@ actor MjolnirLightningWeak: MjolnirLightning
         DPLE B 0
         DPLS B 1 bright ThrustThingZ(0, 32, 1, 0)
         DPLE B 0 A_Stop
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE B 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE C 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 0 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
-        DPLE D 4 bright A_CustomMissile("MjolnirLightningShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotWeak", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        stop
+    }
+}
+
+actor MJLightningSpectral
+{
+    Radius 4
+    Height 4
+
+    Projectile
+    Speed 20
+
+    RenderStyle Add
+    Alpha 0.5
+    Scale 0.35
+
+    States
+    {
+      Spawn:
+      Death:
+        DPLE B 0
+        DPLS B 1 bright ThrustThingZ(0, 32, 1, 0)
+        DPLE B 0 A_Stop
+        DPLE B 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        stop
+    }
+}
+
+actor MJLightningWeakSpectral: MJLightning
+{
+    States
+    {
+      Spawn:
+      Death:
+        DPLE B 0
+        DPLS B 1 bright ThrustThingZ(0, 32, 1, 0)
+        DPLE B 0 A_Stop
+        DPLE B 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotWeakSpectral", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
         stop
     }
 }
 
 
-actor MjolnirLightningShot
+actor MJShot
 {
     Radius 2
     Height 2
@@ -222,7 +337,7 @@ actor MjolnirLightningShot
     }
 }
 
-actor MjolnirLightningShotWeak: MjolnirLightningShot
+actor MJShotWeak: MJShot
 {
     States
     {
@@ -231,6 +346,32 @@ actor MjolnirLightningShotWeak: MjolnirLightningShot
         TNT1 B 0
         TNT1 B 0 A_Stop
         TNT1 B 0 A_CustomMissile("MJBeamWeak", 4,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
+        goto Beam
+    }
+}
+
+actor MJShotSpectral: MJShot
+{
+    States
+    {
+      Spawn:
+      Death:
+        TNT1 B 0
+        TNT1 B 0 A_Stop
+        TNT1 B 0 A_CustomMissile("MJBeamSpectral", 4,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
+        goto Beam
+    }
+}
+
+actor MJShotWeakSpectral: MJShot
+{
+    States
+    {
+      Spawn:
+      Death:
+        TNT1 B 0
+        TNT1 B 0 A_Stop
+        TNT1 B 0 A_CustomMissile("MJBeamWeakSpectral", 4,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
         goto Beam
     }
 }
@@ -317,4 +458,14 @@ actor MJBeam: FastProjectile
 actor MjBeamWeak: MJBeam
 {
     Damage (8)
+}
+
+actor MJBeamSpectral: MJBeam
+{
+    DamageType "Spectral"
+}
+
+actor MJBeamWeakSpectral: MJBeamWeak
+{
+    DamageType "Spectral"
 }
