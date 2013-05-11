@@ -145,7 +145,7 @@ function void ApplyLMS(void)
     }
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
-    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 2); }
+    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 1); }
 
     i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
 
