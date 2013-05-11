@@ -471,5 +471,4 @@ POLISH:\n\
 - The WSTEs now show their magazines being used, instead of always being full. While it's a bit off from Marathon, it's still a major improvement.\n\
 - The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.\n\
 - The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.\n\
-- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.\n\
-- Chicken players can now be zorched, yaaaaaaay";
+- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.";

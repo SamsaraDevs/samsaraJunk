@@ -103,7 +103,6 @@ POLISH:
 - The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.
 - The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.
 - The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.
-- Chicken players can now be zorched, yaaaaaaay
 
 
 
