@@ -71,8 +71,15 @@
 
 #define QUAD_THRESHOLD      2100   // one minute
 
+#define PY640   380.0
+#define PY320   (PY640/2)
+
+#define POFF640 40.0
+#define POFF320 20.0
+
 #define REGEN_CENTER_X      0.953125    // 610 / 640
-#define REGEN_CENTER_Y      0.708333    // 340 / 480
+#define REGEN_CENTER_Y      (PY640 / 480)
+#define REGEN_OFFSET        0.083333    // 40 / 480
 
 #define TIP_SCROLLRATE      8
 
