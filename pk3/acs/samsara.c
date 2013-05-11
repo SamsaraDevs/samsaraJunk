@@ -247,6 +247,12 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 22:
         result = GetCVar("samsara_nohealthcap");
         break;
+
+      case 23:
+        GiveInventory("TimeBombPause", 1);
+        Delay(arg1);
+        TakeInventory("TimeBombPause", 1);
+        break;
     }
     
     SetResultValue(result);
