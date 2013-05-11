@@ -1,7 +1,7 @@
 actor "Gauntlet": InstantSwitchWeapon
 {
     Weapon.Kickback 100
-    Weapon.SelectionOrder 7
+    Weapon.SelectionOrder 9
 
     +UNDROPPABLE
     +CHEATNOTWEAPON

@@ -11,6 +11,8 @@ actor Mjolnir: InstantSwitchWeapon
     //Weapon.AmmoUse 20
     //Weapon.AmmoGive 160
 
+    Weapon.SelectionOrder 8
+
     Obituary "%k \cshammered \c-%o\cs without %p consent."
 
     Weapon.SisterWeapon "Spectral Mjolnir"

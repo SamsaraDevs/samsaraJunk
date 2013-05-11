@@ -73,6 +73,7 @@ addslotdefault 1 "Pipebombs"
 addslotdefault 1 "KKV-7 SMG Flechette"
 
 addslotdefault 1 "Gauntlet"
+addslotdefault 1 "Mjolnir"
 
 addslotdefault 1 " Pistol "
 addslotdefault 1 "Elven Wand"
@@ -143,4 +144,3 @@ addslotdefault 8 "Alien Weapon"
 addslotdefault 8 " Alien Weapon "
 addslotdefault 8 "Laser Cannon"
 
-addslotdefault 9 "Mjolnir"
