@@ -168,7 +168,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
         {"Super Nailgun",                   "Clip",         "",             "", ""},
-        {"QuadDamagePickup",                "",             "",             "", "DoNotQuad"},
+        {"Thunderbolt",                     "",             "",             "", ""},
         {"Gauntlet",                        "",             "",             "", ""},
     },
 };
@@ -182,5 +182,5 @@ int ClassScripts[CLASSCOUNT][SLOTCOUNT] =
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,0},
-    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,SAMSARA_QUAKE,0},
 };

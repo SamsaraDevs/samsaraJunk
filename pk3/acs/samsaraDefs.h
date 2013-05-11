@@ -17,6 +17,7 @@
 #define SAMSARA_CLIENT_WEAPONPICKUP 616
 #define SAMSARA_CLIENT_UNIQUEPICKUP 633
 #define SAMSARA_MARATHON            609
+#define SAMSARA_QUAKE               606
 #define SAMSARA_RESONATE            608
 #define SAMSARA_SYNTHFIRE           607
 #define SAMSARA_MEGAHEALTH          259

@@ -79,7 +79,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
         }
     }
 
-    return !success;
+    return success;
 }
 
 function int HasClassWeapon(int class, int slot)
