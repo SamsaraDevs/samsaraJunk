@@ -40,7 +40,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         }
     }
     
-    if (slot == SLOT_UNIQUE)  // Unique
+    if (slot == SLOT_UNIQUE)
     {
         switch (displaymode)
         {
@@ -49,12 +49,12 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             break;
             
           case 1:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkunique")) { SetActorState(0, PickupStates[toClass][7]); }
+            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) { SetActorState(0, PickupStates[toClass][7]); }
             else { SetActorState(0, PickupStates[toClass][3]); }
             break;
             
           case 2:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkunique")) { SetActorState(0, PickupStates[toClass][4]); }
+            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) { SetActorState(0, PickupStates[toClass][4]); }
             else { SetActorState(0, PickupStates[toClass][0]); }
             break;
         }
