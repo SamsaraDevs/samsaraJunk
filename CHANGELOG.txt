@@ -69,6 +69,7 @@ BUGFIXES:
 - The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.
 - Chickens were immune to booting and zorching. This has been fixed.
 - You no longer regenerate health when dead.
+- The base ammo types are now always filled in LMS.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
