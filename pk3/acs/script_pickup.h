@@ -28,7 +28,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
 
     if (displaymode != 0)
     {
-        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 35))
+        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 70))
         {
             Spawn("SamsaraChangeFlash", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
