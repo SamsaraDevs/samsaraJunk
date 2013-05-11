@@ -49,7 +49,6 @@ actor "Super Nailgun": InstantSwitchWeapon
         loop
 
       Fire:
-        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"LavaAltFire")
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         QSNG A 0 A_TakeInventory("FiredSLNails")
@@ -341,9 +340,7 @@ actor "Spectral SNG": "Super Nailgun"
     {
       Fire:
         TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"LavaAltFire")
-        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
 
-        TNT1 A 0 A_AlertMonsters
         QSNG A 0 A_TakeInventory("FiredSLNails")
         QSNG A 0 A_TakeInventory("UsingDoEAmmo")
         QSNG A 0 A_GunFlash
@@ -363,10 +360,6 @@ actor "Spectral SNG": "Super Nailgun"
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails", 1, 1)
-        goto Swap2
-
-        TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_GiveInventory("FiredSLNails")
         GSNL A 0 A_GiveInventory("UsingDoEAmmo")
         QSNL A 0 A_GunFlash

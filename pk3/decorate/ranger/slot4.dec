@@ -48,13 +48,12 @@ actor "Nailgun": InstantSwitchWeapon
         loop
 
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_JumpIfInventory("FiredLavaNails",1,"LavaFire")
 		TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 A_TakeInventory("FiredLavaNails")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
-        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
-        TNT1 A 0 A_AlertMonsters
         QNLG A 0 A_GunFlash
         QNLG A 0 A_PlaySound("quakeweps/nailgunfire", CHAN_WEAPON)
         goto FireNail
@@ -331,7 +330,7 @@ actor "Spectral NG": "Nailgun"
     {
       Fire:
         TNT1 A 0 A_JumpIfInventory("FiredLavaNails", 1, "MultiFire")
-        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
+
         TNT1 A 0 A_TakeInventory("FiredLavaNails")
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo")
 
@@ -360,9 +359,6 @@ actor "Spectral NG": "Nailgun"
 
 
       MultiFire:
-        TNT1 A 0 A_JumpIfInventory("LavaNails", 1, 1)
-        goto Swap2
-
         TNT1 A 0 A_GiveInventory("FiredLavaNails")
         TNT1 A 0 A_GiveInventory("UsingDoEAmmo")
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)

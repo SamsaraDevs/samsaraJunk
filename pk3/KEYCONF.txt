@@ -66,14 +66,13 @@ addslotdefault 0 "Mighty Boot"
 addslotdefault 0 "Steel Knuckles"
 addslotdefault 0 "Axe"
 
-addslotdefault 0 "Gauntlet"
-
 addslotdefault 1 " Chainsaw "
 addslotdefault 1 "Gauntlets of the Necromancer"
 addslotdefault 1 "Super Bootspork"
 addslotdefault 1 "Pipebombs"
 addslotdefault 1 "KKV-7 SMG Flechette"
-addslotdefault 1 "Mjolnir"
+
+addslotdefault 1 "Gauntlet"
 
 addslotdefault 1 " Pistol "
 addslotdefault 1 "Elven Wand"
@@ -143,3 +142,5 @@ addslotdefault 7 "Thunderbolt"
 addslotdefault 8 "Alien Weapon"
 addslotdefault 8 " Alien Weapon "
 addslotdefault 8 "Laser Cannon"
+
+addslotdefault 8 "Mjolnir"
