@@ -197,8 +197,7 @@ StatusBar Fullscreen
         IsSelected "Spear of Destiny" { drawimage "STY2NUM7", 186, 10; }
         IsSelected "Wraithverge" { drawimage "STY2NUM7", 186, 10; }
         IsSelected "Devastator" { drawimage "STY2NUM7", 186, 10; }
-        InInventory QuadDamageItem, 1 { drawimage "STYSNUM7", 186, 10; }
-        InInventory QuadDamagePower, 1 { drawimage "STY2NUM7", 186, 10; }
+        IsSelected "Thunderbolt" { drawimage "STY2NUM7", 186, 10; }
 
         IsSelected not "MA-75B Assault Rifle"
         {
@@ -1736,8 +1735,8 @@ StatusBar normal, forcescaled
 
             InInventory GotWeapon7, 1 { drawimage "WEPSELN7", 251, 0; }
             InInventory GotWeapon7, 1 { drawimage "WPQUAK7N", 247, 11; }
-            InInventory QuadDamagePower, 1 { drawimage "WEPSELY7", 251, 0; }
-            InInventory QuadDamagePower, 1 { drawimage "WPQUAK7Y", 247, 11; }
+            IsSelected "Thunderbolt" { drawimage "WEPSELY7", 251, 0; }
+            IsSelected "Thunderbolt" { drawimage "WPQUAK7Y", 247, 11; }
         }
     }
 
