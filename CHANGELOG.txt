@@ -13,7 +13,6 @@ GAMEPLAY:
 - samsara_uniquestart has been added. See the wiki for details.
 - A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use "samsara_punchdrunk 1" to turn it on.
 - In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.
-- Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.
 - The Fusion Pistol can now actually bypass player invulnerability, as it should.
@@ -32,10 +31,9 @@ GAMEPLAY:
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.
 - In DM, the TOZT has had its damage slightly reduced.
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.
-- The Thunderbolt has been coupled with the Quad Damage on slot 7.
-- The Laser Cannon has moved to Ranger's unique slot.
-- A weaker version of the Punchdrunk Mjolnir has moved into Ranger's slot 1.
-- Ranger now has the Pentagram of Protection!
+- One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not. To address this, the Thunderbolt has been coupled with the Quad Damage on slot 7.
+- The Laser Cannon has been buffed moved to Ranger's unique slot, and Mjolnir has been introduced as Ranger's slot 1.
+- Ranger now has the Pentagram of Protection for his Invulnerability!
 - The Thunderbolt has been un-nerfed; it's back at 360dps.
 - The Laser Cannon has been buffed, at 24 damage per shot and 240dps.
 - The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.

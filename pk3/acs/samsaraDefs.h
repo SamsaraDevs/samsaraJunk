@@ -382,7 +382,6 @@ GAMEPLAY:\n\
 - samsara_uniquestart has been added. See the wiki for details.\n\
 - A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use \"samsara_punchdrunk 1\" to turn it on.\n\
 - In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.\n\
-- Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.\n\
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.\n\
 - The Fusion Pistol can now actually bypass player invulnerability, as it should.\n\
@@ -401,10 +400,9 @@ GAMEPLAY:\n\
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
 - In DM, the TOZT has had its damage slightly reduced.\n\
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
-- The Thunderbolt has been coupled with the Quad Damage on slot 7.\n\
-- The Laser Cannon has moved to Ranger's unique slot.\n\
-- A weaker version of the Punchdrunk Mjolnir has moved into Ranger's slot 1.\n\
-- Ranger now has the Pentagram of Protection!\n\
+- One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not. To address this, the Thunderbolt has been coupled with the Quad Damage on slot 7.\n\
+- The Laser Cannon has been buffed moved to Ranger's unique slot, and Mjolnir has been introduced as Ranger's slot 1.\n\
+- Ranger now has the Pentagram of Protection for his Invulnerability!\n\
 - The Thunderbolt has been un-nerfed; it's back at 360dps.\n\
 - The Laser Cannon has been buffed, at 24 damage per shot and 240dps.\n\
 - The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.\n\
