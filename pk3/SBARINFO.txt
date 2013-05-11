@@ -1583,30 +1583,39 @@ StatusBar normal, forcescaled
     {
         drawimage "QUAKBAR", 0, 168;
 
+        InInventory not UsingDoEAmmo
+        {
+            drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
+
+            drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
+            drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
+
+            drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
+            drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
+        }
+
+        InInventory UsingDoEAmmo
+        {
+            drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
+
+            drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+            drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
+
+            drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
+            drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
+        }
+
         InInventory not UsingDoEAmmo { drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20; }
-
-        drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
-         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
-
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-        //}
-
         InInventory UsingDoEAmmo { drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20; }
-        //drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-        //drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
-
-        //drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-        //drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
-        //}
 
         drawnumber 3, INDEXFON, darkbrown, ammo Shell, 289, 179;
-         drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
+        drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
 
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
+        drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
+        drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
 
-         drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+        drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+
         InInventory not QuakePentTimer { drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50; }
         InInventory QuakePentTimer, 1 { drawnumber 3, QUAKHUDF, red, 666, 214, 181; }
 
@@ -2852,28 +2861,38 @@ statusbar Automap
     {
         drawimage "QUAKBAR", 0, 168;
 
-        InInventory not UsingDoEAmmo { drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20; }
-        drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
-         drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
+        InInventory not UsingDoEAmmo
+        {
+            drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20;
 
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
-        //}
+            drawnumber 3, INDEXFON, darkbrown, ammo Clip, 289, 173;
+            drawnumber 3, INDEXFON, darkbrown, ammo RocketAmmo, 289, 185;
 
-        InInventory UsingDoEAmmo { drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20; }
-        /*drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
-           drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
+            drawnumber 3, INDEXFON, darkbrown, ammocapacity Clip, 315, 173;
+            drawnumber 3, INDEXFON, darkbrown, ammocapacity RocketAmmo, 315, 185;
+        }
 
-           drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
-           drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
-           } */
+        InInventory UsingDoEAmmo
+        {
+            drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20;
+
+            drawnumber 3, INDEXFON, red, ammo LavaNails, 289, 173;
+            drawnumber 3, INDEXFON, red, ammo MultiRocketAmmo, 289, 185;
+
+            drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
+            drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
+        }
 
         drawnumber 3, INDEXFON, darkbrown, ammo Shell, 289, 179;
-         drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
+        drawnumber 3, INDEXFON, darkbrown, ammo Cell, 289, 191;
 
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
-         drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
-         drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
+        drawnumber 3, INDEXFON, darkbrown, ammocapacity Shell, 315, 179;
+        drawnumber 3, INDEXFON, darkbrown, ammocapacity Cell, 315, 191;
+
+        InInventory not UsingDoEAmmo { drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20; }
+        InInventory UsingDoEAmmo { drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20; }
+
+        drawnumber 3, QUAKHUDF, gold, health, 92, 181, white, 25, untranslated, 50;
         InInventory not QuakePentTimer { drawnumber 3, QUAKHUDF, gold, armor, 214, 181, 0, untranslated, 0, untranslated, 50; }
         InInventory QuakePentTimer, 1 { drawnumber 3, QUAKHUDF, red, 666, 214, 181; }
 
