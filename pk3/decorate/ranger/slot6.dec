@@ -406,7 +406,7 @@ actor QuakeSLNail: QuakeLavaNail
 {
     Damage (27)
     DamageType Fire
-    Obituary "%k\cs's penetrated\c- %o\cs and made %h a flamer."  // this sounds so bad but whatever
+    Obituary "%k\cs's super-penetrated\c- %o\cs."  // this sounds so bad but whatever // This sounds even worse!
     DeathSound "quakeweps/supernailricochet"
 }
 
