@@ -50,6 +50,12 @@ actor Mjolnir: InstantSwitchWeapon
 
 
       FireSlamStrong:
+        QMJL D 0 A_JumpIfInventory("SPModeOn", 1, "FireSlamCoop")
+        QMJL D 0 A_JumpIfInventory("CoopModeOn", 1, "FireSlamCoop")
+        QMJL D 0 A_FireCustomMissile("MJLightningDM")
+        goto FireSlam2
+
+      FireSlamCoop:
         QMJL D 0 A_FireCustomMissile("MJLightning")
         goto FireSlam2
 
@@ -186,6 +192,47 @@ actor MJLightning
         DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
         DPLE D 0 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
         DPLE D 4 bright A_CustomMissile("MJShot", 0,0, random(-30, 30), CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        stop
+    }
+}
+
+actor MJLightningDM
+{
+    Radius 4
+    Height 4
+
+    Projectile
+    Speed 20
+
+    RenderStyle Add
+    Alpha 0.5
+    Scale 0.35
+
+    States
+    {
+      Spawn:
+      Death:
+        DPLE B 0
+        DPLS B 1 bright ThrustThingZ(0, 32, 1, 0)
+        DPLE B 0 A_Stop
+        DPLE B 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE B 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE C 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 0 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
+        DPLE D 4 bright A_CustomMissile("MJShotDM", 0,0, random(-18, 17) + 0.5, CMF_AIMDIRECTION|CMF_TRACKOWNER, 0)
         stop
     }
 }
@@ -339,6 +386,19 @@ actor MJShot
     }
 }
 
+actor MJShotDM: MJShot
+{
+    States
+    {
+      Spawn:
+      Death:
+        TNT1 B 0
+        TNT1 B 0 A_Stop
+        TNT1 B 0 A_CustomMissile("MJBeamDM", 4,0,0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
+        goto Beam
+    }
+}
+
 actor MJShotWeak: MJShot
 {
     States
@@ -455,6 +515,11 @@ actor MJBeam: FastProjectile
         DPLE ABCDE 1 bright
         stop
     }
+}
+
+actor MjBeamDM: MJBeam
+{
+    Damage (12)
 }
 
 actor MjBeamWeak: MJBeam
