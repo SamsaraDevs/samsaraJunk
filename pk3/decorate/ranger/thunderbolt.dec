@@ -605,7 +605,7 @@ actor LGPuff: BulletPuff
     {
       Spawn:
         DPLE A 0
-        DPLE A 0 A_Explode(30, 6, 0)
+        DPLE A 0 A_Explode(31, 6, 0)
         DPLE ABCDE 4 bright
         stop
     }

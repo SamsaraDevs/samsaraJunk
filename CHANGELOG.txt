@@ -32,6 +32,13 @@ GAMEPLAY:
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.
 - In DM, the TOZT has had its damage slightly reduced.
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.
+- The Thunderbolt has been coupled with the Quad Damage on slot 7.
+- The Laser Cannon has moved to Ranger's unique slot.
+- A weaker version of the Punchdrunk Mjolnir has moved into Ranger's slot 1.
+- Ranger now has the Pentagram of Protection!
+- The Thunderbolt has been un-nerfed; it's back at 360dps.
+- The Laser Cannon has been buffed, at 24 damage per shot and 240dps.
+- The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.
 
 BUGFIXES:
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.
@@ -63,6 +70,7 @@ BUGFIXES:
 - Duke no longer has an undying left foot.
 - The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.
 - Chickens were immune to booting and zorching. This has been fixed.
+- You no longer regenerate health when dead.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
@@ -91,8 +99,11 @@ POLISH:
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
 - The TOZT's death frames are now more accurate to Marathon.
 - The Marathon weapons now all properly reload on select.
+- The WSTEs now show their magazines being used, instead of always being full. While it's a bit off from Marathon, it's still a major improvement.
 - The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.
 - The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.
+- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.
+- Chicken players can now be zorched, yaaaaaaay
 
 
 

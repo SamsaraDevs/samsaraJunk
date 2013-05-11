@@ -366,10 +366,10 @@ int PunchDrunkItems[CLASSCOUNT][2] =
 };
 
 
-int ChangelogString = 
-" FROM 0.28 TO 0.29\n\
+int ChangelogString =
+"FROM 0.28 TO 0.29\n\
 ========================\n\
-\cfGAMEPLAY:\c-\n\
+GAMEPLAY:\n\
 - Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.\n\
 - sv_shotgunstart is now respected.\n\
 - The Fusion Pistol overcharge now explodes again.\n\
@@ -380,7 +380,7 @@ int ChangelogString =
 - Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.\n\
 - samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
 - samsara_uniquestart has been added. See the wiki for details.\n\
-- A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use 'samsara_punchdrunk 1' to turn it on.\n\
+- A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use \"samsara_punchdrunk 1\" to turn it on.\n\
 - In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.\n\
 - Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.\n\
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
@@ -394,12 +394,22 @@ int ChangelogString =
 - Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
 - Chexter's screen now flashes green when slimed or flemmed.\n\
 - Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
+- The Dehacked has been implemented back in. It was a nice idea, but practically no wads with Dehacked were behaving properly, and the shell ammo problems it brought back up were terrible.\n\
+- samsara_nohealthcap has been implemented as an optional cvar. True to its name, it gives practically no limit to maximum health, which should make survival/DM games more interesting.\n\
 - Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.\n\
 - In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.\n\
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
 - In DM, the TOZT has had its damage slightly reduced.\n\
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
-\cfBUGFIXES:\c-\n\
+- The Thunderbolt has been coupled with the Quad Damage on slot 7.\n\
+- The Laser Cannon has moved to Ranger's unique slot.\n\
+- A weaker version of the Punchdrunk Mjolnir has moved into Ranger's slot 1.\n\
+- Ranger now has the Pentagram of Protection!\n\
+- The Thunderbolt has been un-nerfed; it's back at 360dps.\n\
+- The Laser Cannon has been buffed, at 24 damage per shot and 240dps.\n\
+- The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.\n\
+\n\
+BUGFIXES:\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
 - Spectral Laser Cannon no longer flickers.\n\
 - Spectral Thunderbolt no longer uses cells.\n\
@@ -423,11 +433,15 @@ int ChangelogString =
 - The Wings of Wrath have had their gold tint removed, as Hexen made it permanent.\n\
 - Freezing the Programmer no longer breaks Strife.\n\
 - The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.\n\
+- The SO's/Ranger's automap HUD no longer show inventory and runes.\n\
 - The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
 - samsara_permault was apparently relying on sv_weaponstay--meaning if sv_weaponstay was 0, samsara_permault 1 would have no effect. Whoops x2!\n\
 - Duke no longer has an undying left foot.\n\
 - The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.\n\
-\cfPOLISH:\c-\n\
+- Chickens were immune to booting and zorching. This has been fixed.\n\
+- You no longer regenerate health when dead.\n\
+\n\
+POLISH:\n\
 - The changelog has been changed from a graphic to a textdump.\n\
 - Further separated Samsara character scripts from other non-Samsara chars.\n\
 - When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.\n\
@@ -435,7 +449,7 @@ int ChangelogString =
 - You can now see what armor type you have when using hud_althud, as you would expect.\n\
 - samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.\n\
 - Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).\n\
-- The Quad Damage now makes the 'no item' sound from Quake 3 if it's used when it's recharging.\n\
+- The Quad Damage now makes the \"no item\" sound from Quake 3 if it's used when it's recharging.\n\
 - Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.\n\
 - The SO has been given generic color painflashes for easier add-on compatibility.\n\
 - BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.\n\
@@ -453,4 +467,9 @@ int ChangelogString =
 - Ranger now has a sound for hitting things with the axe, due to popular request.\n\
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.\n\
 - The TOZT's death frames are now more accurate to Marathon.\n\
-- The Marathon weapons now all properly reload on select.";
+- The Marathon weapons now all properly reload on select.\n\
+- The WSTEs now show their magazines being used, instead of always being full. While it's a bit off from Marathon, it's still a major improvement.\n\
+- The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.\n\
+- The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.\n\
+- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.\n\
+- Chicken players can now be zorched, yaaaaaaay";
