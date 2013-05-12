@@ -1,4 +1,4 @@
-FROM 0.29 TO ????
+FROM 0.29 TO 0.29b
 ========================
 
 GAMEPLAY:
@@ -7,8 +7,10 @@ BUGFIXES:
 - Apparently, red armors, with samsara_armormode 0, would cause an infinite 0-tic loop and hang the server forever. Fixed.
 - "Unknown P-Code 134 in script 312" - this happened every time someone fired in quake without samsara_cl_norecoil set. Fixed.
 - Bosses can no longer be hurt when in their monologues.
+- If autoaim was on, Mjolnir's lightning wouldn't work. Fixed.
 
 POLISH:
+- Popsoap's GLDefs now actually work.
 
 FROM 0.28 TO 0.29
 ========================
