@@ -7,7 +7,6 @@ actor SamsaraUniquePickup: RandomSpawner replaces Berserk
 actor SamsaraUniquePickup1: CustomInventory
 {
     +QUIET
-    +INVENTORY.BIGPOWERUP
 
     States
     {

@@ -389,6 +389,7 @@ GAMEPLAY:\n\
 - samsara_uniquestart has been added. See the wiki for details.\n\
 - A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use \"samsara_punchdrunk 1\" to turn it on.\n\
 - In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.\n\
+- Same deal with the Punchdrunk chainsaws. samsara_punchdrunksaws switches the saws to their Punchdrunk variants.\n\
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.\n\
 - The Fusion Pistol can now actually bypass player invulnerability, as it should.\n\
@@ -413,6 +414,7 @@ GAMEPLAY:\n\
 - The Thunderbolt has been un-nerfed; it's back at 360dps.\n\
 - The Laser Cannon has been buffed, at 24 damage per shot and 240dps.\n\
 - The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.\n\
+- The Unique no longer has +BIGPOWERUP on it. We can hardly remember why it was on in the first place.\n\
 \n\
 BUGFIXES:\n\
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
