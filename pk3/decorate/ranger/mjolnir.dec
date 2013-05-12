@@ -3,6 +3,10 @@ actor StrongerMjolnir: Boolean {}
 
 actor Mjolnir: InstantSwitchWeapon
 {
+    Weapon.BobRangeX 0
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.1
+    Weapon.BobStyle Alpha
     +CHEATNOTWEAPON
     +NOALERT
     +AMMO_OPTIONAL
