@@ -26,7 +26,7 @@ actor SamsaraUniquePickup1: CustomInventory
         
         NoGuy:    UNIQ B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        Doomguy:  PSTR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Doomguy:  DGBZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Heretic:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         Wolfguy:  WFLF A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -44,7 +44,7 @@ actor SamsaraUniquePickup1: CustomInventory
         MarathonSpecial:  UNIQ I 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         QuakeSpecial: 	  UNIQ T 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        DoomPunchdrunk:     PSTR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DoomPunchdrunk:     DGBZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexPunchdrunk:     CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         HereticPunchdrunk:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         WolfPunchdrunk:     UNIQ R 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
