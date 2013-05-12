@@ -6,6 +6,7 @@ actor Mjolnir: InstantSwitchWeapon
     +CHEATNOTWEAPON
     +NOALERT
     +AMMO_OPTIONAL
+    +WEAPON.NOAUTOAIM
 
     //Weapon.AmmoType "Cell"
     //Weapon.AmmoUse 20
