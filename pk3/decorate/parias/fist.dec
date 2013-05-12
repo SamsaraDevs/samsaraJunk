@@ -50,7 +50,6 @@ actor "Spiked Gauntlet" : FWeapFist
 {
     Weapon.SelectionOrder 3400
     Weapon.KickBack 150
-    Weapon.SlotNumber 2
     +WIMPY_WEAPON
     +MELEEWEAPON
     +NOALERT

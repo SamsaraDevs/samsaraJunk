@@ -13,7 +13,6 @@ actor "Talon Ceramic Combat Blade" : Weapon
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
-    Weapon.SlotNumber 2
     Weapon.SelectionOrder 3700
     Obituary "%k \cndug into\c- %o\cn's spine.\c-"
     Weapon.AmmoType		"KnifeAmmo"
@@ -174,8 +173,7 @@ actor "Tech.50 Pacifier" : Weapon
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFusionSkin"
-    Weapon.SelectionOrder 1300
-    Weapon.SlotNumber 1
+    Weapon.SelectionOrder 4000
     Inventory.PickupMessage "You picked up a Tech.50 Pacifier Security Handgun!"
     Scale 0.35
     +NOALERT
