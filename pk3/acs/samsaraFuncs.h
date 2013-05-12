@@ -5,7 +5,8 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, int nopd)
 {
-    if (GetCVar("samsara_punchdrunk") && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+    int pdSaws     = (IsPunchdrunk & 4) || (IsPunchdrunk & 1);
+    if (pdSaws && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
 
     int weapon = ClassWeapons[class][slot][S_WEP];
     int ammo1  = ClassWeapons[class][slot][S_AMMO1];

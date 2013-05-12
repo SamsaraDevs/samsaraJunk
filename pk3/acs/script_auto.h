@@ -3,6 +3,7 @@ script SAMSARA_OPEN open
     IsServer = 1;
     int opd, pd;
     int opdu, pdu;
+    int opds, pds;
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -105,6 +106,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunkuniques"))
         {   ConsoleCommand("set samsara_punchdrunkuniques 0");
         ConsoleCommand("archivecvar samsara_punchdrunkuniques"); }
+        
+        if (!GetCVar("samsara_punchdrunksaws"))
+        {   ConsoleCommand("set samsara_punchdrunksaws 0");
+        ConsoleCommand("archivecvar samsara_punchdrunksaws"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -112,10 +117,14 @@ script SAMSARA_OPEN open
         opdu = pdu;
         pdu = !!GetCVar("samsara_punchdrunkuniques");
 
-        if (pd != opd || opdu != pdu || Timer() % 18 == 0)
+        opds = pds;
+        pds = !!GetCVar("samsara_punchdrunksaws");
+
+        if (pd != opd || opdu != pdu || opds != pds || Timer() % 18 == 0)
         {
             IsPunchdrunk  = pd  << 0;
             IsPunchdrunk |= pdu << 1;
+            IsPunchdrunk |= pds << 2;
             ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, IsPunchdrunk);
         }
         
