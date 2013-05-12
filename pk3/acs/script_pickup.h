@@ -9,15 +9,15 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int toClass = SamsaraClientClass-1;
     int displaymode = GetCVar("samsara_cl_pickupmode");
     int oldslot = slot;
-    int success;
-    int punchdrunk = IsPunchdrunk & 1;
+    int success = 0;
+    int punchdrunk =  IsPunchdrunk & 1;
     int pdUniques  = (IsPunchdrunk & 2) || punchdrunk;
     int pdSaws     = (IsPunchdrunk & 4) || punchdrunk;
 
     slot = itemToSlot(slot);
 
     if (slot == SLOT_CHAINSAW && pdSaws) { slot = SLOT_PUNCHDRUNKSAW; }
-    if (slot == SLOT_BFG9000 && pdUniques) { slot = SLOT_UNIQUE; }
+    if (slot == SLOT_BFG9000 && punchdrunk && pdUniques) { slot = SLOT_UNIQUE; }
 
     while (punchdrunk)
     {
@@ -27,7 +27,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         SetActorState(0, "Invisible");
         terminate;
     }
-
+    
     int hasSlot = SamsaraClientWeps[slot];
 
     if (displaymode != 0)
@@ -75,13 +75,19 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
         
-        if (pdSaws)
+        switch (slot)
         {
-            if (hasSlot) { success = SetActorState(0, PickupStates[toClass][5]); }
-            else         { success = SetActorState(0, PickupStates[toClass][6]); }
+          case SLOT_CHAINSAW:
+          case SLOT_PUNCHDRUNKSAW:
+            if (pdSaws)
+            {
+                if (hasSlot) { success = SetActorState(0, PickupStates[toClass][5]); }
+                else         { success = SetActorState(0, PickupStates[toClass][6]); }
+            }
+            break;
         }
-        
-        if (!pdSaws || !success)
+
+        if (!success)
         {
             if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
             else         { SetActorState(0, PickupStates[toClass][2]); }
@@ -89,8 +95,16 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         break;
         
       case 2:
-        if (pdSaws) { success = SetActorState(0, PickupStates[toClass][4]); }
-        if (!pdSaws || !success) { SetActorState(0, PickupStates[toClass][0]); }
+        switch (slot)
+        {
+          case SLOT_CHAINSAW:
+          case SLOT_PUNCHDRUNKSAW:
+            if (pdSaws) { success = SetActorState(0, PickupStates[toClass][4]); }
+            else { success = SetActorState(0, PickupStates[toClass][0]); }
+            break;
+        }
+          
+        if (!success) { SetActorState(0, PickupStates[toClass][0]); }
         break;
     }
 }
@@ -112,7 +126,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     int punchdrunk = IsPunchdrunk & 1;
     int pdSaws     = (IsPunchdrunk & 4) || punchdrunk;
 
-    if (pdSaws &&  slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+    if (pdSaws && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
 
     if (punchdrunk)
     { 

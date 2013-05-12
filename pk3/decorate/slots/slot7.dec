@@ -21,6 +21,7 @@ actor SamsaraSlotSevenPickup: SamsaraSlotPickup replaces BFG9000
         Hexen:    WWRT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Dukeguy:  DEVP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: WMCP A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+
       Quake:
         QUDD A 0 bright A_ChangeFlag("FLOATBOB", 1)
         QUDD A 35 bright A_SpawnItemEx("ThunderboltDummy", 0.1, 0.1)
@@ -119,6 +120,7 @@ actor ThunderboltDummy: CustomInventory
     +QUIET
     +AUTOACTIVATE
     +FLOORHUGGER
+    +CLIENTSIDEONLY
 
     Inventory.PickupMessage ""
     Inventory.MaxAmount 0
