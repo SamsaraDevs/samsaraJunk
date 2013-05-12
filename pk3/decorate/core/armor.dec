@@ -587,7 +587,7 @@ actor RedArmor 5040
 
       Armor1_Drop:
       Armor1_YellowDrop:
-        TNT1 A 0 A_SpawnItemEx("RedArmor")
+        TNT1 A 0 A_SpawnItemEx("ArmorPack3")
         stop
 
 
@@ -669,7 +669,7 @@ actor BlueArmorNoDrop: ArmorPack2
     }
 }
 
-actor RedArmorNoDrop: RedArmor
+actor RedArmorNoDrop: ArmorPack3
 {
     States
     {
