@@ -70,6 +70,7 @@ BUGFIXES:
 - Chickens were immune to booting and zorching. This has been fixed.
 - You no longer regenerate health when dead.
 - The base ammo types are now always filled in LMS.
+- How did we go for so long without supplying a sprite for the Berserk? Fixed.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
