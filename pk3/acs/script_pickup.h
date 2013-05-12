@@ -113,10 +113,9 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 
     if (pdSaws &&  slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
 
-
     if (punchdrunk)
     { 
-        if (!slot == SLOT_PUNCHDRUNKSAW)
+        if (slot != SLOT_PUNCHDRUNKSAW)
         {
             SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
             terminate;
