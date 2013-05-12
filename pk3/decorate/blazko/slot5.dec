@@ -58,9 +58,9 @@ actor WolfRocket
         Loop
 
       Death:
-        WFLM C 8 Bright A_Explode(128,32,0)
-        WFLM D 6 Bright
-        WFLM E 4 Bright
+        WFLB C 8 Bright A_Explode(128,32,0)
+        WFLB D 6 Bright
+        WFLB E 4 Bright
         Stop
     }
 }
