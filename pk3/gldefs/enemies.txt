@@ -1,0 +1,337 @@
+///////////////////////////////////////
+// Dynamic Lights for Vanilla Actors //
+///////////////////////////////////////
+
+//////////
+// DOOM //
+//////////
+
+// Zombies
+object ZombieMan2
+{
+	frame POSSF { light ZOMBIEATK }
+}
+
+object ShotgunGuy2
+{
+	frame SPOSF { light ZOMBIEATK }
+}
+
+object ChaingunGuy2
+{
+	frame CPOSE { light ZOMBIEATK }
+	frame CPOSF { light ZOMBIEATK }
+}
+
+object DoomguyPlayer
+{
+	frame PLAYF { light ZOMBIEATK }
+}
+
+// Doom Imp Fireball
+object DoomImpBall2
+{
+	frame BAL1A { light IMPBALL    }
+	frame BAL1B { light IMPBALL    }
+
+	frame BAL1C { light IMPBALL_X1 }
+	frame BAL1D { light IMPBALL_X2 }
+	frame BAL1E { light IMPBALL_X3 }
+}
+
+// Cacodemon fireball
+object CacodemonBall2
+{
+	frame BAL2A { light CACOBALL }
+	frame BAL2B { light CACOBALL }
+
+	frame BAL2C { light CACOBALL_X1 }
+	frame BAL2D { light CACOBALL_X2 }
+	frame BAL2E { light CACOBALL_X3 }
+}
+
+// Baron / Hell Knight fireball
+object BaronBall2
+{
+	frame BAL7A { light BARONBALL    }
+	frame BAL7B { light BARONBALL    }
+
+	frame BAL7C { light BARONBALL_X1 }
+	frame BAL7D { light BARONBALL_X2 }
+	frame BAL7E { light BARONBALL_X3 }
+}
+
+// Lost Soul
+object LostSoul2
+{
+	frame SKULA { light LOSTSOUL    }
+	frame SKULB { light LOSTSOUL    }
+	frame SKULC { light LOSTSOUL    }
+	frame SKULD { light LOSTSOUL    }
+	frame SKULE { light LOSTSOUL    }
+	frame SKULF { light LOSTSOUL    }
+	frame SKULG { light LOSTSOUL    }
+	
+	frame SKULH { light LOSTSOUL_X1 }
+	frame SKULI { light LOSTSOUL_X2 }
+	frame SKULJ { light LOSTSOUL_X3 }
+	frame SKULK { light LOSTSOUL_X4 }
+}
+
+// Mancubus Fireball
+object FatShot2
+{
+	frame MANFA { light IMPBALL   }
+	frame MANFB { light IMPBALL   }
+
+	frame MISLB { light ROCKET_X1 }
+	frame MISLC { light ROCKET_X2 }
+	frame MISLD { light ROCKET_X3 }
+}
+
+// Arachnotron Fireball
+object ArachnotronPlasma2
+{
+	frame APLSA { light ARACHPLAS }
+	frame APLSB { light ARACHPLAS }
+
+	frame APBXA { light ARACHPLAS_X1 }
+	frame APBXB { light ARACHPLAS_X2 }
+	frame APBXC { light ARACHPLAS_X2 }
+	frame APBXD { light ARACHPLAS_X3 }
+	frame APBXE { light ARACHPLAS_X4 }
+}
+
+// Revenant tracer
+object RevenantTracerDumbfire
+{
+	frame FATBA { light TRACER    }
+	frame FATBB { light TRACER    }
+
+	frame FBXPA { light TRACER_X1 }
+	frame FBXPB { light TRACER_X2 }
+	frame FBXPC { light TRACER_X3 }
+}
+
+object RevenantTracerHoming
+{
+	frame FATBA { light TRACER    }
+	frame FATBB { light TRACER    }
+
+	frame FBXPA { light TRACER_X1 }
+	frame FBXPB { light TRACER_X2 }
+	frame FBXPC { light TRACER_X3 }
+}
+
+// Arch-vile
+object Archvile2
+{
+	frame VILEH { light ARCHATK1 }
+	frame VILEI { light ARCHATK2 }
+	frame VILEJ { light ARCHATK3 }
+	frame VILEK { light ARCHATK4 }
+	frame VILEL { light ARCHATK4 }
+	frame VILEM { light ARCHATK4 }
+	frame VILEN { light ARCHATK5 }
+	frame VILEO { light ARCHATK6 }
+	frame VILEP { light ARCHATK7 }
+
+	frame VILE[ { light ARCHRES }
+	frame VILE\ { light ARCHRES }
+	frame VILE] { light ARCHRES }
+}
+
+/////////////
+// HERETIC //
+/////////////
+
+// Heretic imp fireball
+object HereticImpBall2
+{
+	frame FX10A { light HIMPBALL }
+	frame FX10B { light HIMPBALL }
+	frame FX10C { light HIMPBALL }
+
+	frame FX10D { light HIMPBALL    }
+	frame FX10E { light HIMPBALL_X1 }
+	frame FX10F { light HIMPBALL_X2 }
+	frame FX10G { light HIMPBALL_X3 }
+}
+
+// Mummy
+object MummyLeader2
+{
+	frame MUMMY { light MUMMYATK }
+}
+
+object MummyLeaderGhost2
+{
+	frame MUMMY { light MUMMYATK }
+}
+
+// Mummy fireball
+object MummyFX2
+{
+	frame FX15A { light MUMMYBALL }
+	frame FX15B { light MUMMYBALL }
+	frame FX15C { light MUMMYBALL }
+
+	frame FX15D { light MUMMYBALL_X1 }
+	frame FX15E { light MUMMYBALL_X2 }
+	frame FX15F { light MUMMYBALL_X3 }
+}
+
+// Green flying axe
+object KnightAxe2
+{
+	frame SPAXA { light GREENAXE }
+	frame SPAXB { light GREENAXE }
+	frame SPAXC { light GREENAXE }
+
+	frame SPAXD { light GREENAXE_X1 }
+	frame SPAXE { light GREENAXE_X2 }
+	frame SPAXF { light GREENAXE_X3 }
+}
+
+// Red flying axe
+object RedAxe2
+{
+	frame RAXEA { light REDAXE }
+	frame RAXEB { light REDAXE }
+
+	frame RAXEC { light REDAXE_X1 }
+	frame RAXED { light REDAXE_X2 }
+	frame RAXEE { light REDAXE_X3 }
+}
+
+// Disciple fireball
+object WizardFX2
+{
+	frame FX11A { light DISCIPLEBALL }
+	frame FX11B { light DISCIPLEBALL }
+	frame FX11C { light DISCIPLEBALL }
+
+	frame FX11D { light DISCIPLEBALL    }
+	frame FX11E { light DISCIPLEBALL    }
+	frame FX11F { light DISCIPLEBALL_X1 }
+	frame FX11G { light DISCIPLEBALL_X2 }
+}
+
+// Clinker death explosion
+object Clink2
+{
+	frame CLNKK { light CLINK_X1 }
+	frame CLNKL { light CLINK_X2 }
+	frame CLNKM { light CLINK_X3 }
+	frame CLNKN { light CLINK_X4 }
+}
+
+// Weredragon
+object Beast2
+{
+	frame BEASI { light BEASTATK }
+}
+
+// Weredragon fireball
+object BeastBall2
+{
+	frame FRB1A { light BEASTBALL }
+	frame FRB1B { light BEASTBALL }
+	frame FRB1C { light BEASTBALL }
+
+	frame FRB1D { light BEASTBALL_X1 }
+	frame FRB1E { light BEASTBALL_X2 }
+	frame FRB1F { light BEASTBALL_X3 }
+	frame FRB1G { light BEASTBALL_X4 }
+}
+
+// Small ophidian shot
+object SnakeProjA2
+{
+	frame SNFXA { light SNAKESHOT1 }
+	frame SNFXB { light SNAKESHOT1 }
+	frame SNFXC { light SNAKESHOT1 }
+	frame SNFXD { light SNAKESHOT1 }
+
+	frame SNFXE { light SNAKESHOT1_X1 }
+	frame SNFXF { light SNAKESHOT1_X2 }
+	frame SNFXG { light SNAKESHOT1_X3 }
+	frame SNFXH { light SNAKESHOT1_X4 }
+}
+
+// Large ophidian shot
+object SnakeProjB2
+{
+	frame SNFXJ { light SNAKESHOT2 }
+	frame SNFXK { light SNAKESHOT2 }
+
+	frame SNFXL { light SNAKESHOT2_X1 }
+	frame SNFXM { light SNAKESHOT2_X2 }
+	frame SNFXN { light SNAKESHOT2_X3 }
+}
+
+// Iron lich death explosion
+object Ironlich2
+{
+	frame LICHD { light IRONLICH1 }
+	frame LICHE { light IRONLICH2 }
+	frame LICHF { light IRONLICH3 }
+	frame LICHG { light IRONLICH4 }
+}
+
+// IronLich frost ball
+object HeadFX12
+{
+	frame FX05A { light FROSTBALL }
+	frame FX05B { light FROSTBALL }
+	frame FX05C { light FROSTBALL }
+
+	frame FX05D { light FROSTBALL_X1 }
+	frame FX05E { light FROSTBALL_X2 }
+	frame FX05F { light FROSTBALL_X3 }
+	frame FX05G { light FROSTBALL_X4 }
+}
+
+// Frost shard (spawned by frost ball)
+object HeadFX22
+{
+	frame FX05H { light FROSTSHARD }
+	frame FX05I { light FROSTSHARD }
+	frame FX05J { light FROSTSHARD }
+}
+
+// Ironlich fire wall
+object HeadFX32
+{
+	frame FX06A { light LICHFIRE }
+	frame FX06B { light LICHFIRE }
+	frame FX06C { light LICHFIRE }
+
+	frame FX06D { light LICHFIRE_X1 }
+	frame FX06E { light LICHFIRE_X2 }
+	frame FX06F { light LICHFIRE_X3 }
+	frame FX06G { light LICHFIRE_X4 }
+}
+
+// D'Sparil blue bolt
+object Sorcerer2FX3
+{
+	frame FX16A { light DSPARILBALL }
+	frame FX16B { light DSPARILBALL }
+	frame FX16C { light DSPARILBALL }
+
+	frame FX16G { light DSPARILBALL_X1 }
+	frame FX16H { light DSPARILBALL_X2 }
+	frame FX16I { light DSPARILBALL_X3 }
+	frame FX16J { light DSPARILBALL_X4 }
+	frame FX16K { light DSPARILBALL_X5 }
+	frame FX16L { light DSPARILBALL_X5 }
+}
+
+// D'Sparil
+object Sorcerer4
+{
+	frame SOR2R { light DSPARILATK }
+	frame SOR2S { light DSPARILATK }
+	frame SOR2T { light DSPARILATK }
+}
