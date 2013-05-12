@@ -2,6 +2,7 @@ script SAMSARA_OPEN open
 {
     IsServer = 1;
     int opd, pd;
+    int opdu, pdu;
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -108,10 +109,14 @@ script SAMSARA_OPEN open
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
 
-        if (pd != opd || Timer() % 18 == 0)
+        opdu = pdu;
+        pdu = !!GetCVar("samsara_punchdrunkuniques");
+
+        if (pd != opd || opdu != pdu || Timer() % 18 == 0)
         {
-            IsPunchdrunk = pd;
-            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, pd);
+            IsPunchdrunk  = pd  << 0;
+            IsPunchdrunk |= pdu << 1;
+            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, IsPunchdrunk);
         }
         
         Delay(1);

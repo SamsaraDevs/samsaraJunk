@@ -9,9 +9,10 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int toClass = SamsaraClientClass-1;
     int displaymode = GetCVar("samsara_cl_pickupmode");
     int oldslot = slot;
+    int success;
     slot = itemToSlot(slot);
 
-    if (IsPunchdrunk)
+    if (IsPunchdrunk & 1)
     {
         if (slot == SLOT_CHAINSAW)
         {
@@ -49,13 +50,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             break;
             
           case 1:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) { SetActorState(0, PickupStates[toClass][7]); }
-            else { SetActorState(0, PickupStates[toClass][3]); }
+            if (IsPunchdrunk) { success = SetActorState(0, PickupStates[toClass][7]); }
+            if (!IsPunchdrunk || !success) { SetActorState(0, PickupStates[toClass][3]); }
             break;
             
           case 2:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) { SetActorState(0, PickupStates[toClass][4]); }
-            else { SetActorState(0, PickupStates[toClass][0]); }
+            if (IsPunchdrunk) { success = SetActorState(0, PickupStates[toClass][4]); }
+            if (!IsPunchdrunk || !success) { SetActorState(0, PickupStates[toClass][0]); }
             break;
         }
     }
@@ -71,12 +72,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
         
-        if (GetCVar("samsara_punchdrunk"))
+        if (IsPunchdrunk & 1)
         {
-            if (hasSlot) { SetActorState(0, PickupStates[toClass][5]); }
-            else         { SetActorState(0, PickupStates[toClass][6]); }
+            if (hasSlot) { success = SetActorState(0, PickupStates[toClass][5]); }
+            else         { success = SetActorState(0, PickupStates[toClass][6]); }
         }
-        else
+        
+        if (!(IsPunchdrunk & 1) || !success)
         {
             if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
             else         { SetActorState(0, PickupStates[toClass][2]); }
@@ -84,8 +86,8 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         break;
         
       case 2:
-        if (GetCVar("samsara_punchdrunk")) { SetActorState(0, PickupStates[toClass][4]); }
-        else { SetActorState(0, PickupStates[toClass][0]); }
+        if (IsPunchdrunk & 1) { success = SetActorState(0, PickupStates[toClass][4]); }
+        if (!(IsPunchdrunk & 1) || !success) { SetActorState(0, PickupStates[toClass][0]); }
         break;
     }
 }
