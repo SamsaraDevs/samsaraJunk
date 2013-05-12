@@ -135,18 +135,42 @@ script SAMSARA_QPOWERS (int startTime)
     int quadTimer,  oQuadTimer;
     int regenTimer, oRegenTimer;
     int invisTimer, oInvisTimer;
+    int pentTimer,  oPentTimer;
     int health, regenPulse, oPulse;
     int regenX, regenY;
     int healthGiven, healthMax;
+    int opowercount, powercount, offset;
     
     if (samsaraClassNum() != CLASS_QUAKE) { terminate; }
+
+    quadTimer   = CheckQuad();
+    regenTimer  = CheckInventory("QuakeRegenTimer");
+    invisTimer  = CheckInventory("QuakeInvisTimer");
+    pentTimer   = CheckInventory("QuakePentTimer");
 
     while (ServerEnterTimes[pln] == startTime)
     {
         health = GetActorProperty(0, APROP_Health);
 
         oQuadTimer = quadTimer;
-        quadTimer = CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
+        quadTimer  = CheckQuad();
+
+        oRegenTimer = regenTimer;
+        regenTimer  = CheckInventory("QuakeRegenTimer");
+
+        oInvisTimer = invisTimer;
+        invisTimer  = CheckInventory("QuakeInvisTimer");
+
+        oPentTimer = pentTimer;
+        pentTimer  = CheckInventory("QuakePentTimer");
+
+        offset = 0;
+        opowercount = powercount;
+        powercount = 0;
+        powercount += (quadTimer > 0);
+        powercount += (regenTimer > 0);
+        powercount += (invisTimer > 0);
+        powercount += (pentTimer > 0);
 
         if (quadTimer - 35 > oQuadTimer)
         {
@@ -155,28 +179,19 @@ script SAMSARA_QPOWERS (int startTime)
 
         if (quadTimer > 0)
         {
-            if (quadTimer % 35 == 0 || oQuadTimer < quadTimer)
+            if (quadTimer % 35 == 0 || oQuadTimer < quadTimer || (opowercount != powercount))
             {
                 SetHudSize(640, 480, 1);
                 SetFont("QUADICO2");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, 380.0, 1.5, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58101, CR_UNTRANSLATED, 610.4, PY640 - (POFF640 * offset), 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:quadTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58102, "QuakeBrick", 295.2, 190.0, 1.5, 1.0);
+                HudMessage(d:(quadTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58102, "QuakeBrick", 295.2, PY320 - (POFF320 * offset), 1.5, 1.0);
             }
+
+            offset++;
 
             if (oQuadTimer <= 0) { GiveInventory("QuadDamagePower", 1); }
-
-            switch (GetCVar("samsara_permault"))
-            {
-              case 0:
-                if (CheckInventory("DoNotQuad")) { TakeInventory("DoNotQuad", 1); }
-                break;
-              
-              case 1:
-                if (!CheckInventory("DoNotQuad")) { GiveInventory("DoNotQuad", 1); }
-                break;
-            }
         }
         else
         {
@@ -224,11 +239,53 @@ script SAMSARA_QPOWERS (int startTime)
         }
 
         /*
-         * Regen shit
+         * Pentagram shit
          */
 
-        oRegenTimer = regenTimer;
-        regenTimer =  CheckInventory("QuakeRegenTimer");
+        if (pentTimer - 35 > oPentTimer)
+        {
+            AmbientSound("quakeweps/pentagramon", 127);
+        }
+
+        if (pentTimer > 0)
+        {
+            if (pentTimer % 35 == 0 || oPentTimer < pentTimer || powercount != opowercount)
+            {
+                SetHudSize(640, 480, 1);
+                SetFont("PENTICON");
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58107, CR_UNTRANSLATED, 610.4, PY640 - (POFF640*offset), 1.5, 1.0);
+                SetHudSize(320, 240, 1);
+                SetFont("QUA3HUDF");
+                HudMessage(d:(pentTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58108, "QuakeBrick", 295.2, PY320 - (POFF320*offset), 1.5, 1.0);
+            }
+
+            offset++;
+
+            if (pentTimer % 35 == 0 && pentTimer / 35 < 5)
+            {
+                LocalAmbientSound("quakeweps/pentagramout", PowerOutVols[regenTimer / 35]);
+            }
+            else if (Timer() % 140 == 0)
+            {
+                ActivatorSound("quakeweps/pentagram", 96);
+            }
+
+            if (oPentTimer == 0) { GiveInventory("QuakePentagram", 1); }
+        }
+        else
+        {
+            if (oPentTimer != 0)
+            {
+                HudMessage(s:""; HUDMSG_PLAIN, 58107, CR_UNTRANSLATED, 0, 0, 1);
+                HudMessage(s:""; HUDMSG_PLAIN, 58108, CR_UNTRANSLATED, 0, 0, 1);
+                TakeInventory("QuakePentagram", 0x7FFFFFFF);
+            }
+
+        }
+
+        /*
+         * Regen shit
+         */
 
         if (regenTimer != 0)
         {
@@ -237,25 +294,26 @@ script SAMSARA_QPOWERS (int startTime)
             regenX = 640 - (regenPulse * 18);
             regenY = 480 - (regenPulse * 18);
 
-            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0 || oRegenTimer < regenTimer)
+            if (regenTimer % 35 == 0 || regenPulse != 0 || oPulse != 0 || oRegenTimer < regenTimer || (opowercount != powercount))
             {
                 SetHudSize(regenX, regenY, 1);
                 regenX = ftoi(regenX * REGEN_CENTER_X);
-                regenY = ftoi(regenY * REGEN_CENTER_Y);
+                regenY = ftoi(regenY * REGEN_CENTER_Y) - ftoi(regenY * (REGEN_OFFSET * offset));
 
                 SetFont("REGENICO");
                 HudMessage(s:"A"; HUDMSG_FADEOUT, 58103, CR_UNTRANSLATED, itof(regenX) + 0.4, itof(regenY), 1.25, 0.25);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:(regenTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, 170.0, 1.25, 0.25);
+                HudMessage(d:(regenTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58104, "QuakeBrick", 295.2, PY320 - (POFF320 * offset), 1.25, 0.25);
                 // the +34 was added so that the regen pulse didn't prematurely lower the seconds display by one
-
             }
+
+            offset++;
 
             oPulse = regenPulse;
             regenPulse = max(0, regenPulse - 1);
 
-            if (regenTimer % 35 == 18)
+            if (regenTimer % 35 == 18 && !isDead(0))
             {
                 healthMax = cond(GetCVar("samsara_nohealthcap"), 0x7FFFFFFF, 150+getMaxHealth());
 
@@ -307,9 +365,6 @@ script SAMSARA_QPOWERS (int startTime)
          * Invis shit
          */
 
-        oInvisTimer = invisTimer;
-        invisTimer  = CheckInventory("QuakeInvisTimer");
-
         if (invisTimer - 35 > oInvisTimer)
         {
             ActivatorSound("quakeweps/invison", 127);
@@ -317,15 +372,17 @@ script SAMSARA_QPOWERS (int startTime)
 
         if (invisTimer > 0)
         {
-            if (invisTimer % 35 == 0 || oInvisTimer < invisTimer)
+            if (invisTimer % 35 == 0 || oInvisTimer < invisTimer || powercount != opowercount)
             {
                 SetHudSize(640, 480, 1);
                 SetFont("INVISICO");
-                HudMessage(s:"A"; HUDMSG_FADEOUT, 58105, CR_UNTRANSLATED, 610.4, 300.0, 1.5, 1.0);
+                HudMessage(s:"A"; HUDMSG_FADEOUT, 58105, CR_UNTRANSLATED, 610.4, PY640 - (POFF640 * offset), 1.5, 1.0);
                 SetHudSize(320, 240, 1);
                 SetFont("QUA3HUDF");
-                HudMessage(d:invisTimer / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58106, "QuakeBrick", 295.2, 150.0, 1.5, 1.0);
+                HudMessage(d:(invisTimer+34) / 35;  HUDMSG_FADEOUT | HUDMSG_COLORSTRING, 58106, "QuakeBrick", 295.2, PY320 - (POFF320 * offset), 1.5, 1.0);
             }
+
+            offset++;
 
             if (invisTimer % 105 == 0)
             {
@@ -353,6 +410,7 @@ script SAMSARA_QPOWERS (int startTime)
         TakeInventory("QuakeQuadTimer", 1);
         TakeInventory("QuakeRegenTimer", 1);
         TakeInventory("QuakeInvisTimer", 1);
+        TakeInventory("QuakePentTimer", 1);
 
         if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
         else { SetActorProperty(0, APROP_Gravity, 0.75); }
@@ -370,4 +428,55 @@ script SAMSARA_QPOWERS (int startTime)
 
     quadTimer = CheckInventory("QuakeQuadTimer"); 
     TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
+}
+
+script SAMSARA_QUAKE (int class, int slot, int dropped)
+{
+    int givingQuad, givingLG;
+
+    int stay = GetCVar("sv_weaponstay") && !dropped;
+    int ultStay = GetCVar("samsara_permault") && !dropped;
+
+    int doquad = 1;
+
+    if (GetCVar("samsara_permault") && CheckQuad() > 0)
+    {
+        doquad = 0;
+    }
+
+    switch (slot)
+    {
+      case SLOT_BFG9000:
+        if (doquad)
+        {
+            if (isLMS())
+            {
+                GiveInventory("QuadDamageItem", 1);
+            }
+            else
+            {
+                GiveQuad(1050);
+
+                if (isCoop())
+                {
+                    GiveInventory("QuadDamageItem", 1);
+                }
+            }
+            givingQuad = 1;
+        }
+
+        if (!CheckInventory("Thunderbolt")
+         || (!ultStay && (GetAmmoCapacity("Cell") > CheckInventory("Cell"))))
+        {
+            givingLG = 1;
+        }
+
+        if (givingLG)
+        {
+            GiveInventory("Thunderbolt", 1);
+        }
+
+        SetResultValue(givingQuad || givingLG);
+        break;
+    }
 }

@@ -38,7 +38,7 @@ int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] =
     {"PortMysticAmbit",     "",                 "", ""},
     {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
     {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"Thunderbolt",         "Cell",             "", ""},
+    {"Laser Cannon",        "Cell",             "", ""},
 };
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
@@ -161,14 +161,14 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     },
     {   // Ranger
         {"Axe",                             "",             "",             "", ""},
-        {"Laser Cannon",                    "Cell",         "",             "", ""},
+        {"Mjolnir",                         "",             "",             "", ""},
         {"Single Shotgun",                  "",             "",             "", ""},
         {"Double Shotgun",                  "Shell",        "",             "", ""},
         {"Grenade Launcher",                "RocketAmmo",   "",             "", ""},
         {"Nailgun",                         "Clip",         "",             "", ""},
         {"  Rocket Launcher  ",             "RocketAmmo",   "",             "", ""},
         {"Super Nailgun",                   "Clip",         "",             "", ""},
-        {"QuadDamagePickup",                "",             "",             "", "DoNotQuad"},
+        {"Thunderbolt",                     "Cell",         "",             "ForceCheck", ""},
         {"Gauntlet",                        "",             "",             "", ""},
     },
 };
@@ -182,5 +182,5 @@ int ClassScripts[CLASSCOUNT][SLOTCOUNT] =
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,0,                   0,  0,0,0,0,0,0,0},
     {0,SAMSARA_MARATHON,    0,  SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,SAMSARA_MARATHON,0},
-    {0,0,                   0,  0,0,0,0,0,0,0},
+    {0,0,                   0,  0,0,0,0,0,SAMSARA_QUAKE,0},
 };

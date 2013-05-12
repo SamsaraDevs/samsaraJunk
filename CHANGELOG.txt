@@ -13,7 +13,7 @@ GAMEPLAY:
 - samsara_uniquestart has been added. See the wiki for details.
 - A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use "samsara_punchdrunk 1" to turn it on.
 - In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.
-- Ranger's Dissolution of Eternity ammo has been completely reworked. One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not--now, he practically lives off them.
+- Same deal with the Punchdrunk chainsaws. samsara_punchdrunksaws switches the saws to their Punchdrunk variants.
 - Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.
 - Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.
 - The Fusion Pistol can now actually bypass player invulnerability, as it should.
@@ -32,6 +32,13 @@ GAMEPLAY:
 - In DM, the LAZ Device's zorch radius has been expanded by 64 units.
 - In DM, the TOZT has had its damage slightly reduced.
 - BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.
+- One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not. To address this, the Thunderbolt has been coupled with the Quad Damage on slot 7.
+- The Laser Cannon has been moved to Ranger's unique slot, and Mjolnir has been introduced as Ranger's slot 1.
+- Ranger now has the Pentagram of Protection for his Invulnerability!
+- The Thunderbolt has been un-nerfed; it's back at 360dps.
+- The Laser Cannon has been buffed, at 24 damage per shot and 240dps.
+- The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.
+- The Unique no longer has +BIGPOWERUP on it. We can hardly remember why it was on in the first place.
 
 BUGFIXES:
 - Ranger's Spectral weapons no longer use the old DoE ammo switching style.
@@ -63,6 +70,9 @@ BUGFIXES:
 - Duke no longer has an undying left foot.
 - The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.
 - Chickens were immune to booting and zorching. This has been fixed.
+- You no longer regenerate health when dead.
+- The base ammo types are now always filled in LMS.
+- How did we go for so long without supplying a sprite for the Berserk? Fixed.
 
 POLISH:
 - The changelog has been changed from a graphic to a textdump.
@@ -91,8 +101,12 @@ POLISH:
 - Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.
 - The TOZT's death frames are now more accurate to Marathon.
 - The Marathon weapons now all properly reload on select.
+- The WSTEs now show their magazines being used, instead of always being full. While it's a bit off from Marathon, it's still a major improvement.
 - The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.
 - The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.
+- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.
+- The weapon pickup sparkles have had their lifespan shortened and count reduced, to hopefully ease lag issues.
+- The powerup timers with Ranger no longer have gaps between them; they move up and down as powerups start and stop.
 
 
 

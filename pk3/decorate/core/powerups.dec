@@ -95,6 +95,7 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
       Pickup:
         TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
         TNT1 A 1 A_JumpIfInventory("CorvusClass",1,"PickupHeretic")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
         TNT1 A 0 A_PlaySound("invulnget")
         TNT1 A 1 A_GiveInventory("PowerFakeInvulnerable")
         stop
@@ -109,6 +110,10 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
         TNT1 A 0 A_JumpIfInventory("PortIconDefender",0,"PickupFail")
         TNT1 A 0 A_PlaySound("hexen/artiget")
         TNT1 A 1 A_GiveInventory("PortIconDefender")
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("QuakePentTimer", 1050)
         stop
 
       PickupFail:
@@ -179,6 +184,14 @@ ACTOR PowerFakeInvulnerable : PowerProtection
   DamageFactor "Kamikaze", 1.0
   DamageFactor "ZorchKamikaze", 1.0
 }
+
+actor QuakePentagram: PowerFakeInvulnerable
+{
+    Powerup.Duration 0x7FFFFFFF
+    Powerup.Color "FF 20 00", 0.15
+}
+
+actor QuakePentTimer: Counter {}
 
 actor InvulnTrail
 {

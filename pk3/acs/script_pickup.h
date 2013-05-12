@@ -9,26 +9,30 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     int toClass = SamsaraClientClass-1;
     int displaymode = GetCVar("samsara_cl_pickupmode");
     int oldslot = slot;
+    int success = 0;
+    int punchdrunk =  IsPunchdrunk & 1;
+    int pdUniques  = (IsPunchdrunk & 2) || punchdrunk;
+    int pdSaws     = (IsPunchdrunk & 4) || punchdrunk;
+
     slot = itemToSlot(slot);
 
-    if (IsPunchdrunk)
-    {
-        if (slot == SLOT_CHAINSAW)
-        {
-            slot = SLOT_PUNCHDRUNKSAW;
-        }
-        else if (slot != SLOT_UNIQUE)
-        {
-            SetActorState(0, "Invisible");
-            terminate;
-        }
-    }
+    if (slot == SLOT_CHAINSAW && pdSaws) { slot = SLOT_PUNCHDRUNKSAW; }
+    if (slot == SLOT_BFG9000 && punchdrunk && pdUniques) { slot = SLOT_UNIQUE; }
 
+    while (punchdrunk)
+    {
+        if (slot == SLOT_PUNCHDRUNKSAW && pdSaws) { break; }
+        if (slot == SLOT_UNIQUE && pdUniques) { break; }
+
+        SetActorState(0, "Invisible");
+        terminate;
+    }
+    
     int hasSlot = SamsaraClientWeps[slot];
 
     if (displaymode != 0)
     {
-        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 35))
+        if ((SamsaraItemFlash >= (Timer() - 35)) && (Timer() >= 70))
         {
             Spawn("SamsaraChangeFlash", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
@@ -40,7 +44,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         }
     }
     
-    if (slot == SLOT_UNIQUE)  // Unique
+    if (slot == SLOT_UNIQUE)
     {
         switch (displaymode)
         {
@@ -49,13 +53,13 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             break;
             
           case 1:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkunique")) { SetActorState(0, PickupStates[toClass][7]); }
-            else { SetActorState(0, PickupStates[toClass][3]); }
+            if (pdUniques) { success = SetActorState(0, PickupStates[toClass][7]); }
+            if (!pdUniques || !success) { SetActorState(0, PickupStates[toClass][3]); }
             break;
             
           case 2:
-            if (GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkunique")) { SetActorState(0, PickupStates[toClass][4]); }
-            else { SetActorState(0, PickupStates[toClass][0]); }
+            if (pdUniques) { success = SetActorState(0, PickupStates[toClass][4]); }
+            if (!pdUniques || !success) { SetActorState(0, PickupStates[toClass][0]); }
             break;
         }
     }
@@ -71,12 +75,19 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
             Spawn("SamsaraChangeFlash2", GetActorX(0), GetActorY(0), GetActorZ(0));
         }
         
-        if (GetCVar("samsara_punchdrunk"))
+        switch (slot)
         {
-            if (hasSlot) { SetActorState(0, PickupStates[toClass][5]); }
-            else         { SetActorState(0, PickupStates[toClass][6]); }
+          case SLOT_CHAINSAW:
+          case SLOT_PUNCHDRUNKSAW:
+            if (pdSaws)
+            {
+                if (hasSlot) { success = SetActorState(0, PickupStates[toClass][5]); }
+                else         { success = SetActorState(0, PickupStates[toClass][6]); }
+            }
+            break;
         }
-        else
+
+        if (!success)
         {
             if (hasSlot) { SetActorState(0, PickupStates[toClass][1]); }
             else         { SetActorState(0, PickupStates[toClass][2]); }
@@ -84,8 +95,16 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
         break;
         
       case 2:
-        if (GetCVar("samsara_punchdrunk")) { SetActorState(0, PickupStates[toClass][4]); }
-        else { SetActorState(0, PickupStates[toClass][0]); }
+        switch (slot)
+        {
+          case SLOT_CHAINSAW:
+          case SLOT_PUNCHDRUNKSAW:
+            if (pdSaws) { success = SetActorState(0, PickupStates[toClass][4]); }
+            else { success = SetActorState(0, PickupStates[toClass][0]); }
+            break;
+        }
+          
+        if (!success) { SetActorState(0, PickupStates[toClass][0]); }
         break;
     }
 }
@@ -104,12 +123,21 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
     if (slot == -1) { terminate; }    
 
     int weaponStay = !!GetCVar("sv_weaponstay");
+    int punchdrunk = IsPunchdrunk & 1;
+    int pdSaws     = (IsPunchdrunk & 4) || punchdrunk;
 
-    if (GetCVar("samsara_punchdrunk"))
-    {
-        if (slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
-        else
-        { 
+    if (pdSaws && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+
+    if (punchdrunk)
+    { 
+        if (slot == SLOT_BFG9000)
+        {
+            SetResultValue(ACS_ExecuteWithResult(SAMSARA_GIVEUNIQUE, 0));
+            terminate;
+        }
+
+        if (slot != SLOT_PUNCHDRUNKSAW)
+        {
             SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
             terminate;
         }
@@ -174,7 +202,7 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 
     if (weaponGet && IsServer)
     {
-        int success = !_giveclassweapon(pclass, slot, 3, dropped, 0);
+        int success = _giveclassweapon(pclass, slot, 3, dropped, 0);
 
         if (!silent && success)
         {

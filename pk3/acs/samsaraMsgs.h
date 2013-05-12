@@ -1,4 +1,4 @@
-﻿#define MSGCOUNT 10
+#define MSGCOUNT 10
 
 int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] = 
 {
@@ -805,7 +805,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Accuracy is compensated for with more shooting.",
             "Turns out that chaingun had some grenades too. Neat.",
             "The previous model was a chaingun, by the way.",
-            "Oddly, this is familiar to you, as if it were from an old dream, but you can't exactly remember...",
+            "Hopeless encounters successfully won. Big guns probably helped.",
         },
         {
             "You got the SPNKR-XP SSM Launcher!",
@@ -870,16 +870,16 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "",
         },
         {
-            "A laser cannon! Find some grunts!",
-            "Oh god dammit even the \cachainsaw replacement\c- is ranged.",
-            "Wasn't this a saw blade thing?",
-            "Shouldn't this be a hammer?",
-            "This sounds like a weapon for soldiers who can't shoot straight.", // stormtroopers!
-            "This makes, what, five or six rapid fire weapons for Ranger?",
-            "Bouncy red death!",
-            "You'll find so much ammo for this at the start of the game.",
-            "Pewpewlasers!",
-            "What is this, Star Wars?",
+            "Mjolnir! Find some grunts!",
+            "You got a Hammer that shoots lightning. omg thor",
+            "The lightning works best when it's inside a wall.",
+            "You never did take that athpirin, did you.",
+            "So, uh, whose bone is that anyway?",
+            "It makes a terrible letter-opener.",
+            "Aiming at the floor is actually more effective.",
+            "This doesn't use ammo, you poo-poo bums. My immersion is now ruined forever.",
+            "Don't buy your Norse hammers from Wal-Mart, people.",
+            "Get out of here, you Parias wannabe!",
         },
         {
             "Picked up a shotgun. This one feels inferior, somehow.",
@@ -954,16 +954,16 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "Who designs a rotary nailgun?!",
         },
         {
-            "You got the Quad Damage! Gib everything.",
-            "I like the part where everything dies.",
+            "You got the Quad Damage and Thunderbolt! Gib everything.",
+            "Oh good. I've always wanted to tear people in half with lightning.",
             "Why can't I hold all these kills?",
-            "Two times bad, four times good!",
+            "You have a gun that fires instant death lightning. omg techthor",
             "Why do I destroy everything I touch? ;_;",
-            "The spikes aren't for stabbing, unfortunately.",
+            "Touch the ends together, and a million volts of electricity will come out.",
             "You can't spell Genocide with a Q, silly.",
             "You're like King Midas. But with gibs instead of gold.",
             "omg op gay hax nerf masterban",
-            "It's Quad Damage, not Quad Volume!",
+            "... you had to make this even more overpowered?",
         },
         {
             "You got the gauntlet!",
@@ -1068,16 +1068,16 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "I know who you are.",
     },
     {
-        "You got the Thunderbolt!",
-        "Well, okay, you might use this in deathmatch too.",
-        "Let's make an electromagnet, bring the enemies closer.",
-        "Who wants a body massage?",
-        "Stick a socket in it.",
-        "There's nothin' like a fistfulla' lightnin', now is there?",
-        "Cower, mortal, for now I control thy destiny.",
-        "Atop the tallest of earth's peaks dwell the gods of earth, and suffer not man to tell that he hath looked upon them.",
-        "This used to be Slot 6. Then bitching happened.",
-        "Control the fucking weather.",
+        "You got the laser cannon!",
+        "This sounds like a weapon for soldiers who can't shoot straight.", // stormtroopers!
+        "This makes, what, five or six rapid fire weapons for Ranger?",
+        "Bouncy red death!",
+        "Pewpewlasers!",
+        "What is this, Star Wars?",
+        "",
+        "",
+        "",
+        "",
     },
 };
 
@@ -1127,7 +1127,7 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "It makes a terrible sewing needle.",
         "Maybe the dollar store wasn't the best place to look.",
         "Poke of Kill That Thing In Front Of You.",
-        "",
+        "Next up, the Spear of Carl From Next Door.",
         "",
         "",
     },
@@ -1151,8 +1151,8 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "It's nothing compared to your farts.",
         "Great for soccer, too!",
         "Your running is now a military secret.",
-        "",
-        "",
+        "Comes with built-in earplugs.",
+        "Being able to see when using this? That's dumb.",
         "",
     },
     {
@@ -1174,10 +1174,10 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "You never did take that athpirin, did you.",
         "So, uh, whose bone is that anyway?",
         "It makes a terrible letter-opener.",
-        "",
-        "",
-        "",
-        "",
+        "Aiming at the floor is actually more effective.",
+        "This doesn't use ammo, you poo-poo bums. My immersion is now ruined forever.",
+        "Get out of he... okay, I guess you can stay. You're still a stupid Parias wannabe.",
+        "Hammertime.",
     },
 };
 

@@ -12,7 +12,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
     
     Weapon.AmmoUse2 1
     Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "Cell"
+    Weapon.AmmoType2 "MultiRocketAmmo"
 
     Weapon.SisterWeapon "Spectral RL"
     
@@ -48,7 +48,6 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         Loop
         
       Fire:
-        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiFire")
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
@@ -91,14 +90,14 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
         goto Ready
         
       MultiFire:
-        TNT1 A 0 A_JumpIfInventory("Cell",1,"MultiFire2")
+        TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo",1,"MultiFire2")
         goto Swap2
       MultiFire2:
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 4, 15)
         TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         TNT1 A 0 A_AlertMonsters
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
-        TNT1 A 0 A_TakeInventory("Cell",10)
+        TNT1 A 0 A_TakeInventory("MultiRocketAmmo",1)
         TNT1 A 0 A_JumpIfInventory("QuadDamagePower", 1, "QuadAlt")
         goto AfterSoundAlt
         
@@ -268,30 +267,26 @@ actor "Spectral RL": "  Rocket Launcher  "
     States
     {
       Fire:
+        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("UsingMultiRockets",1,"MultiFire")
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 5, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 20)
-        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
-        TNT1 A 0 A_AlertMonsters
         QRKL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
         QRKL B 0 A_FireCustomMissile("SpectralRocket")
         goto Fire2
         
       MultiFire:
-        TNT1 A 0 A_JumpIfInventory("Cell", 1, 1)
+        TNT1 A 0 A_JumpIfInventory("MultiRocketAmmo", 1, 1)
         goto Swap2
         TNT1 A 0 ACS_ExecuteAlways(312, 0, 7, 4, 15)
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 35)
 
-        TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
-        TNT1 A 0 A_AlertMonsters
         QMRL B 0 A_PlaySound("quakeweps/rlfire", CHAN_WEAPON)
         TNT1 A 0 A_PlaySound("weapons/sigil", 6)
 
-        TNT1 A 0 //A_TakeInventory("Cell",2)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -4, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket", -2, 0)
         QMRL B 0 A_FireCustomMissile("SpectralClusterRocket",  2, 0)

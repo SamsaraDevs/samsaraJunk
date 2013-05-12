@@ -1,9 +1,7 @@
 actor "Gauntlet": InstantSwitchWeapon
 {
     Weapon.Kickback 100
-    Weapon.SelectionOrder 7
-
-    Weapon.SlotNumber 1
+    Weapon.SelectionOrder 9
 
     +UNDROPPABLE
     +CHEATNOTWEAPON
@@ -14,6 +12,8 @@ actor "Gauntlet": InstantSwitchWeapon
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the gauntlet"
     Obituary "%k \csmade\c- %o \cstalk to the hand.\c-"
+
+    Weapon.SisterWeapon "Spectral Gauntlet"
     
     Weapon.YAdjust 16
     
@@ -38,8 +38,11 @@ actor "Gauntlet": InstantSwitchWeapon
         QGNT A 0 A_AlertMonsters
         QGNT A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 9)
         QGNT A 0 A_PlaySound("quakeweps/gauntlet", 6, 1, 1)
-        QGNT D 0 A_CustomPunch(25, 1, 0, "GauntletPuff")
+        QGNT D 0 A_CustomPunch(30, 1, 0, "GauntletPuff")
         QGNT D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageHold")
+        goto Fire2
+
+      Fire2:
         QGNT B 1 bright offset(0, 33)
         QGNT C 1 bright offset(0, 34)
         QGNT D 1 bright offset(0, 33)
@@ -72,6 +75,25 @@ actor "Gauntlet": InstantSwitchWeapon
     }
 }
 
+actor "Spectral Gauntlet": Gauntlet
+{
+    Weapon.SisterWeapon "Gauntlet"
+    +POWERED_UP
+
+    States
+    {
+      Fire:
+        QGNT A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
+        QGNT A 0 A_AlertMonsters
+        QGNT A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 9)
+        QSGN A 0 A_PlaySound("weapons/sigil", 6)
+        QGNT A 0 A_PlaySound("quakeweps/gauntlet", 6, 1, 1)
+        QGNT D 0 A_CustomPunch(30, 1, 0, "SpectralGauntletPuff")
+        QGNT D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageHold")
+        goto Fire2
+    }
+}
+
 actor GauntletPuff: QuakeBulletPuff
 {
     +PUFFONACTORS
@@ -88,6 +110,11 @@ actor GauntletPuff: QuakeBulletPuff
       Crash:
         goto Super::Spawn
     }
+}
+
+actor SpectralGauntletPuff: GauntletPuff
+{
+    DamageType "Spectral"
 }
 
 actor GauntletSparks
