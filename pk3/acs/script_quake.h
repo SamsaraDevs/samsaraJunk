@@ -143,15 +143,20 @@ script SAMSARA_QPOWERS (int startTime)
     
     if (samsaraClassNum() != CLASS_QUAKE) { terminate; }
 
+    quadTimer   = CheckQuad();
+    regenTimer  = CheckInventory("QuakeRegenTimer");
+    invisTimer  = CheckInventory("QuakeInvisTimer");
+    pentTimer   = CheckInventory("QuakePentTimer");
+
     while (ServerEnterTimes[pln] == startTime)
     {
         health = GetActorProperty(0, APROP_Health);
 
         oQuadTimer = quadTimer;
-        quadTimer = CheckQuad();
+        quadTimer  = CheckQuad();
 
         oRegenTimer = regenTimer;
-        regenTimer =  CheckInventory("QuakeRegenTimer");
+        regenTimer  = CheckInventory("QuakeRegenTimer");
 
         oInvisTimer = invisTimer;
         invisTimer  = CheckInventory("QuakeInvisTimer");
