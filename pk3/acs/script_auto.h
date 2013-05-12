@@ -2,6 +2,8 @@ script SAMSARA_OPEN open
 {
     IsServer = 1;
     int opd, pd;
+    int opdu, pdu;
+    int opds, pds;
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -105,14 +107,26 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunkuniques"))
         {   ConsoleCommand("set samsara_punchdrunkuniques 0");
         ConsoleCommand("archivecvar samsara_punchdrunkuniques"); }
+        
+        if (!GetCVar("samsara_punchdrunksaws"))
+        {   ConsoleCommand("set samsara_punchdrunksaws 0");
+        ConsoleCommand("archivecvar samsara_punchdrunksaws"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
 
-        if (pd != opd || Timer() % 18 == 0)
+        opdu = pdu;
+        pdu = !!GetCVar("samsara_punchdrunkuniques");
+
+        opds = pds;
+        pds = !!GetCVar("samsara_punchdrunksaws");
+
+        if (pd != opd || opdu != pdu || opds != pds || Timer() % 18 == 0)
         {
-            IsPunchdrunk = pd;
-            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, pd);
+            IsPunchdrunk  = pd  << 0;
+            IsPunchdrunk |= pdu << 1;
+            IsPunchdrunk |= pds << 2;
+            ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE, 0, 8, IsPunchdrunk);
         }
         
         Delay(1);
@@ -254,34 +268,32 @@ script SAMSARA_SPAWN (int respawning)
         if (CheckInventory("RWastemUnloaded")) { wsteSide = 1; }
         if (CheckInventory("LWastemUnloaded")) { wsteSide = 0; }
 
-        if (i < 2)
+        if (i <= 2)
         {
             if (!CheckInventory("WastemEmpty"))  { GiveInventory("WastemEmpty", 1); };
             if (!CheckInventory("LWastemEmpty")) { GiveInventory("LWastemEmpty", 1); };
             if (!CheckInventory("RWastemEmpty")) { GiveInventory("RWastemEmpty", 1); };
+        }
+        else if (i <= 4)
+        {
+            if (CheckInventory("WastemEmpty"))  { TakeInventory("WastemEmpty", 0x7FFFFFFF); };
+
+            if (!wsteSide)
+            {
+                if (!CheckInventory("LWastemEmpty")) { GiveInventory("LWastemEmpty", 1); };
+                if (CheckInventory("RWastemEmpty")) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
+            }
+            else
+            {
+                if (!CheckInventory("RWastemEmpty")) { GiveInventory("RWastemEmpty", 1); };
+                if (CheckInventory("LWastemEmpty")) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
+            }
         }
         else
         {
             if (CheckInventory("WastemEmpty"))  { TakeInventory("WastemEmpty", 0x7FFFFFFF); };
             if (CheckInventory("LWastemEmpty") && !wsteSide) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
             if (CheckInventory("RWastemEmpty") &&  wsteSide) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
-        }
-
-        if (i < 4)
-        {
-            if (!wsteSide)
-            {
-                if (!CheckInventory("LWastemEmpty")) { GiveInventory("LWastemEmpty", 1); };
-            }
-            else
-            {
-                if (!CheckInventory("RWastemEmpty")) { GiveInventory("RWastemEmpty", 1); };
-            }
-        }
-        else
-        {
-            if (CheckInventory("RWastemEmpty")) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
-            if (CheckInventory("LWastemEmpty")) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
         }
 
         /*

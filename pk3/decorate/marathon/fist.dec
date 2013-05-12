@@ -13,7 +13,6 @@ actor "Talon Ceramic Combat Blade" : Weapon
     Weapon.BobRangeX 0
     Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
-    Weapon.SlotNumber 2
     Weapon.SelectionOrder 3700
     Obituary "%k \cndug into\c- %o\cn's spine.\c-"
     Weapon.AmmoType		"KnifeAmmo"
@@ -58,9 +57,10 @@ actor "Talon Ceramic Combat Blade" : Weapon
         
       Fire:
         MRNF BCD 2
-        MRNF DEF 1
-        MRNF G 1 A_CustomPunch(random(100,120),1,0,"MarathonKnifePuff",96)
-        MRNF H 1
+        MRNF DE 1
+        MRNF F 1 A_CustomPunch(random(36,40),1,0,"MarathonKnifePuff",96)
+        MRNF G 1 A_CustomPunch(random(36,40),1,0,"MarathonKnifePuff",96)
+        MRNF H 1 A_CustomPunch(random(36,40),1,0,"MarathonKnifePuff",96)
         TNT1 A 10
         TNT1 AAAAAAAAAAA 0 A_Lower
         Goto Select
@@ -173,8 +173,7 @@ actor "Tech.50 Pacifier" : Weapon
     //Weapon.BobRangeX 0
     //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFusionSkin"
-    Weapon.SelectionOrder 1300
-    Weapon.SlotNumber 1
+    Weapon.SelectionOrder 4000
     Inventory.PickupMessage "You picked up a Tech.50 Pacifier Security Handgun!"
     Scale 0.35
     +NOALERT

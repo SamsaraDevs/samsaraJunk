@@ -1242,6 +1242,10 @@ quakeweps/invison               sounds/ranger/inv1.ogg
 quakeweps/invisout              sounds/ranger/inv2.ogg
 quakeweps/inviswhisper          sounds/ranger/inv3.ogg
 
+quakeweps/pentagramon           sounds/ranger/pentagram.wav
+quakeweps/pentagram             sounds/ranger/pentagramding.wav
+$alias quakeweps/pentagramout   quakeweps/regenout
+
 $rolloff quakeweps/inviswhisper 64 512
 
 quakeweps/usefail               sounds/ranger/use_nothing.wav

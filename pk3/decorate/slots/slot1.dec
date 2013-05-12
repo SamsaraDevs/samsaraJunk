@@ -21,7 +21,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         Hexen:    PSBG A 35 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         Dukeguy:  WPBM A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: FSMG A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        Quake:    QLSC Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Quake:    UNIQ P 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomFull:      PSAW B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexFull:      PBSP B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -30,7 +30,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         HexenFull:     PFLC B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeFull:      PPBM B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonFull:  PSMG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeFull:     PLSC B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeFull:     PMJL B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomEmpty:     PSAW A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexEmpty:     PBSP A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -39,7 +39,7 @@ actor SamsaraSlotOnePickup: SamsaraSlotPickup replaces Chainsaw
         HexenEmpty:    PFLC A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeEmpty:     PPBM A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonEmpty: PSMG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeEmpty:    PLSC A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeEmpty:    PMJL A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomPunchdrunk:  WSAW A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexPunchdrunk:  CSPR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop

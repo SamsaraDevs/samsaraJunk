@@ -324,7 +324,7 @@ actor DukeDevastatorRocket
     Speed 30
     Damage (38)
     Projectile
-    Obituary "%k \cfdevastated\c- %o."
+    Obituary "%k \cfdevastated\c- %o\cf."
     Scale 0.2
     Decal DoomImpScorch
     DamageType "DukeExplosive"

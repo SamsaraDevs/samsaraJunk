@@ -11,7 +11,7 @@ actor "Super Nailgun": InstantSwitchWeapon
     Weapon.AmmoType "Clip"
 
     Weapon.AmmoGive2 0
-    Weapon.AmmoType2 "Cell"
+    Weapon.AmmoType2 "LavaNails"
 
     Weapon.SIsterWeapon "Spectral SNG"
 
@@ -50,7 +50,6 @@ actor "Super Nailgun": InstantSwitchWeapon
         loop
 
       Fire:
-        TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"LavaAltFire")
         TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
         QSNG A 0 A_TakeInventory("FiredSLNails")
@@ -155,7 +154,7 @@ actor "Super Nailgun": InstantSwitchWeapon
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("Cell",1,"LavaAltFire2")
+        TNT1 A 0 A_JumpIfInventory("LavaNails",2,"LavaAltFire2")
         goto Swap2
       LavaAltFire2:
         QSNL A 0 A_GiveInventory("FiredSLNails")
@@ -164,13 +163,13 @@ actor "Super Nailgun": InstantSwitchWeapon
         TNT1 A 0 A_JumpIfInventory("QuakeInvisTimer", 1, 2)
         TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_PlaySound("quakeweps/sngfire", CHAN_WEAPON)
-        QSNL A 0 A_TakeInventory("Cell", 2)
+        QSNL A 0 A_TakeInventory("LavaNails", 2)
         QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
         QSNL A 0 A_JumpIfInventory("CoopModeOn", 1, "AltFireCoop")
         QSNL A 0 A_JumpIfInventory("SPModeOn", 1, "AltFireCoop")
-        QSNL A 0 A_FireCustomMissile("QuakeSLNail")
+        QSNL A 0 A_FireCustomMissile("QuakeSLNail", 0, 0)
         goto AltFire0
 
       AltFireCoop:
@@ -342,9 +341,7 @@ actor "Spectral SNG": "Super Nailgun"
     {
       Fire:
         TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"LavaAltFire")
-        TNT1 A 0 A_JumpIfNoAmmo("DeselectShit")
 
-        TNT1 A 0 A_AlertMonsters
         QSNG A 0 A_TakeInventory("FiredSLNails")
         QSNG A 0 A_TakeInventory("UsingDoEAmmo")
         QSNG A 0 A_GunFlash
@@ -364,10 +361,6 @@ actor "Spectral SNG": "Super Nailgun"
         
         
       LavaAltFire:
-        TNT1 A 0 A_JumpIfInventory("Cell", 1, 1)
-        goto Swap2
-
-        TNT1 A 0 A_AlertMonsters
         QSNL A 0 A_GiveInventory("FiredSLNails")
         GSNL A 0 A_GiveInventory("UsingDoEAmmo")
         QSNL A 0 A_GunFlash
@@ -380,8 +373,6 @@ actor "Spectral SNG": "Super Nailgun"
         QSNL A 0 A_FireCustomMissile("QLTrail1",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail2",  0, 0, 0)
         QSNL A 0 A_FireCustomMissile("QLTrail3",  0, 0, 0)
-
-        TNT1 A 0 A_TakeInventory("Cell",4)
 
         QSNG A 0 ACS_ExecuteAlways(317, 0, 8)
         QSNL A 0 A_FireCustomMissile("SpectralSLNail",0,0)
@@ -409,7 +400,7 @@ actor QuakeSLNail: QuakeLavaNail
 {
     Damage (27)
     DamageType Fire
-    Obituary "%k\cs's penetrated\c- %o\cs and made %h a flamer."  // this sounds so bad but whatever
+    Obituary "%k\cs's super-penetrated\c- %o\cs."  // this sounds so bad but whatever // This sounds even worse!
     DeathSound "quakeweps/supernailricochet"
 }
 

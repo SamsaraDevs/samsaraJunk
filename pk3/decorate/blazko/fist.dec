@@ -28,7 +28,7 @@ actor Knife: InstantSwitchWeapon
 
       Fire:
         WKNF B 0 A_JumpIfInventory("BJUberKnife", 1, "Fire3")
-        TNT1 A 0 A_JumpIfInventory("BJSuperKnife",1,"Fire2")
+        TNT1 A 0 A_JumpIfInventory("BJSuperKnife",1, "Fire2")
         WKNF GH 3
         WKNF I 3 A_CustomPunch(7,1,0,"BlankPuff2",64)
         WKNF I 0 A_PlayWeaponSound ("wolfen/knife2")
@@ -36,15 +36,15 @@ actor Knife: InstantSwitchWeapon
         goto Ready
 
       Fire2:
-        WKNF BCD 3 A_CustomPunch(6,1,0,"BlankPuff2",64)
+        WKNF BC 3 A_CustomPunch(6,1,0,"BlankPuff2",64)
         WKNF C 0 A_JumpIfInventory("PopcornStab", 1, "Popcorn2")
-        goto Fire3_2
+        goto Fire2_2
 
       Popcorn2:
         WKNF D 0 A_FireBullets(0,0, 1,0, "KnifePopcorn", 0, 64)
-        goto Fire3_2
+        goto Fire2_2
 
-      Fire3_2:
+      Fire2_2:
         WKNF D 3 A_CustomPunch(6,1,0,"BlankPuff2",64)
         WKNF D 0 A_PlayWeaponSound ("wolfen/knife")
         WKNF E 3
@@ -102,7 +102,6 @@ actor "Spear of Longinus" : InstantSwitchWeapon
 {
     Weapon.Kickback 0
     Weapon.SelectionOrder 2200
-    Weapon.SlotNumber 2
     Inventory.PickUpSound "wolfen/knifeget"
     Inventory.PickupMessage "You got the Spear of...Destiny?"
     Obituary "%k \cjput\c- %o \cjout of %p misery.\c-"
@@ -125,10 +124,38 @@ actor "Spear of Longinus" : InstantSwitchWeapon
 
       Fire:
 	    TNT1 A 0 A_PlayWeaponSound("wolfen/spearstab")
-        WSPR GHI 3 A_CustomPunch(20,1,0,"BlankPuff2",98)
+        WSPR G 3 A_CustomPunch(20,1,0,"SpearPopcornPuff",98)
+        WSPR HI 3 A_CustomPunch(20,1,0,"BlankPuff2",98)
         WSPR I 5
         WSPR I 0
         WSPR H 1
         goto Ready
+    }
+}
+
+actor SpearPopcornPuff: BulletPuff
+{
+    Radius 4
+    Height 4
+    VSpeed 0
+
+    Scale 0.35
+    Alpha 0.75
+    RenderStyle Add
+
+    DeathSound "wolfen/spearexplode2"
+    +PUFFONACTORS
+    +CLIENTSIDEONLY
+
+    States
+    {
+      Spawn:
+      Melee:
+      XDeath:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        SPB2 AB 0 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0,0,0, random(-3,3),0,random(-3,3), random(0,360))
+        SPX2 ABCDE 4 BRIGHT
+        Stop
     }
 }

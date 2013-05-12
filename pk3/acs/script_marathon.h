@@ -25,8 +25,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         }
 
         if ((dropped && hasShotty && ammoFull) ||
-            (!dropped && (hasBoth || (hasShotty && limited)) && ammoFull)
-           )
+            (!dropped && (hasBoth || (hasShotty && limited)) && ammoFull))
         {
             SetResultValue(0);
             terminate;
@@ -45,6 +44,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         {
             GiveInventory("LevelLimiter", 1);
         }
+        SetResultValue(1);
         break;
 
       default:
@@ -61,6 +61,8 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             i = ammoCount(ClassWeapons[class][slot][S_AMMO2]);
             GiveInventory(ClassWeapons[class][slot][S_AMMO2], i*2);
         }
+
+        SetResultValue(1);
         break;
     }
 }

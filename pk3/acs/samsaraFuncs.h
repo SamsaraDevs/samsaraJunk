@@ -5,7 +5,8 @@ function int GiveClassWeapon(int class, int slot, int ammoMode)
 
 function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, int nopd)
 {
-    if (GetCVar("samsara_punchdrunk") && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
+    int pdSaws     = (IsPunchdrunk & 4) || (IsPunchdrunk & 1);
+    if (pdSaws && slot == SLOT_CHAINSAW) { slot = SLOT_PUNCHDRUNKSAW; }
 
     int weapon = ClassWeapons[class][slot][S_WEP];
     int ammo1  = ClassWeapons[class][slot][S_AMMO1];
@@ -24,7 +25,8 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
-    if (!CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
+    if (ClassWeapons[class][slot][S_CHECKITEM] == "ForceCheck"
+     || !CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
 
     if (StrLen(ammo1)) { hasAmmo |= 1; }
     if (StrLen(ammo2)) { hasAmmo |= 2; }
@@ -79,7 +81,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
         }
     }
 
-    return !success;
+    return !!success;
 }
 
 function int HasClassWeapon(int class, int slot)
@@ -144,9 +146,14 @@ function void ApplyLMS(void)
     }
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
-    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 2); }
+    if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 1); }
 
     i = (GetCVar("samsara_lmslife") + 1) * PlayerCount();
+
+    GiveInventory("Clip",       GetAmmoCapacity("Clip")         - CheckInventory("Clip"));
+    GiveInventory("Shell",      GetAmmoCapacity("Shell")        - CheckInventory("Shell"));
+    GiveInventory("RocketAmmo", GetAmmoCapacity("RocketAmmo")   - CheckInventory("RocketAmmo"));
+    GiveInventory("Cell",       GetAmmoCapacity("Cell")         - CheckInventory("Cell"));
 
     TakeInventory("LavaNails",       0x7FFFFFFF);
     TakeInventory("MultiRocketAmmo", 0x7FFFFFFF);
@@ -209,9 +216,12 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
     int success; 
     int i, j, tmpcount;
 
+    int punchdrunk = IsPunchdrunk & 1;
+    int pdUniques  = (IsPunchdrunk & 2) || punchdrunk;
+
     if (cnum == -1) { return -1; }
 
-    if ((GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) && !nopd)
+    if (pdUniques && !nopd)
     {
         GiveInventory(PunchdrunkItems[cnum][1], 1);
         return 1;
@@ -327,7 +337,7 @@ function int ConvertClassWeapons(int classnum)
             if (HasClassWeapon(i, j))
             {
                 TakeInventory(ClassWeapons[i][j][S_WEP], 0x7FFFFFFF);
-                if (classnum != -1) { GiveInventory(ClassWeapons[classnum][j][S_WEP], 1); }
+                if (classnum != -1) { GiveClassWeapon(classnum, j, 1); }
                 ret += 1;
             }
         }
@@ -359,6 +369,11 @@ function int ammoCount(int ammoname)
     }
 
     return GetAmmoCapacity(ammoname); // not the best of defaults but ya gotta have SOMETHING
+}
+
+function int CheckQuad(void)
+{
+    return CheckInventory("QuakeQuadTimer") - QUAD_THRESHOLD;
 }
 
 function int GiveQuad(int toAdd)

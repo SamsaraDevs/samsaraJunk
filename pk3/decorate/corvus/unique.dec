@@ -98,6 +98,7 @@ actor EggFX3 : MorphProjectile // This, however, still works funderfully in DM.
 
 actor EggFX4: EggFX2
 {
+    MorphProjectile.Duration 245 // 35 * 7 = 245
     MorphProjectile.PlayerClass "ChickenPlayer3"
 }
 

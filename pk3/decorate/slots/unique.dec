@@ -7,7 +7,6 @@ actor SamsaraUniquePickup: RandomSpawner replaces Berserk
 actor SamsaraUniquePickup1: CustomInventory
 {
     +QUIET
-    +INVENTORY.BIGPOWERUP
 
     States
     {
@@ -26,14 +25,14 @@ actor SamsaraUniquePickup1: CustomInventory
         
         NoGuy:    UNIQ B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        Doomguy:  PSTR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Doomguy:  DGBZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Chexguy:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Heretic:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         Wolfguy:  WFLF A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Hexen:    HRAD ABCDEFGHIJKLMNOP 4 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
         Dukeguy:  DKJT A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         Marathon: AWPN A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        Quake:    QLTG Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        Quake:    QLSC Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
         DoomSpecial:      UNIQ D 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         ChexSpecial:      UNIQ C 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -42,14 +41,14 @@ actor SamsaraUniquePickup1: CustomInventory
         HexenSpecial:     UNIQ G 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         DukeSpecial:      UNIQ E 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonSpecial:  UNIQ I 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        QuakeSpecial: 	  UNIQ J 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        QuakeSpecial: 	  UNIQ T 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
-        DoomPunchdrunk:  PSTR A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        ChexPunchdrunk:  CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DoomPunchdrunk:     DGBZ A 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        ChexPunchdrunk:     CBRK ABCD 8 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         HereticPunchdrunk:  EGGC ABCB 8 A_ChangeFlag("FLOATBOB", 1)   goto SpawnLoop
-        WolfPunchdrunk:  UNIQ R 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        WolfPunchdrunk:     UNIQ R 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         HexenPunchdrunk:    UNIQ S 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
-        DukePunchdrunk:  UNIQ N 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
+        DukePunchdrunk:     UNIQ N 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         MarathonPunchdrunk: MRNF Z 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         QuakePunchdrunk:    UNIQ P 35 A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
