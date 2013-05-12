@@ -5,6 +5,7 @@ GAMEPLAY:
 
 BUGFIXES:
 - Apparently, red armors, with samsara_armormode 0, would cause an infinite 0-tic loop and hang the server forever. Fixed.
+- Bosses can no longer be hurt when in their monologues.
 
 POLISH:
 
