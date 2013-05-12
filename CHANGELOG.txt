@@ -5,6 +5,7 @@ GAMEPLAY:
 
 BUGFIXES:
 - Apparently, red armors, with samsara_armormode 0, would cause an infinite 0-tic loop and hang the server forever. Fixed.
+- "Unknown P-Code 134 in script 312" - this happened every time someone fired in quake without samsara_cl_norecoil set. Fixed.
 
 POLISH:
 
