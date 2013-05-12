@@ -85,12 +85,12 @@ actor QuakeAxePuff: QuakeBulletPuff
 	MeleeSound "quakeweps/axehit"
 	States
     {
-      Spawn:
 	  Crash:
         TNT1 A 0
 		TNT1 A 0 A_PlaySound("quakeweps/axewall")
         goto Super::Spawn
 
+      Spawn:
 	  Melee:
 	    TNT1 A 1 A_PlaySound("quakeweps/axehit")
         stop
