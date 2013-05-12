@@ -124,10 +124,38 @@ actor "Spear of Longinus" : InstantSwitchWeapon
 
       Fire:
 	    TNT1 A 0 A_PlayWeaponSound("wolfen/spearstab")
-        WSPR GHI 3 A_CustomPunch(20,1,0,"BlankPuff2",98)
+        WSPR G 3 A_CustomPunch(20,1,0,"SpearPopcornPuff",98)
+        WSPR HI 3 A_CustomPunch(20,1,0,"BlankPuff2",98)
         WSPR I 5
         WSPR I 0
         WSPR H 1
         goto Ready
+    }
+}
+
+actor SpearPopcornPuff: BulletPuff
+{
+    Radius 4
+    Height 4
+    VSpeed 0
+
+    Scale 0.35
+    Alpha 0.75
+    RenderStyle Add
+
+    DeathSound "wolfen/spearexplode2"
+    +PUFFONACTORS
+    +CLIENTSIDEONLY
+
+    States
+    {
+      Spawn:
+      Melee:
+      XDeath:
+        TNT1 A 0
+        TNT1 A 0 A_Scream
+        SPB2 AB 0 BRIGHT A_SpawnItemEx("SpearShotTrail2", 0,0,0, random(-3,3),0,random(-3,3), random(0,360))
+        SPX2 ABCDE 4 BRIGHT
+        Stop
     }
 }
