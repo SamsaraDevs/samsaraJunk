@@ -17,6 +17,7 @@ script SAMSARA_CLIENT_CLASS (int slot) clientside
     slot = itemToSlot(slot);
 
     if (slot == SLOT_CHAINSAW && pdSaws) { slot = SLOT_PUNCHDRUNKSAW; }
+    if (slot == SLOT_BFG9000 && pdUniques) { slot = SLOT_UNIQUE; }
 
     while (punchdrunk)
     {
@@ -115,6 +116,12 @@ script SAMSARA_GIVEWEAPON (int slot, int dropped, int silent)
 
     if (punchdrunk)
     { 
+        if (slot == SLOT_BFG9000)
+        {
+            SetResultValue(ACS_ExecuteWithResult(SAMSARA_GIVEUNIQUE, 0));
+            terminate;
+        }
+
         if (slot != SLOT_PUNCHDRUNKSAW)
         {
             SetResultValue(weaponStay * WEPFLAGS_WEAPONSTAY);
