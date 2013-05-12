@@ -38,7 +38,7 @@ actor RangerExtraAxeDamage: PowerDamage
 {
     Powerup.Duration 0x7FFFFFFF
 
-    DamageFactor "Pistol", 1.5
+    DamageFactor "QuakePistol", 1.5
 }
 
 actor DoomguyPunchDrunk: Trigger

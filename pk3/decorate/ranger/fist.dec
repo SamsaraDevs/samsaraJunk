@@ -79,7 +79,7 @@ actor QuakeAxePuff: QuakeBulletPuff
 {
     +PUFFONACTORS
 
-    DamageType "Pistol"
+    DamageType "QuakePistol"
     AttackSound "quakeweps/axewall"
 	SeeSound "quakeweps/axehit"
 	MeleeSound "quakeweps/axehit"

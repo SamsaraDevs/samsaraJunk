@@ -1127,7 +1127,7 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "It makes a terrible sewing needle.",
         "Maybe the dollar store wasn't the best place to look.",
         "Poke of Kill That Thing In Front Of You.",
-        "",
+        "Next up, the Spear of Carl From Next Door.",
         "",
         "",
     },
@@ -1151,8 +1151,8 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "It's nothing compared to your farts.",
         "Great for soccer, too!",
         "Your running is now a military secret.",
-        "",
-        "",
+        "Comes with built-in earplugs.",
+        "Being able to see when using this? That's dumb.",
         "",
     },
     {
@@ -1177,7 +1177,7 @@ int PunchDrunkUniqueMessages[CLASSCOUNT][MSGCOUNT] =
         "Aiming at the floor is actually more effective.",
         "This doesn't use ammo, you poo-poo bums. My immersion is now ruined forever.",
         "Get out of he... okay, I guess you can stay. You're still a stupid Parias wannabe.",
-        "",
+        "Hammertime.",
     },
 };
 
