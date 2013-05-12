@@ -5,3 +5,4 @@
 #include "gldefs/heretic.txt"
 #include "gldefs/hexen.txt"
 #include "gldefs/quake.txt"
+#include "gldefs/popsoap.txt"
