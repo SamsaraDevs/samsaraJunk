@@ -216,9 +216,12 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
     int success; 
     int i, j, tmpcount;
 
+    int punchdrunk = IsPunchdrunk & 1;
+    int pdUniques  = (IsPunchdrunk & 2) || punchdrunk;
+
     if (cnum == -1) { return -1; }
 
-    if ((GetCVar("samsara_punchdrunk") || GetCVar("samsara_punchdrunkuniques")) && !nopd)
+    if (pdUniques && !nopd)
     {
         GiveInventory(PunchdrunkItems[cnum][1], 1);
         return 1;
