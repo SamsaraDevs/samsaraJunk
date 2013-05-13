@@ -7,6 +7,8 @@ BUGFIXES:
 - Apparently, red armors, with samsara_armormode 0, would cause an infinite 0-tic loop and hang the server forever. Fixed.
 - Bosses can no longer be hurt when in their monologues.
 - If autoaim was on, Mjolnir's lightning wouldn't work. Fixed.
+- The Wraithverge no longer turns on its master.
+- Ranger tipbox updated.
 
 POLISH:
 - Popsoap's GLDefs now actually work.
