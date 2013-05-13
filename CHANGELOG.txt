@@ -10,6 +10,7 @@ BUGFIXES:
 
 POLISH:
 - Popsoap's GLDefs now actually work.
+- Ranger should now properly play the Quad sound on the Thunderbolt at all times.
 
 FROM 0.28 TO 0.29
 ========================
