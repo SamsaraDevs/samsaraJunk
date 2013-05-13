@@ -89,6 +89,8 @@ actor QuakePlayer: PlayerPawn
         
       Pain.Slime:
         
+      Pain.HexGreenFire:
+        
       Pain.Fire:
         RANG F 4
         RANG F 4 A_PlaySound("ranger/firepain", CHAN_VOICE)
