@@ -412,9 +412,6 @@ script SAMSARA_QPOWERS (int startTime)
         TakeInventory("QuakeInvisTimer", 1);
         TakeInventory("QuakePentTimer", 1);
 
-        if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
-        else { SetActorProperty(0, APROP_Gravity, 0.75); }
-
         if (UnloadingNow)
         {
             SetActorProperty(0, APROP_Health, middle(health, getMaxHealth(), health - healthGiven));
