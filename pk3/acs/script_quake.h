@@ -48,7 +48,7 @@ script SAMSARA_MEGAHEALTH (int hpcount, int hpPerSec, int delayTics)
 script SAMSARA_RECOIL (int degrees, int ticsup, int ticsdown) clientside
 {
     if (degrees == 0) { terminate; }
-    if (GetCvar("samsara_cl_norecoil") == 1 && ticsup > 0) { terminate; }
+    if (GetCVar("samsara_cl_norecoil") == 1 && ticsup > 0) { terminate; }
     if (GetCVar("sv_nofreelook")) { terminate; }
 
     degrees = itof(degrees);

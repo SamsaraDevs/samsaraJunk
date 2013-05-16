@@ -140,10 +140,6 @@ function void ApplyLMS(void)
 
     for (i = 0; i < SLOT_BFG9000; i++) { GiveClassWeapon(classNum, i, 1); }
 
-    if (GetCVar("samsara_lmsunique"))
-    {
-        for (i = 0; i < UNIQUECOUNT; i++) { GiveClassUnique(classNum, i); }
-    }
 
     if (StrLen(LMSItems[classNum])) { GiveInventory(LMSItems[classNum], 1); }
     if (GetCVar("samsara_lmsult")) { GiveClassWeapon(classNum, SLOT_BFG9000, 1); }

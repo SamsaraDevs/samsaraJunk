@@ -138,7 +138,6 @@ script SAMSARA_OPEN open
 
 script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
 script SAMSARA_RETURN return { UnloadingNow = 0; ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
-script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
 {
@@ -148,6 +147,7 @@ script SAMSARA_SPAWN (int respawning)
     int endloop;
     int canbuddha;
     int wsteSide;
+    int armor, oarmor;
     int i;
 
     ServerEnterTimes[pln] = startTime;
@@ -297,6 +297,14 @@ script SAMSARA_SPAWN (int respawning)
             if (CheckInventory("WastemEmpty"))  { TakeInventory("WastemEmpty", 0x7FFFFFFF); };
             if (CheckInventory("LWastemEmpty") && !wsteSide) { TakeInventory("LWastemEmpty", 0x7FFFFFFF); };
             if (CheckInventory("RWastemEmpty") &&  wsteSide) { TakeInventory("RWastemEmpty", 0x7FFFFFFF); };
+        }
+
+        oarmor = armor;
+        armor = CheckInventory("Armor");
+
+        if (oarmor > armor && ArmorMode == 3)
+        {
+            ActivatorSound("samsara/shieldhit", 127);
         }
 
         /*
