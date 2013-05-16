@@ -304,7 +304,16 @@ script SAMSARA_SPAWN (int respawning)
 
         if (oarmor > armor && ArmorMode == 3)
         {
-            ActivatorSound("samsara/shieldhit", 127);
+            if (samsaraClassNum() == CLASS_MARATHON)
+            {
+                ActivatorSound("marathon/shieldhit", 127);
+                FadeRange(255, 255, 255, 0.4, 0, 0, 0, 0.0, 8.0 / 35);
+            }
+            else
+            {
+                ActivatorSound("samsara/shieldhit", 127);
+                FadeRange(255, 255, 0, min(0.5, (oarmor - armor) * 0.015), 0, 0, 0, 0.0, min(35.0, 1.5 * (oarmor - armor)) / 35);
+            }
         }
 
         /*
@@ -316,6 +325,11 @@ script SAMSARA_SPAWN (int respawning)
           case CLASS_MARATHON:
             if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
             else { SetActorProperty(0, APROP_Gravity, 0.15); }
+            break;
+
+          case CLASS_QUAKE:
+            if (GetCVar("samsara_nocustomgravity")) { SetActorProperty(0, APROP_Gravity, 1.0); }
+            else { SetActorProperty(0, APROP_Gravity, 0.75); }
             break;
 
           default:
