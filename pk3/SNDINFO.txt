@@ -44,6 +44,8 @@ archvile/resummon	VILESMMN // Taken from Fatal/Fake
 
 blackbirdtrustnoone			VOC14 // Haaaaack.
 
+samsara/shieldhit           sounds/samsara/shieldhit.wav
+
 ////////////////////
 // Ally sounds for Strife's beacons
 ////////////////////
