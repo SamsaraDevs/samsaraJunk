@@ -369,7 +369,7 @@ script << 0 >> (int type, int tag)
         break;
         
       case 235:
-        if (SplinterCount() >= 5)
+        if (SplinterCount() < 5)
         {
             SetResultValue (0);
             break;
