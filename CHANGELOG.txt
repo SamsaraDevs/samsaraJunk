@@ -1,7 +1,20 @@
-FROM 0.29 TO 0.29b
+FROM 0.29b TO 0.30
 ========================
 
 GAMEPLAY:
+
+BUGFIXES:
+- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Nuclear Duke right foot kicks don't do double damage.
+- In Strife, apparently the loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.
+- The Thunderbolt could not be forced to not recoil. Fixed.
+
+POLISH:
+- Party Mode particles are now spawned less often and disappear faster.
+- Sounds and flashes are now done if you lose armor with Marathon-style armor.
+
+
+FROM 0.29 TO 0.29b
+========================
 
 BUGFIXES:
 - Apparently, red armors, with samsara_armormode 0, would cause an infinite 0-tic loop and hang the server forever. Fixed.
@@ -9,15 +22,10 @@ BUGFIXES:
 - If autoaim was on, Mjolnir's lightning wouldn't work. Fixed.
 - The Wraithverge no longer turns on its master.
 - Ranger tipbox updated.
-- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Nuclear Duke right foot kicks don't do double damage.
-- In Strife, apparently the loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.
-- The Thunderbolt could not be forced to not recoil. Fixed.
 
 POLISH:
 - Popsoap's GLDefs now actually work.
 - Ranger should now properly play the Quad sound on the Thunderbolt at all times.
-- Party Mode particles are now spawned less often and disappear faster.
-- Sounds and flashes are now done if you lose armor with Marathon-style armor.
 
 FROM 0.28 TO 0.29
 ========================
