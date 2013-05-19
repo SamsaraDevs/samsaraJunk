@@ -11,6 +11,7 @@ BUGFIXES:
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
 - Sounds and flashes are now done if you lose armor with Marathon-style armor.
+- All fake bullets now go at 1024 tics per unit.
 
 
 FROM 0.29 TO 0.29b

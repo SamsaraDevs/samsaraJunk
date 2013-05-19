@@ -129,7 +129,7 @@ actor ElvenBullet : FastProjectile
     Damage (random(1,8)+6)
     Radius 1
     Height 1
-    Speed 300
+    Speed 1024
     Projectile
     Renderstyle "Normal"
     Species "Player"
@@ -177,7 +177,7 @@ actor GoldWandFX4 : FastProjectile
     Damage (Random (2, 12))
     Radius 2
     Height 2
-    Speed 300
+    Speed 1024
     Projectile
     DamageType "Pistol"
     +BLOODSPLATTER

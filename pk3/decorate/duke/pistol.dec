@@ -269,7 +269,7 @@ actor DukePistolBullet : FastProjectile
     Damage (6)
     Radius 1
     Height 1
-    Speed 300
+    Speed 1024
     Projectile
     Obituary "%k \cfmade\c- %o \cfsuck on his M1911.\c-"
     DamageType "DukePistol"

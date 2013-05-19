@@ -298,7 +298,7 @@ script SAMSARA_SPAWN (int respawning)
         oarmor = armor;
         armor = CheckInventory("Armor");
 
-        if (oarmor > armor && ArmorMode == 3)
+        if (oarmor > armor && SamsaraArmorType() == 3)
         {
             if (samsaraClassNum() == CLASS_MARATHON)
             {

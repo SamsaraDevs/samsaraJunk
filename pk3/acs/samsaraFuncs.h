@@ -479,3 +479,23 @@ function void SetArmorMode(void)
         ArmorMode = middle(0, GetCVar("samsara_armormode"), ARMORMODES-1);
     }
 }
+
+function int SamsaraArmorType(void)
+{
+    int i, j;
+    int pln = PlayerNumber();
+
+    for (i = 0; i < ARMORMODES; i++)
+    {
+        for (j = 0; j < ARMORCOUNT; j++)
+        {
+            if (GetArmorType(ArmorItems[i][j][0], pln) > 0)
+            {
+                return i;
+            }
+        }
+    }
+
+    return -1;
+}
+
