@@ -320,6 +320,7 @@ actor FusionSuper
     +FOILINVUL
     +PIERCEARMOR
     +BLOODLESSIMPACT
+    +DONTREFLECT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
