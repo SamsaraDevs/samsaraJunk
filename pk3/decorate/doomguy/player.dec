@@ -191,7 +191,7 @@ actor DoomBullet : FastProjectile
     Damage (Random(1,3)*5)
     Radius 1
     Height 1
-    Speed 1024
+    Speed 320
     Projectile
     Renderstyle "Normal"
     Species "Player"
