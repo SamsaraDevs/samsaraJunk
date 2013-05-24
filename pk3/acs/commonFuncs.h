@@ -505,10 +505,11 @@ function int isLMS(void)
 
 function int isCoop(void)
 {
-    int check1 = GameType() == GAME_NET_COOPERATIVE;
-    int check2 = GetCVar("cooperative") || GetCVar("invasion") || GetCVar("survival");
+    int check1 = GameType() == GAME_SINGLE_PLAYER;
+    int check2 = GameType() == GAME_NET_COOPERATIVE;
+    int check3 = GetCVar("cooperative") || GetCVar("invasion") || GetCVar("survival");
 
-    return check1 || check2;
+    return check1 || check2 || check3;
 }
 
 function int isInvasion(void)
