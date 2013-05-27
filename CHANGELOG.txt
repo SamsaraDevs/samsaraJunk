@@ -2,6 +2,7 @@ FROM 0.29b TO 0.30
 ========================
 
 GAMEPLAY:
+- B.J.'s chaingun gave less ammo on pickup than his Machine Gun. Fixed, now it gives 20 ammo like the Machine Gun does.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Nuclear Duke right foot kicks don't do double damage.
