@@ -156,6 +156,7 @@ actor HectShot : BaronBall//FatShot - Surprisingly, the Baron Ball looks better.
 +THRUGHOST
 Scale 1.5
 Translation "176:191=112:127", "208:223=112:123", "168:175=112:115", "231:231=112:112", "32:47=121:121", "160:167=112:127", "232:235=112:127", "61:79=115:124", "128:143=112:127", "16:31=112:115", "144:151=121:127", "13:15=122:122"
+DamageType "HexGreenFire"
 }
 
 actor SuperShotgunGuy : ChaingunGuy2 5005

@@ -4,7 +4,7 @@ actor "  Chaingun  ": InstantSwitchWeapon
     Weapon.SlotNumber 4
     Inventory.PickUpSound "wolfen/weaponget"
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 6
+    Weapon.AmmoGive 20
     Weapon.AmmoType "Clip"
     +THRUGHOST
     +DONTBOB

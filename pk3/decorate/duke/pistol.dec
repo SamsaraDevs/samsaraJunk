@@ -271,7 +271,7 @@ actor DukePistolBullet : FastProjectile
     Height 1
     Speed 320
     Projectile
-    Obituary "%k \cfmade\c- %o \cfsuck on his M1911.\c-"
+    Obituary "%k \cfmade\c- %o \cfsuck on the M1911.\c-"
     DamageType "DukePistol"
     Renderstyle "Normal"
     +BLOODSPLATTER
