@@ -199,11 +199,20 @@ script SAMSARA_SPAWN (int respawning)
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
         
-        SetInventory("WolfenMovement", array_wolfmove[pln]);
-        SetInventory("DukeBallgag", array_ballgag[pln]);
-        SetInventory("VanillaDoom", array_vanillaAnim[pln]);
-        SetInventory("ExpandedHud", array_weaponBar[pln]);
-        SetInventory("DoomNoBFGAim", GetCVar("dmflags2") & 256);
+        if (array_wolfmove[pln]) { GiveInventory("WolfenMovement", 1); }
+        else { TakeInventory("WolfenMovement", 0x7FFFFFFF); }
+        
+        if (array_ballgag[pln]) { GiveInventory("DukeBallgag", 1); }
+        else { TakeInventory("DukeBallgag", 0x7FFFFFFF); }
+        
+        if (array_vanillaAnim[pln]) { GiveInventory("VanillaDoom", 1); }
+        else { TakeInventory("VanillaDoom", 0x7FFFFFFF); }
+        
+        if (array_weaponBar[pln]) { GiveInventory("ExpandedHud", 1); }
+        else { TakeInventory("ExpandedHud", 0x7FFFFFFF); }
+
+        if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
+        else { GiveInventory("DoomNoBFGAim", 1); }
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
