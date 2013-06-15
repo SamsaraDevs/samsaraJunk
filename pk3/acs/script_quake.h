@@ -152,6 +152,19 @@ script SAMSARA_QPOWERS (int startTime)
     {
         health = GetActorProperty(0, APROP_Health);
 
+        if (health < 0)
+        {
+            quadTimer = CheckQuad(); 
+            TakeInventory("QuakeQuadTimer", quadTimer);
+
+            TakeInventory("QuakeRegenTimer", 0x7FFFFFFF);
+            TakeInventory("QuakeInvisTimer", 0x7FFFFFFF);
+            TakeInventory("QuakePentTimer", 0x7FFFFFFF);
+
+            Delay(1);
+            continue;
+        }
+
         oQuadTimer = quadTimer;
         quadTimer  = CheckQuad();
 
@@ -422,9 +435,6 @@ script SAMSARA_QPOWERS (int startTime)
 
         Delay(1);
     }
-
-    quadTimer = CheckInventory("QuakeQuadTimer"); 
-    TakeInventory("QuakeQuadTimer", quadTimer - QUAD_THRESHOLD);
 }
 
 script SAMSARA_QUAKE (int class, int slot, int dropped)

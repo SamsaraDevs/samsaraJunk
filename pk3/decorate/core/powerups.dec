@@ -183,6 +183,7 @@ ACTOR PowerFakeInvulnerable : PowerProtection
   DamageFactor "MarathonFusion", 1.0
   DamageFactor "Kamikaze", 1.0
   DamageFactor "ZorchKamikaze", 1.0
+  DamageFactor "Suicide", 1.0
 }
 
 actor QuakePentagram: PowerFakeInvulnerable
