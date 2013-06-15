@@ -136,7 +136,7 @@ script SAMSARA_QPOWERS (int startTime)
     int regenTimer, oRegenTimer;
     int invisTimer, oInvisTimer;
     int pentTimer,  oPentTimer;
-    int health, regenPulse, oPulse;
+    int health, oHealth, regenPulse, oPulse;
     int regenX, regenY;
     int healthGiven, healthMax;
     int opowercount, powercount, offset;
@@ -148,8 +148,11 @@ script SAMSARA_QPOWERS (int startTime)
     invisTimer  = CheckInventory("QuakeInvisTimer");
     pentTimer   = CheckInventory("QuakePentTimer");
 
+    health = GetActorProperty(0, APROP_Health);
+
     while (ServerEnterTimes[pln] == startTime)
     {
+        oHealth = health;
         health = GetActorProperty(0, APROP_Health);
 
         if (health < 0)
@@ -204,7 +207,7 @@ script SAMSARA_QPOWERS (int startTime)
 
             offset++;
 
-            if (oQuadTimer <= 0) { GiveInventory("QuadDamagePower", 1); }
+            if (oQuadTimer <= 0 || oHealth <= 0) { GiveInventory("QuadDamagePower", 1); }
         }
         else
         {
@@ -283,7 +286,7 @@ script SAMSARA_QPOWERS (int startTime)
                 ActivatorSound("quakeweps/pentagram", 96);
             }
 
-            if (oPentTimer == 0) { GiveInventory("QuakePentagram", 1); }
+            if (oPentTimer <= 0 || oHealth <= 0) { GiveInventory("QuakePentagram", 1); }
         }
         else
         {
@@ -407,7 +410,7 @@ script SAMSARA_QPOWERS (int startTime)
                 LocalAmbientSound("quakeweps/invisout", 127);
             }
 
-            if (oInvisTimer == 0) { GiveInventory("QuakeInvisibility", 1); }
+            if (oInvisTimer <= 0 || oHealth <= 0) { GiveInventory("QuakeInvisibility", 1); }
         }
         else
         {
