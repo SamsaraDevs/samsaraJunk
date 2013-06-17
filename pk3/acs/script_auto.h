@@ -143,7 +143,7 @@ script SAMSARA_SPAWN (int respawning)
     int endloop;
     int canbuddha;
     int wsteSide;
-    int armor, oarmor;
+    int armor, oarmor, type, otype;
     int i;
 
     ServerEnterTimes[pln] = startTime;
@@ -296,9 +296,11 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         oarmor = armor;
+        otype = type;
         armor = CheckInventory("Armor");
+        type = SamsaraArmorType();
 
-        if (oarmor > armor && SamsaraArmorType() == 3)
+        if (oarmor > armor && otype == 3)
         {
             if (samsaraClassNum() == CLASS_MARATHON)
             {

@@ -489,7 +489,8 @@ function int SamsaraArmorType(void)
     {
         for (j = 0; j < ARMORCOUNT; j++)
         {
-            if (GetArmorType(ArmorItems[i][j][0], pln) > 0)
+            if (GetArmorType(ArmorItems[i][j][0], pln) > 0
+             || GetArmorType(ArmorItems[i][j][2], pln) > 0)
             {
                 return i;
             }
