@@ -132,7 +132,7 @@ actor PainElemental2 : PainElemental replaces PainElemental
         PAIN E 4 A_SetTranslucent(0.1,0)
         TNT1 A 1 A_SetTranslucent(1,0)
         TNT1 A 0 A_Gravity
-        TNT1 A -1 A_NoBlocking
+        TNT1 A 1 A_NoBlocking
         stop
 
       Death.DukeIce:
