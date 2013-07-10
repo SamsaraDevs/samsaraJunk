@@ -3,10 +3,11 @@ FROM 0.29b TO 0.30
 
 GAMEPLAY:
 - B.J.'s chaingun gave less ammo on pickup than his Machine Gun. Fixed, now it gives 20 ammo like the Machine Gun does.
+- The Quake wiki reveals the lava nails were dealing too much damage. They were not more powerful in DM, they just pierced armor. And they only did 30% extra damage in co-op. Ranger was adjusted accordingly.
 
 BUGFIXES:
-- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Nuclear Duke right foot kicks don't do double damage.
-- In Strife, apparently the loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.
+- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
+- In Strife, apparently the Loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.
 - The Thunderbolt could not be forced to not recoil. Fixed.
 
 POLISH:

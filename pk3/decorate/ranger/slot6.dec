@@ -397,9 +397,9 @@ actor QuakeSuperNailCoop: QuakeSuperNail
 
 actor QuakeSLNail: QuakeLavaNail
 {
-    Damage (27)
+    Damage (18)
     DamageType Fire
-    Obituary "%k\cs's super-penetrated\c- %o\cs."  // this sounds so bad but whatever // This sounds even worse!
+    Obituary "%k\cs's burning touch penetrated\c- %o\cs."  // this sounds so bad but whatever // This sounds even worse!
     DeathSound "quakeweps/supernailricochet"
     States
     {
@@ -417,7 +417,7 @@ actor QuakeSLNailCoop: QuakeSLNail
 {
     +THRUSPECIES
     Species "Player"
-    Damage (30)
+    Damage (26)
 }
 
 

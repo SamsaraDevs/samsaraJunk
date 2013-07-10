@@ -530,7 +530,7 @@ actor QLTrail3: QLTrail1
 
 actor QuakeLavaNail: QuakeNail
 {
-    Damage (14)
+    Damage (9)
     +PIERCEARMOR
     DamageType Fire
 
@@ -564,7 +564,7 @@ actor QuakeLavaNailCoop: QuakeLavaNail
     +THRUSPECIES
     Species "Player"
 
-    Damage (15)
+    Damage (13)
 }
 
 
