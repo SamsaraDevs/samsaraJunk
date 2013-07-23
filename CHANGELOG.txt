@@ -25,6 +25,7 @@ POLISH:
 - All fake bullets now go at 320 tics per unit, a slight speed boost.
 - Rephrased a few obituaries to be gender-ambiguous.
 - The Hectebus' shots now use the HexGreenFire damagetype.
+- Ranger's shaft has been given an increase in girth.
 
 
 FROM 0.29 TO 0.29b

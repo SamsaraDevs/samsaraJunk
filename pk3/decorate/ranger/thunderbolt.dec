@@ -549,7 +549,7 @@ actor LGBeam: BulletPuff
     +NOPAIN
     VSpeed 0
 
-    Scale 0.075
+    Scale 0.225
 
     RenderStyle Add
     Alpha 0.25
