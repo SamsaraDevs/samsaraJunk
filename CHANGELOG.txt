@@ -17,6 +17,7 @@ BUGFIXES:
 - You may now suicide when invulnerable again.
 - Ranger's powerups now properly deplete on death.
 - Players could not be telefragged while invulnerable. This has been fixed.
+- In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
