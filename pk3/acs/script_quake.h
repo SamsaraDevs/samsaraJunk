@@ -449,7 +449,7 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
 
     int doquad = 1;
 
-    if (GetCVar("samsara_permault") && CheckQuad() > 0)
+    if (GetCVar("samsara_permault") && CheckInventory("QuakeQuadTimer") > 0)//CheckQuad() > 0)
     {
         doquad = 0;
     }
