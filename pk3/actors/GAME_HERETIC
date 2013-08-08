@@ -605,13 +605,15 @@ actor HereticImp2 : HereticImp replaces HereticImp
       XDeath:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         goto "Super::XDeath"
-
       Death.ZorchPistol:
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoGravity
         IMPX G 0 A_Stop
+        TNT1 A 0 A_ChangeFlag ("DONTSPLASH",1)
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
         IMPX G 3 A_SpawnItem("ZorchEffectTiny")
@@ -631,26 +633,30 @@ actor HereticImp2 : HereticImp replaces HereticImp
         TNT1 A 0 A_Gravity
         TNT1 A -1
         stop
-
+ 
       Crash:
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
+        TNT1 A 0 A_UnsetSolid
         IMPX I 7 A_ImpExplode
         IMPX J 7 A_Scream
         IMPX K 7
         IMPX L -1
         Stop
+ 
+      Crash.ZorchPistol:
+      Crash.Zorch:
+      Crash.ZorchKamikaze:
+      Crash.PhasingZorch:
+      Crash.ZorchSpectral:
+        TNT1 A 5 A_SetTranslucent(0,0)
+        TNT1 A 5 A_NoBlocking
+        TNT1 A -1
+        stop
 
       XCrash:
         IMPX X 7
         IMPX Y 7
         IMPX Z -1
         Stop
-
-      ZorchCrash:
-        TNT1 A 5 A_SetTranslucent(0,0)
-        TNT1 A 5 A_NoBlocking
-        TNT1 A -1
-        stop
 
       Ice:
       Death.HexenIce:
@@ -760,11 +766,14 @@ actor HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
 
       Death.ZorchPistol:
       Death.Zorch:
+      Death.ZorchKamikaze:
       Death.PhasingZorch:
+      Death.ZorchSpectral:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         TNT1 A 0 A_NoGravity
         IMPX G 0 A_Stop
+        TNT1 A 0 A_ChangeFlag ("DONTSPLASH",1)
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorchsmall","soundslot5",0,0)
         IMPX G 3 A_SpawnItem("ZorchEffectTiny")
@@ -784,27 +793,30 @@ actor HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
         TNT1 A 0 A_Gravity
         TNT1 A -1
         stop
-
+ 
       Crash:
         TNT1 A 0 A_UnsetSolid
-        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchCrash")
         IMPX I 7 A_ImpExplode
         IMPX J 7 A_Scream
         IMPX K 7 A_UnsetSolid
         IMPX L -1
         Stop
+ 
+      Crash.ZorchPistol:
+      Crash.Zorch:
+      Crash.ZorchKamikaze:
+      Crash.PhasingZorch:
+      Crash.ZorchSpectral:
+        TNT1 A 5 A_SetTranslucent(0,0)
+        TNT1 A 5 A_NoBlocking
+        TNT1 A -1
+        stop
 
       XCrash:
         IMPX X 7 A_UnsetSolid
         IMPX Y 7
         IMPX Z -1
         Stop
-
-      ZorchCrash:
-        TNT1 A 5 A_SetTranslucent(0,0)
-        TNT1 A 5 A_NoBlocking
-        TNT1 A -1
-        stop
 
       Ice:
       Death.HexenIce:
@@ -877,24 +889,14 @@ actor HereticImpBall2 : HereticImpBall replaces HereticImpBall
     +THRUGHOST
 }
 
-actor HereticImpChunk3 : HereticImpChunk1 replaces HereticImpChunk1 // RIGHT, FUCK THESE GIB GLITCHES. SO DAMN TIRED OF 'EM.
+actor HereticImpChunk3 : HereticImpChunk1 replaces HereticImpChunk1
 {
     +CLIENTSIDEONLY
-    +NOGRAVITY
-    +NOCLIP
-    +NOINTERACTION
-    Renderstyle Translucent
-    Alpha 0
 }
 
-actor HereticImpChunk4 : HereticImpChunk2 replaces HereticImpChunk2 // AND GOOD FUCKING RIDDANCE.
+actor HereticImpChunk4 : HereticImpChunk2 replaces HereticImpChunk2
 {
     +CLIENTSIDEONLY
-    +NOGRAVITY
-    +NOCLIP
-    +NOINTERACTION
-    Renderstyle Translucent
-    Alpha 0
 }
 
 actor Mummy2 : Mummy replaces Mummy
