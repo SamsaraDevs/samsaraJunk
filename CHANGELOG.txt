@@ -20,6 +20,7 @@ BUGFIXES:
 - In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.
 - Ranger should no longer be able to infinitely stack Quad Damage on pickup.
 - Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!
+- Armors no longer spawn on the field in Last Man Standing mode.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
