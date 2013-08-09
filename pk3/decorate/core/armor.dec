@@ -382,6 +382,7 @@ actor GreenArmorPickup replaces GreenArmor
     {
       Spawn:
         RMR1 A 0 bright
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 19), "Armor5")
         TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 0)
         stop
 
@@ -442,6 +443,7 @@ actor YellowArmorPickup 28636
     {
       Spawn:
         RMR5 A 0 bright
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 19), "Armor5")
         TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 1)
         stop
 
@@ -504,6 +506,7 @@ actor BlueArmorPickup replaces BlueArmor
     {
       Spawn:
         RMR2 A 0 bright
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 19), "Armor5")
         TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 2)
         stop
 
@@ -577,6 +580,7 @@ actor RedArmor 5040
     {
       Spawn:
         RMR3 A 0 bright
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 19), "Armor5")
         TNT1 A 35 ACS_ExecuteWithResult(SAMSARA_DECORATE, 18, 3)
         stop
 
