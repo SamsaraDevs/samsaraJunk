@@ -132,7 +132,7 @@ actor LaserCannonBolt
     Speed 50
 
     Projectile
-    Damage (12)
+    Damage (7)
 
     +HEXENBOUNCE
     +BLOODSPLATTER
