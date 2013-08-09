@@ -17,6 +17,7 @@ GAMEPLAY:
  ^- Devastators: Ultimate
 - Parias now only resists 0.375 of Duke's explosives, rather than the 0.25 he does of everyone else.
 - Chexguy's bullets were originally more accurate to counteract lack of an SSG. Now he has an SSG-esque weapon, which is super-accurate. Why do the other bullets still need to be more accurate? Reverted to a Doom-esque spread level.
+- Corvus' staff went through ghosts in Heretic. Now it does here.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
@@ -31,7 +32,7 @@ BUGFIXES:
 - Ranger should no longer be able to infinitely stack Quad Damage on pickup.
 - In crazy instances where you face Lord Snotfolus before he finishes his monologue (?!), getting him in a painstate will no longer permanently lock him in invulnerability.
 - Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!
-- Armors no longer spawn on the field in Last Man Standing mode. 
+- Armors no longer spawn on the field in Last Man Standing mode.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
