@@ -1,0 +1,31 @@
+actor "Mauser Rifle": InstantSwitchWeapon
+{
+    Weapon.Kickback 100
+    Weapon.SlotNumber 0
+    Inventory.PickUpSound "wolfen/mgunget"
+    +DONTBOB
+    +INVENTORY.UNDROPPABLE
+    Obituary "%k \cjsniped\c- %o \cjwith the Rifle.\c-"
+    Weapon.YAdjust 16
+    States
+    {
+      Ready:
+        WRFL A 1 A_WeaponReady
+        loop
+
+      Fire:
+        WRFL AB 1
+        TNT1 A 0 A_PlayWeaponSound("wolfen/rifle")
+        WRFL C 3 BRIGHT A_FireBullets(0,0,3,0x7FFFFFF,"BlankPuffInstagib")
+		WRFL Y 3 BRIGHT
+		WRFL B 3
+        WRFL D 6
+		WRFL E 6
+		WRFL F 6
+		WRFL G 6
+        WRFL A 6
+        Goto Ready
+    }
+}
+
+actor BlankPuffInstagib : BlankPuff { +NOEXTREMEDEATH } 

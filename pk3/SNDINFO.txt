@@ -410,6 +410,7 @@ wolfen/spearbounce			bjsprbnc // Original sound by as3sfxr
 wolfen/spearexplode1		bjsprex1 // Original sound by as3sfxr
 wolfen/spearexplode2		bjsprex2 // Original sound by as3sfxr
 wolfen/spearstab			bjsprstb // Original sound by as3sfxr
+wolfen/rifle			    bjrifle
 $limit  wolfen/machinegun	 		0
 $limit  wolfen/chaingun		 		0
 $limit  wolfen/flamethrower	 		0
