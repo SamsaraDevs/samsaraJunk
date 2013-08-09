@@ -25,6 +25,7 @@ actor HexenPlayer : PlayerPawn
     DamageFactor "MightyBoot", 1.5
     DamageFactor "Kamikaze", 4.0
     DamageFactor "ZorchKamikaze", 4.0
+	DamageFactor "DukeExplosive", 1.5
     Player.ColorRange 240, 247
     +NOSKIN
     -DONTBLAST
