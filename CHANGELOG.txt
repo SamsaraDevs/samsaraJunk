@@ -7,7 +7,8 @@ GAMEPLAY:
 - Someone had removed +THRUGHOST on Ranger's nails. They were put back in.
 - The Fusion Pistol's shots can no longer be deflected.
 - In lieu of Zandronum 1.1.1, Duke's and Ranger's bullets now use FBF_NORANDOM! This gives them wonderful Unlagged compatibility while still being, as in Duke Nukem 3D, completely static about their damage!
-- Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage has been thirded and it speeds up only half as often.
+- Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage in deathmatch has been thirded and it speeds up only half as often.
+- Timon's Axe now actually uses the damagetype "TimonsAxe".
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
