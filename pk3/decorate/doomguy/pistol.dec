@@ -65,7 +65,7 @@ actor " Pistol " : Pistol
         Goto FireAnim
         
       CoopHold:
-        TNT1 A 0 A_FireCustomMissile("DoomBullet2", random(-5.6, 5.6), 1, 0, 1)
+        TNT1 A 0 A_FireCustomMissile("DoomBullet2", random(-500,500)/100.00, 1, 0, 1)
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         Goto FireAnim
         

@@ -30,7 +30,7 @@ actor "Large Zorcher" : Weapon
       Fire:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         SHTC A 3
-        SHTC A 0 A_FireBullets (4, 0, 7, 5, "ChexPuff")
+        SHTC A 0 A_FireBullets (5, 0, 7, 5, "ChexPuff")
         SHTC A 0 A_PlayWeaponSound ("chex/shotgf")
         SHTC A 6 A_GunFlash // 7
         SHTC BC 4 // 5
@@ -42,8 +42,8 @@ actor "Large Zorcher" : Weapon
 
       CoopFire:
         SHTC A 3
-        SHTC A 0 A_FireCustomMissile("ChexBullet",random(-4,4),1,0,1)
-        SHTC AAAAAA 0 A_FireCustomMissile("ChexBullet",random(-4,4),0,0,1)
+        SHTC A 0 A_FireCustomMissile("ChexBullet",random(-500,500)/100.00,1,0,1)
+        SHTC AAAAAA 0 A_FireCustomMissile("ChexBullet",random(-500,500)/100.00,0,0,1)
         SHTC A 0 A_PlayWeaponSound ("chex/shotgf")
         SHTC A 6 A_GunFlash // 7
         SHTC BC 4 // 5

@@ -30,8 +30,8 @@ actor "Super Shotgun" : SuperShotgun
         goto FireEnd
 
       CoopMid:
-        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("DoomBullet", random(-11.2, 11.2), 0, 0, 1, 0, random(-7.1, 7.1))
-        TNT1 A                   0 A_FireCustomMissile("DoomBullet", random(-11.2, 11.2), 1, 0, 1, 0, random(-7.1, 7.1))
+        TNT1 AAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("DoomBullet", random(-1120, 1120)/100.00, 0, 0, 1, 0, random(-710, 710)/100.00)
+        TNT1 A                   0 A_FireCustomMissile("DoomBullet", random(-1120, 1120)/100.00, 1, 0, 1, 0, random(-710, 710)/100.00)
         goto FireEnd
 
       FireEnd:

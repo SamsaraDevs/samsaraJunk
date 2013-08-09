@@ -30,7 +30,7 @@ actor "Mini-Zorcher" : Weapon
       Fire:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         PISC A 4
-        PISC B 0 A_FireBullets (3, 0, 1, 5, "ChexPuff2")
+        PISC B 0 A_FireBullets(5, 0, 1, 5, "ChexPuff2")
         PISC B 0 A_PlayWeaponSound("chex/pistol")
         PISC B 6 A_GunFlash
         PISC C 4
@@ -49,7 +49,7 @@ actor "Mini-Zorcher" : Weapon
       Hold:
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
         PISC A 4
-        PISC B 0 A_FireBullets (3, 0, -1, 5, "ChexPuff2")
+        PISC B 0 A_FireBullets(5, 0, -1, 5, "ChexPuff2")
         PISC B 0 A_PlayWeaponSound("chex/pistol")
         PISC B 6 A_GunFlash
         PISC C 4
@@ -59,7 +59,7 @@ actor "Mini-Zorcher" : Weapon
 
       CoopHold:
         PISC A 4
-        PISC B 0 A_FireCustomMissile("ChexBullet2",random(-3,3),0,0,1)
+        PISC B 0 A_FireCustomMissile("ChexBullet2",random(-500,500)/100.00,0,0,1)
         PISC B 0 A_PlayWeaponSound("chex/pistol")
         PISC B 6 A_GunFlash
         PISC C 4
