@@ -76,7 +76,7 @@ actor "Dragon Claw" : Weapon
         TNT1 A 0 A_JumpIfNoAmmo("Finish")
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"CoopFireTomed")
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
-        BLSR D 0 A_FireCustomMissile("DragonBullet",random(-5.6,5.6),1,0,1)
+        BLSR D 0 A_FireCustomMissile("DragonBullet",random(-560,560)/100.00,1,0,1)
         BLSR D 2
         BLSR CB 2
         BLSR A 0 A_ReFire

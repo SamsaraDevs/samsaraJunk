@@ -16,6 +16,7 @@ GAMEPLAY:
  ^- RPG: Fastest firing
  ^- Devastators: Ultimate
 - Parias now only resists 0.375 of Duke's explosives, rather than the 0.25 he does of everyone else.
+- Doomguy's, Duke's, Corvus', and Chexter's bullets have been reworked to utilize an frandom-esque spread of projectiles, rather than the static grid. SO's bullets have been kept in a grid pattern, for accuracy to Marathon.
 - Chexguy's bullets were originally more accurate to counteract lack of an SSG. Now he has an SSG-esque weapon, which is super-accurate. Why do the other bullets still need to be more accurate? Reverted to a Doom-esque spread level.
 - Corvus' staff went through ghosts in Heretic. Now it does here.
 
@@ -43,7 +44,6 @@ POLISH:
 - Ranger's shaft has been given an increase in girth.
 - Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.
 - Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.
-- Doomguy's, Duke's, and Chexter's bullets have been reworked to utilize an frandom-esque spread of projectiles, rather than the static grid. SO's bullets have been kept in a grid pattern, for accuracy to Marathon.
 
 
 FROM 0.29 TO 0.29b
