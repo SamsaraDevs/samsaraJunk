@@ -156,19 +156,20 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
       SPIR A 1
 	  TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
     Spawn2:
+	  TNT1 A 0 A_Jump(128,"Spawn3")
       TNT1 A 0 A_JumpIfTargetInLOS("SpeedUp",80)
     Spawn3:
       SPIR A 2 A_CHolySeek
-      TNT1 A 0 A_Explode(random(1,8)*3, 32, 0)
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
 	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
 	  SPIR A 2 A_CHolySeek
-      TNT1 A 0 A_Explode(random(1,8)*3, 32, 0)
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
 	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
 	  SPIR B 2 A_CHolySeek
-      TNT1 A 0 A_Explode(random(1,8)*3, 32, 0)
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
 	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
       SPIR B 2 A_CHolyCheckScream
-      TNT1 A 0 A_Explode(random(1,8)*3, 32, 0)
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
 	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
       goto Spawn2
     SpeedUp:
