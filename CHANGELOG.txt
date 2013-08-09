@@ -7,8 +7,12 @@ GAMEPLAY:
 - Someone had removed +THRUGHOST on Ranger's nails. They were put back in.
 - The Fusion Pistol's shots can no longer be deflected.
 - In lieu of Zandronum 1.1.1, Duke's and Ranger's bullets now use FBF_NORANDOM! This gives them wonderful Unlagged compatibility while still being, as in Duke Nukem 3D, completely static about their damage!
-- Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage in deathmatch has been thirded and it speeds up only half as often.
-- Timon's Axe now actually uses the damagetype "TimonsAxe".
+- In lieu of FBF_NORANDOM, Duke Nukem's Explosive Shotgun has been reworked. Damage emphasis has been placed less on the bullets and more on the explosives--the bullets do less damage, while the explosions do more to a wider radius. To accomodate the wider radius, the accuracy has been tightened up as well.
+- The Devastators have had their radius increased as well, from 32 to 64, with damage increased from 35 to 48. Duke Nukem's HEIRARCHY OF EXPLOSIVES now goes:
+ ^- Pipebombs: Largest radius
+ ^- Explosive Shotgun: Most damage
+ ^- RPG: Fastest firing
+ ^- Devastators: Ultimate
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
@@ -21,8 +25,6 @@ BUGFIXES:
 - Players could not be telefragged while invulnerable. This has been fixed.
 - In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.
 - Ranger should no longer be able to infinitely stack Quad Damage on pickup.
-- Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!
-- Armors no longer spawn on the field in Last Man Standing mode.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
@@ -32,7 +34,6 @@ POLISH:
 - The Hectebus' shots now use the HexGreenFire damagetype.
 - Ranger's shaft has been given an increase in girth.
 - Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.
-- Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.
 
 
 FROM 0.29 TO 0.29b
