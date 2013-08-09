@@ -25,6 +25,7 @@ BUGFIXES:
 - Players could not be telefragged while invulnerable. This has been fixed.
 - In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.
 - Ranger should no longer be able to infinitely stack Quad Damage on pickup.
+- In crazy instances where you face Lord Snotfolus before he finishes his monologue (?!), getting him in a painstate will no longer permanently lock him in invulnerability.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
