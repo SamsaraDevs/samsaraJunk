@@ -186,6 +186,7 @@ doomguy/plasmaf			dgplasma
 doomguy/plasmax			dgplshit
 doomguy/bfgf			dgbfg
 doomguy/bfgx			dgbfgxpl
+doomguy/railfire        dgrailgf
 
 $limit doomguy/plasmaf 0
 $limit doomguy/pistol 0
