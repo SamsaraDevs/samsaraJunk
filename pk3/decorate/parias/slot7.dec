@@ -190,7 +190,6 @@ actor HolySpiritCoop : HolySpirit
     Speed 15 // Previously 12
     Alpha 0.5
 	PROJECTILE
-    +STRIFEDAMAGE
     +BRIGHT
 	+SKULLFLY
 	+HEXENBOUNCE
