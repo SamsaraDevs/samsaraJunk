@@ -73,7 +73,7 @@ actor "Golden Desert Eagle" : Weapon
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner",0,0,5)
         DKDG BC 2 BRIGHT A_WeaponReady(14)
         TNT1 A 0 //A_GiveInventory("DukePistolReload",1)
-        DKDG DEEEFFGA 2 A_WeaponReady(14)
+        DKDG DEEFFG 2 A_WeaponReady(14)
         Goto Ready
 
       AccurateFire:
@@ -85,7 +85,7 @@ actor "Golden Desert Eagle" : Weapon
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner",0,0,5)
         DKDG BC 2 BRIGHT A_WeaponReady(14)
         TNT1 A 0 //A_GiveInventory("DukePistolReload",1)
-        DKDG DEEEFFGA 2 A_WeaponReady(14)
+        DKDG DEEFFG 2 A_WeaponReady(14)
         Goto Ready
 
       Flash:
@@ -97,9 +97,9 @@ actor "Golden Desert Eagle" : Weapon
         TNT1 A 0 //A_TakeInventory("DukePistolReload",12)
         TNT1 A 0 A_PlayWeaponSound("duke/adveagleload")
         DKDG A 0 Offset(0,32)
-        DKDG H 1 Offset(0,40)
-        DKDG H 1 Offset(0,50)
-        DKDG H 1 Offset(0,60)
+        DKDG H 2 Offset(0,40)
+        DKDG H 2 Offset(0,50)
+        DKDG H 2 Offset(0,60)
         DKDG H 1 Offset(0,70)
         DKDG H 1 Offset(0,80)
         DKDG H 1 Offset(0,90)
@@ -117,9 +117,9 @@ actor "Golden Desert Eagle" : Weapon
         DKDG A 1 Offset(0,90)
         DKDG A 1 Offset(0,80)
         DKDG A 1 Offset(0,70)
-        DKDG A 1 Offset(0,60)
-        DKDG A 1 Offset(0,50)
-        DKDG A 1 Offset(0,40)
+        DKDG A 2 Offset(0,60)
+        DKDG A 2 Offset(0,50)
+        DKDG A 2 Offset(0,40)
         DKDG A 0 Offset(0,32)
         DKDG A 4
         Goto Ready
