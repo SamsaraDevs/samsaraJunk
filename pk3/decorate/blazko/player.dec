@@ -18,6 +18,7 @@ actor WolfenPlayer : PlayerPawn
     DamageFactor "DragonClaw", 1.1
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.75
+	DamageFactor "EnemyInfightDamage", 0.0
     +NOSKIN
     -DONTBLAST
     -THRUSPECIES

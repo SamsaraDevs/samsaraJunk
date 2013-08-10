@@ -39,6 +39,8 @@ actor QuakePlayer: PlayerPawn
     DamageFactor "MightyBoot", 1.5
     DamageFactor "Mace", 1.1
     DamageFactor "DragonClaw", 1.1
+
+	DamageFactor "EnemyInfightDamage", 0.0
     
     States
     {

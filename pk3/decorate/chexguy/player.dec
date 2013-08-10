@@ -75,6 +75,7 @@ actor ChexWarrior : PlayerPawn
 
     DamageFactor "Kamikaze", 1.33333333333
     DamageFactor "ZorchKamikaze", 1.33333333333
+	DamageFactor "EnemyInfightDamage", 0.0
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"
