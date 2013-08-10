@@ -4,6 +4,7 @@ ACTOR " Railgun " : Weapon
     Weapon.Kickback 100
     Weapon.SlotNumber 0
     Inventory.Pickupmessage "You got the Railgun!"
+	Decal RailScorch
     Obituary "%k \cdrailed\c- %o\cd."
     States
     {

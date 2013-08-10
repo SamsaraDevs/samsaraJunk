@@ -42,6 +42,7 @@ actor MageStaffFXInstagib : FastProjectile
     Damage 0x7FFFFFF
 	Speed 100
 	+EXTREMEDEATH
+	Decal Scorch
     DeathSound "MageStaffExplode"
 	DamageType "Fire"
     Obituary "%k \cgset\c- %o\cg's soul ablaze."
