@@ -251,11 +251,6 @@ actor DukePistolReload : Ammo
     inventory.maxamount 12
     ammo.backpackamount 0
     ammo.backpackmaxamount 12
-    
-    Inventory.PickupMessage "\0"
-    +QUIET
-    +IGNORESKILL
-    
     states
     {
       Spawn:
@@ -263,7 +258,6 @@ actor DukePistolReload : Ammo
         stop
     }
 }
-
 
 actor DukePistolBullet : FastProjectile
 {

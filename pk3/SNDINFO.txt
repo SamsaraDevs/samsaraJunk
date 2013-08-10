@@ -545,6 +545,9 @@ duke/explosion		DKXPLOD
 duke/freezeshot		DKFRZTHR
 $pitchshiftrange 					0
 duke/nightvision	DKNITVIS
+duke/adveagleshot   DKDEAGSH
+duke/adveagleload   DKDEAGRL
+duke/adveagleup     DKDEAGUP
 
 $limit duke/explosion 0
 
