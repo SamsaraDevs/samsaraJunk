@@ -44,6 +44,7 @@ POLISH:
 - Ranger's shaft has been given an increase in girth.
 - Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.
 - Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.
+- Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.
 
 
 FROM 0.29 TO 0.29b
