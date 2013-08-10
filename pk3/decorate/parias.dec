@@ -9,3 +9,4 @@
 #include "decorate/parias/slot6.dec"
 #include "decorate/parias/slot7.dec"
 #include "decorate/parias/unique.dec"
+#include "decorate/parias/instagib.dec"

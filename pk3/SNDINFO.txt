@@ -472,6 +472,8 @@ SpiritAttack            spirt5
 $limit SpiritAttack 0
 SpiritDie               spirts1
 $limit SpiritDie 0
+MageStaffFire           mage4
+MageStaffExplode        mageball
 
 hexen/weaponget         sample11
 hexen/artiget           artget1
