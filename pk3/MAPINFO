@@ -15,6 +15,7 @@ skill baby
 	AutoUseHealth
 	AmmoFactor = 2
 	DamageFactor = 0.5
+	ACSReturn = 0
 	EasyBossBrain
 	SpawnFilter = Baby
 	Name = "Jani"
@@ -30,6 +31,7 @@ skill baby
 
 skill easy
 {
+	ACSReturn = 1
 	EasyBossBrain
 	SpawnFilter = Easy
 	Name = "Srotapanna"
@@ -45,6 +47,7 @@ skill easy
 
 skill normal
 {
+	ACSReturn = 2
 	SpawnFilter = Normal
 	Name = "Sakridagami"
     PlayerClassName = "Doomguy", "Hurt Me Plenty"
@@ -60,6 +63,7 @@ skill normal
 
 skill hard
 {
+	ACSReturn = 3
 	SpawnFilter = Hard
 	Name = "Anagamin"
     PlayerClassName = "Doomguy", "Ultra-Violence"
@@ -74,6 +78,7 @@ skill hard
 
 skill nightmare
 {
+	ACSReturn = 4
 	//AmmoFactor = 2
 	FastMonsters
 	//DisableCheats
@@ -91,5 +96,5 @@ skill nightmare
 	MustConfirm = "Heedfulness is the Deathless path; heedlessness, the path to death."
 	
 	DamageFactor = 1.5
-	Aggressiveness = 0.55
+	Aggressiveness = 0.75
 }
