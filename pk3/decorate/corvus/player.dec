@@ -16,7 +16,7 @@ actor CorvusPlayer : PlayerPawn
     BloodColor "Red"
     DamageFactor "PoisonCloud", 1.75
     //DamageFactor "Wraithverge", 0.75
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.1
     DamageFactor "MightyBoot", 1.5
     DamageFactor "WMCBeam", 0.75

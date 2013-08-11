@@ -2,7 +2,7 @@ actor Crusader2 : Crusader replaces Crusader
 {
     ConversationID 63
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
 

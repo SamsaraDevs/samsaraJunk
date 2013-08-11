@@ -1,6 +1,6 @@
 actor DoomDemon2 : Demon replaces Demon
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH

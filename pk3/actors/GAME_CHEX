@@ -127,7 +127,7 @@ actor FlemoidGibTrail
 // Now the actual enemies...
 actor FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +DONTGIB
@@ -222,7 +222,7 @@ actor FlemoidusCommonus2 : FlemoidusCommonus replaces FlemoidusCommonus
 
 actor FlemoidusBipedicus2 : FlemoidusBipedicus replaces FlemoidusBipedicus
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +DONTGIB
@@ -325,7 +325,7 @@ actor ArmoredFlemoidusBipedicusV3 replaces ArmoredFlemoidusBipedicus
     Mass 100
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
@@ -484,7 +484,7 @@ actor Quadrumpus 9057
     Mass 100
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0 //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     Speed 8
@@ -726,7 +726,7 @@ actor FlemoidusStridicus replaces FlemoidusCycloptisCommonus
     Mass 400
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     Monster
@@ -855,7 +855,7 @@ actor FlemoidusCycloptisCommonusV3 : FlemoidusStridicus 58
     Mass 400
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
@@ -1062,7 +1062,7 @@ actor SuperCycloptis 3005
     Mass 400
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
@@ -1323,7 +1323,7 @@ actor Larva 9050
     Mass 400
     damagefactor "Flem", 0.0
     damagefactor "Slime", 0.0  //in chex3.exe the slam now has slime damagetype
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     Monster

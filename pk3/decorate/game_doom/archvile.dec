@@ -1,6 +1,6 @@
 actor Archvile2 : Archvile replaces Archvile
 {
-    DamageFactor "Mace", 1.15
+    DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     +FIREDAMAGE

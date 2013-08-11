@@ -10,7 +10,7 @@ actor ChingunDrop: SamsaraSlotFourDrop
 
 actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +THRUGHOST

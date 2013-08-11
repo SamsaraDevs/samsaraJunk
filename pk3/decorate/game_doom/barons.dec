@@ -1,6 +1,6 @@
 actor BaronOfHell2 : BaronOfHell replaces BaronOfHell
 {
-    DamageFactor "Mace", 1.15
+    DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     BloodColor darkolivegreen
@@ -161,7 +161,7 @@ actor BaronBall2 : BaronBall replaces BaronBall
 
 actor Hellknight2 : Hellknight replaces Hellknight
 {
-    DamageFactor "Mace", 1.15
+    DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     BloodColor darkolivegreen

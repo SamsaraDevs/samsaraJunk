@@ -16,7 +16,7 @@ actor DukePlayer : PlayerPawn
     Scale 0.725
     DamageFactor "PoisonCloud", 1.9
     DamageFactor "Wraithverge", 1.1
-    DamageFactor "Mace", 1.2
+    DamageFactor "CorvusCrossbow", 1.2
     DamageFactor "DragonClaw", 1.2
     DamageFactor "PoisonCloud", 1.1
     DamageFactor "Pistol", 1.1
@@ -45,7 +45,7 @@ actor DukePlayer : PlayerPawn
     DamageFactor "Explosive", 1.1
     DamageFactor "DoomPlasma", 1.1
     DamageFactor "MarathonFusion", 1.1
-    DamageFactor "CorvusCrossbow", 1.1
+    DamageFactor "Mace", 1.1
     DamageFactor "CorvusHellstaff", 1.1
 	DamageFactor "CorvusHellstaffTomed", 1.1
     DamageFactor "MarathonPlasma", 1.1

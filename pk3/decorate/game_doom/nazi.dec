@@ -1,6 +1,6 @@
 actor Nazi2 : WolfensteinSS replaces WolfensteinSS
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "Clip2"

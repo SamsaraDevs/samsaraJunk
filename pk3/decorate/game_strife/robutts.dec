@@ -2,7 +2,7 @@ actor Sentinel2 : Sentinel replaces Sentinel
 {
     ConversationID 91,-1,-1
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH
@@ -104,7 +104,7 @@ actor Stalker2 : Stalker replaces Stalker
 {
     ConversationID 92,-1,-1
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH
@@ -200,7 +200,7 @@ actor CeilingTurret2 : CeilingTurret replaces CeilingTurret
 {
     ConversationID 92,-1,-1
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     +NOTDMATCH
     +NOICEDEATH
@@ -281,7 +281,7 @@ actor Reaver2 : Reaver replaces Reaver
 {
     ConversationID 52, -1, -1
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH
@@ -402,7 +402,7 @@ ACTOR Inquisitor2 : Inquisitor replaces Inquisitor
    Health 1500
   ConversationID 93, -1, -1
     DamageFactor "MarathonFusion", 2.0
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "CorvusHellstaffTomed", 0.2
   +NOTDMATCH

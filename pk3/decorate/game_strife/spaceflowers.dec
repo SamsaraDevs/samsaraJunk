@@ -10,11 +10,6 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
     Health 1500
     PainChance 15
     ConversationID 67
-    DamageFactor "Mace", 1.15
-    DamageFactor "DragonClaw", 1.6
-    DamageFactor "BFGSpray", 0.5
-    DamageFactor "WMCNade", 0.75
-    DamageFactor "CorvusHellstaffTomed", 0.2
     +DONTRIP
     +BOSSDEATH
     +NOTDMATCH

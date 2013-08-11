@@ -1,6 +1,6 @@
 actor Cacodemon2 : Cacodemon replaces Cacodemon
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     BloodColor blue

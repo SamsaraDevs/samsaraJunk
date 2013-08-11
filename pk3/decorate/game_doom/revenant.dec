@@ -1,6 +1,6 @@
 actor Revenant2 : Revenant replaces Revenant
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255

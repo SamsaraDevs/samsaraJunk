@@ -1,7 +1,7 @@
 actor LostSoul2 : LostSoul replaces LostSoul
 {
     +NOBLOOD
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH
@@ -68,7 +68,7 @@ actor LostSoul2 : LostSoul replaces LostSoul
 
 actor PainElemental2 : PainElemental replaces PainElemental
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +NOTDMATCH

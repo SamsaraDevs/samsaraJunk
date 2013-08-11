@@ -10,7 +10,7 @@ actor ShotgunDrop: SamsaraSlotTwoDrop
 
 actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     +THRUGHOST
