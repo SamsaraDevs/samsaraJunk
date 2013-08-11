@@ -1,8 +1,6 @@
-ACTOR Bloodscourge : MWeapBloodscourge
+ACTOR Bloodscourge : Weapon
 {
     Weapon.SelectionOrder 3100
-	+AMMO_OPTIONAL
-	+ALT_AMMO_OPTIONAL
     Weapon.YAdjust 20
     Weapon.Kickback 100
     Weapon.SlotNumber 0
