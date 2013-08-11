@@ -7,7 +7,7 @@ actor M1911 : Weapon
     Weapon.SelectionOrder 1900
     Weapon.AmmoType "DukePistolReload"
     Weapon.AmmoUse 1
-    Obituary "%k \cfmade\cf- %o \cfsuck on the M1911."
+    Obituary "%k \cfmade\c- %o \cfsuck on the M1911."
 	Decal BulletChip
     DamageType "DukeDamage"
     +WEAPON.WIMPY_WEAPON
