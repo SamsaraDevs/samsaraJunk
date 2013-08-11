@@ -133,6 +133,7 @@ script SAMSARA_OPEN open
 }
 
 script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
+//script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_RETURN return { UnloadingNow = 0; ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
@@ -343,7 +344,7 @@ script SAMSARA_SPAWN (int respawning)
 
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
-        if (isDead(0)) { endloop = 1; }
+        //if (isDead(0)) { endloop = 1; }
         
         Delay(1);
 
