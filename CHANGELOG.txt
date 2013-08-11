@@ -22,6 +22,7 @@ GAMEPLAY:
 - The difficulty settings now have ACSReturn values, for maps with ACS scripts that rely on difficulty settings.
 - Here's one that's been around for a long, long time. Possessed Troopers, Sergeants, and Chaingunners couldn't infight with each other. Now they can!
 - A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.
+- Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor "Mace" on everything with DamageFactor "CorvusCrossbow". The DamageFactor "Mace" increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
