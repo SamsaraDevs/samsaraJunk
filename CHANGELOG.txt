@@ -21,6 +21,7 @@ GAMEPLAY:
 - Corvus' staff went through ghosts in Heretic. Now it does here.
 - The difficulty settings now have ACSReturn values, for maps with ACS scripts that rely on difficulty settings.
 - Here's one that's been around for a long, long time. Possessed Troopers, Sergeants, and Chaingunners couldn't infight with each other. Now they can!
+- A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

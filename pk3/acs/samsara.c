@@ -177,6 +177,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 20:
         SetArmorMode();
 
+      case 21:
+        result = GetCVar("samsara_noult");
+        break;
+
         armorIndex = -1;
         armorToSet = arg1;
 

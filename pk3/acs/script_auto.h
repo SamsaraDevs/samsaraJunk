@@ -110,6 +110,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunksaws"))
         {   ConsoleCommand("set samsara_punchdrunksaws 0");
         ConsoleCommand("archivecvar samsara_punchdrunksaws"); }
+        
+        if (!GetCVar("samsara_noult"))
+        {   ConsoleCommand("set samsara_noult 0");
+        ConsoleCommand("archivecvar samsara_noult"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
