@@ -52,7 +52,7 @@ actor PortTomeCoOp : CustomInventory
         TNT1 A 0 A_GiveInventory("PowerGreaterTome",1)
         TNT1 A 0 A_GiveInventory("PowerTomeProtection",1)
         TNT1 A 0 ACS_ExecuteAlways(202)
-        TNT1 A 0 A_GiveInventory("TomeOfPowerCooldown",250)
+        TNT1 A 0 A_GiveInventory("TomeOfPowerCooldown",200)
         fail
 
       UseFail:
@@ -84,15 +84,15 @@ actor PowerHereticTomeDM : PowerHereticTome
 actor PowerGreaterTome : PowerDamage
 {
     Powerup.Duration -90
-    DamageFactor "Pistol", 1.5
-    DamageFactor "Mace", 1.5
-    DamageFactor "Normal", 1.5
-    DamageFactor "DragonClaw", 1.5
-    DamageFactor "Fire", 1.5
-	DamageFactor "CorvusHellstaff", 1.5
-	DamageFactor "CorvusHellstaffTomed", 1.5
-	DamageFactor "CorvusCrossbow", 1.5
-    DamageFactor "Spectral", 1.5
+    DamageFactor "Pistol", 2.0
+    DamageFactor "Mace", 2.0
+    DamageFactor "Normal", 2.0
+    DamageFactor "DragonClaw", 2.0
+    DamageFactor "Fire", 2.0
+	DamageFactor "CorvusHellstaff", 2.0
+	DamageFactor "CorvusHellstaffTomed", 2.0
+	DamageFactor "CorvusCrossbow", 2.0
+    DamageFactor "Spectral", 2.0
 
 }
 
@@ -104,61 +104,64 @@ actor PowerGreaterTomeDM : PowerGreaterTome
 actor PowerTomeProtection : PowerProtection
 {
     Powerup.Duration -90
-    damagefactor "normal", 0.55
-    damagefactor "Pistol", 0.55
-    DamageFactor "DoomFist", 1.5
-    damagefactor "ZorchPistol", 0.55
-    damagefactor "Wraithverge", 0.55
-    damagefactor "zorch", 0.55
-    damagefactor "fire", 0.55
-    damagefactor "ice", 0.55
-    damagefactor "slime", 0.55
-    damagefactor "bfg", 0.55
-    damagefactor "bfgspray", 0.55
-    damagefactor "disintegrate", 0.55
-    damagefactor "electric", 0.55
-    DamageFactor "BFG", 0.55
-    DamageFactor "BFGSpray", 0.55
-    DamageFactor "Poison", 0.55
-    DamageFactor "PoisonCloud", 0.55
-    DamageFactor "Mace", 0.55
-    DamageFactor "DragonClaw", 0.55
-    DamageFactor "WolfenFlamethrower", 0.55
-    DamageFactor "DukeDamage", 0.55
-    DamageFactor "DukeExplosive", 0.55
-    DamageFactor "DukeSpectral", 0.55
-    DamageFactor "MightyBoot", 0.55
-    DamageFactor "DukeIce", 0.55
+    damagefactor "normal", 0.5
+    damagefactor "Pistol", 0.5
+    DamageFactor "DoomFist", 0.5
+    damagefactor "ZorchPistol", 0.5
+    damagefactor "Wraithverge", 0.5
+    damagefactor "zorch", 0.5
+    damagefactor "fire", 0.5
+    damagefactor "ice", 0.5
+    damagefactor "slime", 0.5
+    damagefactor "bfg", 0.5
+    damagefactor "bfgspray", 0.5
+    damagefactor "disintegrate", 0.5
+    damagefactor "electric", 0.5
+    DamageFactor "BFG", 0.5
+    DamageFactor "BFGSpray", 0.5
+    DamageFactor "Poison", 0.5
+    DamageFactor "PoisonCloud", 0.5
+    DamageFactor "Mace", 0.5
+    DamageFactor "DragonClaw", 0.5
+    DamageFactor "WolfenFlamethrower", 0.5
+    DamageFactor "DukeDamage", 0.5
+    DamageFactor "DukeExplosive", 0.5
+    DamageFactor "DukeSpectral", 0.5
+    DamageFactor "MightyBoot", 0.5
+    DamageFactor "DukeIce", 0.5
     
-    DamageFactor "DukePistol", 0.55
-    DamageFactor "MarathonPistol", 0.55
-    DamageFactor "Explosive", 0.55
-    DamageFactor "DoomPlasma", 0.55
-    DamageFactor "CorvusCrossbow", 0.55
-    DamageFactor "CorvusHellstaff", 0.55
-	DamageFactor "CorvusHellstaffTomed", 0.55
-    DamageFactor "MarathonPlasma", 0.55
-    DamageFactor "BJSpear", 0.55
-    DamageFactor "DoomCacodemon", 0.55
-    DamageFactor "DoomHellNoble", 0.55
-    DamageFactor "DoomSpiderPlasma", 0.55
-    DamageFactor "DoomTheseGuysAreTheBest", 0.55
-    DamageFactor "HereNitrogolem", 0.55
-    DamageFactor "HereAxeGreen", 0.55
-    DamageFactor "HereAxeRed", 0.55
-    DamageFactor "Wizard", 0.55
-    DamageFactor "HereLichWind", 0.55
-    DamageFactor "HereDsparil", 0.55
-    DamageFactor "HexBishop", 0.55
-    DamageFactor "HexSlaughtaur", 0.55
-    DamageFactor "HexGreenFire", 0.55
-    DamageFactor "HexStalkerShot", 0.55
-    DamageFactor "HexHeresiarchPurple", 0.55
-    DamageFactor "QuakePistol", 0.55
-    DamageFactor "NotQuadded", 0.55
-    DamageFactor "SpectralNoQuad", 0.55
+    DamageFactor "DukePistol", 0.5
+    DamageFactor "MarathonPistol", 0.5
+    DamageFactor "Explosive", 0.5
+    DamageFactor "DoomPlasma", 0.5
+    DamageFactor "CorvusCrossbow", 0.5
+    DamageFactor "CorvusHellstaff", 0.5
+	DamageFactor "CorvusHellstaffTomed", 0.5
+    DamageFactor "MarathonPlasma", 0.5
+    DamageFactor "BJSpear", 0.5
+    DamageFactor "DoomCacodemon", 0.5
+    DamageFactor "DoomHellNoble", 0.5
+    DamageFactor "DoomSpiderPlasma", 0.5
+    DamageFactor "DoomTheseGuysAreTheBest", 0.5
+    DamageFactor "HereNitrogolem", 0.5
+    DamageFactor "HereAxeGreen", 0.5
+    DamageFactor "HereAxeRed", 0.5
+    DamageFactor "Wizard", 0.5
+    DamageFactor "HereLichWind", 0.5
+    DamageFactor "HereDsparil", 0.5
+    DamageFactor "HexBishop", 0.5
+    DamageFactor "HexSlaughtaur", 0.5
+    DamageFactor "HexGreenFire", 0.5
+    DamageFactor "HexStalkerShot", 0.5
+    DamageFactor "HexHeresiarchPurple", 0.5
+    DamageFactor "QuakePistol", 0.5
+    DamageFactor "NotQuadded", 0.5
+    DamageFactor "SpectralNoQuad", 0.5
+	
     DamageFactor "Kamikaze", 1.0
     DamageFactor "ZorchKamikaze", 1.0
+    DamageFactor "Suicide", 1.0
+    DamageFactor "Telefrag", 1.0
 }
 
 actor PowerTomeProtectionDM : PowerTomeProtection
