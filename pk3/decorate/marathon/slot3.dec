@@ -405,7 +405,7 @@ actor FusionPistolOvercharge
     +FOILINVUL
     +BLOODLESSIMPACT
 
-    Obituary "%k \cnwas too close to \c-%o\cn's meltdown."
+    Obituary "%k\cn's meltdown caught \c-%o\cn in the blast."
 
     States
     {
