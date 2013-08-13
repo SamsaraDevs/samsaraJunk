@@ -374,113 +374,55 @@ int PunchDrunkItems[CLASSCOUNT][2] =
 
 
 int ChangelogString =
-"FROM 0.28 TO 0.29\n\
+"FROM 0.29b TO 0.3\n\
 ========================\n\
 GAMEPLAY:\n\
-- Double-tapping Duke's jetpack to try and extend the lifespan of it now actually dramatically decreases its lifespan.\n\
-- sv_shotgunstart is now respected.\n\
-- The Fusion Pistol overcharge now explodes again.\n\
-- The first Fusion Pistol beep is now silent, and you can now charge for one more second.\n\
-- Ranger now has invisibility to Quake's Ring of Shadows! He's much less visible when picking up a blursphere (10% visibility), and his weapons don't alert monsters.\n\
-- Everyone Frozen states has been completely reworked. This should fix all of the strange ice-related bugs that keep popping up in DM.\n\
-- samsara_peoplediewhentheyarekilled has been added as an optional cvar. What does it do? Well, call it a Party Mode...\n\
-- Parias' Wraithverge has been converted to Decorate. This allows for different behavior in co-op and DM, at the expense of the ghosts now acting like complete idiots. In DM, the ghosts do dramatically more damage, move faster as long as the player is in sight, and spawn with a large explosion.\n\
-- samsara_chainsawstart has been added. If 1, gives you your chainsaw weapon. If 2, gives you your chainsaw weapon, plus full ammo.\n\
-- samsara_uniquestart has been added. See the wiki for details.\n\
-- A melee-only mode has been added! If it's on, all your non-fist weapons are taken, you can't pick up weapons, and uniques change to effects more useful in Punchdrunk. Use \"samsara_punchdrunk 1\" to turn it on.\n\
-- In case you like the Punchdrunk uniques more than normal ones, samsara_punchdrunkuniques is exactly what you want.\n\
-- Same deal with the Punchdrunk chainsaws. samsara_punchdrunksaws switches the saws to their Punchdrunk variants.\n\
-- Dark Imps, Hectebi, and SSGGuys now shoot through spooky ghosts.\n\
-- Corvus' cooldown for the time bombs has been reduced from 70 tics to 15.\n\
-- The Fusion Pistol can now actually bypass player invulnerability, as it should.\n\
-- B.J. has had his Clip ammo doubled upon picking up Ammo 2.\n\
-- B.J. Blazkowic's Machine Gun now gives 20 of ammo 1 on pickup, rather than 6.\n\
-- samsara_armormode has been added. The modes available are Normal, Quake, Quake (old), Marathon, and None.\n\
-- You can now see what settings the server is using!\n\
-- In DM, the Tomed Firemace has traded in the ability to home on people for the ability to bounce off walls.\n\
-- Thanks to TehVappy50, Corvus now has the ability to pick up and carry around spheres of various kinds in his inventory. A massive buff on Skulltag maps!\n\
-- Chexter's screen now flashes green when slimed or flemmed.\n\
-- Duke's Riot Shotgun has been given a cleaned-up spread, more reminiscent of Duke 3D.\n\
-- The Dehacked has been implemented back in. It was a nice idea, but practically no wads with Dehacked were behaving properly, and the shell ammo problems it brought back up were terrible.\n\
-- samsara_nohealthcap has been implemented as an optional cvar. True to its name, it gives practically no limit to maximum health, which should make survival/DM games more interesting.\n\
-- Duke Nukem's Mighty Foot now affects players! Slam the boot into them, they go careening backwards wildly.\n\
-- In DM, the Spear of Destiny's bolts do not persist as long and have a higher chance to dissipate quickly after the initial wave.\n\
-- In DM, the LAZ Device's zorch radius has been expanded by 64 units.\n\
-- In DM, the TOZT has had its damage slightly reduced.\n\
-- BJ's Flamethrower sprites were conflicting with the Abaddon's projectiles. Fixed.\n\
-- One of the biggest problems Ranger had was that sheer luck determined whether or not he got to use Cells or not. To address this, the Thunderbolt has been coupled with the Quad Damage on slot 7.\n\
-- The Laser Cannon has been moved to Ranger's unique slot, and Mjolnir has been introduced as Ranger's slot 1.\n\
-- Ranger now has the Pentagram of Protection for his Invulnerability!\n\
-- The Thunderbolt has been un-nerfed; it's back at 360dps.\n\
-- The Laser Cannon has been buffed, at 24 damage per shot and 240dps.\n\
-- The Quad Damage recharge time has been lengthened by 30 seconds. It now takes 90 seconds after one use to be reusable.\n\
-- The Unique no longer has +BIGPOWERUP on it. We can hardly remember why it was on in the first place.\n\
+- B.J.'s chaingun gave less ammo on pickup than his Machine Gun. Fixed, now it gives 20 ammo like the Machine Gun does.\n\
+- The Quake wiki reveals the lava nails were dealing too much damage. They were not more powerful in DM, they just pierced armor. And they only did 30% extra damage in co-op. Ranger was adjusted accordingly.\n\
+- Someone had removed +THRUGHOST on Ranger's nails. They were put back in.\n\
+- The Fusion Pistol's shots can no longer be deflected.\n\
+- In lieu of Zandronum 1.1.1, Duke's and Ranger's bullets now use FBF_NORANDOM! This gives them wonderful Unlagged compatibility while still being, as in Duke Nukem 3D, completely static about their damage!\n\
+- Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage in deathmatch has been thirded and it speeds up only half as often.\n\
+- Timon's Axe now actually uses the damagetype TimonsAxe. \n\
+- In lieu of FBF_NORANDOM, Duke Nukem's Explosive Shotgun has been reworked. Damage emphasis has been placed less on the bullets and more on the explosives--the bullets do less damage, while the explosions do more to a wider radius. To accomodate the wider radius, the accuracy has been tightened up as well.\n\
+- The Devastators have had their radius increased as well, from 32 to 64, with damage increased from 35 to 48. Duke Nukem's HEIRARCHY OF EXPLOSIVES now goes:\n\
+ ^- Pipebombs: Largest radius\n\
+ ^- Explosive Shotgun: Most damage\n\
+ ^- RPG: Fastest firing\n\
+ ^- Devastators: Ultimate\n\
+- Parias now only resists 0.375 of Duke's explosives, rather than the 0.25 he does of everyone else.\n\
+- Doomguy's, Duke's, Corvus', and Chexter's bullets have been reworked to utilize an frandom-esque spread of projectiles, rather than the static grid. SO's bullets have been kept in a grid pattern, for accuracy to Marathon.\n\
+- Chexguy's bullets were originally more accurate to counteract lack of an SSG. Now he has an SSG-esque weapon, which is super-accurate. Why do the other bullets still need to be more accurate? Reverted to a Doom-esque spread level.\n\
+- Corvus' staff went through ghosts in Heretic. Now it does here.\n\
+- The difficulty settings now have ACSReturn values, for maps with ACS scripts that rely on difficulty settings.\n\
+- Here's one that's been around for a long, long time. Possessed Troopers, Sergeants, and Chaingunners couldn't infight with each other. Now they can!\n\
+- A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.\n\
+- Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.\n\
+- Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.\n\
 \n\
 BUGFIXES:\n\
-- Ranger's Spectral weapons no longer use the old DoE ammo switching style.\n\
-- Spectral Laser Cannon no longer flickers.\n\
-- Spectral Thunderbolt no longer uses cells.\n\
-- Spectral LAZ Device zorches properly.\n\
-- Ranger no longer keeps his quadded face when he dies.\n\
-- (ZDoom) The SO's lightamp now does BlueMap, as expected. BlueMap still broken in Zandroland.\n\
-- The Thunderbolt discharge now actually escapes the sector it's in. Apparently low-radius projectiles don't explode properly.\n\
-- sv_degeneration disables Ranger's degeneration, so he isn't hit with both of them.\n\
-- Corvus' Tomed Phoenix Rod was getting confused with the Spectral Tomed Phoenix Rod. This was fixed.\n\
-- The Quad Damage no longer plays weapons/sigil when powering down.\n\
-- The SO's Marathon 2 Alien Weapon can no longer be dropped.\n\
-- The Hectebus no longer gets locked in firing.\n\
-- Spectre 2 and 4 in Strife are no longer immune to every non-Spectral weapon.\n\
-- Duke burning and freezing now causes him to lose his inventory stuff and triggers the 'press any button to respawn' message.\n\
-- Duke's ballgag now respects his death quip.\n\
-- The SSG zombie's drop now actually exists.\n\
-- The TOZT no longer lifts up instantly and gains an ammo from nowhere on lift-up.\n\
-- Unique items no longer spawn in LMS and TLMS.\n\
-- Duke passing the pipe no longer results in a clack.\n\
-- The Barons of Hell, Mancubi, and Arachnotrons no longer forget to trigger A_BossDeath when frozen in Survival mode. What a specific bug!\n\
-- The Wings of Wrath have had their gold tint removed, as Hexen made it permanent.\n\
-- Freezing the Programmer no longer breaks Strife.\n\
-- The Programmer now gives a dummy Sigil on death, which should fix Strife's map progression.\n\
-- The SO's/Ranger's automap HUD no longer show inventory and runes.\n\
-- The SO's fists were not taking into account the Y axis on determining whether to deliver extra power to the punch. Um. Whoops!\n\
-- samsara_permault was apparently relying on sv_weaponstay--meaning if sv_weaponstay was 0, samsara_permault 1 would have no effect. Whoops x2!\n\
-- Duke no longer has an undying left foot.\n\
-- The Quad Damage was not being removed from the inventory on use in DM or LMS. This has been fixed.\n\
-- Chickens were immune to booting and zorching. This has been fixed.\n\
-- You no longer regenerate health when dead.\n\
-- The base ammo types are now always filled in LMS.\n\
-- How did we go for so long without supplying a sprite for the Berserk? Fixed.\n\
+- Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
+- In Strife, apparently the Loremaster door wouldn't open if you had all five splinters? At least, that's what the code said. Fixed.\n\
+- The Thunderbolt could not be forced to not recoil. Fixed.\n\
+- In rare instances, the S.O.'s pain frames would be replaced with a burning corpse. This has been fixed.\n\
+- Pain Elementals can no longer be unzorched by Archviles.\n\
+- You may now suicide when invulnerable again.\n\
+- Ranger's powerups now properly deplete on death.\n\
+- Players could not be telefragged while invulnerable. This has been fixed.\n\
+- In rare instances, the IV pickup would be replaced with Duke's Ripper. This has been fixed.\n\
+- Ranger should no longer be able to infinitely stack Quad Damage on pickup.\n\
+- In crazy instances where you face Lord Snotfolus before he finishes his monologue (?!), getting him in a painstate will no longer permanently lock him in invulnerability.\n\
+- Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!\n\
+- Armors no longer spawn on the field in Last Man Standing mode.\n\
+- Ranger's freezedeath graphic was being overwritten by one of his firing frames. No more.\n\
 \n\
 POLISH:\n\
-- The changelog has been changed from a graphic to a textdump.\n\
-- Further separated Samsara character scripts from other non-Samsara chars.\n\
-- When using vanilla animations, Doomguy's pistol muzzle flash is no longer wildly to the side.\n\
-- Hexen armor is now brown, and red armor is actually red again.\n\
-- You can now see what armor type you have when using hud_althud, as you would expect.\n\
-- samsara_cl_noadditivepickups has been added, for those whose bloom makes it near impossible to see the things.\n\
-- Duke pipebombs and devastators now make two explosion sounds; one local and loud, one global and quiet (with the pipebomb global sound limited).\n\
-- The Quad Damage now makes the \"no item\" sound from Quake 3 if it's used when it's recharging.\n\
-- Duke's Freezethrower sprites have been adjusted for better Widescreen compatibility.\n\
-- The SO has been given generic color painflashes for easier add-on compatibility.\n\
-- BlackFish has provided cleaner rocketlauncher sprites for Quakeguy.\n\
-- Weapon pickup messages now take into account msg0color.\n\
-- Duke's RPG has been tweaked in widescreen, thanks to Turbo.\n\
-- Thanks to BlackFish, the Firestorm now has widescreen sprites!\n\
-- Whoops! Turns out the proper message was MIGHTY FOOT ENGAGED, not Mighty Boot. Fixed.\n\
-- Skulltag monsters now bleed/gib their proper colors.\n\
-- The Security Officer's fists now properly alternate when holding both fire buttons.\n\
-- B.J. Blazkowicz now has a Dukegib sequence, thanks to Peter Bark's sprites.\n\
-- Due to popular request, the Chicken player now has its own unique HUD.\n\
-- The Icon of Sin now has a boss speech.\n\
-- For those who don't like the boss speeches, samsara_nomonologues has been implemented as a cvar.\n\
-- Sounds have been arranged and sorted into neat little folders.\n\
-- Ranger now has a sound for hitting things with the axe, due to popular request.\n\
-- Ranger now has a burndeath sequence based off the simplistic burndeaths from Quake mods.\n\
-- The TOZT's death frames are now more accurate to Marathon.\n\
-- The Marathon weapons now all properly reload on select.\n\
-- The WSTEs now show their magazines being used, instead of always being full. While it's a bit off from Marathon, it's still a major improvement.\n\
-- The SO's HUD now displays the empty/loaded state of the magazines of the WSTE-M5 Combat Shotguns.\n\
-- The SO's HUD now properly splits into two magazines when the WSTE-M5 is loaded, and the single magazine is centered with the Magnum.\n\
-- The Quad Damage now has a bunch of lightning shooting out of it with samsara_pickupmode 1.\n\
-- The weapon pickup sparkles have had their lifespan shortened and count reduced, to hopefully ease lag issues.\n\
-- The powerup timers with Ranger no longer have gaps between them; they move up and down as powerups start and stop.\n\
-- Implemented Popsoap's GLDefs.";
+- Party Mode particles are now spawned less often and disappear faster.\n\
+- Sounds and flashes are now done if you lose armor with Marathon-style armor, to indicate when you're hit.\n\
+- All fake bullets now go at 320 tics per unit, a slight speed boost.\n\
+- Rephrased a few obituaries to be gender-ambiguous.\n\
+- The Hectebus' shots now use the HexGreenFire damagetype.\n\
+- Ranger's shaft has been given an increase in girth.\n\
+- Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.\n\
+- Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.\n\
+- Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.";

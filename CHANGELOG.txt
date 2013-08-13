@@ -1,6 +1,5 @@
-FROM 0.29b TO 0.30
+FROM 0.29b TO 0.3
 ========================
-
 GAMEPLAY:
 - B.J.'s chaingun gave less ammo on pickup than his Machine Gun. Fixed, now it gives 20 ammo like the Machine Gun does.
 - The Quake wiki reveals the lava nails were dealing too much damage. They were not more powerful in DM, they just pierced armor. And they only did 30% extra damage in co-op. Ranger was adjusted accordingly.
@@ -8,7 +7,7 @@ GAMEPLAY:
 - The Fusion Pistol's shots can no longer be deflected.
 - In lieu of Zandronum 1.1.1, Duke's and Ranger's bullets now use FBF_NORANDOM! This gives them wonderful Unlagged compatibility while still being, as in Duke Nukem 3D, completely static about their damage!
 - Splitting the Wraithverge into DM modes and coop modes gave it the side effect of being terribly, terribly overpowered. Its damage in deathmatch has been thirded and it speeds up only half as often.
-- Timon's Axe now actually uses the damagetype "TimonsAxe". 
+- Timon's Axe now actually uses the damagetype TimonsAxe. 
 - In lieu of FBF_NORANDOM, Duke Nukem's Explosive Shotgun has been reworked. Damage emphasis has been placed less on the bullets and more on the explosives--the bullets do less damage, while the explosions do more to a wider radius. To accomodate the wider radius, the accuracy has been tightened up as well.
 - The Devastators have had their radius increased as well, from 32 to 64, with damage increased from 35 to 48. Duke Nukem's HEIRARCHY OF EXPLOSIVES now goes:
  ^- Pipebombs: Largest radius
@@ -22,7 +21,7 @@ GAMEPLAY:
 - The difficulty settings now have ACSReturn values, for maps with ACS scripts that rely on difficulty settings.
 - Here's one that's been around for a long, long time. Possessed Troopers, Sergeants, and Chaingunners couldn't infight with each other. Now they can!
 - A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.
-- Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor "Mace" on everything with DamageFactor "CorvusCrossbow". The DamageFactor "Mace" increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.
+- Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.
 - Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.
 
 BUGFIXES:
