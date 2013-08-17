@@ -23,6 +23,7 @@ GAMEPLAY:
 - A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.
 - Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.
 - Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.
+- The SP and DM modes of the Super Large Zorcher's spatters on hit were swapped with each other. This has been fixed.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
