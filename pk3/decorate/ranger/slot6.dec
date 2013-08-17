@@ -417,7 +417,7 @@ actor QuakeSLNailCoop: QuakeSLNail
 {
     +THRUSPECIES
     Species "Player"
-    Damage (26)
+    Damage (30)
 }
 
 
