@@ -1251,6 +1251,7 @@ quakeweps/regenout              sounds/ranger/wearoff.ogg
 quakeweps/invison               sounds/ranger/inv1.ogg
 quakeweps/invisout              sounds/ranger/inv2.ogg
 quakeweps/inviswhisper          sounds/ranger/inv3.ogg
+quake/invisannouncer            sounds/ranger/invisibility.ogg
 
 quakeweps/pentagramon           sounds/ranger/pentagram.wav
 quakeweps/pentagram             sounds/ranger/pentagramding.wav
