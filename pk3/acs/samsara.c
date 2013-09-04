@@ -257,6 +257,13 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 24:
         result = GetCVar("samsara_noult");
         break;
+
+      case 25:
+        if (GameType() == GAME_NET_COOPERATIVE)
+		{ AmbientSound("quake/invisannouncer",127); }
+		else
+		{ LocalAmbientSound("quake/invisannouncer",127); }
+        break;
     }
     
     SetResultValue(result);

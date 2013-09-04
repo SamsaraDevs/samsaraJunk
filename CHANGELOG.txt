@@ -60,6 +60,7 @@ POLISH:
 - Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.
 - Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.
 - Thanks to Popsoap, all Skulltag monsters now have GLDefs.
+- Ranger now has the Quake announcer shout "INVISIBILITY!" on picking up the Partial Invisibility.
 
 
 FROM 0.29 TO 0.29b
