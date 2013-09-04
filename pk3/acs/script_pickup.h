@@ -307,6 +307,8 @@ script SAMSARA_CLIENT_WEAPONPICKUP (int slot, int soundmode, int dropped) client
         {
             if (soundmode == 1) { LocalAmbientSound("duke/weapontaunt", 127); }
             else { ActivatorSound("duke/weapontaunt", 127); }
+            GiveInventory("DukeTauntCooldown",5);
+            ACS_ExecuteAlways(205,0,0);
             DukeQuoteCooldown[pln] = 140;
         }
     }

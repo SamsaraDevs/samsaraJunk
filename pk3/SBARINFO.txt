@@ -327,7 +327,8 @@ StatusBar normal, forcescaled
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, DOOMHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDOOM", 145, 169; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "DGYGOD0", 143, 168;}
         InInventory ExpandedHud, 1
         {
             drawimage "DOOMBART", 0, 0;
@@ -457,7 +458,8 @@ StatusBar normal, forcescaled
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, CHEXHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRCHEX", 145, 169; }
-        drawmugshot "STF", 5, 142, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 142, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "CHXGOD0", 142, 168;}
         InInventory ExpandedHud, 1
         {
             drawimage "CHEXBART", 0, 0;
@@ -585,7 +587,8 @@ StatusBar normal, forcescaled
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, HEREHUDF2, 290, 22, 293, 30, yellow;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRHERTC", 10, 168; }
-        drawmugshot "STF", 5, 142, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 142, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "CRVGOD0", 142, 168;}
         InInventory ExpandedHud, 1
         {
             drawimage "HRTCBART", 0, 0;
@@ -723,7 +726,8 @@ StatusBar normal, forcescaled
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, WOLFHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRWOLFN", 145, 169; }
-        drawmugshot "STF", 5, 143, 167;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 167;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "BJFGOD0", 143, 167;}
         InInventory ExpandedHud, 1
         {
             drawimage "WOLFBART", 0, 0;
@@ -1003,7 +1007,8 @@ StatusBar normal, forcescaled
         InInventory DukeFlying, 1 { drawnumber 3, INDEXFON, yellow, DukeJetpackFuel, 293, 48; }
         InInventory DukeVision, 1 { drawnumber 3, INDEXFON, yellow, DukeVisionFuel, 293, 48; }
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDUKE", 145, 168; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "DKNGOD0", 143, 168;}
         InInventory ExpandedHud, 1
         {
             drawimage "DUKEBART", 0, 0;
@@ -1538,7 +1543,8 @@ StatusBar normal, forcescaled
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, MARAHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRMARA", 145, 169; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "MARGOD0", 143, 168;}
         InInventory ExpandedHud, 1
         {
             drawimage "MRTHBART", 0, 0;
@@ -1925,7 +1931,8 @@ statusbar Automap
             InInventory KillCountNotch, 9 { drawimage "DOMNOTCH", 139, 167; }
         }
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDOOM", 145, 169; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "DGYGOD0", 143, 168;}
     }
 
     Playerclass ChexWarrior
@@ -2016,7 +2023,8 @@ statusbar Automap
         }
 
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRCHEX", 145, 169; }
-        drawmugshot "STF", 5, 142, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 142, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "CHXGOD0", 142, 168;}
     }
 
     Playerclass Corvus
@@ -2105,7 +2113,8 @@ statusbar Automap
         }
 
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRHERTC", 10, 168; }
-        drawmugshot "STF", 5, 142, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 142, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "CRVGOD0", 142, 168;}
     }
 
     Playerclass Blazkowicz
@@ -2196,8 +2205,8 @@ statusbar Automap
         }
 
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRWOLFN", 145, 169; }
-
-        drawmugshot "STF", 5, 143, 167;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 167;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "BJFGOD0", 143, 167;}
     }
 
     playerclass Parias
@@ -2388,7 +2397,8 @@ statusbar Automap
         }
 
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDUKE", 145, 168; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "DKNGOD0", 143, 168;}
     }
 
     playerclass SecurityOfficer
@@ -2854,7 +2864,8 @@ statusbar Automap
         //DrawImage RuneIcon, 20, 40, Center;
 //drawselectedinventory alwaysshowcounter, MARAHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRMARA1", 145, 169; }
-        drawmugshot "STF", 5, 143, 168;
+        InInventory not PowerFakeInvulnerable, 1 {drawmugshot "STF", 5, 143, 168;}
+        InInventory PowerFakeInvulnerable, 1 {drawimage "MARGOD0", 143, 168;}
     }
 
     playerclass Ranger

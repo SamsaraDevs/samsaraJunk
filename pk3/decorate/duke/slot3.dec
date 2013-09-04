@@ -100,9 +100,9 @@ actor "Explosive Shotgun" : Weapon
         DKXS LMN 2 A_WeaponReady(14)
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner2",0,0,5)
         DKXS NMLK 2 A_WeaponReady(14)
-        DKXS KKJIHGF 1 A_WeaponReady(14)
-        DKXS A 1 A_WeaponReady(14) // Super shotgun takes 51 tics (62 if not held) to fire.
-        TNT1 A 0 A_Refire // This takes 49 tics to fire.
+        DKXS KKJJIIHHGGFFF 1 A_WeaponReady(14)
+        DKXS EA 1 A_WeaponReady(14) // Super shotgun takes 51 tics (62 if not held) to fire.
+        TNT1 A 0 A_Refire // This takes 56 tics to fire.
 		goto Ready
 
       Flash:

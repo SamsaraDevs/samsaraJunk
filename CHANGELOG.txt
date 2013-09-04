@@ -24,6 +24,7 @@ GAMEPLAY:
 - Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.
 - Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.
 - The SP and DM modes of the Super Large Zorcher's spatters on hit were swapped with each other. This has been fixed.
+- When all of Duke's firing modes were integrated, the Explosive Shotgun had been sped up slightly, rendering it faster than the Super Shotgun. It has been slowed down back to 56 tics.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
@@ -40,6 +41,12 @@ BUGFIXES:
 - Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!
 - Armors no longer spawn on the field in Last Man Standing mode.
 - Ranger's freezedeath graphic was being overwritten by one of his firing frames. No more.
+- If a player has been killed, Skulltag monsters should no longer repeatedly fire at their corpse.
+- Respawning no longer breaks various scripts.
+- Picking up an Invulnerability as Doomguy, Chex, Corvus, BJ, Duke, and SO now gives the proper god mode hud face.
+- Duke no longer moans every time he picks up a Soulsphere--now he only moans when he picks it up at critical health.
+- The Security Officer can no longer fight from beyond death by holding down fire as he dies.'
+- Here's an old bug. Duke now gets taunt cooldown proper from picking up a weapon, and thus can no longer run two quotes at once by picking up a weapon and then killing someone/dying.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
@@ -51,6 +58,7 @@ POLISH:
 - Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.
 - Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.
 - Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.
+- Thanks to Popsoap, all Skulltag monsters now have GLDefs.
 
 
 FROM 0.29 TO 0.29b

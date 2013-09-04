@@ -137,7 +137,7 @@ script SAMSARA_OPEN open
 }
 
 script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
-//script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
+script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_RETURN return { UnloadingNow = 0; ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
@@ -384,11 +384,14 @@ script SAMSARA_SYNTHFIRE (int startTime)
 
     while (ServerEnterTimes[pln] == startTime)
     {
+	    if (CheckInventory("Health") > 0)
+		{
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
         
         if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
         else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+		}
 
         Delay(1);
     }
@@ -587,7 +590,6 @@ script SAMSARA_ENTER_CLIENT (void) clientside
 
         Delay(1);
     }
-
     //Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has left spawn (", d:startTime, s:" vs. ", d:ClientEnterTimes[pln], s:")");
 }
 
