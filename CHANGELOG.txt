@@ -65,6 +65,7 @@ POLISH:
 - Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.
 - Thanks to Popsoap, all Skulltag monsters now have GLDefs.
 - Ranger now has the Quake announcer shout "INVISIBILITY!" on picking up the Partial Invisibility.
+- The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!
 
 
 FROM 0.29 TO 0.29b
