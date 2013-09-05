@@ -27,7 +27,7 @@ GAMEPLAY:
 - When all of Duke's firing modes were integrated, the Explosive Shotgun had been sped up slightly, rendering it faster than the Super Shotgun. It has been slowed down back to 56 tics.
 - The KKV SMG has had its out-of-water damage increased. While nowhere near as powerful as it was before, lack of water in ZDoom maps made its niche terribly infrequent at best.
 - All of the enemies in Doom, sans the boss monsters, can now be stunned with the Tech.50 Pacifier.
-- BJ has been given a very hacky recreation of A_WolfAttack--specifially, how bullets did more damage up-close. While BJ is and always will be a long-range focused character, a lot of Doom 2 is corridor and close-ranged based, and BJ was essentially useless in these matchups. He recieves a (very minor) 2(1d3) damage boost to his bullets when within 120 map units, which while not degrading from his long range power should give him a minor fighting chance up close.
+- BJ has been given a very hacky recreation of A_WolfAttack--specifically, how bullets did more damage up-close. While BJ is and always will be a long-range focused character, a lot of Doom 2 is corridor and close-ranged based, and BJ was essentially useless in these matchups. He recieves a (very minor) 2(1d3) damage boost to his bullets when within 120 map units, which while not degrading from his long range power should give him a minor fighting chance up close.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
@@ -50,6 +50,7 @@ BUGFIXES:
 - Duke no longer moans every time he picks up a Soulsphere--now he only moans when he picks it up at critical health.
 - The Security Officer can no longer fight from beyond death by holding down fire as he dies.'
 - Here's an old bug. Duke now gets taunt cooldown proper from picking up a weapon, and thus can no longer run two quotes at once by picking up a weapon and then killing someone/dying.
+- Here's another old bug. Players no longer dance in place after spawning and triggering coop mode.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.

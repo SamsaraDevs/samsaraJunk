@@ -104,7 +104,7 @@ actor DoomguyPlayer : PlayerPawn
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
         DGUY A 1
-        goto See
+        goto Spawn
 
       Death.DukeDamage:
 
