@@ -98,6 +98,7 @@ actor Zombieman2 : Zombieman replaces Zombieman
         TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
         POSS G 5 A_FaceTarget
         POSS G 30 A_Pain
+        POSS G 70
         Goto See
 
       Death.ZorchPistol:

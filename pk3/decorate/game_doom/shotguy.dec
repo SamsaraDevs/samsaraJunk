@@ -82,6 +82,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         SPOS G 5 A_FaceTarget
 		TNT1 A 0 A_Gravity
         SPOS G 30 A_Pain
+        SPOS G 70
         Goto See
 
       Death.ZorchPistol:

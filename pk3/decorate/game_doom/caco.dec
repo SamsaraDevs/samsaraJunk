@@ -43,6 +43,7 @@ actor Cacodemon2 : Cacodemon replaces Cacodemon
         HEAD F 5 A_FaceTarget
 		TNT1 A 0 A_Gravity
         HEAD F 30 A_Pain
+        HEAD F 70
         Goto See
 
       Missile:

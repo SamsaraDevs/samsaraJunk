@@ -44,6 +44,7 @@ actor LostSoul2 : LostSoul replaces LostSoul
         SKUL E 5 A_FaceTarget
 		TNT1 A 0 A_Gravity
         SKUL E 30 A_Pain
+        SKUL E 70
         Goto See
 
       Death.ZorchPistol:
@@ -119,6 +120,7 @@ actor PainElemental2 : PainElemental replaces PainElemental
         PAIN E 5 A_FaceTarget
 		TNT1 A 0 A_Gravity
         PAIN E 30 A_Pain
+        PAIN E 70
         Goto See
 
       Missile:
