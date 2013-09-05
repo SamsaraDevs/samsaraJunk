@@ -26,6 +26,7 @@ GAMEPLAY:
 - The SP and DM modes of the Super Large Zorcher's spatters on hit were swapped with each other. This has been fixed.
 - When all of Duke's firing modes were integrated, the Explosive Shotgun had been sped up slightly, rendering it faster than the Super Shotgun. It has been slowed down back to 56 tics.
 - The KKV SMG has had its out-of-water damage increased. While nowhere near as powerful as it was before, lack of water in ZDoom maps made its niche terribly infrequent at best.
+- All of the enemies in Doom, sans the boss monsters, can now be stunned with the Tech.50 Pacifier.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
