@@ -114,6 +114,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_noult"))
         {   ConsoleCommand("set samsara_noult 0");
         ConsoleCommand("archivecvar samsara_noult"); }
+        
+        if (!GetCVar("samsara_backpackstart"))
+        {   ConsoleCommand("set samsara_backpackstart 0");
+        ConsoleCommand("archivecvar samsara_backpackstart"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -169,7 +173,8 @@ script SAMSARA_SPAWN (int respawning)
         ClientTipboxes[pln] = 0;
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
 
-        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3); }
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
+		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
     }
 
     HandlePunchdrunk(respawning);
