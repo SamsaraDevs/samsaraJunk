@@ -455,6 +455,7 @@ actor LazShield1
     +NOBLOODDECALS
     +FLOORCLIP
     +REFLECTIVE
+	+NOTIMEFREEZE
     States
     {
     Spawn:
