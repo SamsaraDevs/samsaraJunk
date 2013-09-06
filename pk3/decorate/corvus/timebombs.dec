@@ -122,6 +122,7 @@ actor TimeBombOfTheAncients
     +MOVEWITHSECTOR
     -EXPLODEONWATER
     +CANBOUNCEWATER
+	+FORCERADIUSDMG
     States
     {
       Spawn:
@@ -169,6 +170,7 @@ actor RemoteOfTheAncients
     +MOVEWITHSECTOR
     -EXPLODEONWATER
     +CANBOUNCEWATER
+	+FORCERADIUSDMG
     States
     {
       Spawn:
