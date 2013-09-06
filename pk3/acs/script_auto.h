@@ -370,20 +370,22 @@ script SAMSARA_SPAWN (int respawning)
 script 677 ENTER
 {
     delay(35);
-    //while (1)
-    //{   
-        if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
-        {
-		
+    if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
+    {
+    GiveInventory("ChickenModeOn",1);
 		if (GetCvar("samsara_superturboturkeypuncher3000") >= 2)
 		{ str ChickenClass = "SuperDMChicken";
-        if (!random(0, 19))
-        ChickenClass = "ExplosiveChicken"; }
+        if (!random(0, 14))
+		{ ChickenClass = "AssaultChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveChicken"; }}
 		
 		if (GetCvar("samsara_superturboturkeypuncher3000") == 1)
 		{ ChickenClass = "SuperCoopChicken";
-        if (!random(0, 19))
-        ChickenClass = "ExplosiveChicken"; }
+        if (!random(0, 14))
+		{ ChickenClass = "AssaultChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveChicken"; }}
      
 	    do
 		{
@@ -419,7 +421,9 @@ script 677 ENTER
 		
 		}
 		
-		}
+	}
+	else
+	{ TakeInventory("ChickenModeOn",999); }
     restart;
 	//}
 }
