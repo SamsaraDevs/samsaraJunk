@@ -67,7 +67,7 @@ actor CorvusPlayer : PlayerPawn
         Stop
 
       Death.HexGreenFire:
-        //Death.MarathonPlasma:
+      Death.QuakeFire:
       Burn:
         FDTH A 5 BRIGHT A_PlaySound("*burndeath")
         FDTH B 4 BRIGHT

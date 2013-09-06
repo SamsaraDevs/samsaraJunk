@@ -163,7 +163,7 @@ actor WolfenPlayer : PlayerPawn
         //wait
 
       Death.HexGreenFire:
-
+      Death.QuakeFire:
       Burn:
         BJBR A 4 A_PlayerScream
         BJBR B 4 A_NoBlocking

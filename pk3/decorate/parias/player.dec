@@ -85,7 +85,7 @@ actor HexenPlayer : PlayerPawn
         //Wait
 
       Death.HexGreenFire:
-
+      Death.QuakeFire:
       Burn:
         CBRN C 5 BRIGHT A_PlaySound("*burndeath")
         CBRN D 4 BRIGHT

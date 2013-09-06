@@ -48,7 +48,7 @@ actor DoomguyPlayer : PlayerPawn
         Goto Spawn
 
       Death.HexGreenFire:
-        //Death.MarathonPlasma:
+      Death.QuakeFire:
       Burn:
         TNT1 A 0 A_PlaySound("*burndeath")
         DBRN ABCDE 5 Bright

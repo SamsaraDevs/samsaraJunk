@@ -93,6 +93,8 @@ actor QuakePlayer: PlayerPawn
         
       Pain.HexGreenFire:
         
+      Pain.QuakeFire:
+	  
       Pain.Fire:
         RANG F 4
         RANG F 4 A_PlaySound("ranger/firepain", CHAN_VOICE)
@@ -228,6 +230,7 @@ actor QuakePlayer: PlayerPawn
         Goto See
         
       Death.HexGreenFire:
+      Death.QuakeFire:
       Burn:
         RBRN I 1 A_SpawnItemEx("QuakeBurn",random(-10,10),random(-10,10),random(12,42),random(-2,2),random(-2,2),random(0,3),random(-180,180),32)
         RBRN I 1 A_PlaySound("*burndeath")

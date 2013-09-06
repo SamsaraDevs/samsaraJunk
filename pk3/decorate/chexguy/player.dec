@@ -72,6 +72,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "SpectralNoQuad", 0.8
 	
 	DamageFactor "MarathonStun", 1.0
+    DamageFactor "QuakeFire", 0.8 
 
     DamageFactor "Kamikaze", 1.33333333333
     DamageFactor "ZorchKamikaze", 1.33333333333

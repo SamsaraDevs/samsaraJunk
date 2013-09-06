@@ -75,7 +75,7 @@ actor MarathonPlayer : PlayerPawn
         Goto Missile
         
       Death.HexGreenFire:
-        //Death.MarathonPlasma:
+      Death.QuakeFire:
       Burn:
         TNT1 A 0 A_JumpIfInventory("FusionChargeLevel",1,"BurnFusionShot")
 
