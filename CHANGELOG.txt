@@ -31,6 +31,7 @@ GAMEPLAY:
 - samsara_backpackstart is a new cvar that, well, has players spawn with backpacks.
 - Corvus' bombs now force radius damage.
 - The +FORCERADIUSDMG of the LAZ Device has been moved from the initial blast to the lingering wall. To compensate, the radius of the lingering explosions has been slightly increased by 32 units.
+- From the same stupid minds that brought you Punchdrunk, a new gamemode has been implemented--Super Turbo Turkey Puncher 3000! How long can you stand against an endless wave of crazy chickens out for YOUR flesh?! Activated via samsara_superturboturkeypuncher3000, it spawns either endlessly spawns aggressive chickens (1), cowardly chickens (2), or friendly chickens (3). Whoever reaches the kill limit (perscribed by samsara_superturboturkeylimit) first is the winner. It is compatible in all gamemodes with all other existing cvars, and can be used in LMS, coop, deathmatch, survival, CTF, punchdrunk, or wherever.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

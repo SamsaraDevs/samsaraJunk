@@ -122,6 +122,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_superturboturkeypuncher3000"))
         {   ConsoleCommand("set samsara_superturboturkeypuncher3000 0");
         ConsoleCommand("archivecvar samsara_superturboturkeypuncher3000"); }
+        
+        if (!GetCVar("samsara_superturboturkeylimit"))
+        {   ConsoleCommand("set samsara_superturboturkeylimit 0");
+        ConsoleCommand("archivecvar samsara_superturboturkeylimit"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -371,10 +375,17 @@ script 677 ENTER
 {
     delay(35);
     if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
-    {
-    GiveInventory("ChickenModeOn",1);
-		if (GetCvar("samsara_superturboturkeypuncher3000") >= 2)
-		{ str ChickenClass = "SuperDMChicken";
+    { GiveInventory("ChickenModeOn",1);
+	
+	    if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
+		{ str ChickenClass = "SuperFriendlyChicken";
+        if (!random(0, 14))
+		{ ChickenClass = "AssaultFriendlyChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveFriendlyChicken"; }}
+	
+		if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
+		{ ChickenClass = "SuperDMChicken";
         if (!random(0, 14))
 		{ ChickenClass = "AssaultChicken";
         if (!random(0, 2))
@@ -398,27 +409,17 @@ script 677 ENTER
 	    until (Spawn(ChickenClass, x, y, z, 0, angle));
 		
 		
-		if (GetCvar("samsara_superturboturkeypuncher3000") > 1)
+		if (GetCvar("samsara_superturboturkeylimit") > 0)
 		{
-			if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
-			{ if(CheckInventory("ChickenKillCount") == 50)
-			{ PrintBold(n:0,s:" \cjhas killed 50 chickens!");
-			Delay(35*3);
+		    if(CheckInventory("ChickenKillCount") >= (GetCvar("samsara_superturboturkeylimit")))
+			{ SetFont("BIGFONT");
+			HudMessageBold(n:0,s:" \cjhit the kill limit!";
+		    HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
+			if(CheckInventory("ChickenKillCount") != (GetCvar("samsara_superturboturkeylimit")))
+			{ TakeInventory("ChickenKillCount",999); }
+			Delay(35*5);
 			ConsoleCommand("nextmap");
-			}}
-			if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
-			{ if(CheckInventory("ChickenKillCount") == 100)
-			{ PrintBold(n:0,s:" \cjhas killed 100 chickens!");
-			Delay(35*3);
-			ConsoleCommand("nextmap");
-			}}
-			if (GetCvar("samsara_superturboturkeypuncher3000") == 4)
-			{ if(CheckInventory("ChickenKillCount") == 200)
-			{ PrintBold(n:0,s:" \cjhas killed 200 chickens!");
-			Delay(35*3);
-			ConsoleCommand("nextmap");
-			}}
-		
+			}		
 		}
 		
 	}
