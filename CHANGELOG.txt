@@ -30,6 +30,7 @@ GAMEPLAY:
 - BJ has been given a very hacky recreation of A_WolfAttack--specifically, how bullets did more damage up-close. While BJ is and always will be a long-range focused character, a lot of Doom 2 is corridor and close-ranged based, and BJ was essentially useless in these matchups. He recieves a (very minor) 2(1d3) damage boost to his bullets when within 120 map units, which while not degrading from his long range power should give him a minor fighting chance up close.
 - samsara_backpackstart is a new cvar that, well, has players spawn with backpacks.
 - Corvus' bombs now force radius damage.
+- The +FORCERADIUSDMG of the LAZ Device has been moved from the initial blast to the lingering wall. To compensate, the radius of the lingering explosions has been slightly increased by 32 units.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
