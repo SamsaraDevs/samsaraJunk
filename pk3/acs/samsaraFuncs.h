@@ -500,3 +500,28 @@ function int SamsaraArmorType(void)
     return -1;
 }
 
+function int HandleInstagib(int respawning)
+{
+    int cs = GetCVar("instagib");
+    int classnum = samsaraClassNum();
+    int i;
+
+    if (cs <= 0) { return 0; }
+
+    for (i = 0; i < SLOTCOUNT; i++)
+    {
+        TakeInventory(ClassWeapons[classnum][i][S_WEP], 0x7FFFFFFF);
+        TakeInventory(ClassWeapons[classnum][i][S_AMMO1], 0x7FFFFFFF);
+        TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);
+    }
+
+    if (CheckInventory("DoomguyClass") == 1) { GiveInventory(" Railgun ",1); }
+    if (CheckInventory("ChexClass") == 1) { GiveInventory(" Railgun ",1); }
+    if (CheckInventory("CorvusClass") == 1) { GiveInventory(" Railgun ",1); }
+    if (CheckInventory("WolfenClass") == 1) { GiveInventory("Mauser Rifle",1); }
+    if (CheckInventory("HexenClass") == 1) { GiveInventory("Bloodscourge",1); }
+    if (CheckInventory("DukeClass") == 1) { GiveInventory("Golden Desert Eagle",1); }
+    if (CheckInventory("MarathonClass") == 1) { GiveInventory(" Railgun ",1); }
+    if (CheckInventory("QuakeClass") == 1) { GiveInventory(" Railgun ",1); }
+    return 1;
+}

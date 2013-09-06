@@ -188,6 +188,7 @@ script SAMSARA_SPAWN (int respawning)
     HandlePunchdrunk(respawning);
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
+    HandleInstagib(respawning);
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
 
@@ -415,7 +416,7 @@ script 677 ENTER
 			{ SetFont("BIGFONT");
 			HudMessageBold(n:0,s:" \cjhit the kill limit!";
 		    HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
-			if(CheckInventory("ChickenKillCount") != (GetCvar("samsara_superturboturkeylimit")))
+			if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
 			{ TakeInventory("ChickenKillCount",999); }
 			Delay(35*5);
 			ConsoleCommand("nextmap");
