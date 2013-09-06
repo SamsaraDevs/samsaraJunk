@@ -118,6 +118,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_backpackstart"))
         {   ConsoleCommand("set samsara_backpackstart 0");
         ConsoleCommand("archivecvar samsara_backpackstart"); }
+        
+        if (!GetCVar("samsara_superturboturkeypuncher3000"))
+        {   ConsoleCommand("set samsara_superturboturkeypuncher3000 0");
+        ConsoleCommand("archivecvar samsara_superturboturkeypuncher3000"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -359,28 +363,65 @@ script SAMSARA_SPAWN (int respawning)
 
         opcount = pcount;
         pcount  = PlayerCount();
-
-        /*
-        if (isLMS() && (pcount == 1) && (opcount > pcount))
-        {
-            SetHudSize(800, 600, 1);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Winning stats of ", n:0;
-                    HUDMSG_FADEOUT, 91028, CR_GOLD, 400.4, 350.1, 3.0, 2.0);
-            
-            SetFont("SMALLFONT");
-            HudMessageBold(s:"+ \ca", d:GetActorProperty(0, APROP_Health);
-                    HUDMSG_FADEOUT, 91027, CR_RED, 370.2, 370.1, 3.0, 2.0);
-            HudMessageBold(d:CheckInventory("BasicArmor"), s:" \cqA";
-                    HUDMSG_FADEOUT, 91029, CR_RED, 430.1, 370.1, 3.0, 2.0);
-
-            HudMessage(s:""; HUDMSG_PLAIN, 91027, 0, 0, 0, 0);
-            HudMessage(s:""; HUDMSG_PLAIN, 91028, 0, 0, 0, 0);
-            HudMessage(s:""; HUDMSG_PLAIN, 91029, 0, 0, 0, 0);
-        }
-        */
     }
 
+}
+
+script 677 ENTER
+{
+    delay(35);
+    //while (1)
+    //{   
+        if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
+        {
+		
+		if (GetCvar("samsara_superturboturkeypuncher3000") >= 2)
+		{ str ChickenClass = "SuperDMChicken";
+        if (!random(0, 19))
+        ChickenClass = "ExplosiveChicken"; }
+		
+		if (GetCvar("samsara_superturboturkeypuncher3000") == 1)
+		{ ChickenClass = "SuperCoopChicken";
+        if (!random(0, 19))
+        ChickenClass = "ExplosiveChicken"; }
+     
+	    do
+		{
+           delay(1);
+           int x = GetActorX(0) + random(-128.0, 128.0);
+           int y = GetActorY(0) + random(-128.0, 128.0);
+           int z = GetActorCeilingZ(0) - 38.0;
+           int angle = GetActorAngle(0) >> 8;
+        }
+	    until (Spawn(ChickenClass, x, y, z, 0, angle));
+		
+		
+		if (GetCvar("samsara_superturboturkeypuncher3000") > 1)
+		{
+			if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
+			{ if(CheckInventory("ChickenKillCount") == 50)
+			{ Print(n:0,s:" \cfhas killed 50 chickens!");
+			Delay(35);
+			ConsoleCommand("nextmap");
+			}}
+			if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
+			{ if(CheckInventory("ChickenKillCount") == 75)
+			{ Print(n:0,s:" \cfhas killed 75 chickens!");
+			Delay(35);
+			ConsoleCommand("nextmap");
+			}}
+			if (GetCvar("samsara_superturboturkeypuncher3000") == 4)
+			{ if(CheckInventory("ChickenKillCount") == 100)
+			{ Print(n:0,s:" \cfhas killed 100 chickens!");
+			Delay(35);
+			ConsoleCommand("nextmap");
+			}}
+		
+		}
+		
+		}
+    restart;
+	//}
 }
 
 script SAMSARA_SYNTHFIRE (int startTime)
