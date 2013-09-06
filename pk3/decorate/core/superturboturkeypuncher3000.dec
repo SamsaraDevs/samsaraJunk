@@ -60,6 +60,36 @@ Actor SuperCoopChicken
         CHKN C 3 A_CustomMeleeAttack(random(1,5))
         Goto See
 		
+      Death.DukeDamage:
+
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death.DukeExplosive:
+      Death.DukeSpectral:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        CHKN E 1
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
     Death:
         TNT1 A 0 A_GiveToTarget("ChickenKillCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
