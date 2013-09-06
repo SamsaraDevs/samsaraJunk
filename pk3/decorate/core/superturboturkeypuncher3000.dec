@@ -1,4 +1,4 @@
-actor ChickenKillCount : Counter { Inventory.MaxAmount 100 }
+actor ChickenKillCount : Counter { Inventory.MaxAmount 999 }
 actor ChickenModeOn : Boolean {}
 
 Actor SuperCoopChicken

@@ -403,19 +403,19 @@ script 677 ENTER
 			if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
 			{ if(CheckInventory("ChickenKillCount") == 50)
 			{ Print(n:0,s:" \cfhas killed 50 chickens!");
-			Delay(35);
+			Delay(35*3);
 			ConsoleCommand("nextmap");
 			}}
 			if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
-			{ if(CheckInventory("ChickenKillCount") == 75)
-			{ Print(n:0,s:" \cfhas killed 75 chickens!");
-			Delay(35);
+			{ if(CheckInventory("ChickenKillCount") == 100)
+			{ Print(n:0,s:" \cfhas killed 100 chickens!");
+			Delay(35*3);
 			ConsoleCommand("nextmap");
 			}}
 			if (GetCvar("samsara_superturboturkeypuncher3000") == 4)
-			{ if(CheckInventory("ChickenKillCount") == 100)
-			{ Print(n:0,s:" \cfhas killed 100 chickens!");
-			Delay(35);
+			{ if(CheckInventory("ChickenKillCount") == 200)
+			{ Print(n:0,s:" \cfhas killed 200 chickens!");
+			Delay(35*3);
 			ConsoleCommand("nextmap");
 			}}
 		
