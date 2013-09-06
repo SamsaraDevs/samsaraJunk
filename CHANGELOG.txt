@@ -56,7 +56,8 @@ BUGFIXES:
 - The Security Officer can no longer fight from beyond death by holding down fire as he dies.'
 - Here's an old bug. Duke now gets taunt cooldown proper from picking up a weapon, and thus can no longer run two quotes at once by picking up a weapon and then killing someone/dying.
 - Here's another old bug. Players no longer dance in place after spawning and triggering coop mode.
-- Time freeze no longer affects the LAZ Device shield, keeping people from locking up computers.
+- Timefreeze no longer affects the LAZ Device shield, keeping people from locking up computers.
+- Timefreeze also no longer affects the LAZ's particles.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.

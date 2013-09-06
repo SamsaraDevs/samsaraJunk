@@ -330,6 +330,7 @@ actor ChexBFGTrail
     -CANBOUNCEWATER
     +CLIENTSIDEONLY
     +NOINTERACTION
+	+NOTIMEFREEZE
     -SOLID
     Scale 0.15
     Speed 2
@@ -530,6 +531,7 @@ actor LazShield5Useless : LazShield5
     +CLIENTSIDEONLY
     -SHOOTABLE
     -REFLECTIVE
+	+NOTIMEFREEZE
 }
 
 actor LazShield5Online : LazShield5
