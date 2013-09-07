@@ -64,25 +64,25 @@ Actor SuperCoopChicken
         CHKN C 3 A_CustomMeleeAttack(random(1,5))
         Goto See
 		
-      Death.DukeDamage:
+    Death.DukeDamage:
 
-      Death.DukePistol:
+    Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
         goto Death
 
-      Death.MightyBoot:
+    Death.MightyBoot:
         TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
         TNT1 A 0 A_Jump(64,"Death")
         TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
         goto Death
 
-      Death.DukeExplosive:
-      Death.DukeSpectral:
+    Death.DukeExplosive:
+    Death.DukeSpectral:
         TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
         goto Death.DukeDamage
 
-      DukeGibStart:
+    DukeGibStart:
         CHKN E 1
         TNT1 A 0 A_UnsetSolid
         TNT1 A 0 A_SpawnDebris("DukeGibs1")
@@ -145,6 +145,24 @@ Actor SuperCoopChicken
         CHKN D 1 A_IceGuyDie
         TNT1 A -1
         stop
+
+    Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        CHKN D 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        CHKN D 16 A_Pain
+        Goto See
+		
+	Pain.MarathonStun:
+        TNT1 A 0 A_Stop
+		TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
+        CHKN D 5 A_FaceTarget
+		TNT1 A 0 A_Gravity
+        CHKN D 30 A_Pain
+        CHKN D 70
+        Goto See
     }
 }
 
