@@ -399,6 +399,16 @@ GAMEPLAY:\n\
 - A new cvar, samsara_noult, has been implemented for DM/CTF/etc play. When enabled, no VIIs will spawn on the battlefield.\n\
 - Corvus' Crossbow has been slightly buffed and the Firemace slightly nerfed, changing out the DamageFactor Mace on everything with DamageFactor CorvusCrossbow. The DamageFactor Mace increase was made long, long ago in the early builds when the Firemace was an alternative to the chaingun and the Crossbow was OP. This is no longer the case.\n\
 - Tome of Power doubles dealt damage and halves recieved damage. Cooldown reduced further to 200.\n\
+- The SP and DM modes of the Super Large Zorcher's spatters on hit were swapped with each other. This has been fixed.\n\
+- When all of Duke's firing modes were integrated, the Explosive Shotgun had been sped up slightly, rendering it faster than the Super Shotgun. It has been slowed down back to 56 tics.\n\
+- The KKV SMG has had its out-of-water damage increased. While nowhere near as powerful as it was before, lack of water in ZDoom maps made its niche terribly infrequent at best.\n\
+- All of the enemies in Doom, sans the boss monsters, can now be stunned with the Tech.50 Pacifier.\n\
+- BJ has been given a very hacky recreation of A_WolfAttack--specifically, how bullets did more damage up-close. While BJ is and always will be a long-range focused character, a lot of Doom 2 is corridor and close-ranged based, and BJ was essentially useless in these matchups. He recieves a (very minor) 2(1d3) damage boost to his bullets when within 120 map units, which while not degrading from his long range power should give him a minor fighting chance up close.\n\
+- samsara_backpackstart is a new cvar that, well, has players spawn with backpacks.\n\
+- Corvus' bombs now force radius damage.\n\
+- The +FORCERADIUSDMG of the LAZ Device has been moved from the initial blast to the lingering wall. To compensate, the radius of the lingering explosions has been slightly increased by 32 units.\n\
+- From the same stupid minds that brought you Punchdrunk, a new gamemode has been implemented--Super Turbo Turkey Puncher 3000! How long can you stand against an endless wave of crazy chickens out for YOUR flesh?! Activated via samsara_superturboturkeypuncher3000, it endlessly spawns either aggressive chickens (1), cowardly chickens (2), or friendly chickens (3). Whoever reaches the kill limit (perscribed by samsara_superturboturkeylimit) first is the winner. It is compatible in all gamemodes with all other existing cvars, and can be used in LMS, coop, deathmatch, survival, CTF, punchdrunk, or wherever.\n\
+- Ranger's Lava Nails now use the QuakeFire damagetype rather than Fire.\n\
 \n\
 BUGFIXES:\n\
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
@@ -415,6 +425,15 @@ BUGFIXES:\n\
 - Dumb things happened with the Gargoyles' Zorch sequence online. PresidentPeople has fixed all of the dumb things!\n\
 - Armors no longer spawn on the field in Last Man Standing mode.\n\
 - Ranger's freezedeath graphic was being overwritten by one of his firing frames. No more.\n\
+- If a player has been killed, Skulltag monsters should no longer repeatedly fire at their corpse.\n\
+- Respawning no longer breaks various scripts.\n\
+- Picking up an Invulnerability as Doomguy, Chex, Corvus, BJ, Duke, and SO now gives the proper god mode hud face.\n\
+- Duke no longer moans every time he picks up a Soulsphere--now he only moans when he picks it up at critical health.\n\
+- The Security Officer can no longer fight from beyond death by holding down fire as he dies.\n\
+- Here's an old bug. Duke now gets taunt cooldown proper from picking up a weapon, and thus can no longer run two quotes at once by picking up a weapon and then killing someone/dying.\n\
+- Here's another old bug. Players no longer dance in place after spawning and triggering coop mode.\n\
+- Timefreeze no longer affects the LAZ Device shield, keeping people from locking up computers.\n\
+- Timefreeze also no longer affects the LAZ's particles.\n\
 \n\
 POLISH:\n\
 - Party Mode particles are now spawned less often and disappear faster.\n\
@@ -425,4 +444,7 @@ POLISH:\n\
 - Ranger's shaft has been given an increase in girth.\n\
 - Duke's ricochet sound happened far too often. Now it happens much less often, as proper of Duke Nukem 3D.\n\
 - Vanilla animations for Doomguy's Pistol/Chaingun now properly light up the room.\n\
-- Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.";
+- Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.\n\
+- Thanks to Popsoap, all Skulltag monsters now have GLDefs.\n\
+- Ranger now has the Quake announcer shout 'INVISIBILITY!' on picking up the Partial Invisibility.\n\
+- The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!";
