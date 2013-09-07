@@ -41,7 +41,7 @@ actor DoomEnemyBulletInfight
     {
     Spawn:
 	    TNT1 A 0
-		TNT1 A 0 A_Explode((random(1,5)*3),16)
+		TNT1 A 0 A_Explode((random(1,5)*3),16,0)
 		stop
 	}
 }
