@@ -287,7 +287,7 @@ actor ChexBFGBall
     Speed 25
     Damage 100
     RenderStyle Translucent
-    Obituary "%o \chfell prey to\c- %k\ch's LAZ device.\c-"
+    Obituary "%k \chkicked\c- %o\ch off to another dimension with the LAZ device.\c-"
     Alpha 0.75
     DeathSound "chex/bfgx"
     Projectile
