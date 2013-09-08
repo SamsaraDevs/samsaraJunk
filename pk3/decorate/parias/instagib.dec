@@ -37,7 +37,7 @@ actor MageStaffFXInstagib : FastProjectile
 {
 	Height 8
 	Radius 8
-    Damage 0x7FFFFFF
+    Damage (10000)
 	Speed 100
 	+EXTREMEDEATH
 	Decal Scorch
