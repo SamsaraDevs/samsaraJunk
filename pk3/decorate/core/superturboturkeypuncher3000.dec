@@ -187,8 +187,10 @@ actor SuperFriendlyChicken : SuperCoopChicken
 actor ChickodemonBall : CacodemonBall
 {
     Scale 0.5
-    Speed 40
+    Speed 30
+	Damage 4
     DamageType "DoomCacodemon"
+	+STRIFEDAMAGE
     +THRUGHOST
 }
 
