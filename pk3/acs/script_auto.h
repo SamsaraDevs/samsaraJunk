@@ -188,6 +188,12 @@ script SAMSARA_SPAWN (int respawning)
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
 		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
     }
+	else
+	{ if (GameType() != GAME_NET_COOPERATIVE)
+	{
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
+		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
+	}}
 
     HandlePunchdrunk(respawning);
     HandleChainsawSpawn(respawning);
