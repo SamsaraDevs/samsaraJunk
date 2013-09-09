@@ -221,3 +221,12 @@ object DoomBFGSplash
     frame DBFPD { light BFGBALL_X5 }
 }
 
+// Barrel
+object DoomExplosiveBarrel
+{
+	frame BAR1  { light BARREL    }
+
+	frame BEXPC { light ROCKET_X1 }
+	frame BEXPD { light ROCKET_X2 }
+	frame BEXPE { light ROCKET_X3 }
+}
