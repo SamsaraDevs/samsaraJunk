@@ -195,9 +195,9 @@ script SAMSARA_SPAWN (int respawning)
 		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
 	}}
 
-    HandlePunchdrunk(respawning);
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
+	HandlePunchdrunk(respawning);
     HandleInstagib(respawning);
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
@@ -439,6 +439,27 @@ script 677 ENTER
     restart;
 	//}
 }
+
+/*script 678 (int respawning)
+{
+    int punchdrunkloop;
+    //punchdrunkloop = 0;
+	
+	print(s:"678 is being called");
+    if (!respawning)
+	{
+	    if (!punchdrunkloop)
+		{ delay(15);
+	      print(s:"punchdrunkloop 0 is being called");
+		  punchdrunkloop = 1; }
+		else
+		{ HandlePunchdrunk(respawning);
+	    print(s:"handlepunchdrunk is being called");
+	    HandleInstagib(respawning); }
+	}
+	delay(1);
+	restart;
+}*/
 
 script SAMSARA_SYNTHFIRE (int startTime)
 {

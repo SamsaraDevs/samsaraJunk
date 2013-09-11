@@ -161,6 +161,8 @@ function void ApplyLMS(void)
         SetActorProperty(0, APROP_Health, GetActorProperty(0, APROP_Health) + (100 * (lmsLevel-1)));
         ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_BLUE, -100 * lmsLevel);
     }
+	//ACS_ExecuteAlways(678,0,0,0,0);
+	//HandlePunchDrunk(respawning);
 } 
 
 function int samsaraClassNum(void)
@@ -436,6 +438,8 @@ function int HandlePunchDrunk(int respawning)
     int cs = GetCVar("samsara_punchdrunk");
     int classnum = samsaraClassNum();
     int i;
+
+    //delay(10);
 
     if (cs <= 0) { return 0; }
 
