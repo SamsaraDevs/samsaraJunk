@@ -59,6 +59,8 @@ BUGFIXES:
 - Timefreeze no longer affects the LAZ Device shield, keeping people from locking up computers.
 - Timefreeze also no longer affects the LAZ's particles.
 - sv_shotgunstart now works on respawning when in non-cooperative game modes.
+- The Security Officer no longer can get a LevelLimiter stuck in his inventory when picking up a dropped shotgun.
+- Picking up a WSTE-M5 gave double the ammo. Whoops.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.

@@ -32,7 +32,6 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
         }
         
         GiveInventory("Shell", 8 / (!!dropped+1));
-        GiveInventory("Shell", 8 / (!!dropped+1));
         GiveInventory("WSTE-M5 Combat Shotgun", 1);
         
         if (giveboth || (hasShotty && !dropped))
@@ -40,7 +39,7 @@ script SAMSARA_MARATHON (int class, int slot, int dropped)
             GiveInventory("CanDualShotties", 1);
         }
         
-        if (limit)
+        if (limit && !dropped)
         {
             GiveInventory("LevelLimiter", 1);
         }
