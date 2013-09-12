@@ -78,7 +78,7 @@ POLISH:
 - Thanks to Popsoap, all Skulltag monsters now have GLDefs.
 - Ranger now has the Quake announcer shout "INVISIBILITY!" on picking up the Partial Invisibility.
 - The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!
-- The Flembrane now has a proper non-zorch death sequence.
+- The Flembrane and Flembomination now have a proper non-zorch death sequence. Only Lord Snotfolus left to go!
 
 
 FROM 0.29 TO 0.29b

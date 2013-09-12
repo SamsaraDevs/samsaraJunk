@@ -330,7 +330,7 @@ actor SLZorcherBoltCoop : SLZorcherBolt
         SLZD ABCDEF 2 BRIGHT
         Stop
     }
-
+}
 
 actor SLZorcherBoltCoop2 : SLZorcherBoltCoop
 {
