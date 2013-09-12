@@ -130,6 +130,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_superturboturkeyfrequency"))
         {   ConsoleCommand("set samsara_superturboturkeyfrequency 35");
         ConsoleCommand("archivecvar samsara_superturboturkeyfrequency"); }
+        
+        if (!GetCVar("samsara_classiclaz"))
+        {   ConsoleCommand("set samsara_classiclaz 0");
+        ConsoleCommand("archivecvar samsara_classiclaz"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -242,6 +246,9 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
+
+        if (GetCVar("samsara_classiclaz") == 1) { GiveInventory("ChexClassicLaz", 1); }
+        else { TakeInventory("ChexClassicLaz", 0x7FFFFFFF); }
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
