@@ -61,6 +61,8 @@ BUGFIXES:
 - sv_shotgunstart now works on respawning when in non-cooperative game modes.
 - The Security Officer no longer can get a LevelLimiter stuck in his inventory when picking up a dropped shotgun.
 - Picking up a WSTE-M5 gave double the ammo. Whoops.
+- Flemoids no longer react like normal damage to the PhasingZorch and ZorchKamikaze damagetype.
+- Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
@@ -75,6 +77,7 @@ POLISH:
 - Thanks to Popsoap, all Skulltag monsters now have GLDefs.
 - Ranger now has the Quake announcer shout "INVISIBILITY!" on picking up the Partial Invisibility.
 - The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!
+- The Flembrane now has a proper non-zorch death sequence.
 
 
 FROM 0.29 TO 0.29b
