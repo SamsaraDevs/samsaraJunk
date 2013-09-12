@@ -45,27 +45,27 @@ actor "Super Large Zorcher" : Weapon
       Fire:
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"SPFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-        CSLZ A 3 // 3
+        CSLZ A 1 // 1
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltDM",0,0,4,4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltDM",0,0,4,-4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltDM",0,0,-4,4)
         TNT1 A 0 A_PlayWeaponSound ("chex/slzorcher")
         TNT1 A 0 A_GunFlash
-        CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBoltDM",0,1,-4,-4) // 6
-        CSLZ GH 3 BRIGHT // 12
-        CSLZ IJJ 3 // 21
-        CSLR ABCD 2// 29
-        CSLR E 6 // 35
+        CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBoltDM",0,1,-4,-4) // 4
+        CSLZ GH 3 BRIGHT // 10
+        CSLZ IJJ 3 // 19
+        CSLR ABCD 2// 27
+        CSLR E 6 // 33
         TNT1 A 0 A_PlaySound("chex/slzorchmagunlk")
-        CSLR FGHHH 2 // 45
+        CSLR FGHHH 2 // 43
         TNT1 A 0 A_PlaySound("chex/slzorchmagdown")
-        CSLR IJKLMNO 2 // 59
+        CSLR IJKLMNO 2 // 57
         TNT1 A 0 A_CheckReload
-        CSLR O 10 // 69
+        CSLR O 9 // 66
         goto FunReload
 
       SPFire:
-        CSLZ A 3
+        CSLZ A 1
         TNT1 A 0 A_FireCustomMissile("SLZorcherBolt",0,0,4,4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBolt",0,0,4,-4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBolt",0,0,-4,4)
@@ -74,18 +74,18 @@ actor "Super Large Zorcher" : Weapon
         CSLZ F 3 BRIGHT A_FireCustomMissile("SLZorcherBolt",0,1,-4,-4)
         CSLZ GH 3 BRIGHT
         CSLZ IJJ 3
-        CSLR ABCD 2//KLMM 3
+        CSLR ABCD 2
         CSLR E 6
         TNT1 A 0 A_PlaySound("chex/slzorchmagunlk")
         CSLR FGHHH 2
         TNT1 A 0 A_PlaySound("chex/slzorchmagdown")
         CSLR IJKLMNO 2
         TNT1 A 0 A_CheckReload
-        CSLR O 10//T 12
+        CSLR O 9
         goto FunReload
 
       CoopFire:
-        CSLZ A 3
+        CSLZ A 1
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltCoop",0,0,4,4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltCoop",0,0,4,-4)
         TNT1 A 0 A_FireCustomMissile("SLZorcherBoltCoop",0,0,-4,4)
@@ -101,17 +101,17 @@ actor "Super Large Zorcher" : Weapon
         TNT1 A 0 A_PlaySound("chex/slzorchmagdown")
         CSLR IJKLMNO 2
         TNT1 A 0 A_CheckReload
-        CSLR O 10
+        CSLR O 9
         goto FunReload
 
       FunReload:
-        CSLR ONMLK 2 // 79
+        CSLR ONMLK 2 // 76
         TNT1 A 0 A_PlaySound("chex/slzorchmagup")
-        CSLR JIIHHH 2 // 91
+        CSLR JIIHHH 2 // 88
         TNT1 A 0 A_PlaySound("chex/slzorchmaglock")
-        CSLR GFE 2 // 97
-        CSLZ STUVW 2 // 107
-        CSLZ A 4 A_Refire // 111
+        CSLR GFE 2 // 94
+        CSLZ STUVW 2 // 104
+        CSLZ A 2 A_Refire// 106
         Goto Ready
 
       Flash:
@@ -125,7 +125,7 @@ actor "Super Large Zorcher" : Weapon
     }
 }
 
-actor SLZorcherBolt
+actor SLZorcherBolt// : FastProjectile
 {
     Radius 15
     Height 10
@@ -134,10 +134,11 @@ actor SLZorcherBolt
     Scale 0.95
     Alpha 0.9
     PROJECTILE
-    +HEXENBOUNCE
+    //+HEXENBOUNCE
     -BLOODSPLATTER
     +NOBLOOD
-    BounceCount 3
+	+SEEKERMISSILE
+    //BounceCount 3
     RenderStyle Add
     DamageType "Zorch"
     SeeSound "chex/pistol"//"chex/slzorchbounce"
@@ -149,6 +150,13 @@ actor SLZorcherBolt
         Loop
 
       Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBolt2",0,0,0,4,0)
+		stop
+	  
+	  Crash:
+	  XDeath:
+	    TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(80,100),6,0)
@@ -157,7 +165,38 @@ actor SLZorcherBolt
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(215,235),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(260,280),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(305,325),6,0)
-        TNT1 A 0 //A_RadiusThrust(5000,32,0)
+        SLZD ABCDEF 2 BRIGHT
+        Stop
+    }
+}
+
+actor SLZorcherBolt2 : SLZorcherBolt
+{
+    Speed 125
+    States
+    {		
+      Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBolt3",0,0,0,4,0)
+		stop
+    }
+}
+
+actor SLZorcherBolt3 : SLZorcherBolt
+{
+    Speed 100
+    States
+    {		
+      Death:
+	    TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(-10,10),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(35,55),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(80,100),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(125,145),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(170,190),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(215,235),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(260,280),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(305,325),6,0)
         SLZD ABCDEF 2 BRIGHT
         Stop
     }
@@ -214,6 +253,45 @@ actor SLZorcherBoltDM : SLZorcherBolt
     States
     {
       Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBoltDM2",0,0,0,4,0)
+		stop
+		
+      XDeath:
+	  Crash:
+	    TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZSpatter2",0,0,random(-10,10),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(35,55),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(80,100),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(125,145),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(170,190),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(215,235),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(260,280),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(305,325),6,0)
+        SLZD ABCDEF 2 BRIGHT
+        Stop
+    }
+}
+
+actor SLZorcherBoltDM2 : SLZorcherBoltDM
+{
+    Speed 125
+    States
+    {		
+      Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBoltDM3",0,0,0,4,0)
+		stop
+    }
+}
+
+actor SLZorcherBoltDM3 : SLZorcherBoltDM
+{
+    Speed 100
+    States
+    {		
+      Death:
+	    TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter2",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(80,100),6,0)
@@ -234,6 +312,45 @@ actor SLZorcherBoltCoop : SLZorcherBolt
     States
     {
       Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop2",0,0,0,4,0)
+		stop
+		
+      XDeath:
+	  Crash:
+	    TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(-10,10),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(35,55),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(80,100),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(125,145),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(170,190),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(215,235),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(260,280),6,0)
+        TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(305,325),6,0)
+        SLZD ABCDEF 2 BRIGHT
+        Stop
+    }
+
+
+actor SLZorcherBoltCoop2 : SLZorcherBoltCoop
+{
+    Speed 125
+    States
+    {		
+      Death:
+	    TNT1 A 0
+	    TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop3",0,0,0,4,0)
+		stop
+    }
+}
+
+actor SLZorcherBoltCoop3 : SLZorcherBoltCoop
+{
+    Speed 100
+    States
+    {		
+      Death:
+	    TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(80,100),6,0)
@@ -257,6 +374,7 @@ actor SLZorchBoltBlur
     Alpha 0.7
     Scale 0.7
     +CLIENTSIDEONLY
+	+NOINTERACTION
     +RANDOMIZE
     +NOGRAVITY
     +DROPOFF
