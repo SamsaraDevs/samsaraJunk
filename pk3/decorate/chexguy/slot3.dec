@@ -129,7 +129,7 @@ actor SLZorcherBolt
 {
     Radius 15
     Height 10
-    Speed 120
+    Speed 155
     Damage (random(10,35))
     Scale 0.95
     Alpha 0.9
@@ -167,7 +167,7 @@ actor SLZSpatter
 {
     Radius 8
     Height 6
-    Speed 12
+    Speed 15
     Damage (random(10,15))
     Scale 0.25
     Alpha 0.75
