@@ -2562,6 +2562,8 @@ ACTOR Flembomination 7
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-1,1),random(-46,-50),random(56,62),random(-2,2),random(-2,2),random(5,10))
 		SPID A 10
         TNT1 A 0 A_PlaySound("flemdie2")
+        TNT1 AAAA 0 A_CustomMissile("QuadrumpusArm1",random(20,40),random(-50,50),random(-45,-135),2,random(0,90))
+        TNT1 AAAAA 0 A_CustomMissile("QuadrumpusArm2",random(20,40),random(-50,50),random(45,135),2,random(0,90))
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,25))
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,20))
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FlemoidGib",random(-10,10),random(-55,55),random(16,56),random(-2,2),random(-2,2),random(5,25))

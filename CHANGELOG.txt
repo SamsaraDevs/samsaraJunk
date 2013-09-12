@@ -64,6 +64,7 @@ BUGFIXES:
 - Picking up a WSTE-M5 gave double the ammo. Whoops.
 - Flemoids no longer react like normal damage to the PhasingZorch and ZorchKamikaze damagetype.
 - Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.
+- Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
