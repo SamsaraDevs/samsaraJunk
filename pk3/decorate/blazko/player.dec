@@ -269,3 +269,5 @@ actor BlankPuff
         Stop
     }
 }
+
+actor BlankPuffBloodless : BlankPuff { -BLOODSPLATTER +BLOODLESSIMPACT }
