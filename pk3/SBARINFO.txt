@@ -1447,7 +1447,14 @@ StatusBar normal, forcescaled
 
         IsSelected " Alien Weapon " { drawimage "MARERROR", 5, 173; }
 
+        IsSelected "Spnkr-25 Auto Cannon"
+        {
+            DrawImage "MARAMBAR", 17, 173;
+            drawbar "MARAMBR2", "MARAMBR3", ammo Spanker2Ammo, vertical, 18, 174;
+        }
 
+IsSelected not "Spnkr-25 Auto Cannon"
+{
     IsSelected not "Talon Ceramic Combat Blade"
     {
         IsSelected not " Alien Weapon "
@@ -1479,6 +1486,7 @@ StatusBar normal, forcescaled
             }
         }
 	}
+}
 
         DrawBar "MBARH100", "MBARMPTY", Health, Horizontal, 51, 170;
         DrawBar "MBARH200", "MBAREMP2", Health OverMax, Horizontal, -36, 170;
@@ -2772,6 +2780,15 @@ statusbar Automap
 
         IsSelected " Alien Weapon " { drawimage "MARERROR", 5, 173; }
 
+        IsSelected "Spnkr-25 Auto Cannon"
+        {
+            DrawImage "MARAMBAR", 17, 173;
+            drawbar "MARAMBR2", "MARAMBR3", ammo Spanker2Ammo, vertical, 18, 174;
+        }
+
+IsSelected not "Spnkr-25 Auto Cannon"
+{
+
     IsSelected not "Talon Ceramic Combat Blade"
     {
         IsSelected not " Alien Weapon "
@@ -2803,6 +2820,7 @@ statusbar Automap
             }
         }
 	}
+}
 
         DrawBar "MBARH100", "MBARMPTY", Health, Horizontal, 51, 170;
         DrawBar "MBARH200", "MBAREMP2", Health OverMax, Horizontal, -36, 170;

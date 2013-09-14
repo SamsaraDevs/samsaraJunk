@@ -902,3 +902,36 @@ script 586 (int divI, int divF, int divF1)
 
     SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
 }
+
+script 678 (int which)
+{
+    int x, y, z;
+
+    x = GetActorX(0); y = GetActorY(0); z = GetActorZ(0);
+    SetActivatorToTarget(0);
+
+    ACS_ExecuteAlways(679, 0, x, y, z);
+}
+
+script 679 (int tx, int ty, int tz) clientside
+{
+    int t, i, k = 0, l;
+    int x, y, z;
+    int vx, vy, vz, mag, magI;
+
+    x  = GetActorX(0); y =  GetActorY(0);  z = GetActorZ(0) + 24.0;
+
+    vx = tx-x; vy = ty-y; vz = tz-z; mag = magnitudeThree_f(vx, vy, vz);
+    vx = FixedDiv(vx, mag); vy = FixedDiv(vy, mag); vz = FixedDiv(vz, mag);
+    magI = ftoi(mag);
+
+    for (i = 8; i < magI; i += 8)
+    {
+        Spawn("SpnkrBeam", x+(vx*i), y+(vy*i), z+(vz*i));
+        
+        l += (i - k);
+        Delay(l / 512);
+        l %= 512;
+        k = i;
+    }
+}

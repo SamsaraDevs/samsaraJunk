@@ -9,3 +9,4 @@
 #include "decorate/marathon/slot6.dec"
 #include "decorate/marathon/slot7.dec"
 #include "decorate/marathon/unique.dec"
+#include "decorate/marathon/instagib.dec"
