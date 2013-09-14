@@ -1117,6 +1117,8 @@ wmc/grenadeexplode2		wmcgxpl2
 alienweapon/shoot		MTAWPSHT
 alienweapon/hit			MTAWPHIT
 
+marathon/railfire       MATCFIRE
+
 
 ///////////////////
 // Ranger sounds
