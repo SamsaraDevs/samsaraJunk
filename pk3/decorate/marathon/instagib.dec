@@ -40,8 +40,7 @@ ACTOR "SPNKR-25 Auto Cannon" : Weapon
         TNT1 A 0 A_JumpIfNoAmmo("Reload")
         MATC A 2 A_GunFlash
 	    TNT1 A 0 A_PlayWeaponSound("marathon/railfire")
-		TNT1 A 0 A_FireBullets(0,0,1,0,"SpnkrAutoPuff",0)
-        MATC B 2 A_RailAttack(10000,0,1,none,none,3)
+		MATC B 2 A_FireBullets(0,0,1,10000,"SpnkrAutoPuff", FBF_NORANDOM | FBF_USEAMMO)
 		MATC B 2 Offset(0,29)
         MATC C 2 Offset(0,32)
         MATC C 3 Offset(0,30)
