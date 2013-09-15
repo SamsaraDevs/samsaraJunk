@@ -35,6 +35,7 @@ GAMEPLAY:
 - Ranger's Lava Nails now use the QuakeFire damagetype rather than Fire.
 - The Super Large Zorcher's bolts have been changed from projectile to fastprojectile, so that they can actually /hit/ people at high speeds. They now travel at 155 speed to hit long-range opponents more easily (though die off in 25 speed with each bounce) and the spatters now travel at speed 15 for a slightly wider AoE. Being a fastprojectile, the "bounces" now all target Chexter, careening back to him rather than bouncing in a random direction--which should make bounce-shots easier for players to predict, and easier for opponents to avoid.
 - For the Chex Quest purists, samsara_classiclaz has been implemented as a cvar. When enabled, it changes the LAZ Device back to the BFG9000 behavior. Keep in mind, the BFG spray effect still does not zorch people in Zandronum!
+- Instagib mode is now supported! Everyone gets new weapons that, well, instagib people.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
