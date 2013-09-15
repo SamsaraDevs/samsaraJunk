@@ -1267,3 +1267,9 @@ quakeweps/mjolnirmiss           sounds/ranger/mjolnir_miss.wav
 quakeweps/mjolnirhit            sounds/ranger/mjolnir_hit.wav
 quakeweps/mjolnirwhack          sounds/ranger/mjolnir_whack.wav
 quakeweps/mjolnirwall           sounds/ranger/mjolnir_wall.wav
+
+quake/impalehit                 sounds/ranger/impale.wav
+quake/impalsplod                sounds/ranger/impex.wav
+quake/impalefire                sounds/ranger/impfire.wav
+quake/impaload                  sounds/ranger/impload.wav
+quake/impalwall                 sounds/ranger/impwall.wav
