@@ -15,8 +15,8 @@ actor DoomEnemyBullet : FastProjectile
     States
     {
       Spawn:
-        TNT1 A 1
-        loop
+        TNT1 A 6
+        stop
 
       Death:
 	    TNT1 A 0
