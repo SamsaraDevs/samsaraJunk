@@ -4,6 +4,7 @@ ACTOR Bloodscourge : Weapon
     Weapon.YAdjust 20
     Weapon.Kickback 100
     Weapon.SlotNumber 0
+    +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "BLOODSCOURGE"
     States
     {

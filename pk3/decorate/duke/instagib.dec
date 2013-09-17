@@ -9,7 +9,6 @@ actor "Golden Desert Eagle" : Weapon
     Obituary "%k \cfmade\cf- %o \cfspread 'em."
 	Decal BulletChip
     DamageType "DukeDamage"
-    +WEAPON.WIMPY_WEAPON
     +WEAPON.AMMO_OPTIONAL
     +NOALERT
     +INVENTORY.UNDROPPABLE
