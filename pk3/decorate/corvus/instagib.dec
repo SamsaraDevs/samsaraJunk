@@ -1,0 +1,114 @@
+ACTOR "Grim Ballista" : Weapon
+{
+    Weapon.Selectionorder 100
+    Weapon.Kickback 100
+    Weapon.SlotNumber 0
+    Weapon.YAdjust 16
+    +INVENTORY.UNDROPPABLE
+    Inventory.Pickupmessage "You got the Grim Ballista!"
+	Decal DoomImpScorch
+    Obituary "%k \cqbrought\c- %o\cq a grim fate."
+    States
+    {
+    Ready:
+        GBLS A 1 A_WeaponReady
+        Loop
+    Deselect:
+        GBLS A 1 A_Lower
+        Loop
+    Select:
+        GBLS A 1 A_Raise
+        Loop
+    Fire:
+	    TNT1 A 0 A_GunFlash
+	    TNT1 A 0 A_PlayWeaponSound("heretic/grimbshot")
+		TNT1 A 0 A_Recoil(5)
+		TNT1 AAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("GrimSpittle",random(-100,100)/10.0,0,0,-2,0,random(-70,70)/10.0)
+        GBLS B 12 A_FireBullets(0,0,1,10000,"SoulPuff", FBF_NORANDOM)//A_RailAttack(10000,0,0,none,none,1,0,"SoulPuff")
+        GBLS C 4
+        GBLS D 3
+	    TNT1 A 0 A_PlaySoundEx("heretic/grimbload","soundslot6",0,0)
+		GBLS EFG 2
+        GBLS HIJ 3
+		GBLS A 5
+        Goto Ready
+    Flash:
+        TNT1 A 5 bright A_Light1
+        TNT1 A 5 bright A_Light2
+        TNT1 A 0 bright A_Light0
+        Goto LightDone
+    }
+}
+
+
+
+ACTOR GrimSpittle
+{
+    Radius 4
+    Height 4
+    Speed 10
+    Damage (10000)
+    Projectile
+    Obituary "%k \cqbrought\c- %o\cq a grim fate."
+    +MISSILE
+    +RIPPER
+    RenderStyle Add
+    Alpha 0.7
+    Scale 0.35
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("GrimSpittleTrail",0,0,2,0,0,0,0,160)
+        SOLT A 1 A_FadeOut(0.04)
+        loop
+    }
+}
+
+ACTOR GrimSpittleTrail
+{
+    Speed 10
+    Projectile
+    +CLIENTSIDEONLY
+    +MISSILE
+    -SOLID
+    +NOCLIP
+    RenderStyle Add
+    Alpha 0.6
+    Scale 0.2
+    States
+    {
+    Spawn:
+        SOLS AAAAAAAAABBBBBBBBBCCCCCCCCCDDDDDDDDDEEEEEEEEE 1 A_FadeOut(0.05)
+        stop
+    }
+}
+
+Actor SoulPuff : BulletPuff
+{
+    +NOINTERACTION
+    +PUFFONACTORS
+    +ALWAYSPUFF
+    +FORCEXYBILLBOARD
+    RenderStyle Add
+    Alpha 0.95
+    Scale 0.7
+	YScale 0.5
+	VSpeed 0
+    States
+    {
+    Spawn:
+    Crash:
+    Melee:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("weapons/bowhit","soundslot7",0,0)
+        TNT1 A 0 A_PlaySoundEx("SoulScream","soundslot5",0,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GrimSpittleTrail2",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
+	    GPF1 ABCDEFGHIJKLMNOPQR 1 bright A_SpawnItemEx("GrimSpittleTrail2",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
+        GPF1 STUVWXYZ 2 bright
+	    GPF2 ABC 2 bright
+        Stop
+    }
+}
+
+Actor GrimSpittleTrail2 : GrimSpittleTrail { Scale 0.25 }

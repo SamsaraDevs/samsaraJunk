@@ -10,3 +10,4 @@
 #include "decorate/corvus/slot6.dec"
 #include "decorate/corvus/slot7.dec"
 #include "decorate/corvus/unique.dec"
+#include "decorate/corvus/instagib.dec"

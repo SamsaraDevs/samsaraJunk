@@ -365,6 +365,24 @@ $limit  weapons/macebounce 			0
 heretic/remoteancient		ANCTRMT
 heretic/proxancient			ANCTPROX
 
+heretic/grimbshot           GRMBSHOT
+heretic/grimbload           GRMBLOAD
+
+$random SoulScream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
+ghostscream1 gstscrma
+ghostscream2 gstscrmb
+ghostscream3 gstscrmc
+ghostscream4 gstscrmd
+
+$volume ghostscream1 0.15
+$volume ghostscream2 0.15
+$volume ghostscream3 0.15
+$volume ghostscream4 0.15
+$rolloff ghostscream1 64 320
+$rolloff ghostscream2 64 320
+$rolloff ghostscream3 64 320
+$rolloff ghostscream4 64 320
+
 ////////////////
 // Wolfenstein Sounds
 ///////////////
