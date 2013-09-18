@@ -27,17 +27,17 @@ ACTOR Bloodscourge : Weapon
         MSTF H 4 Bright Offset(0, 48)
         MSTF H 2 Bright Offset(0, 48)
         MSTF II 2 Offset(0, 48)
-        MSTF I 1 Offset(0, 40)
+        MSTF I 3 Offset(0, 40)
         MSTF J 5 Offset(0, 36)
-	    MSTF A 5
+	    MSTF A 10
         Goto Ready
 	}
 }
 
 actor MageStaffFXInstagib : FastProjectile
 {
-	Height 8
-	Radius 8
+	Height 4
+	Radius 4
     Damage (10000)
 	Speed 100
 	+EXTREMEDEATH
