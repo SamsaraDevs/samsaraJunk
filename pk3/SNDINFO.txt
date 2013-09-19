@@ -367,6 +367,7 @@ heretic/proxancient			ANCTPROX
 
 heretic/grimbshot           GRMBSHOT
 heretic/grimbload           GRMBLOAD
+heretic/grimhbeat           GRMBEAT
 
 $random SoulScream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
 ghostscream1 gstscrma
