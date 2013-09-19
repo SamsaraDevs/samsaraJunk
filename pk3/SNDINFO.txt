@@ -379,10 +379,10 @@ $volume ghostscream1 0.15
 $volume ghostscream2 0.15
 $volume ghostscream3 0.15
 $volume ghostscream4 0.15
-$rolloff ghostscream1 64 320
-$rolloff ghostscream2 64 320
-$rolloff ghostscream3 64 320
-$rolloff ghostscream4 64 320
+$rolloff ghostscream1 64 640
+$rolloff ghostscream2 64 640
+$rolloff ghostscream3 64 640
+$rolloff ghostscream4 64 640
 
 ////////////////
 // Wolfenstein Sounds

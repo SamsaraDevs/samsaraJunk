@@ -6,7 +6,7 @@ ACTOR "Grim Ballista" : Weapon
     Weapon.YAdjust 16
     +INVENTORY.UNDROPPABLE
     Inventory.Pickupmessage "You got the Grim Ballista!"
-	Decal DoomImpScorch
+	Decal CrossbowScorch
     Obituary "%k \cqbrought\c- %o\cq a grim fate."
     States
     {
@@ -41,8 +41,6 @@ ACTOR "Grim Ballista" : Weapon
         Goto LightDone
     }
 }
-
-
 
 ACTOR GrimSpittle
 {
@@ -100,11 +98,12 @@ Actor SoulPuff : BulletPuff
     States
     {
     Spawn:
-    Crash:
+	    TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("DamnedSoul",0,0,-16,0,0,25/10.0,random(0,360),0,0)
     Melee:
+    Crash:
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("weapons/bowhit","soundslot7",0,0)
-        TNT1 A 0 A_PlaySoundEx("SoulScream","soundslot5",0,0)
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GrimSpittleTrail2",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
 	    GPF1 ABCDEFGHIJKLMNOPQR 1 bright A_SpawnItemEx("GrimSpittleTrail2",0,0,0,random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
         GPF1 STUVWXYZ 2 bright
@@ -114,3 +113,33 @@ Actor SoulPuff : BulletPuff
 }
 
 Actor GrimSpittleTrail2 : GrimSpittleTrail { Scale 0.25 }
+
+Actor DamnedSoul
+{
+    Radius 2
+    Height 2
+    Speed 1
+    Alpha 1
+	Scale 0.4
+    RenderStyle Add
+    Projectile
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_PlaySoundEx("SoulScream","soundslot5",0,0)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GrimSpittleTrail2",0,0,random(0,16),random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GrimSpittleTrail2",0,0,random(0,16),random(-400,400)/100.00,random(-400,400)/100.00,random(-400,400)/100.00,random(0,360),180)
+        DAMD A 3 BRIGHT A_CStaffMissileSlither
+    FadeOut:
+	    TNT1 A 0 A_FadeOut(0.025)
+        DAMD A 1 BRIGHT
+	    TNT1 A 0 A_FadeOut(0.025)
+        DAMD A 1 BRIGHT
+	    TNT1 A 0 A_FadeOut(0.025)
+        DAMD A 1 BRIGHT A_CStaffMissileSlither
+        loop
+    }
+}
