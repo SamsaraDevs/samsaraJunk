@@ -409,6 +409,11 @@ GAMEPLAY:\n\
 - The +FORCERADIUSDMG of the LAZ Device has been moved from the initial blast to the lingering wall. To compensate, the radius of the lingering explosions has been slightly increased by 32 units.\n\
 - From the same stupid minds that brought you Punchdrunk, a new gamemode has been implemented--Super Turbo Turkey Puncher 3000! How long can you stand against an endless wave of crazy chickens out for YOUR flesh?! Activated via samsara_superturboturkeypuncher3000, it endlessly spawns either aggressive chickens (1), cowardly chickens (2), or friendly chickens (3). Whoever reaches the kill limit (perscribed by samsara_superturboturkeylimit) first is the winner. It is compatible in all gamemodes with all other existing cvars, and can be used in LMS, coop, deathmatch, survival, CTF, punchdrunk, or wherever.\n\
 - Ranger's Lava Nails now use the QuakeFire damagetype rather than Fire.\n\
+- The Super Large Zorcher's bolts have been changed from projectile to fastprojectile, so that they can actually /hit/ people at high speeds. They now travel at 155 speed to hit long-range opponents more easily (though die off in 25 speed with each bounce) and the spatters now travel at speed 15 for a slightly wider AoE. Being a fastprojectile, the 'bounces' now all target Chexter, careening back to him rather than bouncing in a random direction--which should make bounce-shots easier for players to predict, and easier for opponents to avoid.\n\
+- For the Chex Quest purists, samsara_classiclaz has been implemented as a cvar. When enabled, it changes the LAZ Device back to the BFG9000 behavior. Keep in mind, the BFG spray effect still does not zorch people in Zandronum!\n\
+- Instagib mode is now supported! Everyone gets new weapons that, well, instagib people.\n\
+- I misinterpreted the PLAYERMISSILERANGE's range for hitscans to be the same as hitscans for monsters. This means that the Doom enemy shots did not travel 8192 units long (long enough to not matter) but to 2048 units (short enough to matter). The DoomEnemyBullet actor now only travels for 6 tics (1920 units) before dissipating.\n\
+- Ranger's Thunderbolt has been converted from A_Explode being the source of damage to the A_FireBullets, thanks to FBF_NoRandom. Parias and Chexguy no longer resist it, nor do bosses.\n\
 \n\
 BUGFIXES:\n\
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
@@ -434,6 +439,13 @@ BUGFIXES:\n\
 - Here's another old bug. Players no longer dance in place after spawning and triggering coop mode.\n\
 - Timefreeze no longer affects the LAZ Device shield, keeping people from locking up computers.\n\
 - Timefreeze also no longer affects the LAZ's particles.\n\
+- sv_shotgunstart now works on respawning when in non-cooperative game modes.\n\
+- The Security Officer no longer can get a LevelLimiter stuck in his inventory when picking up a dropped shotgun.\n\
+- Picking up a WSTE-M5 gave double the ammo. Whoops.\n\
+- Flemoids no longer react like normal damage to the PhasingZorch and ZorchKamikaze damagetype.\n\
+- Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.\n\
+- Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.\n\
+- Chexguy would occaisionally go completely silent when 'gibbed'. No longer.\n\
 \n\
 POLISH:\n\
 - Party Mode particles are now spawned less often and disappear faster.\n\
@@ -447,4 +459,7 @@ POLISH:\n\
 - Duke's Explosive Shotgun's explosions now has the proper Duke Nukem 64 sprites.\n\
 - Thanks to Popsoap, all Skulltag monsters now have GLDefs.\n\
 - Ranger now has the Quake announcer shout 'INVISIBILITY!' on picking up the Partial Invisibility.\n\
-- The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!";
+- The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!\n\
+- The Flembrane and Flembomination now have a proper non-zorch death sequence. Only Lord Snotfolus left to go!\n\
+- Here's one I've known about for a while but was too lazy to fix. The Fusion Pistol did not have a reload sound, and thus it has been removed.\n\
+- The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!";
