@@ -58,6 +58,12 @@ Actor SuperCoopChicken
         CHKN D 5 A_Feathers
         CHKN C 5 A_Pain
         Goto See
+	
+    Pain.PoisonCloud:
+    Pain.Poison:
+        CHKN D 5
+        CHKN C 5 A_Pain
+        Goto See
 		
     Melee:
         CHKN A 3 A_FaceTarget

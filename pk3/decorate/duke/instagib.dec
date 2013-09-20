@@ -6,7 +6,7 @@ actor "Golden Desert Eagle" : Weapon
     Weapon.SlotNumber 0
     Weapon.AmmoType "DukeGoldEagleReload"
     Weapon.AmmoUse 1
-    Obituary "%k \cfmade\cf- %o \cfspread 'em."
+    Obituary "%k \cfmade\c- %o \cfspread 'em."
 	Decal BulletChip
     DamageType "DukeDamage"
     +WEAPON.AMMO_OPTIONAL
