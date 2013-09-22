@@ -109,10 +109,11 @@ samsara_backpackstart 0/1: Toggles whether players spawn normally or with backpa
 samsara_classiclaz 0/1: Toggles whether the LAZ Device has its Samsara behavior or original behavior.\n\
 samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.\n\
 samsara_nounique 0/1: Toggles whether the Unique Item spawns.\n\
-samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.";
+samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
+samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.";
 
 int HELPSTR_CL = 
-"\nLikewise, there are several clientside console variables, including:\n\
+"Likewise, there are several clientside console variables, including:\n\
 samsara_cl_printpickup 0/1: 1 = Print, 0 = Log.\n\
 samsara_cl_expparticles [1-100000]: How many particles does Ranger's explosions emit? 0 is default, -1 to disable.\n\
 samsara_cl_norecoil 0/1: Controls whether Ranger's weapons recoil.\n\

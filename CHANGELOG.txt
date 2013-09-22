@@ -41,6 +41,7 @@ GAMEPLAY:
 - samsara_allcanrj has been implemented as a new cvar. For the characters whose rockets do not damage themselves (Parias, Chex Warrior, BJ), this allows for the rockets to deliver self-damage and launch them up.
 - samsara_nounique has been implemented for those who want duels without the unique item messing things up.
 - samsara_noinvuln has been implemented for mapsets that use Invulnerability replacements as props. I'm looking at you, IDL maps.
+- samsara_ban[class] has been implemented primarily as a debugging cvar, but admins who feel a certain character wrecks balance or want to enforce one-character-only matches may find it handy as well. On use, it forbids players from playing as certain classes--bandoomguy to forbid Doomguy, banchex to forbid Chex Warrior, banso to forbid Security Officer, etc.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

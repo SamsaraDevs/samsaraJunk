@@ -157,6 +157,38 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_noinvuln"))
         {   ConsoleCommand("set samsara_noinvuln 0");
         ConsoleCommand("archivecvar samsara_noinvuln"); }
+        
+        if (!GetCVar("samsara_bandoomguy"))
+        {   ConsoleCommand("set samsara_bandoomguy 0");
+        ConsoleCommand("archivecvar samsara_bandoomguy"); }
+        
+        if (!GetCVar("samsara_banchex"))
+        {   ConsoleCommand("set samsara_banchex 0");
+        ConsoleCommand("archivecvar samsara_banchex"); }
+        
+        if (!GetCVar("samsara_bancorvus"))
+        {   ConsoleCommand("set samsara_bancorvus 0");
+        ConsoleCommand("archivecvar samsara_bancorvus"); }
+        
+        if (!GetCVar("samsara_banbj"))
+        {   ConsoleCommand("set samsara_banbj 0");
+        ConsoleCommand("archivecvar samsara_banbj"); }
+        
+        if (!GetCVar("samsara_banparias"))
+        {   ConsoleCommand("set samsara_banparias 0");
+        ConsoleCommand("archivecvar samsara_banparias"); }
+        
+        if (!GetCVar("samsara_banduke"))
+        {   ConsoleCommand("set samsara_banduke 0");
+        ConsoleCommand("archivecvar samsara_banduke"); }
+        
+        if (!GetCVar("samsara_banso"))
+        {   ConsoleCommand("set samsara_banso 0");
+        ConsoleCommand("archivecvar samsara_banso"); }
+        
+        if (!GetCVar("samsara_banranger"))
+        {   ConsoleCommand("set samsara_banranger 0");
+        ConsoleCommand("archivecvar samsara_banranger"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -275,6 +307,38 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
+		
+		if (GetCvar("samsara_bandoomguy") == 1) { if (CheckInventory("DoomguyClass") == 1)
+		{ Print(s:"\cjThe admin has banned \cdDoomguy\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banchex") == 1) { if (CheckInventory("ChexClass") == 1)
+		{ Print(s:"\cjThe admin has banned \chChex Warrior\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_bancorvus") == 1) { if (CheckInventory("CorvusClass") == 1)
+		{ Print(s:"\cjThe admin has banned \cqCorvus\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banbj") == 1) { if (CheckInventory("WolfenClass") == 1)
+		{ Print(s:"\cjThe admin has banned \cjB.J. Blazkowicz\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banparias") == 1) { if (CheckInventory("HexenClass") == 1)
+		{ Print(s:"\cjThe admin has banned \chParias\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banduke") == 1) { if (CheckInventory("DukeClass") == 1)
+		{ Print(s:"\cjThe admin has banned \cfDuke Nukem\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banso") == 1) { if (CheckInventory("MarathonClass") == 1)
+		{ Print(s:"\cjThe admin has banned \cnSecurity Officer\cj from play.");
+		ConsoleCommand("spectate"); }}
+		
+		if (GetCvar("samsara_banranger") == 1) { if (CheckInventory("QuakeClass") == 1)
+		{ Print(s:"\cjThe admin has banned \csRanger\cj from play.");
+		ConsoleCommand("spectate"); }}
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
