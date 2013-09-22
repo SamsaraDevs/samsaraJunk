@@ -107,7 +107,9 @@ samsara_noult 0/1: Toggles whether the VII comes into play or never spawns.\n\
 samsara_nomonologues 0/1: Toggles whether the bosses speak on spawn or not.\n\
 samsara_backpackstart 0/1: Toggles whether players spawn normally or with backpacks.\n\
 samsara_classiclaz 0/1: Toggles whether the LAZ Device has its Samsara behavior or original behavior.\n\
-samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.";
+samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.\n\
+samsara_nounique 0/1: Toggles whether the Unique Item spawns.\n\
+samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.";
 
 int HELPSTR_CL = 
 "\nLikewise, there are several clientside console variables, including:\n\

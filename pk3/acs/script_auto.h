@@ -149,6 +149,14 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_allcanrj"))
         {   ConsoleCommand("set samsara_allcanrj 0");
         ConsoleCommand("archivecvar samsara_allcanrj"); }
+        
+        if (!GetCVar("samsara_nounique"))
+        {   ConsoleCommand("set samsara_nounique 0");
+        ConsoleCommand("archivecvar samsara_nounique"); }
+        
+        if (!GetCVar("samsara_noinvuln"))
+        {   ConsoleCommand("set samsara_noinvuln 0");
+        ConsoleCommand("archivecvar samsara_noinvuln"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");

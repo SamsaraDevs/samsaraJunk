@@ -275,6 +275,18 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 		delay(1);
 		GiveInventory("PowerShadow",1); }
 	    break;
+
+      case 27:
+        result = GetCVar("samsara_nounique");
+        break;
+
+      case 28:
+        result = GetCVar("samsara_noinvuln");
+        break;
+
+      case 29:
+        result = GetCVar("instagib");
+        break;
     }
     
     SetResultValue(result);
