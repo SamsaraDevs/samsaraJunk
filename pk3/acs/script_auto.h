@@ -309,36 +309,28 @@ script SAMSARA_SPAWN (int respawning)
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
 		
 		if (GetCvar("samsara_bandoomguy") == 1) { if (CheckInventory("DoomguyClass") == 1)
-		{ Print(s:"\cjThe admin has banned \cdDoomguy\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \cdDoomguy\cj from play."); }}
 		
 		if (GetCvar("samsara_banchex") == 1) { if (CheckInventory("ChexClass") == 1)
-		{ Print(s:"\cjThe admin has banned \chChex Warrior\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \chChex Warrior\cj from play."); }}
 		
 		if (GetCvar("samsara_bancorvus") == 1) { if (CheckInventory("CorvusClass") == 1)
-		{ Print(s:"\cjThe admin has banned \cqCorvus\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \cqCorvus\cj from play."); }}
 		
 		if (GetCvar("samsara_banbj") == 1) { if (CheckInventory("WolfenClass") == 1)
-		{ Print(s:"\cjThe admin has banned \cjB.J. Blazkowicz\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \cjB.J. Blazkowicz\cj from play."); }}
 		
 		if (GetCvar("samsara_banparias") == 1) { if (CheckInventory("HexenClass") == 1)
-		{ Print(s:"\cjThe admin has banned \chParias\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \chParias\cj from play."); }}
 		
 		if (GetCvar("samsara_banduke") == 1) { if (CheckInventory("DukeClass") == 1)
-		{ Print(s:"\cjThe admin has banned \cfDuke Nukem\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \cfDuke Nukem\cj from play."); }}
 		
 		if (GetCvar("samsara_banso") == 1) { if (CheckInventory("MarathonClass") == 1)
-		{ Print(s:"\cjThe admin has banned \cnSecurity Officer\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \cnSecurity Officer\cj from play."); }}
 		
 		if (GetCvar("samsara_banranger") == 1) { if (CheckInventory("QuakeClass") == 1)
-		{ Print(s:"\cjThe admin has banned \csRanger\cj from play.");
-		ConsoleCommand("spectate"); }}
+		{ KickFromGame(0,"\cjThe admin has banned \csRanger\cj from play."); }}
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
