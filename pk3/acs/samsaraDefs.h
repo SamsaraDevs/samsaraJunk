@@ -110,7 +110,8 @@ samsara_classiclaz 0/1: Toggles whether the LAZ Device has its Samsara behavior 
 samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.\n\
 samsara_nounique 0/1: Toggles whether the Unique Item spawns.\n\
 samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
-samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.";
+samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.\n\
+samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just want to spawn with all weapons.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\

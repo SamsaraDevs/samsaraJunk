@@ -189,6 +189,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_banranger"))
         {   ConsoleCommand("set samsara_banranger 0");
         ConsoleCommand("archivecvar samsara_banranger"); }
+        
+        if (!GetCVar("samsara_lmsrules"))
+        {   ConsoleCommand("set samsara_lmsrules 0");
+        ConsoleCommand("archivecvar samsara_lmsrules"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -237,6 +241,7 @@ script SAMSARA_SPAWN (int respawning)
     ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
     if (isLMS()) { ApplyLMS(); }
+    if (GetCvar("samsara_lmsrules") == 1) { ApplyLMS(); }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
     if (!respawning)
