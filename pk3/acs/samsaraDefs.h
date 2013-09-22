@@ -97,9 +97,27 @@ samsara_lmslife [0-5]: Affects how much health/armor people have on LMS spawn/re
 samsara_lmsult 0/1: Toggles whether players get their VII in LMS.\n\
 samsara_uniquestart [0-4]: Toggles whether players get their unique on enter or spawn.\n\
 samsara_chainsawstart [0-2]: Toggles whether players get their I on enter or spawn.\n\
-samsara_punchdrunkuniques 0/1: Toggles whether Gentleman Mode's uniques are present in normal play.\n\
+samsara_peoplediewhentheyarekilled [0-3]: Players explode on death.\n\
+samsara_punchdrunk 0/1: Toggles melee-only mode. Only works in deathmatch or coop.\n\
+samsara_punchdrunkuniques 0/1: Toggles whether Punchdrunk uniques are present in normal play.\n\
+samsara_punchdrunksaws 0/1: Toggles whether Punchdrunk Chainsaws are present in normal play.\n\
 samsara_armormode [0-4]: Toggles the type of armor that spawns in-game.\n\
-samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, or infinity.";
+samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, or infinity.\n\
+samsara_noult 0/1: Toggles whether the VII comes into play or never spawns.\n\
+samsara_nomonologues 0/1: Toggles whether the bosses speak on spawn or not.\n\
+samsara_backpackstart 0/1: Toggles whether players spawn normally or with backpacks.\n\
+samsara_classiclaz 0/1: Toggles whether the LAZ Device has its Samsara behavior or original behavior.\n\
+samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.";
+
+int HELPSTR_CL = 
+"\nLikewise, there are several clientside console variables, including:\n\
+samsara_cl_printpickup 0/1: 1 = Print, 0 = Log.\n\
+samsara_cl_expparticles [1-100000]: How many particles does Ranger's explosions emit? 0 is default, -1 to disable.\n\
+samsara_cl_norecoil 0/1: Controls whether Ranger's weapons recoil.\n\
+samsara_cl_sinerecoil 0/1: Toggles whether Ranger's recoil movement uses a sine wave.\n\
+samsara_cl_weaponhud 0/1: Controls whether the weapon bar at the top of your screen appears.\n\
+samsara_cl_vanilladoom 0/1: Toggles the vanilla weapon animations for Doomguy.\n\
+samsara_cl_wolfmove 0/1: Toggles classic Wolfenstein movement on B.J. Blazkowicz.";
 
 int LMSArmors[LMSMODES] = 
 {

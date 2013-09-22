@@ -4,6 +4,10 @@ script SAMSARA_OPEN open
     int opd, pd;
     int opdu, pdu;
     int opds, pds;
+        
+    if (!GetCVar("samsara_cvarinfo"))
+    {   ConsoleCommand("set samsara_cvarinfo 0");
+    ConsoleCommand("archivecvar samsara_cvarinfo"); }
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -12,10 +16,17 @@ script SAMSARA_OPEN open
         }
         if (isSinglePlayer())
         {
+		    if(GetCvar("samsara_cvarinfo") == 0)
+			{
             HudMessage(s:HELPSTR;
             HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
-            HudMessage(s:"See the console for \caJAZZ\c-.";
+            HudMessage(s:HELPSTR_CL;
+            HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
+            HudMessage(s:"\cjSee the console for \cacvar information\c-.";
             HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
+			ConsoleCommand("set samsara_cvarinfo 1");
+            ConsoleCommand("archivecvar samsara_cvarinfo");
+			}
         }
         else
         {

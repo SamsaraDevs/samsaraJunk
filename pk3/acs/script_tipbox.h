@@ -135,10 +135,13 @@ switch (changelogshit)
         Log(s:ChangelogString);
         break;
 		
-        /*case 2:
-        SetHudSize(1024,768,1);
-        SetFont("");
-        HudMessage(s:"";HUDMSG_PLAIN,1,1,512.0,384.0,0);
-        break;*/
+        case 2:
+        HudMessage(s:HELPSTR;
+        HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
+        HudMessage(s:HELPSTR_CL;
+        HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
+        HudMessage(s:"See the console for \cacvar information\c-.";
+        HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
+        break;
 }
 }

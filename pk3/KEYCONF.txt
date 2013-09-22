@@ -50,6 +50,7 @@ alias samsara_tipright "puke -227 0 1"
 alias samsara_tipup    "puke -227 1 -1"
 alias samsara_tipdown  "puke -227 1 1"
 alias changelog        "puke -302 1"
+alias cvarinfo         "puke -302 2"
 //alias changelogoff     "puke -302 2"
 
 alias showmode "test != 0 %2 \"set truth True\" \"set truth False\"; echo %1 is\\cf $truth; unset truth"
