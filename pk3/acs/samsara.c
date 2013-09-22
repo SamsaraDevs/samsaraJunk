@@ -264,6 +264,17 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 		else
 		{ LocalAmbientSound("quake/invisannouncer",127); }
         break;
+		
+	  case 26:
+	    if (CheckInventory("PowerInvisibility") == 0)
+		{ GiveInventory("PowerInvisibility",1); }
+		else
+		{ TakeInventory("PowerInvisibility",1); 
+		delay(1);
+		GiveInventory("PowerShadow",1);
+		delay(1);
+		GiveInventory("PowerShadow",1); }
+	    break;
     }
     
     SetResultValue(result);

@@ -88,6 +88,7 @@ POLISH:
 - The Flembrane and Flembomination now have a proper non-zorch death sequence. Only Lord Snotfolus left to go!
 - Here's one I've known about for a while but was too lazy to fix. The Fusion Pistol did not have a reload sound, and thus it has been removed.
 - The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!
+- Security Officer's Partial Invisibility pickup now behaves more closely to Marathon.
 
 
 FROM 0.29 TO 0.29b

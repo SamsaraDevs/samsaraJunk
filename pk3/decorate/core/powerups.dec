@@ -51,7 +51,7 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
         TNT1 A 0 A_SetBlend("Green",0.5,6)
         TNT1 A 0 A_PlaySound("marathon/bigitemget")
         //TNT1 A 1 A_GiveInventory("Blursphere")
-        TNT1 A 1 A_GiveInventory("PowerShadow")
+		TNT1 A 0 ACS_ExecuteAlways(SAMSARA_DECORATE,0,26,0,0) //A_GiveInventory("PowerShadow")
         stop
     }
 }
