@@ -136,6 +136,7 @@ function void ApplyLMS(void)
 
     if (classNum == -1) { return; }
     
+	SetActorProperty(0, APROP_Health, getMaxHealth());
     GiveInventory("Backpack", 1);
 
     for (i = 0; i < SLOT_BFG9000; i++) { GiveClassWeapon(classNum, i, 1); }
