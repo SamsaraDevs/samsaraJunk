@@ -38,6 +38,7 @@ GAMEPLAY:
 - Instagib mode is now supported! Everyone gets new weapons that, well, instagib people.
 - I misinterpreted the PLAYERMISSILERANGE's range for hitscans to be the same as hitscans for monsters. This means that the Doom enemy shots did not travel 8192 units long (long enough to not matter) but to 2048 units (short enough to matter). The DoomEnemyBullet actor now only travels for 6 tics (1920 units) before dissipating.
 - Ranger's Thunderbolt has been converted from A_Explode being the source of damage to the A_FireBullets, thanks to FBF_NoRandom. Parias and Chexguy no longer resist it, nor do bosses.
+- samsara_allcanrj has been implemented as a new cvar. For the characters whose rockets do not damage themselves (Parias, Chex Warrior, BJ), this allows for the rockets to deliver self-damage and launch them up.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

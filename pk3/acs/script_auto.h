@@ -134,6 +134,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_classiclaz"))
         {   ConsoleCommand("set samsara_classiclaz 0");
         ConsoleCommand("archivecvar samsara_classiclaz"); }
+        
+        if (!GetCVar("samsara_allcanrj"))
+        {   ConsoleCommand("set samsara_allcanrj 0");
+        ConsoleCommand("archivecvar samsara_allcanrj"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -249,6 +253,9 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_classiclaz") == 1) { GiveInventory("ChexClassicLaz", 1); }
         else { TakeInventory("ChexClassicLaz", 0x7FFFFFFF); }
+
+        if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
+        else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);

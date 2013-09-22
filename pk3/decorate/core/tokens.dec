@@ -38,6 +38,7 @@ actor EnemyZorched: Boolean {}
 actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}
 actor InstagibModeOn: Boolean {}
+actor RJingModeOn: Boolean {}
 actor ExpandedHud: Boolean {}
 actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}
