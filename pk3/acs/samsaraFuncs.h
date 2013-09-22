@@ -519,6 +519,7 @@ function int HandleInstagib(int respawning)
         TakeInventory(ClassWeapons[classnum][i][S_AMMO2], 0x7FFFFFFF);
     }
 
+    GiveInventory("InstagibModeOn",1);
     if (CheckInventory("DoomguyClass") == 1) { GiveInventory(" Railgun ",1); }
     if (CheckInventory("ChexClass") == 1) { GiveInventory(" Railgun ",1); }
     if (CheckInventory("CorvusClass") == 1) { GiveInventory("Grim Ballista",1); }
