@@ -43,6 +43,7 @@ GAMEPLAY:
 - samsara_noinvuln has been implemented for mapsets that use Invulnerability replacements as props. I'm looking at you, IDL maps.
 - samsara_ban[class] has been implemented primarily as a debugging cvar, but admins who feel a certain character wrecks balance or want to enforce one-character-only matches may find it handy as well. On use, it forbids players from playing as certain classes--bandoomguy to forbid Doomguy, banchex to forbid Chex Warrior, banso to forbid Security Officer, etc.
 - samsara_lmsrules has been implemented for those who want Rocket-Arena-esque matches or just to start with all weapons. As per the name, the game is treated as LMS--everyone starts with all weapons, and samsara_lmslife determines their starting health/armor.
+- BJ was not the only person suffering from ammo woes--Parias now has BJ's ammo conversion system for picking up shells/rockets to convert.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
