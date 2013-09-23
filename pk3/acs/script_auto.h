@@ -193,6 +193,70 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_lmsrules"))
         {   ConsoleCommand("set samsara_lmsrules 0");
         ConsoleCommand("archivecvar samsara_lmsrules"); }
+        
+        if (!GetCVar("samsara_doomguydamage"))
+        {   ConsoleCommand("set samsara_doomguydamage 0");
+        ConsoleCommand("archivecvar samsara_doomguydamage"); }
+        
+        if (!GetCVar("samsara_doomguydefense"))
+        {   ConsoleCommand("set samsara_doomguydefense 0");
+        ConsoleCommand("archivecvar samsara_doomguydefense"); }
+        
+        if (!GetCVar("samsara_chexdamage"))
+        {   ConsoleCommand("set samsara_chexdamage 0");
+        ConsoleCommand("archivecvar samsara_chexdamage"); }
+        
+        if (!GetCVar("samsara_chexdefense"))
+        {   ConsoleCommand("set samsara_chexdefense 0");
+        ConsoleCommand("archivecvar samsara_chexdefense"); }
+        
+        if (!GetCVar("samsara_corvusdamage"))
+        {   ConsoleCommand("set samsara_corvusdamage 0");
+        ConsoleCommand("archivecvar samsara_corvusdamage"); }
+        
+        if (!GetCVar("samsara_corvusdefense"))
+        {   ConsoleCommand("set samsara_corvusdefense 0");
+        ConsoleCommand("archivecvar samsara_corvusdefense"); }
+        
+        if (!GetCVar("samsara_bjdamage"))
+        {   ConsoleCommand("set samsara_bjdamage 0");
+        ConsoleCommand("archivecvar samsara_bjdamage"); }
+        
+        if (!GetCVar("samsara_bjdefense"))
+        {   ConsoleCommand("set samsara_bjdefense 0");
+        ConsoleCommand("archivecvar samsara_bjdefense"); }
+        
+        if (!GetCVar("samsara_pariasdamage"))
+        {   ConsoleCommand("set samsara_pariasdamage 0");
+        ConsoleCommand("archivecvar samsara_pariasdamage"); }
+        
+        if (!GetCVar("samsara_pariasdefense"))
+        {   ConsoleCommand("set samsara_pariasdefense 0");
+        ConsoleCommand("archivecvar samsara_pariasdefense"); }
+        
+        if (!GetCVar("samsara_dukedamage"))
+        {   ConsoleCommand("set samsara_dukedamage 0");
+        ConsoleCommand("archivecvar samsara_dukedamage"); }
+        
+        if (!GetCVar("samsara_dukedefense"))
+        {   ConsoleCommand("set samsara_dukedefense 0");
+        ConsoleCommand("archivecvar samsara_dukedefense"); }
+        
+        if (!GetCVar("samsara_sodamage"))
+        {   ConsoleCommand("set samsara_sodamage 0");
+        ConsoleCommand("archivecvar samsara_sodamage"); }
+        
+        if (!GetCVar("samsara_sodefense"))
+        {   ConsoleCommand("set samsara_sodefense 0");
+        ConsoleCommand("archivecvar samsara_sodefense"); }
+        
+        if (!GetCVar("samsara_rangerdamage"))
+        {   ConsoleCommand("set samsara_rangerdamage 0");
+        ConsoleCommand("archivecvar samsara_rangerdamage"); }
+        
+        if (!GetCVar("samsara_rangerdefense"))
+        {   ConsoleCommand("set samsara_rangerdefense 0");
+        ConsoleCommand("archivecvar samsara_rangerdefense"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -336,6 +400,23 @@ script SAMSARA_SPAWN (int respawning)
 		
 		if (GetCvar("samsara_banranger") == 1) { if (CheckInventory("QuakeClass") == 1)
 		{ KickFromGame(0,"\cjThe admin has banned \csRanger\cj from play."); }}
+		
+        HandleDoomguyDamage(respawning);
+        HandleDoomguyDefense(respawning);
+        HandleChexDamage(respawning);
+        HandleChexDefense(respawning);
+        HandleCorvusDamage(respawning);
+        HandleCorvusDefense(respawning);
+        HandleBJDamage(respawning);
+        HandleBJDefense(respawning);
+        HandlePariasDamage(respawning);
+        HandlePariasDefense(respawning);
+        HandleDukeDamage(respawning);
+        HandleDukeDefense(respawning);
+        HandleSODamage(respawning);
+        HandleSODefense(respawning);
+        HandleRangerDamage(respawning);
+        HandleRangerDefense(respawning);
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);

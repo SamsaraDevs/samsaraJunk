@@ -44,6 +44,7 @@ GAMEPLAY:
 - samsara_ban[class] has been implemented primarily as a debugging cvar, but admins who feel a certain character wrecks balance or want to enforce one-character-only matches may find it handy as well. On use, it forbids players from playing as certain classes--bandoomguy to forbid Doomguy, banchex to forbid Chex Warrior, banso to forbid Security Officer, etc.
 - samsara_lmsrules has been implemented for those who want Rocket-Arena-esque matches or just to start with all weapons. As per the name, the game is treated as LMS--everyone starts with all weapons, and samsara_lmslife determines their starting health/armor.
 - BJ was not the only person suffering from ammo woes--Parias now has BJ's ammo conversion system for picking up shells/rockets to convert.
+- It's impossible to make character balance that everyone agrees with--there are now cvars so that admins can buff or nerf a character on the spot as they see fit. samsara_[class]damage and samsara_[class]defense gives the class a defense or damage multiplier that can either bolster or hinder them. Alternatively, set everything at max and run through slaughterwads, or set everything at min and get a challenge.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

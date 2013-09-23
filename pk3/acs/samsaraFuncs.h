@@ -531,3 +531,1267 @@ function int HandleInstagib(int respawning)
     if (CheckInventory("QuakeClass") == 1) { GiveInventory("Rocket Powered Impaler",1); }
     return 1;
 }
+
+function int HandleDoomguyDamage(int respawning)
+{
+if (CheckInventory("DoomguyClass") == 1)
+{
+    if (GetCvar("samsara_doomguydamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_doomguydamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_doomguydamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_doomguydamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_doomguydamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_doomguydamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_doomguydamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_doomguydamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_doomguydamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_doomguydamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_doomguydamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_doomguydamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_doomguydamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_doomguydamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_doomguydamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_doomguydamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_doomguydamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_doomguydamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_doomguydamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_doomguydamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_doomguydamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_doomguydamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_doomguydamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_doomguydamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_doomguydamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_doomguydamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_doomguydamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_doomguydamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_doomguydamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_doomguydamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_doomguydamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_doomguydamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_doomguydamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_doomguydamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_doomguydamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_doomguydamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_doomguydamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_doomguydamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_doomguydamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_doomguydamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_doomguydamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_doomguydamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_doomguydamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_doomguydamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_doomguydamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_doomguydamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_doomguydamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_doomguydamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_doomguydamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_doomguydamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_doomguydamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_doomguydamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_doomguydamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_doomguydamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_doomguydamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_doomguydamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_doomguydamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_doomguydamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_doomguydamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_doomguydamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_doomguydamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_doomguydamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_doomguydamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_doomguydamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_doomguydamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_doomguydamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_doomguydamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_doomguydamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_doomguydamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_doomguydamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_doomguydamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_doomguydamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_doomguydamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_doomguydamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_doomguydamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_doomguydamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_doomguydamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_doomguydamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_doomguydamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_doomguydamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleDoomguyDefense(int respawning)
+{
+if (CheckInventory("DoomguyClass") == 1)
+{
+    if (GetCvar("samsara_doomguydefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_doomguydefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_doomguydefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_doomguydefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_doomguydefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_doomguydefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_doomguydefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_doomguydefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_doomguydefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_doomguydefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_doomguydefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_doomguydefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_doomguydefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_doomguydefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_doomguydefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_doomguydefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_doomguydefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_doomguydefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_doomguydefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_doomguydefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_doomguydefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_doomguydefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_doomguydefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_doomguydefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_doomguydefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_doomguydefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_doomguydefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_doomguydefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_doomguydefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_doomguydefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_doomguydefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_doomguydefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_doomguydefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_doomguydefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_doomguydefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_doomguydefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_doomguydefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_doomguydefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_doomguydefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_doomguydefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_doomguydefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_doomguydefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_doomguydefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_doomguydefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_doomguydefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_doomguydefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_doomguydefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_doomguydefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_doomguydefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_doomguydefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_doomguydefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_doomguydefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_doomguydefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_doomguydefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_doomguydefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_doomguydefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_doomguydefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_doomguydefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_doomguydefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_doomguydefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleChexDamage(int respawning)
+{
+if (CheckInventory("ChexClass") == 1)
+{
+    if (GetCvar("samsara_chexdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_chexdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_chexdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_chexdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_chexdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_chexdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_chexdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_chexdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_chexdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_chexdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_chexdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_chexdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_chexdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_chexdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_chexdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_chexdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_chexdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_chexdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_chexdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_chexdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_chexdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_chexdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_chexdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_chexdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_chexdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_chexdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_chexdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_chexdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_chexdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_chexdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_chexdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_chexdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_chexdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_chexdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_chexdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_chexdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_chexdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_chexdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_chexdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_chexdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_chexdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_chexdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_chexdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_chexdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_chexdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_chexdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_chexdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_chexdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_chexdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_chexdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_chexdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_chexdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_chexdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_chexdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_chexdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_chexdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_chexdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_chexdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_chexdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_chexdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_chexdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_chexdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_chexdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_chexdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_chexdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_chexdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_chexdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_chexdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_chexdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_chexdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_chexdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_chexdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_chexdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_chexdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_chexdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_chexdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_chexdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_chexdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_chexdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_chexdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleChexDefense(int respawning)
+{
+if (CheckInventory("ChexClass") == 1)
+{
+    if (GetCvar("samsara_chexdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_chexdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_chexdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_chexdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_chexdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_chexdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_chexdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_chexdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_chexdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_chexdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_chexdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_chexdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_chexdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_chexdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_chexdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_chexdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_chexdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_chexdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_chexdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_chexdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_chexdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_chexdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_chexdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_chexdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_chexdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_chexdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_chexdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_chexdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_chexdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_chexdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_chexdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_chexdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_chexdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_chexdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_chexdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_chexdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_chexdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_chexdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_chexdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_chexdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_chexdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_chexdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_chexdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_chexdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_chexdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_chexdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_chexdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_chexdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_chexdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_chexdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_chexdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_chexdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_chexdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_chexdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_chexdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_chexdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_chexdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_chexdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_chexdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_chexdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleCorvusDamage(int respawning)
+{
+if (CheckInventory("CorvusClass") == 1)
+{
+    if (GetCvar("samsara_corvusdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_corvusdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_corvusdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_corvusdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_corvusdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_corvusdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_corvusdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_corvusdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_corvusdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_corvusdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_corvusdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_corvusdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_corvusdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_corvusdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_corvusdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_corvusdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_corvusdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_corvusdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_corvusdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_corvusdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_corvusdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_corvusdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_corvusdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_corvusdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_corvusdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_corvusdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_corvusdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_corvusdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_corvusdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_corvusdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_corvusdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_corvusdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_corvusdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_corvusdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_corvusdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_corvusdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_corvusdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_corvusdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_corvusdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_corvusdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_corvusdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_corvusdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_corvusdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_corvusdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_corvusdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_corvusdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_corvusdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_corvusdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_corvusdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_corvusdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_corvusdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_corvusdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_corvusdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_corvusdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_corvusdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_corvusdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_corvusdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_corvusdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_corvusdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_corvusdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_corvusdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_corvusdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_corvusdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_corvusdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_corvusdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_corvusdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_corvusdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_corvusdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_corvusdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_corvusdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_corvusdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_corvusdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_corvusdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_corvusdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_corvusdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_corvusdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_corvusdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_corvusdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_corvusdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_corvusdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleCorvusDefense(int respawning)
+{
+if (CheckInventory("CorvusClass") == 1)
+{
+    if (GetCvar("samsara_corvusdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_corvusdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_corvusdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_corvusdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_corvusdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_corvusdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_corvusdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_corvusdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_corvusdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_corvusdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_corvusdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_corvusdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_corvusdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_corvusdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_corvusdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_corvusdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_corvusdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_corvusdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_corvusdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_corvusdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_corvusdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_corvusdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_corvusdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_corvusdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_corvusdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_corvusdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_corvusdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_corvusdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_corvusdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_corvusdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_corvusdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_corvusdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_corvusdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_corvusdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_corvusdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_corvusdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_corvusdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_corvusdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_corvusdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_corvusdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_corvusdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_corvusdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_corvusdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_corvusdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_corvusdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_corvusdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_corvusdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_corvusdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_corvusdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_corvusdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_corvusdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_corvusdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_corvusdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_corvusdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_corvusdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_corvusdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_corvusdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_corvusdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_corvusdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_corvusdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleBJDamage(int respawning)
+{
+if (CheckInventory("WolfenClass") == 1)
+{
+    if (GetCvar("samsara_bjdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_bjdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_bjdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_bjdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_bjdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_bjdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_bjdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_bjdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_bjdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_bjdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_bjdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_bjdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_bjdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_bjdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_bjdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_bjdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_bjdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_bjdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_bjdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_bjdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_bjdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_bjdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_bjdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_bjdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_bjdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_bjdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_bjdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_bjdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_bjdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_bjdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_bjdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_bjdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_bjdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_bjdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_bjdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_bjdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_bjdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_bjdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_bjdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_bjdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_bjdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_bjdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_bjdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_bjdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_bjdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_bjdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_bjdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_bjdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_bjdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_bjdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_bjdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_bjdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_bjdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_bjdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_bjdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_bjdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_bjdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_bjdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_bjdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_bjdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_bjdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_bjdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_bjdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_bjdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_bjdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_bjdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_bjdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_bjdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_bjdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_bjdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_bjdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_bjdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_bjdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_bjdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_bjdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_bjdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_bjdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_bjdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_bjdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_bjdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleBJDefense(int respawning)
+{
+if (CheckInventory("WolfenClass") == 1)
+{
+    if (GetCvar("samsara_bjdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_bjdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_bjdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_bjdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_bjdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_bjdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_bjdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_bjdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_bjdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_bjdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_bjdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_bjdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_bjdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_bjdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_bjdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_bjdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_bjdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_bjdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_bjdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_bjdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_bjdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_bjdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_bjdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_bjdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_bjdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_bjdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_bjdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_bjdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_bjdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_bjdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_bjdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_bjdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_bjdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_bjdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_bjdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_bjdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_bjdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_bjdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_bjdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_bjdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_bjdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_bjdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_bjdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_bjdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_bjdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_bjdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_bjdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_bjdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_bjdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_bjdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_bjdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_bjdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_bjdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_bjdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_bjdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_bjdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_bjdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_bjdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_bjdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_bjdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandlePariasDamage(int respawning)
+{
+if (CheckInventory("HexenClass") == 1)
+{
+    if (GetCvar("samsara_Pariasdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Pariasdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Pariasdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Pariasdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Pariasdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Pariasdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Pariasdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Pariasdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Pariasdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Pariasdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Pariasdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Pariasdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Pariasdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Pariasdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Pariasdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Pariasdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Pariasdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Pariasdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Pariasdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Pariasdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Pariasdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Pariasdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Pariasdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Pariasdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Pariasdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Pariasdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Pariasdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Pariasdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Pariasdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Pariasdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Pariasdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Pariasdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Pariasdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Pariasdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Pariasdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Pariasdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Pariasdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Pariasdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Pariasdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Pariasdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_Pariasdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Pariasdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Pariasdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Pariasdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Pariasdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Pariasdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Pariasdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Pariasdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Pariasdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Pariasdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Pariasdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Pariasdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Pariasdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Pariasdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Pariasdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Pariasdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Pariasdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Pariasdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Pariasdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Pariasdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Pariasdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Pariasdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Pariasdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Pariasdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Pariasdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Pariasdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Pariasdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Pariasdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Pariasdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Pariasdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Pariasdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Pariasdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Pariasdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Pariasdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Pariasdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Pariasdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Pariasdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Pariasdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Pariasdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Pariasdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandlePariasDefense(int respawning)
+{
+if (CheckInventory("HexenClass") == 1)
+{
+    if (GetCvar("samsara_Pariasdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Pariasdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Pariasdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Pariasdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Pariasdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Pariasdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Pariasdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Pariasdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Pariasdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Pariasdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Pariasdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Pariasdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Pariasdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Pariasdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Pariasdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Pariasdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Pariasdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Pariasdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Pariasdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Pariasdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Pariasdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Pariasdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Pariasdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Pariasdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Pariasdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Pariasdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Pariasdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Pariasdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Pariasdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Pariasdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_Pariasdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Pariasdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Pariasdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Pariasdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Pariasdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Pariasdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Pariasdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Pariasdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Pariasdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Pariasdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Pariasdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Pariasdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Pariasdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Pariasdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Pariasdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Pariasdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Pariasdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Pariasdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Pariasdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Pariasdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Pariasdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Pariasdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Pariasdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Pariasdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Pariasdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Pariasdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Pariasdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Pariasdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Pariasdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Pariasdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleDukeDamage(int respawning)
+{
+if (CheckInventory("DukeClass") == 1)
+{
+    if (GetCvar("samsara_Dukedamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Dukedamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Dukedamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Dukedamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Dukedamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Dukedamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Dukedamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Dukedamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Dukedamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Dukedamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Dukedamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Dukedamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Dukedamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Dukedamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Dukedamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Dukedamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Dukedamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Dukedamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Dukedamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Dukedamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Dukedamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Dukedamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Dukedamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Dukedamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Dukedamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Dukedamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Dukedamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Dukedamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Dukedamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Dukedamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Dukedamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Dukedamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Dukedamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Dukedamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Dukedamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Dukedamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Dukedamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Dukedamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Dukedamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Dukedamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_Dukedamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Dukedamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Dukedamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Dukedamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Dukedamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Dukedamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Dukedamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Dukedamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Dukedamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Dukedamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Dukedamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Dukedamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Dukedamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Dukedamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Dukedamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Dukedamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Dukedamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Dukedamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Dukedamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Dukedamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Dukedamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Dukedamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Dukedamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Dukedamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Dukedamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Dukedamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Dukedamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Dukedamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Dukedamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Dukedamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Dukedamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Dukedamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Dukedamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Dukedamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Dukedamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Dukedamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Dukedamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Dukedamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Dukedamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Dukedamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleDukeDefense(int respawning)
+{
+if (CheckInventory("DukeClass") == 1)
+{
+    if (GetCvar("samsara_Dukedefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Dukedefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Dukedefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Dukedefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Dukedefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Dukedefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Dukedefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Dukedefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Dukedefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Dukedefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Dukedefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Dukedefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Dukedefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Dukedefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Dukedefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Dukedefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Dukedefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Dukedefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Dukedefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Dukedefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Dukedefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Dukedefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Dukedefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Dukedefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Dukedefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Dukedefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Dukedefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Dukedefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Dukedefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Dukedefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_Dukedefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Dukedefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Dukedefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Dukedefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Dukedefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Dukedefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Dukedefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Dukedefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Dukedefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Dukedefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Dukedefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Dukedefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Dukedefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Dukedefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Dukedefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Dukedefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Dukedefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Dukedefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Dukedefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Dukedefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Dukedefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Dukedefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Dukedefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Dukedefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Dukedefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Dukedefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Dukedefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Dukedefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Dukedefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Dukedefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleSODamage(int respawning)
+{
+if (CheckInventory("MarathonClass") == 1)
+{
+    if (GetCvar("samsara_SOdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_SOdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_SOdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_SOdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_SOdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_SOdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_SOdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_SOdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_SOdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_SOdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_SOdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_SOdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_SOdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_SOdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_SOdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_SOdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_SOdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_SOdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_SOdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_SOdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_SOdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_SOdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_SOdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_SOdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_SOdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_SOdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_SOdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_SOdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_SOdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_SOdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_SOdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_SOdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_SOdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_SOdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_SOdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_SOdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_SOdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_SOdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_SOdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_SOdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_SOdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_SOdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_SOdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_SOdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_SOdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_SOdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_SOdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_SOdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_SOdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_SOdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_SOdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_SOdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_SOdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_SOdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_SOdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_SOdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_SOdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_SOdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_SOdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_SOdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_SOdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_SOdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_SOdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_SOdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_SOdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_SOdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_SOdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_SOdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_SOdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_SOdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_SOdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_SOdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_SOdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_SOdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_SOdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_SOdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_SOdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_SOdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_SOdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_SOdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleSODefense(int respawning)
+{
+if (CheckInventory("MarathonClass") == 1)
+{
+    if (GetCvar("samsara_SOdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_SOdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_SOdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_SOdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_SOdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_SOdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_SOdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_SOdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_SOdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_SOdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_SOdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_SOdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_SOdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_SOdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_SOdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_SOdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_SOdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_SOdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_SOdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_SOdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_SOdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_SOdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_SOdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_SOdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_SOdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_SOdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_SOdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_SOdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_SOdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_SOdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_SOdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_SOdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_SOdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_SOdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_SOdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_SOdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_SOdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_SOdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_SOdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_SOdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_SOdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_SOdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_SOdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_SOdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_SOdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_SOdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_SOdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_SOdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_SOdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_SOdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_SOdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_SOdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_SOdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_SOdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_SOdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_SOdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_SOdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_SOdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_SOdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_SOdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}
+
+function int HandleRangerDamage(int respawning)
+{
+if (CheckInventory("QuakeClass") == 1)
+{
+    if (GetCvar("samsara_Rangerdamage") != -10) { TakeInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Rangerdamage") != -9)  { TakeInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Rangerdamage") != -8)  { TakeInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Rangerdamage") != -7)  { TakeInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Rangerdamage") != -6)  { TakeInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Rangerdamage") != -5)  { TakeInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Rangerdamage") != -4)  { TakeInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Rangerdamage") != -3)  { TakeInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Rangerdamage") != -2)  { TakeInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Rangerdamage") != -1)  { TakeInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Rangerdamage") != 1)   { TakeInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Rangerdamage") != 2)   { TakeInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Rangerdamage") != 3)   { TakeInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Rangerdamage") != 4)   { TakeInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Rangerdamage") != 5)   { TakeInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Rangerdamage") != 6)   { TakeInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Rangerdamage") != 7)   { TakeInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Rangerdamage") != 8)   { TakeInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Rangerdamage") != 9)   { TakeInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Rangerdamage") != 10)  { TakeInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Rangerdamage") != 11)  { TakeInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Rangerdamage") != 12)  { TakeInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Rangerdamage") != 13)  { TakeInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Rangerdamage") != 14)  { TakeInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Rangerdamage") != 15)  { TakeInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Rangerdamage") != 16)  { TakeInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Rangerdamage") != 17)  { TakeInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Rangerdamage") != 18)  { TakeInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Rangerdamage") != 19)  { TakeInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Rangerdamage") != 20)  { TakeInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Rangerdamage") != 21)  { TakeInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Rangerdamage") != 22)  { TakeInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Rangerdamage") != 23)  { TakeInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Rangerdamage") != 24)  { TakeInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Rangerdamage") != 25)  { TakeInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Rangerdamage") != 26)  { TakeInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Rangerdamage") != 27)  { TakeInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Rangerdamage") != 28)  { TakeInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Rangerdamage") != 29)  { TakeInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Rangerdamage") != 30)  { TakeInventory("PowerDamageBuff30",1); }
+	
+    if (GetCvar("samsara_Rangerdamage") == -10) { GiveInventory("PowerDamageBuff-10",1); }
+    if (GetCvar("samsara_Rangerdamage") == -9)  { GiveInventory("PowerDamageBuff-9",1); }
+    if (GetCvar("samsara_Rangerdamage") == -8)  { GiveInventory("PowerDamageBuff-8",1); }
+    if (GetCvar("samsara_Rangerdamage") == -7)  { GiveInventory("PowerDamageBuff-7",1); }
+    if (GetCvar("samsara_Rangerdamage") == -6)  { GiveInventory("PowerDamageBuff-6",1); }
+    if (GetCvar("samsara_Rangerdamage") == -5)  { GiveInventory("PowerDamageBuff-5",1); }
+    if (GetCvar("samsara_Rangerdamage") == -4)  { GiveInventory("PowerDamageBuff-4",1); }
+    if (GetCvar("samsara_Rangerdamage") == -3)  { GiveInventory("PowerDamageBuff-3",1); }
+    if (GetCvar("samsara_Rangerdamage") == -2)  { GiveInventory("PowerDamageBuff-2",1); }
+    if (GetCvar("samsara_Rangerdamage") == -1)  { GiveInventory("PowerDamageBuff-1",1); }
+    if (GetCvar("samsara_Rangerdamage") == 1)   { GiveInventory("PowerDamageBuff1",1); }
+    if (GetCvar("samsara_Rangerdamage") == 2)   { GiveInventory("PowerDamageBuff2",1); }
+    if (GetCvar("samsara_Rangerdamage") == 3)   { GiveInventory("PowerDamageBuff3",1); }
+    if (GetCvar("samsara_Rangerdamage") == 4)   { GiveInventory("PowerDamageBuff4",1); }
+    if (GetCvar("samsara_Rangerdamage") == 5)   { GiveInventory("PowerDamageBuff5",1); }
+    if (GetCvar("samsara_Rangerdamage") == 6)   { GiveInventory("PowerDamageBuff6",1); }
+    if (GetCvar("samsara_Rangerdamage") == 7)   { GiveInventory("PowerDamageBuff7",1); }
+    if (GetCvar("samsara_Rangerdamage") == 8)   { GiveInventory("PowerDamageBuff8",1); }
+    if (GetCvar("samsara_Rangerdamage") == 9)   { GiveInventory("PowerDamageBuff9",1); }
+    if (GetCvar("samsara_Rangerdamage") == 10)  { GiveInventory("PowerDamageBuff10",1); }
+    if (GetCvar("samsara_Rangerdamage") == 11)  { GiveInventory("PowerDamageBuff11",1); }
+    if (GetCvar("samsara_Rangerdamage") == 12)  { GiveInventory("PowerDamageBuff12",1); }
+    if (GetCvar("samsara_Rangerdamage") == 13)  { GiveInventory("PowerDamageBuff13",1); }
+    if (GetCvar("samsara_Rangerdamage") == 14)  { GiveInventory("PowerDamageBuff14",1); }
+    if (GetCvar("samsara_Rangerdamage") == 15)  { GiveInventory("PowerDamageBuff15",1); }
+    if (GetCvar("samsara_Rangerdamage") == 16)  { GiveInventory("PowerDamageBuff16",1); }
+    if (GetCvar("samsara_Rangerdamage") == 17)  { GiveInventory("PowerDamageBuff17",1); }
+    if (GetCvar("samsara_Rangerdamage") == 18)  { GiveInventory("PowerDamageBuff18",1); }
+    if (GetCvar("samsara_Rangerdamage") == 19)  { GiveInventory("PowerDamageBuff19",1); }
+    if (GetCvar("samsara_Rangerdamage") == 20)  { GiveInventory("PowerDamageBuff20",1); }
+    if (GetCvar("samsara_Rangerdamage") == 21)  { GiveInventory("PowerDamageBuff21",1); }
+    if (GetCvar("samsara_Rangerdamage") == 22)  { GiveInventory("PowerDamageBuff22",1); }
+    if (GetCvar("samsara_Rangerdamage") == 23)  { GiveInventory("PowerDamageBuff23",1); }
+    if (GetCvar("samsara_Rangerdamage") == 24)  { GiveInventory("PowerDamageBuff24",1); }
+    if (GetCvar("samsara_Rangerdamage") == 25)  { GiveInventory("PowerDamageBuff25",1); }
+    if (GetCvar("samsara_Rangerdamage") == 26)  { GiveInventory("PowerDamageBuff26",1); }
+    if (GetCvar("samsara_Rangerdamage") == 27)  { GiveInventory("PowerDamageBuff27",1); }
+    if (GetCvar("samsara_Rangerdamage") == 28)  { GiveInventory("PowerDamageBuff28",1); }
+    if (GetCvar("samsara_Rangerdamage") == 29)  { GiveInventory("PowerDamageBuff29",1); }
+    if (GetCvar("samsara_Rangerdamage") == 30)  { GiveInventory("PowerDamageBuff30",1); }
+}
+return 1;
+}
+
+function int HandleRangerDefense(int respawning)
+{
+if (CheckInventory("QuakeClass") == 1)
+{
+    if (GetCvar("samsara_Rangerdefense") != -10) { TakeInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Rangerdefense") != -9)  { TakeInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Rangerdefense") != -8)  { TakeInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Rangerdefense") != -7)  { TakeInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Rangerdefense") != -6)  { TakeInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Rangerdefense") != -5)  { TakeInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Rangerdefense") != -4)  { TakeInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Rangerdefense") != -3)  { TakeInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Rangerdefense") != -2)  { TakeInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Rangerdefense") != -1)  { TakeInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Rangerdefense") != 1)   { TakeInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Rangerdefense") != 2)   { TakeInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Rangerdefense") != 3)   { TakeInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Rangerdefense") != 4)   { TakeInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Rangerdefense") != 5)   { TakeInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Rangerdefense") != 6)   { TakeInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Rangerdefense") != 7)   { TakeInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Rangerdefense") != 8)   { TakeInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Rangerdefense") != 9)   { TakeInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Rangerdefense") != 10)  { TakeInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Rangerdefense") != 11)  { TakeInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Rangerdefense") != 12)  { TakeInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Rangerdefense") != 13)  { TakeInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Rangerdefense") != 14)  { TakeInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Rangerdefense") != 15)  { TakeInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Rangerdefense") != 16)  { TakeInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Rangerdefense") != 17)  { TakeInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Rangerdefense") != 18)  { TakeInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Rangerdefense") != 19)  { TakeInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Rangerdefense") != 20)  { TakeInventory("PowerDefenseBuff20",1); }
+	
+    if (GetCvar("samsara_Rangerdefense") == -10) { GiveInventory("PowerDefenseBuff-10",1); }
+    if (GetCvar("samsara_Rangerdefense") == -9)  { GiveInventory("PowerDefenseBuff-9",1); }
+    if (GetCvar("samsara_Rangerdefense") == -8)  { GiveInventory("PowerDefenseBuff-8",1); }
+    if (GetCvar("samsara_Rangerdefense") == -7)  { GiveInventory("PowerDefenseBuff-7",1); }
+    if (GetCvar("samsara_Rangerdefense") == -6)  { GiveInventory("PowerDefenseBuff-6",1); }
+    if (GetCvar("samsara_Rangerdefense") == -5)  { GiveInventory("PowerDefenseBuff-5",1); }
+    if (GetCvar("samsara_Rangerdefense") == -4)  { GiveInventory("PowerDefenseBuff-4",1); }
+    if (GetCvar("samsara_Rangerdefense") == -3)  { GiveInventory("PowerDefenseBuff-3",1); }
+    if (GetCvar("samsara_Rangerdefense") == -2)  { GiveInventory("PowerDefenseBuff-2",1); }
+    if (GetCvar("samsara_Rangerdefense") == -1)  { GiveInventory("PowerDefenseBuff-1",1); }
+    if (GetCvar("samsara_Rangerdefense") == 1)   { GiveInventory("PowerDefenseBuff1",1); }
+    if (GetCvar("samsara_Rangerdefense") == 2)   { GiveInventory("PowerDefenseBuff2",1); }
+    if (GetCvar("samsara_Rangerdefense") == 3)   { GiveInventory("PowerDefenseBuff3",1); }
+    if (GetCvar("samsara_Rangerdefense") == 4)   { GiveInventory("PowerDefenseBuff4",1); }
+    if (GetCvar("samsara_Rangerdefense") == 5)   { GiveInventory("PowerDefenseBuff5",1); }
+    if (GetCvar("samsara_Rangerdefense") == 6)   { GiveInventory("PowerDefenseBuff6",1); }
+    if (GetCvar("samsara_Rangerdefense") == 7)   { GiveInventory("PowerDefenseBuff7",1); }
+    if (GetCvar("samsara_Rangerdefense") == 8)   { GiveInventory("PowerDefenseBuff8",1); }
+    if (GetCvar("samsara_Rangerdefense") == 9)   { GiveInventory("PowerDefenseBuff9",1); }
+    if (GetCvar("samsara_Rangerdefense") == 10)  { GiveInventory("PowerDefenseBuff10",1); }
+    if (GetCvar("samsara_Rangerdefense") == 11)  { GiveInventory("PowerDefenseBuff11",1); }
+    if (GetCvar("samsara_Rangerdefense") == 12)  { GiveInventory("PowerDefenseBuff12",1); }
+    if (GetCvar("samsara_Rangerdefense") == 13)  { GiveInventory("PowerDefenseBuff13",1); }
+    if (GetCvar("samsara_Rangerdefense") == 14)  { GiveInventory("PowerDefenseBuff14",1); }
+    if (GetCvar("samsara_Rangerdefense") == 15)  { GiveInventory("PowerDefenseBuff15",1); }
+    if (GetCvar("samsara_Rangerdefense") == 16)  { GiveInventory("PowerDefenseBuff16",1); }
+    if (GetCvar("samsara_Rangerdefense") == 17)  { GiveInventory("PowerDefenseBuff17",1); }
+    if (GetCvar("samsara_Rangerdefense") == 18)  { GiveInventory("PowerDefenseBuff18",1); }
+    if (GetCvar("samsara_Rangerdefense") == 19)  { GiveInventory("PowerDefenseBuff19",1); }
+    if (GetCvar("samsara_Rangerdefense") == 20)  { GiveInventory("PowerDefenseBuff20",1); }
+}
+return 1;
+}

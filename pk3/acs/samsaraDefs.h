@@ -111,7 +111,9 @@ samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Ch
 samsara_nounique 0/1: Toggles whether the Unique Item spawns.\n\
 samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
 samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.\n\
-samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just want to spawn with all weapons.";
+samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just want to spawn with all weapons.\n\
+samsara_[class]damage -10-30: Adjusts the character's damage multiplier, if you think they're too underpowered or overpowered.\n\
+samsara_[class]defense -10-20: Adjusts the character's defense multiplier, if you think they're too flimsy or hefty.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\
