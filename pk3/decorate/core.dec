@@ -9,3 +9,4 @@
 #include "decorate/core/lms.dec"
 #include "decorate/core/powerups.dec"
 #include "decorate/core/superturboturkeypuncher3000.dec"
+#include "decorate/core/buffsandnerfs.dec"
