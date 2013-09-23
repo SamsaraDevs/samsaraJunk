@@ -77,6 +77,7 @@ BUGFIXES:
 - Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.
 - Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.
 - Chexguy would occaisionally go completely silent when "gibbed". No longer.
+- Traductus no longer uses Parias' terrifying version of the Wraithverge.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
