@@ -75,6 +75,14 @@ actor DoomguyPlayer : PlayerPawn
         DGUY W -1
         Stop
 
+      Death.CorvusGrimBallista:
+        DGUY O 5
+        DGUY P 5 A_PlaySoundEx("*falling",CHAN_VOICE,0,0)
+        DGUY Q 5 A_NoBlocking
+        DGUY RSTUV 5
+        DGUY W -1
+        Stop
+
       Death.ZorchPistol:
 
       Death.Zorch:

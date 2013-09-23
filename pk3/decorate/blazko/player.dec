@@ -77,8 +77,15 @@ actor WolfenPlayer : PlayerPawn
         BJBL M -1
         Stop
 
-      Death.ZorchPistol:
+      Death.CorvusGrimBallista:
+        BJBL G 8 A_PlaySoundEx("*falling",CHAN_VOICE,0,0)
+        BJBL H 8 A_NoBlocking
+        BJBL I 8
+        BJBL JKL 8
+        BJBL M -1
+        Stop
 
+      Death.ZorchPistol:
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:

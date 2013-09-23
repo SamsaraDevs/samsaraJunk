@@ -132,6 +132,15 @@ actor ChexWarrior : PlayerPawn
         CHEX X -1
         Stop
 
+      Death.CorvusGrimBallista:
+        CHEX O 5
+        CHEX P 5 A_PlaySoundEx("*falling",CHAN_VOICE,0,0)
+        CHEX Q 5 A_NoBlocking
+        CHEX RSTUV 5
+        CHEX W 20
+        CHEX X -1
+        Stop
+
       Death.ZorchPistol:
 
       Death.Zorch:

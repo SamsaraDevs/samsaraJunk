@@ -7,6 +7,7 @@ ACTOR "Grim Ballista" : Weapon
     +INVENTORY.UNDROPPABLE
     Inventory.Pickupmessage "You got the Grim Ballista!"
 	Decal CrossbowScorch
+	DamageType "CorvusGrimBallista"
     Obituary "%k \cqbrought\c- %o\cq a grim fate."
     States
     {
@@ -91,6 +92,7 @@ Actor SoulPuff : BulletPuff
     +ALWAYSPUFF
     +FORCEXYBILLBOARD
     RenderStyle Add
+	DamageType "CorvusGrimBallista"
     Alpha 0.95
     Scale 0.7
 	YScale 0.5
