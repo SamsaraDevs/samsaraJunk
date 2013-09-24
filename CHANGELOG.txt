@@ -79,6 +79,7 @@ BUGFIXES:
 - Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.
 - Chexguy would occaisionally go completely silent when "gibbed". No longer.
 - Traductus no longer uses Parias' terrifying version of the Wraithverge.
+- At the cost of irrevocably breaking Skulltag mode (which nobody plays, so it isn't a big loss), keys can no longer be crushed by crushers.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
