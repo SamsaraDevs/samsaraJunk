@@ -11,7 +11,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     +NOALERT
     
     Weapon.SisterWeapon "Spectral SG"
-    Inventory.Icon "QSHTZ0"
+    //Inventory.Icon "QSHTZ0"
     
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the shotgun"

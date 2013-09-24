@@ -36,10 +36,10 @@ ACTOR Bloodscourge : Weapon
 
 actor MageStaffFXInstagib : FastProjectile
 {
-	Height 4
-	Radius 4
+	Height 3
+	Radius 3
     Damage (10000)
-	Speed 100
+	Speed 90
 	+EXTREMEDEATH
 	Decal Scorch
     DeathSound "MageStaffExplode"

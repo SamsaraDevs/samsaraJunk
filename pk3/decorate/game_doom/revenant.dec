@@ -134,25 +134,27 @@ actor Revenant2 : Revenant replaces Revenant
     }
 }
 
-actor RevenantTracerDumbfire : RevenantTracer {
+actor RevenantTracerDumbfire : RevenantTracer
+{
     Decal RevenantScorch
     +THRUGHOST
     DamageType "DoomTheseGuysAreTheBest"
-    states {
-
-      Spawn:
+    States
+	{
+    Spawn:
         FATB AB 2 bright
         loop
     }
 }
 
-actor RevenantTracerHoming : RevenantTracer {
+actor RevenantTracerHoming : RevenantTracer
+{
     Decal RevenantScorch
     -THRUGHOST
     DamageType "DoomTheseGuysAreTheBest"
-    states {
-
-      Spawn:
+    States
+	{
+    Spawn:
         FATB A 1 bright A_Tracer
         FATB A 1 bright A_Tracer
         FATB B 1 bright A_Tracer

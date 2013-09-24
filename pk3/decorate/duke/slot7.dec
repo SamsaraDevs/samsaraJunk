@@ -348,4 +348,4 @@ actor DukeDevastatorRocketCoop : DukeDevastatorRocket { +THRUSPECIES Species "Pl
 
 actor SpectralDevastatorRocket: DukeDevastatorRocketCoop { DamageType "DukeSpectral" }
 
-actor DevastatorExplosion : RPGExplosion { Scale 0.1 +CLIENTSIDEONLY } // ...But this can be clientsided with no problems. WAT.
+actor DevastatorExplosion : RPGExplosion { Scale 0.1 +CLIENTSIDEONLY }
