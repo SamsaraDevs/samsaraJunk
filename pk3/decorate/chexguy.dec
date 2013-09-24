@@ -9,3 +9,4 @@
 #include "decorate/chexguy/slot6.dec"
 #include "decorate/chexguy/slot7.dec"
 #include "decorate/chexguy/unique.dec"
+#include "decorate/chexguy/instagib.dec"

@@ -278,6 +278,8 @@ chex/slzorchmagdown	chslzdn
 chex/slzorchmagup	chslzup
 chex/slzorchmaglock	chslzloc
 chex/slzorchmagunlk	chslzunl
+chex/instazorchfire chizfire
+chex/instazorchload chizload
 
 /////////////////////
 // Heretic sounds
