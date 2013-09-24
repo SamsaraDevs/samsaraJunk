@@ -25,6 +25,7 @@ actor RedCard2 : CustomInventory replaces RedCard
     //inventory.icon "STKEYS2"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -45,6 +46,7 @@ actor YellowCard2 : CustomInventory replaces YellowCard
     //inventory.icon "STKEYS1"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -65,6 +67,7 @@ actor BlueCard2 : CustomInventory replaces BlueCard
     //inventory.icon "STKEYS0"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -92,7 +95,7 @@ actor STRedSkull: RedSkull//ST replaces RedSkullST
         }
 }
 
-actor RedSkullSpawner : CustomInventory replaces RedSkull
+actor RedSkullSpawner : CustomInventory// replaces RedSkull
 {
 	Scale 2.0
 	States
@@ -113,7 +116,7 @@ actor RedSkullSpawner : CustomInventory replaces RedSkull
 	}
 }
 
-actor BlueSkullSpawner : CustomInventory replaces BlueSkull
+actor BlueSkullSpawner : CustomInventory// replaces BlueSkull
 {
 	Scale 2.0
 	States
@@ -134,13 +137,14 @@ actor BlueSkullSpawner : CustomInventory replaces BlueSkull
 	}
 }
 
-actor RedSkull2: CustomInventory// replaces RedSkull
+actor RedSkull2: CustomInventory replaces RedSkull
 {
     inventory.pickupmessage "$GOTREDSKUL" // "Picked up a red skull key."
     //inventory.icon "STKEYS5"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
     -DROPPED
+	+DONTGIB
 
     States
     {
@@ -166,6 +170,7 @@ actor YellowSkull2: CustomInventory replaces YellowSkull
     //inventory.icon "STKEYS4"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -193,12 +198,14 @@ actor STBlueSkull: BlueSkull//ST replaces BlueSkullST
         }
 }
 
-actor BlueSkull2: CustomInventory// replaces BlueSkull
+actor BlueSkull2: CustomInventory replaces BlueSkull
 {
     inventory.pickupmessage "$GOTBLUESKUL" // "Picked up a blue skull key."
     //inventory.icon "STKEYS3"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	-DROPPED
+	+DONTGIB
     States
     {
       Spawn:
@@ -224,6 +231,7 @@ actor KeyBlue2 : CustomInventory replaces KeyBlue
     //Inventory.Icon "BKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -243,6 +251,7 @@ actor KeyGreen2 : CustomInventory replaces KeyGreen
     //Inventory.Icon "GKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -262,6 +271,7 @@ actor KeyYellow2 : CustomInventory replaces KeyYellow
     //Inventory.Icon "YKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -282,6 +292,7 @@ actor ChexRedCard2 : CustomInventory replaces ChexRedCard
     //inventory.icon "STKEYS2"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -302,6 +313,7 @@ actor ChexYellowCard2 : CustomInventory replaces ChexYellowCard
     //inventory.icon "STKEYS1"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -322,6 +334,7 @@ actor ChexBlueCard2 : CustomInventory replaces ChexBlueCard
     //inventory.icon "STKEYS0"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -342,6 +355,7 @@ actor RedFlemKey2 : CustomInventory replaces RedFlemKey
     //inventory.icon "STKEYS5"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -362,6 +376,7 @@ actor YellowFlemKey2 : CustomInventory replaces YellowFlemKey
     //inventory.icon "STKEYS4"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -382,6 +397,7 @@ actor BlueFlemKey2 : CustomInventory replaces BlueFlemKey
     //inventory.icon "STKEYS3"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
+	+DONTGIB
     States
     {
       Spawn:
@@ -401,6 +417,7 @@ actor HexenSharedKey: CustomInventory
 {
     Radius 8
     Height 20
+	+DONTGIB
 
     Inventory.PickupSound "misc/k_pkup"
 }
