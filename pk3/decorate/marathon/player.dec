@@ -76,6 +76,7 @@ actor MarathonPlayer : PlayerPawn
         
       Death.HexGreenFire:
       Death.QuakeFire:
+	  Death.FireExplosive:
       Burn:
         TNT1 A 0 A_JumpIfInventory("FusionChargeLevel",1,"BurnFusionShot")
 
@@ -243,7 +244,6 @@ actor MarathonPlayer : PlayerPawn
         goto DrownFusionContinue
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -286,7 +286,6 @@ actor MarathonPlayer : PlayerPawn
         goto Spawn
 
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeDMTaunt1",1)
@@ -310,7 +309,6 @@ actor MarathonPlayer : PlayerPawn
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_JumpIfInventory("FusionChargeLevel",1,"IceFusionShot")
 
@@ -432,6 +430,8 @@ actor MarathonPlayer : PlayerPawn
         Goto Spawn
         
       Pain.WolfenFlamethrower:
+	  Pain.QuakeFire:
+	  Pain.FireExplosive:
       Pain.Fire:
         SOPL Y 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
         SOPL Y 4 A_Pain

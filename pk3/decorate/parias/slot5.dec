@@ -139,6 +139,7 @@ actor HammerMissile2 : HammerMissile replaces HammerMissile
     +SKYEXPLODE
     Species "Player"
     +THRUSPECIES
+	DamageType "FireExplosive"
 }
 
 actor HammerMissile2RJ : HammerMissile2
@@ -163,6 +164,7 @@ actor HammerMissileDM : HammerMissile
     Damage 10
     +THRUGHOST
     +SKYEXPLODE
+	DamageType "FireExplosive"
     States
     {
       Death:

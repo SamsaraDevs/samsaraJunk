@@ -46,6 +46,8 @@ GAMEPLAY:
 - BJ was not the only person suffering from ammo woes--Parias now has BJ's ammo conversion system for picking up shells/rockets to convert.
 - Parias' hammer might have had no self-damage, but it was dramatically slower than everyone else's and had a delayed explosion that allowed people to run away. The explosion damage has been restored to 128.
 - It's impossible to make character balance that everyone agrees with--there are now cvars so that admins can buff or nerf a character on the spot as they see fit. samsara_[class]damage and samsara_[class]defense gives the class a defense or damage multiplier that can either bolster or hinder them. Alternatively, set everything at max and run through slaughterwads, or set everything at min and get a challenge.
+- FireExplosive has been implemented as a damagetype for the Phoenix Rod and Hammer of Retribution.
+- Two more gib decorative actors are now available for B.J. to drink up.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

@@ -93,6 +93,7 @@ actor PowerGreaterTome : PowerDamage
 	DamageFactor "CorvusHellstaffTomed", 2.0
 	DamageFactor "CorvusCrossbow", 2.0
     DamageFactor "Spectral", 2.0
+	DamageFactor "FireExplosive", 2.0
 
 }
 
