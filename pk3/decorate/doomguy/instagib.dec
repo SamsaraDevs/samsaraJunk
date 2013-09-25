@@ -22,7 +22,7 @@ ACTOR " Railgun " : Weapon
     Fire:
         RLGG BCD 1
 	    TNT1 A 0 A_PlayWeaponSound("doomguy/railfire")
-        RLGG E 9 A_RailAttack(10000,0,0,"","")
+        RLGG E 9 A_RailAttack(10000,0,0,"","",1)
         RLGG F 6 A_CheckForReload(4, "Reloaded")
         RLGG GHIJK 6
         RLGG L 6 A_ResetReloadCounter
