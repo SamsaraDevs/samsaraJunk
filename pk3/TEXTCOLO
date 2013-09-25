@@ -270,9 +270,9 @@ C1 {
 
 // LIME GREEN //
 C2 {
-		#007f27 #88d600 0 256
+		#006e22 #88d600 0 256
 	 Console:
-		#007f27 #88d600 0 256
+		#006e22 #88d600 0 256
 }
 
 // RICH YELLOW //
@@ -322,6 +322,13 @@ C9 {
 		#006247 #00d4c3 0 256
 	 Console:
 		#006247 #00d4c3 0 256
+}
+
+// FABULOUS //
+C0 {
+		#81003d #f14ed8 0 256
+	 Console:
+		#81003d #f14ed8 0 256
 }
 
 //////////////////////////////////////////
@@ -377,8 +384,8 @@ M6 {
 // DIAMOND STASH//
 M7 {
 		#2b5366 #899398 0 139
-                #899398 #cddbe6 140 200
-                #cddbe6 #ffffff 201 256
+                #899398 #cddbe6 140 189
+                #cddbe6 #ffffff 190 256
 	 Console:
 		#353544 #ffffff 0 256
 }
@@ -397,12 +404,20 @@ M8 {
 M9 {
 		#4e0000  #77000e  0 7
 		#6b492b  #b69259  8 170
-                #b69259 #ebd9b3  171 256
+                #b69259  #ebd9b3  171 256
 	Console:
 		#111111  #353535  0 127
 		#b70000  #c0b37e  128 256
 }
 
+// LUXURY RUG //
+M0 {
+		#debd4b  #f6c500   0 6
+		#4c1c7e  #ab19a9   7 99
+                #ab19a9  #db35c6   100 256
+	Console:
+		#56208e  #ae1cc4  0 256
+}
 
 
 //////////////////////////////////////////
@@ -410,10 +425,10 @@ M9 {
 
 // GHOST WHITE //
 G1 {
-		#9d98a2 #dadbe6 0 200
+		#928e97 #dadbe6 0 200
                 #dadbe6 #ffffff 201 256
 	 Console:
-		#a8a3ad #dadbe6 0 256
+		#928e97 #dadbe6 0 256
 }
 
 // BLACK STEEL //
@@ -490,7 +505,13 @@ G9 {
 		#633e2c #d1ba7c 0 256
 }
 
-
+// CAPCOM //
+G0 {
+		#003f97  #003f97   0 6
+		#e29000  #fdd100   7 256
+	Console:
+		#bc7c00  #fed825  0 256
+}
 
 
 
@@ -591,6 +612,19 @@ U9 {
 		#320f48 #9157b5 0 256
 }
 
+// PATCHED DARK //
+U0 {
+                #000000 #2a2834 0 60
+                #2a2834 #38313e 61 81
+                #302b46 #1c1b21 82 100
+                #ffffff #e6e3f1 101 110
+                #38313e #776586 111 120
+                #464160 #1c1b21 121 256
+         Console:
+                #000000 #1c1b21 0 256
+}
+
+
 ////////////////////////////////////////////
 
 // RED BORDER //
@@ -674,6 +708,15 @@ B9 {
 		#ae9780  #ffffff  128 256
 }
 
+// PINK BORDER //
+B0 {
+		#f078e3  #e54b97   0 6
+		#000000  #222222   7 256
+	Console:
+		#111111  #e54b97    0 127
+		#ae9780  #ffffff  128 256
+}
+
 //////////////////////////////////////////////
 
 // RED TEAM //
@@ -706,4 +749,151 @@ T4 {
 		#276f00  #4cd700 7 256
 	Console:
 		#194700  #39a200 0 256
+}
+
+
+// WHITE TEAM //
+T5 {
+		#ffffff  #dfdfdf 0 6
+		#8f8b92  #cacaca 7 256
+	Console:
+		#444444  #cacaca 0 256
+}
+
+////////////////////////////////////////////
+
+// TOUGH LOVE //
+Q1 {
+                #2f171b  #8b4f6b 0 256
+       Console:
+                #2f171b  #8b4f6b 0 256
+}
+
+// HOT STUFF //
+
+Q2 {
+                #591d0d  #7f3b2b 0 89
+                #8f4333  #bf772f 90 179
+                #cf8f2b  #fff31b 180 256
+       Console:
+                #591d0d  #bf772f 0 256
+}
+
+// OXYGEN RICH //
+Q3 {
+                #360000  #660000 0 160
+                #660000  #980614 161 256
+       Console:
+                #360000  #980614 0 256
+}
+
+// QUAKE BRICKS //
+Q4 {
+                #0f0b07  #8f6f23 0 256
+       Console:
+                #0f0b07  #8f6f23 0 256
+}
+
+// BABY BOY //
+Q5 {
+                #46a3ff  #abe7ff 0 139
+                #abe7ff  #d7ffff 140 256
+       Console:
+                #46a3ff  #abe7ff 0 139
+                #abe7ff  #d7ffff 140 256
+}
+
+// NUCLEAR FUMES //
+Q6 {
+                #b2eb1c  #4a8a15 0 124
+                #4a8a15  #1a0d23 125 256
+       Console:
+                #1a0d23  #b2eb1c 0 256
+}
+
+// TRICK OR TREAT //
+Q7 {
+                #0f0911  #382033 0 99
+                #382033  #bf3c0e 100 199
+                #bf3c0e  #ed8412 200 256
+       Console:
+                #0f0911  #ed8412 0 256
+}
+
+// PEARLY WHITES //
+Q8 {
+                #877e6e  #d7cab4 0 99
+                #d7cab4  #d3d0c2 100 139
+                #d3d0c2  #ffffff 140 256
+       Console:
+                #877e6e  #ffffff 0 256
+}
+
+
+// ZANDRONUM //
+Q9 {
+		#1e3207 #355613 0 119
+                #355613 #669832 120 199
+                #669832 #9cc96b 200 256
+	 Console:
+		#1e3207 #9cc96b 0 256
+}
+
+
+// CHILLED SUNSET //
+Q0 {
+		#2b2777 #6f33ba 0 110
+                #6f33ba #cf60f3 111 189
+                #cf60f3 #fab7ed 190 256
+	 Console:
+		#2b2777 #fab7ed 0 256
+}
+
+
+
+//////////////////////////////////////////
+
+// NEON PINK //
+N1 {
+                #b300b5  #ff00fc 0 100
+                #ff00fc  #ff6eec 101 256
+       Console:
+                #b300b5  #ff00fc 0 100
+                #ff00fc  #ff6eec 101 256
+}
+
+// NEON YELLOW //
+N2 {
+                #dfb800 #e4ff00 0 100
+                #e4ff00  #fff88a 101 256
+       Console:
+                #dfb800  #e4ff00 0 100
+                #e4ff00  #fff88a 101 256
+}
+
+// NEON ORANGE //
+N3 {
+                #d45f00  #ff8a00 0 100
+                #ff8a00  #ffa95c 101 256
+       Console:
+                #d45f00  #ff8a00 0 100
+                #ff8a00  #ffa95c 101 256
+}
+
+// NEON GREEN //
+N4 {
+                #00ba1b  #24ff00 0 100
+                #24ff00  #63ff5f 101 256
+       Console:
+                #00ba1b  #24ff00 0 100
+                #24ff00  #63ff5f 101 256
+}
+
+// NEON BLUE //
+N5 {
+                #006ede  #0096ff 0 100
+                #0096ff  #5fd0ff 101 256
+       Console:
+                #006ede  #0096ff 0 100
+                #0096ff  #5fd0ff 101 256
 }
