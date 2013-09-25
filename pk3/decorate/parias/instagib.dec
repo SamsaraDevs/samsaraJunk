@@ -19,9 +19,9 @@ ACTOR Bloodscourge : Weapon
         Loop
     Fire:
         MSTF G 4 Offset(0, 40)
-		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",-5,0,0,8)
+		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",-3,0,0,8)
 		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",0,0,0,8)
-		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",5,0,0,8)
+		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",3,0,0,8)
 		TNT1 A 0 A_PlayWeaponSound("MageStaffFire")
 		TNT1 A 0 A_SetBlend("Gold",0.3,10)
         MSTF H 4 Bright Offset(0, 48)
@@ -36,10 +36,10 @@ ACTOR Bloodscourge : Weapon
 
 actor MageStaffFXInstagib : FastProjectile
 {
-	Height 3
-	Radius 3
+	Height 2
+	Radius 2
     Damage (10000)
-	Speed 90
+	Speed 60
 	+EXTREMEDEATH
 	Decal Scorch
     DeathSound "MageStaffExplode"
