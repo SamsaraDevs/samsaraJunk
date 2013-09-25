@@ -574,6 +574,9 @@ duke/adveagleup     DKDEAGUP
 
 $limit duke/explosion 0
 
+$alias duke/explosion2 duke/explosion
+$rolloff duke/explosion2 64 640
+
 $alias duke/pipeexplosion duke/explosion
 $limit duke/pipeexplosion 3
 
