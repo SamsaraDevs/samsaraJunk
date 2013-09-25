@@ -154,6 +154,10 @@ actor DrinkableHeartColumn : CustomInventory replaces HeartColumn
 
 actor DrinkableZombie : CustomInventory replaces LiveStick
 {
+    Radius 16
+    Height 64
+    +SOLID
+	+DROPPED
     Inventory.PickupMessage "Drank up for 1 Health."
     Inventory.PickupSound "wolfen/slurpie"
     States
@@ -183,6 +187,10 @@ actor DrinkableZombie : CustomInventory replaces LiveStick
 
 actor DrinkableZombie2 : CustomInventory replaces DeadStick
 {
+    Radius 16
+    Height 64
+    +SOLID
+	+DROPPED
     Inventory.PickupMessage "Drank up for 1 Health."
     Inventory.PickupSound "wolfen/slurpie"
     States
