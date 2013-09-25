@@ -438,6 +438,16 @@ GAMEPLAY:\n\
 - Instagib mode is now supported! Everyone gets new weapons that, well, instagib people.\n\
 - I misinterpreted the PLAYERMISSILERANGE's range for hitscans to be the same as hitscans for monsters. This means that the Doom enemy shots did not travel 8192 units long (long enough to not matter) but to 2048 units (short enough to matter). The DoomEnemyBullet actor now only travels for 6 tics (1920 units) before dissipating.\n\
 - Ranger's Thunderbolt has been converted from A_Explode being the source of damage to the A_FireBullets, thanks to FBF_NoRandom. Parias and Chexguy no longer resist it, nor do bosses.\n\
+- samsara_allcanrj has been implemented as a new cvar. For the characters whose rockets do not damage themselves (Parias, Chex Warrior, BJ), this allows for the rockets to deliver self-damage and launch them up.\n\
+- samsara_nounique has been implemented for those who want duels without the unique item messing things up.\n\
+- samsara_noinvuln has been implemented for mapsets that use Invulnerability replacements as props. I'm looking at you, IDL maps.\n\
+- samsara_ban[class] has been implemented primarily as a debugging cvar, but admins who feel a certain character wrecks balance or want to enforce one-character-only matches may find it handy as well. On use, it forbids players from playing as certain classes--bandoomguy to forbid Doomguy, banchex to forbid Chex Warrior, banso to forbid Security Officer, etc.\n\
+- samsara_lmsrules has been implemented for those who want Rocket-Arena-esque matches or just to start with all weapons. As per the name, the game is treated as LMS--everyone starts with all weapons, and samsara_lmslife determines their starting health/armor.\n\
+- BJ was not the only person suffering from ammo woes--Parias now has BJ's ammo conversion system for picking up shells/rockets to convert.\n\
+- Parias' hammer might have had no self-damage, but it was dramatically slower than everyone else's and had a delayed explosion that allowed people to run away. The explosion damage has been restored to 128.\n\
+- It's impossible to make character balance that everyone agrees with--there are now cvars so that admins can buff or nerf a character on the spot as they see fit. samsara_[class]damage and samsara_[class]defense gives the class a defense or damage multiplier that can either bolster or hinder them. Alternatively, set everything at max and run through slaughterwads, or set everything at min and get a challenge.\n\
+- FireExplosive has been implemented as a damagetype for the Phoenix Rod and Hammer of Retribution.\n\
+- Two more gib decorative actors are now available for B.J. to drink up.\n\
 \n\
 BUGFIXES:\n\
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
@@ -470,6 +480,8 @@ BUGFIXES:\n\
 - Common Flemoids and Bipedal Common Flemoids no longer get hurt by the Flem damagetype.\n\
 - Defining the teams as Raktah and Nilah broke announcers in team-based games. Sorry. Teams reverted back to default, which also unfortunately means the colored winpics and losepics go.\n\
 - Chexguy would occaisionally go completely silent when 'gibbed'. No longer.\n\
+- Traductus no longer uses Parias' terrifying version of the Wraithverge.\n\
+- At the cost of irrevocably breaking Skulltag mode (which nobody plays, so it isn't a big loss), keys can no longer be crushed by crushers.\n\
 \n\
 POLISH:\n\
 - Party Mode particles are now spawned less often and disappear faster.\n\
@@ -486,4 +498,7 @@ POLISH:\n\
 - The Freezethrower now has its official Widescreen sprite from the Duke Nukem 3D Megaton Edition, ripped by Kinsie. Thanks!\n\
 - The Flembrane and Flembomination now have a proper non-zorch death sequence. Only Lord Snotfolus left to go!\n\
 - Here's one I've known about for a while but was too lazy to fix. The Fusion Pistol did not have a reload sound, and thus it has been removed.\n\
-- The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!";
+- The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!\n\
+- Security Officer's Partial Invisibility pickup now behaves more closely to Marathon.\n\
+- The 'see console' message now only pops up on first playing Samsara for clients. For servers, it still lists all of the serverside cvars every time. To see all of the cvars available, type 'cvarinfo' into the console--it lists all cvars, both serverside and clientside.\n\
+- FuzzballFox has contributed almost 50 new colors for players to use in their names! WOWZERS!";

@@ -101,6 +101,7 @@ POLISH:
 - The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!
 - Security Officer's Partial Invisibility pickup now behaves more closely to Marathon.
 - The "see console" message now only pops up on first playing Samsara for clients. For servers, it still lists all of the serverside cvars every time. To see all of the cvars available, type "cvarinfo" into the console--it lists all cvars, both serverside and clientside.
+- FuzzballFox has contributed almost 50 new colors for players to use in their names! WOWZERS!
 
 
 FROM 0.29 TO 0.29b
