@@ -378,28 +378,28 @@ script SAMSARA_SPAWN (int respawning)
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
 		
 		if (GetCvar("samsara_bandoomguy") == 1) { if (CheckInventory("DoomguyClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \cdDoomguy\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \cdDoomguy\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banchex") == 1) { if (CheckInventory("ChexClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \chChex Warrior\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \chChex Warrior\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_bancorvus") == 1) { if (CheckInventory("CorvusClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \cqCorvus\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \cqCorvus\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banbj") == 1) { if (CheckInventory("WolfenClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \cjB.J. Blazkowicz\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banparias") == 1) { if (CheckInventory("HexenClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \chParias\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \chParias\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banduke") == 1) { if (CheckInventory("DukeClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \cfDuke Nukem\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banso") == 1) { if (CheckInventory("MarathonClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \cnSecurity Officer\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play."); }}
 		
 		if (GetCvar("samsara_banranger") == 1) { if (CheckInventory("QuakeClass") == 1)
-		{ KickFromGame(0,"\cjThe admin has banned \csRanger\cj from play."); }}
+		{ KickFromGame(0,"\c[m7]The admin has banned \csRanger\c[m7] from play."); }}
 		
         HandleDoomguyDamage(respawning);
         HandleDoomguyDefense(respawning);
