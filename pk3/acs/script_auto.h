@@ -305,7 +305,11 @@ script SAMSARA_SPAWN (int respawning)
     ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
     if (isLMS()) { ApplyLMS(); }
-    if (GetCvar("samsara_lmsrules") == 1) { ApplyLMS(); }
+    if (GetCvar("samsara_lmsrules") == 1)
+	{
+	    ApplyLMS();
+	    GiveInventory("CanDualShotties",1);
+	}
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
     if (!respawning)

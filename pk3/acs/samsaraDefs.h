@@ -106,14 +106,14 @@ samsara_nohealthcap 0/1: Toggles whether 100/200 is the health cap for players, 
 samsara_noult 0/1: Toggles whether the VII comes into play or never spawns.\n\
 samsara_nomonologues 0/1: Toggles whether the bosses speak on spawn or not.\n\
 samsara_backpackstart 0/1: Toggles whether players spawn normally or with backpacks.\n\
-samsara_classiclaz 0/1: Toggles whether the LAZ Device has its Samsara behavior or original behavior.\n\
-samsara_allcanrj 0/1: Every character with a non-self-damaging rocket (Parias/Chex/BJ) will be able to RJ with them.\n\
-samsara_nounique 0/1: Toggles whether the Unique Item spawns.\n\
+samsara_classiclaz 0/1: Toggles whether the LAZ Device has Samsara behavior or original behavior.\n\
+samsara_allcanrj 0/1: Every character with non-self-damaging rockets will be able to RJ with them.\n\
+samsara_nounique 0/1: Toggles whether Unique Item spawns.\n\
 samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
 samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.\n\
-samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just want to spawn with all weapons.\n\
-samsara_[class]damage -10-30: Adjusts the character's damage multiplier, if you think they're too underpowered or overpowered.\n\
-samsara_[class]defense -10-20: Adjusts the character's defense multiplier, if you think they're too flimsy or hefty.";
+samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just to spawn with all weapons.\n\
+samsara_[class]damage -10-30: Adjusts the character's damage multiplier.\n\
+samsara_[class]defense -10-20: Adjusts the character's defense multiplier.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\
