@@ -11,6 +11,7 @@ ACTOR "Gigazorcher 2100" : Weapon
     +INVENTORY.UNDROPPABLE
 	+BLOODLESSIMPACT
 	+PUFFONACTORS
+	+WEAPON.NOAUTOAIM
     Obituary "%k \chsent\c- %o\ch on a trip to lightspeed."
     States
     {

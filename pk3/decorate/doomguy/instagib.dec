@@ -6,6 +6,7 @@ ACTOR " Railgun " : Weapon
     Inventory.Pickupmessage "You got the Railgun!"
 	Decal RailScorch
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Obituary "%k \cdrailed\c- %o\cd."
     States
     {

@@ -12,6 +12,7 @@ actor "Golden Desert Eagle" : Weapon
     +WEAPON.AMMO_OPTIONAL
     +NOALERT
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Inventory.Pickupmessage "You got the Golden Desert Eagle!"
     Weapon.UpSound "duke/adveagleup"
     States

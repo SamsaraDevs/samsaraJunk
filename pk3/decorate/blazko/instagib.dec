@@ -5,6 +5,7 @@ actor "Mauser Rifle": InstantSwitchWeapon
     Inventory.PickUpSound "wolfen/mgunget"
     +DONTBOB
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Obituary "%k \cjsniped\c- %o \cjwith the Mauser Rifle.\c-"
     Weapon.YAdjust 16
     States

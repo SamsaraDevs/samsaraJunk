@@ -10,6 +10,7 @@ ACTOR "Rocket Powered Impaler" : InstantSwitchWeapon
     Inventory.Pickupmessage "You got the Rocket Power Impaler!"
 	Decal DoomImpScorch
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Obituary "%k \cspinned\c- %o\cs down."
     States
     {

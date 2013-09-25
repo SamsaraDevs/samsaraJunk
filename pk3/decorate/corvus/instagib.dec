@@ -5,6 +5,7 @@ ACTOR "Grim Ballista" : Weapon
     Weapon.SlotNumber 0
     Weapon.YAdjust 16
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Inventory.Pickupmessage "You got the Grim Ballista!"
 	Decal CrossbowScorch
 	DamageType "CorvusGrimBallista"

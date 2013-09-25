@@ -22,6 +22,7 @@ ACTOR "SPNKR-25 Auto Cannon" : Weapon
     Weapon.AmmoUse		1
     +AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     States
     {
     Ready:

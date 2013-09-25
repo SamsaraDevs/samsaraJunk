@@ -5,6 +5,7 @@ ACTOR Bloodscourge : Weapon
     Weapon.Kickback 100
     Weapon.SlotNumber 0
     +INVENTORY.UNDROPPABLE
+	+WEAPON.NOAUTOAIM
     Inventory.PickupMessage "BLOODSCOURGE"
     States
     {
@@ -29,7 +30,7 @@ ACTOR Bloodscourge : Weapon
         MSTF II 2 Offset(0, 48)
         MSTF I 3 Offset(0, 40)
         MSTF J 5 Offset(0, 36)
-	    MSTF A 10
+	    MSTF A 15
         Goto Ready
 	}
 }
