@@ -89,7 +89,7 @@ favoriteweapon = "  Chaingun  "
 }
 
 {
-name = "\cfDuke Nukem"
+name = "\c[m1]Duke Nukem"
 script = DFULTBOT
 chatlump = DUKECHAT
 gender = male

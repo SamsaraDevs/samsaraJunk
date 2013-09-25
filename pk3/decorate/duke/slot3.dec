@@ -13,7 +13,7 @@ actor "Explosive Shotgun" : Weapon
     +NOALERT
     +WEAPON.EXPLOSIVE
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \cfpulverized\c- %o \cfwith a spray of explosions.\c-"
+    Obituary "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-"
     Inventory.Pickupmessage "You got the Explosive Shotgun!"
     Inventory.PickupSound "duke/xshotgunpump"
     Weapon.UpSound "duke/xshotgunpump"
@@ -228,7 +228,7 @@ actor DukeExplosiveShotgunBullet : FastProjectile
     Height 1
     Speed 320
     Projectile
-    Obituary "%k \cfpulverized\c- %o \cfwith a spray of explosions.\c-"
+    Obituary "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-"
     DamageType "DukeExplosive"
     Renderstyle "Normal"
     +BLOODSPLATTER
