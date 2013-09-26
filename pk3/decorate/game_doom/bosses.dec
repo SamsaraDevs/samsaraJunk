@@ -112,7 +112,7 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
         CYBR A 3 A_Hoof
         CYBR ABBCC 3 A_Chase
         CYBR D 3 A_Metal
-        CYBR D 3
+        CYBR D 3 A_Chase
         loop
 
       Death.DukeDamage:

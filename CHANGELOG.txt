@@ -89,6 +89,7 @@ BUGFIXES:
 - Duke's pipebombs can no longer telefrag people.
 - Online, Duke's Devastators no longer spam the server console with "NETWORK_AttenuationFloatToInt: Warning unknown attenuation value!".
 - The Dark Imp had brown specs all over his body on death. Popsoap has fixed this with a new translation.
+- The Cyberdemon now chases players properly.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
