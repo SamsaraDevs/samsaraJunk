@@ -8,6 +8,8 @@ actor KnifeAmmo : Ammo // You need ammo to stab people. Makes sense.
     Inventory.MaxAmount 2
 }
 
+actor UsingTCCB : Boolean {}
+
 actor "Talon Ceramic Combat Blade" : Weapon
 {
     Weapon.BobRangeX 0
@@ -34,7 +36,7 @@ actor "Talon Ceramic Combat Blade" : Weapon
       Select:
         TNT1 A 0 A_TakeInventory("UsingSMG",1)
         TNT1 A 0 A_TakeInventory("UsingPistols",1)
-        //TNT1 A 0 A_TakeInventory("UsingFists",1)
+        TNT1 A 0 A_TakeInventory("UsingFists",1)
         TNT1 A 0 A_TakeInventory("UsingShotguns",1)
         TNT1 A 0 A_TakeInventory("UsingFusionPistol",1)
         TNT1 A 0 A_TakeInventory("UsingAssaultRifle",1)
@@ -45,8 +47,11 @@ actor "Talon Ceramic Combat Blade" : Weapon
         TNT1 A 0 A_TakeInventory("UsingWMC",1)
         TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
-        
-        TNT1 A 0 A_GiveInventory("UsingFists",1)
+		TNT1 A 0 A_TakeInventory("UsingSpanker2",1)
+		TNT1 A 0 A_TakeInventory("UsingTechPacifier",1)
+		//TNT1 A 0 A_TakeInventory("UsingTCCB",1)
+		
+        TNT1 A 0 A_GiveInventory("UsingTCCB",1)
         TNT1 A 0 A_Raise
         MRNF A 1 A_Raise
         loop
@@ -168,6 +173,8 @@ actor TCCBPickup : CustomInventory
     }
 }
 
+actor UsingTechPacifier : Boolean {}
+
 actor "Tech.50 Pacifier" : Weapon
 {
     Weapon.BobRangeX 0
@@ -189,6 +196,24 @@ actor "Tech.50 Pacifier" : Weapon
 		loop
 		
 	  Select:
+        TNT1 A 0 A_TakeInventory("UsingSMG",1)
+        TNT1 A 0 A_TakeInventory("UsingPistols",1)
+        TNT1 A 0 A_TakeInventory("UsingFists",1)
+        TNT1 A 0 A_TakeInventory("UsingShotguns",1)
+        TNT1 A 0 A_TakeInventory("UsingFusionPistol",1)
+        TNT1 A 0 A_TakeInventory("UsingAssaultRifle",1)
+        TNT1 A 0 A_TakeInventory("UsingSpanker",1)
+        TNT1 A 0 A_TakeInventory("UsingToasty",1)
+        TNT1 A 0 A_TakeInventory("UsingAlienWeapon",1)
+        TNT1 A 0 A_TakeInventory("UsingAlienWeapon2",1)
+        TNT1 A 0 A_TakeInventory("UsingWMC",1)
+        TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
+        TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+		TNT1 A 0 A_TakeInventory("UsingSpanker2",1)
+		//TNT1 A 0 A_TakeInventory("UsingTechPacifier",1)
+		TNT1 A 0 A_TakeInventory("UsingTCCB",1)
+		
+		TNT1 A 0 A_GiveInventory("UsingTechPacifier",1)
         MRTK A 1 A_Raise
         loop
 		
@@ -340,6 +365,9 @@ actor "Steel Knuckles" : Weapon
         TNT1 A 0 A_TakeInventory("UsingWMC",1)
         TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+		TNT1 A 0 A_TakeInventory("UsingSpanker2",1)
+		TNT1 A 0 A_TakeInventory("UsingTechPacifier",1)
+		TNT1 A 0 A_TakeInventory("UsingTCCB",1)
         
         TNT1 A 0 A_GiveInventory("UsingFists",1)
         TNT1 A 0 A_Raise

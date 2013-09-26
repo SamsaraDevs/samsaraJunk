@@ -92,6 +92,9 @@ actor "Fusion Pistol" : Weapon
         TNT1 A 0 A_TakeInventory("UsingWMC",1)
         TNT1 A 0 A_TakeInventory("UsingDualPistols",1)
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
+		TNT1 A 0 A_TakeInventory("UsingSpanker2",1)
+		TNT1 A 0 A_TakeInventory("UsingTechPacifier",1)
+		TNT1 A 0 A_TakeInventory("UsingTCCB",1)
         TNT1 A 0 A_JumpIfNoAmmo("SelectReload")
         goto Select2
 
