@@ -91,7 +91,7 @@ ACTOR MarathonPlayer : PlayerPawn
     SOPL BBBBCCCCDDDDEEEE 0 A_JumpIfInventory("UsingWMC",1,"SeeSpanker")
     SOPL BBBBCCCCDDDDEEEE 0 A_JumpIf(momz >> 0, "JumpingAssaultRifle")
         Loop // Let's just hope nothing triggers this.
-      Jumping:
+      Jumping:	
         SOPL C 0
     TNT1 A 0 A_JumpIfInventory("UsingDualPistols",1,"JumpingDualPistols")
     TNT1 A 0 A_JumpIfInventory("UsingDualShotguns",1,"JumpingDualShotguns")
@@ -1686,7 +1686,7 @@ ACTOR MarathonPlayer : PlayerPawn
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
         SOPL A 1
-        goto Spawn
+        goto SpawnAssaultRifle
 
       Death.DukeDamage:
       Death.DukePistol:
@@ -1737,19 +1737,19 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.HexSlaughtaur:
         SOPL Y 4 A_SetBlend("0EBFE9",0.8,8) // Diamond blue
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HereWizard:
       Pain.HexHeresiarchPurple:
         SOPL Y 4 A_SetBlend("5C246E",0.8,8) // Ultramarine violet
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HexBishop:
       Pain.DoomSpiderPlasma:
         SOPL Y 4 A_SetBlend("00FF66",0.8,8) // Neon avacado
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HexGreenFire:
       Pain.HexStalkerShot:
@@ -1758,29 +1758,29 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.HereAxeGreen:
         SOPL Y 4 A_SetBlend("49E20E",0.8,8) // Nerf green
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HereNitrogolem:
         SOPL Y 4 A_SetBlend("E6B426",0.8,8) // Yellow chocolate
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.BJSpear:
         SOPL Y 4 A_SetBlend("FFEC8B",0.8,8) // Light goldenrod
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HereLichWind:
         SOPL Y 4 A_SetBlend("CDC9A5",0.8,8) // Lemon chiffon
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HereDsparil:
       Pain.MarathonFusion:
       Pain.DoomPlasma:
         SOPL Y 4 A_SetBlend("0FDDAF",0.8,8) // Turquoise
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.DoomTheseGuysAreTheBest:
       Pain.Explosive:
@@ -1789,14 +1789,14 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.NotQuadded:
         SOPL Y 4 A_SetBlend("Yellow",0.8,8)
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.CorvusHellstaff:
       Pain.CorvusHellstaffTomed:
       Pain.HereAxeRed:
         SOPL Y 4 A_SetBlend("8B0000",0.8,8) // Dark red
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Mace:
       Pain.DukeDamage:
@@ -1806,31 +1806,31 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain:
         SOPL Y 4 A_SetBlend("E3170D",0.8,8) // Cadmium red
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.TimonsAxe:
       Pain.DragonClaw:
         SOPL Y 4 A_SetBlend("Blue",0.8,8)
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.BFG:
       Pain.BFGspray:
       Pain.BFGsplash:
         SOPL Y 4 A_SetBlend("7FFF00",0.8,8) // Chartreuse
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.ZorchPistol:
       Pain.Zorch:
         SOPL Y 4 A_SetBlend("Red",0.8,8)
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.MarathonPlasma:
         SOPL Y 4 A_SetBlend("FF69AF",0.8,8) // Dry violet-red
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.WolfenFlamethrower:
 	  Pain.QuakeFire:
@@ -1838,20 +1838,20 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.Fire:
         SOPL Y 4 A_SetBlend("FF8C00",0.8,8) // Fiery orange
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.Drowning:
 	  Pain.CorvusGrimBallista:
         SOPL Y 4 A_SetBlend("White",0.8,8)
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.HexenIce:
       Pain.DukeIce:
       Pain.Ice:
         SOPL Y 4 A_SetBlend("00FFFF",0.8,8) // Aqua
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
         
       Pain.Poison:
       Pain.PoisonCloud:
@@ -1859,14 +1859,14 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.Slime:
         SOPL Y 4 A_SetBlend("228B22",0.8,8) // Muck green
         SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Wraithverge:
       Pain.Gray:
 	  Pain.Grey:
        SOPL Y 4 A_SetBlend("33 33 33",0.8,8)  // Gray
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.MightyBoot:
 	    SOPL Y 1 ACS_ExecuteAlways(312, 0, 25, 5, 24)
@@ -1900,37 +1900,37 @@ ACTOR MarathonPlayer : PlayerPawn
       Pain.Green:
        SOPL Y 4 A_SetBlend("00 8B 00",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Purple:
        SOPL Y 4 A_SetBlend("82 0B BB",0.8,8) // It's actually more of a violet, but...
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Brown:
        SOPL Y 4 A_SetBlend("5C 33 17",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Gold:
        SOPL Y 4 A_SetBlend("8B 75 00",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Black:
        SOPL Y 4 A_SetBlend("00 00 00",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Pink:
        SOPL Y 4 A_SetBlend("FF 6F F2",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
 
       Pain.Orange:
        SOPL Y 4 A_SetBlend("FF AA 00",0.8,8)
        SOPL Y 4 A_Pain
-        Goto Spawn
+        Goto SpawnAssaultRifle
     }
 }
 
