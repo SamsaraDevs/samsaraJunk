@@ -448,6 +448,9 @@ GAMEPLAY:\n\
 - It's impossible to make character balance that everyone agrees with--there are now cvars so that admins can buff or nerf a character on the spot as they see fit. samsara_[class]damage and samsara_[class]defense gives the class a defense or damage multiplier that can either bolster or hinder them. Alternatively, set everything at max and run through slaughterwads, or set everything at min and get a challenge.\n\
 - FireExplosive has been implemented as a damagetype for the Phoenix Rod and Hammer of Retribution.\n\
 - Two more gib decorative actors are now available for B.J. to drink up.\n\
+- The Security Officer's KKV-7 SMG and Wave Motion Cannon now have an auto-reload.\n\
+- Chex Warrior's LAZ Device has gone from 'stupidly powerful explosion' to 'pretty damn powerful', reduced from 896/512 damage/radius to 512/384.\n\
+- Chex Warrior's bullets originally all hit ghosts to counteract lack of an SSG. Now he doesn't need that anymore. Poor dude's getting nerfed all around today.\n\
 \n\
 BUGFIXES:\n\
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.\n\
@@ -482,6 +485,10 @@ BUGFIXES:\n\
 - Chexguy would occaisionally go completely silent when 'gibbed'. No longer.\n\
 - Traductus no longer uses Parias' terrifying version of the Wraithverge.\n\
 - At the cost of irrevocably breaking Skulltag mode (which nobody plays, so it isn't a big loss), keys can no longer be crushed by crushers.\n\
+- Duke's pipebombs can no longer telefrag people.\n\
+- Online, Duke's Devastators no longer spam the server console with 'NETWORK_AttenuationFloatToInt: Warning unknown attenuation value!'.\n\
+- The Dark Imp had brown specs all over his body on death. Popsoap has fixed this with a new translation.\n\
+- The Cyberdemon now chases players properly.\n\
 \n\
 POLISH:\n\
 - Party Mode particles are now spawned less often and disappear faster.\n\
@@ -501,4 +508,4 @@ POLISH:\n\
 - The Laser Cannon in Scourge of Armagon had some interesting behavior I'd forgotten about--every second shot was two bolts combined into one, and it wasn't a 100% guarantee to bounce. Whoops!\n\
 - Security Officer's Partial Invisibility pickup now behaves more closely to Marathon.\n\
 - The 'see console' message now only pops up on first playing Samsara for clients. For servers, it still lists all of the serverside cvars every time. To see all of the cvars available, type 'cvarinfo' into the console--it lists all cvars, both serverside and clientside.\n\
-- FuzzballFox has contributed almost 50 new colors for players to use in their names! WOWZERS!";
+- FuzzballFox has contributed almost 70 new colors for players to use in their names! WOWZERS!";
