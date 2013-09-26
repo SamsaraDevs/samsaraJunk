@@ -88,6 +88,7 @@ BUGFIXES:
 - At the cost of irrevocably breaking Skulltag mode (which nobody plays, so it isn't a big loss), keys can no longer be crushed by crushers.
 - Duke's pipebombs can no longer telefrag people.
 - Online, Duke's Devastators no longer spam the server console with "NETWORK_AttenuationFloatToInt: Warning unknown attenuation value!".
+- The Dark Imp had brown specs all over his body on death. Popsoap has fixed this with a new translation.
 
 POLISH:
 - Party Mode particles are now spawned less often and disappear faster.
