@@ -219,7 +219,7 @@ Actor "LAZ Device" : Weapon
         goto FireEndVanilla
 
       NoAimMidVanilla:
-        TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimSpreadVanilla")
+        TNT1 A 0 //A_JumpIfInventory("RuneSpread", 1, "NoAimSpreadVanilla")
         TNT1 A 0 A_FireCustomMissile("BFGAmmoWaster")
         TNT1 A 0 A_SpawnItemEx("ChexLAZBall", 0, 0, 32, 25)
         goto FireEndVanilla
@@ -237,7 +237,7 @@ Actor "LAZ Device" : Weapon
         goto FireEndVanilla
 
       NoAimCoopVanilla:
-        TNT1 A 0 A_JumpIfInventory("RuneSpread", 1, "NoAimCoopSpreadVanilla")
+        TNT1 A 0 //A_JumpIfInventory("RuneSpread", 1, "NoAimCoopSpreadVanilla")
         TNT1 A 0 A_FireCustomMissile("BFGAmmoWaster")
         TNT1 A 0 A_SpawnItemEx("ChexLAZBallCoop", 0, 0, 32, 25)
         goto FireEndVanilla
