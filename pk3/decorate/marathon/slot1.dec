@@ -151,7 +151,7 @@ actor SmgBullet : Ammo
 
 actor MarathonSMGBullet : FastProjectile
 {
-    Damage (random(4,7))
+    Damage (random(6,9))
     Radius 8
     Height 8
     Speed 100
