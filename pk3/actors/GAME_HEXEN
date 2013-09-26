@@ -1117,19 +1117,31 @@ actor EttinMash2 : Ettin2 replaces EttinMash
     Alpha 0.4
     States
     {
+	  Spawn:
+	    TNT1 A 0
+		ETTN A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Idle
+		
+	  DeGhost:
+	    TNT1 A 0
+		ETTN A 5 A_ChangeFlag("GHOST",0)
+		goto Idle
+	
+	  Idle:
+	    ETTN AA 10 A_Look
+		loop
+		
       Death:
       XDeath:
       Ice:
       Death.HexenIce:
-
       Death.DukeIce:
-
       Death.DukeExplosive:
-
+	  Death.DukeDamage:
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.PhasingZorch:
+	    TNT1 A 0
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         Stop
     }
@@ -1430,17 +1442,28 @@ actor CentaurMash2 : Centaur2 replaces CentaurMash
     Alpha 0.4
     States
     {
+	  Spawn:
+	    TNT1 A 0
+		CENT A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Idle
+		
+	  DeGhost:
+	    TNT1 A 0
+		CENT A 5 A_ChangeFlag("GHOST",0)
+		goto Idle
+	
+	  Idle:
+	    CENT AB 10 A_Look
+		loop
+		
       Death:
       XDeath:
       Ice:
       Death.HexenIce:
-
       Death.DukeIce:
-
       Death.DukeExplosive:
-
+	  Death.DukeDamage:
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -1598,17 +1621,28 @@ actor Demon1Mash2 : Demon1B replaces Demon1Mash
     Alpha 0.4
     States
     {
+	  Spawn:
+	    TNT1 A 0
+		DEMN A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Idle
+		
+	  DeGhost:
+	    TNT1 A 0
+		DEMN A 5 A_ChangeFlag("GHOST",0)
+		goto Idle
+	
+	  Idle:
+	    DEMN AA 10 A_Look
+		loop
+		
       Death:
       XDeath:
       Ice:
       Death.HexenIce:
-
       Death.DukeIce:
-
       Death.DukeExplosive:
-
+	  Death.DukeDamage:
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -1774,17 +1808,28 @@ actor Demon2Mash2 : Demon2B replaces Demon2Mash
     Alpha 0.4
     States
     {
+	  Spawn:
+	    TNT1 A 0
+		DEM2 A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Idle
+		
+	  DeGhost:
+	    TNT1 A 0
+		DEM2 A 5 A_ChangeFlag("GHOST",0)
+		goto Idle
+	
+	  Idle:
+	    DEM2 AA 10 A_Look
+		loop
+		
       Death:
       XDeath:
       Ice:
       Death.HexenIce:
-
       Death.DukeIce:
-
       Death.DukeExplosive:
-
+	  Death.DukeDamage:
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -2336,6 +2381,18 @@ actor Wraith2 : Wraith replaces Wraith
     PainChance "MightyBoot", 255
     States
     {
+	  Spawn:
+	    WRTH A 5
+		WRTH A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+        WRTH B 5 A_WraithInit
+		goto Look
+		
+	  DeGhost:
+	    TNT1 A 0
+		WRTH A 5 A_ChangeFlag("GHOST",0)
+        WRTH B 5 A_WraithInit
+		goto Look
+		
       See:
         TNT1 A 0 A_SetTranslucent(0.75,0)
         WRTH ABCD 4 A_WraithChase
@@ -2346,7 +2403,6 @@ actor Wraith2 : Wraith replaces Wraith
         goto "Super::Death"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.PhasingZorch:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -2372,7 +2428,6 @@ actor Wraith2 : Wraith replaces Wraith
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_ChangeFlag("GHOST",0)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
@@ -2386,9 +2441,7 @@ actor Wraith2 : Wraith replaces Wraith
         stop
 
       Death.DukeExplosive:
-
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -2463,6 +2516,15 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
     States
     {
       Spawn:
+	    TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Look
+		
+	  DeGhost:
+	    TNT1 A 0
+		TNT1 A 0 A_ChangeFlag("GHOST",0)
+		goto Look
+	  
       Look:
         //TNT1 A 0 A_SetShootable
         //TNT1 A 0 A_SetSolid

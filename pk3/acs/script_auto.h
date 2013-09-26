@@ -257,6 +257,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_rangerdefense"))
         {   ConsoleCommand("set samsara_rangerdefense 0");
         ConsoleCommand("archivecvar samsara_rangerdefense"); }
+        
+        if (!GetCVar("samsara_noghosts"))
+        {   ConsoleCommand("set samsara_noghosts 0");
+        ConsoleCommand("archivecvar samsara_noghosts"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");

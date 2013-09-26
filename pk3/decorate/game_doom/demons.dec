@@ -7,6 +7,13 @@ actor DoomDemon2 : Demon replaces Demon
     +NOICEDEATH
     states
     {
+	  Spawn:
+	    TNT1 A 0
+	    SARG A 5
+      Idle:
+        SARG AB 10 A_Look
+        Loop
+	
       Death.DukeExplosive:
       Death.DukeSpectral:
 
@@ -126,6 +133,7 @@ actor DoomDemon2 : Demon replaces Demon
 actor Spectre2: DoomDemon2 replaces Spectre
 {
     +SHADOW
+	+GHOST
     RenderStyle OptFuzzy
     Alpha 0.5
     SeeSound "spectre/sight"
@@ -136,6 +144,15 @@ actor Spectre2: DoomDemon2 replaces Spectre
     HitObituary "$OB_SPECTREHIT" // "%o was eaten by a spectre."
     States
 	{
+	  Spawn:
+	    TNT1 A 0
+	    SARG A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
+		goto Idle
+		
+	  DeGhost:
+	    TNT1 A 0
+		SARG A 5 A_ChangeFlag("GHOST",0)
+		goto Idle
 
       Death.DukeIce:
         TNT1 A 0 A_PlaySound("duke/enemyfreeze")

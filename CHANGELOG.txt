@@ -51,6 +51,7 @@ GAMEPLAY:
 - The Security Officer's KKV-7 SMG and Wave Motion Cannon now have an auto-reload.
 - Chex Warrior's LAZ Device has gone from 'stupidly powerful explosion' to 'pretty damn powerful', reduced from 896/512 damage/radius to 512/384.
 - Chex Warrior's bullets originally all hit ghosts to counteract lack of an SSG. Now he doesn't need that anymore. Poor dude's getting nerfed all around today.
+- People have been asking me to add +GHOST to Spectres. People have been asking me to remove +GHOST on Acolytes. Some are glad that ghosts have been expanded, others wish not even Heretic had them. Now, there's a cvar to handle it all! samsara_noghosts removes all ghostly properties from enemies across all games. This includes the Mummy Ghost, Undead Knight Ghost, D'Sparil, the Wraith, the Ghostly Ettin/Centaur/Chaos Serpents, Acolytes, and now the Spectre!
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.
