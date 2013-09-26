@@ -75,16 +75,19 @@ actor " Fist " : Weapon
 
 actor DoomPunchPuff : BulletPuff
 {
+    +PUFFONACTORS
     DamageType "DoomFist"
     States
     {
-      Spawn:
       Crash:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("doomguy/wallpunch2")
         DPFF CD 4
         Stop
 
+      Spawn:
       Melee:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("doomguy/punch")
         stop
     }
@@ -92,16 +95,19 @@ actor DoomPunchPuff : BulletPuff
 
 actor DoomPunchPuff2 : BulletPuff
 {
+    +PUFFONACTORS
     DamageType "DoomFist"
     States
     {
-      Spawn:
       Crash:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("doomguy/wallpunch")
         DPFF CD 4
         stop
 
+      Spawn:
       Melee:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("doomguy/punch2")
         stop
     }

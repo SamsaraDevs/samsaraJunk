@@ -47,11 +47,13 @@ actor ChexSpoonPuff : BulletPuff
     {
       Spawn:
       Melee:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("chex/spoon")
         CMIS DCB 4 bright
         stop
 
       Crash:
+	    TNT1 A 0
         TNT1 A 0 A_PlaySound("chex/wallspoon")
         CMIS DCB 4 bright
         Stop
