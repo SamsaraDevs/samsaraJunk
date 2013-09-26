@@ -1,9 +1,9 @@
 ACTOR "Rocket Powered Impaler" : InstantSwitchWeapon
 {
-    //Weapon.BobRangeX 0
-    //Weapon.BobRangeY 0.5
-    //Weapon.BobSpeed 1.1
-    //Weapon.BobStyle Alpha
+    Weapon.BobRangeX 0
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.1
+    Weapon.BobStyle Alpha
     Weapon.Selectionorder 100
     Weapon.Kickback 100
     Weapon.SlotNumber 0
