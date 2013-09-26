@@ -306,7 +306,6 @@ actor QuakeRocket
     Scale 0.3
     
     Projectile
-    Damage (35)
     
     +RANDOMIZE
     +DEHEXPLOSION
@@ -334,7 +333,6 @@ actor QuakeRocketQuad: QuakeRocket
     Obituary "%k \cssmeared\c- %o \cswith a Quadded Rocket."
     
     DamageType "NotQuadded"
-    Damage (140)
     
     States
     {
@@ -350,22 +348,19 @@ actor QuakeRocketCoop: QuakeRocket
 {
     +THRUSPECIES
     Species "Player"
-    
-    Damage (75)
+	Damage (20)
 }
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-    
-    Damage (300)
+	Damage (80)
 }
 
 actor QuakeClusterRocket: QuakeRocket
 {
     Obituary "%k \csgave\c- %o \csfour rockets to ride.\c-"
-    Damage (13)
     
     States
     {
@@ -382,14 +377,13 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
     +THRUSPECIES
     Species "Player"
     
-    Damage (28)
+    Damage (5)
 }
 
 actor QuadClusterRocket: QuakeClusterRocket
 {
     DamageType "NotQuadded"
     Obituary "%k \csturned\c- %o \csinto a fine mist.\c-"
-    Damage (52)
     
     States
     {
@@ -405,8 +399,7 @@ actor QuadClusterRkCoop: QuadClusterRocket
 {
     +THRUSPECIES
     Species "Player"
-    
-    Damage (113)
+	Damage (20)
 }
 
 actor SpectralRocket: QuakeRocketCoopQuad { DamageType "SpectralNoQuad" }

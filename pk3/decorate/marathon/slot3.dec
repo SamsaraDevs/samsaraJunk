@@ -32,7 +32,6 @@ actor "Fusion Pistol" : Weapon
       Reload:
         TNT1 A 0 A_JumpIfInventory("Cell",1,1)
         goto Ready
-        FUSN A 0 A_PlaySound("marathon/fusion/reload")
         FUSN A 1 A_Lower
         FUSN A 0 A_Lower
         FUSN A 1 A_Lower
@@ -256,6 +255,7 @@ actor FusionShot
     +FOILINVUL
     +PIERCEARMOR
     +BLOODLESSIMPACT
+    +DONTREFLECT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -319,6 +319,7 @@ actor FusionSuper
     +FOILINVUL
     +PIERCEARMOR
     +BLOODLESSIMPACT
+    +DONTREFLECT
     Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
     Projectile
     States
@@ -403,7 +404,7 @@ actor FusionPistolOvercharge
     +FOILINVUL
     +BLOODLESSIMPACT
 
-    Obituary "%k \cnwas too close to \c-%o\cn's meltdown."
+    Obituary "%k\cn's meltdown caught \c-%o\cn in the blast."
 
     States
     {

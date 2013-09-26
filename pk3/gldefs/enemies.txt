@@ -759,3 +759,66 @@ object StrifeBishop2
 {
 	frame MLDRE { light BISHOP }
 }
+
+//////////////
+// SKULLTAG //
+//////////////
+
+// Dark Imp Fireball
+pointlight DARKIMPBALL
+{
+	color 0.1 0.1 1.0
+	size 64
+}
+
+// Dark imp fireball explosion
+flickerlight DARKIMPBALL_X1
+{
+	color 0.07 0.07 0.7
+	size 80
+	secondarySize 88
+	chance 0.25
+}
+
+flickerlight DARKIMPBALL_X2
+{
+	color 0.0 0.0 0.4
+	size 96
+	secondarySize 104
+	chance 0.25
+}
+
+flickerlight DARKIMPBALL_X3
+{
+	color 0.0 0.0 0.2
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+object DarkImpBall
+{
+	frame BAL1A { light DARKIMPBALL    }
+	frame BAL1B { light DARKIMPBALL    }
+
+	frame BAL1C { light DARKIMPBALL_X1 }
+	frame BAL1D { light DARKIMPBALL_X2 }
+	frame BAL1E { light DARKIMPBALL_X3 }
+}
+
+// Zombies
+object SuperShotgunGuy
+{
+	frame CPOSF { light ZOMBIEATK }
+}
+
+// Hectebus Fireball
+object HectShot
+{
+	frame BAL7A { light BARONBALL    }
+	frame BAL7B { light BARONBALL    }
+
+	frame BAL7C { light BARONBALL_X1 }
+	frame BAL7D { light BARONBALL_X2 }
+	frame BAL7E { light BARONBALL_X3 }
+}

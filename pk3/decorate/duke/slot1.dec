@@ -482,7 +482,7 @@ actor DukePipebomb
     Radius 10
     Height 8
     Health 5
-    Obituary "%k \cfpassed\c- %o \cfthe pipe.\c-"
+    Obituary "%k \c[m1]passed\c- %o \c[m1]the pipe.\c-"
     Gravity 0.8
     BounceFactor 0.7
     BounceCount 3
@@ -493,7 +493,8 @@ actor DukePipebomb
     -NOBLOCKMAP
     -NOLIFTDROP
     -NOGRAVITY
-    -NOTELEPORT
+    +NOTELEPORT
+	-TELESTOMP
     +MOVEWITHSECTOR
     +BOUNCEONACTORS
     +DOOMBOUNCE

@@ -66,7 +66,7 @@ actor "Phoenix Rod" : Weapon
         goto Fire
 
       HoldTomed:
-	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"HoldTomedSpectral")
+	    TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"HoldTomedSpectral")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHoldTomed")
         TNT1 A 0 A_JumpIfInventory("PhoenixRodCount",280,"Powerdown")
         PHNX C 0 A_JumpIfInventory("PhoenixRodCount",1,1)
@@ -132,7 +132,7 @@ actor PhoenixRodCount : inventory { -INVBAR +INVENTORY.UNDROPPABLE inventory.max
 actor PhoenixShot : PhoenixFX1
 {
     -SPECIALFIREDAMAGE
-    +FIREDAMAGE
+    DamageType "FireExplosive"
     Decal Scorch
     Obituary "%k \cqgave\c- %o \cqthe bird.\c-"
 }
@@ -141,6 +141,7 @@ actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }
 actor PhoenixFX2A : PhoenixFX2
 {
     +THRUSPECIES
+	+FIREDAMAGE
     Species "Player"
     DECAL PhoenixThrowerScorch
 }

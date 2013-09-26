@@ -25,7 +25,7 @@ actor "Nailgun": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the nailgun"
-    Obituary "%k \csnailed\c- %o."
+    Obituary "%k \csnailed\c- %o\cs."
 
     States
     {
@@ -443,6 +443,7 @@ actor QuakeNail: FastProjectile
     Damage (9)
 
     +BLOODSPLATTER
+    +THRUGHOST
 
     //Decal BulletChip
     DeathSound "quakeweps/nailricochet"
@@ -529,9 +530,9 @@ actor QLTrail3: QLTrail1
 
 actor QuakeLavaNail: QuakeNail
 {
-    Damage (14)
+    Damage (9)
     +PIERCEARMOR
-    DamageType Fire
+    DamageType QuakeFire
 
     Translation "160:164=208:214"
 
@@ -563,7 +564,7 @@ actor QuakeLavaNailCoop: QuakeLavaNail
     +THRUSPECIES
     Species "Player"
 
-    Damage (15)
+    Damage (13)
 }
 
 

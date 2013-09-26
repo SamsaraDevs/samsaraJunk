@@ -11,3 +11,4 @@
 #include "decorate/duke/slot6.dec"
 #include "decorate/duke/slot7.dec"
 #include "decorate/duke/unique.dec"
+#include "decorate/duke/instagib.dec"

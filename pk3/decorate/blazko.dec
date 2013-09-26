@@ -10,3 +10,4 @@
 #include "decorate/blazko/slot7.dec"
 #include "decorate/blazko/unique.dec"
 #include "decorate/blazko/healthitems.dec"
+#include "decorate/blazko/instagib.dec"

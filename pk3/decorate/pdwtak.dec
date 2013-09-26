@@ -32,7 +32,7 @@ actor DoomguysDieParticle: PeopleDieParticle
     States
     {
       Spawn:
-        PLSS AAAAAABBBBBB 1 bright A_FadeOut(0.01)
+        PLSS AAAAAABBBBBB 1 bright A_FadeOut(0.02)
         loop
     }
 }

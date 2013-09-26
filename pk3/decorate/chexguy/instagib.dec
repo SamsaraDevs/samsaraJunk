@@ -1,0 +1,178 @@
+actor ChexInstazorchFired : Counter { Inventory.MaxAmount 3 }
+
+ACTOR "Gigazorcher 2100" : Weapon
+{
+    Weapon.Selectionorder 100
+    Weapon.Kickback 100
+    Weapon.SlotNumber 0
+    Inventory.Pickupmessage "You got the Gigazorcher 2100!"
+	//Decal RailScorch
+	DamageType "Zorch"
+    +INVENTORY.UNDROPPABLE
+	+BLOODLESSIMPACT
+	+PUFFONACTORS
+	+WEAPON.NOAUTOAIM
+    Obituary "%k \chsent\c- %o\ch on a trip to lightspeed."
+    States
+    {
+    Ready:
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",3,"Ready4")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",2,"Ready3")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",1,"Ready2")
+        CHIZ A 1 A_WeaponReady
+        Loop
+	Ready2:
+        CHIZ D 1 A_WeaponReady
+        Loop
+	Ready3:
+        CHIZ G 1 A_WeaponReady
+        Loop
+	Ready4:
+        CHIZ J 1 A_WeaponReady
+        Loop
+    Deselect:
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",3,"Deselect4")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",2,"Deselect3")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",1,"Deselect2")
+        CHIZ A 1 A_Lower
+        Loop
+    Deselect2:
+        CHIZ A 1 A_Lower
+        Loop
+    Deselect3:
+        CHIZ A 1 A_Lower
+        Loop
+    Deselect4:
+        CHIZ A 1 A_Lower
+        Loop
+    Select:
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",3,"Select4")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",2,"Select3")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",1,"Select2")
+        CHIZ A 1 A_Raise
+        Loop
+    Select2:
+        CHIZ A 1 A_Raise
+        Loop
+    Select3:
+        CHIZ A 1 A_Raise
+        Loop
+    Select4:
+        CHIZ A 1 A_Raise
+        Loop
+    Fire:
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",3,"Fire4")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",2,"Fire3")
+	    TNT1 A 0 A_JumpIfInventory("ChexInstazorchFired",1,"Fire2")
+        CHIZ A 3
+	    TNT1 A 0 A_PlayWeaponSound("chex/instazorchfire")
+		TNT1 A 0 A_FireBullets(0,0,10,1000,"GigazorcherPuff", FBF_NORANDOM)
+		TNT1 A 0 A_RailAttack(0,3,0,none,pink,1,0,"GigazorcherPuff")
+		TNT1 A 0 A_RailAttack(0,3,0,none,white,1,0,"GigazorcherPuff")
+        CHIZ B 3 A_RailAttack(0,3,0,none,red,1,0,"GigazorcherPuff")
+		CHIZ C 3 A_GiveInventory("ChexInstazorchFired",1)
+		CHIZ T 3
+        CHIZ D 6
+        TNT1 A 0 A_ReFire
+        Goto Ready
+	Fire2:
+        CHIZ D 3
+	    TNT1 A 0 A_PlayWeaponSound("chex/instazorchfire")
+		TNT1 A 0 A_FireBullets(0,0,10,1000,"GigazorcherPuff", FBF_NORANDOM)
+		TNT1 A 0 A_RailAttack(0,3,0,none,pink,1,0,"GigazorcherPuff")
+		TNT1 A 0 A_RailAttack(0,3,0,none,white,1,0,"GigazorcherPuff")
+        CHIZ E 3 A_RailAttack(0,3,0,none,red,1,0,"GigazorcherPuff")
+		CHIZ F 3 A_GiveInventory("ChexInstazorchFired",1)
+		CHIZ U 3
+        CHIZ G 6
+        TNT1 A 0 A_ReFire
+        Goto Ready
+	Fire3:
+        CHIZ G 3
+	    TNT1 A 0 A_PlayWeaponSound("chex/instazorchfire")
+		TNT1 A 0 A_FireBullets(0,0,10,1000,"GigazorcherPuff", FBF_NORANDOM)
+		TNT1 A 0 A_RailAttack(0,3,0,none,pink,1,0,"GigazorcherPuff")
+		TNT1 A 0 A_RailAttack(0,3,0,none,white,1,0,"GigazorcherPuff")
+        CHIZ H 3 A_RailAttack(0,3,0,none,red,1,0,"GigazorcherPuff")
+		CHIZ I 3 A_GiveInventory("ChexInstazorchFired",1)
+		CHIZ V 3
+        CHIZ J 6
+        TNT1 A 0 A_ReFire
+        Goto Ready
+	Fire4:
+        CHIZ J 3
+	    TNT1 A 0 A_PlayWeaponSound("chex/instazorchfire")
+		TNT1 A 0 A_FireBullets(0,0,10,1000,"GigazorcherPuff", FBF_NORANDOM)
+		TNT1 A 0 A_RailAttack(0,3,0,none,pink,1,5,"GigazorcherPuff")
+		TNT1 A 0 A_RailAttack(0,3,0,none,white,1,5,"GigazorcherPuff")
+		TNT1 A 0 A_RailAttack(0,3,0,none,red,1,5,"GigazorcherPuff")
+		//TNT1 A 0 A_RailAttack(0,3,0,none,pink,1,0,"GigazorcherPuff")
+		//TNT1 A 0 A_RailAttack(0,3,0,none,white,1,0,"GigazorcherPuff")
+        CHIZ K 3 //A_RailAttack(0,3,0,none,red,1,0,"GigazorcherPuff")
+		CHIZ L 3
+        CHIZ M 13
+		TNT1 A 0 A_PlaySoundEx("chex/instazorchload","soundslot7",0,0)
+		CHIZ M 3
+        CHIZ NOPQR 3
+        CHIZ S 5 A_TakeInventory("ChexInstazorchFired",4)
+		CHIZ A 9
+		goto Ready
+    Flash:
+        TNT1 A 5 bright A_Light1
+        TNT1 A 5 bright A_Light2
+        TNT1 A 0 bright A_Light0
+        Goto LightDone
+    }
+}
+
+actor GigazorcherPuff
+{
+    Radius 1
+    Height 1
+    Speed 0
+    Damage 0
+	DamageType "Zorch"
+    +ALWAYSPUFF
+    +SKYEXPLODE
+    +PUFFONACTORS
+    +PUFFGETSOWNER
+	+BLOODLESSIMPACT
+	+NOEXTREMEDEATH
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        TNT1 A 8
+        stop
+    }
+}
+
+actor GigazorchDummyShot1 : FastProjectile
+{
+	Height 1
+	Radius 1
+    Damage 0
+	Speed 25
+	DamageType "Zorch"
+	RenderStyle Add
+	Alpha 0.9
+	Scale 0.15
+	-SOLID
+	+RIPPER
+	+NOINTERACTION
+	+BLOODLESSIMPACT
+	-BLOODSPLATTER
+	States
+	{
+    Spawn:
+        RBPL A 4
+	Spawn2:
+        RBPL A 1 A_FadeOut(0.05)
+        loop
+	}
+}
+
+actor GigazorchDummyShot2 : GigazorchDummyShot1 { Speed 50 }
+actor GigazorchDummyShot3 : GigazorchDummyShot1 { Speed 75 }
+actor GigazorchDummyShot4 : GigazorchDummyShot1 { Speed 100 }
+actor GigazorchDummyShot5 : GigazorchDummyShot1 { Speed 125 }

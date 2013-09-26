@@ -29,8 +29,8 @@ actor " Shotgun " : Shotgun
         goto FireAnim
 
       CoopFire:
-        TNT1 AAAAAA 0 A_FireCustomMissile("DoomBullet", random(-5.6, 5.6), 0, 0, 1, 0)
-        TNT1 A      0 A_FireCustomMissile("DoomBullet", random(-5.6, 5.6), 1, 0, 1, 0)
+        TNT1 AAAAAA 0 A_FireCustomMissile("DoomBullet", random(-560, 560)/100.00, 0, 0, 1, 0)
+        TNT1 A      0 A_FireCustomMissile("DoomBullet", random(-560, 560)/100.00, 1, 0, 1, 0)
         goto FireAnim
 
       FireAnim:

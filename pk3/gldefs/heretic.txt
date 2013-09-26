@@ -732,3 +732,24 @@ object MaceFX42
     frame FX02J { light MACEBALL_X4 }
 }
 
+// Pod
+object Pod2
+{
+	frame PPODC { light POD_X1 }
+	frame PPODD { light POD_X2 }
+	frame PPODE { light POD_X3 }
+	frame PPODF { light POD_X4 }
+}
+
+// Dragon Claw Coop Puff
+object DragonBullet
+{
+    frame FX17A { light CLAWPUFF1 }
+    frame FX17B { light CLAWPUFF2 }
+    frame FX17C { light CLAWPUFF3 }
+    frame FX17D { light CLAWPUFF4 }
+    frame FX17F { light CLAWPUFF1 }
+    frame FX17G { light CLAWPUFF2 }
+    frame FX17H { light CLAWPUFF3 }
+    frame FX17I { light CLAWPUFF4 }
+}

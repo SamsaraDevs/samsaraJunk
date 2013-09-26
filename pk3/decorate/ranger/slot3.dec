@@ -311,8 +311,8 @@ actor UsingMultiNades : Boolean { }
 
 actor QuakeGrenade
 {
-    Radius 16
-    Height 16
+    Radius 4
+    Height 4
     Speed 24
     
     Projectile
@@ -321,8 +321,6 @@ actor QuakeGrenade
     Gravity 0.6
     Scale 0.2
     BounceFactor 0.3
-
-    Damage (40)
     
     +HEXENBOUNCE
     +CANBOUNCEWATER
@@ -417,17 +415,12 @@ actor QuakeGrenadeCoop: QuakeGrenade
 {
     +THRUSPECIES
     Species "Player"
-    
-    Radius 4
-    Height 4
-
-    Damage (80)
+	Damage (20)
 }
 
 actor QuakeGrenadeQuad: QuakeGrenade
 {
     DamageType "NotQuadded"
-    Damage (160)
     
     States
     {
@@ -446,8 +439,7 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     
     Radius 4
     Height 4
-    
-    Damage (320)
+	Damage (80)
 }
 
 actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
@@ -456,8 +448,6 @@ actor QuakeClusterGrenade: QuakeGrenade
 {
     Translation "80:111=48:79"
     Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
-
-    Damage (13)
     
     ReactionTime 46
     
@@ -478,11 +468,7 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
 {
     +THRUSPECIES
     Species "Player"
-    
-    Damage (26)
-    
-    Radius 4
-    Height 4
+	Damage (20)
     
     States
     {
@@ -500,7 +486,6 @@ actor QuakeClusterGrnCoop: QuakeClusterGrenade
 actor QuadClusterGrenade: QuakeClusterGrenade
 {
     DamageType "NotQuadded"
-    Damage (52)
     
     States
     {
@@ -521,10 +506,7 @@ actor QuadClusterGrnCoop: QuadClusterGrenade
     Species "Player"
     
     DamageType "NotQuadded"
-    Damage (102)
-    
-    Radius 4
-    Height 4
+	Damage (80)
     
     States
     {
@@ -545,10 +527,8 @@ actor QuakeTinyGrenade: QuakeGrenade
     Scale 0.1625
     ReactionTime 46
     
-    Radius 8
-    Height 8
-
-    Damage (13)
+    Radius 2
+    Height 2
     
     SeeSound "quakeweps/grenadebounce_quiet"
     
@@ -584,16 +564,14 @@ actor QuakeTinyGrnCoop: QuakeTinyGrenade
     +THRUSPECIES
     Species "Player"
     
-    Radius 4
-    Height 4
-    
-    Damage (26)
+    Radius 2
+    Height 2
+	Damage (4)
 }
 
 actor QuadTinyGrenade: QuakeTinyGrenade
 {
     DamageType "NotQuadded"
-    Damage (52)
     
     States
     {
@@ -609,8 +587,7 @@ actor QuadTinyGrnCoop: QuadTinyGrenade
 {
     +THRUSPECIES
     Species "Player"
-    
-    Damage (102)
+	Damage (16)
 }
 
 actor SpectralClusterGrenade: QuadClusterGrnCoop

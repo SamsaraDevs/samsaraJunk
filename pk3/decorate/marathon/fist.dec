@@ -302,7 +302,7 @@ actor NothingSpeed : PowerSpeed
   Speed 0.1
 }
 
-actor "Steel Knuckles" : Weapon replaces Fist
+actor "Steel Knuckles" : Weapon
 {
     Weapon.BobRangeX 0
     Weapon.BobStyle Smooth

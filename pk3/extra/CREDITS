@@ -1,11 +1,13 @@
-﻿ï»¿- : Majority of amounts of reference was taken off the ZDoom wiki. A deep and heartfelt thank you to all those who continue to document the finer workings this game, even today.
+- : Majority of amounts of reference was taken off the ZDoom wiki. A deep and heartfelt thank you to all those who continue to document the finer workings this game, even today.
 - : Doom, the Doomguy, and everything within the Doom umbrella is property of id Software.
  ^- : Doomguy's Falling, Taunt, and Landing sound was taken from Quake III.
  ^- : Doomguy's burning scream was by cdrk.
  ^- : Doomguy's burning sprites by Blox.
  ^- : Doomguy's puzzfail voice by Roy Conrad.
+ ^- : Railgun sprites by Michael Niggel and Edmundo Bordeu.
 - : Corvus, Heretic, and the respective sprites/sounds are property of Raven Software.
  ^- : Corvus' Burn Death, Taunt, and Falling sounds were taken from Heretic II.
+ ^- : Grim Ballista drawn by Revae, design tweaks by Matt Smirnoff.
 - : Chex Warrior, Chex Quest, and the respective sprites/sounds are property of Digital Cafe.
  ^- : Chex Quest 3 actors and decorate by Charles Jacobi.
  ^- : Super Large Zorcher designed with assistance by Charles Jacobi.
@@ -14,6 +16,7 @@
  ^- : Flemoid death sound taken from audionautics, anechoix, and flasher21 on FreeSound.
  ^- : Cyclops Flemoid death sound taken from Killing Floor.
  ^- : Lord Snotfolus' Flemoid summoning taken from ZDoom Wars.
+ ^- : Gigazorcher 2100 drawn by Revae, design by Charles Jacobi.
 - : B.J. Blazkowicz, Wolfenstein, and the respective sprites/sounds are property of id Software.
  ^- : Wolfenstein 3D HUD graphics ripped by Ultimecia.
  ^- : B.J. Blazkowicz skin done by Joseph Dugas.
@@ -24,6 +27,7 @@
  ^- : Knife pickup sprite by Scuba Steve.
  ^- : Numerous sounds by as3sfxr
  ^- : Gibbing sprites by Peter Bark
+ ^- : Rifle by Turbo.
 - : Parias, Hexen, and the respective sprites/sounds are property of Raven Software.
  ^- : Widescreen sprites for the Firestorm by BlackFish.
  ^- : Muscular polishing on Timon's Axe and Hammer of Retribution by BlackFish.
@@ -35,7 +39,9 @@
  ^- : Freezethrower self-damage and streamlined taunting by Doomrater.
  ^- : Pipebomb detonation via bullets by Doomrater.
  ^- : Widescreen RPG sprites by BlackFish and Turbo.
- ^- : Widescreen Freezethrower sprite by BlackFish.
+ ^- : Widescreen Freezethrower sprite ripped by Kinsie.
+ ^- : Duke Nukem Advance sprites for the Golden Desert Eagle expanded and polished by Marrub.
+ ^- : Duke Nukem Advance sounds for the Golden Desert Eagle ripped by President People.
 - : The Security Officer, Durandal, Marathon, and the respective sprites/sounds are property of Bungie.
  ^- : Wave Motion Cannon sprite by Hopper.
  ^- : Security Officer sprites ripped and assembled by Hopper. Infinite thanks for your generosity!
@@ -44,7 +50,7 @@
  ^- : Majority of resources/decorate given graciously by TwelveEyes. Thank you very much!
  ^- : Double, triple, and quadruple checking for Marathon accuracy by PresidentPeople.
  ^- : Synthesized fire mode by Xaser.
- ^- : HUD inspired by Steven TzÃÂ©'s M1A1 Enhanced hud.
+ ^- : HUD inspired by Steven Tze's M1A1 Enhanced hud.
  ^- : Marapfhont and Squarish Sans by ChristTrekker.
 - : Quake, Ranger, the Quakeguy, Quake III, and the respective models/sounds are property of id Software.
  ^- : Majority of weapon coding done by Ijon Tichy, adapted from Quakeweps.
@@ -83,3 +89,4 @@
 - : Global key pickups taken from Shared Keys by Synert.
 - : Xspheres inventory stuff for Corvus done by TehVappy50.
 - : GLDefs for enemies provided by Popsoap.
+- : Extra colors by Fuzzball Fox.

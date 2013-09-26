@@ -186,6 +186,7 @@ doomguy/plasmaf			dgplasma
 doomguy/plasmax			dgplshit
 doomguy/bfgf			dgbfg
 doomguy/bfgx			dgbfgxpl
+doomguy/railfire        dgrailgf
 
 $limit doomguy/plasmaf 0
 $limit doomguy/pistol 0
@@ -277,6 +278,8 @@ chex/slzorchmagdown	chslzdn
 chex/slzorchmagup	chslzup
 chex/slzorchmaglock	chslzloc
 chex/slzorchmagunlk	chslzunl
+chex/instazorchfire chizfire
+chex/instazorchload chizload
 
 /////////////////////
 // Heretic sounds
@@ -364,6 +367,25 @@ $limit  weapons/macebounce 			0
 heretic/remoteancient		ANCTRMT
 heretic/proxancient			ANCTPROX
 
+heretic/grimbshot           GRMBSHOT
+heretic/grimbload           GRMBLOAD
+heretic/grimhbeat           GRMBEAT
+
+$random SoulScream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
+ghostscream1 gstscrma
+ghostscream2 gstscrmb
+ghostscream3 gstscrmc
+ghostscream4 gstscrmd
+
+$volume ghostscream1 0.15
+$volume ghostscream2 0.15
+$volume ghostscream3 0.15
+$volume ghostscream4 0.15
+$rolloff ghostscream1 64 640
+$rolloff ghostscream2 64 640
+$rolloff ghostscream3 64 640
+$rolloff ghostscream4 64 640
+
 ////////////////
 // Wolfenstein Sounds
 ///////////////
@@ -409,6 +431,7 @@ wolfen/spearbounce			bjsprbnc // Original sound by as3sfxr
 wolfen/spearexplode1		bjsprex1 // Original sound by as3sfxr
 wolfen/spearexplode2		bjsprex2 // Original sound by as3sfxr
 wolfen/spearstab			bjsprstb // Original sound by as3sfxr
+wolfen/rifle			    bjrifle
 $limit  wolfen/machinegun	 		0
 $limit  wolfen/chaingun		 		0
 $limit  wolfen/flamethrower	 		0
@@ -470,6 +493,8 @@ SpiritAttack            spirt5
 $limit SpiritAttack 0
 SpiritDie               spirts1
 $limit SpiritDie 0
+MageStaffFire           mage4
+MageStaffExplode        mageball
 
 hexen/weaponget         sample11
 hexen/artiget           artget1
@@ -543,8 +568,14 @@ duke/explosion		DKXPLOD
 duke/freezeshot		DKFRZTHR
 $pitchshiftrange 					0
 duke/nightvision	DKNITVIS
+duke/adveagleshot   DKDEAGSH
+duke/adveagleload   DKDEAGRL
+duke/adveagleup     DKDEAGUP
 
 $limit duke/explosion 0
+
+$alias duke/explosion2 duke/explosion
+$rolloff duke/explosion2 64 640
 
 $alias duke/pipeexplosion duke/explosion
 $limit duke/pipeexplosion 3
@@ -1110,6 +1141,8 @@ wmc/grenadeexplode2		wmcgxpl2
 alienweapon/shoot		MTAWPSHT
 alienweapon/hit			MTAWPHIT
 
+marathon/railfire       MATCFIRE
+
 
 ///////////////////
 // Ranger sounds
@@ -1244,6 +1277,7 @@ quakeweps/regenout              sounds/ranger/wearoff.ogg
 quakeweps/invison               sounds/ranger/inv1.ogg
 quakeweps/invisout              sounds/ranger/inv2.ogg
 quakeweps/inviswhisper          sounds/ranger/inv3.ogg
+quake/invisannouncer            sounds/ranger/invisibility.ogg
 
 quakeweps/pentagramon           sounds/ranger/pentagram.wav
 quakeweps/pentagram             sounds/ranger/pentagramding.wav
@@ -1257,3 +1291,9 @@ quakeweps/mjolnirmiss           sounds/ranger/mjolnir_miss.wav
 quakeweps/mjolnirhit            sounds/ranger/mjolnir_hit.wav
 quakeweps/mjolnirwhack          sounds/ranger/mjolnir_whack.wav
 quakeweps/mjolnirwall           sounds/ranger/mjolnir_wall.wav
+
+quake/impalehit                 sounds/ranger/impale.wav
+quake/impalsplod                sounds/ranger/impex.wav
+quake/impalefire                sounds/ranger/impfire.wav
+quake/impaload                  sounds/ranger/impload.wav
+quake/impalwall                 sounds/ranger/impwall.wav

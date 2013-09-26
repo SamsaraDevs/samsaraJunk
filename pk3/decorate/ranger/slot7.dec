@@ -8,6 +8,7 @@ actor QuadDamagePower: PowerDamage
     Powerup.Duration 0x7FFFFFFF
 
     DamageFactor "Normal", 4
+    DamageFactor "EnemyInfightDamage", 0
     DamageFactor "NotQuadded", 1
     DamageFactor "SpectralNoQuad", 1
 }

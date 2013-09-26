@@ -9,3 +9,4 @@
 #include "decorate/doomguy/slot6.dec"
 #include "decorate/doomguy/slot7.dec"
 #include "decorate/doomguy/unique.dec"
+#include "decorate/doomguy/instagib.dec"

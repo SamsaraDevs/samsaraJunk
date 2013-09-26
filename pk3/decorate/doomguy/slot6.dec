@@ -25,7 +25,7 @@ actor "Plasma Rifle" : PlasmaRifle
         DPLF A 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall")
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
-        DPLS B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLS A 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
         goto FireEnd
 
       Fire2:
@@ -43,7 +43,7 @@ actor "Plasma Rifle" : PlasmaRifle
         DPLF A 3 BRIGHT A_FireCustomMissile("DoomPlasmaBall2")
         TNT1 A 0 A_Refire
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
-        DPLS B 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
+        DPLS A 1 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaCooldown")
         goto FireEnd
 
       CoopFire2:
@@ -57,7 +57,8 @@ actor "Plasma Rifle" : PlasmaRifle
         DPLS D 0 A_JumpIfInventory("PowerDoubleFiringSpeed", 1, "RageEnd")
         DPLS DEF 1
         DPLS GF 3
-        DPLS EDCBA 2
+        DPLS EDCB 2
+		DPLS A 1
         goto Ready
       
       RageEnd:

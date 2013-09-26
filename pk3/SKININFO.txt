@@ -43,3 +43,8 @@ name = SOM1AWSkin
 class = SecurityOfficer
 sprite = SOA2
 }
+{
+name = SOSACannonSkin
+class = SecurityOfficer
+sprite = SOAC
+}

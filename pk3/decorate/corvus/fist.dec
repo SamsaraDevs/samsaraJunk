@@ -2,12 +2,12 @@ actor " Staff " : Weapon
 {
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3800
-    +THRUGHOST
     +WIMPY_WEAPON
     +MELEEWEAPON
     +NOALERT
     +STAFF2_KICKBACK
     +INVENTORY.UNDROPPABLE
+	+THRUGHOST
     Obituary "%k \cqspoke softly and gave\c- %o \cqthe big stick.\c-"
     States
     {

@@ -63,7 +63,7 @@ script SAMSARA_PDWTAK death
 
             Spawn(j, x,y,z, rTID);
         }
-        else
+        else if (Timer() % 2)
         {
             if (classNum != -1)
             {

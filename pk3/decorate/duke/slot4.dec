@@ -1,6 +1,6 @@
 actor DukeRipperFiringSequence : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 2 }
 
-actor "Chaingun Cannon" : Weapon replaces Chaingun
+actor "Chaingun Cannon" : Weapon
 {
     Weapon.BobRangeX 0.75
     Weapon.BobRangeY 0.95
@@ -10,7 +10,8 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
     Weapon.AmmoUse 1
     Weapon.AmmoGive 50
     Weapon.AmmoType "Clip"
-    //Obituary "%k ripped %o apart with bullets."
+    Obituary "%k \c[m1]ripped \c-%o \c[m1]a new one.\c-"
+	decal BulletChip
     Inventory.Pickupmessage "You got the Ripper Chaingun Cannon!"
     Inventory.PickupSound "duke/weaponget"
     weapon.upsound "duke/weaponget"
@@ -74,7 +75,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireLeft")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireBullets(5.5,2.5,-1,15,"DukeBulletPuff", FBF_USEAMMO | FBF_NORANDOM)//A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -88,7 +89,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireMiddle")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireBullets(5.5,2.5,-1,15,"DukeBulletPuff", FBF_USEAMMO | FBF_NORANDOM)//A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -102,7 +103,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFireRight")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireBullets(5.5,2.5,-1,15,"DukeBulletPuff", FBF_USEAMMO | FBF_NORANDOM)//A_FireCustomMissile("DukeRipperBullet",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -115,7 +116,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
       CoopFireLeft:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-500,500)/100.00,1,0,1,0,random(-200,200)/100.00)//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -128,7 +129,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
       CoopFireMiddle:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-500,500)/100.00,1,0,1,0,random(-200,200)/100.00)//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -141,7 +142,7 @@ actor "Chaingun Cannon" : Weapon replaces Chaingun
       CoopFireRight:
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-5,5),1,0,1,0,random(-2,2))//A_FireBullets (6, 1, -1, 5, "BulletPuff")
+        TNT1 A 0 A_FireCustomMissile("DukeRipperBulletCoop",random(-500,500)/100.00,1,0,1,0,random(-200,200)/100.00)//A_FireBullets (6, 1, -1, 5, "BulletPuff")
         TNT1 A 0 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/chaingun")
         TNT1 A 0 A_FireCustomMissile("ShellCasingSpawner3",0,0,6)
@@ -271,14 +272,14 @@ actor DukeRipperBullet : DukePistolBullet
 {
     +THRUGHOST
     +NOTIMEFREEZE
-    Obituary "%k \cfripped\c- %o \cfa new one.\c-"
+    Obituary "%k \c[m1]ripped\c- %o \c[m1]a new one.\c-"
     Damage (15)// Original was (9)
     DamageType "DukeDamage"
 }
 
 actor DukeRipperBulletCoop : DukePistolBullet
 {
-    Obituary "%k \cfripped\c- %o \cfa new one.\c-"
+    Obituary "%k \c[m1]ripped\c- %o \c[m1]a new one.\c-"
     Damage (15)
     +THRUGHOST
     +THRUSPECIES

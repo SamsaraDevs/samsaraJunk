@@ -79,12 +79,12 @@ actor Devastator : Weapon
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-300,300)/100.00,1,5,0,0,random(-100,100)/100.00)
         DDEV I 2 A_WeaponReady(14)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-300,300)/100.00,1,6,2,0,random(-100,100)/100.00)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         DDEV KLMA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -98,12 +98,12 @@ actor Devastator : Weapon
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-300,300)/100.00,1,-5,0,0,random(-100,100)/100.00)
         DDEV C 2 A_WeaponReady(14)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocket",random(-300,300)/100.00,1,-6,2,0,random(-100,100)/100.00)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         DDEV EFGA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -116,12 +116,12 @@ actor Devastator : Weapon
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-300,300)/100.00,1,5,0,0,random(-100,100)/100.00)
         DDEV I 2 A_WeaponReady(14)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-300,300)/100.00,1,6,2,0,random(-100,100)/100.00)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         DDEV KLMA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -134,12 +134,12 @@ actor Devastator : Weapon
         TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-300,300)/100.00,1,-5,0,0,random(-100,100)/100.00)
         DDEV C 2 A_WeaponReady(14)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
-        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("DukeDevastatorRocketCoop",random(-300,300)/100.00,1,-6,2,0,random(-100,100)/100.00)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         DDEV EFGA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -283,13 +283,13 @@ actor "Spectral Devastator": Devastator
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
-        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, 5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket",random(-300,300)/100.00,1,5,0,0,random(-100,100)/100.00)
         DDEV I 2 A_WeaponReady(14)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
-        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, 6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket",random(-300,300)/100.00,1,6,2,0,random(-100,100)/100.00)
         DDEV J 1 BRIGHT A_WeaponReady(14)
         DDEV KLMA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -303,13 +303,13 @@ actor "Spectral Devastator": Devastator
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
-        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, -5, 0, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket",random(-300,300)/100.00,1,-5,0,0,random(-100,100)/100.00)
         DDEV C 2 A_WeaponReady(14)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_PlaySound("duke/freezeshot")
         TNT1 A 0 A_PlayWeaponSound("duke/rocketfire")
         TNT1 A 0 ACS_ExecuteAlways(317, 0, 4,0,0)
-        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket", random(-3, 3), 1, -6, 2, 0, random(-1, 1))
+        TNT1 A 0 A_FireCustomMissile("SpectralDevastatorRocket",random(-300,300)/100.00,1,-6,2,0,random(-100,100)/100.00)
         DDEV D 1 BRIGHT A_WeaponReady(14)
         DDEV EFGA 1 BRIGHT A_WeaponReady(14)
         TNT1 A 0 A_ReFire
@@ -324,7 +324,7 @@ actor DukeDevastatorRocket
     Speed 30
     Damage (38)
     Projectile
-    Obituary "%k \cfdevastated\c- %o\cf."
+    Obituary "%k \c[m1]devastated\c- %o\c[m1]."
     Scale 0.2
     Decal DoomImpScorch
     DamageType "DukeExplosive"
@@ -336,9 +336,10 @@ actor DukeDevastatorRocket
         loop
 
       Death:
-        TNT1 A 0 A_Explode(35, 32)
-        TNT1 A 0 A_PlaySound("duke/explosion", CHAN_WEAPON, 1.0, 0, 2)
-        TNT1 A 0 A_PlaySound("duke/explosion", 5,           0.4, 0, 0)
+	    TNT1 A 0
+        TNT1 A 0 A_Explode(48, 64)
+        TNT1 A 0 A_PlaySoundEx("duke/explosion2", CHAN_WEAPON, 0, -1)
+        TNT1 A 0 A_PlaySound("duke/explosion", 5, 0.4, 0, 0)
         TNT1 A 1 A_SpawnItemEx("DevastatorExplosion")
         Stop
     }
@@ -348,4 +349,4 @@ actor DukeDevastatorRocketCoop : DukeDevastatorRocket { +THRUSPECIES Species "Pl
 
 actor SpectralDevastatorRocket: DukeDevastatorRocketCoop { DamageType "DukeSpectral" }
 
-actor DevastatorExplosion : RPGExplosion { Scale 0.1 +CLIENTSIDEONLY } // ...But this can be clientsided with no problems. WAT.
+actor DevastatorExplosion : RPGExplosion { Scale 0.1 +CLIENTSIDEONLY }

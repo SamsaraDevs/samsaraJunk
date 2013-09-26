@@ -3071,7 +3071,134 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
         CLFR Z 1 A_IceGuyDie
         TNT1 A -1
         stop
+		
+	  Melee:
+	  Missile:
+	    CLER EF 8 A_FaceTarget
+		TNT1 A 0 A_PlaySound("HolySymbolFire")
+		TNT1 A 0 A_CustomMissile("HolySpiritTraductus")
+		TNT1 A 0 A_CustomMissile("HolySpiritTraductus2")
+		TNT1 A 0 A_CustomMissile("HolySpiritTraductus3")
+		TNT1 A 0 A_CustomMissile("HolySpiritTraductus4")
+		CLER G 10
+		goto See2
     }
+}
+
+actor HolySpiritTraductus : HolySpiritDM
+{
+	Speed 10
+	Damage 1
+	States
+	{
+	Idle:
+	  TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
+	  TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR B 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR B 2 A_MStaffTrack//A_CHolyCheckScream
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      goto Spawn3
+	}
+}
+
+actor HolySpiritTraductus2 : HolySpiritDM2
+{
+	Speed 10
+	Damage 1
+	States
+	{
+	Idle:
+	  TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
+	  TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR B 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR B 2 A_MStaffTrack//A_CHolyCheckScream
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      goto Spawn3
+	}
+}
+
+actor HolySpiritTraductus3 : HolySpiritDM3
+{
+	Speed 10
+	Damage 1
+	States
+	{
+	Idle:
+	  TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
+	  TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR B 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR B 2 A_MStaffTrack//A_CHolyCheckScream
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      goto Spawn3
+	}
+}
+
+actor HolySpiritTraductus4 : HolySpiritDM4
+{
+	Speed 10
+	Damage 1
+	States
+	{
+	Idle:
+	  TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
+	  TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+	  SPIR B 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_Explode(random(1,8), 16, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+	  TNT1 A 0 A_CStaffMissileSlither
+      SPIR B 2 A_MStaffTrack//A_CHolyCheckScream
+      TNT1 A 0 A_Explode(random(1,8), 32, 0)
+	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      goto Spawn3
+	}
 }
 
 actor MageBoss2 : MageBoss replaces MageBoss

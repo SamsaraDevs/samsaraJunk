@@ -12,6 +12,8 @@ actor SamsaraUniquePickup1: CustomInventory
     {
       Spawn:
         UNIQ B 0
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,27,0,0) == 1, "Nope")
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,29,0,0) == 1, "Nope")
 		UNIQ B 1 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 19), "Nope")
         goto SpawnLoop
 		

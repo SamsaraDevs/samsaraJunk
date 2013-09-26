@@ -29,7 +29,7 @@ actor StrifeAcolyteDrop: CustomInventory
 
 actor Acolyte2: Acolyte replaces Acolyte
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
 
@@ -244,7 +244,7 @@ actor AcolyteToBe2: Acolyte2 replaces AcolyteToBe
 
 actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when all the Acolytes are killed. Interesting.
 {
-    DamageFactor "Mace", 1.1
+    DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     Translation "128:143=144:159"

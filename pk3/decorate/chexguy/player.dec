@@ -19,7 +19,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "Telefrag", 2.0
     DamageFactor "PoisonCloud", 1.65
     DamageFactor "Wraithverge", 0.9
-    DamageFactor "Mace", 0.9
+    DamageFactor "CorvusCrossbow", 0.9
     DamageFactor "DragonClaw", 0.9
     DamageFactor "MarathonPistol", 0.8
     DamageFactor "Pistol", 0.8
@@ -73,9 +73,12 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "SpectralNoQuad", 0.8
 	
 	DamageFactor "MarathonStun", 1.0
+    DamageFactor "QuakeFire", 0.8 
+	DamageFactor "FireExplosive", 0.8
 
     DamageFactor "Kamikaze", 1.33333333333
     DamageFactor "ZorchKamikaze", 1.33333333333
+	DamageFactor "EnemyInfightDamage", 0.0
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"
@@ -131,6 +134,15 @@ actor ChexWarrior : PlayerPawn
         CHEX X -1
         Stop
 
+      Death.CorvusGrimBallista:
+        CHEX O 5
+        CHEX P 5 A_PlaySoundEx("*falling",CHAN_VOICE,0,0)
+        CHEX Q 5 A_NoBlocking
+        CHEX RSTUV 5
+        CHEX W 20
+        CHEX X -1
+        Stop
+
       Death.ZorchPistol:
 
       Death.Zorch:
@@ -160,7 +172,7 @@ actor ChexWarrior : PlayerPawn
         TNT1 A 0 A_ChangeFlag("THRUSPECIES",1)
         TNT1 A 0 A_ChangeFlag("DONTBLAST",1)
         CHEX A 1
-        goto See
+        goto Spawn
 
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -181,7 +193,7 @@ actor ChexWarrior : PlayerPawn
       Death.HexenIce:
 
       Death.Ice:
-	TNT1 A 0 A_PlayWeaponSound("misc/freeze")
+	    TNT1 A 0 A_PlayWeaponSound("misc/freeze")
         CHEX Z 70 A_NoBlocking//A_GenericFreezeDeath
         CHEX Z 0 A_SetTranslucent(0,0)
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
@@ -217,6 +229,7 @@ actor ChexPuff : BulletPuff
     +PUFFONACTORS
     +BLOODLESSIMPACT
     +CLIENTSIDEONLY
+	+THRUGHOST
     DamageType "Zorch"
     RenderStyle Add
     Alpha 0.4
@@ -235,7 +248,7 @@ actor ChexBullet : FastProjectile
     Damage (Random(1,3)*5)
     Radius 1
     Height 1
-    Speed 300
+    Speed 320
     Projectile
     Renderstyle "Normal"
     Species "Player"
@@ -244,6 +257,7 @@ actor ChexBullet : FastProjectile
     +BLOODLESSIMPACT
     +THRUSPECIES
     +NOTIMEFREEZE
+	+THRUGHOST
     Alpha 1.0
     States
     {

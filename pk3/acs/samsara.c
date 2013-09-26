@@ -253,6 +253,40 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         Delay(arg1);
         TakeInventory("TimeBombPause", 1);
         break;
+
+      case 24:
+        result = GetCVar("samsara_noult");
+        break;
+
+      case 25:
+        if (GameType() == GAME_NET_COOPERATIVE)
+		{ AmbientSound("quake/invisannouncer",127); }
+		else
+		{ LocalAmbientSound("quake/invisannouncer",127); }
+        break;
+		
+	  case 26:
+	    if (CheckInventory("PowerInvisibility") == 0)
+		{ GiveInventory("PowerInvisibility",1); }
+		else
+		{ TakeInventory("PowerInvisibility",1); 
+		delay(1);
+		GiveInventory("PowerShadow",1);
+		delay(1);
+		GiveInventory("PowerShadow",1); }
+	    break;
+
+      case 27:
+        result = GetCVar("samsara_nounique");
+        break;
+
+      case 28:
+        result = GetCVar("samsara_noinvuln");
+        break;
+
+      case 29:
+        result = GetCVar("instagib");
+        break;
     }
     
     SetResultValue(result);
@@ -890,4 +924,37 @@ script 586 (int divI, int divF, int divF1)
     int z = GetActorVelZ(0);
 
     SetActorVelocity(0, FixedMul(x, div), FixedMul(y, div), FixedMul(z, div), 0, 1);
+}
+
+script 678 (int which)
+{
+    int x, y, z;
+
+    x = GetActorX(0); y = GetActorY(0); z = GetActorZ(0);
+    SetActivatorToTarget(0);
+
+    ACS_ExecuteAlways(679, 0, x, y, z);
+}
+
+script 679 (int tx, int ty, int tz) clientside
+{
+    int t, i, k = 0, l;
+    int x, y, z;
+    int vx, vy, vz, mag, magI;
+
+    x  = GetActorX(0); y =  GetActorY(0);  z = GetActorZ(0) + 24.0;
+
+    vx = tx-x; vy = ty-y; vz = tz-z; mag = magnitudeThree_f(vx, vy, vz);
+    vx = FixedDiv(vx, mag); vy = FixedDiv(vy, mag); vz = FixedDiv(vz, mag);
+    magI = ftoi(mag);
+
+    for (i = 8; i < magI; i += 8)
+    {
+        Spawn("SpnkrBeam", x+(vx*i), y+(vy*i), z+(vz*i));
+        
+        l += (i - k);
+        Delay(l / 512);
+        l %= 512;
+        k = i;
+    }
 }

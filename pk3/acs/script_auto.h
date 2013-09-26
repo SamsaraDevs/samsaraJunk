@@ -4,6 +4,10 @@ script SAMSARA_OPEN open
     int opd, pd;
     int opdu, pdu;
     int opds, pds;
+        
+    if (!GetCVar("samsara_cvarinfo"))
+    {   ConsoleCommand("set samsara_cvarinfo 0");
+    ConsoleCommand("archivecvar samsara_cvarinfo"); }
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -12,10 +16,17 @@ script SAMSARA_OPEN open
         }
         if (isSinglePlayer())
         {
+		    if(GetCvar("samsara_cvarinfo") == 0)
+			{
             HudMessage(s:HELPSTR;
             HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
-            HudMessage(s:"See the console for \caJAZZ\c-.";
+            HudMessage(s:HELPSTR_CL;
+            HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
+            HudMessage(s:"\cjSee the console for \cacvar information\c-.";
             HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
+			ConsoleCommand("set samsara_cvarinfo 1");
+            ConsoleCommand("archivecvar samsara_cvarinfo");
+			}
         }
         else
         {
@@ -111,7 +122,142 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_punchdrunksaws"))
         {   ConsoleCommand("set samsara_punchdrunksaws 0");
         ConsoleCommand("archivecvar samsara_punchdrunksaws"); }
-    }
+        
+        if (!GetCVar("samsara_noult"))
+        {   ConsoleCommand("set samsara_noult 0");
+        ConsoleCommand("archivecvar samsara_noult"); }
+        
+        if (!GetCVar("samsara_backpackstart"))
+        {   ConsoleCommand("set samsara_backpackstart 0");
+        ConsoleCommand("archivecvar samsara_backpackstart"); }
+        
+        if (!GetCVar("samsara_superturboturkeypuncher3000"))
+        {   ConsoleCommand("set samsara_superturboturkeypuncher3000 0");
+        ConsoleCommand("archivecvar samsara_superturboturkeypuncher3000"); }
+        
+        if (!GetCVar("samsara_superturboturkeylimit"))
+        {   ConsoleCommand("set samsara_superturboturkeylimit 0");
+        ConsoleCommand("archivecvar samsara_superturboturkeylimit"); }
+        
+        if (!GetCVar("samsara_superturboturkeyfrequency"))
+        {   ConsoleCommand("set samsara_superturboturkeyfrequency 35");
+        ConsoleCommand("archivecvar samsara_superturboturkeyfrequency"); }
+        
+        if (!GetCVar("samsara_classiclaz"))
+        {   ConsoleCommand("set samsara_classiclaz 0");
+        ConsoleCommand("archivecvar samsara_classiclaz"); }
+        
+        if (!GetCVar("samsara_allcanrj"))
+        {   ConsoleCommand("set samsara_allcanrj 0");
+        ConsoleCommand("archivecvar samsara_allcanrj"); }
+        
+        if (!GetCVar("samsara_nounique"))
+        {   ConsoleCommand("set samsara_nounique 0");
+        ConsoleCommand("archivecvar samsara_nounique"); }
+        
+        if (!GetCVar("samsara_noinvuln"))
+        {   ConsoleCommand("set samsara_noinvuln 0");
+        ConsoleCommand("archivecvar samsara_noinvuln"); }
+        
+        if (!GetCVar("samsara_bandoomguy"))
+        {   ConsoleCommand("set samsara_bandoomguy 0");
+        ConsoleCommand("archivecvar samsara_bandoomguy"); }
+        
+        if (!GetCVar("samsara_banchex"))
+        {   ConsoleCommand("set samsara_banchex 0");
+        ConsoleCommand("archivecvar samsara_banchex"); }
+        
+        if (!GetCVar("samsara_bancorvus"))
+        {   ConsoleCommand("set samsara_bancorvus 0");
+        ConsoleCommand("archivecvar samsara_bancorvus"); }
+        
+        if (!GetCVar("samsara_banbj"))
+        {   ConsoleCommand("set samsara_banbj 0");
+        ConsoleCommand("archivecvar samsara_banbj"); }
+        
+        if (!GetCVar("samsara_banparias"))
+        {   ConsoleCommand("set samsara_banparias 0");
+        ConsoleCommand("archivecvar samsara_banparias"); }
+        
+        if (!GetCVar("samsara_banduke"))
+        {   ConsoleCommand("set samsara_banduke 0");
+        ConsoleCommand("archivecvar samsara_banduke"); }
+        
+        if (!GetCVar("samsara_banso"))
+        {   ConsoleCommand("set samsara_banso 0");
+        ConsoleCommand("archivecvar samsara_banso"); }
+        
+        if (!GetCVar("samsara_banranger"))
+        {   ConsoleCommand("set samsara_banranger 0");
+        ConsoleCommand("archivecvar samsara_banranger"); }
+        
+        if (!GetCVar("samsara_lmsrules"))
+        {   ConsoleCommand("set samsara_lmsrules 0");
+        ConsoleCommand("archivecvar samsara_lmsrules"); }
+        
+        if (!GetCVar("samsara_doomguydamage"))
+        {   ConsoleCommand("set samsara_doomguydamage 0");
+        ConsoleCommand("archivecvar samsara_doomguydamage"); }
+        
+        if (!GetCVar("samsara_doomguydefense"))
+        {   ConsoleCommand("set samsara_doomguydefense 0");
+        ConsoleCommand("archivecvar samsara_doomguydefense"); }
+        
+        if (!GetCVar("samsara_chexdamage"))
+        {   ConsoleCommand("set samsara_chexdamage 0");
+        ConsoleCommand("archivecvar samsara_chexdamage"); }
+        
+        if (!GetCVar("samsara_chexdefense"))
+        {   ConsoleCommand("set samsara_chexdefense 0");
+        ConsoleCommand("archivecvar samsara_chexdefense"); }
+        
+        if (!GetCVar("samsara_corvusdamage"))
+        {   ConsoleCommand("set samsara_corvusdamage 0");
+        ConsoleCommand("archivecvar samsara_corvusdamage"); }
+        
+        if (!GetCVar("samsara_corvusdefense"))
+        {   ConsoleCommand("set samsara_corvusdefense 0");
+        ConsoleCommand("archivecvar samsara_corvusdefense"); }
+        
+        if (!GetCVar("samsara_bjdamage"))
+        {   ConsoleCommand("set samsara_bjdamage 0");
+        ConsoleCommand("archivecvar samsara_bjdamage"); }
+        
+        if (!GetCVar("samsara_bjdefense"))
+        {   ConsoleCommand("set samsara_bjdefense 0");
+        ConsoleCommand("archivecvar samsara_bjdefense"); }
+        
+        if (!GetCVar("samsara_pariasdamage"))
+        {   ConsoleCommand("set samsara_pariasdamage 0");
+        ConsoleCommand("archivecvar samsara_pariasdamage"); }
+        
+        if (!GetCVar("samsara_pariasdefense"))
+        {   ConsoleCommand("set samsara_pariasdefense 0");
+        ConsoleCommand("archivecvar samsara_pariasdefense"); }
+        
+        if (!GetCVar("samsara_dukedamage"))
+        {   ConsoleCommand("set samsara_dukedamage 0");
+        ConsoleCommand("archivecvar samsara_dukedamage"); }
+        
+        if (!GetCVar("samsara_dukedefense"))
+        {   ConsoleCommand("set samsara_dukedefense 0");
+        ConsoleCommand("archivecvar samsara_dukedefense"); }
+        
+        if (!GetCVar("samsara_sodamage"))
+        {   ConsoleCommand("set samsara_sodamage 0");
+        ConsoleCommand("archivecvar samsara_sodamage"); }
+        
+        if (!GetCVar("samsara_sodefense"))
+        {   ConsoleCommand("set samsara_sodefense 0");
+        ConsoleCommand("archivecvar samsara_sodefense"); }
+        
+        if (!GetCVar("samsara_rangerdamage"))
+        {   ConsoleCommand("set samsara_rangerdamage 0");
+        ConsoleCommand("archivecvar samsara_rangerdamage"); }
+        
+        if (!GetCVar("samsara_rangerdefense"))
+        {   ConsoleCommand("set samsara_rangerdefense 0");
+        ConsoleCommand("archivecvar samsara_rangerdefense"); }
 
     while (1)
     {
@@ -137,6 +283,7 @@ script SAMSARA_OPEN open
 }
 
 script SAMSARA_ENTER enter { ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
+script SAMSARA_RESPAWN respawn { ACS_ExecuteWithResult(SAMSARA_SPAWN, 1,0,0); }
 script SAMSARA_RETURN return { UnloadingNow = 0; ACS_ExecuteWithResult(SAMSARA_SPAWN, 0,0,0); }
 
 script SAMSARA_SPAWN (int respawning)
@@ -147,7 +294,7 @@ script SAMSARA_SPAWN (int respawning)
     int endloop;
     int canbuddha;
     int wsteSide;
-    int armor, oarmor;
+    int armor, oarmor, type, otype;
     int i;
 
     ServerEnterTimes[pln] = startTime;
@@ -161,6 +308,11 @@ script SAMSARA_SPAWN (int respawning)
     ACS_ExecuteWithResult(SAMSARA_QPOWERS,  startTime,0,0);
     
     if (isLMS()) { ApplyLMS(); }
+    if (GetCvar("samsara_lmsrules") == 1)
+	{
+	    ApplyLMS();
+	    GiveInventory("CanDualShotties",1);
+	}
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
     if (!respawning)
@@ -168,12 +320,20 @@ script SAMSARA_SPAWN (int respawning)
         ClientTipboxes[pln] = 0;
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
 
-        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3); }
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
+		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
     }
+	else
+	{ if (GameType() != GAME_NET_COOPERATIVE)
+	{
+        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
+		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
+	}}
 
-    HandlePunchdrunk(respawning);
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
+	HandlePunchdrunk(respawning);
+    HandleInstagib(respawning);
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
 
@@ -217,6 +377,53 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("dmflags2") & 256) { TakeInventory("DoomNoBFGAim", 0x7FFFFFFF); }
         else { GiveInventory("DoomNoBFGAim", 1); }
+
+        if (GetCVar("samsara_classiclaz") == 1) { GiveInventory("ChexClassicLaz", 1); }
+        else { TakeInventory("ChexClassicLaz", 0x7FFFFFFF); }
+
+        if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
+        else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
+		
+		if (GetCvar("samsara_bandoomguy") == 1) { ACS_ExecuteAlways(680,0,0); } /*if (CheckInventory("DoomguyClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \cdDoomguy\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banchex") == 1) { ACS_ExecuteAlways(680,0,1); } /*if (CheckInventory("ChexClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \chChex Warrior\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_bancorvus") == 1) { ACS_ExecuteAlways(680,0,2); } /*if (CheckInventory("CorvusClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \cqCorvus\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banbj") == 1) { ACS_ExecuteAlways(680,0,3); } /*if (CheckInventory("WolfenClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banparias") == 1) { ACS_ExecuteAlways(680,0,4); } /*if (CheckInventory("HexenClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \chParias\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banduke") == 1) { ACS_ExecuteAlways(680,0,5); } /*if (CheckInventory("DukeClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banso") == 1) { ACS_ExecuteAlways(680,0,6); } /*if (CheckInventory("MarathonClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play."); }}*/
+		
+		if (GetCvar("samsara_banranger") == 1) { ACS_ExecuteAlways(680,0,7); } /*if (CheckInventory("QuakeClass") == 1)
+		{ KickFromGame(0,"\c[m7]The admin has banned \csRanger\c[m7] from play."); }}*/
+		
+        HandleDoomguyDamage(respawning);
+        HandleDoomguyDefense(respawning);
+        HandleChexDamage(respawning);
+        HandleChexDefense(respawning);
+        HandleCorvusDamage(respawning);
+        HandleCorvusDefense(respawning);
+        HandleBJDamage(respawning);
+        HandleBJDefense(respawning);
+        HandlePariasDamage(respawning);
+        HandlePariasDefense(respawning);
+        HandleDukeDamage(respawning);
+        HandleDukeDefense(respawning);
+        HandleSODamage(respawning);
+        HandleSODefense(respawning);
+        HandleRangerDamage(respawning);
+        HandleRangerDefense(respawning);
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
@@ -300,9 +507,11 @@ script SAMSARA_SPAWN (int respawning)
         }
 
         oarmor = armor;
+        otype = type;
         armor = CheckInventory("Armor");
+        type = SamsaraArmorType();
 
-        if (oarmor > armor && ArmorMode == 3)
+        if (oarmor > armor && otype == 3)
         {
             if (samsaraClassNum() == CLASS_MARATHON)
             {
@@ -345,35 +554,149 @@ script SAMSARA_SPAWN (int respawning)
 
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
-        if (isDead(0)) { endloop = 1; }
+        //if (isDead(0)) { endloop = 1; }
         
         Delay(1);
 
         opcount = pcount;
         pcount  = PlayerCount();
-
-        /*
-        if (isLMS() && (pcount == 1) && (opcount > pcount))
-        {
-            SetHudSize(800, 600, 1);
-            SetFont("BIGFONT");
-            HudMessageBold(s:"Winning stats of ", n:0;
-                    HUDMSG_FADEOUT, 91028, CR_GOLD, 400.4, 350.1, 3.0, 2.0);
-            
-            SetFont("SMALLFONT");
-            HudMessageBold(s:"+ \ca", d:GetActorProperty(0, APROP_Health);
-                    HUDMSG_FADEOUT, 91027, CR_RED, 370.2, 370.1, 3.0, 2.0);
-            HudMessageBold(d:CheckInventory("BasicArmor"), s:" \cqA";
-                    HUDMSG_FADEOUT, 91029, CR_RED, 430.1, 370.1, 3.0, 2.0);
-
-            HudMessage(s:""; HUDMSG_PLAIN, 91027, 0, 0, 0, 0);
-            HudMessage(s:""; HUDMSG_PLAIN, 91028, 0, 0, 0, 0);
-            HudMessage(s:""; HUDMSG_PLAIN, 91029, 0, 0, 0, 0);
-        }
-        */
     }
 
 }
+
+script 680 (int which) CLIENTSIDE
+{
+if (PlayerNumber() != ConsolePlayerNumber()) { terminate; }
+switch (which)
+    {
+    case 0:
+	    if (CheckInventory("DoomguyClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \cdDoomguy\c[m7] from play.");
+		ConsoleCommand("spectate"); } //KickFromGame(0,"\c[m7]The admin has banned \cdDoomguy\c[m7] from play."); }
+		break;
+	
+	case 1:
+		if (CheckInventory("ChexClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \chChex Warrior\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 2:
+		if (CheckInventory("CorvusClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \cqCorvus\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 3:
+		if (CheckInventory("WolfenClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 4:
+		if (CheckInventory("HexenClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \chParias\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 5:
+		if (CheckInventory("DukeClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 6:
+		if (CheckInventory("MarathonClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+		
+	case 7:
+		if (CheckInventory("QuakeClass") == 1)
+		{ Print(s:"\c[m7]The admin has banned \csRanger\c[m7] from play.");
+		ConsoleCommand("spectate"); } 
+		break;
+    }
+}
+
+script 677 ENTER
+{
+    delay(GetCvar("samsara_superturboturkeyfrequency"));
+    if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
+    { GiveInventory("ChickenModeOn",1);
+	
+	    if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
+		{ str ChickenClass = "SuperFriendlyChicken";
+        if (!random(0, 15))
+		{ ChickenClass = "AssaultFriendlyChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveFriendlyChicken"; }}
+	
+		if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
+		{ ChickenClass = "SuperDMChicken";
+        if (!random(0, 15))
+		{ ChickenClass = "AssaultChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveChicken"; }}
+		
+		if (GetCvar("samsara_superturboturkeypuncher3000") == 1)
+		{ ChickenClass = "SuperCoopChicken";
+        if (!random(0, 15))
+		{ ChickenClass = "AssaultChicken";
+        if (!random(0, 2))
+        ChickenClass = "ExplosiveChicken"; }}
+     
+	    do
+		{
+           delay(1);
+           int x = GetActorX(0) + random(-128.0, 128.0);
+           int y = GetActorY(0) + random(-128.0, 128.0);
+           int z = GetActorCeilingZ(0) - 38.0;
+           int angle = GetActorAngle(0) >> 8;
+        }
+	    until (Spawn(ChickenClass, x, y, z, 0, angle));
+		
+		
+		if (GetCvar("samsara_superturboturkeylimit") > 0)
+		{
+		    if(CheckInventory("ChickenKillCount") >= (GetCvar("samsara_superturboturkeylimit")))
+			{ SetFont("BIGFONT");
+			HudMessageBold(n:0,s:" \cjhit the kill limit!";
+		    HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
+			if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
+			{ TakeInventory("ChickenKillCount",999); }
+			Delay(35*5);
+			ConsoleCommand("nextmap");
+			}		
+		}
+		
+	}
+	else
+	{ TakeInventory("ChickenModeOn",999); }
+    restart;
+	//}
+}
+
+/*script 678 (int respawning)
+{
+    int punchdrunkloop;
+    //punchdrunkloop = 0;
+	
+	print(s:"678 is being called");
+    if (!respawning)
+	{
+	    if (!punchdrunkloop)
+		{ delay(15);
+	      print(s:"punchdrunkloop 0 is being called");
+		  punchdrunkloop = 1; }
+		else
+		{ HandlePunchdrunk(respawning);
+	    print(s:"handlepunchdrunk is being called");
+	    HandleInstagib(respawning); }
+	}
+	delay(1);
+	restart;
+}*/
 
 script SAMSARA_SYNTHFIRE (int startTime)
 {
@@ -381,11 +704,14 @@ script SAMSARA_SYNTHFIRE (int startTime)
 
     while (ServerEnterTimes[pln] == startTime)
     {
+	    if (CheckInventory("Health") > 0)
+		{
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
         
         if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
         else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
+		}
 
         Delay(1);
     }
@@ -586,7 +912,6 @@ script SAMSARA_ENTER_CLIENT (void) clientside
 
         Delay(1);
     }
-
     //Log(s:"Client ", n:pln+1, s:"\c- (", d:pln, s:") has left spawn (", d:startTime, s:" vs. ", d:ClientEnterTimes[pln], s:")");
 }
 
