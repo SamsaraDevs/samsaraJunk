@@ -5,9 +5,9 @@ script SAMSARA_OPEN open
     int opdu, pdu;
     int opds, pds;
         
-    if (!GetCVar("samsara_cvarinfo"))
-    {   ConsoleCommand("set samsara_cvarinfo 0");
-    ConsoleCommand("archivecvar samsara_cvarinfo"); }
+    //if (!GetCVar("samsara_cvarinfo"))
+    //{   //ConsoleCommand("set samsara_cvarinfo 0");
+    //ConsoleCommand("archivecvar samsara_cvarinfo"); }
     
     if (SamsaraGlobal[GLOBAL_DONEBITCHING] == 0)
     {
@@ -24,8 +24,9 @@ script SAMSARA_OPEN open
             HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
             HudMessage(s:"\cjSee the console for \cacvar information\c-.";
             HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
-			ConsoleCommand("set samsara_cvarinfo 1");
-            ConsoleCommand("archivecvar samsara_cvarinfo");
+			//ConsoleCommand("set samsara_cvarinfo 1");
+            //ConsoleCommand("archivecvar samsara_cvarinfo");
+			SetCvar("samsara_cvarinfo",1);
 			}
         }
         else
@@ -40,11 +41,11 @@ script SAMSARA_OPEN open
     CheckMapArmors();
     
     //while (1)
-    while (0)
-    {
+    //while (0)
+    //{
         // I'd use defaultCVar but best-ever breaks on it for some reason :/
         
-        if (!GetCVar("samsara_banjetpack"))
+        /*if (!GetCVar("samsara_banjetpack"))
         {   ConsoleCommand("set samsara_banjetpack 0");
         ConsoleCommand("archivecvar samsara_banjetpack"); }
         
@@ -257,7 +258,7 @@ script SAMSARA_OPEN open
         
         if (!GetCVar("samsara_rangerdefense"))
         {   ConsoleCommand("set samsara_rangerdefense 0");
-        ConsoleCommand("archivecvar samsara_rangerdefense"); }
+        ConsoleCommand("archivecvar samsara_rangerdefense"); }*/
 
     while (1)
     {
@@ -666,7 +667,8 @@ script 677 ENTER
 			if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
 			{ TakeInventory("ChickenKillCount",999); }
 			Delay(35*5);
-			ConsoleCommand("nextmap");
+			//ConsoleCommand("nextmap");
+			Exit_Normal(0);
 			}		
 		}
 		
@@ -827,7 +829,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
     //if (GetCVar("samsara_cl_exists") != SAMSARA_CL_VERSION)
     if (0)
     {
-        ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
+        /*ConsoleCommand(StrParam(s:"set samsara_cl_exists ", d:SAMSARA_CL_VERSION));
         ConsoleCommand("archivecvar samsara_cl_exists");
         
         if (!GetCVar("samsara_cl_wolfmove"))
@@ -856,7 +858,7 @@ script SAMSARA_ENTER_CLIENT (void) clientside
         
         if (!GetCVar("samsara_cl_printpickup"))
         {   ConsoleCommand("set samsara_cl_printpickup 0");
-        ConsoleCommand("archivecvar samsara_cl_printpickup"); }
+        ConsoleCommand("archivecvar samsara_cl_printpickup"); }*/
     }
 
     for (i = 0; i < RESCOUNT; i++)
