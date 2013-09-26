@@ -49,6 +49,8 @@ GAMEPLAY:
 - FireExplosive has been implemented as a damagetype for the Phoenix Rod and Hammer of Retribution.
 - Two more gib decorative actors are now available for B.J. to drink up.
 - The Security Officer's KKV-7 SMG and Wave Motion Cannon now have an auto-reload.
+- Chex Warrior's LAZ Device has gone from 'stupidly powerful explosion' to 'pretty damn powerful', reduced from 896/512 damage/radius to 512/384.
+- Chex Warrior's bullets originally all hit ghosts to counteract lack of an SSG. Now he doesn't need that anymore. Poor dude's getting nerfed all around today.
 
 BUGFIXES:
 - Duke's left foot kicks with the Mighty Boot no longer do double damage, and Atomic Boot right foot kicks don't do double damage.

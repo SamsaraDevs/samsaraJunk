@@ -79,7 +79,7 @@ actor "Mini-Zorcher" : Weapon
     }
 }
 
-actor ChexPuff2 : ChexPuff { DamageType "ZorchPistol" } // I never understood why you had to damagetype puffs on hitscan weapons.
+actor ChexPuff2 : ChexPuff { -THRUGHOST DamageType "ZorchPistol" } // I never understood why you had to damagetype puffs on hitscan weapons.
 
 actor ChexBullet2 : FastProjectile
 {

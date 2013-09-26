@@ -8,6 +8,7 @@ actor "Rapid Zorcher" : Weapon
     Weapon.AmmoType "Clip"
     +BLOODLESSIMPACT
     +PUFFONACTORS
+	+THRUGHOST
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     DamageType "Zorch"
