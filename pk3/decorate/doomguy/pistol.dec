@@ -1,5 +1,6 @@
-actor " Pistol " : Pistol
+actor " Pistol " : Weapon// : Pistol
 {
+    Weapon.SelectionOrder 1900
     Decal BulletChip
     Weapon.SlotNumber 1  
     Weapon.SlotPriority 1
@@ -8,8 +9,8 @@ actor " Pistol " : Pistol
     Weapon.AmmoType ""
     +WEAPON.WIMPY_WEAPON
     +INVENTORY.UNDROPPABLE
-    AttackSound "doomguy/pistol"
     DamageType Pistol
+    Inventory.Pickupmessage "i eat you"
     Obituary "%k \cdexecuted\c- %o \cdfor insubordination.\c-"
     States
     {
@@ -28,12 +29,14 @@ actor " Pistol " : Pistol
       Fire:
         DPIS A 4
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
+		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff2")
         goto FireAnim
 
       CoopFire:
-        TNT1 A 0 A_FireCustomMissile("DoomBullet2", 0, 1, 0, 1)
+	    TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_FireCustomMissile("DoomBullet2", 0, 1, 0, 1)
         Goto FireAnim
 
       FireAnim:
@@ -61,12 +64,14 @@ actor " Pistol " : Pistol
       Hold:
         DPIS A 4
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         TNT1 A 0 A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff2")
         Goto FireAnim
         
       CoopHold:
-        TNT1 A 0 A_FireCustomMissile("DoomBullet2", random(-560,560)/100.00, 1, 0, 1)
+	    TNT1 A 0
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_FireCustomMissile("DoomBullet2", random(-560,560)/100.00, 1, 0, 1)
         Goto FireAnim
         
       Flash:
