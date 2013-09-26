@@ -287,10 +287,6 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 29:
         result = GetCVar("instagib");
         break;
-
-      case 30:
-        result = GetCVar("samsara_noghosts");
-        break;
     }
     
     SetResultValue(result);

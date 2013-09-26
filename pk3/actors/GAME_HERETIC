@@ -1033,20 +1033,6 @@ actor MummyGhost2 : MummyGhost replaces MummyGhost
     DropItem "GoldWandAmmo2", 84
     States
     {
-	  Spawn:
-	    TNT1 A 0
-		MUMM A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
-		goto Idle
-		
-	  DeGhost:
-	    TNT1 A 0
-		MUMM A 5 A_ChangeFlag("GHOST",0)
-		goto Idle
-	
-	  Idle:
-	    MUMM AB 10 A_Look
-		loop
-	  
       Raise:
         TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
         MUMM PONMLKJI 4
@@ -1306,16 +1292,6 @@ actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
     DropItem "GoldWandAmmo2", 84
     States
     {
-	  Spawn:
-	    TNT1 A 0
-		MUMM A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
-		goto Idle
-		
-	  DeGhost:
-	    TNT1 A 0
-		MUMM A 5 A_ChangeFlag("GHOST",0)
-		goto Idle
-		
       Raise:
         TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
         MUMM PONMLKJI 4
@@ -1553,20 +1529,6 @@ actor KnightGhost2 : KnightGhost replaces KnightGhost
     DropItem "CrossbowAmmo2", 84
     States
     {
-	  Spawn:
-	    TNT1 A 0
-		KNIG A 5 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "DeGhost")
-		goto Idle
-		
-	  DeGhost:
-	    TNT1 A 0
-		KNIG A 5 A_ChangeFlag("GHOST",0)
-		goto Idle
-		
-	  Idle:
-	    KNIG AB 10 A_Look
-		loop
-		
       Raise:
         TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
         KNIG ONMLKJI 4
@@ -2665,7 +2627,6 @@ actor Sorcerer4 : Sorcerer2 replaces Sorcerer2
         TNT1 A 0 A_Jump(256,"GhostOn","GhostOff")
 
       GhostOn:
-	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,30,0,0) == 1, "GhostOff")
         TNT1 A 0 A_SetTranslucent(0.5,0)
         TNT1 A 0 A_ChangeFlag("GHOST",1)
         goto TeleportIn
