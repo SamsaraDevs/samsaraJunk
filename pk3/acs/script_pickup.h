@@ -7,7 +7,7 @@ int msgColors[22] =
 script SAMSARA_CLIENT_CLASS (int slot) clientside
 {
     int toClass = SamsaraClientClass-1;
-    int displaymode = GetCVar("samsara_cl_pickupmode");
+    int displaymode = GetUserCVar(0,"samsara_cl_pickupmode");
     int oldslot = slot;
     int success = 0;
     int punchdrunk =  IsPunchdrunk & 1;
