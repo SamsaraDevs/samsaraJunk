@@ -232,7 +232,7 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
         for (i = 0; i < UNIQUECOUNT; i++)
         {
             j = ClassUniques[cnum][i];
-            if (j == "") { continue; }
+            if (!StrLen(j)) { continue; }//(j == "") { continue; }
 
             TempUniques[tmpcount++] = i;
         }

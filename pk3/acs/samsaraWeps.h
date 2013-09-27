@@ -31,14 +31,14 @@
 
 int ClassUniques[CLASSCOUNT][CHOICECOUNT_U] = 
 {
-    {"DoomguyBerserker",    "",                 "", ""},
-    {"ChexSoulsphere",      "",                 "", ""},
-    {"ArtiEgg2",            "",                 "", ""},
-    {"WolfExtraLife",       "",                 "", ""},
-    {"PortMysticAmbit",     "",                 "", ""},
-    {"DukePortJetpack",     "DukeJetpackFuel",  "", ""},
-    {"Alien Weapon",        "UnknownAmmo",      " Alien Weapon ", "UnknownAmmo2"},
-    {"Laser Cannon",        "Cell",             "", ""},
+    {"DoomguyBerserker",    "",                "DoomguyBerserker",  ""},
+    {"ChexSoulsphere",      "",                "ChexSoulsphere",    ""},
+    {"ArtiEgg2",            "",                "ArtiEgg2",          ""},
+    {"WolfExtraLife",       "",                "WolfExtraLife",     ""},
+    {"PortMysticAmbit",     "",                "PortMysticAmbit",   ""},
+    {"DukePortJetpack",     "DukeJetpackFuel", "DukePortJetpack",   "DukeJetpackFuel"},
+    {"Alien Weapon",        "UnknownAmmo",     " Alien Weapon ",    "UnknownAmmo2"},
+    {"Laser Cannon",        "Cell",            "Laser Cannon",      "Cell"},
 };
 
 int UniqueMaxes[CLASSCOUNT][CHOICECOUNT_U] = 
