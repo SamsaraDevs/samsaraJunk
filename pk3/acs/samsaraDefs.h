@@ -396,6 +396,131 @@ int PunchDrunkItems[CLASSCOUNT][2] =
     {"RangerPunchDrunk",    "RangerPunchUnique"},
 };
 
+int BanCVars[CLASSCOUNT] = 
+{
+    "samsara_bandoomguy",
+    "samsara_banchex",
+    "samsara_bancorvus",
+    "samsara_banbj",
+    "samsara_banparias",
+    "samsara_banduke",
+    "samsara_banso",
+    "samsara_banranger",
+};
+
+int BanStrings[CLASSCOUNT] =
+{
+	"\c[m7]The admin has banned \cdDoomguy\c[m7] from play.",
+	"\c[m7]The admin has banned \chChex Warrior\c[m7] from play.",
+	"\c[m7]The admin has banned \cqCorvus\c[m7] from play.",
+	"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play.",
+	"\c[m7]The admin has banned \chParias\c[m7] from play.",
+	"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play.",
+	"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play.",
+	"\c[m7]The admin has banned \csRanger\c[m7] from play.",
+};
+
+
+#define DAMAGEMODES 31
+#define DAMAGEZEROINDEX 10
+
+#define DEFENSEMODES 31
+#define DEFENSEZEROINDEX 10
+
+int DamageCVars[CLASSCOUNT] = 
+{
+    "samsara_doomguydamage",
+    "samsara_chexdamage",
+    "samsara_corvusdamage",
+    "samsara_bjdamage",
+    "samsara_pariasdamage",
+    "samsara_dukedamage",
+    "samsara_sodamage",
+    "samsara_rangerdamage",
+};
+
+int DefenseCVars[CLASSCOUNT] = 
+{
+    "samsara_doomguydefense",
+    "samsara_chexdefense",
+    "samsara_corvusdefense",
+    "samsara_bjdefense",
+    "samsara_pariasdefense",
+    "samsara_dukedefense",
+    "samsara_sodefense",
+    "samsara_rangerdefense",
+};
+
+int CVarDamageItems[DAMAGEMODES] = 
+{
+    "PowerDamageBuff-10",
+    "PowerDamageBuff-9",
+    "PowerDamageBuff-8",
+    "PowerDamageBuff-7",
+    "PowerDamageBuff-6",
+    "PowerDamageBuff-5",
+    "PowerDamageBuff-4",
+    "PowerDamageBuff-3",
+    "PowerDamageBuff-2",
+    "PowerDamageBuff-1",
+    "", // middle point
+    "PowerDamageBuff1",
+    "PowerDamageBuff2",
+    "PowerDamageBuff3",
+    "PowerDamageBuff4",
+    "PowerDamageBuff5",
+    "PowerDamageBuff6",
+    "PowerDamageBuff7",
+    "PowerDamageBuff8",
+    "PowerDamageBuff9",
+    "PowerDamageBuff10",
+    "PowerDamageBuff11",
+    "PowerDamageBuff12",
+    "PowerDamageBuff13",
+    "PowerDamageBuff14",
+    "PowerDamageBuff15",
+    "PowerDamageBuff16",
+    "PowerDamageBuff17",
+    "PowerDamageBuff18",
+    "PowerDamageBuff19",
+    "PowerDamageBuff20",
+};
+
+int CVarDefenseItems[DEFENSEMODES] =
+{
+    "PowerDefenseBuff-10",
+    "PowerDefenseBuff-9",
+    "PowerDefenseBuff-8",
+    "PowerDefenseBuff-7",
+    "PowerDefenseBuff-6",
+    "PowerDefenseBuff-5",
+    "PowerDefenseBuff-4",
+    "PowerDefenseBuff-3",
+    "PowerDefenseBuff-2",
+    "PowerDefenseBuff-1",
+    "", // middle point
+    "PowerDefenseBuff1",
+    "PowerDefenseBuff2",
+    "PowerDefenseBuff3",
+    "PowerDefenseBuff4",
+    "PowerDefenseBuff5",
+    "PowerDefenseBuff6",
+    "PowerDefenseBuff7",
+    "PowerDefenseBuff8",
+    "PowerDefenseBuff9",
+    "PowerDefenseBuff10",
+    "PowerDefenseBuff11",
+    "PowerDefenseBuff12",
+    "PowerDefenseBuff13",
+    "PowerDefenseBuff14",
+    "PowerDefenseBuff15",
+    "PowerDefenseBuff16",
+    "PowerDefenseBuff17",
+    "PowerDefenseBuff18",
+    "PowerDefenseBuff19",
+    "PowerDefenseBuff20",
+};
+
 
 int ChangelogString =
 "FROM 0.29b TO 0.3\n\

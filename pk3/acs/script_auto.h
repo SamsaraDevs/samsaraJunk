@@ -190,6 +190,10 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_banranger 0");
         ConsoleCommand("archivecvar samsara_banranger"); }
         
+        if (!GetCVar("samsara_banburl"))
+        {   ConsoleCommand("set samsara_banburl 0");
+        ConsoleCommand("archivecvar samsara_banburl"); }
+        
         if (!GetCVar("samsara_lmsrules"))
         {   ConsoleCommand("set samsara_lmsrules 0");
         ConsoleCommand("archivecvar samsara_lmsrules"); }
@@ -257,6 +261,14 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_rangerdefense"))
         {   ConsoleCommand("set samsara_rangerdefense 0");
         ConsoleCommand("archivecvar samsara_rangerdefense"); }
+
+        if (!GetCVar("samsara_burldamage"))
+        {   ConsoleCommand("set samsara_burldamage 0");
+        ConsoleCommand("archivecvar samsara_burldamage"); }
+        
+        if (!GetCVar("samsara_burldefense"))
+        {   ConsoleCommand("set samsara_burldefense 0");
+        ConsoleCommand("archivecvar samsara_burldefense"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -381,46 +393,8 @@ script SAMSARA_SPAWN (int respawning)
         if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
 		
-		if (GetCvar("samsara_bandoomguy") == 1) { ACS_ExecuteAlways(680,0,0); } /*if (CheckInventory("DoomguyClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \cdDoomguy\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banchex") == 1) { ACS_ExecuteAlways(680,0,1); } /*if (CheckInventory("ChexClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \chChex Warrior\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_bancorvus") == 1) { ACS_ExecuteAlways(680,0,2); } /*if (CheckInventory("CorvusClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \cqCorvus\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banbj") == 1) { ACS_ExecuteAlways(680,0,3); } /*if (CheckInventory("WolfenClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banparias") == 1) { ACS_ExecuteAlways(680,0,4); } /*if (CheckInventory("HexenClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \chParias\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banduke") == 1) { ACS_ExecuteAlways(680,0,5); } /*if (CheckInventory("DukeClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banso") == 1) { ACS_ExecuteAlways(680,0,6); } /*if (CheckInventory("MarathonClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play."); }}*/
-		
-		if (GetCvar("samsara_banranger") == 1) { ACS_ExecuteAlways(680,0,7); } /*if (CheckInventory("QuakeClass") == 1)
-		{ KickFromGame(0,"\c[m7]The admin has banned \csRanger\c[m7] from play."); }}*/
-		
-        HandleDoomguyDamage(respawning);
-        HandleDoomguyDefense(respawning);
-        HandleChexDamage(respawning);
-        HandleChexDefense(respawning);
-        HandleCorvusDamage(respawning);
-        HandleCorvusDefense(respawning);
-        HandleBJDamage(respawning);
-        HandleBJDefense(respawning);
-        HandlePariasDamage(respawning);
-        HandlePariasDefense(respawning);
-        HandleDukeDamage(respawning);
-        HandleDukeDefense(respawning);
-        HandleSODamage(respawning);
-        HandleSODefense(respawning);
-        HandleRangerDamage(respawning);
-        HandleRangerDefense(respawning);
+		HandleBans();
+        HandleBuffCVars(respawning);
         
         TakeInventory("WeaponGetYaaaay",  1);
         TakeInventory("WeaponGetYaaaay2", 1);
@@ -559,61 +533,6 @@ script SAMSARA_SPAWN (int respawning)
         pcount  = PlayerCount();
     }
 
-}
-
-script 680 (int which) CLIENTSIDE
-{
-if (PlayerNumber() != ConsolePlayerNumber()) { terminate; }
-switch (which)
-    {
-    case 0:
-	    if (CheckInventory("DoomguyClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \cdDoomguy\c[m7] from play.");
-		ConsoleCommand("spectate"); } //KickFromGame(0,"\c[m7]The admin has banned \cdDoomguy\c[m7] from play."); }
-		break;
-	
-	case 1:
-		if (CheckInventory("ChexClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \chChex Warrior\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 2:
-		if (CheckInventory("CorvusClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \cqCorvus\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 3:
-		if (CheckInventory("WolfenClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \cjB.J. Blazkowicz\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 4:
-		if (CheckInventory("HexenClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \chParias\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 5:
-		if (CheckInventory("DukeClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \cfDuke Nukem\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 6:
-		if (CheckInventory("MarathonClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \cnSecurity Officer\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-		
-	case 7:
-		if (CheckInventory("QuakeClass") == 1)
-		{ Print(s:"\c[m7]The admin has banned \csRanger\c[m7] from play.");
-		ConsoleCommand("spectate"); } 
-		break;
-    }
 }
 
 script 677 ENTER
