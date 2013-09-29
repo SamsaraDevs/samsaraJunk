@@ -16,17 +16,17 @@ script SAMSARA_OPEN open
         }
         if (isSinglePlayer())
         {
-		    if(GetCvar("samsara_cvarinfo") == 0)
-			{
+            if(GetCvar("samsara_cvarinfo") == 0)
+            {
             HudMessage(s:HELPSTR;
             HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
             HudMessage(s:HELPSTR_CL;
             HUDMSG_PLAIN|HUDMSG_LOG, 92712, CR_WHITE, 1.5, 0.2, 2.5);
             HudMessage(s:"\cjSee the console for \cacvar information\c-.";
             HUDMSG_FADEOUT, 92712, CR_WHITE, 1.5, 0.2, 2.0, 0.5);
-			ConsoleCommand("set samsara_cvarinfo 1");
+            ConsoleCommand("set samsara_cvarinfo 1");
             ConsoleCommand("archivecvar samsara_cvarinfo");
-			}
+            }
         }
         else
         {
@@ -318,10 +318,10 @@ script SAMSARA_SPAWN (int respawning)
     
     if (isLMS()) { ApplyLMS(); }
     if (GetCvar("samsara_lmsrules") == 1)
-	{
-	    ApplyLMS();
-	    GiveInventory("CanDualShotties",1);
-	}
+    {
+        ApplyLMS();
+        GiveInventory("CanDualShotties",1);
+    }
     if (isSinglePlayer()) { SamsaraWepType = samsaraClassNum()+1; }
 
     if (!respawning)
@@ -330,18 +330,18 @@ script SAMSARA_SPAWN (int respawning)
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
 
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
+        if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
     }
-	else
-	{ if (GameType() != GAME_NET_COOPERATIVE)
-	{
+    else
+    { if (GameType() != GAME_NET_COOPERATIVE)
+    {
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-		if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
-	}}
+        if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
+    }}
 
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
-	HandlePunchdrunk(respawning);
+    HandlePunchdrunk(respawning);
     HandleInstagib(respawning);
 
     ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,0,0);
@@ -392,8 +392,8 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
-		
-		HandleBans();
+        
+        HandleBans();
         HandleBuffCVars(respawning);
         
         TakeInventory("WeaponGetYaaaay",  1);
@@ -540,78 +540,78 @@ script 677 ENTER
     delay(GetCvar("samsara_superturboturkeyfrequency"));
     if (GetCvar("samsara_superturboturkeypuncher3000") > 0)
     { GiveInventory("ChickenModeOn",1);
-	
-	    if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
-		{ str ChickenClass = "SuperFriendlyChicken";
+    
+        if (GetCvar("samsara_superturboturkeypuncher3000") == 3)
+        { str ChickenClass = "SuperFriendlyChicken";
         if (!random(0, 15))
-		{ ChickenClass = "AssaultFriendlyChicken";
+        { ChickenClass = "AssaultFriendlyChicken";
         if (!random(0, 2))
         ChickenClass = "ExplosiveFriendlyChicken"; }}
-	
-		if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
-		{ ChickenClass = "SuperDMChicken";
+    
+        if (GetCvar("samsara_superturboturkeypuncher3000") == 2)
+        { ChickenClass = "SuperDMChicken";
         if (!random(0, 15))
-		{ ChickenClass = "AssaultChicken";
+        { ChickenClass = "AssaultChicken";
         if (!random(0, 2))
         ChickenClass = "ExplosiveChicken"; }}
-		
-		if (GetCvar("samsara_superturboturkeypuncher3000") == 1)
-		{ ChickenClass = "SuperCoopChicken";
+        
+        if (GetCvar("samsara_superturboturkeypuncher3000") == 1)
+        { ChickenClass = "SuperCoopChicken";
         if (!random(0, 15))
-		{ ChickenClass = "AssaultChicken";
+        { ChickenClass = "AssaultChicken";
         if (!random(0, 2))
         ChickenClass = "ExplosiveChicken"; }}
      
-	    do
-		{
+        do
+        {
            delay(1);
            int x = GetActorX(0) + random(-128.0, 128.0);
            int y = GetActorY(0) + random(-128.0, 128.0);
            int z = GetActorCeilingZ(0) - 38.0;
            int angle = GetActorAngle(0) >> 8;
         }
-	    until (Spawn(ChickenClass, x, y, z, 0, angle));
-		
-		
-		if (GetCvar("samsara_superturboturkeylimit") > 0)
-		{
-		    if(CheckInventory("ChickenKillCount") >= (GetCvar("samsara_superturboturkeylimit")))
-			{ SetFont("BIGFONT");
-			HudMessageBold(n:0,s:" \cjhit the kill limit!";
-		    HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
-			if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
-			{ TakeInventory("ChickenKillCount",999); }
-			Delay(35*5);
-			ConsoleCommand("nextmap");
-			}		
-		}
-		
-	}
-	else
-	{ TakeInventory("ChickenModeOn",999); }
+        until (Spawn(ChickenClass, x, y, z, 0, angle));
+        
+        
+        if (GetCvar("samsara_superturboturkeylimit") > 0)
+        {
+            if(CheckInventory("ChickenKillCount") >= (GetCvar("samsara_superturboturkeylimit")))
+            { SetFont("BIGFONT");
+            HudMessageBold(n:0,s:" \cjhit the kill limit!";
+            HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
+            if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
+            { TakeInventory("ChickenKillCount",999); }
+            Delay(35*5);
+            ConsoleCommand("nextmap");
+            }       
+        }
+        
+    }
+    else
+    { TakeInventory("ChickenModeOn",999); }
     restart;
-	//}
+    //}
 }
 
 /*script 678 (int respawning)
 {
     int punchdrunkloop;
     //punchdrunkloop = 0;
-	
-	print(s:"678 is being called");
+    
+    print(s:"678 is being called");
     if (!respawning)
-	{
-	    if (!punchdrunkloop)
-		{ delay(15);
-	      print(s:"punchdrunkloop 0 is being called");
-		  punchdrunkloop = 1; }
-		else
-		{ HandlePunchdrunk(respawning);
-	    print(s:"handlepunchdrunk is being called");
-	    HandleInstagib(respawning); }
-	}
-	delay(1);
-	restart;
+    {
+        if (!punchdrunkloop)
+        { delay(15);
+          print(s:"punchdrunkloop 0 is being called");
+          punchdrunkloop = 1; }
+        else
+        { HandlePunchdrunk(respawning);
+        print(s:"handlepunchdrunk is being called");
+        HandleInstagib(respawning); }
+    }
+    delay(1);
+    restart;
 }*/
 
 script SAMSARA_SYNTHFIRE (int startTime)
@@ -620,14 +620,14 @@ script SAMSARA_SYNTHFIRE (int startTime)
 
     while (ServerEnterTimes[pln] == startTime)
     {
-	    if (CheckInventory("Health") > 0)
-		{
+        if (CheckInventory("Health") > 0)
+        {
         if (keyDown(BT_ATTACK)) { GiveInventory("SynthFireLeft", 1); }
         else { TakeInventory("SynthFireLeft", 0x7FFFFFFF); }
         
         if (keyDown(BT_ALTATTACK)) { GiveInventory("SynthFireRight", 1); }
         else { TakeInventory("SynthFireRight", 0x7FFFFFFF); }
-		}
+        }
 
         Delay(1);
     }

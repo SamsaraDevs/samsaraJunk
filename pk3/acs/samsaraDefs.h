@@ -421,7 +421,7 @@ int BanStrings[CLASSCOUNT] =
 };
 
 
-#define DAMAGEMODES 31
+#define DAMAGEMODES 41
 #define DAMAGEZEROINDEX 10
 
 #define DEFENSEMODES 31
@@ -484,6 +484,16 @@ int CVarDamageItems[DAMAGEMODES] =
     "PowerDamageBuff18",
     "PowerDamageBuff19",
     "PowerDamageBuff20",
+    "PowerDamageBuff21",
+    "PowerDamageBuff22",
+    "PowerDamageBuff23",
+    "PowerDamageBuff24",
+    "PowerDamageBuff25",
+    "PowerDamageBuff26",
+    "PowerDamageBuff27",
+    "PowerDamageBuff28",
+    "PowerDamageBuff29",
+    "PowerDamageBuff30",
 };
 
 int CVarDefenseItems[DEFENSEMODES] =
