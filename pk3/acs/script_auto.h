@@ -190,10 +190,6 @@ script SAMSARA_OPEN open
         {   ConsoleCommand("set samsara_banranger 0");
         ConsoleCommand("archivecvar samsara_banranger"); }
         
-        if (!GetCVar("samsara_banburl"))
-        {   ConsoleCommand("set samsara_banburl 0");
-        ConsoleCommand("archivecvar samsara_banburl"); }
-        
         if (!GetCVar("samsara_lmsrules"))
         {   ConsoleCommand("set samsara_lmsrules 0");
         ConsoleCommand("archivecvar samsara_lmsrules"); }
@@ -261,14 +257,6 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_rangerdefense"))
         {   ConsoleCommand("set samsara_rangerdefense 0");
         ConsoleCommand("archivecvar samsara_rangerdefense"); }
-
-        if (!GetCVar("samsara_burldamage"))
-        {   ConsoleCommand("set samsara_burldamage 0");
-        ConsoleCommand("archivecvar samsara_burldamage"); }
-        
-        if (!GetCVar("samsara_burldefense"))
-        {   ConsoleCommand("set samsara_burldefense 0");
-        ConsoleCommand("archivecvar samsara_burldefense"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
