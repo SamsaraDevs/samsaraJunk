@@ -293,7 +293,7 @@ actor EnforcerShot
     +BLOODLESSIMPACT
     Scale 0.35
     DeathSound "enforcer/hit"
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"
     Projectile
     States
     {
@@ -309,13 +309,13 @@ actor EnforcerShot
 
 actor AlienWeaponBullet : FastProjectile
 {
-    Damage (random(9, 15)) //Unknown what the damage values were before
+    Damage (random(10, 15)) // Formerly 10-18
     Radius 1
     Height 1
     Speed 80
     Projectile
     DamageType MarathonPlasma
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"
+    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"
     -BLOODSPLATTER
     +NOBLOOD
     +NOTIMEFREEZE
