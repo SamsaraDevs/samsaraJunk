@@ -98,7 +98,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 
             GiveQuad(arg1);
 
-            if (isCoop())
+            if (isCoop() || isSinglePlayer())
             {
                 GiveInventory("QuadDamageItem", 1);
             }
