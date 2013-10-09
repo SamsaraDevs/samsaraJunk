@@ -1,3 +1,7 @@
+FROM 0.3 TO 0.31
+========================
+- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
+
 FROM 0.29b TO 0.3
 ========================
 GAMEPLAY:

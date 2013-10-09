@@ -2,7 +2,7 @@ actor "Timon's Axe" : FWeapAxe
 {
     Weapon.SelectionOrder 1500
     Weapon.SlotNumber 3
-    Weapon.AmmoUse1 3
+    Weapon.AmmoUse1 0//3
     Weapon.AmmoGive1 25
     Weapon.KickBack 150
     Weapon.YAdjust -12
@@ -133,7 +133,23 @@ actor AxePuff2 : AxePuff replaces AxePuff
 actor AxePuffGlow2 : AxePuffGlow replaces AxePuffGlow
 {
     DamageType "TimonsAxe"
+    +PUFFGETSOWNER
+    States
+    {
+    Spawn:
+         TNT1 A 0
+         Stop
+    Melee:
+         TNT1 A 1
+         TNT1 A 1 A_TakeFromTarget("Clip",3)
+         FAXE RSTUVWX 4 Bright
+         goto Spawn
+    Crash:
+         FHFX STUVW 4
+         stop
+    }
 }
+
 
 actor BlankPuff4 : BlankPuff
 {
