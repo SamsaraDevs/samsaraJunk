@@ -1,7 +1,8 @@
 FROM 0.3 TO 0.31
 ========================
 - Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
-- Okay seriously now the Quad Damage will work in singleplayer ZDoom
+- Okay seriously now the Quad Damage will work in singleplayer ZDoom.
+- Parias' Wraithverge no longer takes 160 mana in DM.
 
 FROM 0.29b TO 0.3
 ========================
