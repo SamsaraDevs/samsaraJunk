@@ -471,12 +471,12 @@ actor YellowArmorPickup //28636
 
       Armor3:
       Armor3_WithYellow:
-        TNT1 A 0 A_SpawnItemEx("QYellowArmorNoDrop")
+        TNT1 A 0 A_SpawnItemEx("QRedArmorNoDrop")
         stop
 
       Armor3_Drop:
       Armor3_YellowDrop:
-        TNT1 A 0 A_SpawnItemEx("QuakeYellowArmor")
+        TNT1 A 0 A_SpawnItemEx("QuakeRedArmor")
         stop
 
       Armor4:
@@ -541,29 +541,29 @@ actor BlueArmorPickup replaces BlueArmor
         stop
 
       Armor3:
-      Armor3_WithYellow:
         TNT1 A 0 A_SpawnItemEx("QRedArmorNoDrop")
         stop
 
+      Armor3_WithYellow:
+        TNT1 A 0 A_SpawnItemEx("SilverArmorNoDrop")
+        stop
+
       Armor3_Drop:
-      Armor3_RedDrop:
         TNT1 A 0 A_SpawnItemEx("QuakeRedArmor")
         stop
 
+      Armor3_YellowDrop:
+        TNT1 A 0 A_SpawnItemEx("SamsaraSilverArmor")
+        stop
+
       Armor4:
+      Armor4_WithYellow:
         TNT1 A 0 A_SpawnItemEx("MBlueArmorNoDrop")
         stop
 
-      Armor4_WithYellow:
-        TNT1 A 0 A_SpawnItemEx("MRedArmorNoDrop")
-        stop
-
       Armor4_Drop:
-        TNT1 A 0 A_SpawnItemEx("MarathonBlueArmor")
-        stop
-      
       Armor4_YellowDrop:
-        TNT1 A 0 A_SpawnItemEx("MarathonRedArmor")
+        TNT1 A 0 A_SpawnItemEx("MarathonBlueArmor")
         stop
 
       Armor5:

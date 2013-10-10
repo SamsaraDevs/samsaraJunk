@@ -4,3 +4,4 @@
 *.bkp
 nocommit/*
 *.err
+compare/*
