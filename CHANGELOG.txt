@@ -3,6 +3,10 @@ FROM 0.3 TO 0.31
 - Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
 - Okay seriously now the Quad Damage will work in singleplayer ZDoom.
 - Parias' Wraithverge no longer takes 160 mana in DM.
+- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.
+- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.
+- The Marathon 1 Alien Weapon has had its damage increased by a whole 1 to be more accurate to Marathon.
+- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.
 
 FROM 0.29b TO 0.3
 ========================
