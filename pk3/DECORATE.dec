@@ -3,6 +3,7 @@ const int ARMOR_YELLOW          = 1;
 const int ARMOR_BLUE            = 2;
 const int ARMOR_BLUE_WITHYELLOW = 3;
 const int ARMOR_RED             = 4;
+const int ARMOR_MEGASPHERE      = 5;
 
 const int SAMSARA_DECORATE = 215;
 const int SAMSARA_CLIENT_DECORATE = 212;

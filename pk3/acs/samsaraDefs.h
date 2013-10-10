@@ -311,30 +311,34 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie3", "InvPeopleZorch3"},
 };
 
-#define ARMORCOUNT  5
+#define ARMORCOUNT  6
 
 #define ARMOR_GREEN             0
 #define ARMOR_YELLOW            1
 #define ARMOR_BLUE              2
 #define ARMOR_BLUE_WITHYELLOW   3
 #define ARMOR_RED               4
+#define ARMOR_MEGASPHERE        5
 
 int ArmorPickups[ARMORCOUNT] = 
 {
     "GreenArmorPickup",
     "YellowArmorPickup",
     "BlueArmorPickup",
+    "BlueArmorPickup",
     "RedArmor",
+    "MegaPack",
 };
 
 int ArmorItems[ARMORMODES][ARMORCOUNT][3] = 
 {
     {
         {"ArmorPack1",          100, "GreenArmorNoDrop"},
-        {"SamsaraYellowArmor",  150, "GreenArmorNoDrop"},
-        {"ArmorPack2",          200, "GreenArmorNoDrop"},
-        {"ArmorPack2",          200, "GreenArmorNoDrop"},
-        {"ArmorPack3",          250, "GreenArmorNoDrop"},
+        {"SamsaraYellowArmor",  150, "YellowArmorNoDrop"},
+        {"ArmorPack2",          200, "BlueArmorNoDrop"},
+        {"ArmorPack2",          200, "BlueArmorNoDrop"},
+        {"ArmorPack3",          250, "RedArmorNoDrop"},
+        {"ArmorPack2",          200, "BlueArmorNoDrop"},
     },
     {
         {"QuakeGreenArmor",     100, "QGreenArmorNoDrop"},
@@ -342,6 +346,7 @@ int ArmorItems[ARMORMODES][ARMORCOUNT][3] =
         {"QuakeYellowArmor",    150, "QYellowArmorNoDrop"},
         {"QuakeRedArmor",       200, "QRedArmorNoDrop"},
         {"SamsaraSilverArmor",  250, "SilverArmorNoDrop"},
+        {"QuakeRedArmor",       200, "QRedArmorNoDrop"},
     },
     {
         {"QuakeYellowArmor",    150, "QYellowArmorNoDrop"},
@@ -349,15 +354,18 @@ int ArmorItems[ARMORMODES][ARMORCOUNT][3] =
         {"QuakeRedArmor",       200, "QRedArmorNoDrop"},
         {"QuakeRedArmor",       200, "QRedArmorNoDrop"},
         {"SamsaraSilverArmor",  250, "SilverArmorNoDrop"},
+        {"QuakeRedArmor",       200, "QRedArmorNoDrop"},
     },
     {
         {"MarathonGreenArmor",  100, "MGreenArmorNoDrop"},
         {"MarathonYellowArmor", 150, "MYellowArmorNoDrop"},
         {"MarathonBlueArmor",   200, "MBlueArmorNoDrop"},
+        {"MarathonBlueArmor",   200, "MBlueArmorNoDrop"},
         {"MarathonRedArmor",    300, "MRedArmorNoDrop"},
         {"MarathonRedArmor",    300, "MRedArmorNoDrop"},
     },
     {
+        {"NoArmor",             0, "NoArmor"},
         {"NoArmor",             0, "NoArmor"},
         {"NoArmor",             0, "NoArmor"},
         {"NoArmor",             0, "NoArmor"},
