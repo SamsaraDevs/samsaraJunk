@@ -71,6 +71,7 @@ actor DukePlayer : PlayerPawn
     DamageFactor "NotQuadded", 1.1
     DamageFactor "SpectralNoQuad", 1.1
 	DamageFactor "FireExplosive", 1.1
+	DamageFactor "QuakeFire", 1.1
 	
 	DamageFactor "EnemyInfightDamage", 0.0
     
