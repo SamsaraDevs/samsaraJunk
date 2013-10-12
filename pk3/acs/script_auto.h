@@ -316,16 +316,13 @@ script SAMSARA_SPAWN (int respawning)
     {
         ClientTipboxes[pln] = 0;
         ACS_ExecuteAlways(SAMSARA_SCHEDULED, 0, respawning,1,0);
-
-        if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
-        if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
     }
-    else
-    { if (GameType() != GAME_NET_COOPERATIVE)
+
+    if (!respawning || !isCoop() || !isSinglePlayer())
     {
         if (GetCVar("sv_shotgunstart") > 0) { GiveClassWeapon(samsaraClassNum(), 3, 3);}
         if (GetCvar("samsara_backpackstart") == 1) { GiveInventory("Backpack",1); }
-    }}
+    }
 
     HandleChainsawSpawn(respawning);
     HandleUniqueSpawn(respawning);
@@ -384,10 +381,10 @@ script SAMSARA_SPAWN (int respawning)
         HandleBans();
         HandleBuffCVars(respawning);
         
-        if (CheckInventory("WeaponGetYaaaay")  { TakeInventory("WeaponGetYaaaay",  1); }
-        if (CheckInventory("WeaponGetYaaaay2") { TakeInventory("WeaponGetYaaaay2", 1); }
-        if (CheckInventory("Mace"))            { TakeInventory("Mace", 1); }
-        if (CheckInventory("MacePowered"))     { TakeInventory("MacePowered", 1); }
+        if (CheckInventory("WeaponGetYaaaay"))  { TakeInventory("WeaponGetYaaaay",  1); }
+        if (CheckInventory("WeaponGetYaaaay2")) { TakeInventory("WeaponGetYaaaay2", 1); }
+        if (CheckInventory("Mace"))             { TakeInventory("Mace", 1); }
+        if (CheckInventory("MacePowered"))      { TakeInventory("MacePowered", 1); }
         ConvertClassWeapons(-1);
 
         if (CheckInventory("SpectralFiring"))
