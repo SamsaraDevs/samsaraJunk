@@ -534,6 +534,8 @@ actor MarathonPlayer : PlayerPawn
 actor MarathonClass: Boolean {}
 actor LeftReload: Boolean {}
 actor RightReload: Boolean {}
+actor LevelSwitch_DualWielding: Boolean {}
+actor LevelSwitch_DualRaising: Boolean {}
 
 actor MarathonPuff : BulletPuff
 {
