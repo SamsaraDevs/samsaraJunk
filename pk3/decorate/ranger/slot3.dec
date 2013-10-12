@@ -35,9 +35,13 @@ actor "Grenade Launcher": InstantSwitchWeapon
         QRKL A 0 A_TakeInventory("UsingDoEAmmo")
         goto Super::Deselect
         
+      // Jump line's repeated twice because on the first tic, all inventory
+      // jump checks break
+
       Ready:
         TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"MultiReady")
         QGRL A 1 A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("UsingMultiNades",1,"MultiReady")
         TNT1 A 0 A_TakeInventory("UsingMultiNades",1)
         TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
         Loop

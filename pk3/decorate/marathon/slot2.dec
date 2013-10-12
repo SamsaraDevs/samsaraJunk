@@ -20,14 +20,14 @@ actor "WSTE-M5 Combat Shotgun": Weapon
     Weapon.SlotNumber 2
     Decal BulletChip
     Inventory.PickupMessage "You picked up a WSTE-M5 Combat Shotgun!"
-    Weapon.AmmoType		"Shell"
-    Weapon.AmmoGive		8
-    Weapon.AmmoUse		2
+    Weapon.AmmoType     "Shell"
+    Weapon.AmmoGive     8
+    Weapon.AmmoUse      2
     Scale 0.35
     +NOALERT
     +INVENTORY.UNDROPPABLE
-    Radius				12
-    Height				12
+    Radius              12
+    Height              12
     States
     {
       Spawn:
@@ -35,6 +35,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         STOP
 
       Ready:
+        MSHT A 0 A_TakeInventory("LevelSwitch_DualRaising")
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Ready2")
         MSHT A 1 A_WeaponReady
         LOOP
@@ -43,12 +44,20 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Deselect2")
         TNT1 A 0 A_Lower
         MSHT A 1 A_Lower
+        TNT1 B 0 A_TakeInventory("LevelSwitch_DualWielding")
         LOOP
 
+      DualSelect:
+        MSHT A 0 A_TakeInventory("LevelSwitch_DualWielding")
+        MSHT A 0 A_GiveInventory("LevelSwitch_DualRaising", 1)
+        MSHT A 0 A_GiveInventory("SynthFireActive")
+        MSHT A 0 A_GunFlash
+        goto Select
+
       Select:
-	    TNT1 A 0 A_TakeInventory("WastemUnloaded")
-	    TNT1 A 0 A_TakeInventory("RWastemUnloaded")
-	    TNT1 A 0 A_TakeInventory("LWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("WastemUnloaded")
+        TNT1 A 0 A_TakeInventory("RWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("LWastemUnloaded")
         TNT1 A 0 A_TakeInventory("UsingSMG",1)
         TNT1 A 0 A_TakeInventory("UsingPistols",1)
         TNT1 A 0 A_TakeInventory("UsingFists",1)
@@ -66,7 +75,8 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_GiveInventory("UsingShotguns",1)
         TNT1 A 0 A_Raise
         MSHT A 1 A_Raise
-        LOOP
+        MSHT A 0 A_JumpIfInventory("LevelSwitch_DualWielding", 1, "DualSelect")
+        loop
 
       Fire:
         TNT1 A 0 A_JumpIf(waterlevel == 3, "NothingFire")
@@ -78,7 +88,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),0,0,0,0,random(-4,4))
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
-		TNT1 A 0 A_GiveInventory("WastemUnloaded")
+        TNT1 A 0 A_GiveInventory("WastemUnloaded")
         MSHT A 1 A_AlertMonsters
         MSHT A 1 A_Light2
         MSHT B 4 Bright A_Light1 
@@ -87,7 +97,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         MSHT F 4 A_PlaySound("marathon/shotgun/reload")
         MSHT G 4
         MSHT H 4
-		TNT1 A 0 A_TakeInventory("WastemUnloaded")
+        TNT1 A 0 A_TakeInventory("WastemUnloaded")
         MSHT I 5
         MSHT J 5
         MSHT A 3
@@ -98,7 +108,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBulletCoop",random(-4,4),0,0,0,0,random(-4,4))
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBulletCoop",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
-		TNT1 A 0 A_GiveInventory("WastemUnloaded")
+        TNT1 A 0 A_GiveInventory("WastemUnloaded")
         MSHT A 1 A_AlertMonsters
         MSHT A 1 A_Light2
         MSHT B 4 Bright A_Light1 
@@ -107,7 +117,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         MSHT F 4 A_PlaySound("marathon/shotgun/reload")
         MSHT G 4
         MSHT H 4
-		TNT1 A 0 A_TakeInventory("WastemUnloaded")
+        TNT1 A 0 A_TakeInventory("WastemUnloaded")
         MSHT I 5
         MSHT J 5
         MSHT A 3
@@ -118,6 +128,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"RFire")
         TNT1 A 0 A_JumpIfInventory("CanDualShotties",1,1)
         goto Ready
+        SHT3 B 0 A_GiveInventory("LevelSwitch_DualWielding")
         SHT3 BDFHJLNOPQ 1 A_GiveInventory("UsingDualShotguns",1)
         TNT1 A 0 A_GunFlash
         SHT3 R 1 A_GiveInventory("SynthFireActive",1)
@@ -131,12 +142,11 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         
       Deselect2:
         TNT1 A 0 A_TakeInventory("SynthFireActive",1)
-        TNT1 A 0 A_TakeInventory("SynthFireLeft",1)
-        TNT1 A 0 A_TakeInventory("SynthFireRight",1)
 
       DS:
         TNT1 A 0 A_Lower
         RSHT A 1 A_Lower
+        TNT1 B 0 A_TakeInventory("LevelSwitch_DualWielding")
         Goto DS
 
       Ready2:
@@ -160,7 +170,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
         TNT1 A 0 A_TakeInventory("Shell",2)
-		TNT1 A 0 A_GiveInventory("LWastemUnloaded")
+        TNT1 A 0 A_GiveInventory("LWastemUnloaded")
         RSHT A 1 A_AlertMonsters
         RSHT A 1 A_Light2
         RSHT B 4 Bright A_Light1 
@@ -170,7 +180,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         RSHT F 4 A_PlaySound("marathon/shotgun/reload")
         RSHT G 4
         RSHT H 4
-		TNT1 A 0 A_TakeInventory("LWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("LWastemUnloaded")
         RSHT I 5
         RSHT J 5
         RSHT A 3
@@ -182,7 +192,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBulletCoop",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
         TNT1 A 0 A_TakeInventory("Shell",2)
-		TNT1 A 0 A_GiveInventory("LWastemUnloaded")
+        TNT1 A 0 A_GiveInventory("LWastemUnloaded")
         RSHT A 1 A_AlertMonsters
         RSHT A 1 A_Light2
         RSHT B 4 Bright A_Light1 
@@ -192,18 +202,19 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         RSHT F 4 A_PlaySound("marathon/shotgun/reload")
         RSHT G 4
         RSHT H 4
-		TNT1 A 0 A_TakeInventory("LWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("LWastemUnloaded")
         RSHT I 5
         RSHT J 5
         RSHT A 3
         TNT1 A 0 A_JumpIfInventory("SynthFireLeft",1,"LFire")
         Goto LIdle
+        
         // Right Shotgun
-      Flash:
-        SHT2 A 8
 
+      Flash:
       RIdle:
         SHT2 A 1
+        SHT2 A 0 A_JumpIfInventory("LevelSwitch_DualRaising", 1, "RIdle")
         TNT1 A 0 A_JumpIfInventory("SynthFireRight",1,"RFire")
         Loop
 
@@ -218,7 +229,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),0,0,0,0,random(-4,4))
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBullet",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
-		TNT1 A 0 A_GiveInventory("RWastemUnloaded")
+        TNT1 A 0 A_GiveInventory("RWastemUnloaded")
         TNT1 A 0 A_TakeInventory("Shell",2)
         SHT2 A 1 A_AlertMonsters
         SHT2 A 1 A_Light2
@@ -229,7 +240,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         SHT2 F 4 A_PlaySound("marathon/shotgun/reload")
         SHT2 G 4
         SHT2 H 4
-		TNT1 A 0 A_TakeInventory("RWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("RWastemUnloaded")
         SHT2 I 5
         SHT2 J 5
         SHT2 A 3
@@ -240,7 +251,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         TNT1 AAAAAAAAA 0 A_FireCustomMissile("MarathonShotgunBulletCoop",random(-4,4),0,0,0,0,random(-4,4))
         TNT1 A 0 A_FireCustomMissile("MarathonShotgunBulletCoop",random(-4,4),1,0,0,0,random(-4,4))
         TNT1 A 0 A_PlayWeaponSound("marathon/shotgun/fire")
-		TNT1 A 0 A_GiveInventory("RWastemUnloaded")
+        TNT1 A 0 A_GiveInventory("RWastemUnloaded")
         TNT1 A 0 A_TakeInventory("Shell",2)
         SHT2 A 1 A_AlertMonsters
         SHT2 A 1 A_Light2
@@ -251,7 +262,7 @@ actor "WSTE-M5 Combat Shotgun": Weapon
         SHT2 F 4 A_PlaySound("marathon/shotgun/reload")
         SHT2 G 4
         SHT2 H 4
-		TNT1 A 0 A_TakeInventory("RWastemUnloaded")
+        TNT1 A 0 A_TakeInventory("RWastemUnloaded")
         SHT2 I 5
         SHT2 J 5
         SHT2 A 3
