@@ -384,10 +384,10 @@ script SAMSARA_SPAWN (int respawning)
         HandleBans();
         HandleBuffCVars(respawning);
         
-        TakeInventory("WeaponGetYaaaay",  1);
-        TakeInventory("WeaponGetYaaaay2", 1);
-        TakeInventory("Mace", 1);
-        TakeInventory("MacePowered", 1);
+        if (CheckInventory("WeaponGetYaaaay")  { TakeInventory("WeaponGetYaaaay",  1); }
+        if (CheckInventory("WeaponGetYaaaay2") { TakeInventory("WeaponGetYaaaay2", 1); }
+        if (CheckInventory("Mace"))            { TakeInventory("Mace", 1); }
+        if (CheckInventory("MacePowered"))     { TakeInventory("MacePowered", 1); }
         ConvertClassWeapons(-1);
 
         if (CheckInventory("SpectralFiring"))
