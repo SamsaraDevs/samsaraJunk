@@ -397,6 +397,7 @@ actor SmallGib2 : SmallGib1
 }
 
 actor QuakeClass: Boolean {}
+actor LevelSwitch_HadDoE: Boolean {}
 
 actor QuakeBullet: FastProjectile
 {

@@ -292,6 +292,7 @@ script SAMSARA_SPAWN (int respawning)
     int canbuddha;
     int wsteSide;
     int armor, oarmor, type, otype;
+    int doeTimer = 0;
     int i;
 
     ServerEnterTimes[pln] = startTime;
@@ -353,6 +354,16 @@ script SAMSARA_SPAWN (int respawning)
     }
 
     pcount = PlayerCount();
+
+    if (CheckInventory("LevelSwitch_HadDoE") && !respawning)
+    {
+        GiveInventory("UsingDoEAmmo", 1);
+
+        if (CheckWeapon("Grenade Launcher"))    { GiveInventory("UsingMultiNades", 1); }
+        if (CheckWeapon("  Rocket Launcher  ")) { GiveInventory("UsingMultiRockets", 1); }
+        if (CheckWeapon("Nailgun"))             { GiveInventory("FiredLavaNails", 1); }
+        if (CheckWeapon("Super Nailgun"))       { GiveInventory("FiredSLNails", 1); }
+    }
     
     while (!endloop && ServerEnterTimes[pln] == startTime)
     {
@@ -386,6 +397,28 @@ script SAMSARA_SPAWN (int respawning)
         if (CheckInventory("Mace"))             { TakeInventory("Mace", 1); }
         if (CheckInventory("MacePowered"))      { TakeInventory("MacePowered", 1); }
         ConvertClassWeapons(-1);
+
+        // You know what would be really nice? SetInventory not breaking online.
+        // It'd make this a lot easier to read.
+        // And strings not breaking in ZDoom, probably breaking SetInventory as well.
+        // Basically ACS is shit.
+
+        if (CheckInventory("UsingDoEAmmo"))
+        {
+            doeTimer = 2;
+            if (!CheckInventory("LevelSwitch_HadDoE")) { GiveInventory("LevelSwitch_HadDoE", 1); }
+        }
+        else
+        {
+            doeTimer = max(0, doeTimer-1);
+        }
+
+        if (doeTimer <= 0)
+        {
+            if (CheckInventory("LevelSwitch_HadDoE")) { TakeInventory("LevelSwitch_HadDoE", 1); }
+        }
+
+        // Compare: SetInventory("LevelSwitch_HadDoE", CheckInventory("UsingDoEAmmo"));
 
         if (CheckInventory("SpectralFiring"))
         {
