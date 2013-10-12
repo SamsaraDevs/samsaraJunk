@@ -34,9 +34,13 @@ actor "Nailgun": InstantSwitchWeapon
         QRKL A 0 A_TakeInventory("UsingDoEAmmo")
 		goto Super::Deselect
 
+      // Jump line's repeated twice because on the first tic, all inventory
+      // jump checks break
+
       Ready:
 		TNT1 A 0 A_JumpIfInventory("FiredLavaNails",1,"LavaReady")
         QNLG A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("FiredLavaNails",1,"LavaReady")
 		TNT1 A 0 A_TakeInventory("FiredLavaNails",1)
 		TNT1 A 0 A_TakeInventory("UsingDoEAmmo",1)
         loop
