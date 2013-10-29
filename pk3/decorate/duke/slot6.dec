@@ -1,4 +1,5 @@
-actor DukeFreezethrowerHold : Inventory { -INVBAR +INVENTORY.UNDROPPABLE Inventory.MaxAmount 1 }
+actor DukeFreezethrowerHold : Boolean {}
+actor DukeFreezethrowerHold2 : DukeFreezethrowerHold {}
 
 actor Freezethrower : Weapon
 {
@@ -23,13 +24,87 @@ actor Freezethrower : Weapon
         FRZP A -1
         Stop
 
-      Ready:
-        TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
+      ReadyB:
+		TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireA1")
+		TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireA2")
+		TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireA3")
+		TNT1 A 0 A_JumpIfInventory("DB4",1,"AltFireA4")
+		TNT1 A 0 A_JumpIfInventory("DB5",1,"AltFireA5")
+		TNT1 A 0 A_JumpIfInventory("DB6",1,"AltFireA6")
+		TNT1 A 0 A_JumpIfInventory("DB7",1,"AltFireA7")
+		TNT1 A 0 A_JumpIfInventory("DB8",1,"AltFireA8")
+		TNT1 A 0 A_JumpIfInventory("DB9",1,"AltFireA9")
+		TNT1 A 0 A_JumpIfInventory("DB10",1,"AltFireA10")
+		TNT1 A 0 A_JumpIfInventory("DB11",1,"AltFireA11")
+		TNT1 A 0 A_JumpIfInventory("DB12",1,"AltFireA12")
+		TNT1 A 0 A_JumpIfInventory("DB13",1,"AltFireA13")
+		TNT1 A 0 A_JumpIfInventory("DB14",1,"AltFireA14")
+		TNT1 A 0 A_JumpIfInventory("DB15",1,"AltFireA15")
+		TNT1 A 0 A_JumpIfInventory("DB16",1,"AltFireA16")
+		TNT1 A 0 A_JumpIfInventory("DB17",1,"AltFireA17")
+		TNT1 A 0 A_JumpIfInventory("DB18",1,"AltFireA18")
+		TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
         TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
-        FRZG A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
+	  ReadyA:
+		TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireA1")
+		TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireA2")
+		TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireA3")
+		TNT1 A 0 A_JumpIfInventory("DB4",1,"AltFireA4")
+		TNT1 A 0 A_JumpIfInventory("DB5",1,"AltFireA5")
+		TNT1 A 0 A_JumpIfInventory("DB6",1,"AltFireA6")
+		TNT1 A 0 A_JumpIfInventory("DB7",1,"AltFireA7")
+		TNT1 A 0 A_JumpIfInventory("DB8",1,"AltFireA8")
+		TNT1 A 0 A_JumpIfInventory("DB9",1,"AltFireA9")
+		TNT1 A 0 A_JumpIfInventory("DB10",1,"AltFireA10")
+		TNT1 A 0 A_JumpIfInventory("DB11",1,"AltFireA11")
+		TNT1 A 0 A_JumpIfInventory("DB12",1,"AltFireA12")
+		TNT1 A 0 A_JumpIfInventory("DB13",1,"AltFireA13")
+		TNT1 A 0 A_JumpIfInventory("DB14",1,"AltFireA14")
+		TNT1 A 0 A_JumpIfInventory("DB15",1,"AltFireA15")
+		TNT1 A 0 A_JumpIfInventory("DB16",1,"AltFireA16")
+		TNT1 A 0 A_JumpIfInventory("DB17",1,"AltFireA17")
+		TNT1 A 0 A_JumpIfInventory("DB18",1,"AltFireA18")
+		TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
+        TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
+		TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  Ready:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
+		TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt")
+        TNT1 A 0 A_JumpIfInventory("DukeWaiting",15,"WaitingTaunt")
+		FRZG A 1 A_WeaponReady
         Loop
 
       Deselect:
+        TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		TNT1 A 0 A_TakeInventory("DB18",1)
+		TNT1 A 0 A_GiveInventory("BlankFlash",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_TakeInventory("BlankFlash",1)
         FRZG AAAA 1 A_Lower
         FRZG A 0 A_Lower
         FRZG A 1 A_Lower
@@ -51,7 +126,30 @@ actor Freezethrower : Weapon
         loop
 
       Select:
+        TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		TNT1 A 0 A_TakeInventory("DB18",1)
         TNT1 A 0 A_JumpIfInventory("DukeReady",1,"IntroTaunt1")
+		TNT1 A 0 A_GiveInventory("BlankFlash",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_TakeInventory("BlankFlash",1)
         FRZG A 1 A_Raise
         FRZG A 0 A_Raise
         FRZG A 0 A_Raise
@@ -67,119 +165,598 @@ actor Freezethrower : Weapon
         Loop
 
       Fire:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG D 1 bright offset(0, 32)
-        FRZG C 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
-        FRZG B 1 bright offset(1, 30)
-        FRZG D 1 bright offset(0, 29)
-        FRZG C 1 bright offset(1, 30)
-        FRZG A 0 A_Refire
-        Goto Ready
-
-      Hold:
-        TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold",1,"Hold2")
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold")
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG B 1 bright offset(0, 32)
-        FRZG D 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
-        FRZG C 1 bright offset(1, 30)
-        FRZG B 1 bright offset(0, 29)
-        FRZG D 1 bright offset(1, 30)
-        TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_Refire
-        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_ClearRefire
-        Goto Ready
-
-      Hold2:
-        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopHold2")
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG C 1 bright offset(0, 32)
-        FRZG B 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
-        FRZG D 1 bright offset(1, 30)
-        FRZG C 1 bright offset(0, 29)
-        FRZG B 1 bright offset(1, 30)
-        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_ClearRefire
-        Goto Ready
-
-      CoopFire:
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG D 1 bright offset(0, 32)
-        FRZG C 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
-        FRZG B 1 bright offset(1, 30)
-        FRZG D 1 bright offset(0, 29)
-        FRZG C 1 bright offset(1, 30)
-        FRZG A 0 A_Refire
-        Goto Ready
-
-      CoopHold:
-        TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold",1,"CoopHold2")
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG B 1 bright offset(0, 32)
-        FRZG D 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
-        FRZG C 1 bright offset(1, 30)
-        FRZG B 1 bright offset(0, 29)
-        FRZG D 1 bright offset(1, 30)
-        TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_Refire
-        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_ClearRefire
-        Goto Ready
-
-      CoopHold2:
-        TNT1 A 0 A_GunFlash
-        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
-        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
-        TNT1 A 0 A_AlertMonsters
-        FRZG C 1 bright offset(0, 32)
-        FRZG B 1 bright offset(-1, 31) A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
-        FRZG D 1 bright offset(1, 30)
-        FRZG C 1 bright offset(0, 29)
-        FRZG B 1 bright offset(1, 30)
-        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
-        TNT1 A 0 A_ClearRefire
-        Goto Ready
+        TNT1 A 0 A_GiveInventory("DBSHOT",10)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireA1")
+		TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireA2")
+		TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireA3")
+		TNT1 A 0 A_JumpIfInventory("DB4",1,"AltFireA4")
+		TNT1 A 0 A_JumpIfInventory("DB5",1,"AltFireA5")
+		TNT1 A 0 A_JumpIfInventory("DB6",1,"AltFireA6")
+		TNT1 A 0 A_JumpIfInventory("DB7",1,"AltFireA7")
+		TNT1 A 0 A_JumpIfInventory("DB8",1,"AltFireA8")
+		TNT1 A 0 A_JumpIfInventory("DB9",1,"AltFireA9")
+		TNT1 A 0 A_JumpIfInventory("DB10",1,"AltFireA10")
+		TNT1 A 0 A_JumpIfInventory("DB11",1,"AltFireA11")
+		TNT1 A 0 A_JumpIfInventory("DB12",1,"AltFireA12")
+		TNT1 A 0 A_JumpIfInventory("DB13",1,"AltFireA13")
+		TNT1 A 0 A_JumpIfInventory("DB14",1,"AltFireA14")
+		TNT1 A 0 A_JumpIfInventory("DB15",1,"AltFireA15")
+		TNT1 A 0 A_JumpIfInventory("DB16",1,"AltFireA16")
+		TNT1 A 0 A_JumpIfInventory("DB17",1,"AltFireA17")
+		TNT1 A 0 A_JumpIfInventory("DB18",1,"AltFireA18")
+		Goto ReadyA
 
       Flash:
-        TNT1 A 1 A_Light1
-        TNT1 A 2
-        TNT1 A 1 A_Light0
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"FlashA")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"FlashA")
+		TNT1 A 0 A_JumpIfInventory("BlankFlash",1,"FlashBlank")
+		FRZG A 8
         stop
+	  FlashBlank:
+		TNT1 A 1
+        stop
+	  FlashA:
+		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold",1,"FlashHold")
+		TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold",1)
+		TNT1 A 0 A_Light1
+        FRZG D 1 Bright
+        FRZG E 1 Bright A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
+        FRZG F 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+		FRZG G 1 Bright
+        FRZG H 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
+      FlashHold:
+		TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold2",1,"FlashHold2")
+        TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold2",1)
+        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
+        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_Light1
+        FRZG B 1 Bright
+        FRZG I 1 Bright A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
+        FRZG J 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+        FRZG K 1 Bright
+        FRZG L 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
+      FlashHold2:
+		TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold2",1)
+        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_Light1
+        FRZG C 1 Bright
+        FRZG M 1 Bright A_FireCustomMissile("FreezethrowerBolt",0,1,5,1)
+        FRZG N 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+        FRZG O 1 Bright
+        FRZG P 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
+      CoopFire:
+		TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold",1,"CoopFlashHold")
+		TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold",1)
+		TNT1 A 0 A_Light1
+        FRZG D 1 Bright
+        FRZG E 1 Bright A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
+        FRZG F 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+		FRZG G 1 Bright
+        FRZG H 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
+      CoopFlashHold:
+		TNT1 A 0 A_JumpIfInventory("DukeFreezethrowerHold2",1,"CoopFlashHold2")
+        TNT1 A 0 A_GiveInventory("DukeFreezethrowerHold2",1)
+        TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold",1)
+        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_Light1
+        FRZG B 1 Bright
+        FRZG I 1 Bright A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
+        FRZG J 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+        FRZG K 1 Bright
+        FRZG L 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
+      CoopFlashHold2:
+		TNT1 A 0 A_TakeInventory("DukeFreezethrowerHold2",1)
+        TNT1 A 0 A_PlayWeaponSound("duke/freezeshot")
+        TNT1 A 0 A_TakeInventory("DukeWaiting",15)
+        TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_Light1
+        FRZG C 1 Bright
+        FRZG M 1 Bright A_FireCustomMissile("FreezethrowerBoltCoop",0,1,5,1)
+        FRZG N 1 Bright
+		TNT1 A 0 A_GiveInventory("DBSHOT1",10)
+		TNT1 A 0 A_TakeInventory("DBSHOT",99)
+		TNT1 A 0 A_Light0
+        FRZG O 1 Bright
+        FRZG P 2 Bright
+		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
+		FRZG A 2 A_WeaponReady(14)
+        Stop
 
       AltFire:
-        TNT1 A 0 A_GiveInventory("DukeKicking",1)
+		TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireA1")
+		TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireA2")
+		TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireA3")
+		TNT1 A 0 A_JumpIfInventory("DB4",1,"AltFireA4")
+		TNT1 A 0 A_JumpIfInventory("DB5",1,"AltFireA5")
+		TNT1 A 0 A_JumpIfInventory("DB6",1,"AltFireA6")
+		TNT1 A 0 A_JumpIfInventory("DB7",1,"AltFireA7")
+		TNT1 A 0 A_JumpIfInventory("DB8",1,"AltFireA8")
+		TNT1 A 0 A_JumpIfInventory("DB9",1,"AltFireA9")
+		TNT1 A 0 A_JumpIfInventory("DB10",1,"AltFireA10")
+		TNT1 A 0 A_JumpIfInventory("DB11",1,"AltFireA11")
+		TNT1 A 0 A_JumpIfInventory("DB12",1,"AltFireA12")
+		TNT1 A 0 A_JumpIfInventory("DB13",1,"AltFireA13")
+		TNT1 A 0 A_JumpIfInventory("DB14",1,"AltFireA14")
+		TNT1 A 0 A_JumpIfInventory("DB15",1,"AltFireA15")
+		TNT1 A 0 A_JumpIfInventory("DB16",1,"AltFireA16")
+		TNT1 A 0 A_JumpIfInventory("DB17",1,"AltFireA17")
+		TNT1 A 0 A_JumpIfInventory("DB18",1,"AltFireA18")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB")
+		TNT1 A 0 A_GiveInventory("DukeKicking",1)
         TNT1 A 0 ACS_ExecuteAlways(212,0,3)
         TNT1 A 0 A_GunFlash
-        DKBT C 6 A_WeaponReady(14)
-        TNT1 A 0 A_FireCustomMissile("DukeKickAttack")
-        DKBT D 9 A_WeaponReady(14)
-        DKBT C 3 A_WeaponReady(14)
-        TNT1 A 0 A_Refire
+		TNT1 A 0 A_GiveInventory("DB1",1)
+        DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire1:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB1")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA1")
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB2",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire2:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB2")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA2")
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_TakeInventory("DukePipebombFired",1)
+		TNT1 A 0 A_GiveInventory("DB3",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire3:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB3")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA3")
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB4",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire4:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB4")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA4")
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB5",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire5:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB5")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA5")
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB6",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire6:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB6")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA6")
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB7",1)
+		TNT1 A 0 A_FireCustomMissile("DukeKickAttack",0,0)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire7:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB7")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA7")
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB8",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire8:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB8")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA8")
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB9",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire9:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB9")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA9")
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB10",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire10:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB10")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA10")
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB11",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire11:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB11")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA11")
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB12",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire12:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB12")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA12")
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB13",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire13:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB13")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA13")
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB14",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire14:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB14")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA14")
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB15",1)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire15:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB15")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA15")
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB16",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire16:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB16")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA16")
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB17",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire17:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB17")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA17")
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GiveInventory("DB18",1)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+	  AltFire18:
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB18")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireA18")
+		TNT1 A 0 A_TakeInventory("DB18",1)
+		TNT1 A 0 A_GunFlash
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
-        DKBT C 1 A_WeaponReady(14)
+        DKBT C 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
         goto Ready
 
+	  AltFireA:
+		TNT1 A 0 A_GiveInventory("DukeKicking",1)
+        TNT1 A 0 ACS_ExecuteAlways(212,0,3)
+        DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA1")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB1")
+		goto AltFire1
+	  AltFireA1:
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA2")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB2")
+		goto AltFire2
+	  AltFireA2:
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA3")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB3")
+		goto AltFire3
+	  AltFireA3:
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA4")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB4")
+		goto AltFire4
+	  AltFireA4:
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA5")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB5")
+		goto AltFire5
+	  AltFireA5:
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA6")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB6")
+		goto AltFire6
+	  AltFireA6:
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		TNT1 A 0 A_FireCustomMissile("DukeKickAttack",0,0)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA7")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB7")
+		goto AltFire7
+	  AltFireA7:
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA8")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB8")
+		goto AltFire8
+	  AltFireA8:
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA9")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB9")
+		goto AltFire9
+	  AltFireA9:
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA10")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB10")
+		goto AltFire10
+	  AltFireA10:
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA11")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB11")
+		goto AltFire11
+	  AltFireA11:
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA12")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB12")
+		goto AltFire12
+	  AltFireA12:
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA13")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB13")
+		goto AltFire13
+	  AltFireA13:
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA14")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB14")
+		goto AltFire14
+	  AltFireA14:
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		DKBT D 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA15")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB15")
+		goto AltFire15
+	  AltFireA15:
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA16")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB16")
+		goto AltFire16
+	  AltFireA16:
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA17")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB17")
+		goto AltFire17
+	  AltFireA17:
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		DKBT C 1 A_WeaponReady(14)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"AltFireA18")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB18")
+		goto AltFire18
+	  AltFireA18:
+		TNT1 A 0 A_TakeInventory("DB18",1)
+        DKBT C 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
+        goto Ready
+
+	  AltFireB:
+		TNT1 A 0 A_JumpIfInventory("DB1",1,"AltFireB1")
+		TNT1 A 0 A_JumpIfInventory("DB2",1,"AltFireB2")
+		TNT1 A 0 A_JumpIfInventory("DB3",1,"AltFireB3")
+		TNT1 A 0 A_JumpIfInventory("DB4",1,"AltFireB4")
+		TNT1 A 0 A_JumpIfInventory("DB5",1,"AltFireB5")
+		TNT1 A 0 A_JumpIfInventory("DB6",1,"AltFireB6")
+		TNT1 A 0 A_JumpIfInventory("DB7",1,"AltFireB7")
+		TNT1 A 0 A_JumpIfInventory("DB8",1,"AltFireB8")
+		TNT1 A 0 A_JumpIfInventory("DB9",1,"AltFireB9")
+		TNT1 A 0 A_JumpIfInventory("DB10",1,"AltFireB10")
+		TNT1 A 0 A_JumpIfInventory("DB11",1,"AltFireB11")
+		TNT1 A 0 A_JumpIfInventory("DB12",1,"AltFireB12")
+		TNT1 A 0 A_JumpIfInventory("DB13",1,"AltFireB13")
+		TNT1 A 0 A_JumpIfInventory("DB14",1,"AltFireB14")
+		TNT1 A 0 A_JumpIfInventory("DB15",1,"AltFireB15")
+		TNT1 A 0 A_JumpIfInventory("DB16",1,"AltFireB16")
+		TNT1 A 0 A_JumpIfInventory("DB17",1,"AltFireB17")
+		TNT1 A 0 A_JumpIfInventory("DB18",1,"AltFireB18")
+		TNT1 A 0 A_GiveInventory("DukeKicking",1)
+        TNT1 A 0 ACS_ExecuteAlways(212,0,3)
+		TNT1 A 0 A_GiveInventory("DB1",1)
+        DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB1")
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		Goto AltFireA2
+	  AltFireB1:
+		TNT1 A 0 A_TakeInventory("DB1",1)
+		TNT1 A 0 A_GiveInventory("DB2",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB2")
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		Goto AltFireA3
+	  AltFireB2:
+		TNT1 A 0 A_TakeInventory("DB2",1)
+		TNT1 A 0 A_GiveInventory("DB3",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB3")
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		Goto AltFireA4
+	  AltFireB3:
+		TNT1 A 0 A_TakeInventory("DB3",1)
+		TNT1 A 0 A_GiveInventory("DB4",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB4")
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		Goto AltFireA5
+	  AltFireB4:
+		TNT1 A 0 A_TakeInventory("DB4",1)
+		TNT1 A 0 A_GiveInventory("DB5",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB5")
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		Goto AltFireA6
+	  AltFireB5:
+		TNT1 A 0 A_TakeInventory("DB5",1)
+		TNT1 A 0 A_GiveInventory("DB6",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB6")
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		Goto AltFireA7
+	  AltFireB6:
+		TNT1 A 0 A_TakeInventory("DB6",1)
+		TNT1 A 0 A_GiveInventory("DB7",1)
+		TNT1 A 0 A_FireCustomMissile("DukeKickAttack",0,0)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB7")
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		Goto AltFireA8
+	  AltFireB7:
+		TNT1 A 0 A_TakeInventory("DB7",1)
+		TNT1 A 0 A_GiveInventory("DB8",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB8")
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		Goto AltFireA9
+	  AltFireB8:
+		TNT1 A 0 A_TakeInventory("DB8",1)
+		TNT1 A 0 A_GiveInventory("DB9",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB9")
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		Goto AltFireA10
+	  AltFireB9:
+		TNT1 A 0 A_TakeInventory("DB9",1)
+		TNT1 A 0 A_GiveInventory("DB10",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB10")
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		Goto AltFireA11
+	  AltFireB10:
+		TNT1 A 0 A_TakeInventory("DB10",1)
+		TNT1 A 0 A_GiveInventory("DB11",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB11")
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		Goto AltFireA12
+	  AltFireB11:
+		TNT1 A 0 A_TakeInventory("DB11",1)
+		TNT1 A 0 A_GiveInventory("DB12",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB12")
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		Goto AltFireA13
+	  AltFireB12:
+		TNT1 A 0 A_TakeInventory("DB12",1)
+		TNT1 A 0 A_GiveInventory("DB13",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB13")
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		Goto AltFireA14
+	  AltFireB13:
+		TNT1 A 0 A_TakeInventory("DB13",1)
+		TNT1 A 0 A_GiveInventory("DB14",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT D 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB14")
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		Goto AltFireA15
+	  AltFireB14:
+		TNT1 A 0 A_TakeInventory("DB14",1)
+		TNT1 A 0 A_GiveInventory("DB15",1)
+		DKBT D 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB15")
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		Goto AltFireA16
+	  AltFireB15:
+		TNT1 A 0 A_TakeInventory("DB15",1)
+		TNT1 A 0 A_GiveInventory("DB16",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB16")
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		Goto AltFireA17
+	  AltFireB16:
+		TNT1 A 0 A_TakeInventory("DB16",1)
+		TNT1 A 0 A_GiveInventory("DB17",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB17")
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		Goto AltFireA18
+	  AltFireB17:
+		TNT1 A 0 A_TakeInventory("DB17",1)
+		TNT1 A 0 A_GiveInventory("DB18",1)
+		DKBT C 1 A_WeaponReady(14)
+		DKBT C 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"AltFireB18")
+		TNT1 A 0 A_TakeInventory("DB18",1)
+		Goto ReadyA
+	  AltFireB18:
+		TNT1 A 0 A_TakeInventory("DB18",1)
+        TNT1 A 0 A_TakeInventory("DukeKicking",9)
+        DKBT C 1 A_WeaponReady(14)
+		TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 0 A_ReFire
+		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
+		Goto ReadyA
+		
       AltFlash:  
-        FRZG A 20
+		FRZG A 2
         stop
-        
+		
       IntroTaunt:
         FRZG AAAA 1 A_Lower
         FRZG A 0 A_Lower
@@ -268,8 +845,7 @@ actor Freezethrower : Weapon
         KNUX A 3 A_TakeInventory("DukeWaiting",15)
         TNT1 A 0 A_PlayWeaponSound("duke/weaponget")
         KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto Select
-        
+        goto Select   
     }
 }
 
@@ -290,7 +866,7 @@ actor FreezethrowerBolt
     States
     {
       Spawn:
-        FRZX AAABBBCCC 1 bright A_Explode(3,1,1)
+        FRZX AAABBBCCC 1 Bright A_Explode(3,1,1)
         loop
 
       Death:

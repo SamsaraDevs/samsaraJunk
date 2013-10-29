@@ -7,7 +7,9 @@ FROM 0.3 TO 0.31
 - Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.
 - The Marathon 1 Alien Weapon has had its damage increased by a whole 1 to be more accurate to Marathon.
 - Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.
-- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else.
+- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.
+- Thanks to Popsoap, Duke is now capable of picking up his thrown pipebombs!
+- Thanks to Scroton, Duke is now capable of kicking while shooting or reloading!
 
 FROM 0.29b TO 0.3
 ========================
