@@ -11,6 +11,7 @@ FROM 0.3 TO 0.31
 - Thanks to Popsoap, Duke is now capable of picking up his thrown pipebombs!
 - Thanks to Scroton, Duke is now capable of kicking while shooting or reloading!
 - Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!
+- The wonky rules about when Ranger could or could not get a Quad item have been chucked out the window in favor of a cvar--samsara_permaquad. Put at 1 to get a Quake II-style inventory Quad Damage, put at 0 to have just 30 seconds and nothing more.
 
 FROM 0.29b TO 0.3
 ========================

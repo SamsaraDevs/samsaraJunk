@@ -113,7 +113,8 @@ samsara_noinvuln 0/1: Toggles whether Invulnerability spawns.\n\
 samsara_ban[class] 0/1: Forbids players from playing certain classes. bandoomguy for Doomguy, banchex for Chex Warrior, etc.\n\
 samsara_lmsrules 0/1: For players who want Rocket Arena-style showdowns or just to spawn with all weapons.\n\
 samsara_[class]damage -10-30: Adjusts the character's damage multiplier.\n\
-samsara_[class]defense -10-20: Adjusts the character's defense multiplier.";
+samsara_[class]defense -10-20: Adjusts the character's defense multiplier.\n\
+samsara_permaquad: Determines whether Ranger gets a Quake II or Quake I Quad Damage on picking up the VII.";
 
 int HELPSTR_CL = 
 "Likewise, there are several clientside console variables, including:\n\
