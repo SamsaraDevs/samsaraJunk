@@ -460,7 +460,7 @@ actor Freezethrower : Weapon
 		TNT1 A 0 A_GunFlash
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
         DKBT C 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
-		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
+		TNT1 A 0 A_WeaponReady(WRF_NOSECONDARY|WRF_NOSWITCH)
         goto Ready
 
 	  AltFireA:
@@ -748,7 +748,7 @@ actor Freezethrower : Weapon
 		TNT1 A 0 A_TakeInventory("DB18",1)
         TNT1 A 0 A_TakeInventory("DukeKicking",9)
         DKBT C 1 A_WeaponReady(14)
-		TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+		TNT1 A 0 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
 		TNT1 A 0 A_ReFire
 		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
 		Goto ReadyA

@@ -79,7 +79,8 @@ actor Pipebombs : Weapon
 		TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
 		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
 	  Ready:
-		TNT1 A 0 A_JumpIfNoAmmo("Ready3")
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		goto Ready3
 		TNT1 A 0 A_JumpIfInventory("DBSHOT",1,"ReadyA")
 		TNT1 A 0 A_JumpIfInventory("DBSHOT1",1,"ReadyB")
 		TNT1 A 0 A_JumpIfInventory("DukePipebombHold",1,"ReadyB")
@@ -993,7 +994,8 @@ actor Pipebombs : Weapon
 		Goto ReadyA
 		
       AltFlash:
-		TNT1 A 0 A_JumpIfNoAmmo("AltFlash3")
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		goto AltFlash3
 		TNT1 A 0 A_JumpIfInventory("DukeThrownPipebomb",1,"AltFlash2")
 		DKPB A 2
         stop
