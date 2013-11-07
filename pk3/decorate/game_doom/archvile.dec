@@ -3,6 +3,7 @@ actor Archvile2 : Archvile replaces Archvile
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
+	BloodType "SamsaraBloodyHellBlood"
     +FIREDAMAGE
     +DONTRIP
     +NOTDMATCH

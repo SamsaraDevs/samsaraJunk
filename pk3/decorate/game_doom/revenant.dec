@@ -4,6 +4,7 @@ actor Revenant2 : Revenant replaces Revenant
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+	BloodType "SamsaraBloodyHellBlood"
     +NOTDMATCH
     +NOICEDEATH
     states

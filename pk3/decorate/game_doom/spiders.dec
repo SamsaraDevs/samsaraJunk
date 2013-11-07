@@ -4,6 +4,7 @@ actor Arachnotron2 : Arachnotron replaces Arachnotron
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+	BloodType "SamsaraBloodyHellBlood"
     +DONTRIP
     +BOSSDEATH
     +NOTDMATCH

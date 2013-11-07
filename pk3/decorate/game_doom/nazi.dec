@@ -4,6 +4,7 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "Clip2"
+	BloodType "SamsaraBloodyHellBlood"
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH
@@ -46,6 +47,7 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
 
       XDeath:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+		TNT1 A 0 A_SpawnItemEx("ZombiemanNashgoreXDeath",0,0,0,0,0,0,0,33)
         goto "Super::XDeath"
 
       Missile:

@@ -289,7 +289,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         break;
 
       case 30:
-        result = GetCVar("samsara_bloodyhell");
+        result = GetCVar("samsara_cl_bloodyhell");
         break;
     }
     

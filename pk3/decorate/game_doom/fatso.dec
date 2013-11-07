@@ -4,6 +4,7 @@ actor Fatso2 : Fatso replaces Fatso
     DamageFactor "DragonClaw", 1.5
     DamageFactor "MarathonFusion", 2.0
     PainChance "MightyBoot", 255
+	BloodType "SamsaraBloodyHellBlood"
     +DONTRIP
     +BOSSDEATH
     +NOTDMATCH
