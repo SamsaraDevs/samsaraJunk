@@ -42,22 +42,22 @@ actor FlemoidGib
     {
       Spawn:
         TNT1 A 0
-        FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD A 1 
-        FBLD A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD A 1
-        FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD B 1
-        FBLD B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD B 1
-        FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD C 1
-        FBLD C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD C 1
-        FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD D 1
-        FBLD D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
-        FBLD D 1
+        FLBL A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL A 1 
+        FLBL A 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL A 1
+        FLBL B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL B 1
+        FLBL B 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL B 1
+        FLBL C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL C 1
+        FLBL C 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL C 1
+        FLBL D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL D 1
+        FLBL D 1 A_SpawnItem("FlemoidGibTrail",0,0,0,1)
+        FLBL D 1
         loop
 
       Crash:
