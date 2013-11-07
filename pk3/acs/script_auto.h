@@ -261,6 +261,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_permaquad"))
         {   ConsoleCommand("set samsara_permaquad 0");
         ConsoleCommand("archivecvar samsara_permaquad"); }
+        
+        if (!GetCVar("samsara_bloodyhell"))
+        {   ConsoleCommand("set samsara_bloodyhell 0");
+        ConsoleCommand("archivecvar samsara_bloodyhell"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");

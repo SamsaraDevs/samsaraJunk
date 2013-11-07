@@ -10,3 +10,4 @@
 #include "decorate/core/powerups.dec"
 #include "decorate/core/superturboturkeypuncher3000.dec"
 #include "decorate/core/buffsandnerfs.dec"
+#include "decorate/core/blood.dec"
