@@ -179,11 +179,11 @@ actor Zombieman2 : Zombieman replaces Zombieman
 	    TNT1 A 0 A_SpawnItemEx("NashGore_Gib10",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("NashGore_Gib10",0)
 	    TNT1 AA 0 A_SpawnItemEx("NashGore_Gib11",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33) //A_SpawnDebris("NashGore_Gib11",0)
 	    TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
-        POSS A 5
+        POSS M 5
 	    TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
-        POSS A 5 A_XScream
+        POSS N 5 A_XScream
 	    TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
-        POSS A 5 A_NoBlocking
+        POSS O 5 A_NoBlocking
 	    TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
         POSS PQRST 5
         POSS U -1
