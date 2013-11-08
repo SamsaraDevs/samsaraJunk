@@ -291,6 +291,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 30:
         result = GetCVar("samsara_cl_bloodyhell");
         break;
+
+      case 31:
+        result = GetCVar("samsara_cl_bloodypersistent");
+        break;
     }
     
     SetResultValue(result);
@@ -961,4 +965,16 @@ script 679 (int tx, int ty, int tz) clientside
         l %= 512;
         k = i;
     }
+}
+
+script 680 (int clientsidechoice) CLIENTSIDE
+{
+    //int result;
+    switch (clientsidechoice)
+    {
+    case 1:
+        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XdeathNashgore"); }
+        break;
+    }
+    //SetResultValue(result);
 }
