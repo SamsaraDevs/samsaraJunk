@@ -5,7 +5,7 @@ actor Knife: InstantSwitchWeapon
     Weapon.SlotNumber 0
     Inventory.PickUpSound "wolfen/knifeget"
     Inventory.PickupMessage "You got a Knife! Wait, shouldn't you start with this?"
-    Obituary "%k \cjshanked\c- %o \cjwith a knife.\c-"
+    Obituary "$SAMSARA_WOLFEN_OB_FIST_1"
     +WEAPON.MELEEWEAPON
     +DONTBOB
     +NOALERT
@@ -73,7 +73,7 @@ actor KnifePopcorn: BulletPuff
     Height 4
     VSpeed 0
 
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Butterknife.\c-" 
+    Obituary "$SAMSARA_WOLFEN_OB_FIST_2" 
 
     DamageType "Pistol"
     DeathSound "wolfen/spearexplode2"
@@ -104,7 +104,7 @@ actor "Spear of Longinus" : InstantSwitchWeapon
     Weapon.SelectionOrder 2200
     Inventory.PickUpSound "wolfen/knifeget"
     Inventory.PickupMessage "You got the Spear of...Destiny?"
-    Obituary "%k \cjput\c- %o \cjout of %p misery.\c-"
+    Obituary "$SAMSARA_WOLFEN_OB_PUNCHDRUNKB"
     +WEAPON.MELEEWEAPON
     +DONTBOB
     +NOALERT

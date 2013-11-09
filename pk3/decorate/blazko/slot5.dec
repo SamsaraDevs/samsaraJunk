@@ -64,7 +64,7 @@ actor WolfRocket
     +NOBOSSRIP
     SeeSound "wolfen/missilefire"
     DeathSound "wolfen/missilexplod"
-    Obituary "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-"
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT5"
     States
     {
       Spawn:

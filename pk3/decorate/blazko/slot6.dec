@@ -60,7 +60,7 @@ actor WolfenFire
     +BRIGHT
     DamageType "WolfenFlamethrower"
     SeeSound "wolfen/flamethrower"
-    Obituary "%k \cjscorched\c- %o \cjwith the Flamethrower.\c-"
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT6"
     States
     {
       Spawn:

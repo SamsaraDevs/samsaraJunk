@@ -1,5 +1,8 @@
 [enu default]
 
+// QUIT MESSAGES
+// =============
+
 //Quake
 QUITMSG = "Are you gonna quit this game\njust like everything else?"; // Quake quit message
 //Doom
@@ -69,3 +72,202 @@ QUITMSG46 = "No matter! What is important is you love our game.\nCongratulations
 QUITMSG47 = "Neither fire nor wind,\nbirth nor death,\ncan erase our good deeds.";
 QUITMSG48 = "If on the hand there is no wound,\none may carry even poison in it.\nPoison does not affect one who is free from wounds.";
 QUITMSG49 = "Neither in the sky nor in mid-ocean,\nnor by entering into mountain clefts,\nnowhere in the world is there a place\nwhere one will not be overcome by death.";
+
+
+
+// OBITUARIES
+// ==========
+
+SAMSARA_DOOMGUY_OB_FIST = "%k \cdfisted\c- %o \cdwith a pair of brass knuckles.\c-";
+SAMSARA_DOOMGUY_OB_PISTOL = "%k \cdexecuted\c- %o \cdfor insubordination.\c-";
+SAMSARA_DOOMGUY_OB_SLOT1 = "%k \cdmassacred\c- %o \cdwith the Chainsaw.\c-";
+SAMSARA_DOOMGUY_OB_SLOT2 = "%k \cdshowed\c- %o \cdthe boomstick.\c-";
+SAMSARA_DOOMGUY_OB_SLOT3 = "%k \cdsmeared\c- %o \cdacross the wall with the SSG.\c-";
+SAMSARA_DOOMGUY_OB_SLOT4 = "%k \cdmowed\c- %o \cddown with the Chaingun.\c-";
+SAMSARA_DOOMGUY_OB_SLOT5 = "%k \cdmade\c- %o \cdride the rocket.\c-";
+SAMSARA_DOOMGUY_OB_SLOT6 = "%k \cdmelted\c- %o \cdwith the Plasma Rifle.\c-";
+SAMSARA_DOOMGUY_OB_SLOT7_1 = "%k \cdshowed\c- %o \cdyou don't hide from the B.F.G. 9000.\c-";
+SAMSARA_DOOMGUY_OB_SLOT7_2 = "%k \cdobliterated\c- %o \cdwith the B.F.G. 9000.\c-";
+SAMSARA_DOOMGUY_OB_INSTAGIB = "%k \cdrailed\c- %o\cd.\c-";
+
+SAMSARA_CHEX_OB_FIST = "%k \chspooned\c- %o \chback to home.\c-";
+SAMSARA_CHEX_OB_PISTOL = "%k \chzorched\c- %o \chwith a pea-blaster.\c-";
+SAMSARA_CHEX_OB_SLOT1 = "%k \chthoroughly mixed\c- %o \chwith the Super Bootspork.\c-";
+SAMSARA_CHEX_OB_SLOT2 = "%k \chsplayed\c- %o \chwith zorches all over.\c-";
+SAMSARA_CHEX_OB_SLOT3 = "%k \chpounded\c- %o \chwith super-kinetic zorches.\c-";
+SAMSARA_CHEX_OB_SLOT4 = "%k \chzorched\c- %o \chfull of neat holes.\c-";
+SAMSARA_CHEX_OB_SLOT5 = "%k \chzorched\c- %o \chwith way more force than needed.\c-";
+SAMSARA_CHEX_OB_SLOT6 = "%k \chphased\c- %o \choff of this planet.\c-";
+SAMSARA_CHEX_OB_SLOT7_1 = "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-";
+SAMSARA_CHEX_OB_SLOT7_2 = "%k \chkicked\c- %o \choff to another dimension with the LAZ Device.\c-";
+SAMSARA_CHEX_OB_INSTAGIB = "%k \chsent\c- %o \chon a trip to lightspeed.\c-";
+
+SAMSARA_CORVUS_OB_FIST = "%k \cqspoke softly and gave\c- %o \cqthe big stick.\c-";
+SAMSARA_CORVUS_OB_PISTOL = "%k \cqput an elven hex on\c- %o\cq.\c-";
+SAMSARA_CORVUS_OB_SLOT1 = "%k \cqseized\c- %o\cq's soul in %p very body.\c-";
+SAMSARA_CORVUS_OB_SLOT2_1 = "%k \cqpelted\c- %o \cqwith balls of steel.\c-";
+SAMSARA_CORVUS_OB_SLOT2_2 = "%k \cqcrushed\c- %o \cqwith giant balls.\c-";
+SAMSARA_CORVUS_OB_SLOT3 = "%k \cqturned\c- %o \cqinto an ethereal pincushion.\c-";
+SAMSARA_CORVUS_OB_SLOT4 = "%k \cqclawed\c- %o \cqwide open.\c-";
+SAMSARA_CORVUS_OB_SLOT5 = "%k \cqgave\c- %o \cqthe bird.\c-";
+SAMSARA_CORVUS_OB_SLOT6 = "%k \cqsent\c- %o \cqto the depths of Hell.\c-";
+SAMSARA_CORVUS_OB_BOMB = "%k \cqsent\c- %o \cqto the Ancients.\c-";
+SAMSARA_CORVUS_OB_INSTAGIB = "%k \cqbrought\c- %o \cqa grim fate.\c-";
+
+SAMSARA_WOLFEN_OB_FIST_1 = "%k \cjshanked\c- %o \cjwith a knife.\c-";
+SAMSARA_WOLFEN_OB_FIST_2 = "%k \cjcleansed\c- %o \cjfrom this world with the Butterknife.\c-";
+SAMSARA_WOLFEN_OB_PISTOL = "%k \cjput a hole in\c- %o \cjwith the Luger.\c-";
+SAMSARA_WOLFEN_OB_SLOT2 = "%k \cjshot\c- %o \cjto pieces with the Machine Gun.\c-";
+SAMSARA_WOLFEN_OB_SLOT4 = "%k \cjdrilled\c- %o \cjwith the Chaingun.\c-";
+SAMSARA_WOLFEN_OB_SLOT5 = "%k \cjtore through\c- %o \cjwith the Rocket Launcher.\c-";
+SAMSARA_WOLFEN_OB_SLOT6 = "%k \cjscorched\c- %o \cjwith the Flamethrower.\c-";
+SAMSARA_WOLFEN_OB_SLOT7 = "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-";
+SAMSARA_WOLFEN_OB_PUNCHDRUNKB = "%k \cjput\c- %o \cjout of %p misery.\c-";
+SAMSARA_WOLFEN_OB_INSTAGIB = "%k \cjsniped\c- %o \cjwith the Mauser Rifle.\c-";
+
+SAMSARA_HEXEN_OB_FIST = "%k \clmaced\c- %o \clthe ol'-fashioned way.\c-";
+SAMSARA_HEXEN_OB_PISTOL = "%k \clunwove\c- %o\cl's life force with the Sapphire Wand.\c-";
+SAMSARA_HEXEN_OB_SLOT1 = "%k \clput\c- %o \clunder the gas.\c-";
+SAMSARA_HEXEN_OB_SLOT2 = "%k \clshattered\c- %o \cland left %p body to melt.\c-";
+SAMSARA_HEXEN_OB_SLOT3 = "%k \clexecuted\c- %o \clunder Timon's blessing.\c-";
+SAMSARA_HEXEN_OB_SLOT4 = "%k \cldrained\c- %o\cl's soul into the Serpent Staff.\c-";
+SAMSARA_HEXEN_OB_SLOT5_1 = "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-";
+SAMSARA_HEXEN_OB_SLOT5_2 = "%k \clthrew\c- %o \clunder the Hammer.\c-";
+SAMSARA_HEXEN_OB_SLOT6 = "%k \clbaptized\c- %o \clin the Firestorm.\c-";
+SAMSARA_HEXEN_OB_SLOT7 = "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-";
+SAMSARA_HEXEN_OB_PUNCHDRUNKB = "%k \cgsnapped\c- %o\cg's neck with a brutal punch.\c-";
+SAMSARA_HEXEN_OB_INSTAGIB = "%k \cgset\c- %o\cg's soul ablaze.\c-";
+
+SAMSARA_DUKE_OB_FIST = "%k \c[m1]put\c- %o \c[m1]out with a snap kick.\c-";
+SAMSARA_DUKE_OB_PISTOL = "%k \c[m1]made\c- %o \c[m1]suck on the M1911.\c-";
+SAMSARA_DUKE_OB_SLOT1 = "%k \c[m1]passed\c- %o \c[m1]the pipe.\c-";
+SAMSARA_DUKE_OB_SLOT2 = "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-";
+SAMSARA_DUKE_OB_SLOT3 = "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-";
+SAMSARA_DUKE_OB_SLOT4 = "%k \c[m1]ripped \c-%o \c[m1]a new one.\c-";
+SAMSARA_DUKE_OB_SLOT5 = "%k \c[m1]sent\c- %o \c[m1]home in a box.\c-";
+SAMSARA_DUKE_OB_SLOT6 = "%k \c[m1]threw\c- %o \c[m1]in the freezer.\c-";
+SAMSARA_DUKE_OB_SLOT7 = "%k \c[m1]devastated\c- %o\c[m1].\c-";
+SAMSARA_DUKE_OB_INSTAGIB = "%k \c[m1]made\c- %o \c[m1]spread 'em.\c-";
+
+SAMSARA_MARATHON_OB_FIST = "%k \cnsnapped\c- %o \cnwith a nasty hook.\c-";
+SAMSARA_MARATHON_OB_PISTOL = "%k \cnemptied\c- %o\cn's skull with a .44 Magnum.\c-";
+SAMSARA_MARATHON_OB_SLOT1 = "%k \cnshredded\c- %o \cnwith the KKV-7.\c-";
+SAMSARA_MARATHON_OB_SLOT2 = "%k \cnwasted\c- %o \cnwith the WSTE-M5.\c-";
+SAMSARA_MARATHON_OB_SLOT3_1 = "%k \cnfused\c- %o \cnwith the dirt.\c-";
+SAMSARA_MARATHON_OB_SLOT3_2 = "%k\cn's meltdown caught \c-%o \cnin the blast.\c-";
+SAMSARA_MARATHON_OB_SLOT4_1 = "%k \cnassaulted\c- %o \cnwith the MA-75B.\c-";
+SAMSARA_MARATHON_OB_SLOT4_2 = "%k \cnwent with\c- %o \cnin a game of catch-the-grenade.\c-";
+SAMSARA_MARATHON_OB_SLOT5 = "%k \cnspanked\c- %o\cn.\c-";
+SAMSARA_MARATHON_OB_SLOT6 = "%k \cnmade\c- %o \cnall TOZT.\c-";
+SAMSARA_MARATHON_OB_SLOT7_1 = "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-";
+SAMSARA_MARATHON_OB_SLOT7_2 = "%k \cnintroduced\c- %o \cnto the magic of orbital bombardment.\c-";
+SAMSARA_MARATHON_OB_BERSERK1 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M2/I Alien Weapon.
+SAMSARA_MARATHON_OB_BERSERK2 = "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \cjSYSTEM ERROR\c-"; // M1 Alien Weapon
+SAMSARA_MARATHON_OB_PUNCHDRUNKC = "%k \cnbrought\c- %o \cnin for resisting security.\c-";
+SAMSARA_MARATHON_OB_PUNCHDRUNKB_1 = "%k \cndug into\c- %o\cn's spine.\c-";
+SAMSARA_MARATHON_OB_PUNCHDRUNKB_2 = "%k \cnput\c- %o \cnin the blender.\c-";
+SAMSARA_MARATHON_OB_INSTAGIB = "%k \cnspanked\c- %o\cn.\c-";
+
+SAMSARA_RANGER_OB_FIST = "%k \csmet\c- %o\cs, and %g met the axe.\c-";
+SAMSARA_RANGER_OB_PISTOL = "%k \csgave\c- %o \csa boomstick to chew on.\c-";
+SAMSARA_RANGER_OB_SLOT1_1 = "%k \cshammered \c-%o \cswithout %p consent.\c-";
+SAMSARA_RANGER_OB_SLOT1_2 = "%k \csshocked\c- %o \cswith a purple wand.\c-";
+SAMSARA_RANGER_OB_SLOT2 = "%k \csgave\c- %o \cstwo loads of buckshot.\c-";
+SAMSARA_RANGER_OB_SLOT3_1 = "%k \csfed\c- %o \csa pineapple.\c-";
+SAMSARA_RANGER_OB_SLOT3_2 = "%k \csfed\c- %o \csa cluster of pineapples.\c-";
+SAMSARA_RANGER_OB_SLOT4_1 = "%k \csnailed\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_SLOT4_2 = "%k \csthought\c- %o \cswas hot.\c-";
+SAMSARA_RANGER_OB_SLOT5_1 = "%k \csgave\c- %o \csa rocket to ride.\c-";
+SAMSARA_RANGER_OB_SLOT5_2 = "%k \csgave\c- %o \csfour rockets to ride.\c-";
+SAMSARA_RANGER_OB_SLOT5_3 = "%k \cssmeared\c- %o \cswith a Quadded Rocket.\c-";
+SAMSARA_RANGER_OB_SLOT5_4 = "%k \csturned\c- %o \csinto a fine mist.\c-";
+SAMSARA_RANGER_OB_SLOT6_1 = "%k \cspenetrated\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_SLOT6_2 = "%k \csthought\c- %o \cswas super-hot.\c-";
+SAMSARA_RANGER_OB_SLOT7_1 = "%k \csgave\c- %o \csthe shaft.\c-";
+SAMSARA_RANGER_OB_SLOT7_2 = "%k \csstruck a discharge at\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_BERSERK = "%k \cstazed\c- %o \cswith the Laser Cannon.\c-";
+SAMSARA_RANGER_OB_PUNCHDRUNKC = "%k \csmade\c- %o \cstalk to the hand.\c-";
+SAMSARA_RANGER_OB_INSTAGIB_1 = "%k \cspinned\c- %o \csdown.\c-";
+SAMSARA_RANGER_OB_INSTAGIB_2 = "%k \csshouldn't have killed\c- %o \cswith this.\c-";
+
+SAMSARA_STTP3K_OB_CHICKEN1 = "%o was pecked to death by a chicken.";
+SAMSARA_STTP3K_OB_CHICKEN2 = "%o was shot down by an assault chicken.";
+SAMSARA_STTP3K_OB_CHICKEN3 = "%o was blown up by an explosive chicken.";
+
+SAMSARA_OB_PDWTAK = "%k exploded %o.";
+
+
+
+// ITEMS
+// ======
+
+SAMSARA_WOLFENCHICKEN = "Ate up a chicken leg for 10 Health.";
+SAMSARA_WOLFENDRINK = "Drank up for 1 Health.";
+SAMSARA_HEALPACK0 = "Picked up 1 Health.";
+SAMSARA_HEALPACK1 = "Picked up 10 Health.";
+SAMSARA_HEALPACK2 = "Picked up 25 Health.";
+SAMSARA_HEALPACK3 = "Picked up 100 Health.";
+SAMSARA_MEGAPACK = "Picked up 200 Health and 200 Armor!";
+SAMSARA_ARMORSCRAP = "Picked up 1 Armor.";
+SAMSARA_ARMOR0_1 = "Picked up 100 Armor.";
+SAMSARA_ARMOR0_2 = "Picked up 150 Armor.";
+SAMSARA_ARMOR0_3 = "Picked up 200 Armor.";
+SAMSARA_ARMOR0_4 = "Picked up 250 explosive/fire-tempered armor.";
+SAMSARA_ARMOR12_1 = "Picked up 100 Armor.";
+SAMSARA_ARMOR12_2 = "Picked up 150 Armor.";
+SAMSARA_ARMOR12_3 = "Picked up 200 red armor.";
+SAMSARA_ARMOR12_4 = "Picked up 250 titanium armor.";
+SAMSARA_ARMOR3_1 = "Picked up 100 shield.";
+SAMSARA_ARMOR3_2 = "Picked up 150 shield.";
+SAMSARA_ARMOR3_3 = "Picked up 200 shield.";
+SAMSARA_ARMOR3_4 = "Picked up 300 shield.";
+SAMSARA_POWERUP_INVIS = "Picked up Partial Invisibility.";
+SAMSARA_POWERUP_INVULN = "Picked up Invulnerability.";
+SAMSARA_POWERUP_RADSUIT = "Picked up Environmental Protection.";
+SAMSARA_POWERUP_INFRARED = "Picked up Light Amplification.";
+SAMSARA_HEALPACK_HERETIC = "Picked up 4 Health.";
+SAMSARA_ARMORSCRAP_HERETIC = "Picked up 5 Armor.";
+SAMSARA_HEALPACK_TI = "Picked up 2 Health.";
+SAMSARA_ARMORSCRAP_TI = "Picked up 2 Armor.";
+SAMSARA_ARMORHEXEN = "Picked up 25 Armor.";
+SAMSARA_POWERUP_FLIGHT = "Picked up Flight.";
+SAMSARA_POWERUP_TELEPORTSELF = "Picked up Teleportation.";
+SAMSARA_POWERUP_LESSERTOME = "Picked up a Lesser Tome of Power!";
+SAMSARA_POWERUP_ARMOR = "Picked up 50 Extra Armor.";
+SAMSARA_POWERUP_TEAM = "Picked up Team Power.";
+SAMSARA_POWERUP_QUARTERDMG = "Picked up a Quarter Damage!";
+SAMSARA_POWERUP_SPEED = "Picked up Haste.";
+SAMSARA_POWERUP_TELEPORTOTHER = "Picked up Banishment.";
+SAMSARA_BEACON_HEXEN = "Picked up a crystallized Chaos Portal!";
+SAMSARA_BEACON_STRIFE = "Picked up a teleporter beacon!";
+
+
+
+// AMMO
+// =====
+
+SAMSARA_CLIP_1 = "Picked up 10 rounds of Ammo 1.";
+SAMSARA_CLIP_2 = "Picked up 50 rounds of Ammo 1.";
+SAMSARA_SHELL_1 = "Picked up 4 rounds of Ammo 2.";
+SAMSARA_SHELL_2 = "Picked up 20 rounds of Ammo 2.";
+SAMSARA_ROCKET_1 = "Picked up 2 rounds of Ammo 3.";
+SAMSARA_ROCKET_2 = "Picked up 6 rounds of Ammo 3.";
+SAMSARA_CELL_1 = "Picked up 20 rounds of Ammo 4.";
+SAMSARA_CELL_2 = "Picked up 100 rounds of Ammo 4.";
+SAMSARA_BACKPACK = "Picked up Ammo Expansion Pack.";
+SAMSARA_CLIPDROP_DOOM = "Picked up 5 rounds of Ammo 1.";
+SAMSARA_CLIPDROP_HERETIC_1 = "Picked up 3 rounds of Ammo 1.";
+SAMSARA_CLIPDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 1.";
+SAMSARA_SHELLDROP_HERETIC_1 = "Picked up 5 rounds of Ammo 2.";
+SAMSARA_SHELLDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 2.";
+SAMSARA_ROCKETDROP_HERETIC_1 = "Picked up 5 rounds of Ammo 3.";
+SAMSARA_ROCKETDROP_HERETIC_2 = "Picked up 10 rounds of Ammo 3.";
+SAMSARA_CELLDROP_HERETIC = "Picked up 20 rounds of Ammo 4.";
+SAMSARA_CLIPSHELL_HEXEN = "Picked up 10/10 rounds of Ammo 1/2.";
+SAMSARA_ROCKETCELL_HEXEN = "Picked up 5/10 rounds of Ammo 3/4.";
+SAMSARA_ALLAMMO_HEXEN = "Picked up 15 rounds of all ammo.";
+SAMSARA_CLIPDROP_STRIFE = "Picked up 5 rounds of Ammo 1.";
+SAMSARA_SHELL_STRIFE = "Picked up 12 rounds of Ammo 2.";
+SAMSARA_ROCKET_STRIFE = "Picked up 4 rounds of Ammo 3.";
+SAMSARA_ALLAMMO_STRIFE_1 = "Picked up 5/2/4 rounds of Ammo 1/2/4.";
+SAMSARA_ALLAMMO_STRIFE_2 = "Picked up 20/10/1/10 rounds of Ammo 1/2/3/4.";

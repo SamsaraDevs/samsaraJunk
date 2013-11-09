@@ -6,7 +6,7 @@ actor "Mauser Rifle": InstantSwitchWeapon
     +DONTBOB
     +INVENTORY.UNDROPPABLE
 	+WEAPON.NOAUTOAIM
-    Obituary "%k \cjsniped\c- %o \cjwith the Mauser Rifle.\c-"
+    Obituary "$SAMSARA_WOLFEN_OB_INSTAGIB"
     Weapon.YAdjust 16
     States
     {

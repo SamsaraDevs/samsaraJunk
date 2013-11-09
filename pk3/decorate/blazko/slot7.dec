@@ -11,7 +11,7 @@ actor "Spear of Destiny": InstantSwitchWeapon
 
     Weapon.SisterWeapon "Spear of Eternity"
 
-    Obituary "%k cleansed %o from this world with the Spear of Destiny." 
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT7" 
     Inventory.PickupMessage "You got the Spear of Destiny!"
 
     States
@@ -91,7 +91,7 @@ actor SpearBolt
     Damage 55
     SeeSound ""
     DeathSound "wolfen/spearexplode1"
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT7" 
     PROJECTILE
     +DONTREFLECT
     DamageType "BJSpear"
@@ -117,7 +117,7 @@ actor SpearBolt
 actor SpearBoltDM: SpearBolt
 {
     DamageType "BJSpear"
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT7" 
     States
     {
       Death:
@@ -140,7 +140,7 @@ actor SpearShotMini
     Speed 10
     Damage 4
     Scale 0.75
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT7" 
     PROJECTILE
     +RIPPER
     +NOBOSSRIP
@@ -197,7 +197,7 @@ actor SpearShotMini2
     Height 4
     Speed 10
     Damage 4
-    Obituary "%k \cjcleansed\c- %o \cjfrom this world with the Spear of Destiny.\c-" 
+    Obituary "$SAMSARA_WOLFEN_OB_SLOT7" 
     PROJECTILE
     +RIPPER
     +NOBOSSRIP
