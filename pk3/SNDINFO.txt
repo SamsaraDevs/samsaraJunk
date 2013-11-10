@@ -72,6 +72,10 @@ $random brutal/thud { bthud1 bthud2 } // Taken from Painkiller
 bthud1                       BRTTHUD1
 bthud2                       BRTTHUD2
 
+$random brutal/death { bdeth1 bdeth2 } // The only resources actually taken from Brutal Doom!
+bdeth1                       BRTDETH1
+bdeth2                       BRTDETH2
+
 ////////////////////
 // Ally sounds for Strife's beacons
 ////////////////////

@@ -277,6 +277,48 @@ actor BrutalTinyBouncyBone : GenericGoreActor
     }
 }
 
+actor BrutalTinyBone : GenericGoreActor
+{
+    Radius 1
+    Height 1
+	Mass 1
+	Scale 0.7
+    +MISSILE
+    States
+    {
+    Spawn:
+        JNKQ PQRS 2
+        loop
+    Death:
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5")
+	Death1:
+        JNKQ K 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
+	    JNKQ K 10
+        stop
+	Death2:
+        JNKQ L 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
+	    JNKQ L 10
+        stop
+	Death3:
+        JNKQ M 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
+	    JNKQ M 10
+        stop
+	Death4:
+        JNKQ N 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
+	    JNKQ N 10
+        stop
+	Death5:
+        JNKQ O 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death5")
+	    JNKQ O 10
+        stop
+    }
+}
+
 actor BrutalChunk : GenericGoreActor
 {
     Radius 4
@@ -466,6 +508,21 @@ actor BrutalOnlineSound
 	Spawn:
 	    TNT1 A 0
 		TNT1 A 1 A_PlaySoundEx("brutal/splatter","soundslot5",0,0)
+		stop
+	}
+}
+
+actor BrutalOnlineSound2
+{
+	+NOCLIP
+	-SOLID
+	+CLIENTSIDEONLY
+    +NOINTERACTION
+	States
+	{
+	Spawn:
+	    TNT1 A 0
+		TNT1 A 1 A_PlaySoundEx("brutal/death","soundslot5",0,0)
 		stop
 	}
 }
