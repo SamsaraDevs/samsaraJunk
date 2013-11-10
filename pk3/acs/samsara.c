@@ -973,7 +973,13 @@ script 680 (int clientsidechoice) CLIENTSIDE
     switch (clientsidechoice)
     {
     case 1:
-        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XdeathNashgore"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
+        break;
+		
+    case 2:
+        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
         break;
     }
     //SetResultValue(result);
