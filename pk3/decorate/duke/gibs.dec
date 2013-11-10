@@ -21,7 +21,9 @@ actor DukeGibs1
 
       Death:
         TNT1 A 0 A_Gravity
-        DKG1 E 1000
+        DKG1 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG1 E 10
         stop
     }
 }
@@ -37,7 +39,9 @@ actor DukeGibs2 : DukeGibs1
 
       Death:
         TNT1 A 0 A_Gravity
-        DKG2 E 1000
+        DKG2 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG2 E 10
         stop
     }
 }
@@ -53,7 +57,9 @@ actor DukeGibs3 : DukeGibs1
 
       Death:
         TNT1 A 0 A_Gravity
-        DKG3 E 1000
+        DKG3 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG3 E 10
         stop
     }
 }
@@ -67,7 +73,9 @@ actor DukeGibs4 : DukeGibs1
 
       Death:
         TNT1 A 0 A_Gravity
-        DKG4 E 1000
+        DKG4 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG4 E 10
         stop
     }
 }
@@ -83,7 +91,9 @@ actor DukeGibs5 : DukeGibs1
 
       Death:
         TNT1 A 0 A_Gravity
-        DKG5 E 1000
+        DKG5 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG5 E 10
         stop
     }
 }
@@ -99,7 +109,9 @@ actor DukeGibs6 : DukeGibs1
 
       Death:
         DKG6 CDEFGH 5 A_Gravity
-        DKG6 H 1000
+        DKG6 H 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+		DKG6 H 10
         stop
     }
 }
