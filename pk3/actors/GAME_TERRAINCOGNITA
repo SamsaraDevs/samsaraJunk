@@ -2,7 +2,7 @@
 
 actor HealthBonus2 : HealPack0 9937
 {
-    Inventory.PickupMessage "Picked up 2 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK_TI"
     Game Heretic
         
     States
@@ -20,7 +20,7 @@ actor HealthBonus2 : HealPack0 9937
 
 actor ArmorBonus2 : ArmorScrap 9938
 {
-    Inventory.PickupMessage "Picked up 2 Armor."
+    Inventory.PickupMessage "$SAMSARA_ARMORSCRAP_TI"
     Game Heretic
     Armor.SaveAmount 2
 }

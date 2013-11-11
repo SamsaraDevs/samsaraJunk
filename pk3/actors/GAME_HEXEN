@@ -163,7 +163,7 @@ actor HexenArmor1 : BasicArmorBonus replaces AmuletOfWarding
     Armor.Savepercent 33.33333
     Armor.MaxSaveAmount 200
     Armor.Saveamount 25
-    Inventory.PickupMessage "Picked up 25 Armor."
+    Inventory.PickupMessage "$SAMSARA_ARMORHEXEN"
     Inventory.PickupSound "armor1get"
     States
     {
@@ -195,7 +195,7 @@ actor ArmorHexenTrail
 actor HexenArmor5 : CustomInventory replaces ArtiBoostArmor
 {
     +Floatbob
-    Inventory.PickupMessage "Picked up 50 Extra Armor."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_ARMOR"
     Inventory.PickupSound "nosoundforyoubitch"
     States
     {
@@ -295,7 +295,7 @@ actor HexenTeamPickup : CustomInventory replaces ArtiHealingRadius
     +INVENTORY.PICKUPFLASH
     +INVENTORY.HUBPOWER
     +COUNTITEM
-    Inventory.PickupMessage "Picked up Team Power."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_TEAM"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -384,7 +384,7 @@ Actor QuakeQuarterDamage : PowerupGiver
   Scale 0.2
   Inventory.PickupAnnouncerEntry "strength"
   Inventory.PickupSound "quakeweps/quadready"
-  Inventory.PickupMessage "Picked up a Quarter Damage!"
+  Inventory.PickupMessage "$SAMSARA_POWERUP_QUARTERDMG"
   States
   {
   Spawn:
@@ -441,7 +441,7 @@ actor HeXenBeaconItem: CustomInventory replaces ArtiDarkServant
     Height 16
 	Scale 0.3
     Inventory.MaxAmount 5
-    Inventory.PickupMessage "You got a crystallized Chaos Portal!"
+    Inventory.PickupMessage "$SAMSARA_BEACON_HEXEN"
 
     Inventory.Icon "ARTICPRT"
     +INVBAR
@@ -687,7 +687,7 @@ actor HexenBootsPickup : CustomInventory replaces ArtiSpeedBoots
     +INVENTORY.HUBPOWER
     +COUNTITEM
     Inventory.PickupAnnouncerEntry "Haste"
-    Inventory.PickupMessage "Picked up Haste."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_SPEED"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -734,7 +734,7 @@ actor HexenTeleportPickup : CustomInventory replaces ArtiTeleportOther
     +INVENTORY.PICKUPFLASH
     +INVENTORY.HUBPOWER
     +COUNTITEM
-    Inventory.PickupMessage "Picked up Banishment."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_TELEPORTOTHER"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {

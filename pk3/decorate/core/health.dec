@@ -30,7 +30,7 @@ actor HealPack0: CustomInventory replaces HealthBonus
     -INVENTORY.ALWAYSPICKUP
     -COUNTITEM
 
-    Inventory.PickupMessage "Picked up 1 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK0"
     Inventory.PickupSound "healpack0pickup"
 
     States
@@ -75,7 +75,7 @@ actor HealPack1: CustomInventory replaces StimPack
     Alpha 0.9
     Scale 0.5
     +FLOATBOB
-    Inventory.PickupMessage "Picked up 10 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK1"
     Inventory.PickupSound "healpack1pickup"
 
     states
@@ -121,7 +121,7 @@ actor HealPack2 : CustomInventory replaces Medikit
     Scale 0.75
     +FLOATBOB
 
-    Inventory.PickupMessage "Picked up 25 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK2"
     Inventory.PickupSound "silence"
 
     states
@@ -240,7 +240,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
     +INVENTORY.PICKUPFLASH
     +COUNTITEM
     Inventory.PickupAnnouncerEntry "soulsphere"
-    Inventory.PickupMessage "Picked up 100 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK3"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -372,7 +372,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
     +INVENTORY.FANCYPICKUPSOUND
     Scale 0.50
     Inventory.PickupAnnouncerEntry "megasphere"
-    inventory.pickupmessage "Picked up 200 Health and 200 Armor!"
+    inventory.pickupmessage "$SAMSARA_MEGAPACK"
     inventory.pickupsound "nosoundforyoubitch"
     States
     {

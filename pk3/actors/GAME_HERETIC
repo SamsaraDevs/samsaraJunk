@@ -111,7 +111,7 @@ actor HereticStuffDump: HealPack0 replaces GoldWandHefty
 {
     Scale 0.3
     Inventory.Amount 4
-    Inventory.PickupMessage "Picked up 4 Health."
+    Inventory.PickupMessage "$SAMSARA_HEALPACK_HERETIC"
     States
     {
       Spawn:
@@ -157,7 +157,7 @@ actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
 {
     Scale 0.55
     Armor.Saveamount 5
-    Inventory.Pickupmessage "Picked up 5 Armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMORSCRAP_HERETIC"
     States
     {
       Spawn:
@@ -193,7 +193,7 @@ actor HereticFlightPickup : CustomInventory replaces ArtiFly
     +INVENTORY.PICKUPFLASH
     +INVENTORY.HUBPOWER
     +COUNTITEM
-    Inventory.PickupMessage "Picked up Flight."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_FLIGHT"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -250,7 +250,7 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
     +INVENTORY.PICKUPFLASH
     +COUNTITEM
     +INVENTORY.HUBPOWER
-    Inventory.PickupMessage "Picked up Teleportation."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_TELEPORTSELF"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -292,7 +292,7 @@ actor HereticLesserTome : PowerupGiver replaces ArtiTomeOfPower
     Powerup.Type LesserTome
     Inventory.PickupAnnouncerEntry "strength"
     Inventory.PickupSound "tome/lesser"
-    Inventory.PickupMessage "Picked up a Lesser Tome of Power!"
+    Inventory.PickupMessage "$SAMSARA_POWERUP_LESSERTOME"
     States
     {
       Spawn:

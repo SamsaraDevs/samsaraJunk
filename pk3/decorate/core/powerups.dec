@@ -8,7 +8,7 @@ actor PartialInvisibility : CustomInventory replaces BlurSphere
     +INVENTORY.BIGPOWERUP
     +COUNTITEM
     Inventory.PickupAnnouncerEntry "partialinvisibility"
-    Inventory.PickupMessage "Picked up Partial Invisibility."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INVIS"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -85,7 +85,7 @@ actor InvulnPowerup : CustomInventory replaces InvulnerabilitySphere
     +INVENTORY.PICKUPFLASH
     +COUNTITEM
     Inventory.PickupAnnouncerEntry "invulnerability"
-    Inventory.PickupMessage "Picked up Invulnerability."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INVULN"
     Inventory.PickupSound "nosoundforyoubitch"
     states
     {
@@ -233,7 +233,7 @@ actor BioSuit : PowerupGiver replaces RadSuit
     Powerup.Type "IronFeet"
     Powerup.Duration -60
     Powerup.Color "Green", 0.125
-    Inventory.PickupMessage "Picked up Environmental Protection."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_RADSUIT"
     Inventory.PickupSound "antisterileget"
     States
     {
@@ -268,7 +268,7 @@ actor Visor : CustomInventory replaces Infrared// replaces Infrared
     Alpha 0.85
     +Floatbob
     +INVENTORY.PICKUPFLASH
-    Inventory.PickupMessage "Picked up Light Amplification."
+    Inventory.PickupMessage "$SAMSARA_POWERUP_INFRARED"
     Inventory.PickupSound "nosoundforyoubitch"
     States
     {

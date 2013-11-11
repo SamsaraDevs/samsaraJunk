@@ -6,7 +6,7 @@ actor ArmorScrap : ArmorBonus replaces ArmorBonus
     +FLOATBOB
     -INVENTORY.ALWAYSPICKUP
     -COUNTITEM
-    Inventory.Pickupmessage "Picked up 1 Armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMORSCRAP"
     Inventory.PickupSound "armor0get"
     Inventory.Icon "RMR1A0"
     Armor.Saveamount 1
@@ -49,7 +49,7 @@ actor ArmorPack1: GreenArmor
     RenderStyle Add
     Alpha 0.9
     +FLOATBOB
-    Inventory.PickupMessage "Picked up 100 Armor."
+    Inventory.PickupMessage "$SAMSARA_ARMOR0_1"
     Inventory.PickupSound "armor1get"
     Inventory.Icon "RMR1A0"
     States
@@ -84,7 +84,7 @@ actor ArmorPack2: BlueArmor
     RenderStyle Add
     Alpha 0.975
     +FLOATBOB
-    Inventory.PickupMessage "Picked up 200 Armor."
+    Inventory.PickupMessage "$SAMSARA_ARMOR0_3"
     Inventory.PickupSound "armor2get"
     Inventory.Icon "RMR2A0"
     States
@@ -126,7 +126,7 @@ actor ArmorPack3: BasicArmorPickup
     RenderStyle Add
     Alpha 0.95
     +FLOATBOB
-    Inventory.Pickupmessage "Picked up 250 explosive/fire-tempered armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR0_4"
     Inventory.PickupSound "armor3get"
     Inventory.Icon "RMR3A0"
     DamageFactor "Fire", 0.125
@@ -160,7 +160,7 @@ actor SamsaraYellowArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 150 armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR0_2"
     Inventory.PickupSound "armor1get"
 
     States
@@ -179,7 +179,7 @@ actor QuakeGreenArmor: BasicArmorPickup
     Alpha 0.9
     +FLOATBOB
 
-    Inventory.PickupMessage "Picked up 100 Armor."
+    Inventory.PickupMessage "$SAMSARA_ARMOR12_1"
     Inventory.PickupSound "armor1get"
     Inventory.Icon "RMR7A0"
 
@@ -208,7 +208,7 @@ actor QuakeYellowArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 150 armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR12_2"
     Inventory.PickupSound "armor1get"
 
     States
@@ -225,7 +225,7 @@ actor QuakeRedArmor: BasicArmorPickup
     Armor.SaveAmount 200
     Armor.SavePercent 80
     Inventory.Icon "RMR3A0"
-    Inventory.PickupMessage "Picked up 200 red armor."
+    Inventory.PickupMessage "$SAMSARA_ARMOR12_3"
     Inventory.PickupSound "armor2get"
 
     RenderStyle Add
@@ -256,7 +256,7 @@ actor SamsaraSilverArmor: BasicArmorPickup
     DamageFactor "NotQuadded", 0.125
     DamageFactor "SpectralNoQuad", 0.125
 
-    Inventory.Pickupmessage "Picked up 250 titanium armor."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR12_4"
     Inventory.PickupSound "armor3get"
     Inventory.Icon "RMR6A0"
 
@@ -286,7 +286,7 @@ actor MarathonGreenArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 100 shield."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR3_1"
     Inventory.PickupSound "armor1get"
 
     States
@@ -311,7 +311,7 @@ actor MarathonYellowArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 150 shield."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR3_2"
     Inventory.PickupSound "armor1get"
 
     States
@@ -336,7 +336,7 @@ actor MarathonBlueArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 200 shield."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR3_3"
     Inventory.PickupSound "armor2get"
 
     States
@@ -361,7 +361,7 @@ actor MarathonRedArmor: BasicArmorPickup
     Alpha 0.95
     +FLOATBOB
 
-    Inventory.Pickupmessage "Picked up 300 shield."
+    Inventory.Pickupmessage "$SAMSARA_ARMOR3_4"
     Inventory.PickupSound "armor3get"
 
     States
