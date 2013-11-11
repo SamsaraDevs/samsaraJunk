@@ -193,6 +193,9 @@ actor HealPack2 : CustomInventory replaces Medikit
         TNT1 A 0 A_JumpIfHealthLower(50, 1)
         stop
 	    TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupStop")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupStop")
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
         stop
         
@@ -203,6 +206,10 @@ actor HealPack2 : CustomInventory replaces Medikit
       PickupFail:
         MED3 A 1 BRIGHT
         fail
+		
+	  PickupStop:
+	    TNT1 A 0
+		stop
     }
 }
 
@@ -273,6 +280,16 @@ actor SuperHealth : CustomInventory replaces Soulsphere
         goto PickupSound
 
       PickupDuke:
+	    TNT1 A 0
+        TNT1 A 0 A_JumpIfHealthLower(25, 1)
+        goto PickupDuke2
+	    TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupDuke2")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupDuke2")
+        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+      PickupDuke2:
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "InfiniteDuke")
         TNT1 A 1 A_GiveInventory("FiniteHealth200", 50)
         goto PickupSound
@@ -306,17 +323,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
       DukeSound:
 	    TNT1 A 0
         TNT1 A 0 A_PlaySound("duke/atomhealth", CHAN_ITEM)
-		TNT1 A 0 A_JumpIfHealthLower(50,"DukeCriticalHeal")
 		stop
-		
-	  DukeCriticalHeal:
-	    TNT1 A 0
-        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "PickupStop")
-        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "PickupStop")
-        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
-        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
-        TNT1 A 0 ACS_ExecuteAlways(205)
-        stop
 
       MarathonSound:
         TNT1 A 0 A_SetBlend("F0F8FF", 0.5, 7) // Light Alice Blue
@@ -376,9 +383,10 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
       Pickup:
         TNT1 A 0 A_JumpIfInventory("CorvusClass", 1, "PickupCorvus")
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 1, "PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("DukeClass", 1, "PickupDuke")
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 1, "PickupQuake")
+      Pickup2:
         TNT1 A 0 A_PlaySound("megapackpickup", CHAN_ITEM)
-
         TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 20, ARMOR_MEGASPHERE)
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
         TNT1 A 0 A_GiveInventory("FiniteHealth200", 200)
@@ -415,6 +423,17 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
       PickupFail:
         FELD A 1 BRIGHT
         fail
+		
+	  PickupDuke:
+        TNT1 A 0 A_JumpIfHealthLower(25, 1)
+        goto Pickup2
+	    TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "Pickup2")
+        TNT1 A 0 A_JumpIfInventory("DukeBallgag", 1, "Pickup2")
+        TNT1 A 0 A_PlaySoundEx("duke/criticalheal", "soundslot7", 0, 0)
+        TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
+        TNT1 A 0 ACS_ExecuteAlways(205)
+        goto Pickup2
     }
 }
 

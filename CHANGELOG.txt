@@ -16,6 +16,8 @@ FROM 0.3 TO 0.31
 - People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed! 0 is vanilla blood, 1 is Nashgore blood, 2 is Brutal blood, and 3 is BLOODY HELL!
 - samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.
 - Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!
+- As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.
+- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
 
 FROM 0.29b TO 0.3
 ========================
