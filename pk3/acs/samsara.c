@@ -92,16 +92,15 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
         {
             if (isLMS())
             {
-                GiveInventory("QuadDamageItem", 1);
+                if (GetCvar("samsara_permaquad") == 1)
+                { GiveInventory("QuadDamageItem", 1); }
                 break;
             }
 
             GiveQuad(arg1);
 
             if (GetCvar("samsara_permaquad") == 1)//if (isCoop() || isSinglePlayer())
-            {
-                GiveInventory("QuadDamageItem", 1);
-            }
+            { GiveInventory("QuadDamageItem", 1); }
         }
         break;
 

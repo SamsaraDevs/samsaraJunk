@@ -461,16 +461,16 @@ script SAMSARA_QUAKE (int class, int slot, int dropped)
         {
             if (isLMS())
             {
-                GiveInventory("QuadDamageItem", 1);
+                if (GetCvar("samsara_permaquad") == 1)
+                { GiveInventory("QuadDamageItem", 1); }
             }
             else
             {
                 GiveQuad(1050);
-
-                if (isCoop())
-                {
-                    GiveInventory("QuadDamageItem", 1);
-                }
+    
+                if (GetCvar("samsara_permaquad") == 1)//if (isCoop() || isSinglePlayer())
+                { GiveInventory("QuadDamageItem", 1); }
+			
             }
             givingQuad = 1;
         }
