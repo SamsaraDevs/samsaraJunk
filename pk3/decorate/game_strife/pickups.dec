@@ -24,7 +24,7 @@ actor StrifeElectricBolts: CustomInventory replaces ElectricBolts
 {
     ConversationID 186
 
-    Inventory.PickupMessage "Picked up 12 rounds of Ammo 2."
+    Inventory.PickupMessage "$SAMSARA_SHELL_STRIFE"
     Inventory.PickupSound "ammo/shellsmall"
 
     States
@@ -70,7 +70,7 @@ actor StrifeMiniMissiles: CustomInventory replaces MiniMissiles
 {
     ConversationID 181
 
-    Inventory.PickupMessage "Picked up 5/2/0/4 Ammo 1/2/3/4."
+    Inventory.PickupMessage "$SAMSARA_ALLAMMO_STRIFE_1"
     Inventory.PickupSound "ammo/mana"
 
     States
@@ -132,7 +132,7 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 {
     ConversationID 182
 
-    Inventory.PickupMessage "Picked up 20/10/1/10 Ammo 1/2/3/4."
+    Inventory.PickupMessage "$SAMSARA_ALLAMMO_STRIFE_2"
     Inventory.PickupSound "ammo/mana"
 
     States
@@ -198,7 +198,7 @@ actor StrifeCrateOfMissiles: CustomInventory replaces CrateOfMissiles
 
 actor StrifeHEGrenades: CustomInventory replaces HEGrenadeRounds
 {
-    Inventory.PickupMessage "Picked up 4 rounds of Ammo 3."
+    Inventory.PickupMessage "$SAMSARA_ROCKET_STRIFE"
     Inventory.PickupSound "ammo/rocketsmall"
 
     ConversationID 177

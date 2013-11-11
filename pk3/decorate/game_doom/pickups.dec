@@ -1,6 +1,6 @@
 actor SamsaraClip_Doom: CustomInventory
 {
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 1."
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_DOOM"
     Inventory.PickupSound "ammo/bulletsmall"
     States
     {

@@ -1,6 +1,6 @@
 actor StrifeAcolyteDrop: CustomInventory
 {
-    Inventory.PickupMessage "Picked up 5 rounds of Ammo 1."
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_STRIFE"
     Inventory.PickupSound "ammo/bulletsmall"
 
     States
