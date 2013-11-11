@@ -294,7 +294,7 @@ actor EnforcerShot
     +NOEXTREMEDEATH
     Scale 0.35
     DeathSound "enforcer/hit"
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"
+    Obituary "$SAMSARA_MARATHON_OB_BERSERK1"
     Projectile
     States
     {
@@ -316,7 +316,7 @@ actor AlienWeaponBullet : FastProjectile
     Speed 80
     Projectile
     DamageType MarathonPlasma
-    Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"
+    Obituary "$SAMSARA_MARATHON_OB_BERSERK2"
     -BLOODSPLATTER
     +NOBLOOD
     +NOTIMEFREEZE

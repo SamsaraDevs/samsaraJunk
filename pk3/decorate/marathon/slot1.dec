@@ -156,7 +156,7 @@ actor MarathonSMGBullet : FastProjectile
     Height 8
     Speed 100
     Projectile
-    Obituary "%k \cnshredded\c- %o \cnwith the KKV-7.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT1"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH

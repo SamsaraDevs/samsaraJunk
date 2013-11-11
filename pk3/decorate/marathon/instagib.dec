@@ -16,7 +16,7 @@ ACTOR "SPNKR-25 Auto Cannon" : Weapon
     Weapon.SlotNumber 0
     Inventory.Pickupmessage "You got the SPNKR-25 Auto Cannon!"
 	Decal DoomImpScorch
-    Obituary "%k \cnspanked\c- %o\cn."
+    Obituary "$SAMSARA_MARATHON_OB_INSTAGIB"
     Weapon.AmmoType		"Spanker2Ammo"
     Weapon.AmmoGive		7
     Weapon.AmmoUse		1

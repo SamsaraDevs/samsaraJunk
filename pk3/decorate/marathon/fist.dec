@@ -14,7 +14,7 @@ actor "Talon Ceramic Combat Blade" : Weapon
     //Weapon.BobStyle Smooth
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SelectionOrder 3700
-    Obituary "%k \cndug into\c- %o\cn's spine.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKB_1"
     Weapon.AmmoType		"KnifeAmmo"
     Weapon.AmmoGive		1
     Weapon.AmmoUse		0
@@ -104,7 +104,7 @@ ACTOR TCCBThrown
     WallBounceFactor 1.0
     DeathSound "marathon/knife/wall"
     SeeSound "marathon/knife/bounce"
-	Obituary "%k \cnput\c- %o \cnin the blender.\c-"
+	Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKB_2"
     DropItem TCCBPickup
     States
     {
@@ -265,7 +265,7 @@ actor Tech50Shot
     +FOILINVUL
     +PIERCEARMOR
     +BLOODLESSIMPACT
-    Obituary "%k \cnbrought\c- %o \cnin for resisting security.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKC"
     Projectile
     States
     {
@@ -309,7 +309,7 @@ actor "Steel Knuckles" : Weapon
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SlotNumber 0
     Weapon.SelectionOrder 3700
-    Obituary "%k \cnsnapped\c- %o \cnwith a nasty hook.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_FIST"
     //AttackSound "marathon/fist/hit"
     Weapon.Kickback 300
     +WIMPY_WEAPON

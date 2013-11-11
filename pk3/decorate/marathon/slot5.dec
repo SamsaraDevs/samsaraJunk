@@ -504,7 +504,7 @@ actor LauncherRocket
     DamageType "Explosive"
     Scale 0.55
     DeathSound "marathon/rocket/hit"
-    Obituary "%k \cnspanked\c- %o\cn."
+    Obituary "$SAMSARA_MARATHON_OB_SLOT5"
     Projectile
     +RANDOMIZE
     +FORCERADIUSDMG

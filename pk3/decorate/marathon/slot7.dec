@@ -940,7 +940,7 @@ actor WMCRailLevel1: FastProjectile
     Height 15
     Speed 400
     Projectile
-    Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
     +RIPPER
     +NOBOSSRIP
     +BLOODSPLATTER
@@ -971,7 +971,7 @@ actor WMCRailLevel2: FastProjectile
     Height 15
     Speed 400
     Projectile
-    Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
     +RIPPER
     +NOBOSSRIP
     +BLOODSPLATTER
@@ -1018,7 +1018,7 @@ actor WMCRailLevel3: FastProjectile
     Height 30
     Speed 400
     Projectile
-    Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
     +RIPPER
     +NOBOSSRIP
     +BLOODSPLATTER
@@ -1156,7 +1156,7 @@ actor WMCGrenade
     //Scale 0.55
     //Gravity 0.11
     DeathSound "wmc/grenadeexplode1"
-    Obituary "%k \cnintroduced\c- %o \cnto the magic of orbital bombardment.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_2"
     Projectile
     -NOGRAVITY
     +LOWGRAVITY
@@ -1213,7 +1213,7 @@ actor WMCGrenade2
     Scale 0.3
     Gravity 0.35
     DeathSound "wmc/grenadeexplode2"
-    Obituary "%k \cnintroduced\c- %o \cnto the magic of orbital bombardment.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_2"
     Projectile
     -NOGRAVITY
     +LOWGRAVITY
@@ -1351,7 +1351,7 @@ actor WMCRailLevel3Baby: FastProjectile
     Height 10
     Speed 80
     Projectile
-    Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
     +RIPPER
     +NOBOSSRIP
     +BLOODSPLATTER
@@ -1412,7 +1412,7 @@ actor WMCBeamExplode: FastProjectile
     Height 5
     Speed 20
     Projectile
-    Obituary "%k \cnremoved\c- %o \cnfrom existence with the Wave Motion Cannon.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT7_1"
     +RIPPER
     -SOLID
     -BLOODSPLATTER

@@ -257,7 +257,7 @@ actor FusionShot
     +BLOODLESSIMPACT
     +DONTREFLECT
     +NOEXTREMEDEATH
-    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT3_1"
     Projectile
     States
     {
@@ -292,7 +292,7 @@ actor FusionShotWater
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +BLOODLESSIMPACT
-    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT3_1"
     Projectile
     States
     {
@@ -322,7 +322,7 @@ actor FusionSuper
     +BLOODLESSIMPACT
     +NOEXTREMEDEATH
     +DONTREFLECT
-    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT3_1"
     Projectile
     States
     {
@@ -374,7 +374,7 @@ actor FusionShotWater2
     DeathSound "marathon/fusion/hit"
     +FOILINVUL
     +BLOODLESSIMPACT
-    Obituary "%k \cnfused\c- %o \cnwith the dirt.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT3_1"
     Projectile
     States
     {
@@ -406,7 +406,7 @@ actor FusionPistolOvercharge
     +FOILINVUL
     +BLOODLESSIMPACT
 
-    Obituary "%k\cn's meltdown caught \c-%o\cn in the blast."
+    Obituary "$SAMSARA_MARATHON_OB_SLOT3_2"
 
     States
     {

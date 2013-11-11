@@ -277,7 +277,7 @@ actor MarathonShotgunBullet: FastProjectile
     Radius 8
     Height 8
     Projectile
-    Obituary "%k \cnwasted\c- %o \cnwith the WSTE-M5.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT2"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH

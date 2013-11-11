@@ -240,7 +240,7 @@ actor MarathonARBullet : FastProjectile
     Height 8
     Speed 100
     Projectile
-    Obituary "%k \cnassaulted\c- %o \cnwith the MA-75B.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT4_1"
     +BLOODSPLATTER
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
@@ -351,7 +351,7 @@ actor MarathonGrenade
     //Gravity 0.11
     DeathSound "marathon/rifle/nadexpl"
     Projectile
-    Obituary "%k \cnwent with\c- %o \cnin a game of catch-the-grenade.\c-"
+    Obituary "$SAMSARA_MARATHON_OB_SLOT4_2"
     -NOGRAVITY
     +LOWGRAVITY
     +FORCERADIUSDMG
