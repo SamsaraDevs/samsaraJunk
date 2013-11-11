@@ -9,7 +9,7 @@ actor "Serpent Staff" : CWeapStaff
     Weapon.AmmoType1 "Clip"
     Inventory.PickupMessage "You got the Serpent Staff!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "$SAMSARA_HEXEN_OB_SLOT4"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT4_1"
     +INVENTORY.UNDROPPABLE
     States
     {
