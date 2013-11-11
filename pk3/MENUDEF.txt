@@ -1,0 +1,179 @@
+	
+
+    OptionMenu "OptionsMenu"
+    {
+            Title "OPTIONS"
+            Submenu "Customize Controls",                   "CustomizeControls"
+            Submenu "Mouse options",                        "MouseOptions"
+            Submenu "Joystick options",                     "JoystickOptions"
+            StaticText " "
+            Submenu "Samsara Clientside Options",           "SamsaraClientOptions"
+            Submenu "Samsara Serverside Options",           "SamsaraServerSideOptions"
+            StaticText " "
+            Submenu "Player Setup",                         "PlayerMenu"
+            Submenu "Gameplay Options",                     "GameplayOptions"
+            Submenu "Compatibility Options",                "CompatibilityOptions"
+            Submenu "Automap Options",                      "AutomapOptions"
+            Submenu "HUD Options",                          "HUDOptions"
+            Submenu "Miscellaneous Options",                "MiscOptions"
+            Submenu "Sound Options",                        "SoundOptions"
+            Submenu "Display Options",                      "VideoOptions"
+            Submenu "Set video mode",                       "VideoModeMenu"
+            StaticText " "
+            SafeCommand "Reset to defaults",                "reset2defaults"
+            SafeCommand "Reset to last saved",              "reset2saved"
+            Command "Go to console",                        "menuconsole"
+    }
+     
+    OptionMenu "SamsaraClientOptions"
+    {
+            Title "SAMSARA CLIENTSIDE OPTIONS"
+     
+            Option "Old Wolfenstien Movement",              "samsara_cl_wolfmove", "OnOff"
+            Option "Vanilla Doom Animations",               "samsara_cl_vanilladoom", "OnOff"
+            Option "Weapon HUD Bar",                        "samsara_cl_weaponhud", "OnOff"
+            Option "Duke Ballgag",                          "samsara_cl_ballgag", "OnOff"
+            Option "Pickup Graphic",                        "samsara_cl_pickupmode", "PickupGraphics"
+            Option "Print Pickup Message",                  "samsara_cl_printpickup", "OnOff"
+            }
+           
+    OptionValue PickupGraphics
+    {
+            0, "Old-Style"
+            1, "Hybrid"
+            2, "Class"
+    }
+     
+    OptionMenu "SamsaraServerSideOptions"
+    {
+    Title "SAMSARA SERVERSIDE OPTIONS"
+            StaticText      ""
+            StaticText      "General Options", 1
+            Option "Jump Height",                    "samsara_jumpmod", "JumpModOptions"
+            Option "Armor Mode",                     "Samsara_Armormode", "ArmorModeOptions"
+            Option "No Health Cap",                  "samsara_nohealthcap", "OnOff"
+            Option "No Boss Monologues",             "samsara_nomonologues", "OnOff"
+            Option "Everybody Rocketjumps",          "samsara_allcanrj", "OnOff"
+            StaticText      ""
+            StaticText      "LMS Options", 1
+            Option "LMS Rules in All Gamemodes",     "samsara_lmsrules", "OnOff"
+            Option "LMS HP/Armor Values",            "samsara_lmslife", "LMSLifeOption"
+            Option "Ultimate Weapon in LMS",         "samsara_lmsult", "OnOff"
+            StaticText      ""
+            StaticText      "PunchDrunk Options", 1
+            Option "PunchDrunk Mode",                "samsara_punchdrunk", "OnOff"
+            Option "PunchDrunk Uniques",             "samsara_punchdrunkuniques", "OnOff"
+            Option "PunchDrunk Chainsaws",           "samsara_punchdrunksaws", "OnOff"
+            StaticText      ""
+            StaticText      "Turkey Puncher Options", 1
+            Option "Super Turbo Turkey Puncher Mode", "samsara_superturboturkeypuncher3000", "ChickensOptionsA"
+            Option "Turkey Spawn Frequency",          "samsara_superturboturkeyfrequency", "ChickensOptionsB"
+            Slider "Turkey Puncher Kill Limit",       "samsara_superturboturkeylimit", 0, 250, 5
+            StaticText      ""
+            StaticText      "Other PartyModes", 1
+            Option "Players Explode when Killed",     "samsara_peoplediewhentheyarekilled", "pdwtakOptions"
+            StaticText      ""
+            StaticText      "Weapon Options", 1    
+            Option "Ultimate WeaponStay",             "samsara_permault", "OnOff"
+            Option "Start with Unique",               "samsara_uniquestart", "OnOff"
+            Option "Start with Slot 1",               "samsara_chainsawstart", "OnOff"
+            Option "Start with Backpack",             "samsara_backpackstart", "OnOff"
+            StaticText      ""
+            StaticText      "Weapon Remove", 1
+            Option "No Invulnerability",              "samsara_noinvuln", "OnOff"
+            Option "No Unique Weapon",                "samsara_nounique", "OnOff"
+            Option "No Ultimate Weapon",              "samsara_noult", "OnOff"
+            StaticText      ""
+            StaticText      "Class Remove", 1
+            Option "Ban Doomguy",                     "samsara_bandoomguy", "OnOff"
+            Option "Ban ChexWarrior",                 "samsara_banchex", "OnOff"
+            Option "Ban Corvus",                      "samsara_bancorvus", "OnOff"
+            Option "Ban BJ Blazkowicz",               "samsara_banbj",  "OnOff"
+            Option "Ban Parias",                      "samsara_banparias", "OnOff"
+            Option "Ban Duke",                        "samsara_banduke", "OnOff"
+            Option "Ban SecurityOfficer",             "samsara_banso", "OnOff"
+            Option "Ban Ranger",                      "samsara_banranger", "OnOff"
+            StaticText      ""
+            StaticText      "Ability Remove", 1
+            Option "Old Laz Device",                  "samsara_classiclaz", "OnOff"
+            Option "Ban Duke's Jetpack",              "samsara_banjetpack", "OnOff"
+            Option "Ban Wolf Movement",               "samsara_banwolfmove", "OnOff"
+            Option "No Custom Gravity",               "samsara_nocustomgravity", "OnOff"
+            StaticText      ""
+            StaticText      "Class Multiplier Options", 1
+            Slider "Doomguy Damage Multiplier",       "samsara_doomguydamage", -10, 30, 2
+            Slider "Doomguy Defense Multiplier",      "samsara_doomguydefense", -10, 20, 2
+            Slider "Chex Damage Multiplier",          "samsara_chexdamage", -10, 30, 2
+            Slider "Chex Defense Multiplier",         "samsara_chexdefense", -10, 20, 2
+            Slider "Corvus Damage Multiplier",        "samsara_corvusdamage", -10, 30, 2
+            Slider "Corvus Defense Multiplier",       "samsara_corvusdefense", -10, 20, 2
+            Slider "BJ Damage Multiplier",            "samsara_bjdamage", -10, 30, 2
+            Slider "BJ Defense Multiplier",           "samsara_bjdefense", -10, 20, 2
+            Slider "Parias Damage Multiplier",        "samsara_pariasdamage", -10, 30, 2
+            Slider "Parias Defense Multiplier",       "samsara_pariasdefense", -10, 20, 2
+            Slider "Duke Damage Multiplier",          "samsara_dukedamage", -10, 30, 2
+            Slider "Duke Defense Multiplier",         "samsara_dukedefense", -10, 20, 2
+            Slider "SO Damage Multiplier",            "samsara_sodamage", -10, 30, 2
+            Slider "SO Defense Multiplier",           "samsara_sodefense", -10, 20, 2
+            Slider "Ranger Damage Multiplier",        "samsara_rangerdamage", -10, 30, 2
+            Slider "Ranger Defense Multiplier",       "samsara_rangerdefense", -10, 20, 2
+            }
+     
+    OptionValue ChickensOptionsA
+    {
+            0, "Off"
+            1, "Aggressive"
+            2, "Cowardly"
+            3, "Friendly"
+    }
+     
+    OptionValue ChickensOptionsB
+    {
+            75, "Very Slow"
+            50, "Slow"
+            35, "Default"
+            20, "Fast"
+            5, "Very Fast"
+            1, "OH GOD"
+    }
+     
+    OptionValue LMSLifeOption
+    {
+            0, "100/0"
+            1, "100/100"
+            2, "200/200"
+            3, "300/300"
+            4, "400/400"
+            5, "500/500"
+    }
+     
+    OptionValue JumpModOptions
+    {
+            -25, "Grounded"
+            -16, "High Gravity"
+            -8, "Strife"
+            0, "Default"
+            9, "Hexen"
+            20, "Duke"
+            32, "Rocket Jumping"
+            64, "Jump Boots"
+            100, "Full Retard"
+    }
+     
+    OptionValue pdwtakOptions
+    {
+            0, "Off"
+            1, "512/384"
+            2, "1024/768"
+            3, "8192/2048"
+    }
+     
+    OptionValue ArmorModeOptions
+    {
+            0, "Default"
+            1, "Quake"
+            2, "Quake+"
+            3, "Marathon"
+            4, "No Armor"
+    }
+

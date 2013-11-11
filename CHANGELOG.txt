@@ -18,6 +18,7 @@ FROM 0.3 TO 0.31
 - Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.
 - Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
+- Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.
 
 FROM 0.29b TO 0.3
 ========================
