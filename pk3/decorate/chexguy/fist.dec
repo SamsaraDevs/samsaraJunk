@@ -8,7 +8,7 @@ actor " Bootspoon " : Weapon
     +WEAPON.NOALERT
     +BLOODLESSIMPACT
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \chspooned\c- %o \chback to home.\c-"
+    Obituary "$SAMSARA_CHEX_OB_FIST"
     States
     {
       Ready:

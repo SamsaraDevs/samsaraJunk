@@ -13,7 +13,7 @@ actor "Rapid Zorcher" : Weapon
     +INVENTORY.UNDROPPABLE
     DamageType "Zorch"
     Inventory.PickupMessage "You got the Rapid Zorcher!"
-    Obituary "%k \chzorched\c- %o \chfull of neat holes.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT4"
     States
     {
       Ready:

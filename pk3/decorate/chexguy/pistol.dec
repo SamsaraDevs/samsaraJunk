@@ -4,7 +4,7 @@ actor "Mini-Zorcher" : Weapon
     Weapon.SlotNumber 1
     Weapon.SlotPriority 1
     Inventory.PickUpSound "chex/weaponget"
-    Obituary "%k \chzorched\c- %o \chwith his pea-blaster.\c-"
+    Obituary "$SAMSARA_CHEX_OB_PISTOL"
     Inventory.PickupMessage "You got the Mini-Zorcher!"
     Weapon.AmmoUse 0
     Weapon.AmmoGive 0

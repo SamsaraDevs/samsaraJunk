@@ -12,7 +12,7 @@ ACTOR "Gigazorcher 2100" : Weapon
 	+BLOODLESSIMPACT
 	+PUFFONACTORS
 	+WEAPON.NOAUTOAIM
-    Obituary "%k \chsent\c- %o\ch on a trip to lightspeed."
+    Obituary "$SAMSARA_CHEX_OB_INSTAGIB"
     States
     {
     Ready:

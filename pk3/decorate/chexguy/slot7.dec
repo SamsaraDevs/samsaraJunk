@@ -15,7 +15,7 @@ Actor "LAZ Device" : Weapon
     +NOEXTREMEDEATH
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the LAZ Device! Woot!"
-    Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT7_1"
     DamageType "ZorchBfg"
     Weapon.SisterWeapon "Spectral LAZ Device"
     States
@@ -349,7 +349,7 @@ actor ChexLAZBall : BFGBall
 	+NOEXTREMEDEATH
 	+BLOODLESSIMPACT
     DeathSound "chex/bfgx"
-    Obituary "%k \chkicked\c- %o\ch off to another dimension with the LAZ device.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT7_2"
     States
     {
       Spawn:
@@ -387,7 +387,7 @@ actor ChexBFGBall
     Speed 25
     Damage 100
     RenderStyle Translucent
-    Obituary "%k \chkicked\c- %o\ch off to another dimension with the LAZ device.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT7_2"
     Alpha 0.75
     DeathSound "chex/bfgx"
     Projectile
@@ -482,7 +482,7 @@ actor ChexBFGExplosionEffect
     Scale 0.75
     Speed 0
     RenderStyle Add
-    Obituary "%k \chshowed\c- %o \chyou can always get LAZ'd.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT7_1"
     DamageType "Zorch"
     Alpha 0.1
     States

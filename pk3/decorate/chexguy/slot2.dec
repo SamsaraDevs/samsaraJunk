@@ -13,7 +13,7 @@ actor "Large Zorcher" : Weapon
     +INVENTORY.UNDROPPABLE
     DamageType "Zorch"
     Inventory.PickupMessage "You got the Large Zorcher!"
-    Obituary "%k \chsplayed\c- %o \chwith zorches all over.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT2"
     States
     {
       Ready:

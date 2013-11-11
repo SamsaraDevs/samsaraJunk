@@ -77,7 +77,7 @@ actor ChexRocket
     +BRIGHT
     SeeSound "chex/rocklf"
     DeathSound "chex/rocklx"
-    Obituary "%k \chzorched\c- %o \chwith way more force than needed.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT5"
     DamageType "Zorch"
     States
     {

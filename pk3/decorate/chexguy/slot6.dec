@@ -81,7 +81,7 @@ actor ChexPlasma
     Alpha 0.75
     SeeSound "chex/plasmaf"
     DeathSound "chex/plasmax"
-    Obituary "%k \chphased\c- %o \choff of this planet.\c-"
+    Obituary "$SAMSARA_CHEX_OB_SLOT6"
     DamageType "PhasingZorch"
     Decal ChexPlasmaScorch
     States
