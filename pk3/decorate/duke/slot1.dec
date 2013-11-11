@@ -103,7 +103,8 @@ actor Pipebombs : Weapon
 	  
 	  Deselect:
         TNT1 A 0 A_JumpIfInventory("DukeThrownPipebomb",1,"Deselect2")
-		TNT1 A 0 A_JumpIfNoAmmo("Deselect3")
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		goto Deselect3
 		TNT1 A 0 A_TakeInventory("DBSHOT",99)
 		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
 		TNT1 A 0 A_TakeInventory("DukePipebombSpeed",1)
@@ -260,7 +261,8 @@ actor Pipebombs : Weapon
         loop
 	  
 	  Select:
-        TNT1 A 0 A_JumpIfNoAmmo("Select2")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		goto Select2
 		TNT1 A 0 A_TakeInventory("DBSHOT",99)
 		TNT1 A 0 A_TakeInventory("DBSHOT1",99)
 		TNT1 A 0 A_TakeInventory("DukePipebombSpeed",1)
