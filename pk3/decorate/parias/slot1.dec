@@ -49,7 +49,7 @@ actor PoisonBagCoop
 	+PIERCEARMOR
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
-    Obituary "%k \clput\c- %o \clunder the gas.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT1"
     States
     {
       Spawn:

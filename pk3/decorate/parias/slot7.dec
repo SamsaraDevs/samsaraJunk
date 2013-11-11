@@ -15,7 +15,7 @@ actor Wraithverge : CWeapWraithverge
 
     Weapon.SisterWeapon "Spectral Wraithverge"
 
-    Obituary "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT7"
     Inventory.PickupMessage "You picked up the Wraithverge!"
     Inventory.PickupSound "hexen/weaponget"
     States
@@ -135,7 +135,7 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
 
 actor HolySpiritDM : MageStaffFX2//HolySpirit
 {
-    Obituary "%k \cladded\c- %o\cl's soul to the Wraithverge.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT7"
     //Renderstyle Translucent
     Speed 20 // Previously 12
     //Alpha 0.5

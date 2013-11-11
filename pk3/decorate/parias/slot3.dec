@@ -10,7 +10,7 @@ actor "Timon's Axe" : FWeapAxe
     Weapon.AmmoType1 "Clip"
     Inventory.PickupMessage "You got Timon's Axe!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \clexecuted\c- %o \clunder Timon's blessing.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT3"
     -WEAPON.AXEBLOOD
     +WEAPON.AMMO_OPTIONAL
     +WEAPON.MELEEWEAPON

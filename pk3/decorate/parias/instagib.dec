@@ -45,7 +45,7 @@ actor MageStaffFXInstagib : FastProjectile
 	Decal Scorch
     DeathSound "MageStaffExplode"
 	DamageType "Fire"
-    Obituary "%k \cgset\c- %o\cg's soul ablaze."
+    Obituary "$SAMSARA_HEXEN_OB_INSTAGIB"
 	States
 	{
     Spawn:

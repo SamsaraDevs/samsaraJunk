@@ -9,7 +9,7 @@ actor "Mace of Contrition" : CWeapMace
     +WEAPON.MELEEWEAPON
     +WEAPON.NOALERT
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \clmaced\c- %o \clthe ol'-fashioned way.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_FIST"
     States
     {
       Select:
@@ -57,7 +57,7 @@ actor "Spiked Gauntlet" : FWeapFist
     +CHEATNOTWEAPON
     Inventory.PickupMessage "You got the Spiked Gauntlet of Baratus!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \cgsnapped\c- %o\cg's neck with a brutal punch."
+    Obituary "$SAMSARA_HEXEN_OB_PUNCHDRUNKB"
     States
     {
       Select:

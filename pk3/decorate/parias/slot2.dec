@@ -9,7 +9,7 @@ actor "Frost Shards" : MWeapFrost
     DamageType "HexenIce"
     Weapon.AmmoType1 "Clip"
     Inventory.PickupMessage "You got the Frost Shards!"
-    Obituary "%k \clshattered\c- %o \cland left %p body to melt.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT2"
     Inventory.PickupSound "hexen/weaponget"
     +BLOODSPLATTER
     -ICEDAMAGE
@@ -140,7 +140,7 @@ actor FrostMissileMelee : FastProjectile
 actor FrostMissileDM : FrostMissile
 {
     Damage (random(1,4))
-    Obituary "%k \clshattered\c- %o \cland left %p body to melt.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT2"
     -ICEDAMAGE
     DamageType "HexenIce"
     +THRUGHOST
@@ -163,7 +163,7 @@ actor FrostMissileDM4 : FrostMissileDM
 
 actor FrostMissile2 : FrostMissile replaces FrostMissile
 {
-    Obituary "%k \clshattered\c- %o \cland left %p body to melt.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT2"
     -ICEDAMAGE
     DamageType "HexenIce"
     +THRUGHOST

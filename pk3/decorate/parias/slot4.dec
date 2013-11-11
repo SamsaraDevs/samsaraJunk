@@ -9,7 +9,7 @@ actor "Serpent Staff" : CWeapStaff
     Weapon.AmmoType1 "Clip"
     Inventory.PickupMessage "You got the Serpent Staff!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \cldrained\c- %o\cl's soul into the Serpent Staff.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT4"
     +INVENTORY.UNDROPPABLE
     States
     {
@@ -106,7 +106,7 @@ actor CStaffMissile2 : CStaffMissile replaces CStaffMissile
 {
     Decal DoomImpScorch
     Damage (random(5,25))//5
-    Obituary "%k \clmelted\c- %o\cl's flesh off with the Serpent's venom.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT4_2"
 }
 
 actor CStaffMissileCoop : CStaffMissile2

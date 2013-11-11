@@ -13,7 +13,7 @@ actor "Hammer of Retribution" : FWeapHammer
     Weapon.AmmoType1 "Cell"
     Inventory.PickupMessage "You got the Hammer of Retribution!"
     Inventory.PickupSound "hexen/weaponget"
-    Obituary "%k \clsplintered\c- %o\cl's skull and spine with the Hammer of Retribution.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT5_1"
     States
     {
       Spawn:
@@ -131,7 +131,7 @@ actor "Hammer of Retribution" : FWeapHammer
 
 actor HammerMissile2 : HammerMissile replaces HammerMissile
 {
-    Obituary "%k \clthrew\c- %o \clunder the Hammer.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT5_2"
     Decal Scorch
     Damage 10
     +THRUGHOST
@@ -159,7 +159,7 @@ actor HammerMissile2RJ : HammerMissile2
 
 actor HammerMissileDM : HammerMissile
 {
-    Obituary "%k \clthrew\c- %o \clunder the Hammer.\c-"
+    Obituary "$SAMSARA_HEXEN_OB_SLOT5_2"
     Decal Scorch
     Damage 10
     +THRUGHOST
