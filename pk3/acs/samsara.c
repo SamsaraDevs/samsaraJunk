@@ -299,7 +299,7 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
     SetResultValue(result);
 }
 
-script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is the shit for different text messages.
+script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
 {
     int i, j, k;
     int x, y, z;
@@ -365,6 +365,16 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside // This is
         z += itof(cond(keyDown(BT_CROUCH), random(10, 14), random(30, 34)));
         Spawn("GauntletSparks", x + FixedMul(cos(i), 16 * cos(j)), y + FixedMul(cos(i), 16 * sin(j)), z - (16 * sin(i)), k);
         SetActorVelocity(k, GetActorVelX(0), GetActorVelY(0), GetActorVelZ(0), 0,0);
+        break;
+		
+    case 10:
+        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
+        break;
+		
+    case 11:
+        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
         break;
     }
 }
@@ -966,7 +976,7 @@ script 679 (int tx, int ty, int tz) clientside
     }
 }
 
-script 680 (int clientsidechoice) CLIENTSIDE
+/*script 680 (int clientsidechoice) CLIENTSIDE
 {
     //int result;
     switch (clientsidechoice)
@@ -982,4 +992,4 @@ script 680 (int clientsidechoice) CLIENTSIDE
         break;
     }
     //SetResultValue(result);
-}
+}*/
