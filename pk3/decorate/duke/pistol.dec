@@ -11,7 +11,7 @@ actor M1911 : Weapon
     Weapon.SelectionOrder 1900
     Weapon.AmmoType "DukePistolReload"
     Weapon.AmmoUse 1
-    Obituary "%k \c[m1]made\c- %o \c[m1]suck on the M1911."
+    Obituary "$SAMSARA_DUKE_OB_PISTOL"
 	Decal BulletChip
     DamageType "DukeDamage"
     +WEAPON.WIMPY_WEAPON
@@ -727,7 +727,7 @@ actor DukePistolBullet : FastProjectile
     Height 1
     Speed 320
     Projectile
-    Obituary "%k \c[m1]made\c- %o \c[m1]suck on the M1911.\c-"
+    Obituary "$SAMSARA_DUKE_OB_PISTOL"
     DamageType "DukePistol"
     Renderstyle "Normal"
     +BLOODSPLATTER

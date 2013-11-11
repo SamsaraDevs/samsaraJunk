@@ -635,7 +635,7 @@ actor DukeDevastatorRocket
     Speed 30
     Damage (38)
     Projectile
-    Obituary "%k \c[m1]devastated\c- %o\c[m1]."
+    Obituary "$SAMSARA_DUKE_OB_SLOT7"
     Scale 0.2
     Decal DoomImpScorch
     DamageType "DukeExplosive"
@@ -651,7 +651,7 @@ actor DukeDevastatorRocket
         TNT1 A 0 A_Explode(48, 64)
         TNT1 A 0 A_PlaySoundEx("duke/explosion2", CHAN_WEAPON, 0, -1)
         TNT1 A 0 A_PlaySound("duke/explosion", 5, 0.4, 0, 0)
-        TNT1 A 1 A_SpawnItemEx("DevastatorExplosion")
+        TNT1 A 1 A_SpawnItemEx("DevastatorExplosion",0,0,0,0,0,0,0,160)
         Stop
     }
 }

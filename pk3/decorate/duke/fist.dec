@@ -314,7 +314,7 @@ actor DukeKickAttack : FastProjectile
     Projectile
     Damage (10)
     Speed 25
-    Obituary "%k \c[m1]put\c- %o \c[m1]out with a snap kick.\c-"
+    Obituary "$SAMSARA_DUKE_OB_FIST"
     SeeSound "none"
     DeathSound "none"
     Decal "none"

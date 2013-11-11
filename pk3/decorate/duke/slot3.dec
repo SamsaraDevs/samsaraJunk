@@ -13,7 +13,7 @@ actor "Explosive Shotgun" : Weapon
     +NOALERT
     +WEAPON.EXPLOSIVE
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT3"
     Inventory.Pickupmessage "You got the Explosive Shotgun!"
     Inventory.PickupSound "duke/xshotgunpump"
     Weapon.UpSound "duke/xshotgunpump"
@@ -516,7 +516,7 @@ actor DukeExplosiveShotgunBullet : FastProjectile
     Height 1
     Speed 320
     Projectile
-    Obituary "%k \c[m1]pulverized\c- %o \c[m1]with a spray of explosions.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT3"
     DamageType "DukeExplosive"
     Renderstyle "Normal"
     +BLOODSPLATTER

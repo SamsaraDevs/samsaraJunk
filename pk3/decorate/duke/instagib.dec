@@ -6,7 +6,7 @@ actor "Golden Desert Eagle" : Weapon
     Weapon.SlotNumber 0
     Weapon.AmmoType "DukeGoldEagleReload"
     Weapon.AmmoUse 1
-    Obituary "%k \c[m1]made\c- %o \c[m1]spread 'em."
+    Obituary "$SAMSARA_DUKE_OB_INSTAGIB"
 	Decal BulletChip
     DamageType "DukeDamage"
     +WEAPON.AMMO_OPTIONAL

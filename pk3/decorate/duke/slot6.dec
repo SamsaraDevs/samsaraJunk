@@ -857,7 +857,7 @@ actor FreezethrowerBolt
     Damage (22)//Original was 20.
     DamageType "DukeIce"
     Projectile
-    Obituary "%k \c[m1]threw\c- %o \c[m1]in the freezer.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT6"
     Scale 0.14
     Alpha 0.95
     RenderStyle Add
@@ -871,7 +871,7 @@ actor FreezethrowerBolt
 
       Death:
         FRZX A 1
-        FRZX A 10 A_SpawnItem("FreezethrowerDeath")
+        FRZX A 10 A_SpawnItemEx("FreezethrowerDeath",0,0,0,0,0,0,0,160)
         stop
 
       Crash:

@@ -10,7 +10,7 @@ actor "Chaingun Cannon" : Weapon
     Weapon.AmmoUse 1
     Weapon.AmmoGive 50
     Weapon.AmmoType "Clip"
-    Obituary "%k \c[m1]ripped \c-%o \c[m1]a new one.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT4"
 	decal BulletChip
     Inventory.Pickupmessage "You got the Ripper Chaingun Cannon!"
     Inventory.PickupSound "duke/weaponget"
@@ -591,14 +591,14 @@ actor DukeRipperBullet : DukePistolBullet
 {
     +THRUGHOST
     +NOTIMEFREEZE
-    Obituary "%k \c[m1]ripped\c- %o \c[m1]a new one.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT4"
     Damage (15)// Original was (9)
     DamageType "DukeDamage"
 }
 
 actor DukeRipperBulletCoop : DukePistolBullet
 {
-    Obituary "%k \c[m1]ripped\c- %o \c[m1]a new one.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT4"
     Damage (15)
     +THRUGHOST
     +THRUSPECIES

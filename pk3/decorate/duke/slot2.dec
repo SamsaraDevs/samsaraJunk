@@ -33,7 +33,7 @@ actor "  Shotgun  " : Weapon
     DamageType "DukeDamage"
     +NOALERT
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT2"
 	Decal BulletChip
     Inventory.Pickupmessage "You got the Shotgun!"
     Inventory.PickupSound "duke/mosspump2"
@@ -593,14 +593,14 @@ actor DukeShotgunBullet : DukePistolBullet
 {
     +THRUGHOST
     +NOTIMEFREEZE
-    Obituary "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT2"
     Damage (10)
     DamageType "DukeDamage"
 }
 
 actor DukeShotgunBulletCoop : DukePistolBullet
 {
-    Obituary "%k \c[m1]deemed\c- %o \c[m1]a threat.\c-"
+    Obituary "$SAMSARA_DUKE_OB_SLOT2"
     Damage (10)
     +THRUGHOST
     +THRUSPECIES
