@@ -35,7 +35,7 @@ Actor SuperCoopChicken
     PainSound "chicken/pain"
     DeathSound "chicken/death"
     ActiveSound "chicken/active"
-    Obituary "%o was pecked to death by a chicken."
+    Obituary "$SAMSARA_STTP3K_OB_CHICKEN1"
     States
     {
     Spawn:
@@ -210,7 +210,7 @@ actor AssaultChicken : SuperCoopChicken
 	+MISSILEEVENMORE
 	Translation "80:111=16:47", "3:3=42:42"
     Speed 20
-	Obituary "%o was shot down by an assault chicken."
+	Obituary "$SAMSARA_STTP3K_OB_CHICKEN2"
 	Species "Chicken"
 	DropItem "BulletPuff"
 	States
@@ -263,7 +263,7 @@ actor ExplosiveChicken : SuperCoopChicken
 	Speed 30
 	Translation "80:103=5:8", "104:111=0:0", "3:3=8:8"
 	MeleeRange 128
-	Obituary "%o was blown up by an explosive chicken."
+	Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
 	+THRUSPECIES
     +NOTARGET
 	Species "Chicken"
@@ -314,7 +314,7 @@ actor ChickenExplode
     +NOCLIP
 	+FORCERADIUSDMG
     -SOLID
-	Obituary "%o was blown up by an explosive chicken."
+	Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
     States
     {
       Spawn:

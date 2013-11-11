@@ -127,7 +127,7 @@ actor PeopleDieWhenTheyAreKilled
     Height 8
 
     DamageType "Kamikaze"
-    Obituary "%k exploded %o."
+    Obituary "$SAMSARA_OB_PDWTAK"
 
     States
     {
