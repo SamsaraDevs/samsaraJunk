@@ -291,6 +291,7 @@ actor EnforcerShot
     -BLOODSPLATTER
     +NOBLOOD
     +BLOODLESSIMPACT
+    +NOEXTREMEDEATH
     Scale 0.35
     DeathSound "enforcer/hit"
     Obituary "%k \cnkildldedd\c- %o \cnwitfji09 tth e   44 \c[c2]SYSTEM ERROR\c-"
@@ -321,6 +322,7 @@ actor AlienWeaponBullet : FastProjectile
     +NOTIMEFREEZE
     +NOEXTREMEDEATH
     +BLOODLESSIMPACT
+    +NOEXTREMEDEATH
     Decal RailScorchLower
     States
     {

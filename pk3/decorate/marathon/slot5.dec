@@ -509,6 +509,7 @@ actor LauncherRocket
     +RANDOMIZE
     +FORCERADIUSDMG
     +BLOODLESSIMPACT
+	+EXTREMEDEATH
     States
     {
       Spawn:
