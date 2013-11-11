@@ -11,7 +11,7 @@ ACTOR "Rocket Powered Impaler" : InstantSwitchWeapon
 	Decal DoomImpScorch
     +INVENTORY.UNDROPPABLE
 	+WEAPON.NOAUTOAIM
-    Obituary "%k \cspinned\c- %o\cs down."
+    Obituary "$SAMSARA_RANGER_OB_INSTAGIB_1"
     States
     {
     Ready:

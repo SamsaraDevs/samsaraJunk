@@ -333,7 +333,7 @@ actor QuakeGrenade
     
     SeeSound "quakeweps/grenadebounce"
     
-    Obituary "%k \csfed\c- %o \csa pineapple.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_1"
     
     States
     {
@@ -447,7 +447,7 @@ actor SpectralGrenade: QuakeGrenadeCoopQuad { DamageType "SpectralNoQuad" }
 actor QuakeClusterGrenade: QuakeGrenade
 {
     Translation "80:111=48:79"
-    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_2"
     
     ReactionTime 46
     
@@ -532,7 +532,7 @@ actor QuakeTinyGrenade: QuakeGrenade
     
     SeeSound "quakeweps/grenadebounce_quiet"
     
-    Obituary "%k \csfed\c- %o \csa cluster of pineapples.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT3_2"
     
     States
     {

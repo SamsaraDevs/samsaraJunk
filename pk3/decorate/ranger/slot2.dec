@@ -19,7 +19,7 @@ actor "Double Shotgun": InstantSwitchWeapon
     
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the double-barreled shotgun"
-    Obituary "%k \csgave\c- %o \cstwo loads of buckshot.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT2"
     
     //Decal BulletChip
     

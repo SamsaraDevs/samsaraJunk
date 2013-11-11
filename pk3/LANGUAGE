@@ -185,11 +185,10 @@ SAMSARA_RANGER_OB_SLOT5_4 = "%k \csturned\c- %o \csinto a fine mist.\c-";
 SAMSARA_RANGER_OB_SLOT6_1 = "%k \cspenetrated\c- %o\cs.\c-";
 SAMSARA_RANGER_OB_SLOT6_2 = "%k \csthought\c- %o \cswas super-hot.\c-";
 SAMSARA_RANGER_OB_SLOT7_1 = "%k \csgave\c- %o \csthe shaft.\c-";
-SAMSARA_RANGER_OB_SLOT7_2 = "%k \csstruck a discharge at\c- %o\cs.\c-";
+SAMSARA_RANGER_OB_SLOT7_2 = "%k \csdischarged at\c- %o\cs.\c-";
 SAMSARA_RANGER_OB_BERSERK = "%k \cstazed\c- %o \cswith the Laser Cannon.\c-";
 SAMSARA_RANGER_OB_PUNCHDRUNKC = "%k \csmade\c- %o \cstalk to the hand.\c-";
 SAMSARA_RANGER_OB_INSTAGIB_1 = "%k \cspinned\c- %o \csdown.\c-";
-SAMSARA_RANGER_OB_INSTAGIB_2 = "%k \csshouldn't have killed\c- %o \cswith this.\c-";
 
 SAMSARA_STTP3K_OB_CHICKEN1 = "%o was pecked to death by a chicken.";
 SAMSARA_STTP3K_OB_CHICKEN2 = "%o was shot down by an assault chicken.";

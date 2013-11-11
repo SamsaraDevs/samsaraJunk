@@ -25,7 +25,7 @@ actor "Nailgun": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the nailgun"
-    Obituary "%k \csnailed\c- %o\cs."
+    Obituary "$SAMSARA_RANGER_OB_SLOT4_1"
 
     States
     {
@@ -536,7 +536,7 @@ actor QuakeLavaNail: QuakeNail
 
     Translation "160:164=208:214"
 
-    Obituary "%k \csthought\c- %o \cswas hot."
+    Obituary "$SAMSARA_RANGER_OB_SLOT4_2"
     
     States
     {

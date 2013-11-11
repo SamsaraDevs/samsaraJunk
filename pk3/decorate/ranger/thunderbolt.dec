@@ -21,7 +21,7 @@ actor "Thunderbolt": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the thunderbolt"
-    Obituary "%k \csgave\c- %o \csthe shaft.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT7_1"
 
     States
     {
@@ -624,7 +624,7 @@ actor LGDischarge
 
     Projectile
 
-    Obituary "%o \csaccepts\c- %k's \csdischarge.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT7_2"
 
     States
     {

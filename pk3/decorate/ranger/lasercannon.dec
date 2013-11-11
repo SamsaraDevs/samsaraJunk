@@ -141,7 +141,7 @@ actor LaserCannonBolt
     Scale 0.55
     SeeSound "quakeweps/laserbounce"
 
-    Obituary "%k \cstazed\c- %o \cswith the Laser Cannon.\c-"
+    Obituary "$SAMSARA_RANGER_OB_BERSERK"
 
     States
     {

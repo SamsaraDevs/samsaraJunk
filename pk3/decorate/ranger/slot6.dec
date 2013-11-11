@@ -24,7 +24,7 @@ actor "Super Nailgun": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the super nailgun"
-    Obituary "%k \cspenetrated\c- %o\cs."
+    Obituary "$SAMSARA_RANGER_OB_SLOT6_1"
 
     States
     {
@@ -383,7 +383,7 @@ actor "Spectral SNG": "Super Nailgun"
 actor QuakeSuperNail: QuakeNail
 {
     Damage (18)
-    Obituary "%k \cspenetrated\c- %o\cs\cs."
+    Obituary "$SAMSARA_RANGER_OB_SLOT6_1"
 
     DeathSound "quakeweps/supernailricochet"
 }
@@ -399,7 +399,7 @@ actor QuakeSLNail: QuakeLavaNail
 {
     Damage (18)
     DamageType QuakeFire
-    Obituary "%k\cs thought\c- %o\cs was super-hot."
+    Obituary "$SAMSARA_RANGER_OB_SLOT6_2"
     DeathSound "quakeweps/supernailricochet"
     States
     {

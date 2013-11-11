@@ -312,7 +312,7 @@ actor QuakeRocket
     +ROCKETTRAIL
     +EXPLODEONWATER
     
-    Obituary "%k \csmade\c- %o \csride the rocket.\c-" // Might need to change, exact same as Doomguy's.
+    Obituary "$SAMSARA_RANGER_OB_SLOT5_1"
     
     States
     {
@@ -330,7 +330,7 @@ actor QuakeRocket
 
 actor QuakeRocketQuad: QuakeRocket
 {
-    Obituary "%k \cssmeared\c- %o \cswith a Quadded Rocket."
+    Obituary "$SAMSARA_RANGER_OB_SLOT5_3"
     
     DamageType "NotQuadded"
     
@@ -360,7 +360,7 @@ actor QuakeRocketCoopQuad: QuakeRocketQuad
 
 actor QuakeClusterRocket: QuakeRocket
 {
-    Obituary "%k \csgave\c- %o \csfour rockets to ride.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT5_2"
     
     States
     {
@@ -383,7 +383,7 @@ actor QuakeClusterRkCoop: QuakeClusterRocket
 actor QuadClusterRocket: QuakeClusterRocket
 {
     DamageType "NotQuadded"
-    Obituary "%k \csturned\c- %o \csinto a fine mist.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT5_4"
     
     States
     {

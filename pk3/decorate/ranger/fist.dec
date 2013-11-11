@@ -12,7 +12,7 @@ actor "Axe": InstantSwitchWeapon
     +UNDROPPABLE
 
     Inventory.Icon "TNT1A0"
-    Obituary "%k \csmet\c- %o\cs, and %g met the axe.\c-"
+    Obituary "$SAMSARA_RANGER_OB_FIST"
 
     States
     {

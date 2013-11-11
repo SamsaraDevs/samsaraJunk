@@ -11,7 +11,7 @@ actor "Gauntlet": InstantSwitchWeapon
 
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the gauntlet"
-    Obituary "%k \csmade\c- %o \cstalk to the hand.\c-"
+    Obituary "$SAMSARA_RANGER_OB_PUNCHDRUNKC"
 
     Weapon.SisterWeapon "Spectral Gauntlet"
     

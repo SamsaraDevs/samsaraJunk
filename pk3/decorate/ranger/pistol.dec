@@ -15,7 +15,7 @@ actor "Single Shotgun": InstantSwitchWeapon
     
     Inventory.PickupSound "quakeweps/weaponpickup"
     Inventory.PickupMessage "You got the shotgun"
-    Obituary "%k \csgave\c- %o \csa boomstick to chew on.\c-"
+    Obituary "$SAMSARA_RANGER_OB_PISTOL"
     
     //Decal BulletChip
     

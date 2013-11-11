@@ -14,7 +14,7 @@ actor Mjolnir: InstantSwitchWeapon
 
     Weapon.SelectionOrder 8
 
-    Obituary "%k \cshammered \c-%o\cs without %p consent."
+    Obituary "$SAMSARA_RANGER_OB_SLOT1_1"
 
     Weapon.SisterWeapon "Spectral Mjolnir"
 
@@ -503,7 +503,7 @@ actor MJBeam: FastProjectile
 
     +NODAMAGETHRUST
 
-    Obituary "%k \csshocked\c- %o \cswith a purple wand.\c-"
+    Obituary "$SAMSARA_RANGER_OB_SLOT1_2"
 
     States
     {
