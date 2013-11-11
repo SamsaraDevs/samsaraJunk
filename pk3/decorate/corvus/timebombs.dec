@@ -107,7 +107,7 @@ actor TimeBombOfTheAncients
     RenderStyle Translucent
     Alpha 0.4
     // Health 5
-    Obituary "%k \cqsent\c- %o \cqto the Ancients.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_BOMB"
     //DeathSound "weapons/phoenixhit"
     PROJECTILE
     +FLOATBOB
@@ -155,7 +155,7 @@ actor RemoteOfTheAncients
     RenderStyle Translucent
     Alpha 0.4
     // Health 5
-    Obituary "%k \cqsent\c- %o \cqto the Ancients.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_BOMB"
     //DeathSound "weapons/phoenixhit"
     PROJECTILE
     +FLOATBOB
@@ -204,7 +204,7 @@ actor ProxyOfTheAncients
     RenderStyle Translucent
     Alpha 0.4
     // Health 5
-    Obituary "%k \cqsent\c- %o \cqto the Ancients.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_BOMB"
     //DeathSound "weapons/phoenixhit"
     //PROJECTILE
     MONSTER

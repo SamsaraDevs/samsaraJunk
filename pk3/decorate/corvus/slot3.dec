@@ -10,7 +10,7 @@ actor "Ethereal Crossbow" : Weapon
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     Inventory.PickupMessage "You got the Ethereal Crossbow!"
-    Obituary "%k \cqturned\c- %o \cqinto an ethereal pincushion.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_SLOT3"
     
     States
     {

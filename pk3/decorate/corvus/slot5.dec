@@ -11,7 +11,7 @@ actor "Phoenix Rod" : Weapon
     Weapon.AmmoType "RocketAmmo"
     Inventory.PickUpSound "heretic/weaponget"
     Inventory.PickupMessage "You got the Phoenix Rod!"
-    Obituary "%k \cqgave\c- %o \cqthe bird.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_SLOT5"
     
     States
     {
@@ -134,7 +134,7 @@ actor PhoenixShot : PhoenixFX1
     -SPECIALFIREDAMAGE
     DamageType "FireExplosive"
     Decal Scorch
-    Obituary "%k \cqgave\c- %o \cqthe bird.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_SLOT5"
 }
 
 actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }

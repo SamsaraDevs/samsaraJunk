@@ -9,7 +9,7 @@ ACTOR "Grim Ballista" : Weapon
     Inventory.Pickupmessage "You got the Grim Ballista!"
 	Decal CrossbowScorch
 	DamageType "CorvusGrimBallista"
-    Obituary "%k \cqbrought\c- %o\cq a grim fate."
+    Obituary "$SAMSARA_CORVUS_OB_INSTAGIB"
     States
     {
     Ready:
@@ -52,7 +52,7 @@ ACTOR GrimSpittle
     Speed 10
     Damage (10000)
     Projectile
-    Obituary "%k \cqbrought\c- %o\cq a grim fate."
+    Obituary "$SAMSARA_CORVUS_OB_INSTAGIB"
     +MISSILE
     +RIPPER
     RenderStyle Add

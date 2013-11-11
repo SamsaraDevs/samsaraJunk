@@ -8,7 +8,7 @@ actor " Staff " : Weapon
     +STAFF2_KICKBACK
     +INVENTORY.UNDROPPABLE
 	+THRUGHOST
-    Obituary "%k \cqspoke softly and gave\c- %o \cqthe big stick.\c-"
+    Obituary "$SAMSARA_CORVUS_OB_FIST"
     States
     {
       Ready:
@@ -50,7 +50,7 @@ actor " Staff " : Weapon
         Goto Ready
 
       FireTomed:
-	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireSpectral")
+	    TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireSpectral")
         STFF G 6
         STFF H 8 A_CustomPunch(random(60,120),1,0,"StaffPuff4")//A_StaffAttack(random[StaffAttack](18, 81), "StaffPuff2")
         STFF G 8 A_ReFire

@@ -12,7 +12,7 @@ actor "Elven Wand" : Weapon
     Weapon.AmmoUse 0
     Weapon.AmmoGive 0
     Decal RailScorchLower
-    Obituary "%k \cqput an elven hex on\c- %o."
+    Obituary "$SAMSARA_CORVUS_OB_PISTOL"
     Weapon.YAdjust 5
     
     States
@@ -167,7 +167,7 @@ actor GoldWandFX3 : GoldWandFX2
 {
     Decal HImpScorch
     DamageType "Pistol"
-    Obituary "%k put an elven hex on %o."
+    Obituary "$SAMSARA_CORVUS_OB_PISTOL"
 }
 
 actor GoldWandFX32 : GoldWandFX3 { +THRUSPECIES Species "Player" }
@@ -182,7 +182,7 @@ actor GoldWandFX4 : FastProjectile
     DamageType "Pistol"
     +BLOODSPLATTER
     +NOTIMEFREEZE
-    Obituary "%k \cqput an elven hex on\c- %o."
+    Obituary "$SAMSARA_CORVUS_OB_PISTOL"
     Decal RailScorchLower
     States
     {
