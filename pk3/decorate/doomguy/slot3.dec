@@ -6,7 +6,7 @@ actor "Super Shotgun" : SuperShotgun
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
     AttackSound ""
-    Obituary "%k \cdsmeared\c- %o \cdacross the wall with the SSG.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_SLOT3"
     States
     {
       Ready:

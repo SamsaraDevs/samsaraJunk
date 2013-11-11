@@ -7,7 +7,7 @@ ACTOR " Railgun " : Weapon
 	Decal RailScorch
     +INVENTORY.UNDROPPABLE
 	+WEAPON.NOAUTOAIM
-    Obituary "%k \cdrailed\c- %o\cd."
+    Obituary "$SAMSARA_DOOMGUY_OB_INSTAGIB"
     States
     {
     Ready:

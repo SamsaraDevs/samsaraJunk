@@ -2,7 +2,7 @@ Actor "B.F.G. 9000" : BFG9000
 {
     //Weapon.SlotNumber 7
     DamageType "BFG"
-    Obituary "%k \cdshowed\c- %o \cdyou don't hide from the B.F.G. 9000.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_SLOT7_1"
     +INVENTORY.UNDROPPABLE
 	
     Weapon.SisterWeapon "Spectral B.F.G. 9000"
@@ -143,7 +143,7 @@ actor DoomBFGBall : BFGBall
     +BRIGHT
     +DONTREFLECT
     DeathSound "doomguy/bfgx"
-    Obituary "%k \cdobliterated\c- %o \cdwith the B.F.G. 9000.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_SLOT7_2"
     States
     {
       Spawn:

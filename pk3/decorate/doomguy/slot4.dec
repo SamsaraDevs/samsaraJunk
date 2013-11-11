@@ -9,7 +9,7 @@ actor " Chaingun " : Weapon// : Chaingun
     Inventory.PickupMessage "You got the Chaingun!"
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
-    Obituary "%k \cdmowed\c- %o \cddown with his Chaingun.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_SLOT4"
     States
     {
       Ready:

@@ -11,7 +11,7 @@ actor " Pistol " : Weapon// : Pistol
     +INVENTORY.UNDROPPABLE
     DamageType Pistol
     Inventory.Pickupmessage "i eat you"
-    Obituary "%k \cdexecuted\c- %o \cdfor insubordination.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_PISTOL"
     States
     {
       Ready:

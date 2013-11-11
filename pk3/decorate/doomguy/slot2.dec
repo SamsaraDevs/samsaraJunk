@@ -6,7 +6,7 @@ actor " Shotgun " : Shotgun
     +THRUGHOST
     +INVENTORY.UNDROPPABLE
     AttackSound ""
-    Obituary "%k \cdshowed\c- %o \cdhis boomstick.\c-"
+    Obituary "$SAMSARA_DOOMGUY_OB_SLOT2"
     States
     {
       Ready:
