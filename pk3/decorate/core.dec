@@ -12,5 +12,6 @@
 #include "decorate/core/buffsandnerfs.dec"
 
 #include "decorate/core/blood.dec"
+#include "decorate/core/blood0.dec"
 #include "decorate/core/blood1.dec"
 #include "decorate/core/blood2.dec"
