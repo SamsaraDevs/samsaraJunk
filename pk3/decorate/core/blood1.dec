@@ -105,6 +105,7 @@ actor NashGoreGibBase : GenericGoreActor
     Height 8
     Mass 1
     Scale 0.75
+	+MISSILE
 }
 
 actor NashGore_Gib1 : NashGoreGibBase
