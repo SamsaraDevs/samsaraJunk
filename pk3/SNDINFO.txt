@@ -78,6 +78,24 @@ bdeth2                       BRTDETH2
 bdeth3                       BRTDETH3
 bdeth4                       BRTDETH4
 
+$random happy/sparkle { hspark2 hspark3 hspark4 hspark5 hspark6 hspark7 hspark8 }
+//hspark1                      HPPYSPRK
+hspark2                      HPPYSPR2
+hspark3                      HPPYSPR3
+hspark4                      HPPYSPR4
+hspark5                      HPPYSPR5
+hspark6                      HPPYSPR6
+hspark7                      HPPYSPR7
+hspark8                      HPPYSPR8
+
+$random happy/gib { hgib1 hgib2 hgib3 hgib4 hgib5 hgib6 }
+hgib1                        HPPYGIB1
+hgib2                        HPPYGIB2
+hgib3                        HPPYGIB3
+hgib4                        HPPYGIB4
+hgib5                        HPPYGIB5
+hgib6                        HPPYGIB6
+
 ////////////////////
 // Ally sounds for Strife's beacons
 ////////////////////
