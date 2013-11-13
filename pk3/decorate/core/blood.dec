@@ -78,6 +78,9 @@ actor Switchable_FlyingBlood
     }
 }
 
+actor Switchable_FlyingBlood_Green : Switchable_FlyingBlood { Translation "16:47=112:127", "176:191=112:127" }
+actor Switchable_FlyingBlood_Blue : Switchable_FlyingBlood { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
+
 actor GenericGoreActor
 {
     +CANNOTPUSH
