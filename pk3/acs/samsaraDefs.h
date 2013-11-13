@@ -63,7 +63,7 @@
 #define SPEED_FORWARD       15
 #define SPEED_SIDE          13
 
-#define UNLOADCOUNT 37
+#define UNLOADCOUNT 59
 
 #define P_COUNT 2
 #define P_QUAD  0
@@ -212,6 +212,9 @@ int UnloadRemove[UNLOADCOUNT] =
     "UsingToasty", "UsingAlienWeapon", "UsingAlienWeapon2", "UsingWMC", 
     "UsingDualPistols", "UsingDualShotguns", "InvasionDualShottyCheck",
     "QuakeQuadTimer", "QuakeRegenTimer", "QuakeInvisTimer", "ChickenKillCount",
+	"GibfistSide", "DBSHOT", "DBSHOT1", "DB1", "DB2", "DB3", "DB4", "DB5", "DB6",
+	"DB7", "DB8", "DB9", "DB10", "DB11", "DB12", "DB13", "DB14", "DB15", "DB16", "DB17",
+    "DB18", "DB19",
 };
 
 int PowerOutVols[5] = {96, 104, 112, 120, 127};
