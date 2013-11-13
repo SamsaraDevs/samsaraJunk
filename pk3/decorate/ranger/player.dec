@@ -24,7 +24,7 @@ actor QuakePlayer: PlayerPawn
     Player.StartItem "QuakeClass"
     Player.StartItem "Single Shotgun"
     Player.StartItem "IsSamsaraClass", 1
-    Player.StartItem "Clip", 50
+    Player.StartItem "Shell", 25
     Player.StartItem "Axe"
     
     Player.ColorRange 112, 127
