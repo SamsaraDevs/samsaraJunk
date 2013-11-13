@@ -651,6 +651,7 @@ StatusBar normal, forcescaled
     Playerclass Blazkowicz
     {
         drawimage "WOLFBAR", 0, 168;
+		IsSelected "Luger" { InInventory PistolModeOn, 1 { drawnumber 3, WOLFHUDF, gold, ammo Clip, 37, 181, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, WOLFHUDF, gold, ammo1, 37, 181, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, WOLFHUDF, gold, health, 90, 181, red, 25, untranslated, 50;
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
