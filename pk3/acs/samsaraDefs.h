@@ -560,11 +560,11 @@ int ChangelogString =
 - Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!\n\
 - The wonky rules about when Ranger could or could not get a Quad item have been chucked out the window in favor of a cvar--samsara_permaquad. Put at 1 to get a Quake II-style inventory Quad Damage, put at 0 to have just 30 seconds and nothing more.\n\
 - Flemoid Blood should no longer conflict with any instances of Nashgore.\n\
-- People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed!\n\
- ^- : samsara_bloodyhell 0 is default level, and is no different from vanilla.\n\
- ^- : samsara_bloodyhell 1 is Nashgore level, and is for those who want a little bit more blood without anything over the top.\n\
- ^- : samsara_bloodyhell 2 is Brutal level, and is for those who want as much bloodshed and brutality as possible.\n\
- ^- : samsara_bloodyhell -1 is Happyfun level, and is...well, you'll see.\n\
+- People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_cl_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed!\n\
+ ^- : samsara_cl_bloodyhell 0 is default level, and is no different from vanilla.\n\
+ ^- : samsara_cl_bloodyhell 1 is Nashgore level, and is for those who want a little bit more blood without anything over the top.\n\
+ ^- : samsara_cl_bloodyhell 2 is Brutal level, and is for those who want as much bloodshed and brutality as possible.\n\
+ ^- : samsara_cl_bloodyhell -1 is Happyfun level, and is...well, you'll see.\n\
 - samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.\n\
 - Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!\n\
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.\n\
