@@ -146,7 +146,7 @@ actor DarkImp : DoomImp2 5003
 		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan_Orange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 A 0 A_SpawnItemEx("BrutalBlueOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 AAAA 0 A_SpawnItemEx("BrutalChunk_Blue",random(-10,10),random(-10,10),random(12,40),random(-500,500)/100.00,random(-500,500)/100.00,random(300,1000)/100.00,random(-180,180),160)
 		TNT1 AA 0 A_SpawnItemEx("BrutalChunkHuge_Blue",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
