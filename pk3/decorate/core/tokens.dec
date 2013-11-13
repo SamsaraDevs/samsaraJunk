@@ -39,6 +39,7 @@ actor CoopModeOn: Boolean {}
 actor SPModeOn: Boolean {}
 actor InstagibModeOn: Boolean {}
 actor RJingModeOn: Boolean {}
+actor PistolModeOn: Boolean {}
 actor ExpandedHud: Boolean {}
 actor DoomNoBFGAim: Boolean {}
 actor UsingDoEAmmo: Boolean {}

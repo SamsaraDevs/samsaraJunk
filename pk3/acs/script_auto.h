@@ -261,6 +261,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_permaquad"))
         {   ConsoleCommand("set samsara_permaquad 0");
         ConsoleCommand("archivecvar samsara_permaquad"); }
+        
+        if (!GetCVar("samsara_pistolammo"))
+        {   ConsoleCommand("set samsara_pistolammo 0");
+        ConsoleCommand("archivecvar samsara_pistolammo"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -384,6 +388,9 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_allcanrj") == 1) { GiveInventory("RJingModeOn", 1); }
         else { TakeInventory("RJingModeOn", 0x7FFFFFFF); }
+
+        if (GetCVar("samsara_pistolammo") == 1) { GiveInventory("PistolModeOn", 1); }
+        else { TakeInventory("PistolModeOn", 0x7FFFFFFF); }
         
         HandleBans();
         HandleBuffCVars(respawning);
