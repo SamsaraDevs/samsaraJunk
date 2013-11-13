@@ -224,7 +224,7 @@ actor "Mighty Boot" : Weapon//InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeReady",1)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto "Super::Select"
+        goto Select
         
       WaitingTaunt:
       WaitingTaunt1:
@@ -241,7 +241,7 @@ actor "Mighty Boot" : Weapon//InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeWaiting",15)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto "Super::Select"
+        goto Select
 
       WaitingTaunt2:
         KNUX A 3
@@ -254,7 +254,7 @@ actor "Mighty Boot" : Weapon//InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeWaiting",15)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto "Super::Select"
+        goto Select
         
       Fire:
         TNT1 A 0
