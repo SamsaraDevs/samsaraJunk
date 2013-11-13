@@ -211,7 +211,7 @@ actor "Mighty Boot" : Weapon//InstantSwitchWeapon
         KNUX B 3
         KNUX A 3 A_TakeInventory("DukeReady",1)
         //KNUX AAAAAAAAAAAAAA 0 A_Lower
-        goto "Super::Select"
+        goto Select
 
       IntroTaunt2:
         KNUX A 3
