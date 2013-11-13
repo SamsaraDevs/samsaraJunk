@@ -196,6 +196,7 @@ actor Hellknight2 : Hellknight replaces Hellknight
     DamageFactor "DragonClaw", 1.6
     PainChance "MightyBoot", 255
     BloodColor darkolivegreen
+	BloodType "SamsaraBloodyHellBlood"
     +DONTRIP
     +NOTDMATCH
     +NOICEDEATH
