@@ -245,6 +245,7 @@ StatusBar normal, forcescaled
     {
         drawimage "DOOMBAR", 0, 168;
         //drawimage "DOOMBART", 0, 0;
+		IsSelected " Pistol " { InInventory PistolModeOn, 1 { drawnumber 3, DOOMHUDF, gold, ammo Clip, 44, 171, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, DOOMHUDF, gold, ammo1, 44, 171, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, DOOMHUDF, gold, health, 94, 171, white, 25, untranslated, 50;
         drawnumber 3, DOOMHUDF, gold, armor, 219, 171, 0, untranslated, 0, untranslated, 50;
