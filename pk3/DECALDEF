@@ -82,3 +82,46 @@ generator CyberRocket			Scorch
 generator CacodemonBall2		CacoScorch
 generator FatShot2				Scorch
 generator SpiderMastermind2		BulletChip
+
+generator BeastBall2			DoomImpScorch
+generator SnakeProjA2			SnakeScorch1
+generator SnakeProjB2			SnakeScorch2
+generator HeadFX12				SnakeScorch2
+generator HeadFX32				CacoScorch
+generator Sorcerer2FX3			SorcererLightning
+generator HereticImpBall2		HImpScorch
+generator MummyFX2				MummyScorch
+generator WizardFX2				WizardScorch
+
+generator SerpentFX2			DoomImpScorch
+generator CentaurFX2		CentaurScorch
+generator Demon1FX2			RevenantScorch
+generator Demon2FX2			Demon2Scorch
+generator BishopFX2			BishopScorch
+generator WraithFX6			Demon2Scorch
+generator SorcFX12			RevenantScorch
+generator SorcFX42			RevenantScorch
+generator FSwordMissile2	SwordLightning
+generator MageStaffFX22		Scorch
+
+generator Acolyte2			BulletChip
+generator AcolyteTan2		BulletChip
+generator AcolyteRed2		BulletChip
+generator AcolyteRust2		BulletChip
+generator AcolyteGray2		BulletChip
+generator AcolyteDGreen2	BulletChip
+generator AcolyteGold2		BulletChip
+generator AcolyteLGreen2	BulletChip
+generator AcolyteBlue2		BulletChip
+generator AcolyteShadow2	BulletChip
+generator RebelB			BulletChip
+generator Rebel1B			BulletChip
+generator Rebel2B			BulletChip
+generator Rebel3B			BulletChip
+generator Rebel4B			BulletChip
+generator Rebel5B			BulletChip
+generator Macil2B			BulletChip
+generator SentinelFX3		PlasmaScorchLower
+generator Templar2			RailScorchLower
+generator Reaver2			BulletChip
+generator CeilingTurret2	BulletChip
