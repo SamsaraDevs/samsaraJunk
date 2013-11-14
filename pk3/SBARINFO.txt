@@ -379,6 +379,7 @@ StatusBar normal, forcescaled
     Playerclass ChexWarrior
     {
         drawimage "CHEXBAR", 0, 168;
+		IsSelected "Mini-Zorcher" { InInventory PistolModeOn, 1 { drawnumber 3, CHEXHUDF, yellow, ammo Clip, 45, 172, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, CHEXHUDF, yellow, ammo1, 45, 172, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, CHEXHUDF, yellow, health, 94, 172, white, 25, untranslated, 50;
         drawnumber 3, CHEXHUDF, yellow, armor, 220, 172, 0, untranslated, 0, untranslated, 50;
