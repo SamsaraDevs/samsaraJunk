@@ -516,6 +516,9 @@ StatusBar normal, forcescaled
         drawimage "HRTCBAR", 0, 151;
         InInventory PowerFakeInvulnerable, 1 { drawimage "HEREGOD1", 6, 167; }
         InInventory PowerFakeInvulnerable, 1 { drawimage "HEREGOD2", 297, 167; }
+		IsSelected "Elven Wand" { InInventory PistolModeOn, 1 { 
+        drawnumber 3, HEREHUDF, gold, ammo Clip, 58, 171, 0, untranslated, 0, untranslated, 20;
+        drawimage "AMSMA0", 47, 189, center; }}
         drawnumber 3, HEREHUDF, gold, ammo1, 58, 171, 0, untranslated, 0, untranslated, 20;
         drawimage ammoicon1, 47, 189, center;
          drawnumber 3, HEREHUDF, gold, health, 96, 180, white, 25, untranslated, 50;
