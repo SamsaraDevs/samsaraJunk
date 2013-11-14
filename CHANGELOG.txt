@@ -1,29 +1,37 @@
 FROM 0.3 TO 0.31
 ========================
-- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
-- Okay seriously now the Quad Damage will work in singleplayer ZDoom.
-- Parias' Wraithverge no longer takes 160 mana in DM.
-- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.
-- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.
+GAMEPLAY:
 - The Marathon 1 Alien Weapon has had its damage increased by a whole 1 to be more accurate to Marathon.
-- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.
-- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.
 - Thanks to Popsoap, Duke is now capable of picking up his thrown pipebombs!
 - Thanks to Scroton, Duke is now capable of kicking while shooting or reloading!
-- Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!
 - The wonky rules about when Ranger could or could not get a Quad item have been chucked out the window in favor of a cvar--samsara_permaquad. Put at 1 to get a Quake II-style inventory Quad Damage, put at 0 to have just 30 seconds and nothing more.
-- Flemoid Blood should no longer conflict with any instances of Nashgore.
 - People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_cl_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed!
  ^- : samsara_cl_bloodyhell 0 is default level, and is no different from vanilla.
  ^- : samsara_cl_bloodyhell 1 is Nashgore level, and is for those who want a little bit more blood without anything over the top.
  ^- : samsara_cl_bloodyhell 2 is Brutal level, and is for those who want as much bloodshed and brutality as possible.
  ^- : samsara_cl_bloodyhell -1 is Happyfun level, and is...well, you'll see.
 - samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.
+- By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...
+
+BUGFIXES:
+- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
+- Okay seriously now the Quad Damage will work in singleplayer ZDoom.
+- Parias' Wraithverge no longer takes 160 mana in DM.
+- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.
+- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.
+- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
+- The WSTE-M5 was the only Marathon weapon that would swap to another weapon when out of ammo. Thanks to ForrestMarkX, this inconsistency has been removed.
+
+POLISH:
+- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.
+- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.
+- Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!
+- Flemoid Blood should no longer conflict with any instances of Nashgore.
 - Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.
-- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
 - Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.
-- By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...
+- Thanks to ForrestMarkX, the Doom 2 bestiary now leaves proper decals on the wall.
+
 
 FROM 0.29b TO 0.3
 ========================
