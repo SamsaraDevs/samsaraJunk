@@ -23,6 +23,7 @@ FROM 0.3 TO 0.31
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.
 - Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
 - Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.
+- By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...
 
 FROM 0.29b TO 0.3
 ========================
