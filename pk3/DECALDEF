@@ -73,3 +73,12 @@ decalgroup ChexPlasmaScorch
 	ChexPlasmaScorch1	1
 	ChexPlasmaScorch2	1
 }
+
+// Generators
+
+generator DoomImpBall2			DoomImpScorch
+generator ArachnotronPlasma2	ArachnotronScorch
+generator CyberRocket			Scorch
+generator CacodemonBall2		CacoScorch
+generator FatShot2				Scorch
+generator SpiderMastermind2		BulletChip
