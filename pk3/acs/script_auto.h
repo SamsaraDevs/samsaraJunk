@@ -273,6 +273,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_nohealth"))
         {   ConsoleCommand("set samsara_nohealth 0");
         ConsoleCommand("archivecvar samsara_nohealth"); }
+        
+        if (!GetCVar("samsara_vanillaquake"))
+        {   ConsoleCommand("set samsara_vanillaquake 0");
+        ConsoleCommand("archivecvar samsara_vanillaquake"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -399,6 +403,9 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_pistolammo") == 1) { GiveInventory("PistolModeOn", 1); }
         else { TakeInventory("PistolModeOn", 0x7FFFFFFF); }
+
+        if (GetCVar("samsara_vanillaquake") == 1) { GiveInventory("QuakeModeOn", 1); }
+        else { TakeInventory("QuakeModeOn", 0x7FFFFFFF); }
 
         if (GetCVar("samsara_dukesoundboard") == 1) { if (CheckInventory("DukeClass") == 1) {
 		GiveInventory("Soundboard - Boss Kill",1);

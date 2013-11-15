@@ -298,6 +298,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 32:
         result = GetCVar("samsara_nohealth");
         break;
+
+      case 33:
+        result = GetCVar("samsara_vanillaquake");
+        break;
     }
     
     SetResultValue(result);

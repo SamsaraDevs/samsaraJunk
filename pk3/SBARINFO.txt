@@ -1645,7 +1645,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
             drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
             drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
         }
- }
+		
         InInventory not UsingDoEAmmo { drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20; }
         InInventory UsingDoEAmmo { drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20; }
 

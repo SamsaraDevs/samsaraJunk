@@ -133,6 +133,7 @@ actor "Super Nailgun": InstantSwitchWeapon
         goto Ready
 
       AltFire:
+	    TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,"Ready")
         TNT1 A 0 A_JumpIfInventory("FiredSLNails",1,"Swap2")
         TNT1 A 0 A_PlaySound("quakeweps/doeammochange")
         TNT1 A 0 A_GiveInventory("FiredSLNails",1)
