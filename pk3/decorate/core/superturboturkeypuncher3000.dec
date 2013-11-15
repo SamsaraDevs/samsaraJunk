@@ -188,6 +188,30 @@ actor SuperFriendlyChicken : SuperCoopChicken
 	+FRIENDLY
 	-ISMONSTER
 	Species "Player"
+	DropItem "BulletPuff"
+	DamageFactor "DukeExplosive", 0.0
+	DamageFactor "Explosive", 0.0
+	DamageFactor "BFGSplash", 0.0
+	DamageFactor "Zorch", 0.0
+	DamageFactor "BJSpear", 0.0
+	DamageFactor "HexenIce", 0.0
+	DamageFactor "Poison", 0.0
+	DamageFactor "PoisonCloud", 0.0
+	DamageFactor "FireExplosive", 0.0
+	DamageFactor "Wraithverge", 0.0
+	DamageFactor "MightyBoot", 0.0
+	DamageFactor "DukeFreezethrower", 0.0
+	DamageFactor "WMCBeam", 0.0
+	DamageFactor "WMCNade", 0.0
+	DamageFactor "Chainsaw", 0.0
+	DamageFactor "TimonsAxe", 0.0
+	DamageFactor "NotQuadded", 0.0
+	DamageFactor "VillainTeam", 0.0
+	DamageFactor "Pistol", 0.0
+	DamageFactor "ZorchPistol", 0.0
+	DamageFactor "Telefrag", 0.0
+	DamageFactor "CorvusHellstaff", 0.0
+	DamageFactor "VillainTeamFire", 0.0
 }
 
 actor ChickodemonBall : CacodemonBall
@@ -254,6 +278,29 @@ actor AssaultFriendlyChicken : AssaultChicken
     +FRIENDLY
 	-ISMONSTER
 	Species "Player"
+	DamageFactor "DukeExplosive", 0.0
+	DamageFactor "Explosive", 0.0
+	DamageFactor "BFGSplash", 0.0
+	DamageFactor "Zorch", 0.0
+	DamageFactor "BJSpear", 0.0
+	DamageFactor "HexenIce", 0.0
+	DamageFactor "Poison", 0.0
+	DamageFactor "PoisonCloud", 0.0
+	DamageFactor "FireExplosive", 0.0
+	DamageFactor "Wraithverge", 0.0
+	DamageFactor "MightyBoot", 0.0
+	DamageFactor "DukeFreezethrower", 0.0
+	DamageFactor "WMCBeam", 0.0
+	DamageFactor "WMCNade", 0.0
+	DamageFactor "Chainsaw", 0.0
+	DamageFactor "TimonsAxe", 0.0
+	DamageFactor "NotQuadded", 0.0
+	DamageFactor "VillainTeam", 0.0
+	DamageFactor "Pistol", 0.0
+	DamageFactor "ZorchPistol", 0.0
+	DamageFactor "Telefrag", 0.0
+	DamageFactor "CorvusHellstaff", 0.0
+	DamageFactor "VillainTeamFire", 0.0
 }
 
 actor ExplosiveChicken : SuperCoopChicken
@@ -295,6 +342,29 @@ actor ExplosiveFriendlyChicken : ExplosiveChicken
     +FRIENDLY
 	-ISMONSTER
 	Species "Player"
+	DamageFactor "DukeExplosive", 0.0
+	DamageFactor "Explosive", 0.0
+	DamageFactor "BFGSplash", 0.0
+	DamageFactor "Zorch", 0.0
+	DamageFactor "BJSpear", 0.0
+	DamageFactor "HexenIce", 0.0
+	DamageFactor "Poison", 0.0
+	DamageFactor "PoisonCloud", 0.0
+	DamageFactor "FireExplosive", 0.0
+	DamageFactor "Wraithverge", 0.0
+	DamageFactor "MightyBoot", 0.0
+	DamageFactor "DukeFreezethrower", 0.0
+	DamageFactor "WMCBeam", 0.0
+	DamageFactor "WMCNade", 0.0
+	DamageFactor "Chainsaw", 0.0
+	DamageFactor "TimonsAxe", 0.0
+	DamageFactor "NotQuadded", 0.0
+	DamageFactor "VillainTeam", 0.0
+	DamageFactor "Pistol", 0.0
+	DamageFactor "ZorchPistol", 0.0
+	DamageFactor "Telefrag", 0.0
+	DamageFactor "CorvusHellstaff", 0.0
+	DamageFactor "VillainTeamFire", 0.0
 	States
 	{
 	Melee:
