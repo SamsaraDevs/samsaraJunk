@@ -2,7 +2,7 @@ actor DukePlayer : PlayerPawn
 {
     Player.DisplayName "Duke"
     Player.Face "DKN"
-    BloodColor "Red"
+    BloodColor "ff 40 00"
     Player.StartItem "M1911", 1
     Player.StartItem "Mighty Boot", 1
     Player.StartItem "DukeClass", 1

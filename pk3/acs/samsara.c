@@ -303,6 +303,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
 {
     int i, j, k;
     int x, y, z;
+	int result;
 
     SetFont("SMALLFONT");
     switch (which)
@@ -378,7 +379,13 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
         break;
+		
+	case 12:
+        result = GetCVar("samsara_cl_bloodyhell");
+        break;
     }
+    
+    SetResultValue(result);
 }
 
 script SAMSARA_GETSETTINGS (void) net

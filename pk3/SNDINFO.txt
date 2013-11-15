@@ -1088,6 +1088,19 @@ duke/boss38			DKBSST38
 duke/boss39			DKBSST39
 duke/boss40			DKBSST40
 
+$random doug/huggem { d/huggem1 d/huggem2 d/huggem3 d/huggem4 d/huggem5 d/huggem6 d/huggem7 d/huggem8 d/huggem9 d/huggem10 d/huggem11 }
+d/huggem1            DHUGGEM1
+d/huggem2            DHUGGEM2
+d/huggem3            DHUGGEM3
+d/huggem4            DHUGGEM4
+d/huggem5            DHUGGEM5
+d/huggem6            DHUGGEM6
+d/huggem7            DHUGGEM7
+d/huggem8            DHUGGEM8
+d/huggem9            DHUGGEM9
+d/huggem10           DHUGGEMA
+d/huggem11           DHUGGEMB
+
 
 ////////////////////
 // Marathon sounds

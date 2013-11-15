@@ -265,6 +265,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_pistolammo"))
         {   ConsoleCommand("set samsara_pistolammo 0");
         ConsoleCommand("archivecvar samsara_pistolammo"); }
+        
+        if (!GetCVar("samsara_dukesoundboard"))
+        {   ConsoleCommand("set samsara_dukesoundboard 0");
+        ConsoleCommand("archivecvar samsara_dukesoundboard"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");
@@ -391,6 +395,34 @@ script SAMSARA_SPAWN (int respawning)
 
         if (GetCVar("samsara_pistolammo") == 1) { GiveInventory("PistolModeOn", 1); }
         else { TakeInventory("PistolModeOn", 0x7FFFFFFF); }
+
+        if (GetCVar("samsara_dukesoundboard") == 1) { if (CheckInventory("DukeClass") == 1) {
+		GiveInventory("Soundboard - Boss Kill",1);
+		GiveInventory("Soundboard - Deathmatch Kill",1);
+		GiveInventory("Soundboard - Dukematch Kill",1);
+		GiveInventory("Soundboard - Boss Sight",1);
+		GiveInventory("Soundboard - Enemy Kill",1);
+		GiveInventory("Soundboard - Boot Kill",1);
+		GiveInventory("Soundboard - Gib Kill",1);
+		GiveInventory("Soundboard - Weapon Acquired",1);
+		GiveInventory("Soundboard - Level Intro",1);
+		GiveInventory("Soundboard - Idle Taunt",1);
+		GiveInventory("Soundboard - Critical Heal",1);
+		GiveInventory("Soundboard - Death Taunt",1);
+		GiveInventory("Soundboard - Doug Huggem",1); }}
+        else { TakeInventory("Soundboard - Boss Kill",1);
+		TakeInventory("Soundboard - Deathmatch Kill",1);
+		TakeInventory("Soundboard - Dukematch Kill",1);
+		TakeInventory("Soundboard - Boss Sight",1);
+		TakeInventory("Soundboard - Enemy Kill",1);
+		TakeInventory("Soundboard - Boot Kill",1);
+		TakeInventory("Soundboard - Gib Kill",1);
+		TakeInventory("Soundboard - Weapon Acquired",1);
+		TakeInventory("Soundboard - Level Intro",1);
+		TakeInventory("Soundboard - Idle Taunt",1);
+		TakeInventory("Soundboard - Critical Heal",1);
+		TakeInventory("Soundboard - Death Taunt",1);
+		TakeInventory("Soundboard - Doug Huggem",1); }
         
         HandleBans();
         HandleBuffCVars(respawning);
