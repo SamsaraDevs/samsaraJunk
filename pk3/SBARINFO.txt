@@ -15,7 +15,8 @@ StatusBar Fullscreen
         InInventory ChexClass, 1 { drawimage translatable "HUDBARC", 10, 176; }
         InInventory MarathonClass, 1 { drawimage translatable "HUDBARD", 10, 176; }
     }
-    DrawImage "HUDBAR", 13, 185;
+    
+	DrawImage "HUDBAR", 13, 185;
     //Armor
      DrawBar "HARMOR", "HEMPTY", Armor, Horizontal, /*Reverse, */ 14, 186;
      DrawImage "ARMRICON", 8, 191;
@@ -27,6 +28,33 @@ StatusBar Fullscreen
      DrawImage "HLTHICON", 40, 191;
      DrawNumber 3, INDEXFON, Gold, Health, 60, 191, Red, 25, White, 50;
     //Ammo
+	InInventory PistolModeOn, 1 {
+    IsSelected " Pistol " {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 3, INDEXFON, White, Ammo Clip, 298, 185;
+            DrawImage "AMSMA0", 238, 185, Center; }
+    IsSelected "Mini-Zorcher" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 3, INDEXFON, White, Ammo Clip, 298, 185;
+            DrawImage "AMSMA0", 238, 185, Center; }
+    IsSelected "Elven Wand" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 3, INDEXFON, White, Ammo Clip, 298, 185;
+            DrawImage "AMSMA0", 238, 185, Center; }
+    IsSelected "Luger" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
+            DrawNumber 3, INDEXFON, White, Ammo Clip, 298, 185;
+            DrawImage "AMSMA0", 238, 185, Center; }
+    IsSelected "Single Shotgun" {
+            DrawImage "HUDBAR", 250, 180;
+            DrawBar "HAMBAR", "HEMPTY", Ammo Shell, Horizontal, Reverse, 251, 181;
+            DrawNumber 3, INDEXFON, White, Ammo Shell, 298, 185;
+            DrawImage "AMSMB0", 238, 185, Center; }
+	}
      UsesAmmo
     {
         DrawImage AmmoIcon1, 238, 185, Center;
