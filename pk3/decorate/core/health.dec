@@ -37,6 +37,7 @@ actor HealPack0: CustomInventory replaces HealthBonus
     {
       Spawn:
         MEDI A 0
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,32,0,0) == 1, "Nope")
         MEDI A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
@@ -48,24 +49,10 @@ actor HealPack0: CustomInventory replaces HealthBonus
       Infinite:
         TNT1 A 0 A_GiveInventory("InfiniteHealth", 1)
         stop
-    }
-}
-
-actor HealPack0Trail
-{
-    Renderstyle Add
-    Alpha 0.4
-    Scale 0.2
-    -SOLID
-    +NOCLIP
-    +NOGRAVITY
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-      Spawn:
-        MEDI A 2 A_FadeOut(0.125)
-        Loop
+		
+	  Nope:
+	    TNT1 A 1
+		stop
     }
 }
 
@@ -82,6 +69,7 @@ actor HealPack1: CustomInventory replaces StimPack
     {
       Spawn:
         MED2 A 0
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,32,0,0) == 1, "Nope")
         MED2 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
@@ -93,24 +81,10 @@ actor HealPack1: CustomInventory replaces StimPack
       Infinite:
         TNT1 A 0 A_GiveInventory("InfiniteHealth", 10)
         stop
-    }
-}
-
-actor HealPack1Trail
-{
-    Renderstyle Add
-    Alpha 0.4
-    Scale 0.45
-    -SOLID
-    +NOCLIP
-    +NOGRAVITY
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-      Spawn:
-        MED2 A 2 A_FadeOut(0.125)
-        Loop
+		
+	  Nope:
+	    TNT1 A 1
+		stop
     }
 }
 
@@ -128,6 +102,7 @@ actor HealPack2 : CustomInventory replaces Medikit
     {
       Spawn:
         MED3 A 0
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,32,0,0) == 1, "Nope")
         MED3 A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
@@ -210,24 +185,10 @@ actor HealPack2 : CustomInventory replaces Medikit
 	  PickupStop:
 	    TNT1 A 0
 		stop
-    }
-}
-
-actor HealPack2Trail
-{
-    Renderstyle Add
-    Alpha 0.4
-    Scale 0.7
-    -SOLID
-    +NOCLIP
-    +NOGRAVITY
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-      Spawn:
-        MED3 A 2 A_FadeOut(0.125)
-        Loop
+		
+	  Nope:
+	    TNT1 A 1
+		stop
     }
 }
 
@@ -246,6 +207,7 @@ actor SuperHealth : CustomInventory replaces Soulsphere
     {
       Spawn:
         SOUL A 0
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,32,0,0) == 1, "Nope")
         SOUL A -1 BRIGHT ACS_ExecuteAlways(212, 0, 4, 100, 90)
         stop
 
@@ -342,25 +304,11 @@ actor SuperHealth : CustomInventory replaces Soulsphere
       PickupFail:
         TNT1 A 0
         fail
+		
+	  Nope:
+	    TNT1 A 1
+		stop
     
-    }
-}
-
-actor SuperHealthTrail
-{
-    Renderstyle Add
-    Alpha 0.5
-    Scale 0.95
-    -SOLID
-    +NOCLIP
-    +NOGRAVITY
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-      Spawn:
-        SOUL A 2 A_FadeOut(0.125)
-        Loop
     }
 }
 
@@ -377,6 +325,7 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
     States
     {
       Spawn:
+	    TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,32,0,0) == 1, "Nope")
         FELD ABCDCB 4 bright
         loop
 
@@ -434,6 +383,10 @@ actor MegaPack : CustomInventory replaces Megasphere// replaces Megasphere
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         goto Pickup2
+		
+	  Nope:
+	    TNT1 A 1
+		stop
     }
 }
 

@@ -269,6 +269,10 @@ script SAMSARA_OPEN open
         if (!GetCVar("samsara_dukesoundboard"))
         {   ConsoleCommand("set samsara_dukesoundboard 0");
         ConsoleCommand("archivecvar samsara_dukesoundboard"); }
+        
+        if (!GetCVar("samsara_nohealth"))
+        {   ConsoleCommand("set samsara_nohealth 0");
+        ConsoleCommand("archivecvar samsara_nohealth"); }
 
         opd = pd;
         pd = !!GetCVar("samsara_punchdrunk");

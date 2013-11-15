@@ -12,6 +12,8 @@ GAMEPLAY:
  ^- : samsara_cl_bloodyhell -1 is Happyfun level, and is...well, you'll see.
 - samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.
 - By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...
+- For those who would like to manually control when and how Duke taunts, samsara_dukesoundboard has been implemented.
+- For people who would like survival runs or for their rocketarena duels to be a test of longevity, samsara_nohealth has been implemented. It removes all health pickups from the map.
 
 BUGFIXES:
 - Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.

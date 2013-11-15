@@ -294,6 +294,10 @@ script SAMSARA_DECORATE (int choice, int arg1, int arg2)
       case 31:
         result = GetCVar("samsara_cl_bloodypersistent");
         break;
+
+      case 32:
+        result = GetCVar("samsara_nohealth");
+        break;
     }
     
     SetResultValue(result);
