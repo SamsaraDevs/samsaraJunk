@@ -1622,7 +1622,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
     {
         drawimage "QUAKBAR", 0, 168;
 		
-		IsSelected "Single Shotgun" { InInventory PistolModeOn, 1 { drawnumber 3, QUAKHUDF, gold, ammo Shell, 42, 181, 0, untranslated, 0, untranslated, 20; }
+		IsSelected "Single Shotgun" { InInventory PistolModeOn, 1 { drawnumber 3, QUAKHUDF, gold, ammo Shell, 42, 181, 0, untranslated, 0, untranslated, 20; } }
 
         InInventory not UsingDoEAmmo
         {
