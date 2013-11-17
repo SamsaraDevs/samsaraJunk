@@ -31,6 +31,7 @@ actor Minotaur2 : Minotaur replaces Minotaur
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         goto "Super::Death"
 
       Death.ZorchPistol:
@@ -74,5 +75,92 @@ actor Minotaur2 : Minotaur replaces Minotaur
         MNTR E 1 A_IceGuyDie
         TNT1 A -1 A_BossDeath
         stop
+
+      DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160)
+        MNTR F 12 A_MinotaurDeath
+        MNTR G 5
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalRedOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalChunk",random(-10,10),random(-10,10),random(12,40),random(-500,500)/100.00,random(-500,500)/100.00,random(300,1000)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("BrutalChunkHuge",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalSkull",0,0,56,random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 AAAAAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAA 0 A_SpawnItemEx("BrutalTinyBouncyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("RedMist",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAA 0 A_SpawnItemEx("RedMistIntense",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
+        MNTR H 5 A_Scream
+        MNTR I 5
+        MNTR J 5
+        MNTR K 5
+        MNTR L 2
+        MNTR L 3 A_NoBlocking
+        MNTR M 5
+        MNTR N 5
+        MNTR O 5
+        MNTR P 5
+        MNTR Q 5
+        MNTR R 5
+        MNTR S 5
+        MNTR T -1 A_BossDeath
+        Stop
+
+      DeathHappyfun:
+        TNT1 A 0
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        MNTR F 12 A_MinotaurDeath
+        MNTR G 5
+		TNT1 AAA 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR H 5 A_Scream
+        MNTR I 5
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR J 5
+        MNTR K 5
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR L 2
+        MNTR L 3 A_NoBlocking
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR M 5
+        MNTR N 5
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR O 5
+        MNTR P 5
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR Q 5
+        MNTR R 5
+		TNT1 AAAA 0 A_SpawnItemEx("RainbowSparkHuge",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("RainbowSpark",random(-20,20),random(-20,20),random(12,100),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-15,15),random(-15,15),random(15,100),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        MNTR S 5
+        MNTR T -1 A_BossDeath
+        Stop
     }
 }
