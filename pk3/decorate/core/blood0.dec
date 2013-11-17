@@ -294,7 +294,7 @@ actor FancyWhiteSmokeSpawner
     {
     Spawn:
         TNT1 A 0
-        TNT1 AAAAAAAAAA 4 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)}
+        TNT1 AAAAAAAAAA 4 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
         stop
     }
 }
