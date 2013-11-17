@@ -155,7 +155,7 @@ actor Beast2 : Beast replaces Beast
         TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
         BEAS J 5
         TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
-        BEAS K 6 A_XScream
+        BEAS K 6 A_Scream
         TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
         BEAS L 5
         TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
