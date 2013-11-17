@@ -23,6 +23,7 @@ BUGFIXES:
 - Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.
 - Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.
 - The WSTE-M5 was the only Marathon weapon that would swap to another weapon when out of ammo. Thanks to ForrestMarkX, this inconsistency has been removed.
+- When Golems were gibbed by Duke, they had a chance to jump to a state that didn't exist.
 
 POLISH:
 - samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.

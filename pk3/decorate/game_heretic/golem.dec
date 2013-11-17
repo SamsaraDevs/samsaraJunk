@@ -6,6 +6,7 @@ actor Mummy2 : Mummy replaces Mummy
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
+	BloodType "SamsaraBloodyHellBlood"
     States
     {
       Raise:
@@ -33,6 +34,7 @@ actor Mummy2 : Mummy replaces Mummy
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         goto "Super::Death"
 
       Death.ZorchPistol:
@@ -97,7 +99,7 @@ actor Mummy2 : Mummy replaces Mummy
         TNT1 A 0 A_SpawnDebris("DukeGibs5")
         TNT1 A 0 A_SpawnDebris("DukeGibs6")
         TNT1 A 0 A_PlaySound("duke/enemygib")
-        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_Jump(96,"Death")
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
         goto Death
 
@@ -119,6 +121,26 @@ actor Mummy2 : Mummy replaces Mummy
       Melee:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         goto "Super::Melee"
+		
+      DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Super::Death"
+		
+      DeathHappyfun:
+        TNT1 A 0
+        TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+        TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        goto "Super::Death"
     }
 }
 
@@ -130,6 +152,7 @@ actor MummyGhost2 : MummyGhost replaces MummyGhost
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
+	BloodType "SamsaraBloodyHellBlood"
     States
     {
       Raise:
@@ -157,6 +180,7 @@ actor MummyGhost2 : MummyGhost replaces MummyGhost
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         goto "Super::Death"
 
       Death.ZorchPistol:
@@ -240,6 +264,26 @@ actor MummyGhost2 : MummyGhost replaces MummyGhost
       Melee:
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         goto "Super::Melee"
+		
+      DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Super::Death"
+		
+      DeathHappyfun:
+        TNT1 A 0
+        TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+        TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        goto "Super::Death"
     }
 }
 
@@ -251,6 +295,7 @@ actor MummyLeader2 : MummyLeader replaces MummyLeader
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
+	BloodType "SamsaraBloodyHellBlood"
     States
     {
       Raise:
@@ -278,6 +323,7 @@ actor MummyLeader2 : MummyLeader replaces MummyLeader
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         goto "Super::Death"
 
       Death.ZorchPistol:
@@ -372,6 +418,26 @@ actor MummyLeader2 : MummyLeader replaces MummyLeader
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
         Goto See
+		
+      DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Super::Death"
+		
+      DeathHappyfun:
+        TNT1 A 0
+        TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+        TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        goto "Super::Death"
     }
 }
 
@@ -389,6 +455,7 @@ actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
+	BloodType "SamsaraBloodyHellBlood"
     States
     {
       Raise:
@@ -416,6 +483,7 @@ actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
 
       Death:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
         goto "Super::Death"
 
       Death.ZorchPistol:
@@ -507,5 +575,25 @@ actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
         MUMM X 5 A_FaceTarget
         MUMM Y 5 Bright A_CustomComboAttack("MummyFX1", 32, random[MummyAttack2](1,8)*2, "mummy/attack2")
         Goto See
+		
+      DeathBrutal:
+        TNT1 A 0
+        TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+        TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
+        goto "Super::Death"
+		
+      DeathHappyfun:
+        TNT1 A 0
+        TNT1 AAAAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
+        TNT1 AAAA 0 A_SpawnItemEx("WhiteSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 A 0 A_SpawnItemEx("RainbowSparkHuge",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAAAAA 0 A_SpawnItemEx("RainbowSpark",0,0,random(32,40),random(-60,60)/20.0,random(-60,60)/20.0,random(-40,40)/20.0,random(-180,180),32)
+        TNT1 AAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
+        goto "Super::Death"
     }
 }
