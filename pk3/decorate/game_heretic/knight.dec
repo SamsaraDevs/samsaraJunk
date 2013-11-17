@@ -1,0 +1,224 @@
+actor Knight2 : Knight replaces Knight
+{
+    +NOTDMATCH
+    +NOICEDEATH
+    DamageFactor "CorvusCrossbow", 1.15
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    DropItem "CrossbowAmmo2", 84
+    States
+    {
+      Raise:
+        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+        KNIG ONMLKJI 4
+        Goto See
+
+      ZorchRaise:
+        TNT1 A 1 A_UnsetShootable
+        TNT1 A 1 A_SpawnItem("SpawnFire2")
+        TNT1 A 0 A_PlaySound("archvile/resummon")
+        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+        TNT1 A 0 A_SetTranslucent(0.1,0)
+        KNIG A 3 A_SetTranslucent(0.2,0)
+        KNIG A 3 A_SetTranslucent(0.3,0)
+        KNIG A 3 A_SetTranslucent(0.4,0)
+        KNIG A 3 A_SetTranslucent(0.5,0)
+        KNIG A 3 A_SetTranslucent(0.6,0)
+        KNIG A 3 A_SetTranslucent(0.7,0)
+        KNIG A 3 A_SetTranslucent(0.8,0)
+        KNIG A 3 A_SetTranslucent(0.9,0)
+        KNIG A 3 A_SetTranslucent(1,0)
+        KNIG A 1 A_SetShootable
+        Goto See
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_NoGravity
+        KNIG H 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        KNIG H 4 A_SpawnItem("ZorchEffectBig")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        KNIG H 4 A_SetTranslucent(0.9,0)
+        KNIG H 0 A_Pain
+        KNIG H 4 A_SetTranslucent(0.8,0)
+        TNT1 H 0 A_NoBlocking
+        KNIG H 4 A_SetTranslucent(0.7,0)
+        KNIG H 4 A_SetTranslucent(0.6,0)
+        KNIG H 4 A_SetTranslucent(0.5,0)
+        KNIG H 4 A_SetTranslucent(0.4,0)
+        KNIG H 4 A_SetTranslucent(0.3,0)
+        KNIG H 4 A_SetTranslucent(0.2,0)
+        KNIG H 4 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Ice:
+      Death.HexenIce:
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        //TNT1 A 0 A_NoBlocking
+        KNIG H 0 A_UnsetSolid
+        KNIG H 70 A_GenericFreezeDeath
+        KNIG H 0 A_IceGuyDie
+        KNIG H 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+
+      Death.DukeExplosive:
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Ice
+        
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        KNIG H 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        KNIG H 16 A_Pain
+        Goto See
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        goto "Super::Missile"
+    }
+}
+
+actor KnightGhost2 : KnightGhost replaces KnightGhost
+{
+    +NOTDMATCH
+    +NOICEDEATH
+    DamageFactor "CorvusCrossbow", 1.15
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    DropItem "CrossbowAmmo2", 84
+    States
+    {
+      Raise:
+        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+        KNIG ONMLKJI 4
+        Goto See
+
+      ZorchRaise:
+        TNT1 A 1 A_UnsetShootable
+        TNT1 A 1 A_SpawnItem("SpawnFire2")
+        TNT1 A 0 A_PlaySound("archvile/resummon")
+        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+        TNT1 A 0 A_SetTranslucent(0.05,0)
+        KNIG A 3 A_SetTranslucent(0.1,0)
+        KNIG A 3 A_SetTranslucent(0.15,0)
+        KNIG A 3 A_SetTranslucent(0.2,0)
+        KNIG A 3 A_SetTranslucent(0.25,0)
+        KNIG A 3 A_SetTranslucent(0.3,0)
+        KNIG A 3 A_SetTranslucent(0.35,0)
+        KNIG A 3 A_SetTranslucent(0.4,0)
+        KNIG A 3 A_SetTranslucent(0.45,0)
+        KNIG A 3 A_SetTranslucent(0.5,0)
+        KNIG A 1 A_SetShootable
+        Goto See
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        TNT1 A 0 A_NoGravity
+        KNIG H 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        KNIG H 6 A_SpawnItem("ZorchEffectBig")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        KNIG H 6 A_SetTranslucent(0.4,0)
+        KNIG H 0 A_Pain
+        KNIG H 6 A_SetTranslucent(0.3,0)
+        TNT1 H 0 A_NoBlocking
+        KNIG H 6 A_SetTranslucent(0.2,0)
+        KNIG H 6 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Ice:
+      Death.HexenIce:
+      Death.Ice:
+        TNT1 A 0 A_ChangeFlag("GHOST",0)
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        //TNT1 A 0 A_NoBlocking
+        KNIG H 0 A_SetTranslucent(1,0)
+        KNIG H 0 A_UnsetSolid
+        KNIG H 70 A_GenericFreezeDeath
+        KNIG H 0 A_IceGuyDie
+        KNIG H 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+
+      Death.DukeExplosive:
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Ice
+        
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        KNIG H 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        KNIG H 16 A_Pain
+        Goto See
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        goto "Super::Missile"
+    }
+}
+
+actor KnightAxe2 : KnightAxe replaces KnightAxe
+{
+    DamageType "HereAxeGreen"
+    +THRUGHOST
+}
+
+actor RedAxe2 : RedAxe replaces RedAxe
+{
+    DamageType "HereAxeRed"
+    +THRUGHOST
+}

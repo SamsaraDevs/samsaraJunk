@@ -1,0 +1,83 @@
+actor Clink2 : Clink replaces Clink
+{
+    +NOTDMATCH
+    +NOICEDEATH
+    DamageFactor "CorvusCrossbow", 1.15
+    DamageFactor "DragonClaw", 1.5
+    DamageFactor "MarathonFusion", 2.0
+    PainChance "MightyBoot", 255
+    DropItem "SkullRodAmmo2", 84
+    States
+    {
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        CLNK H 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        CLNK H 4 A_SpawnItem("ZorchEffectBig")
+        CLNK H 4 A_SetTranslucent(0.9,0)
+        TNT1 A 0 A_ActiveSound//A_PlaySound("clink/active")
+        CLNK H 4 A_SetTranslucent(0.8,0)
+        TNT1 A 0 A_NoBlocking
+        CLNK H 4 A_SetTranslucent(0.7,0)
+        CLNK H 4 A_SetTranslucent(0.6,0)
+        CLNK H 4 A_SetTranslucent(0.5,0)
+        CLNK H 4 A_SetTranslucent(0.4,0)
+        CLNK H 4 A_SetTranslucent(0.3,0)
+        CLNK H 4 A_SetTranslucent(0.2,0)
+        CLNK H 4 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Ice:
+      Death.HexenIce:
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        //TNT1 A 0 A_NoBlocking
+        CLNK H 0 A_UnsetSolid
+        CLNK H 70 A_GenericFreezeDeath
+        CLNK H 0 A_IceGuyDie
+        CLNK H 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+
+      Death.DukeExplosive:
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Ice
+        
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        CLNK H 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        CLNK H 16 A_Pain
+        Goto See
+
+      Melee:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        goto "Super::Melee"
+    }
+}

@@ -1,0 +1,401 @@
+actor HereticAmmo1Small : Ammo1Small replaces BlasterAmmo
+{
+    Inventory.PickupSound "ammogem/bulletsmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM G 20
+        AMSM G 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo1Big : Ammo1Big replaces BlasterHefty
+{
+    Inventory.PickupSound "ammogem/bulletbig"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMMB F 20
+        AMMB F 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo2Small : Ammo2Small replaces CrossbowAmmo
+{
+    Inventory.PickupSound "ammogem/shellsmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM H 20
+        AMSM H 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo2Big : Ammo2Big replaces CrossbowHefty 
+{
+    Inventory.PickupSound "ammogem/shellbig"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMMB G 20
+        AMMB G 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo3Small : Ammo3Small replaces PhoenixRodAmmo 
+{
+    Inventory.PickupSound "ammogem/rocketsmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM I 20
+        AMSM I 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo3Big : Ammo3Big replaces PhoenixRodHefty 
+{
+    Inventory.PickupSound "ammogem/rocketbig"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMMB H 20
+        AMMB H 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo4Small : Ammo4Small replaces SkullRodAmmo 
+{
+    Inventory.PickupSound "ammogem/plasmasmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM J 20
+        AMSM J 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmo4Big : Ammo4Big replaces SkullRodHefty 
+{
+    Inventory.PickupSound "ammogem/plasmabig"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMMB I 20
+        AMMB I 20 BRIGHT
+        loop
+    }
+}
+
+actor HereticAmmoBackpack : AmmoBackpack replaces BagOfHolding { }
+
+actor HereticStuffDump: HealPack0 replaces GoldWandHefty
+{
+    Scale 0.3
+    Inventory.Amount 4
+    Inventory.PickupMessage "$SAMSARA_HEALPACK_HERETIC"
+    States
+    {
+      Spawn:
+        MEDI V -1 BRIGHT
+        stop
+        
+      Pickup:
+        TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE, 22), "Infinite")
+        TNT1 A 0 A_GiveInventory("FiniteHealth200", 4)
+        stop
+
+      Infinite:
+        TNT1 A 0 A_GiveInventory("InfiniteHealth", 4)
+        stop
+    }
+}
+
+actor HereticAmmoDump : RandomSpawner replaces MaceAmmo
+{
+    DropItem HereticAmmo1Small
+    DropItem HereticAmmo2Small
+    DropItem HereticAmmo3Small
+    DropItem HereticAmmo4Small
+}
+
+actor HereticAmmoDump2 : RandomSpawner replaces MaceHefty
+{
+    DropItem HereticAmmo1Big
+    DropItem HereticAmmo2Big
+    DropItem HereticAmmo3Big
+    DropItem HereticAmmo4Big
+}
+
+actor HereticHealPack0 : HealPack0 replaces GoldWandAmmo { }
+
+actor HereticHealPack1 : HealPack1 replaces CrystalVial { }
+
+actor HereticHealPack2 : HealPack2 replaces ArtiHealth { }
+
+actor HereticSuperHealth : SuperHealth replaces ArtiSuperHealth { }//Inventory.PickupAnnouncerEntry "" }
+
+actor HereticArmorDump : ArmorScrap replaces ArtiTimeBomb
+{
+    Scale 0.55
+    Armor.Saveamount 5
+    Inventory.Pickupmessage "$SAMSARA_ARMORSCRAP_HERETIC"
+    States
+    {
+      Spawn:
+        BON3 A -1 bright
+        stop
+    }
+}
+
+actor HereticArmorPack1 : ArmorPack1 replaces SilverShield
+{
+    Armor.Savepercent 50
+    Armor.Saveamount 100
+}
+
+actor HereticArmorPack2 : ArmorPack2 replaces EnchantedShield
+{
+    Armor.Savepercent 75
+    Armor.Saveamount 200
+}
+
+// Dropped ammo replacement!
+actor GoldWandAmmo2 : CustomInventory
+{
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_HERETIC_1"
+    Inventory.PickupSound "ammo/bulletsmall"
+    States
+    {
+      Spawn:
+        AMG1 A -1 
+        Stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",3)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("Clip",3)
+        stop
+
+      PickupFail:
+        AMG1 A 1
+        fail
+    }
+}
+
+actor BlasterAmmo2 : CustomInventory
+{
+    Inventory.PickupMessage "$SAMSARA_CLIPDROP_HERETIC_2"
+    Inventory.PickupSound "ammo/bulletsmall"
+    States
+    {
+      Spawn:
+        AMB1 ABC 4
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupFail:
+        AMB1 A 1
+        fail
+    }
+}
+
+actor CrossbowAmmo2 : CustomInventory//Shell
+{
+    //Inventory.Amount 10
+    Inventory.PickupMessage "$SAMSARA_SHELLDROP_HERETIC_1"
+    Inventory.PickupSound "ammo/shellsmall"
+    States
+    {
+      Spawn:
+        AMC1 A -1 
+        Stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",5)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("Shell",5)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupFail:
+        AMSM B 1
+        fail
+    }
+}
+
+actor CrossbowAmmo3 : CustomInventory//Shell
+{
+    //Inventory.Amount 20
+    Inventory.PickupMessage "$SAMSARA_SHELLDROP_HERETIC_2"
+    Inventory.PickupSound "ammo/shellsmall"
+    States
+    {
+      Spawn:
+        AMC1 A -1 
+        Stop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",20)
+        stop
+
+      PickupFail:
+        AMSM B 1
+        fail
+    }
+}
+
+actor PhoenixRodAmmo2 : CustomInventory
+{
+    Inventory.PickupMessage "$SAMSARA_ROCKETDROP_HERETIC_1"
+    Inventory.PickupSound "ammo/rocketsmall"
+    States
+    {
+      Spawn:
+        AMP1 ABC 4
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",5)
+        stop
+
+      PickupFail:
+        AMP1 A 1
+        fail
+    }
+}
+
+actor PhoenixRodAmmo3 : CustomInventory
+{
+    Inventory.PickupMessage "$SAMSARA_ROCKETDROP_HERETIC_2"
+    Inventory.PickupSound "ammo/rocketsmall"
+    States
+    {
+      Spawn:
+        AMP1 ABC 4
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",10)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",10)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",10)
+        stop
+
+      PickupFail:
+        AMP1 A 1
+        fail
+    }
+}
+
+actor SkullRodAmmo2 : CustomInventory
+{
+    Inventory.PickupMessage "$SAMSARA_CELLDROP_HERETIC"
+    Inventory.PickupSound "ammo/plasmasmall"
+    States
+    {
+      Spawn:
+        AMS1 AB 5
+        Loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",20)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        TNT1 A 0 A_GiveInventory("Cell",20)
+        stop
+
+      PickupFail:
+        AMS1 A 1
+        fail
+    }
+}

@@ -1,0 +1,47 @@
+actor ZorchEffectHuge2 : ZorchEffectSmall
+{
+    yscale 1.625
+    xscale 1.825
+    States
+    {
+      Spawn:
+        ZFOG AABBCCDDEEFFGGHHIIJJ 4 BRIGHT A_SpawnItemEx("ZorchSparkle",0,0,random(20,72),random(-9,9),random(-9,9),random(1,3),48,128)
+        stop
+    }
+}
+
+actor Pod2 : Pod replaces Pod { +DONTRIP }
+
+actor Teleglitter1B : Teleglitter1 replaces Teleglitter1
+{
+    +CLIENTSIDEONLY
+    +SKYEXPLODE
+    Alpha 0.9
+    States
+    {
+      Spawn:
+        TGLT A 2 BRIGHT A_FadeOut(0.05)
+        TGLT B 2 BRIGHT A_AccTeleGlitter
+        TGLT C 2 BRIGHT
+        TGLT D 2 BRIGHT A_AccTeleGlitter
+        TGLT E 2 BRIGHT
+        Loop
+    }
+}
+
+actor Teleglitter2B : Teleglitter2 replaces Teleglitter2
+{
+    +CLIENTSIDEONLY
+    +SKYEXPLODE
+    Alpha 0.9
+    States
+    {
+      Spawn:
+        TGLT F 2 BRIGHT A_FadeOut(0.05)
+        TGLT G 2 BRIGHT A_AccTeleGlitter
+        TGLT H 2 BRIGHT
+        TGLT I 2 BRIGHT A_AccTeleGlitter
+        TGLT J 2 BRIGHT
+        Loop
+    }
+}

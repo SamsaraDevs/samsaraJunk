@@ -1,0 +1,100 @@
+actor IronLich2 : IronLich replaces IronLich
+{
+    +NOTDMATCH
+    +NOICEDEATH
+    +BOSS
+    +DONTRIP
+    DamageFactor "CorvusCrossbow", 1.15
+    DamageFactor "BFG", 0.75
+    DamageFactor "BFGSpray", 0.75
+    DamageFactor "WMCNade", 0.75
+    DamageFactor "DragonClaw", 1.5
+    DamageFactor "CorvusHellstaffTomed", 0.2
+    DropItem "BlasterAmmo2", 84
+    DropItem "ArtiEgg", 51, 0
+    States
+    {
+      See:
+        TNT1 A 0 A_JumpIfInventory("DukeBossSee",1,"See2")
+        TNT1 A 0 A_GiveInventory("DukeBossSee",1)
+        TNT1 A 0 A_GiveToTarget("DukeBossSightTaunt")
+
+      See2:
+        LICH A 4 A_Chase
+        Loop
+
+      Death.DukeDamage:
+      Death.MightyBoot:
+      Death.DukeExplosive:
+      Death.DukePistol:
+        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        LICH A 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorchhuge","soundslot5",0,0)
+        LICH A 8 A_SpawnItem("ZorchEffectHuge2")
+        LICH A 8 A_SetTranslucent(0.9,0)
+        TNT1 A 0 A_PlaySoundEx("ironlich/sight","soundslot6",0,2)
+        LICH A 8 A_SetTranslucent(0.8,0)
+        TNT1 A 0 A_NoBlocking
+        LICH A 8 A_SetTranslucent(0.7,0)
+        LICH A 8 A_SetTranslucent(0.6,0)
+        LICH A 8 A_SetTranslucent(0.5,0)
+        LICH A 8 A_SetTranslucent(0.4,0)
+        LICH A 8 A_SetTranslucent(0.3,0)
+        LICH A 8 A_SetTranslucent(0.2,0)
+        LICH A 8 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1 A_BossDeath
+        stop
+
+      Death.DukeIce:
+        TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
+
+      Ice:
+      Death.HexenIce:
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        //TNT1 A 0 A_NoBlocking
+        LICH A 0 A_PlaySoundEx("freeze/ironlich","soundslot6",0,0)
+        LICH A 0 A_UnsetSolid
+        LICH A 0 A_UnsetShootable
+        LICH A 140 A_GenericFreezeDeath
+        LICH A 0 A_PlaySoundEx("freeze/break","soundslot6",0,0)
+        LICH AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(16,96),random(-2,2),random(-2,2),random(5,15))
+        LICH A 0 A_IceGuyDie
+        LICH A 1 A_IceGuyDie
+        TNT1 A -1 A_BossDeath
+        stop
+    }
+}
+
+actor HeadFX12 : HeadFX1 replaces HeadFX1
+{
+    +ICEDAMAGE
+}
+
+actor HeadFX22 : HeadFX2 replaces HeadFX2
+{
+    +ICEDAMAGE
+}
+
+actor HeadFX32 : HeadFX3 replaces HeadFX3
+{
+    +FIREDAMAGE
+}
+
+actor HeadFX4 : Whirlwind replaces Whirlwind
+{
+    DamageType "HereLichWind"
+    Renderstyle Add
+    Alpha 0.65
+}

@@ -1,0 +1,133 @@
+actor Beast2 : Beast replaces Beast
+{
+    +NOTDMATCH
+    +NOICEDEATH
+    DamageFactor "CorvusCrossbow", 1.15
+    DamageFactor "DragonClaw", 1.5
+    PainChance "MightyBoot", 255
+    DropItem "CrossbowAmmo3", 84
+    States
+    {
+      Raise:
+        TNT1 A 0 A_JumpIfInventory("EnemyZorched",1,"ZorchRaise")
+        BEAS ZYXWVUTSR 5
+        Goto See	
+
+      ZorchRaise:
+        TNT1 A 1 A_UnsetShootable
+        TNT1 A 1 A_SpawnItem("SpawnFire2")
+        TNT1 A 0 A_PlaySound("archvile/resummon")
+        TNT1 A 1 A_TakeInventory("EnemyZorched",1)
+        TNT1 A 0 A_SetTranslucent(0.1,0)
+        BEAS A 3 A_SetTranslucent(0.2,0)
+        BEAS A 3 A_SetTranslucent(0.3,0)
+        BEAS A 3 A_SetTranslucent(0.4,0)
+        BEAS A 3 A_SetTranslucent(0.5,0)
+        BEAS A 3 A_SetTranslucent(0.6,0)
+        BEAS A 3 A_SetTranslucent(0.7,0)
+        BEAS A 3 A_SetTranslucent(0.8,0)
+        BEAS A 3 A_SetTranslucent(0.9,0)
+        BEAS A 3 A_SetTranslucent(1,0)
+        BEAS A 1 A_SetShootable
+        Goto See
+
+      Death:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::Death"
+
+      XDeath:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        goto "Super::XDeath"
+
+      Death.ZorchPistol:
+      Death.Zorch:
+      Death.PhasingZorch:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        BEAS G 0 A_Stop
+        TNT1 A 0 A_ChangeFlag("DONTGIB",1)
+        TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
+        BEAS G 4 A_SpawnItem("ZorchEffectWide")
+        TNT1 A 0 A_GiveInventory("EnemyZorched",1)
+        BEAS G 4 A_SetTranslucent(0.9,0)
+        TNT1 A 0 A_PlaySound("chex/weredrzorch")
+        BEAS G 4 A_SetTranslucent(0.8,0)
+        TNT1 A 0 A_NoBlocking
+        BEAS G 4 A_SetTranslucent(0.7,0)
+        BEAS G 4 A_SetTranslucent(0.6,0)
+        BEAS G 4 A_SetTranslucent(0.5,0)
+        BEAS G 4 A_SetTranslucent(0.4,0)
+        BEAS G 4 A_SetTranslucent(0.3,0)
+        BEAS G 4 A_SetTranslucent(0.2,0)
+        BEAS G 4 A_SetTranslucent(0.1,0)
+        TNT1 A 1 A_SetTranslucent(1,0)
+        TNT1 A -1
+        stop
+
+      Ice:
+      Death.HexenIce:
+      Death.Ice:
+        TNT1 A 0 A_GiveToTarget("KillCount",1)
+        //TNT1 A 0 A_NoBlocking
+        BEAS G 0 A_UnsetSolid
+        BEAS G 70 A_GenericFreezeDeath
+        BEAS G 0 A_IceGuyDie
+        BEAS G 1 A_IceGuyDie
+        TNT1 A -1
+        stop
+
+      Death.DukeDamage:
+      Death.DukePistol:
+        TNT1 A 0 A_Jump(218,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Death
+
+      Death.MightyBoot:
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        TNT1 A 0 A_Jump(64,"Death")
+        TNT1 A 0 A_GiveToTarget("DukeBootTaunt",1)
+        goto Death
+
+      Death.DukeExplosive:
+        TNT1 A 0 A_JumpIfHealthLower(-3,"DukeGibStart")
+        goto Death.DukeDamage
+
+      DukeGibStart:
+        BEAS G 1
+        TNT1 A 0 A_UnsetSolid
+        TNT1 A 0 A_SpawnDebris("DukeGibs1")
+        TNT1 A 0 A_SpawnDebris("DukeGibs2")
+        TNT1 A 0 A_SpawnDebris("DukeGibs3")
+        TNT1 A 0 A_SpawnDebris("DukeGibs4")
+        TNT1 A 0 A_SpawnDebris("DukeGibs5")
+        TNT1 A 0 A_SpawnDebris("DukeGibs6")
+        TNT1 A 0 A_PlaySound("duke/enemygib")
+        TNT1 A 0 A_Jump(96,"XDeath")
+        TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
+        goto XDeath
+
+      Death.DukeIce:
+        TNT1 A 0 A_PlaySound("duke/enemyfreeze")
+        TNT1 A 0 A_GiveInventory("FreezethrowerWeakness")
+        TNT1 A 0 A_Jump(218,"Ice")
+        TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
+        goto Ice
+        
+      Pain.MightyBoot:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+        TNT1 A 0 A_PlaySoundEx("duke/kickhit","body",0,0)
+        BEAS G 2 A_FaceTarget
+        TNT1 A 0 A_Recoil(14)
+        BEAS G 16 A_Pain
+        Goto See
+
+      Missile:
+        TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+        goto "Super::Missile"
+    }
+}
+
+actor BeastBall2 : BeastBall replaces BeastBall
+{
+    +FIREDAMAGE
+    +THRUGHOST
+}
