@@ -34,6 +34,7 @@ POLISH:
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.
 - Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.
 - Thanks to ForrestMarkX, the Doom 2 bestiary now leaves proper decals on the wall.
+- The Heretic/Hexen actors directory has been changed from a big, clunky, useless file in actors/ to a sorted and organized folder in decorate/.
 
 
 FROM 0.29b TO 0.3

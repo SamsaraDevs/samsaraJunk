@@ -27,7 +27,7 @@ const int SAMSARA_CLIENT_DECORATE = 212;
 //#include "actors/GAME_DOOM"
 #include "actors/GAME_CHEX"
 #include "decorate/game_heretic.dec"
-#include "actors/GAME_HEXEN"
+#include "decorate/game_hexen.dec"
 #include "decorate/game_strife.dec"
 //#include "actors/GAME_STRIFE"
 #include "actors/GAME_CHAOS"

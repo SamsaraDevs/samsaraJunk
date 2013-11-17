@@ -1,0 +1,37 @@
+actor HexenAmmoBackpack2 : AmmoBackpack replaces CWeapStaff { }
+actor HexenAmmoBackpack3 : AmmoBackpack replaces MWeapLightning { }
+
+actor HexenNothingSpawner1 replaces MWeaponPiece3
+{
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+    States
+    {
+      Spawn:
+        TNT1 A 0
+        stop
+    }
+}
+
+actor HexenBlueArmorSpawner1 : ArmorPack2 replaces FWeaponPiece3 { }
+actor HexenBlueArmorSpawner2 : ArmorPack2 replaces FWeaponPiece2 { }
+actor HexenBlueArmorSpawner3 : ArmorPack2 replaces FWeaponPiece1 { }
+
+actor HexenArmorDump replaces ArtiBlastRadius
+{
+    DropItem ArmorScrap
+    DropItem ArmorScrap
+    DropItem ArmorScrap
+    DropItem ArmorScrap
+    DropItem ArmorScrap
+    States
+    {
+      Spawn:
+        ACLO E 1
+        TNT1 A 0 A_NoBlocking
+        stop
+    }
+}
+
+actor HexenHealPack0 : HealPack0 replaces ArtiPoisonBag { }
+

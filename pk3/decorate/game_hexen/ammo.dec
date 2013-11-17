@@ -1,0 +1,153 @@
+actor HexenAmmo12Small : CustomInventory replaces Mana1
+{
+    Inventory.PickupMessage "$SAMSARA_CLIPSHELL_HEXEN"
+    Inventory.PickupSound "ammogem/bulletsmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM E 20
+        AMSM E 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFailCheck2")
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",20)
+        stop
+
+      PickupFailCheck:
+        TNT1 A 0 A_JumpIfInventory("Clip",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Clip",10)
+        stop
+
+      PickupFailCheck2:
+        TNT1 A 0 A_JumpIfInventory("Shell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Shell",10)
+        stop
+
+      PickupFail:
+        AMSM E 1
+        fail
+    }
+}
+
+actor HexenAmmo34Small : CustomInventory replaces Mana2
+{
+    Inventory.PickupMessage "$SAMSARA_ROCKETCELL_HEXEN"
+    Inventory.PickupSound "ammogem/plasmasmall"
+    +FLOATBOB
+    States
+    {
+      Spawn:
+        AMSM F 20
+        AMSM F 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFailCheck2")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("Cell",10)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFailCheck")
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFailCheck2")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        TNT1 A 0 A_GiveInventory("Cell",10)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        stop
+
+      PickupFailCheck2:
+        TNT1 A 0 A_JumpIfInventory("RocketAmmo",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("RocketAmmo",5)
+        stop
+
+      PickupFailCheck:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",10)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_JumpIfInventory("Cell",0,"PickupFail")
+        TNT1 A 0 A_GiveInventory("Cell",15)
+        stop
+
+      PickupFail:
+        AMSM F 1
+        fail
+    }
+}
+
+actor HexenEverythingAmmo : CustomInventory replaces Mana3
+{
+    Inventory.PickupMessage "$SAMSARA_ALLAMMO_HEXEN"
+    Inventory.PickupSound "ammo/mana"
+    -INVENTORY.ALWAYSPICKUP
+    +FLOATBOB
+    Scale 0.75
+    States
+    {
+      Spawn:
+        AMMB E 20
+        AMMB E 20 BRIGHT
+        loop
+
+      Pickup:
+        TNT1 A 0 A_JumpIfInventory("MarathonClass",1,"PickupMarathon")
+        TNT1 A 0 A_JumpIfInventory("HexenClass",1,"PickupHexen")
+        TNT1 A 0 A_JumpIfInventory("WolfenClass",1,"PickupWolfen")
+        TNT1 A 0 A_JumpIfInventory("QuakeClass",1,"PickupQuake")
+        TNT1 A 0 A_GiveInventory("Clip",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
+        TNT1 A 0 A_GiveInventory("Cell",15)
+        stop
+
+      PickupMarathon:
+        TNT1 A 0 A_GiveInventory("Clip",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
+        TNT1 A 0 A_GiveInventory("Cell",15)
+        TNT1 A 0 A_SetBlend("Green",0.4,4)
+        stop
+
+      PickupWolfen:
+        TNT1 A 0 A_GiveInventory("Clip",30)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
+        TNT1 A 0 A_GiveInventory("Cell",15)
+        stop
+
+      PickupHexen:
+        TNT1 A 0 A_GiveInventory("Clip",30)
+        TNT1 A 0 A_GiveInventory("Cell",30)
+        stop
+
+      PickupQuake:
+        TNT1 A 0 A_GiveInventory("Clip",15)
+        TNT1 A 0 A_GiveInventory("Shell",15)
+        TNT1 A 0 A_GiveInventory("RocketAmmo",15)
+        TNT1 A 0 A_GiveInventory("Cell",15)
+        stop
+    }
+}
