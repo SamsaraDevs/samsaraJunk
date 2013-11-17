@@ -14,6 +14,8 @@ actor Korax2 : Korax replaces Korax
     DamageFactor "Explosive", 0.9
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.5
+    BloodType "SamsaraBloodyHellBlood"
+    BloodColor Green
     Health 10000
     PainChance 10
     Speed 20

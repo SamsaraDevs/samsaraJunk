@@ -33,6 +33,7 @@ actor Ettin2 : Ettin replaces Ettin
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       See:
@@ -51,6 +52,7 @@ actor Ettin2 : Ettin replaces Ettin
       Death.ZorchPistol:
       Death.Zorch:
       Death.PhasingZorch:
+      Death.ZorchKamikaze:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)

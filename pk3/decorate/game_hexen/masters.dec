@@ -35,6 +35,7 @@ actor FighterBoss2 : FighterBoss replaces FighterBoss
     DamageFactor "BJSpear", 0.9
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.5
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Death.DukeDamage:
@@ -162,6 +163,7 @@ actor ClericBoss2 : ClericBoss replaces ClericBoss
     DamageFactor "BJSpear", 0.9
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.5
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Death.DukeDamage:
@@ -399,6 +401,7 @@ actor MageBoss2 : MageBoss replaces MageBoss
     DamageFactor "BJSpear", 0.9
     DamageFactor "WMCBeam", 0.75
     DamageFactor "WMCNade", 0.5
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Death.DukeDamage:

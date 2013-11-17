@@ -36,6 +36,7 @@ actor FireDemon2 : FireDemon replaces FireDemon
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Chase:

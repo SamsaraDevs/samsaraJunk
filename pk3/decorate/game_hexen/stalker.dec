@@ -33,6 +33,7 @@ actor Serpent2 : Serpent replaces Serpent
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Hump:
@@ -162,6 +163,7 @@ actor SerpentLeader2 : SerpentLeader replaces SerpentLeader
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Hump:

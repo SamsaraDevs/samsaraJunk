@@ -35,6 +35,7 @@ actor Wraith2 : Wraith replaces Wraith
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       See:
@@ -158,6 +159,7 @@ actor WraithBuried2 : WraithBuried replaces WraithBuried
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Spawn:
