@@ -104,6 +104,7 @@ actor EggFX4: EggFX2
 
 actor Chicken2 : Chicken replaces Chicken
 {
+    BloodType "SamsaraBloodyHellBlood"
     States
     {
       Death:
@@ -177,6 +178,7 @@ actor ChickenPlayer2 : ChickenPlayer
     Player.SoundClass "Chicken"
     Player.DisplayName "Chicken"
     Player.MorphWeapon " Beak "
+    BloodType "SamsaraBloodyHellBlood"
     -PICKUP
     States
     {
