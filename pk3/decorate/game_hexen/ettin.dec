@@ -169,7 +169,7 @@ actor Ettin2 : Ettin replaces Ettin
         ETTB C 4 A_SpawnItemEx("EttinMace", 0, 0, 8.5, random[DropMace](-128, 127)*0.03125,random[DropMace](-128, 127)*0.03125, 10+random[DropMace](0, 255)*0.015625,0,8)
         TNT1 AA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
         ETTB D 4 A_Scream
-        ETTB E 4
+        ETTB E 4 A_QueueCorpse
         ETTB FGHIJK 4
         ETTB L -1
         stop
@@ -201,17 +201,8 @@ actor Ettin2 : Ettin replaces Ettin
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("RainbowSparkTiny",random(-5,5),random(-5,5),random(25,30),random(-80,80)/10.00,random(-80,80)/10.0,random(-3,3),random(-180,180),160)
         TNT1 AAAA 0 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
         TNT1 A 0 A_SpawnItemEx("HappyOnlineSound",0,0,0,0,0,0,0,160)
-        BEAS J 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        TNT1 A 0 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        BEAS K 6 A_Scream
-        BEAS L 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        BEAS M 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        BEAS N 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        TNT1 A 0 A_NoBlocking
-        BEAS O 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        BEAS P 5 A_SpawnItemEx("FancyWhiteSmoke",random(-10,10),random(-10,10),random(-10,-10),random(-200,200)/100.00,random(-200,200)/100.00,random(200,600)/100.00,random(-180,180),160)
-        BEAS Q -1
-        stop
+        TNT1 A 0 A_SpawnItemEx("FancyWhiteSmokeSpawner",0,0,0,0,0,0,0,32)
+        goto "Super::Death"
     }
 }
 
