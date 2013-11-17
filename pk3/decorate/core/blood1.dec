@@ -98,6 +98,16 @@ actor NashGore_GibGenerator
     } 
 }
 
+actor Nashgore_GibGenerator_Brown : Nashgore_GibGenerator { Translation "16:47=48:79", "16:47=48:79" }
+actor Nashgore_GibGenerator_Tan : Nashgore_GibGenerator { Translation "16:47=128:143", "16:47=128:143" }
+actor Nashgore_GibGenerator_Forest : Nashgore_GibGenerator { Translation "16:47=152:159", "16:47=152:159" }
+actor Nashgore_GibGenerator_Orange : Nashgore_GibGenerator { Translation "16:47=208:223", "16:47=208:223" }
+actor Nashgore_GibGenerator_White : Nashgore_GibGenerator { Translation "16:47=80:95", "16:47=80:95" }
+actor Nashgore_GibGenerator_Grey : Nashgore_GibGenerator { Translation "16:47=96:111", "16:47=96:111" }
+actor Nashgore_GibGenerator_Black : Nashgore_GibGenerator { Translation "16:47=5:8", "16:47=5:8" }
+actor Nashgore_GibGenerator_Yellow : Nashgore_GibGenerator { Translation "16:47=160:167", "16:47=160:167" }
+actor Nashgore_GibGenerator_Pink : Nashgore_GibGenerator { Translation "16:47=250:254", "16:47=250:254" }
+actor Nashgore_GibGenerator_Green : Nashgore_GibGenerator { Translation "16:47=112:127", "176:191=112:127" }
 actor Nashgore_GibGenerator_Blue : Nashgore_GibGenerator { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
 actor NashGoreGibBase : GenericGoreActor
@@ -254,6 +264,16 @@ actor NashGore_Gib9 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib9_Brown : Nashgore_Gib9 { Translation "16:47=48:79", "16:47=48:79" }
+actor Nashgore_Gib9_Tan : Nashgore_Gib9 { Translation "16:47=128:143", "16:47=128:143" }
+actor Nashgore_Gib9_Forest : Nashgore_Gib9 { Translation "16:47=152:159", "16:47=152:159" }
+actor Nashgore_Gib9_Orange : Nashgore_Gib9 { Translation "16:47=208:223", "16:47=208:223" }
+actor Nashgore_Gib9_White : Nashgore_Gib9 { Translation "16:47=80:95", "16:47=80:95" }
+actor Nashgore_Gib9_Grey : Nashgore_Gib9 { Translation "16:47=96:111", "16:47=96:111" }
+actor Nashgore_Gib9_Black : Nashgore_Gib9 { Translation "16:47=5:8", "16:47=5:8" }
+actor Nashgore_Gib9_Yellow : Nashgore_Gib9 { Translation "16:47=160:167", "16:47=160:167" }
+actor Nashgore_Gib9_Pink : Nashgore_Gib9 { Translation "16:47=250:254", "16:47=250:254" }
+actor Nashgore_Gib9_Green : Nashgore_Gib9 { Translation "16:47=112:127", "176:191=112:127" }
 actor Nashgore_Gib9_Blue : Nashgore_Gib9 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
 actor NashGore_Gib10 : NashGoreGibBase
@@ -272,6 +292,16 @@ actor NashGore_Gib10 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib10_Brown : Nashgore_Gib10 { Translation "16:47=48:79", "16:47=48:79" }
+actor Nashgore_Gib10_Tan : Nashgore_Gib10 { Translation "16:47=128:143", "16:47=128:143" }
+actor Nashgore_Gib10_Forest : Nashgore_Gib10 { Translation "16:47=152:159", "16:47=152:159" }
+actor Nashgore_Gib10_Orange : Nashgore_Gib10 { Translation "16:47=208:223", "16:47=208:223" }
+actor Nashgore_Gib10_White : Nashgore_Gib10 { Translation "16:47=80:95", "16:47=80:95" }
+actor Nashgore_Gib10_Grey : Nashgore_Gib10 { Translation "16:47=96:111", "16:47=96:111" }
+actor Nashgore_Gib10_Black : Nashgore_Gib10 { Translation "16:47=5:8", "16:47=5:8" }
+actor Nashgore_Gib10_Yellow : Nashgore_Gib10 { Translation "16:47=160:167", "16:47=160:167" }
+actor Nashgore_Gib10_Pink : Nashgore_Gib10 { Translation "16:47=250:254", "16:47=250:254" }
+actor Nashgore_Gib10_Green : Nashgore_Gib10 { Translation "16:47=112:127", "176:191=112:127" }
 actor Nashgore_Gib10_Blue : Nashgore_Gib10 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
 actor NashGore_Gib11 : NashGoreGibBase
@@ -290,4 +320,14 @@ actor NashGore_Gib11 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib11_Brown : Nashgore_Gib11 { Translation "16:47=48:79", "16:47=48:79" }
+actor Nashgore_Gib11_Tan : Nashgore_Gib11 { Translation "16:47=128:143", "16:47=128:143" }
+actor Nashgore_Gib11_Forest : Nashgore_Gib11 { Translation "16:47=152:159", "16:47=152:159" }
+actor Nashgore_Gib11_Orange : Nashgore_Gib11 { Translation "16:47=208:223", "16:47=208:223" }
+actor Nashgore_Gib11_White : Nashgore_Gib11 { Translation "16:47=80:95", "16:47=80:95" }
+actor Nashgore_Gib11_Grey : Nashgore_Gib11 { Translation "16:47=96:111", "16:47=96:111" }
+actor Nashgore_Gib11_Black : Nashgore_Gib11 { Translation "16:47=5:8", "16:47=5:8" }
+actor Nashgore_Gib11_Yellow : Nashgore_Gib11 { Translation "16:47=160:167", "16:47=160:167" }
+actor Nashgore_Gib11_Pink : Nashgore_Gib11 { Translation "16:47=250:254", "16:47=250:254" }
+actor Nashgore_Gib11_Green : Nashgore_Gib11 { Translation "16:47=112:127", "176:191=112:127" }
 actor Nashgore_Gib11_Blue : Nashgore_Gib11 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
