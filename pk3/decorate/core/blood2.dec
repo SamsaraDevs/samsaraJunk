@@ -60,7 +60,7 @@ actor RedMistTrail
     }
 }
 
-
+actor HPurpleMistTrail : RedMistTrail { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
 actor BrownMistTrail : RedMistTrail { Translation "16:47=48:79", "16:47=48:79" }
 actor TanMistTrail : RedMistTrail { Translation "16:47=128:143", "16:47=128:143" }
 actor ForestMistTrail : RedMistTrail { Translation "16:47=152:159", "16:47=152:159" }
@@ -115,6 +115,7 @@ actor RedMistIntenseTrail : RedMistTrail
     }
 }
 
+actor HPurpleMistIntenseTrail : RedMistIntenseTrail { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
 actor BrownMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=48:79", "16:47=48:79" }
 actor TanMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=128:143", "16:47=128:143" }
 actor ForestMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=152:159", "16:47=152:159" }
@@ -746,6 +747,7 @@ actor BrutalChunkTiny : GenericGoreActor
     }
 }
 
+actor BrutalChunkTiny_HPurple : BrutalChunkTiny { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
 actor BrutalChunkTiny_Brown : BrutalChunkTiny { Translation "16:47=48:79", "16:47=48:79" }
 actor BrutalChunkTiny_Tan : BrutalChunkTiny { Translation "16:47=128:143", "16:47=128:143" }
 actor BrutalChunkTiny_Forest : BrutalChunkTiny { Translation "16:47=152:159", "16:47=152:159" }
@@ -760,6 +762,7 @@ actor BrutalChunkTiny_Blue : BrutalChunkTiny { Translation "16:31=200:207", "32:
 
 actor BrutalChunkTinier : BrutalChunkTiny { Scale 0.35 }
 
+actor BrutalChunkTinier_HPurple : BrutalChunkTinier { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
 actor BrutalChunkTinier_Brown : BrutalChunkTinier { Translation "16:47=48:79", "16:47=48:79" }
 actor BrutalChunkTinier_Tan : BrutalChunkTinier { Translation "16:47=128:143", "16:47=128:143" }
 actor BrutalChunkTinier_Forest : BrutalChunkTinier { Translation "16:47=152:159", "16:47=152:159" }
