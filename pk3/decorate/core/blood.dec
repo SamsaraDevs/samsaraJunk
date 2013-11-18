@@ -78,6 +78,7 @@ actor Switchable_FlyingBlood
     }
 }
 
+actor Switchable_FlyingBlood_HexGreen : Switchable_FlyingBlood { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
 actor Switchable_FlyingBlood_HPurple : Switchable_FlyingBlood { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
 actor Switchable_FlyingBlood_Brown : Switchable_FlyingBlood { Translation "16:47=48:79", "16:47=48:79" }
 actor Switchable_FlyingBlood_Tan : Switchable_FlyingBlood { Translation "16:47=128:143", "16:47=128:143" }

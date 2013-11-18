@@ -11,4 +11,3 @@
 #include "decorate/game_heretic/minotaur.dec"
 #include "decorate/game_heretic/dsparil.dec"
 #include "decorate/game_heretic/misc.dec"
-#include "decorate/game_heretic/ammo.dec"
