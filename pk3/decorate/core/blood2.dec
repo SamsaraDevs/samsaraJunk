@@ -858,7 +858,7 @@ actor BrutalGibExplosionSmall2 : GenericGoreActor
     {
     Spawn:
         TNT1 A 0
-        BGIB AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH 3 A_FadeOut(0.025)
+        BGIB AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH 2 A_FadeOut(0.025)
         stop
     }
 }
