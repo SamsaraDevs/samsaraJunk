@@ -246,11 +246,8 @@ actor " Alien Weapon " : Weapon
         AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBullet", random(-2, 2), 0, 0, 0)//A_FireBullets(7.5, 0, 3, 5, "alienpuff", 1, 0)
         TNT1 A 0 A_Light0
         AWP2 B 1
-        TNT1 A 0 A_Jump(48, 1)
+        TNT1 A 0 A_Jump(256,"Ready","Ready","Ready","Ready","Ready","Ready","TakeAmmo")
         goto Ready
-        TNT1 A 0
-        TNT1 A 0 A_TakeInventory("UnknownAmmo2", 1)
-        Goto Ready
 
       CoopFire:
         AWP2 B 1 A_Recoil(0.1)
@@ -260,8 +257,10 @@ actor " Alien Weapon " : Weapon
         AWP2 C 2 bright A_FireCustomMissile("AlienWeaponBulletCoop", random(-2, 2), 0, 0, 0)//A_FireBullets(7.5, 0, 3, 5, "alienpuff", 1, 0)
         TNT1 A 0 A_Light0
         AWP2 B 1
-        TNT1 A 0 A_Jump(48, 1)
+        TNT1 A 0 A_Jump(256,"Ready","Ready","Ready","Ready","Ready","Ready","TakeAmmo")
         goto Ready
+
+      TakeAmmo:
         TNT1 A 0
         TNT1 A 0 A_TakeInventory("UnknownAmmo2", 1)
         Goto Ready
