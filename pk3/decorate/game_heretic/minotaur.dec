@@ -11,7 +11,7 @@ actor Minotaur2 : Minotaur replaces Minotaur
     DamageFactor "CorvusHellstaffTomed", 0.2
     DropItem "ArtiSuperHealth", 51
     DropItem "PhoenixRodAmmo3", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       See:

@@ -6,7 +6,7 @@ actor Knight2 : Knight replaces Knight
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "CrossbowAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:
@@ -136,7 +136,7 @@ actor KnightGhost2 : KnightGhost replaces KnightGhost
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "CrossbowAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:

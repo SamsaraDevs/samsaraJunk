@@ -32,7 +32,6 @@ actor Zombieman2 : Zombieman replaces Zombieman
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-	BloodType "SamsaraBloodyHellBlood"
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH

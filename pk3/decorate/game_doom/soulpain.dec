@@ -77,7 +77,7 @@ actor PainElemental2 : PainElemental replaces PainElemental
     DamageFactor "CorvusCrossbow", 1.1
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-	BloodType "SamsaraBloodyHellBlood"
+	
     +NOTDMATCH
     +NOICEDEATH
     states

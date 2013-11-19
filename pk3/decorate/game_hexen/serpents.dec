@@ -33,7 +33,7 @@ actor Demon1B : Demon1 replaces Demon1
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
-    BloodType "SamsaraBloodyHellBlood"
+    
     States
     {
       See:
@@ -207,7 +207,7 @@ actor Demon2B : Demon2 replaces Demon2
     DamageFactor "WMCBeam", 1.15
     DamageFactor "WMCNade", 1.15
     PainChance "MightyBoot", 255
-    BloodType "SamsaraBloodyHellBlood"
+    
     States
     {
       See:

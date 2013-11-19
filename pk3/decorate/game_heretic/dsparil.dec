@@ -9,7 +9,7 @@ actor Sorcerer3 : Sorcerer1 replaces Sorcerer1
     DamageFactor "WMCNade", 0.55
     DamageFactor "DragonClaw", 1.5
     DamageFactor "CorvusHellstaffTomed", 0.2
-	BloodType "SamsaraBloodyHellBlood"
+	
     +NODAMAGE
     +NOPAIN
     +DONTRIP
@@ -291,7 +291,7 @@ actor Sorcerer4 : Sorcerer2 replaces Sorcerer2
     DamageFactor "WMCNade", 0.5
     DamageFactor "DragonClaw", 1.5
     DamageFactor "CorvusHellstaffTomed", 0.2
-	BloodType "SamsaraBloodyHellBlood"
+	
     +DONTRIP
     +NOTARGET
     +NOINFIGHTING

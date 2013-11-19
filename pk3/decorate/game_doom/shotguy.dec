@@ -17,7 +17,7 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
     +NOTDMATCH
     +NOICEDEATH
     dropitem "ShotgunDrop"
-	BloodType "SamsaraBloodyHellBlood"
+	
     states
     {
       Death.DukeDamage:

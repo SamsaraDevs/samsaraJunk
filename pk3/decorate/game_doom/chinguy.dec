@@ -17,7 +17,7 @@ actor ChaingunGuy2 : ChaingunGuy replaces ChaingunGuy
     +NOTDMATCH
     +NOICEDEATH
     dropitem "ChingunDrop"
-	BloodType "SamsaraBloodyHellBlood"
+	
     states
     {
       Death.DukeDamage:

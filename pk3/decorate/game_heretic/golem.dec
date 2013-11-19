@@ -6,7 +6,7 @@ actor Mummy2 : Mummy replaces Mummy
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:
@@ -152,7 +152,7 @@ actor MummyGhost2 : MummyGhost replaces MummyGhost
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:
@@ -295,7 +295,7 @@ actor MummyLeader2 : MummyLeader replaces MummyLeader
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:
@@ -455,7 +455,7 @@ actor MummyLeaderGhost2 : MummyLeaderGhost replaces MummyLeaderGhost
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "GoldWandAmmo2", 84
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:

@@ -862,23 +862,3 @@ actor BrutalGibExplosionSmall2 : GenericGoreActor
         stop
     }
 }
-
-actor BrutalGibExplosionSmall3 : GenericGoreActor
-{
-	Scale 0.45
-    +FLOORHUGGER
-    +NOINTERACTION
-    -NOGRAVITY
-    +MOVEWITHSECTOR
-    States
-    {
-    Spawn:
-        TNT1 A 0
-        TNT1 A 0 A_Gravity
-        BGIB I 2100
-		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Spawn")
-	    BGIB I 10
-        stop
-        stop
-    }
-}

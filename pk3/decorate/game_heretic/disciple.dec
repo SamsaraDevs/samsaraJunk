@@ -7,7 +7,7 @@ actor Wizard2 : Wizard replaces Wizard
     PainChance "MightyBoot", 255
     DropItem "BlasterAmmo2", 84
     DropItem "ArtiHealth", 4, 0
-	BloodType "SamsaraBloodyHellBlood"
+	
     BloodColor Purple
     States
     {

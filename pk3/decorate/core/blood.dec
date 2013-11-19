@@ -1,4 +1,20 @@
-actor SamsaraBloodyHellBlood : Blood //replaces Blood - Interestingly, it can't replace Blood for it to function. Otherwise in online play, you never see it at all.
+actor SamsaraBloodyHellBlood : Blood replaces Blood //- Interestingly, it can't replace Blood for it to function. Otherwise in online play, you never see it at all.
+{
+    Game Doom
+    States
+    {
+    Spawn:
+        BLUD C 8 A_SpawnItemEx("Switchable_FlyingBlood",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        goto Spawn+3
+        BLUD B 8 A_SpawnItemEx("Switchable_FlyingBlood",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        BLUD A 8
+        stop
+        BLUD BA 8
+        stop
+    }
+}
+
+actor SamsaraBloodyHellBlood2 : BloodSplatter replaces BloodSplatter
 {
     Game Doom
     States

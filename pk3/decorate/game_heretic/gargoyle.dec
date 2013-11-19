@@ -5,7 +5,7 @@ actor HereticImp2 : HereticImp replaces HereticImp
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:
@@ -239,7 +239,7 @@ actor HereticImpLeader2 : HereticImpLeader replaces HereticImpLeader
     DamageFactor "CorvusCrossbow", 1.15
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
-	BloodType "SamsaraBloodyHellBlood"
+	
     States
     {
       Raise:

@@ -4,7 +4,7 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
     DamageFactor "DragonClaw", 1.5
     PainChance "MightyBoot", 255
     DropItem "Clip2"
-	BloodType "SamsaraBloodyHellBlood"
+	
     +THRUGHOST
     +NOTDMATCH
     +NOICEDEATH
