@@ -13,9 +13,7 @@ actor Fatso2 : Fatso replaces Fatso
     {
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -55,7 +53,6 @@ actor Fatso2 : Fatso replaces Fatso
         goto "Super::Missile"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -112,7 +109,6 @@ actor Fatso2 : Fatso replaces Fatso
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)

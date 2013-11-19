@@ -9,12 +9,9 @@ actor LostSoul2 : LostSoul replaces LostSoul
     states
     {
       Death.DukeIce:
-
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -48,7 +45,6 @@ actor LostSoul2 : LostSoul replaces LostSoul
         Goto See
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -88,9 +84,7 @@ actor PainElemental2 : PainElemental replaces PainElemental
     {
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -130,7 +124,6 @@ actor PainElemental2 : PainElemental replaces PainElemental
         goto "Super::Missile"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -165,7 +158,6 @@ actor PainElemental2 : PainElemental replaces PainElemental
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_Gravity
         TNT1 A 0 A_SetFloorClip

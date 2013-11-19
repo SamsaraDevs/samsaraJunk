@@ -27,12 +27,9 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
         loop
 
       Death.DukeDamage:
-
       Death.MightyBoot:
-
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 
@@ -42,7 +39,6 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
         goto "Super::Death"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -72,7 +68,6 @@ actor SpiderMastermind2 : Spidermastermind replaces Spidermastermind
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoBlocking
@@ -191,12 +186,9 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
         loop
 
       Death.DukeDamage:
-
       Death.MightyBoot:
-
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukePistol:
         TNT1 A 0 A_GiveToTarget("DukeBossKillTaunt",1)
 
@@ -206,7 +198,6 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
         goto "Super::Death"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -236,7 +227,6 @@ actor Cyberdemon2 : Cyberdemon replaces Cyberdemon
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoBlocking

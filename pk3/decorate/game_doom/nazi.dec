@@ -11,7 +11,6 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
     states
     {
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -81,7 +80,6 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
         Goto See
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -138,7 +136,6 @@ actor Nazi2 : WolfensteinSS replaces WolfensteinSS
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)

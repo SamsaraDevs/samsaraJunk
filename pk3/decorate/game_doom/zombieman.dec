@@ -39,7 +39,6 @@ actor Zombieman2 : Zombieman replaces Zombieman
     states
     {
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -105,7 +104,6 @@ actor Zombieman2 : Zombieman replaces Zombieman
         Goto See
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -163,7 +161,6 @@ actor Zombieman2 : Zombieman replaces Zombieman
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)

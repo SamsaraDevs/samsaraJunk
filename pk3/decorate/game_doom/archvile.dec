@@ -12,9 +12,7 @@ actor Archvile2 : Archvile replaces Archvile
     {
       Death.DukeExplosive:
       Death.DukeSpectral:
-
       Death.DukeDamage:
-
       Death.DukePistol:
         TNT1 A 0 A_Jump(218,"Death")
         TNT1 A 0 A_GiveToTarget("DukeKillTaunt",1)
@@ -53,7 +51,6 @@ actor Archvile2 : Archvile replaces Archvile
         goto "Super::Missile"
 
       Death.ZorchPistol:
-
       Death.Zorch:
       Death.ZorchKamikaze:
       Death.PhasingZorch:
@@ -86,7 +83,6 @@ actor Archvile2 : Archvile replaces Archvile
 
       Ice:
       Death.HexenIce:
-
       Death.Ice:
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
@@ -120,4 +116,3 @@ actor Archvile2 : Archvile replaces Archvile
         goto "Super::Death"
     }
 }
-
