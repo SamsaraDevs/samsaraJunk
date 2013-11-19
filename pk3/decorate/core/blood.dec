@@ -1,4 +1,4 @@
-actor SamsaraBloodyHellBlood : Blood replaces Blood //- Interestingly, it can't replace Blood for it to function. Otherwise in online play, you never see it at all.
+actor SamsaraBloodyHellBlood : Blood replaces Blood
 {
     Game Doom
     States
