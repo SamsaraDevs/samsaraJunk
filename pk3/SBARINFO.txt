@@ -222,9 +222,9 @@ StatusBar Fullscreen
     {*/
         DrawNumber 4, INDEXFON, White, KillCountAmountTrue, 70, 170;
         DrawKeyBar 10, Horizontal, 10, 221, 169;
-        InInventory KeyYellow, 1 { drawimage "YKEYICON", 240, 169; }
-        InInventory KeyGreen, 1 { drawimage "GKEYICON", 255, 169; }
-        InInventory KeyBlue, 1 { drawimage "BKEYICON", 270, 169; }
+        //InInventory KeyYellow, 1 { drawimage "YKEYICON", 240, 169; }
+        //InInventory KeyGreen, 1 { drawimage "GKEYICON", 255, 169; }
+        //InInventory KeyBlue, 1 { drawimage "BKEYICON", 270, 169; }
     //}
 	}
 	InInventory ChickenModeOn, 1 { DrawNumber 4, INDEXFON, White, ChickenKillCount, 70, 170; }
