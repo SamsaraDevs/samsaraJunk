@@ -85,7 +85,7 @@ addslotdefault 1 "Elven Wand"
 addslotdefault 1 "Sapphire Wand"
 addslotdefault 1 "Mini-Zorcher"
 addslotdefault 1 "Luger"
-addslotdefault 1 "M1911"
+addslotdefault 1 "Glock 17"
 addslotdefault 1 ".44 Magnum Mega Class A1"
 addslotdefault 1 "Single Shotgun"
 
