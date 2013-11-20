@@ -580,7 +580,7 @@ actor Pipebombs : Weapon
 	  
 	  Nothing:
         TNT1 A 1 A_WeaponReady(14)
-        TNT1 A 0 A_SelectWeapon("M1911")
+        TNT1 A 0 A_SelectWeapon("Glock 17")
         goto Deselect
         
       AltFire:
