@@ -3,7 +3,7 @@ actor DukePlayer : PlayerPawn
     Player.DisplayName "Duke"
     Player.Face "DKN"
     BloodColor "ff 40 00"
-    Player.StartItem "M1911", 1
+    Player.StartItem "Glock 17", 1
     Player.StartItem "Mighty Boot", 1
     Player.StartItem "DukeClass", 1
     Player.StartItem "IsSamsaraClass", 1

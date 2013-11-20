@@ -137,7 +137,7 @@ int ClassWeapons[CLASSCOUNT][SLOTCOUNT][CHOICECOUNT] =
     {   // Duke
         {"Mighty Boot",                     "",             "",             "", ""},
         {"Pipebombs",                       "RocketAmmo",   "",             "", ""},
-        {"M1911",                           "",             "",             "", ""},
+        {"Glock 17",                           "",             "",             "", ""},
         {"  Shotgun  ",                     "Shell",        "",             "", ""},
         {"Explosive Shotgun",               "RocketAmmo",   "",             "", ""},
         {"Chaingun Cannon",                 "Clip",         "",             "", ""},

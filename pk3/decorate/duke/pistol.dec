@@ -2,7 +2,7 @@ actor PistolFire : Boolean {}
 actor PistolReload : Boolean {}
 actor BlankFlash : Boolean {}
 
-actor M1911 : Weapon
+actor "Glock 17" : Weapon
 {
     //Weapon.BobRangeX 0.75
     //Weapon.BobRangeY 0.95
