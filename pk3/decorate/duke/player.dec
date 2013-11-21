@@ -302,39 +302,39 @@ actor DukePlayer : PlayerPawn
 		
 	  XDeathNashgore:
 	    TNT1 A 0
-	    TNT1 A 0 A_SpawnItemEx("NashGore_Gib9",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-	    TNT1 A 0 A_SpawnItemEx("NashGore_Gib10",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-	    TNT1 AA 0 A_SpawnItemEx("NashGore_Gib11",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
-	    TNT1 AAAAAAAA 0 A_SpawnItemEx("NashGore_GibGenerator",0,0,0,0,0,0,0,33)
+	    TNT1 A 0 A_SpawnItemEx("NashGore_Gib9_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+	    TNT1 A 0 A_SpawnItemEx("NashGore_Gib10_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+	    TNT1 AA 0 A_SpawnItemEx("NashGore_Gib11_DukeOrange",0,0,0,random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+	    TNT1 AAAAAAAA 0 A_SpawnItemEx("NashGore_GibGenerator_DukeOrange",0,0,0,0,0,0,0,33)
         goto XDeath2
 		
       DeathBrutal:
 	    TNT1 A 0
-		TNT1 AA 0 A_SpawnItemEx("RedMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+		TNT1 AA 0 A_SpawnItemEx("DukeOrangeMistTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
 		TNT1 AAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-200,200)/100.00,random(-200,200)/100.00,random(300,800)/100.00,random(-180,180),160)
-		TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-		TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("RedMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
-		TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+		TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTinier_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+		TNT1 AAA 0 A_SpawnItemEx("BrutalChunkTiny_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("DukeOrangeMistIntenseTrail",random(-10,10),random(-10,10),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,600)/100.00,random(-180,180),160)
+		TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
 		TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160)
         goto Death2
 		
 	  XDeathBrutal:
 		TNT1 A 0
-		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalRedOrgan",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 AAAA 0 A_SpawnItemEx("BrutalChunk",random(-10,10),random(-10,10),random(12,40),random(-500,500)/100.00,random(-500,500)/100.00,random(300,1000)/100.00,random(-180,180),160)
-		TNT1 AA 0 A_SpawnItemEx("BrutalChunkHuge",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
-		TNT1 A 0 A_SpawnItemEx("BrutalSkull",0,0,56,random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy1_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy2_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalChunkBouncy3_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalBrownOrgan_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalRedOrgan_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 AAAA 0 A_SpawnItemEx("BrutalChunk_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-500,500)/100.00,random(-500,500)/100.00,random(300,1000)/100.00,random(-180,180),160)
+		TNT1 AA 0 A_SpawnItemEx("BrutalChunkHuge_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 A 0 A_SpawnItemEx("BrutalSkull_DukeOrange",0,0,56,random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 AAAAAA 0 A_SpawnItemEx("BrutalTinyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
-		TNT1 AAAA 0 A_SpawnItemEx("BrutalTinyBouncyBone",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
-		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("RedMist",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
-		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BrutalChunkTiny",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
-		TNT1 AAAAA 0 A_SpawnItemEx("RedMistIntense",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
-		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+		TNT1 AAAA 0 A_SpawnItemEx("BrutalTinyBouncyBone_DukeOrange",random(-5,5),random(-5,5),random(12,40),random(-400,400)/100.00,random(-400,400)/100.00,random(300,800)/100.00,random(-180,180),160)
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DukeOrangeMist",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("BrutalChunkTiny_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+		TNT1 AAAAA 0 A_SpawnItemEx("DukeOrangeMistIntense",random(-10,10),random(-10,10),random(12,40),random(-800,800)/100.00,random(-800,800)/100.00,random(600,1200)/100.00,random(-180,180),160)
+		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood_DukeOrange",random(-10,10),random(-10,10),random(12,40),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
 		TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
 		goto XDeath2
 		

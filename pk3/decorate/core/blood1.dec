@@ -98,6 +98,7 @@ actor NashGore_GibGenerator
     } 
 }
 
+actor Nashgore_GibGenerator_DukeOrange : Nashgore_GibGenerator { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor Nashgore_GibGenerator_Brown : Nashgore_GibGenerator { Translation "16:47=48:79", "176:191=48:79" }
 actor Nashgore_GibGenerator_Tan : Nashgore_GibGenerator { Translation "16:47=128:143", "176:191=128:143" }
 actor Nashgore_GibGenerator_Forest : Nashgore_GibGenerator { Translation "16:47=152:159", "176:191=152:159" }
@@ -264,6 +265,7 @@ actor NashGore_Gib9 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib9_DukeOrange : Nashgore_Gib9 { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor Nashgore_Gib9_Brown : Nashgore_Gib9 { Translation "16:47=48:79", "176:191=48:79" }
 actor Nashgore_Gib9_Tan : Nashgore_Gib9 { Translation "16:47=128:143", "176:191=128:143" }
 actor Nashgore_Gib9_Forest : Nashgore_Gib9 { Translation "16:47=152:159", "176:191=152:159" }
@@ -292,6 +294,7 @@ actor NashGore_Gib10 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib10_DukeOrange : Nashgore_Gib10 { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor Nashgore_Gib10_Brown : Nashgore_Gib10 { Translation "16:47=48:79", "176:191=48:79" }
 actor Nashgore_Gib10_Tan : Nashgore_Gib10 { Translation "16:47=128:143", "176:191=128:143" }
 actor Nashgore_Gib10_Forest : Nashgore_Gib10 { Translation "16:47=152:159", "176:191=152:159" }
@@ -320,6 +323,7 @@ actor NashGore_Gib11 : NashGoreGibBase
 	}
 }
 
+actor Nashgore_Gib11_DukeOrange : Nashgore_Gib11 { Translation "16:47=[255, 64, 0]:[66, 18, 0]", "176:191=[255, 64, 0]:[66, 18, 0]" }
 actor Nashgore_Gib11_Brown : Nashgore_Gib11 { Translation "16:47=48:79", "176:191=48:79" }
 actor Nashgore_Gib11_Tan : Nashgore_Gib11 { Translation "16:47=128:143", "176:191=128:143" }
 actor Nashgore_Gib11_Forest : Nashgore_Gib11 { Translation "16:47=152:159", "176:191=152:159" }
