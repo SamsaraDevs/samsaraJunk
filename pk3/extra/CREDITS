@@ -93,6 +93,13 @@
 - : GLDefs for enemies provided by Popsoap.
 - : Extra colors by Fuzzball Fox.
 - : Obituaries/pickup messages to LANGUAGE by TehVappy50.
-- : Nashgore gore by Nash.
-- : Brutal gore sprites by Bloax.
 - : MENUDEF by BlackFish.
+
+- : bloodyhell cvar-based gore system developed with the assistance of the following people:
+ ^- : Level 1 (Nashgore) done pretty much entirely by Nash.
+ ^- : Nashgore code polishing by Popsoap.
+ ^- : Level 2 (Brutal) sprites by Bloax, along with quite a bit of code-polishing.
+ ^- : Duke Orange blood color translations by PresidentPeople.
+ ^- : Brutal bounce/thud sounds from Painkiller.
+ ^- : Brutal splash sounds from Bloax, Painkiller, and Unreal Tournament 2004.
+ ^- : Level -1 (Happyfun) sounds taken from Trickster Online.
