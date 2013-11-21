@@ -23,15 +23,15 @@ actor RedMist
 }
 
 actor HexGreenMist : RedMist { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrownMist : RedMist { Translation "16:47=48:79", "16:47=48:79" }
-actor TanMist : RedMist { Translation "16:47=128:143", "16:47=128:143" }
-actor ForestMist : RedMist { Translation "16:47=152:159", "16:47=152:159" }
-actor OrangeMist : RedMist { Translation "16:47=208:223", "16:47=208:223" }
-actor WhiteMist : RedMist { Translation "16:47=80:95", "16:47=80:95" }
-actor GreyMist : RedMist { Translation "16:47=96:111", "16:47=96:111" }
-actor BlackMist : RedMist { Translation "16:47=5:8", "16:47=5:8" }
-actor YellowMist : RedMist { Translation "16:47=160:167", "16:47=160:167" }
-actor PinkMist : RedMist { Translation "16:47=250:254", "16:47=250:254" }
+actor BrownMist : RedMist { Translation "16:47=48:79", "176:191=48:79" }
+actor TanMist : RedMist { Translation "16:47=128:143", "176:191=128:143" }
+actor ForestMist : RedMist { Translation "16:47=152:159", "176:191=152:159" }
+actor OrangeMist : RedMist { Translation "16:47=208:223", "176:191=208:223" }
+actor WhiteMist : RedMist { Translation "16:47=80:95", "176:191=80:95" }
+actor GreyMist : RedMist { Translation "16:47=96:111", "176:191=96:111" }
+actor BlackMist : RedMist { Translation "16:47=5:8", "176:191=5:8" }
+actor YellowMist : RedMist { Translation "16:47=160:167", "176:191=160:167" }
+actor PinkMist : RedMist { Translation "16:47=250:254", "176:191=250:254" }
 actor GreenMist : RedMist { Translation "16:47=112:127", "176:191=112:127" }
 actor BlueMist : RedMist { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -63,15 +63,15 @@ actor RedMistTrail
 
 actor HexGreenMistTrail : RedMistTrail { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
 actor HPurpleMistTrail : RedMistTrail { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
-actor BrownMistTrail : RedMistTrail { Translation "16:47=48:79", "16:47=48:79" }
-actor TanMistTrail : RedMistTrail { Translation "16:47=128:143", "16:47=128:143" }
-actor ForestMistTrail : RedMistTrail { Translation "16:47=152:159", "16:47=152:159" }
-actor OrangeMistTrail : RedMistTrail { Translation "16:47=208:223", "16:47=208:223" }
-actor WhiteMistTrail : RedMistTrail { Translation "16:47=80:95", "16:47=80:95" }
-actor GreyMistTrail : RedMistTrail { Translation "16:47=96:111", "16:47=96:111" }
-actor BlackMistTrail : RedMistTrail { Translation "16:47=5:8", "16:47=5:8" }
-actor YellowMistTrail : RedMistTrail { Translation "16:47=160:167", "16:47=160:167" }
-actor PinkMistTrail : RedMistTrail { Translation "16:47=250:254", "16:47=250:254" }
+actor BrownMistTrail : RedMistTrail { Translation "16:47=48:79", "176:191=48:79" }
+actor TanMistTrail : RedMistTrail { Translation "16:47=128:143", "176:191=128:143" }
+actor ForestMistTrail : RedMistTrail { Translation "16:47=152:159", "176:191=152:159" }
+actor OrangeMistTrail : RedMistTrail { Translation "16:47=208:223", "176:191=208:223" }
+actor WhiteMistTrail : RedMistTrail { Translation "16:47=80:95", "176:191=80:95" }
+actor GreyMistTrail : RedMistTrail { Translation "16:47=96:111", "176:191=96:111" }
+actor BlackMistTrail : RedMistTrail { Translation "16:47=5:8", "176:191=5:8" }
+actor YellowMistTrail : RedMistTrail { Translation "16:47=160:167", "176:191=160:167" }
+actor PinkMistTrail : RedMistTrail { Translation "16:47=250:254", "176:191=250:254" }
 actor GreenMistTrail : RedMistTrail { Translation "16:47=112:127", "176:191=112:127" }
 actor BlueMistTrail : RedMistTrail { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -89,15 +89,15 @@ actor RedMistIntense : RedMist
 }
 
 actor HexGreenMistIntense : RedMistIntense { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrownMistIntense : RedMistIntense { Translation "16:47=48:79", "16:47=48:79" }
-actor TanMistIntense : RedMistIntense { Translation "16:47=128:143", "16:47=128:143" }
-actor ForestMistIntense : RedMistIntense { Translation "16:47=152:159", "16:47=152:159" }
-actor OrangeMistIntense : RedMistIntense { Translation "16:47=208:223", "16:47=208:223" }
-actor WhiteMistIntense : RedMistIntense { Translation "16:47=80:95", "16:47=80:95" }
-actor GreyMistIntense : RedMistIntense { Translation "16:47=96:111", "16:47=96:111" }
-actor BlackMistIntense : RedMistIntense { Translation "16:47=5:8", "16:47=5:8" }
-actor YellowMistIntense : RedMistIntense { Translation "16:47=160:167", "16:47=160:167" }
-actor PinkMistIntense : RedMistIntense { Translation "16:47=250:254", "16:47=250:254" }
+actor BrownMistIntense : RedMistIntense { Translation "16:47=48:79", "176:191=48:79" }
+actor TanMistIntense : RedMistIntense { Translation "16:47=128:143", "176:191=128:143" }
+actor ForestMistIntense : RedMistIntense { Translation "16:47=152:159", "176:191=152:159" }
+actor OrangeMistIntense : RedMistIntense { Translation "16:47=208:223", "176:191=208:223" }
+actor WhiteMistIntense : RedMistIntense { Translation "16:47=80:95", "176:191=80:95" }
+actor GreyMistIntense : RedMistIntense { Translation "16:47=96:111", "176:191=96:111" }
+actor BlackMistIntense : RedMistIntense { Translation "16:47=5:8", "176:191=5:8" }
+actor YellowMistIntense : RedMistIntense { Translation "16:47=160:167", "176:191=160:167" }
+actor PinkMistIntense : RedMistIntense { Translation "16:47=250:254", "176:191=250:254" }
 actor GreenMistIntense : RedMistIntense { Translation "16:47=112:127", "176:191=112:127" }
 actor BlueMistIntense : RedMistIntense { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -120,15 +120,15 @@ actor RedMistIntenseTrail : RedMistTrail
 
 actor HexGreenMistIntenseTrail : RedMistIntenseTrail { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
 actor HPurpleMistIntenseTrail : RedMistIntenseTrail { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
-actor BrownMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=48:79", "16:47=48:79" }
-actor TanMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=128:143", "16:47=128:143" }
-actor ForestMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=152:159", "16:47=152:159" }
-actor OrangeMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=208:223", "16:47=208:223" }
-actor WhiteMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=80:95", "16:47=80:95" }
-actor GreyMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=96:111", "16:47=96:111" }
-actor BlackMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=5:8", "16:47=5:8" }
-actor YellowMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=160:167", "16:47=160:167" }
-actor PinkMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=250:254", "16:47=250:254" }
+actor BrownMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=48:79", "176:191=48:79" }
+actor TanMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=128:143", "176:191=128:143" }
+actor ForestMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=152:159", "176:191=152:159" }
+actor OrangeMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=208:223", "176:191=208:223" }
+actor WhiteMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=80:95", "176:191=80:95" }
+actor GreyMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=96:111", "176:191=96:111" }
+actor BlackMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=5:8", "176:191=5:8" }
+actor YellowMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=160:167", "176:191=160:167" }
+actor PinkMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=250:254", "176:191=250:254" }
 actor GreenMistIntenseTrail : RedMistIntenseTrail { Translation "16:47=112:127", "176:191=112:127" }
 actor BlueMistIntenseTrail : RedMistIntenseTrail { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -175,15 +175,15 @@ actor BrutalSkull : GenericGoreActor
     }
 }
 
-actor BrutalSkull_Brown : BrutalSkull { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalSkull_Tan : BrutalSkull { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalSkull_Forest : BrutalSkull { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalSkull_Orange : BrutalSkull { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalSkull_White : BrutalSkull { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalSkull_Grey : BrutalSkull { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalSkull_Black : BrutalSkull { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalSkull_Yellow : BrutalSkull { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalSkull_Pink : BrutalSkull { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalSkull_Brown : BrutalSkull { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalSkull_Tan : BrutalSkull { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalSkull_Forest : BrutalSkull { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalSkull_Orange : BrutalSkull { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalSkull_White : BrutalSkull { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalSkull_Grey : BrutalSkull { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalSkull_Black : BrutalSkull { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalSkull_Yellow : BrutalSkull { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalSkull_Pink : BrutalSkull { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalSkull_Green : BrutalSkull { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalSkull_Blue : BrutalSkull { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -229,15 +229,15 @@ actor BrutalRedOrgan : GenericGoreActor
     }
 }
 
-actor BrutalRedOrgan_Brown : BrutalRedOrgan { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalRedOrgan_Tan : BrutalRedOrgan { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalRedOrgan_Forest : BrutalRedOrgan { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalRedOrgan_Orange : BrutalRedOrgan { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalRedOrgan_White : BrutalRedOrgan { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalRedOrgan_Grey : BrutalRedOrgan { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalRedOrgan_Black : BrutalRedOrgan { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalRedOrgan_Yellow : BrutalRedOrgan { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalRedOrgan_Pink : BrutalRedOrgan { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalRedOrgan_Brown : BrutalRedOrgan { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalRedOrgan_Tan : BrutalRedOrgan { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalRedOrgan_Forest : BrutalRedOrgan { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalRedOrgan_Orange : BrutalRedOrgan { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalRedOrgan_White : BrutalRedOrgan { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalRedOrgan_Grey : BrutalRedOrgan { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalRedOrgan_Black : BrutalRedOrgan { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalRedOrgan_Yellow : BrutalRedOrgan { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalRedOrgan_Pink : BrutalRedOrgan { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalRedOrgan_Green : BrutalRedOrgan { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalBlueOrgan : BrutalRedOrgan { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -283,15 +283,15 @@ actor BrutalBrownOrgan : GenericGoreActor
     }
 }
 
-actor BrutalBrownOrgan_Brown : BrutalBrownOrgan { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalBrownOrgan_Tan : BrutalBrownOrgan { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalBrownOrgan_Forest : BrutalBrownOrgan { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalBrownOrgan_Orange : BrutalBrownOrgan { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalBrownOrgan_White : BrutalBrownOrgan { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalBrownOrgan_Grey : BrutalBrownOrgan { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalBrownOrgan_Black : BrutalBrownOrgan { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalBrownOrgan_Yellow : BrutalBrownOrgan { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalBrownOrgan_Pink : BrutalBrownOrgan { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalBrownOrgan_Brown : BrutalBrownOrgan { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalBrownOrgan_Tan : BrutalBrownOrgan { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalBrownOrgan_Forest : BrutalBrownOrgan { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalBrownOrgan_Orange : BrutalBrownOrgan { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalBrownOrgan_White : BrutalBrownOrgan { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalBrownOrgan_Grey : BrutalBrownOrgan { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalBrownOrgan_Black : BrutalBrownOrgan { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalBrownOrgan_Yellow : BrutalBrownOrgan { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalBrownOrgan_Pink : BrutalBrownOrgan { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalBrownOrgan_Green : BrutalBrownOrgan { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalBrownOrgan_Blue : BrutalBrownOrgan { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -462,15 +462,15 @@ actor BrutalTinyBouncyBone : GenericGoreActor
 }
 
 actor BrutalTinyBouncyBone_HexGreen : BrutalTinyBouncyBone { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalTinyBouncyBone_Brown : BrutalTinyBouncyBone { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalTinyBouncyBone_Tan : BrutalTinyBouncyBone { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalTinyBouncyBone_Forest : BrutalTinyBouncyBone { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalTinyBouncyBone_Orange : BrutalTinyBouncyBone { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalTinyBouncyBone_White : BrutalTinyBouncyBone { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalTinyBouncyBone_Grey : BrutalTinyBouncyBone { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalTinyBouncyBone_Black : BrutalTinyBouncyBone { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalTinyBouncyBone_Yellow : BrutalTinyBouncyBone { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalTinyBouncyBone_Pink : BrutalTinyBouncyBone { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalTinyBouncyBone_Brown : BrutalTinyBouncyBone { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalTinyBouncyBone_Tan : BrutalTinyBouncyBone { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalTinyBouncyBone_Forest : BrutalTinyBouncyBone { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalTinyBouncyBone_Orange : BrutalTinyBouncyBone { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalTinyBouncyBone_White : BrutalTinyBouncyBone { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalTinyBouncyBone_Grey : BrutalTinyBouncyBone { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalTinyBouncyBone_Black : BrutalTinyBouncyBone { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalTinyBouncyBone_Yellow : BrutalTinyBouncyBone { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalTinyBouncyBone_Pink : BrutalTinyBouncyBone { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalTinyBouncyBone_Green : BrutalTinyBouncyBone { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalTinyBouncyBone_Blue : BrutalTinyBouncyBone { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -559,15 +559,15 @@ actor BrutalChunk : GenericGoreActor
 }
 
 actor BrutalChunk_HexGreen : BrutalChunk { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalChunk_Brown : BrutalChunk { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunk_Tan : BrutalChunk { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunk_Forest : BrutalChunk { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunk_Orange : BrutalChunk { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunk_White : BrutalChunk { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunk_Grey : BrutalChunk { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunk_Black : BrutalChunk { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunk_Yellow : BrutalChunk { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunk_Pink : BrutalChunk { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunk_Brown : BrutalChunk { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunk_Tan : BrutalChunk { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunk_Forest : BrutalChunk { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunk_Orange : BrutalChunk { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunk_White : BrutalChunk { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunk_Grey : BrutalChunk { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunk_Black : BrutalChunk { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunk_Yellow : BrutalChunk { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunk_Pink : BrutalChunk { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunk_Green : BrutalChunk { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunk_Blue : BrutalChunk { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -593,15 +593,15 @@ actor BrutalChunkHuge : GenericGoreActor
 }
 
 actor BrutalChunkHuge_HexGreen : BrutalChunkHuge { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalChunkHuge_Brown : BrutalChunkHuge { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkHuge_Tan : BrutalChunkHuge { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkHuge_Forest : BrutalChunkHuge { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkHuge_Orange : BrutalChunkHuge { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkHuge_White : BrutalChunkHuge { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkHuge_Grey : BrutalChunkHuge { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkHuge_Black : BrutalChunkHuge { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkHuge_Yellow : BrutalChunkHuge { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkHuge_Pink : BrutalChunkHuge { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkHuge_Brown : BrutalChunkHuge { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkHuge_Tan : BrutalChunkHuge { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkHuge_Forest : BrutalChunkHuge { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkHuge_Orange : BrutalChunkHuge { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkHuge_White : BrutalChunkHuge { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkHuge_Grey : BrutalChunkHuge { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkHuge_Black : BrutalChunkHuge { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkHuge_Yellow : BrutalChunkHuge { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkHuge_Pink : BrutalChunkHuge { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkHuge_Green : BrutalChunkHuge { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkHuge_Blue : BrutalChunkHuge { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -631,15 +631,15 @@ actor BrutalChunkBouncy1 : GenericGoreActor
 }
 
 actor BrutalChunkBouncy1_HexGreen : BrutalChunkBouncy1 { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalChunkBouncy1_Brown : BrutalChunkBouncy1 { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkBouncy1_Tan : BrutalChunkBouncy1 { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkBouncy1_Forest : BrutalChunkBouncy1 { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkBouncy1_Orange : BrutalChunkBouncy1 { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkBouncy1_White : BrutalChunkBouncy1 { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkBouncy1_Grey : BrutalChunkBouncy1 { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkBouncy1_Black : BrutalChunkBouncy1 { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkBouncy1_Yellow : BrutalChunkBouncy1 { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkBouncy1_Pink : BrutalChunkBouncy1 { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkBouncy1_Brown : BrutalChunkBouncy1 { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkBouncy1_Tan : BrutalChunkBouncy1 { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkBouncy1_Forest : BrutalChunkBouncy1 { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkBouncy1_Orange : BrutalChunkBouncy1 { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkBouncy1_White : BrutalChunkBouncy1 { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkBouncy1_Grey : BrutalChunkBouncy1 { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkBouncy1_Black : BrutalChunkBouncy1 { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkBouncy1_Yellow : BrutalChunkBouncy1 { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkBouncy1_Pink : BrutalChunkBouncy1 { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkBouncy1_Green : BrutalChunkBouncy1 { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkBouncy1_Blue : BrutalChunkBouncy1 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -669,15 +669,15 @@ actor BrutalChunkBouncy2 : GenericGoreActor
 }
 
 actor BrutalChunkBouncy2_HexGreen : BrutalChunkBouncy2 { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalChunkBouncy2_Brown : BrutalChunkBouncy2 { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkBouncy2_Tan : BrutalChunkBouncy2 { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkBouncy2_Forest : BrutalChunkBouncy2 { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkBouncy2_Orange : BrutalChunkBouncy2 { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkBouncy2_White : BrutalChunkBouncy2 { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkBouncy2_Grey : BrutalChunkBouncy2 { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkBouncy2_Black : BrutalChunkBouncy2 { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkBouncy2_Yellow : BrutalChunkBouncy2 { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkBouncy2_Pink : BrutalChunkBouncy2 { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkBouncy2_Brown : BrutalChunkBouncy2 { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkBouncy2_Tan : BrutalChunkBouncy2 { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkBouncy2_Forest : BrutalChunkBouncy2 { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkBouncy2_Orange : BrutalChunkBouncy2 { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkBouncy2_White : BrutalChunkBouncy2 { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkBouncy2_Grey : BrutalChunkBouncy2 { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkBouncy2_Black : BrutalChunkBouncy2 { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkBouncy2_Yellow : BrutalChunkBouncy2 { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkBouncy2_Pink : BrutalChunkBouncy2 { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkBouncy2_Green : BrutalChunkBouncy2 { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkBouncy2_Blue : BrutalChunkBouncy2 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -707,15 +707,15 @@ actor BrutalChunkBouncy3 : GenericGoreActor
 }
 
 actor BrutalChunkBouncy3_HexGreen : BrutalChunkBouncy3 { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
-actor BrutalChunkBouncy3_Brown : BrutalChunkBouncy3 { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkBouncy3_Tan : BrutalChunkBouncy3 { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkBouncy3_Forest : BrutalChunkBouncy3 { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkBouncy3_Orange : BrutalChunkBouncy3 { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkBouncy3_White : BrutalChunkBouncy3 { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkBouncy3_Grey : BrutalChunkBouncy3 { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkBouncy3_Black : BrutalChunkBouncy3 { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkBouncy3_Yellow : BrutalChunkBouncy3 { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkBouncy3_Pink : BrutalChunkBouncy3 { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkBouncy3_Brown : BrutalChunkBouncy3 { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkBouncy3_Tan : BrutalChunkBouncy3 { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkBouncy3_Forest : BrutalChunkBouncy3 { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkBouncy3_Orange : BrutalChunkBouncy3 { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkBouncy3_White : BrutalChunkBouncy3 { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkBouncy3_Grey : BrutalChunkBouncy3 { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkBouncy3_Black : BrutalChunkBouncy3 { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkBouncy3_Yellow : BrutalChunkBouncy3 { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkBouncy3_Pink : BrutalChunkBouncy3 { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkBouncy3_Green : BrutalChunkBouncy3 { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkBouncy3_Blue : BrutalChunkBouncy3 { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -759,15 +759,15 @@ actor BrutalChunkTiny : GenericGoreActor
 
 actor BrutalChunkTiny_HexGreen : BrutalChunkTiny { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
 actor BrutalChunkTiny_HPurple : BrutalChunkTiny { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
-actor BrutalChunkTiny_Brown : BrutalChunkTiny { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkTiny_Tan : BrutalChunkTiny { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkTiny_Forest : BrutalChunkTiny { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkTiny_Orange : BrutalChunkTiny { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkTiny_White : BrutalChunkTiny { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkTiny_Grey : BrutalChunkTiny { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkTiny_Black : BrutalChunkTiny { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkTiny_Yellow : BrutalChunkTiny { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkTiny_Pink : BrutalChunkTiny { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkTiny_Brown : BrutalChunkTiny { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkTiny_Tan : BrutalChunkTiny { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkTiny_Forest : BrutalChunkTiny { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkTiny_Orange : BrutalChunkTiny { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkTiny_White : BrutalChunkTiny { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkTiny_Grey : BrutalChunkTiny { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkTiny_Black : BrutalChunkTiny { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkTiny_Yellow : BrutalChunkTiny { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkTiny_Pink : BrutalChunkTiny { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkTiny_Green : BrutalChunkTiny { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkTiny_Blue : BrutalChunkTiny { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
@@ -775,15 +775,15 @@ actor BrutalChunkTinier : BrutalChunkTiny { Scale 0.35 }
 
 actor BrutalChunkTinier_HexGreen : BrutalChunkTinier { Translation "164:185=193:202", "240:245=198:202", "0:2=192:192", "203:203=198:198" }
 actor BrutalChunkTinier_HPurple : BrutalChunkTinier { Translation "145:159=169:176", "248:251=169:170", "73:94=169:176", "137:144=169:176", "0:6=169:176" }
-actor BrutalChunkTinier_Brown : BrutalChunkTinier { Translation "16:47=48:79", "16:47=48:79" }
-actor BrutalChunkTinier_Tan : BrutalChunkTinier { Translation "16:47=128:143", "16:47=128:143" }
-actor BrutalChunkTinier_Forest : BrutalChunkTinier { Translation "16:47=152:159", "16:47=152:159" }
-actor BrutalChunkTinier_Orange : BrutalChunkTinier { Translation "16:47=208:223", "16:47=208:223" }
-actor BrutalChunkTinier_White : BrutalChunkTinier { Translation "16:47=80:95", "16:47=80:95" }
-actor BrutalChunkTinier_Grey : BrutalChunkTinier { Translation "16:47=96:111", "16:47=96:111" }
-actor BrutalChunkTinier_Black : BrutalChunkTinier { Translation "16:47=5:8", "16:47=5:8" }
-actor BrutalChunkTinier_Yellow : BrutalChunkTinier { Translation "16:47=160:167", "16:47=160:167" }
-actor BrutalChunkTinier_Pink : BrutalChunkTinier { Translation "16:47=250:254", "16:47=250:254" }
+actor BrutalChunkTinier_Brown : BrutalChunkTinier { Translation "16:47=48:79", "176:191=48:79" }
+actor BrutalChunkTinier_Tan : BrutalChunkTinier { Translation "16:47=128:143", "176:191=128:143" }
+actor BrutalChunkTinier_Forest : BrutalChunkTinier { Translation "16:47=152:159", "176:191=152:159" }
+actor BrutalChunkTinier_Orange : BrutalChunkTinier { Translation "16:47=208:223", "176:191=208:223" }
+actor BrutalChunkTinier_White : BrutalChunkTinier { Translation "16:47=80:95", "176:191=80:95" }
+actor BrutalChunkTinier_Grey : BrutalChunkTinier { Translation "16:47=96:111", "176:191=96:111" }
+actor BrutalChunkTinier_Black : BrutalChunkTinier { Translation "16:47=5:8", "176:191=5:8" }
+actor BrutalChunkTinier_Yellow : BrutalChunkTinier { Translation "16:47=160:167", "176:191=160:167" }
+actor BrutalChunkTinier_Pink : BrutalChunkTinier { Translation "16:47=250:254", "176:191=250:254" }
 actor BrutalChunkTinier_Green : BrutalChunkTinier { Translation "16:47=112:127", "176:191=112:127" }
 actor BrutalChunkTinier_Blue : BrutalChunkTinier { Translation "16:31=200:207", "32:47=240:247", "176:183=200:207", "184:191=240:247" }
 
