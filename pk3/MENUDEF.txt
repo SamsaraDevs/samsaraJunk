@@ -35,6 +35,7 @@
             Option "Duke Ballgag",                          "samsara_cl_ballgag", "OnOff"
             Option "Pickup Graphic",                        "samsara_cl_pickupmode", "PickupGraphics"
             Option "Print Pickup Message",                  "samsara_cl_printpickup", "OnOff"
+            Option "Bloody Hell Level",                     "samsara_cl_bloodyhell", "BHellLevel"
             }
            
     OptionValue PickupGraphics
@@ -42,6 +43,14 @@
             0, "Old-Style"
             1, "Hybrid"
             2, "Class"
+    }
+           
+    OptionValue BHellLevel
+    {
+            -1, "Happyfun"
+            0, "Vanilla"
+            1, "Nashgore"
+            2, "Brutal"
     }
      
     OptionMenu "SamsaraServerSideOptions"
