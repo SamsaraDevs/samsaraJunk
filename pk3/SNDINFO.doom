@@ -1,0 +1,54 @@
+////////////////////
+// Doomguy sounds
+////////////////////
+$playersound	Doomguy	 male	*death			dgdeth
+$playersound	Doomguy	 male	*xdeath			dgdethx
+$playersound	Doomguy	 male	*burndeath			dgdethf
+$playersound	Doomguy	 male	*crazydeath		dgdethx
+$playersounddup Doomguy  male   *wimpydeath 	*death
+$playersound	Doomguy	 male	*gibbed			dggibd
+$playersound	Doomguy  male	*falling		dgfall
+$playersound	Doomguy	 male	*pain100		dgpain
+$playersounddup	Doomguy	 male	*pain75			*pain100
+$playersounddup	Doomguy	 male	*pain50			*pain100
+$playersounddup	Doomguy	 male	*pain25			*pain100
+$playersound	Doomguy	 male	*grunt			dgoof
+$playersound	Doomguy	 male	*land			dgland
+$playersound	Doomguy	 male	*usefail		dgnope
+$playersound	Doomguy  male	*puzzfail		dgpuzz
+$playersound	Doomguy  male	*taunt			dgtaunt
+
+doomguy/weaponget		dgwepget
+doomguy/itemget			dgitmget
+
+$pitchshiftrange 1//3
+doomguy/sawup			dgsawup
+doomguy/sawidle			dgsawidl
+doomguy/sawfull			dgsawful
+doomguy/sawhit			dgsawhit
+$pitchshiftrange 0//4
+
+$pitchshiftrange 					0
+doomguy/punch			dgpunch
+doomguy/punch2			dgpunch2
+doomguy/wallpunch2		dgwall
+doomguy/wallpunch		dgwpunch
+doomguy/pistol			dgpistol
+doomguy/shotgf			dgshotgn
+doomguy/shotgr			dgsgcock
+doomguy/sshotf			dgdshtgn
+doomguy/sshoto			dgdbopn
+doomguy/sshotc			dgdbcls
+doomguy/sshotl			dgdbload
+doomguy/rocklf			dgrlaunc
+doomguy/rocklx			dgrckexp
+doomguy/plasmaf			dgplasma
+doomguy/plasmax			dgplshit
+doomguy/bfgf			dgbfg
+doomguy/bfgx			dgbfgxpl
+doomguy/railfire        dgrailgf
+
+$limit doomguy/plasmaf 0
+$limit doomguy/pistol 0
+$limit doomguy/rocklf 0
+$limit doomguy/rocklx 0

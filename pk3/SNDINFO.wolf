@@ -1,0 +1,49 @@
+////////////////
+// Wolfenstein Sounds
+///////////////
+$playersound	WolfenPlayer	male	*death			bjdeth
+$playersounddup	WolfenPlayer	male	*wimpydeath		*death
+$playersounddup	WolfenPlayer	male	*crazydeath		*death
+$playersounddup	WolfenPlayer	male	*xdeath			*death
+$playersounddup	WolfenPlayer	male	*gibbed			*death
+$playersound	WolfenPlayer	male	*pain100		bjpain	// Original sound by as3sfxr
+$playersounddup	WolfenPlayer	male	*pain75			*pain100
+$playersounddup	WolfenPlayer	male	*pain50			*pain100
+$playersounddup	WolfenPlayer	male	*pain25			*pain100
+$playersound	WolfenPlayer	male	*grunt			bjoof
+$playersound	WolfenPlayer	male	*usefail		bjnope
+$playersounddup	WolfenPlayer	male	*land			*grunt
+$playersound	WolfenPlayer	male	*taunt			bjtaunt
+$playersound	WolfenPlayer	male	*evillaugh		silence
+$playersounddup	WolfenPlayer	male	*puzzfail		*usefail
+$playersound	WolfenPlayer	male	*falling		bjfall // Sound by CGEffex
+
+wolfen/knife				bjknife
+wolfen/knife2				bjknife2
+wolfen/pistol				bjpistol
+wolfen/machinegun			bjmgun
+wolfen/chaingun				bjchgun
+wolfen/flamethrower			bjflame
+wolfen/missilefire			bjmissf
+wolfen/missilexplod			bjmissx
+wolfen/itemget				bjitmget
+wolfen/weaponget			bjwpnget
+wolfen/mgunget				bjwpngtm
+wolfen/knifeget				bjwpngtk
+wolfen/rocketget			bjwpngtr
+wolfen/ammocrate			bjammfil
+wolfen/flameget				bjwpngtf
+wolfen/spearget				bjwpngts
+wolfen/lifeget				bjlifget
+wolfen/slurpie				bjslurp
+wolfen/chicken				bjchikn
+wolfen/spearready			bjsprrdy // Original sound by as3sfxr
+wolfen/spearfire			bjsprsht // Original sound by as3sfxr
+wolfen/spearbounce			bjsprbnc // Original sound by as3sfxr
+wolfen/spearexplode1		bjsprex1 // Original sound by as3sfxr
+wolfen/spearexplode2		bjsprex2 // Original sound by as3sfxr
+wolfen/spearstab			bjsprstb // Original sound by as3sfxr
+wolfen/rifle			    bjrifle
+$limit  wolfen/machinegun	 		0
+$limit  wolfen/chaingun		 		0
+$limit  wolfen/flamethrower	 		0

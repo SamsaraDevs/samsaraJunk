@@ -2,3 +2,11 @@
 *.h text
 *.dec text
 *.txt text
+*.doom text
+*.chex text
+*.hrtc text
+*.wolf text
+*.hexn text
+*.duke text
+*.mara text
+*.quak text

@@ -1,0 +1,87 @@
+///////////////////
+// Chex sounds
+///////////////////
+$pitchshiftrange 					1//4
+$playersound		ChexWarrior		male	*death		chpldeth
+$playersounddup		ChexWarrior		male	*wimpydeath	*death
+$playersound		ChexWarrior		male	*xdeath		chpdiehi
+$playersound		ChexWarrior		male	*crazydeath	chpdiehi
+$playersound		ChexWarrior		male	*gibbed		chslop
+$playersound		ChexWarrior		male	*pain100	chplpain
+$playersounddup		ChexWarrior		male	*pain75		*pain100
+$playersounddup		ChexWarrior		male	*pain50		*pain100
+$playersounddup		ChexWarrior		male	*pain25		*pain100
+$playersound		ChexWarrior		male	*grunt		choof
+$playersound		ChexWarrior		male	*land		chland // ORIGINAL SOUND PLEASE DON'T STEAL :(
+$playersound		ChexWarrior		male	*usefail	chnoway
+$playersound		ChexWarrior		male	*taunt		chtaunt // Same
+$playersound		ChexWarrior		male	*falling	chfall // Same
+$playersound		ChexWarrior		male	*puzzfail	chpuzz // Yup, same
+
+$pitchshiftrange 					0//3
+chex/sawup			chsawup
+chex/sawidle		chsawidl
+chex/sawfull		chsawful
+chex/sawhit			chsawhit
+$pitchshiftrange 					0
+
+$random flemsplat { flemsplat1 flemsplat2 flemsplat3 }
+$limit flemsplat 1
+flemsplat1 chsplat1 // Taken from Nashgore
+flemsplat2 chsplat2 // Taken from Nashgore
+flemsplat3 chsplat3 // Taken from Nashgore
+flemdie			chsplat4 // Taken from audionautics, anechoix, and flasher21 on FreeSound
+$limit flemdie 0
+flem/cyclopsbody	CHCYCBOD // Taken from Killing Floor
+flemdie2		chsplat5 // Taken from Painkiller and Unreal Tournament 2004
+flemdie3		chsplat6 // Taken from Painkiller and Unreal Tournament 2004
+
+// Zorching!
+chex/zorch			chzorch
+chex/zorchsmall		chzorch2
+chex/zorchhuge		chzorch3
+$limit chex/zorch 					0
+$limit chex/zorchsmall 				0
+$limit chex/zorchhuge 				0
+
+chex/cyberzorch		chcyberd	// Taken from Duke Nukem 3D
+chex/pinkyzorch		chpinky		// Taken from Doom II, modified
+chex/spidmzorch		chspidth	// Taken from Doom 64, modified
+
+chex/gargzorch		chgrgoyl	// Taken from Heretic, modified
+chex/mummyzorch		chmummy		// Taken from Doom 64, modified
+chex/weredrzorch	chwerdrg	// Taken from Heretic, modified
+chex/ophidzorch		chophid		// Taken from Heretic, modified
+chex/maulozorch		chmaltar	// Taken from Heretic, modified
+chex/dsparilzorch	chdsparl	// Taken from HeXen, modified
+
+chex/heresizorch	chhrsirc	// Taken from HeXen, modified
+chex/koraxzorch		chkorax		// Taken from HeXen, modified
+
+// Weapons!
+chex/weaponget		chwpnup
+chex/spoon			chspoon // SPOOOOOOOOOOOOON
+chex/wallspoon		chspoon2
+chex/pistol			chpistol
+chex/shotgf			chshotgn
+chex/shotgr			chsgcock
+chex/rocklx			chrxplod
+chex/rocklf			chrlaunc
+chex/plasmaf		chplasma
+$limit chex/plasmaf 				0
+chex/plasmax		chfirxpl
+chex/bfgf			chbfg
+chex/bfgfire		chbfg1
+chex/bfglaunch		chbfg2
+chex/bfghold		chheld1
+chex/bfgquickfire	chbfg3
+chex/bfgx			chrxplod
+chex/slzorcher		chslzrch
+chex/slzorchbounce	chslzrcb
+chex/slzorchhit		chslzrcd
+chex/slzorchmagdown	chslzdn
+chex/slzorchmagup	chslzup
+chex/slzorchmaglock	chslzloc
+chex/slzorchmagunlk	chslzunl
+chex/instazorchfire chizfire
+chex/instazorchload chizload

@@ -1,0 +1,104 @@
+/////////////////////
+// Heretic sounds
+/////////////////////
+$pitchshiftrange 					1//3
+$playersound	CorvusPlayer	male	*wimpydeath		hplrwdth
+$playersound	CorvusPlayer	male	*death			hplrdth
+$playersound	CorvusPlayer	male	*burndeath		hplrfdth
+$playersound	CorvusPlayer	male	*crazydeath		hplrcdth
+$playersounddup	CorvusPlayer	male	*xdeath			*crazydeath
+$playersound	CorvusPlayer	male	*gibbed			hgibdth
+$playersound	CorvusPlayer	male	*falling		hplrfall
+$playersound	CorvusPlayer	male	*pain100		hplrpai
+$playersounddup	CorvusPlayer	male	*pain75			*pain100
+$playersounddup	CorvusPlayer	male	*pain50			*pain100
+$playersounddup	CorvusPlayer	male	*pain25			*pain100
+$playersound	CorvusPlayer	male	*weaponlaugh	hwpnup
+$playersounddup	CorvusPlayer	male	*evillaugh		*weaponlaugh
+$playersound	CorvusPlayer	male	*grunt			hplroof
+$playersounddup	CorvusPlayer	male	*usefail		*grunt
+$playersound	CorvusPlayer	male	*puzzfail		hplrpuzz
+$playersound	CorvusPlayer	male	*land			hplrland // ORIGINAL SOUND PLEASE DON'T STEAL :(
+$playersound	CorvusPlayer	male	*taunt			hplrtant
+
+$playeralias	chicken male	*usefail		chicken/peck
+$playeralias	chicken male	*pain100		chicken/pain
+$playeralias	chicken male	*pain75			chicken/pain
+$playeralias	chicken male	*pain50			chicken/pain
+$playeralias	chicken male	*pain25			chicken/pain
+$playeralias	chicken male	*death			chicken/death
+$playeralias	chicken male	*wimpydeath		chicken/death
+$playeralias	chicken male	*crazydeath		chicken/death
+$playeralias	chicken male	*xdeath			chicken/death
+$playeralias	chicken male	*falling		chicken/active
+
+$pitchshiftrange 					0
+chicken/active			chicact
+chicken/attack			chicatk
+chicken/pain			chicpai
+chicken/death			chicdth
+chicken/peck1			chicpk1
+chicken/peck2			chicpk2
+chicken/peck3			chicpk3
+$random chicken/peck		{ chicken/peck1  chicken/peck2  chicken/peck3 }
+
+heretic/weaponget			hwpnup
+heretic/ammoget				hitmup
+heretic/itemget				hitemget
+heretic/itemuse				hitemuse
+heretic/wand				gldhit
+heretic/staffhit			stfhit
+heretic/staffpowerhit		stfpow
+$limit  heretic/staffpowerhit 0
+heretic/staffcrackle		stfcrk
+weapons/bowshoot			bowsht
+weapons/bowhit				hrnhit
+heretic/dragonclaw			blssht
+weapons/gauntletsactivate	gntact
+weapons/gauntletsuse		gntuse
+weapons/gauntletson			gntful
+weapons/gauntletshit		gnthit
+weapons/gauntletspowhit		gntpow
+$limit	weapons/gauntletson			0
+$limit	weapons/gauntletshit		0
+$limit	weapons/gauntletspowhit		0
+$limit	weapons/gauntletsactivate	0
+$limit	weapons/gauntletsuse		0
+weapons/phoenixshoot		phosht
+weapons/phoenixhit			phohit
+weapons/phoenixpowshoot		phopow
+$limit  weapons/phoenixpowshoot		1
+heretic/hornrodshoot		hrnsht
+weapons/hornrodpowshoot		hrnpow
+weapons/hornrodpowhit		ramphit
+weapons/maceshoot			lobsht
+weapons/macebounce			lobbnce
+weapons/macestop			lobpow
+weapons/maceexplode			phohit
+weapons/macehit				lobhit
+$limit  heretic/hornrodshoot 		0
+$limit  weapons/bowhit 				0
+$limit  weapons/maceshoot 			0
+$limit  weapons/macebounce 			0
+
+heretic/remoteancient		ANCTRMT
+heretic/proxancient			ANCTPROX
+
+heretic/grimbshot           GRMBSHOT
+heretic/grimbload           GRMBLOAD
+heretic/grimhbeat           GRMBEAT
+
+$random SoulScream { ghostscream1 ghostscream2 ghostscream3 ghostscream4 } // Taken from freqman from FreeSound.org, modified
+ghostscream1 gstscrma
+ghostscream2 gstscrmb
+ghostscream3 gstscrmc
+ghostscream4 gstscrmd
+
+$volume ghostscream1 0.15
+$volume ghostscream2 0.15
+$volume ghostscream3 0.15
+$volume ghostscream4 0.15
+$rolloff ghostscream1 64 640
+$rolloff ghostscream2 64 640
+$rolloff ghostscream3 64 640
+$rolloff ghostscream4 64 640

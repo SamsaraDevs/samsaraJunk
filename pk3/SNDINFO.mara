@@ -1,0 +1,102 @@
+////////////////////
+// Marathon sounds
+///////////////////
+
+$playeralias	MarathonPlayer	male	*pain100	bob/pain
+$playeralias	MarathonPlayer	male	*pain75		bob/pain
+$playeralias	MarathonPlayer	male	*pain50		bob/pain
+$playeralias	MarathonPlayer	male	*pain25		bob/pain
+$playeralias	MarathonPlayer	male	*death		bob/death
+$playeralias	MarathonPlayer	male	*xdeath		bob/death
+$playeralias	MarathonPlayer	male	*gibbed		bob/death
+$playersound	MarathonPlayer	male	*burndeath  mtbobbrn
+$playersounddup	MarathonPlayer	male	*wimpydeath	*death
+$playersound	MarathonPlayer	male	*land		mrthland
+$playersound	MarathonPlayer	male	*grunt		MRTHNOPE
+$playersound 	MarathonPlayer 	male	*taunt		MTBOBAC1
+$playersound	MarathonPlayer	male	*falling	MRTHFALL
+$playersound	MarathonPlayer	male	*splat		MRTHSLOP
+$playersound	MarathonPlayer	male	*usefail	MRTHNOPE
+$playersound	MarathonPlayer	male	*puzzfail	MRTHPZFL
+$playersound	MarathonPlayer	male	*poison		mtbobdth
+
+marathon/drown			mtbobdth
+marathon/itemget		MRTHITEM
+marathon/bigitemget		MRTHBITM
+
+$Random bob/death {bob/death1 bob/death2}
+$Random bob/pain {bob/pain1 bob/pain2}
+bob/death1	MTBOBDI1
+bob/death2	MTBOBDI2
+bob/pain1	MTBOBPN1
+bob/pain2	MTBOBPN2
+
+
+marathon/fist/hit	MTPUNCH
+marathon/knife/wall	MRNFWALL
+marathon/knife/hit	MRNFHIT
+marathon/knife/throw MRNFTHRW
+marathon/knife/bounce MRNFDING
+
+marathon/tech50/fire MR50FIR
+marathon/tech50/stun MRSTUN // Probably the only non-Marathon sound here. Taken from Devil May Cry 3.
+
+$Random marathon/pistol/fire {marathon/pistol/fire1 marathon/pistol/fire2}
+marathon/pistol/fire1		MTPISTS1
+marathon/pistol/fire2		MTPISTS2
+marathon/pistol/reload		MTPSTRLD
+
+marathon/fusion/fire		MTFSHOOT
+marathon/fusion/super	MTFSUPER
+marathon/fusion/charge	MTFCHRGE
+marathon/fusion/beep		MTFBEEPS
+marathon/fusion/hit		MTFUSHIT
+marathon/fusion/reload	MTFUSRLD
+
+$Random marathon/shotgun/fire {marathon/shotgun/fire1 marathon/shotgun/fire2}
+marathon/shotgun/fire1	MTSHTFR1
+marathon/shotgun/fire2	MTSHTFR2
+marathon/shotgun/reload	MTSHTRLD
+
+marathon/rifle/fire		MTRFLSHT
+marathon/rifle/reload	MTRFLRLD
+marathon/rifle/grenade	MTGRNSHT
+marathon/rifle/nadexpl	MTGRNXPL
+marathon/rifle/dryfire	MTRFLDRY
+
+marathon/smg/fire	MTSMGSHT
+marathon/smg/reload	MTSMGRLD
+
+marathon/rocket/fire	MTRLAUNC
+marathon/rocket/hit	MTRKTXPL
+
+marathon/flamethrower/fire	MTFLMTHR
+
+enforcer/shoot	MTALNSHT
+enforcer/hit	MTALNHIT
+hunter/explode	MTHNTXPL
+
+$Random puff/ric {puff/ric1 puff/ric2}
+puff/ric1			MRTRICO1
+puff/ric2			MRTRICO2
+$random puff/hit {puff/hit1 puff/hit2 puff/hit3}
+puff/hit1			MRTHHIT1
+puff/hit2			MRTHHIT2
+puff/hit3			MRTHHIT3
+puff/ding			MRTHDING
+
+
+wmc/beep1				wmcbeep
+wmc/beep2				wmcbeep2
+wmc/chargeup			wmccharg
+wmc/chargedown			wmcch2rg
+wmc/railfire			wmcfire
+wmc/grenadefire			wmcfireg
+wmc/reload				wmcreloa
+wmc/grenadeexplode1		WMCGXPLO
+wmc/grenadeexplode2		wmcgxpl2
+
+alienweapon/shoot		MTAWPSHT
+alienweapon/hit			MTAWPHIT
+
+marathon/railfire       MATCFIRE

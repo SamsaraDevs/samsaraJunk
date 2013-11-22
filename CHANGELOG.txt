@@ -38,6 +38,7 @@ POLISH:
 - The Heretic/Hexen actors directory has been changed from a big, clunky, useless file in actors/ to a sorted and organized folder in decorate/.
 - Duke 3D's pistol name has been changed from the M1911 that was in the .def to the Glock 17 its design is based off, due to...insistent request.
 - Thanks to PresidentPeople, Duke Nukem now bleeds his slightly-orange blood color from Duke Nukem 3D.
+- All SNDINFOs have been split into different files per each character, for easier tracking.
 
 
 FROM 0.29b TO 0.3

@@ -1,0 +1,79 @@
+//////////////////
+// HeXen sounds
+////////////////
+$playersound	HexenPlayer	male	*death			clrdth
+$playersounddup	HexenPlayer	male	*wimpydeath		*death
+$playersound	HexenPlayer	male	*crazydeath		clrcdth
+$playersound	HexenPlayer	male	*burndeath		clrburn
+$playeralias	HexenPlayer	male	*xdeath			clerXdeath
+$playersounddup	HexenPlayer	male	*gibbed			*xdeath
+$playersound	HexenPlayer	male	*poison			clpois2
+$playersound	HexenPlayer	male	*splat			clfllhit
+$playersound	HexenPlayer	male	*pain100		clrpain3
+$playersounddup	HexenPlayer	male	*pain75			*pain100
+$playersounddup	HexenPlayer	male	*pain50			*pain100
+$playersounddup	HexenPlayer	male	*pain25			*pain100
+$playersound	HexenPlayer	male	*grunt			clgrunt1
+$playersound	HexenPlayer	male	*fistgrunt		gntmis1
+$playersounddup	HexenPlayer	male	*usefail		*grunt
+$playersound	HexenPlayer	male	*land			clfeet4
+$playersound	HexenPlayer	male	*evillaugh		cllaugh
+$playersound	HexenPlayer	male	*puzzfail		clhmm
+$playersound	HexenPlayer	male	*falling		clfall1
+$playersound	HexenPlayer	male	*taunt			cltaunt
+
+parias/explode			PABOOM
+
+$random clerXdeath { PlayerClericExtreme1Death PlayerClericExtreme2Death PlayerClericExtreme3Death }
+PlayerClericExtreme1Death       clxdth1
+PlayerClericExtreme2Death       clxdth2
+PlayerClericExtreme3Death       clxdth3
+
+FighterPunchMiss        punchmis
+FighterPunchHitWall     punch8
+FighterPunchHitThing    mumpun5
+MageWandFire            wand4
+MageShardsFire          cone3
+MageShardsExplode       shards1b
+FighterAxeHitThing      axe5
+FighterHammerMiss       hammis2
+FighterHammerHitWall    hamwal1
+FighterHammerHitThing   hmhit1a
+FighterHammerContinuous hamfly1
+FighterHammerExplode    impact3
+ClericCStaffFire        spell1
+ClericCStaffExplode     glbhit4
+$limit ClericCStaffExplode 0
+ClericCStaffHitThing    vamp5
+ClericFlameFire         strike3
+ClericFlameExplode      strike1
+ClericFlameCircle       firedhit
+HolySymbolFire          holy3
+SpiritActive            spirt7
+$limit SpiritActive 0
+SpiritAttack            spirt5
+$limit SpiritAttack 0
+SpiritDie               spirts1
+$limit SpiritDie 0
+MageStaffFire           mage4
+MageStaffExplode        mageball
+
+hexen/weaponget         sample11
+hexen/artiget           artget1
+hexen/artiuse           artact1
+hexen/itemget           picup5
+PoisonShroomDeath       puff1
+hexen/ambituse			ambituse
+
+freeze/cyberdemon		frcyber
+freeze/spidermind		frspider
+freeze/break			frbreak
+freeze/ironlich			frlich
+freeze/maulotaur		frmaulo
+freeze/dsparil			frdsparl
+freeze/wyvern			frdragon
+freeze/heresiarch		frhrsirc
+freeze/menelkir			frmnlkir
+freeze/traductus		frtrdcts
+freeze/zedek			frzedek
+freeze/korax			frkorax
