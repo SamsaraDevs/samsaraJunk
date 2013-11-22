@@ -380,12 +380,14 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
         if(GetCvar("samsara_cl_bloodyhell") == -1) { SetActorState(0,"XDeathHappyfun"); }
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 3) { SetActorState(0,"XDeathNightmare"); }
         break;
 		
     case 11:
         if(GetCvar("samsara_cl_bloodyhell") == -1) { SetActorState(0,"DeathHappyfun"); }
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 3) { SetActorState(0,"DeathNightmare"); }
         break;
 		
 	case 12:
