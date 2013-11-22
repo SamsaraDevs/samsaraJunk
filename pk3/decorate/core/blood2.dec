@@ -159,22 +159,22 @@ actor BrutalSkull : GenericGoreActor
 	Death1:
         BGB1 A 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    BGB1 A 10
+	    BGB1 AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
 	Death2:
         BGB1 D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    BGB1 D 10
+	    BGB1 DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
 	Death3:
         BGB1 J 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    BGB1 J 10
+	    BGB1 JJJJJJJJJJ 1 A_FadeOut(0.1)
         stop
 	Death4:
         BGB1 L 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    BGB1 L 10
+	    BGB1 LLLLLLLLLL 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -214,22 +214,22 @@ actor BrutalRedOrgan : GenericGoreActor
 	Death1:
         BGB3 A 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    BGB3 A 10
+	    BGB3 AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
 	Death2:
         BGB3 B 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    BGB3 B 10
+	    BGB3 BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
 	Death3:
         BGB3 C 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    BGB3 C 10
+	    BGB3 CCCCCCCCCC 1 A_FadeOut(0.1)
         stop
 	Death4:
         BGB3 D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    BGB3 D 10
+	    BGB3 DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -269,22 +269,22 @@ actor BrutalBrownOrgan : GenericGoreActor
 	Death1:
         BGB2 A 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    BGB2 A 10
+	    BGB2 AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
 	Death2:
         BGB2 B 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    BGB2 B 10
+	    BGB2 BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
 	Death3:
         BGB2 C 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    BGB2 C 10
+	    BGB2 CCCCCCCCCC 1 A_FadeOut(0.1)
         stop
 	Death4:
         BGB2 D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    BGB2 D 10
+	    BGB2 DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -398,22 +398,22 @@ actor BrutalLittlePuddle : GenericGoreActor
     Death1:
         BSPT A 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    BSPT A 10
+	    BSPT AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
     Death2:
         BSPT B 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    BSPT B 10
+	    BSPT BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
     Death3:
         BSPT C 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    BSPT C 10
+	    BSPT CCCCCCCCCC 1 A_FadeOut(0.1)
         stop
     Death4:
         BSPT D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    BSPT D 10
+	    BSPT DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -438,32 +438,32 @@ actor BrutalTinyBouncyBone : GenericGoreActor
 	Death1:
         JNKQ D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    JNKQ D 10
+	    JNKQ DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
 	Death2:
         JNKQ E 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    JNKQ E 10
+	    JNKQ EEEEEEEEEE 1 A_FadeOut(0.1)
         stop
 	Death3:
         JNKQ F 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    JNKQ F 10
+	    JNKQ FFFFFFFFFF 1 A_FadeOut(0.1)
         stop
 	Death4:
         JNKQ G 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    JNKQ G 10
+	    JNKQ GGGGGGGGGG 1 A_FadeOut(0.1)
         stop
 	Death5:
         JNKQ H 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death5")
-	    JNKQ H 10
+	    JNKQ HHHHHHHHHH 1 A_FadeOut(0.1)
         stop
 	Death6:
         JNKQ I 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death6")
-	    JNKQ I 10
+	    JNKQ IIIIIIIIII 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -499,27 +499,27 @@ actor BrutalTinyBone : GenericGoreActor
 	Death1:
         JNKQ K 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    JNKQ K 10
+	    JNKQ KKKKKKKKKK 1 A_FadeOut(0.1)
         stop
 	Death2:
         JNKQ L 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    JNKQ L 10
+	    JNKQ LLLLLLLLLL 1 A_FadeOut(0.1)
         stop
 	Death3:
         JNKQ M 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    JNKQ M 10
+	    JNKQ MMMMMMMMMM 1 A_FadeOut(0.1)
         stop
 	Death4:
         JNKQ N 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    JNKQ N 10
+	    JNKQ NNNNNNNNNN 1 A_FadeOut(0.1)
         stop
 	Death5:
         JNKQ O 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death5")
-	    JNKQ O 10
+	    JNKQ OOOOOOOOOO 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -541,27 +541,27 @@ actor BrutalChunk : GenericGoreActor
 	Death1:
         JHNK H 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    JHNK H 10
+	    JHNK HHHHHHHHHH 1 A_FadeOut(0.1)
         stop
 	Death2:
         JHNK I 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    JHNK I 10
+	    JHNK IIIIIIIIII 1 A_FadeOut(0.1)
         stop
 	Death3:
         JHNK J 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    JHNK J 10
+	    JHNK JJJJJJJJJJ 1 A_FadeOut(0.1)
         stop
 	Death4:
         JHNK K 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    JHNK K 10
+	    JHNK KKKKKKKKKK 1 A_FadeOut(0.1)
         stop
 	Death5:
         JHNK L 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death5")
-	    JHNK L 10
+	    JHNK LLLLLLLLLL 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -635,7 +635,7 @@ actor BrutalChunkBouncy1 : GenericGoreActor
     Death:
         JHNQ A 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
-	    JHNQ A 10
+	    JHNQ AAAAAAAAAA 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -674,7 +674,7 @@ actor BrutalChunkBouncy2 : GenericGoreActor
     Death:
         JHNQ B 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
-	    JHNQ B 10
+	    JHNQ BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -713,7 +713,7 @@ actor BrutalChunkBouncy3 : GenericGoreActor
     Death:
         JHNQ C 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
-	    JHNQ C 10
+	    JHNQ CCCCCCCCCC 1 A_FadeOut(0.1)
         stop
     }
 }
@@ -750,22 +750,22 @@ actor BrutalChunkTiny : GenericGoreActor
 	Death1:
         JHNQ E 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
-	    JHNQ E 10
+	    JHNQ EEEEEEEEEE 1 A_FadeOut(0.1)
         stop
 	Death2:
         JHNQ F 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
-	    JHNQ F 10
+	    JHNQ FFFFFFFFFF 1 A_FadeOut(0.1)
         stop
 	Death3:
         JHNQ G 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
-	    JHNQ G 10
+	    JHNQ GGGGGGGGGG 1 A_FadeOut(0.1)
         stop
 	Death4:
         JHNQ H 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
-	    JHNQ H 10
+	    JHNQ HHHHHHHHHH 1 A_FadeOut(0.1)
         stop
     }
 }
