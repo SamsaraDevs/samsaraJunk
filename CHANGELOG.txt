@@ -14,6 +14,7 @@ GAMEPLAY:
 - By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...
 - For those who would like to manually control when and how Duke taunts, samsara_dukesoundboard has been implemented.
 - For people who would like survival runs or for their rocketarena duels to be a test of longevity, samsara_nohealth has been implemented. It removes all health pickups from the map.
+- An acquaintence reminded me that Ranger's explosions did half damage to Shamblers. Ranger's splash damage now has half+FORCERADIUSDMG on it, allowing bosses to take half damage rather than nil damage to it.
 
 BUGFIXES:
 - Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.
@@ -25,6 +26,7 @@ BUGFIXES:
 - The WSTE-M5 was the only Marathon weapon that would swap to another weapon when out of ammo. Thanks to ForrestMarkX, this inconsistency has been removed.
 - When Heretic's Golems were gibbed by Duke, they had a chance to jump to a state that didn't exist.
 - ZDoom's SBARINFO no longer shows doubles of the Heretic keys.
+- The Nailguns no longer think Ranger's Grenade/Rocket Launcher run off Shells.
 
 POLISH:
 - samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.
