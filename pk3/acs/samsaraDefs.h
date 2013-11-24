@@ -547,26 +547,44 @@ int CVarDefenseItems[DEFENSEMODES] =
 int ChangelogString =
 "FROM 0.3 TO 0.31\n\
 ========================\n\
-- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.\n\
-- Okay seriously now the Quad Damage will work in singleplayer ZDoom.\n\
-- Parias' Wraithverge no longer takes 160 mana in DM.\n\
-- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.\n\
-- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.\n\
+GAMEPLAY:\n\
 - The Marathon 1 Alien Weapon has had its damage increased by a whole 1 to be more accurate to Marathon.\n\
-- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.\n\
-- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.\n\
 - Thanks to Popsoap, Duke is now capable of picking up his thrown pipebombs!\n\
 - Thanks to Scroton, Duke is now capable of kicking while shooting or reloading!\n\
-- Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!\n\
 - The wonky rules about when Ranger could or could not get a Quad item have been chucked out the window in favor of a cvar--samsara_permaquad. Put at 1 to get a Quake II-style inventory Quad Damage, put at 0 to have just 30 seconds and nothing more.\n\
-- Flemoid Blood should no longer conflict with any instances of Nashgore.\n\
 - People keep asking me about Brutal Doom, if it will be implemented. No, it will not, but I will accomodate your thirst for gore! samsara_cl_bloodyhell has been implemented as an optional cvar--raise the numbers for even more bloodshed!\n\
  ^- : samsara_cl_bloodyhell 0 is default level, and is no different from vanilla.\n\
  ^- : samsara_cl_bloodyhell 1 is Nashgore level, and is for those who want a little bit more blood without anything over the top.\n\
  ^- : samsara_cl_bloodyhell 2 is Brutal level, and is for those who want as much bloodshed and brutality as possible.\n\
  ^- : samsara_cl_bloodyhell -1 is Happyfun level, and is...well, you'll see.\n\
 - samsara_cl_bloodypersistent has been implemented to keep gibs lasting on maps. Duke's gibs have been edited to accomodate this as well.\n\
+- By massive request, samsara_pistolammo is now a cvar. With it enabled, the pistol weapons now use ammo 1 like normal--keep in mind now all characters respond favorably to this...\n\
+- For those who would like to manually control when and how Duke taunts, samsara_dukesoundboard has been implemented.\n\
+- For people who would like survival runs or for their rocketarena duels to be a test of longevity, samsara_nohealth has been implemented. It removes all health pickups from the map.\n\
+- An acquaintence reminded me that Ranger's explosions did half damage to Shamblers. Ranger's splash damage now has half+FORCERADIUSDMG on it, allowing bosses to take half damage rather than nil damage to it.\n\
+\n\
+BUGFIXES:\n\
+- Timon's Axe no longer refuses to take ammo when a hit is made with full ammo in co-op.\n\
+- Okay seriously now the Quad Damage will work in singleplayer ZDoom.\n\
+- Parias' Wraithverge no longer takes 160 mana in DM.\n\
+- Duke was resisting QuakeFire normally, rather than being 10% weak to it like everything else. This has been fixed.\n\
+- Marathon armor no longer goes 100 -> 150 -> 300 -> 300 with yellow armor on the map.\n\
+- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.\n\
+- The WSTE-M5 was the only Marathon weapon that would swap to another weapon when out of ammo. Thanks to ForrestMarkX, this inconsistency has been removed.\n\
+- When Heretic's Golems were gibbed by Duke, they had a chance to jump to a state that didn't exist.\n\
+- ZDoom's SBARINFO no longer shows doubles of the Heretic keys.\n\
+- The Nailguns no longer think Ranger's Grenade/Rocket Launcher run off Shells.\n\
+\n\
+POLISH:\n\
+- samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.\n\
+- Duke's taunts now check for DukeClass--enemies using the DukeExplosive type no longer do Duke's taunts.\n\
+- Thanks to Mike12, the Duke Nukem Advance Golden Desert Eagle sprites are infinitely sexier!\n\
+- Flemoid Blood should no longer conflict with any instances of Nashgore.\n\
 - Thanks to TehVappy50, a huge amount of the text lumps have been converted to LANGUAGE use. What does this mean? Well, if you want simpler obituaries, uncolored obituaries, or different ones, you can change them to be whatever you'd like!\n\
 - As per Marathon behavior, non-explosive Marathon weapons no longer gib, and explosive Marathon weapons always gib.\n\
-- Duke now properly moans/groans on picking up the Soulsphere/Megasphere when below 25 health.\n\
-- Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.";
+- Thanks to BlackFish, Samsara now has a menudef for its many options for the ZDoom version! And whenever the Zandronum version supports MENUDEF, I suppose.\n\
+- Thanks to ForrestMarkX, the Doom 2 bestiary now leaves proper decals on the wall.\n\
+- The Heretic/Hexen actors directory has been changed from a big, clunky, useless file in actors/ to a sorted and organized folder in decorate/.\n\
+- Duke 3D's pistol name has been changed from the M1911 that was in the .def to the Glock 17 its design is based off, due to...insistent request.\n\
+- Thanks to PresidentPeople, Duke Nukem now bleeds his slightly-orange blood color from Duke Nukem 3D.\n\
+- All SNDINFOs have been split into different files per each character, for easier tracking.";
