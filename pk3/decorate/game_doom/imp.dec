@@ -203,6 +203,39 @@ actor DoomImp2 : DoomImp replaces DoomImp
         TROO L 6
         TROO M -1
         Stop
+
+      DeathNightmare1:
+      DeathNightmare4:
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        TROO I 8
+        TROO J 8 A_Scream
+        TROO K 6
+        TROO L 6 A_NoBlocking
+        TROO M -1
+        Stop
+      DeathNightmare2:
+      DeathNightmare5: // 28 Frames
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        12DC ABCD 2
+        12DC E 2 A_Scream // 8
+        12DC FGH 2
+        12DC IJ 3
+        12DC K 3 A_NoBlocking // 22
+        12DC L 3
+        12DC L -1
+        stop
+      DeathNightmare3:
+      DeathNightmare6:
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        12DD A 6
+        12DD B 2
+        12DD B 4 A_Scream // 8
+        12DD C 6
+        12DD D 4
+        12DD D 2 A_NoBlocking // 22
+        12DD E 4
+        12DD F -1
+        stop
 		
 	  XDeathHappyfun:
 	    TNT1 A 0

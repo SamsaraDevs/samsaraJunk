@@ -219,6 +219,41 @@ actor ShotgunGuy2 : ShotgunGuy replaces ShotgunGuy
         SPOS K 5
         SPOS L -1
         Stop
+
+      DeathNightmare1:
+      DeathNightmare4:
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        SPOS H 5
+        SPOS I 5 A_Scream
+        SPOS J 5 A_NoBlocking
+        SPOS K 5
+        SPOS L -1
+        Stop
+      DeathNightmare2:
+      DeathNightmare5: // 20 Frames
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        12DE AB 4
+        12DE C 2
+        12DE C 1 A_Scream // 10
+        12DE D 3
+        12DE E 3
+        12DE F 3 A_NoBlocking // 15
+        12DE G 2
+        12DE H -1
+        stop
+      DeathNightmare3:
+      DeathNightmare6:
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        12DF AB 4
+        12DF C 2
+        12DF C 2 A_Scream // 10
+        12DF D 3
+        12DF E 2
+        12DF E 1 A_NoBlocking // 15
+        12DF F 3
+        12DF G 2
+        12DF G -1
+        stop
 		
 	  XDeathHappyfun:
 	    TNT1 A 0

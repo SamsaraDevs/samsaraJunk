@@ -312,6 +312,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
     int i, j, k;
     int x, y, z;
 	int result;
+    int deathresult;
 
     SetFont("SMALLFONT");
     switch (which)
@@ -387,7 +388,13 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
         if(GetCvar("samsara_cl_bloodyhell") == -1) { SetActorState(0,"DeathHappyfun"); }
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
-        if(GetCvar("samsara_cl_bloodyhell") == 3) { SetActorState(0,"DeathNightmare"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 3) { deathresult = random(1,6);
+        if(deathresult==1) { SetActorState(0,"DeathNightmare1"); }
+        if(deathresult==2) { SetActorState(0,"DeathNightmare2"); }
+        if(deathresult==3) { SetActorState(0,"DeathNightmare3"); }
+        if(deathresult==4) { SetActorState(0,"DeathNightmare4"); }
+        if(deathresult==5) { SetActorState(0,"DeathNightmare5"); }
+        if(deathresult==6) { SetActorState(0,"DeathNightmare6"); } }
         break;
 		
 	case 12:
@@ -994,21 +1001,3 @@ script 679 (int tx, int ty, int tz) clientside
         k = i;
     }
 }
-
-/*script 680 (int clientsidechoice) CLIENTSIDE
-{
-    //int result;
-    switch (clientsidechoice)
-    {
-    case 1:
-        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
-        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
-        break;
-		
-    case 2:
-        if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"DeathNashgore"); }
-        if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"DeathBrutal"); }
-        break;
-    }
-    //SetResultValue(result);
-}*/
