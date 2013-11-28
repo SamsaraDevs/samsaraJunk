@@ -204,8 +204,8 @@ actor Zombieman2 : Zombieman replaces Zombieman
         POSS K 5
         POSS L -1
         Stop
-      DeathNightmare2:
-      DeathNightmare5: // 20 Frames
+
+      DeathNightmare2: // 20 Frames
 	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
         12DA AB 4
         12DA C 2
@@ -216,6 +216,20 @@ actor Zombieman2 : Zombieman replaces Zombieman
         12DA G 2
         12DA H -1
         stop
+
+      DeathNightmare5:
+	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
+        12DG A 4
+        12DG B 4 A_PlayWeaponSound("grunt/attack")
+        12DG C 2
+        12DG C 1 A_Scream
+        12DG D 3 A_PlayWeaponSound("grunt/attack")
+        12DG E 3
+        12DG F 3 A_NoBlocking
+        12DG G 2
+        12DG H -1
+        stop
+
       DeathNightmare3:
       DeathNightmare6:
 	    TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
@@ -302,11 +316,11 @@ actor Zombieman2 : Zombieman replaces Zombieman
 		TNT1 A 0 A_SpawnItemEx("NightmareHip",random(-10,10),random(-10,10),random(12,20),random(-400,400)/100.00,random(-400,400)/100.00,random(400,1000)/100.00,random(-180,180),160,192)
         TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("NightmareGibExplosionSmall1",0,0,0,0,0,0,0,160)
-        POSS M 5
-        POSS N 5 A_XScream
-        POSS O 5 A_NoBlocking
-        POSS PQRST 5
-        POSS U -1
+        12XD A 5
+        12XD B 5 A_XScream
+        12XD C 5 A_NoBlocking
+        12XD DEFGH 5
+        12XD I -1
 		stop
     }
 }
