@@ -313,6 +313,7 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
     int x, y, z;
 	int result;
     int deathresult;
+    int xdeathresult;
 
     SetFont("SMALLFONT");
     switch (which)
@@ -381,7 +382,9 @@ script SAMSARA_CLIENT_DECORATE (int which, int a1, int a2) clientside
         if(GetCvar("samsara_cl_bloodyhell") == -1) { SetActorState(0,"XDeathHappyfun"); }
         if(GetCvar("samsara_cl_bloodyhell") == 1) { SetActorState(0,"XDeathNashgore"); }
         if(GetCvar("samsara_cl_bloodyhell") == 2) { SetActorState(0,"XDeathBrutal"); }
-        if(GetCvar("samsara_cl_bloodyhell") == 3) { SetActorState(0,"XDeathNightmare"); }
+        if(GetCvar("samsara_cl_bloodyhell") == 3) { xdeathresult = random(1,2);
+        if(xdeathresult==1) { SetActorState(0,"XDeathNightmare1"); }
+        if(xdeathresult==2) { SetActorState(0,"XDeathNightmare2"); } }
         break;
 		
     case 11:
