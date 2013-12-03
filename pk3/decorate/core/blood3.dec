@@ -46,7 +46,7 @@ actor NightmareArm : GenericGoreActor
         DRM1 ABA 4
     Death1B:
         DRM1 B 2100
-		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1B")
 	    DRM1 BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
 	Death2:
@@ -54,15 +54,15 @@ actor NightmareArm : GenericGoreActor
         DRM2 ABA 4
     Death2B:
         DRM2 B 2100
-		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2")
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death2B")
 	    DRM2 BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
 	Death3:
-        TNT1 A 0 A_Jump(128,"Death3D")
+        TNT1 A 0 A_Jump(128,"Death3B")
         DRM1 ABA 4
     Death3B:
         DRM1 B 2100
-		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3")
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death3B")
 	    DRM1 BBBBBBBBBB 1 A_FadeOut(0.1)
         stop
     }
@@ -481,6 +481,185 @@ actor NightmareLittlePuddle : GenericGoreActor
         12BS D 2100
 		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death4")
 	    12BS DDDDDDDDDD 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareChunk1 : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHK1 ABCD 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHK1 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+	    CHK1 EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareChunk2 : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHK2 ABCD 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHK2 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+	    CHK2 EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareChunk3 : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHK3 ABCD 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHK3 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+	    CHK3 EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareChunk4 : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHK4 ABCD 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHK4 E 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+	    CHK4 EEEEEEEEEE 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareImpChunk : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHKI A 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHKI B 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death")
+	    CHKI BBBBBBBBBB 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareShotgunnerChunk : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHKS A 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHKS BC 3
+    Death1:
+        CHKS D 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
+	    CHKS DDDDDDDDDD 1 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor NightmareZombiemanChunk : GenericGoreActor
+{
+    Radius 4
+    Height 4
+    Speed 3
+	Mass 6
+    Gravity 0.85
+	BounceFactor 0.05
+	WallBounceFactor 0.65
+	BounceCount 5
+	+MISSILE
+	+DOOMBOUNCE
+    States
+    {
+    Spawn:
+        CHKZ A 2 A_SpawnItemEx("NightmareFlyingBloodTrail",0,0,0,0,0,0,0,129)
+        loop
+    Death:
+        CHKZ BC 3
+    Death1:
+        CHKZ D 2100
+		TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(SAMSARA_DECORATE,31) == 1, "Death1")
+	    CHKZ DDDDDDDDDD 1 A_FadeOut(0.1)
         stop
     }
 }
