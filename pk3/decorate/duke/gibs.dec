@@ -116,3 +116,9 @@ actor DukeGibs6 : DukeGibs1
     }
 }
 
+actor DukeGibs1_DukeOrange : DukeGibs1 { Translation "16:47=[255,64,0]:[66,18,0]" }
+actor DukeGibs2_DukeOrange : DukeGibs2 { Translation "16:47=[255,64,0]:[66,18,0]" }
+actor DukeGibs3_DukeOrange : DukeGibs3 { Translation "16:47=[255,64,0]:[66,18,0]" }
+actor DukeGibs4_DukeOrange : DukeGibs4 { Translation "16:47=[255,64,0]:[66,18,0]" }
+actor DukeGibs5_DukeOrange : DukeGibs5 { Translation "16:47=[255,64,0]:[66,18,0]" }
+actor DukeGibs6_DukeOrange : DukeGibs6 { Translation "16:47=[255,64,0]:[66,18,0]" }
