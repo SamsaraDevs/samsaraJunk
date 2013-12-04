@@ -442,7 +442,7 @@ script SAMSARA_SPAWN (int respawning)
         TakeInventory("WeaponGetYaaaay2", 1);
         TakeInventory("Mace", 1);
         TakeInventory("MacePowered", 1);
-        ConvertClassWeapons(-1);
+        if (GetCvar("samsara_lmsrules") == 0) { ConvertClassWeapons(-1); }
 
         if (CheckInventory("SpectralFiring"))
         {
