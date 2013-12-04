@@ -387,6 +387,7 @@ actor ExplosiveFriendlyChicken : ExplosiveChicken
 	DamageFactor "Telefrag", 0.0
 	DamageFactor "CorvusHellstaff", 0.0
 	DamageFactor "VillainTeamFire", 0.0
+    DamageType "EnemyInfightDamage"
 	States
 	{
 	Melee:
