@@ -60,6 +60,7 @@ actor DukeBossKillTaunt: DukeTaunt
 
 actor "Soundboard - Boss Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTBK"
     States
 	{
     Use:
@@ -91,6 +92,7 @@ actor DukeDMTaunt1: DukeTaunt
 
 actor "Soundboard - Deathmatch Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTDG"
     States
 	{
     Use:
@@ -124,6 +126,7 @@ actor DukeDMTauntDuke: DukeTaunt
 
 actor "Soundboard - Dukematch Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTDK"
     States
 	{
     Use:
@@ -173,6 +176,7 @@ actor DukeBossSightTaunt: DukeTaunt
 
 actor "Soundboard - Boss Sight" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTBS"
     States
 	{
     Use:
@@ -204,6 +208,7 @@ actor DukeKillTaunt: DukeTaunt
 
 actor "Soundboard - Enemy Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTEK"
     States
 	{
     Use:
@@ -235,6 +240,7 @@ actor DukeBootTaunt: DukeTaunt
 
 actor "Soundboard - Boot Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTBT"
     States
 	{
     Use:
@@ -266,6 +272,7 @@ actor DukeGibTaunt: DukeTaunt
 
 actor "Soundboard - Gib Kill" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTEG"
     States
 	{
     Use:
@@ -279,6 +286,7 @@ actor "Soundboard - Gib Kill" : DukeSoundbox
 
 actor "Soundboard - Weapon Acquired" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTWP"
     States
 	{
     Use:
@@ -292,6 +300,7 @@ actor "Soundboard - Weapon Acquired" : DukeSoundbox
 
 actor "Soundboard - Level Intro" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTNT"
     States
 	{
     Use:
@@ -305,6 +314,7 @@ actor "Soundboard - Level Intro" : DukeSoundbox
 
 actor "Soundboard - Idle Taunt" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTID"
     States
 	{
     Use:
@@ -318,6 +328,7 @@ actor "Soundboard - Idle Taunt" : DukeSoundbox
 
 actor "Soundboard - Critical Heal" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTCH"
     States
 	{
     Use:
@@ -331,6 +342,7 @@ actor "Soundboard - Critical Heal" : DukeSoundbox
 
 actor "Soundboard - Death Taunt" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTDT"
     States
 	{
     Use:
@@ -344,6 +356,7 @@ actor "Soundboard - Death Taunt" : DukeSoundbox
 
 actor "Soundboard - Doug Huggem" : DukeSoundbox
 {
+    Inventory.Icon "DUKTNTDH"
     States
 	{
     Use:
