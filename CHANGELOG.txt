@@ -42,6 +42,7 @@ POLISH:
 - Duke 3D's pistol name has been changed from the M1911 that was in the .def to the Glock 17 its design is based off, due to...insistent request.
 - Thanks to PresidentPeople, Duke Nukem now bleeds and gibs his slightly-orange blood color from Duke Nukem 3D.
 - All SNDINFOs have been split into different files per each character, for easier tracking.
+- Previously, Duke's sound clips all suffered from wildly varying quality, being from different games such as Manhattan Project, Time to Kill, Forever, Zero Hour, and 3D--BouncyTEM has converted every single soundclip to be the same frequency as Duke Nukem 3D's! While there's still a disconnect, it's no longer as wild as before.
 
 
 FROM 0.29b TO 0.3
