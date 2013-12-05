@@ -43,6 +43,7 @@ POLISH:
 - Thanks to PresidentPeople, Duke Nukem now bleeds and gibs his slightly-orange blood color from Duke Nukem 3D.
 - All SNDINFOs have been split into different files per each character, for easier tracking.
 - Previously, Duke's sound clips all suffered from wildly varying quality, being from different games such as Manhattan Project, Time to Kill, Forever, Zero Hour, and 3D--BouncyTEM has converted every single soundclip to be the same frequency as Duke Nukem 3D's! While there's still a disconnect, it's no longer as wild as before.
+- Marathon had more than one metal ding sound! Whoops.
 
 
 FROM 0.29b TO 0.3

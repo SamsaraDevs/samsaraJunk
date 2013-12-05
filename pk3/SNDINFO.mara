@@ -83,7 +83,10 @@ $random puff/hit {puff/hit1 puff/hit2 puff/hit3}
 puff/hit1			MRTHHIT1
 puff/hit2			MRTHHIT2
 puff/hit3			MRTHHIT3
-puff/ding			MRTHDING
+
+$random puff/ding { puff/ding1 puff/ding2 }
+puff/ding1          MRTHDING
+puff/ding2          MRTHDIN2
 
 
 wmc/beep1				wmcbeep
