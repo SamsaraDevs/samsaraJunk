@@ -1,5 +1,7 @@
 actor UsingSMG: Boolean {}
 
+// MarathonCasingSound located in slot4.dec
+
 actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 {
     //Weapon.BobRangeX 0
@@ -30,6 +32,7 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         LOOP
 
       Deselect:
+        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
         TNT1 A 0 A_Lower
         HSMG A 1 A_Lower
         LOOP
@@ -68,6 +71,7 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 
       Fire:
         TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+        TNT1 A 0 A_GiveInventory("MarathonCasingSound", 1)
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
@@ -117,6 +121,11 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         TNT1 A 0 A_Light0
         TNT1 A 0 A_Refire
         Goto Ready
+
+      CasingSound:
+        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
+        TNT1 A 0 A_PlaySound("marathon/casings")
+        goto Ready
 
       DryFire:
         TNT1 A 0 A_JumpIfInventory("Clip",1,"Reload")
