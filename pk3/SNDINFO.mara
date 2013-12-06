@@ -67,6 +67,8 @@ marathon/rifle/dryfire	MTRFLDRY
 marathon/smg/fire	MTSMGSHT
 marathon/smg/reload	MTSMGRLD
 
+marathon/casings  MRTHCASE
+
 marathon/rocket/fire	MTRLAUNC
 marathon/rocket/hit	MTRKTXPL
 
