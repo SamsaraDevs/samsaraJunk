@@ -28,6 +28,7 @@ BUGFIXES:
 - ZDoom's SBARINFO no longer shows doubles of the Heretic keys.
 - The Nailguns no longer think Ranger's Grenade/Rocket Launcher run off Shells.
 - Shell ammo no longer infinitely regenerates when LMSRules is on, at the cost of the weapon converter no longer working when LMSRules is on.
+- When Ranger has only one of Ammo 1 left, he no longer has an infinite switch loop between the Rocket Launcher and the Super Nailgun.
 
 POLISH:
 - samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.

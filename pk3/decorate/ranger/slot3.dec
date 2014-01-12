@@ -191,27 +191,21 @@ actor "Grenade Launcher": InstantSwitchWeapon
       ConsiderTB:
         TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectTB")
         goto Consider6
-
       ConsiderQRL:
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQRL")
         goto Consider5
-
       ConsiderQGL:
         TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,"SelectQGL")
         goto Consider4
-
       ConsiderSNG:
-        TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectSNG")
+        TNT1 A 0 A_JumpIfInventory("Clip",2,"SelectSNG")
         goto Consider3
-
       ConsiderNG:
         TNT1 A 0 A_JumpIfInventory("Clip",1,"SelectNG")
         goto Consider2
-
       ConsiderDSG:
         TNT1 A 0 A_JumpIfInventory("Shell",1,"SelectDSG")
         goto Consider1
-
       ConsiderLasCan:
         TNT1 A 0 A_JumpIfInventory("Cell",1,"SelectLasCan")
         goto Consider0
