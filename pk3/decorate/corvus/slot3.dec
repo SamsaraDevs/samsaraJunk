@@ -113,6 +113,7 @@ actor CrossbowFX1B : CrossbowFX1
     Damage 12 // Originally 10
     Speed 40
     Decal CrossbowScorch
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX3B : CrossbowFX3
@@ -121,6 +122,7 @@ actor CrossbowFX3B : CrossbowFX3
     Damage 3 // Originally 2
     Speed 35
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX2B : CrossbowFX2
@@ -129,6 +131,7 @@ actor CrossbowFX2B : CrossbowFX2
     Damage 8 // Originally 6
     Speed 42
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX5 : CrossbowFX4 replaces CrossbowFX4
@@ -137,6 +140,7 @@ actor CrossbowFX5 : CrossbowFX4 replaces CrossbowFX4
     +CLIENTSIDEONLY
     Alpha 0.75
     Gravity 0.095//Gravity 0.85//+LOWGRAVITY//+NOGRAVITY
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX12 : CrossbowFX1
@@ -146,6 +150,7 @@ actor CrossbowFX12 : CrossbowFX1
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX22 : CrossbowFX2
@@ -155,6 +160,7 @@ actor CrossbowFX22 : CrossbowFX2
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX32 : CrossbowFX3
@@ -164,6 +170,7 @@ actor CrossbowFX32 : CrossbowFX3
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX23 : CrossbowFX2 { DamageType "Spectral" }

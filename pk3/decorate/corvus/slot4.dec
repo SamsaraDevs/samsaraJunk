@@ -158,6 +158,7 @@ actor BlasterFX1B : FastProjectile
     Decal HImpScorch
     +SPAWNSOUNDSOURCE
     +NOTIMEFREEZE
+    +BLOODSPLATTER
     DONTHURTSHOOTER
     States
     {

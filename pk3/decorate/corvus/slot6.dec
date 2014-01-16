@@ -95,6 +95,7 @@ actor HellstaffShot
     Projectile
     +WINDTHRUST
     -NOBLOCKMAP
+    +BLOODSPLATTER
     DamageType "CorvusHellstaff"
     Decal PlasmaScorchLower
     RenderStyle Add
