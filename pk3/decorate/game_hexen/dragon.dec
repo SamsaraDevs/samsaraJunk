@@ -3,6 +3,7 @@ actor Dragon2 : Dragon replaces Dragon
     +NORADIUSDMG
     +NOTDMATCH
     +NOICEDEATH
+    -NOBLOOD // Ehhh.
     Health 1500
     DamageFactor "QuakePistol", 1.25
     DamageFactor "MarathonPistol", 1.25
