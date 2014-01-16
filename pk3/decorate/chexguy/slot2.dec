@@ -8,7 +8,7 @@ actor "Large Zorcher" : Weapon
     Weapon.AmmoType "Shell"
     +BLOODLESSIMPACT
     +PUFFONACTORS
-	+THRUGHOST
+    +THRUGHOST
     //+AMMO_OPTIONAL
     +INVENTORY.UNDROPPABLE
     DamageType "Zorch"

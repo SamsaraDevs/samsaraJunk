@@ -26,7 +26,7 @@ actor DukeSoundbox: CustomInventory
 {
     Inventory.MaxAmount 1
     +INVBAR
-	+UNDROPPABLE
+    +UNDROPPABLE
     
     States
     {
@@ -62,14 +62,14 @@ actor "Soundboard - Boss Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTBK"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/bosskill", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeDMTaunt1: DukeTaunt
@@ -94,14 +94,14 @@ actor "Soundboard - Deathmatch Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTDG"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/mpkill", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeDMTauntDuke: DukeTaunt
@@ -128,14 +128,14 @@ actor "Soundboard - Dukematch Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTDK"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/fragduke", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeDMTauntDoomguy: DukeTaunt
@@ -178,14 +178,14 @@ actor "Soundboard - Boss Sight" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTBS"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/bosssee", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeKillTaunt: DukeTaunt
@@ -210,14 +210,14 @@ actor "Soundboard - Enemy Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTEK"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/killtaunt", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeBootTaunt: DukeTaunt
@@ -242,14 +242,14 @@ actor "Soundboard - Boot Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTBT"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/bootkill", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor DukeGibTaunt: DukeTaunt
@@ -274,96 +274,96 @@ actor "Soundboard - Gib Kill" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTEG"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/gibkill", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Weapon Acquired" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTWP"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/weapontaunt", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Level Intro" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTNT"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/introtaunt", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Idle Taunt" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTID"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/waitingtoolong", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Critical Heal" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTCH"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/criticalheal", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Death Taunt" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTDT"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("duke/mpdeath", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }
 
 actor "Soundboard - Doug Huggem" : DukeSoundbox
 {
     Inventory.Icon "DUKTNTDH"
     States
-	{
+    {
     Use:
         TNT1 A 0 A_JumpIfInventory("DukeTauntCooldown", 1, "UseStop")
         TNT1 A 0 A_PlaySoundEx("doug/huggem", 7)
         TNT1 A 0 A_GiveInventory("DukeTauntCooldown", 5)
         TNT1 A 0 ACS_ExecuteAlways(205)
         fail
-	}
+    }
 }

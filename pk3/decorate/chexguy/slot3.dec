@@ -137,7 +137,7 @@ actor SLZorcherBolt// : FastProjectile
     //+HEXENBOUNCE
     -BLOODSPLATTER
     +NOBLOOD
-	+SEEKERMISSILE
+    +SEEKERMISSILE
     //BounceCount 3
     RenderStyle Add
     DamageType "Zorch"
@@ -150,13 +150,13 @@ actor SLZorcherBolt// : FastProjectile
         Loop
 
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBolt2",0,0,0,4,0)
-		stop
-	  
-	  Crash:
-	  XDeath:
-	    TNT1 A 0
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBolt2",0,0,0,4,0)
+        stop
+      
+      Crash:
+      XDeath:
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(80,100),6,0)
@@ -174,11 +174,11 @@ actor SLZorcherBolt2 : SLZorcherBolt
 {
     Speed 125
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBolt3",0,0,0,4,0)
-		stop
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBolt3",0,0,0,4,0)
+        stop
     }
 }
 
@@ -186,9 +186,9 @@ actor SLZorcherBolt3 : SLZorcherBolt
 {
     Speed 100
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatter",0,0,random(80,100),6,0)
@@ -253,13 +253,13 @@ actor SLZorcherBoltDM : SLZorcherBolt
     States
     {
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBoltDM2",0,0,0,4,0)
-		stop
-		
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBoltDM2",0,0,0,4,0)
+        stop
+        
       XDeath:
-	  Crash:
-	    TNT1 A 0
+      Crash:
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter2",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(80,100),6,0)
@@ -277,11 +277,11 @@ actor SLZorcherBoltDM2 : SLZorcherBoltDM
 {
     Speed 125
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBoltDM3",0,0,0,4,0)
-		stop
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBoltDM3",0,0,0,4,0)
+        stop
     }
 }
 
@@ -289,9 +289,9 @@ actor SLZorcherBoltDM3 : SLZorcherBoltDM
 {
     Speed 100
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatter2",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterDM",0,0,random(80,100),6,0)
@@ -312,13 +312,13 @@ actor SLZorcherBoltCoop : SLZorcherBolt
     States
     {
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop2",0,0,0,4,0)
-		stop
-		
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop2",0,0,0,4,0)
+        stop
+        
       XDeath:
-	  Crash:
-	    TNT1 A 0
+      Crash:
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(80,100),6,0)
@@ -336,11 +336,11 @@ actor SLZorcherBoltCoop2 : SLZorcherBoltCoop
 {
     Speed 125
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop3",0,0,0,4,0)
-		stop
+        TNT1 A 0
+        TNT1 A 0 A_CustomMissile("SLZorcherBoltCoop3",0,0,0,4,0)
+        stop
     }
 }
 
@@ -348,9 +348,9 @@ actor SLZorcherBoltCoop3 : SLZorcherBoltCoop
 {
     Speed 100
     States
-    {		
+    {        
       Death:
-	    TNT1 A 0
+        TNT1 A 0
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(-10,10),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(35,55),6,0)
         TNT1 A 0 A_CustomMissile("SLZSpatterCoop",0,0,random(80,100),6,0)
@@ -374,7 +374,7 @@ actor SLZorchBoltBlur
     Alpha 0.7
     Scale 0.7
     +CLIENTSIDEONLY
-	+NOINTERACTION
+    +NOINTERACTION
     +RANDOMIZE
     +NOGRAVITY
     +DROPOFF

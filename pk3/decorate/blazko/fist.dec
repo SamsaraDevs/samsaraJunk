@@ -123,7 +123,7 @@ actor "Spear of Longinus" : InstantSwitchWeapon
         loop
 
       Fire:
-	    TNT1 A 0 A_PlayWeaponSound("wolfen/spearstab")
+        TNT1 A 0 A_PlayWeaponSound("wolfen/spearstab")
         WSPR G 3 A_CustomPunch(20,1,0,"SpearPopcornPuff",98)
         WSPR HI 3 A_CustomPunch(20,1,0,"BlankPuff2",98)
         WSPR I 5

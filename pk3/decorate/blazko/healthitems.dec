@@ -157,7 +157,7 @@ actor DrinkableZombie : CustomInventory replaces LiveStick
     Radius 16
     Height 64
     +SOLID
-	+DROPPED
+    +DROPPED
     Inventory.PickupMessage "$SAMSARA_WOLFENDRINK"
     Inventory.PickupSound "wolfen/slurpie"
     States
@@ -190,7 +190,7 @@ actor DrinkableZombie2 : CustomInventory replaces DeadStick
     Radius 16
     Height 64
     +SOLID
-	+DROPPED
+    +DROPPED
     Inventory.PickupMessage "$SAMSARA_WOLFENDRINK"
     Inventory.PickupSound "wolfen/slurpie"
     States
