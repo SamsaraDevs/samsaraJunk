@@ -127,6 +127,10 @@ actor Heresiarch2 : Heresiarch replaces Heresiarch
         TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound",0,0,0,0,0,0,0,160)
         goto "Super::Death"
 		
+      DeathNashgore:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),33)
+        goto "Super::Death"
+		
       DeathHappyfun:
         TNT1 A 0
         TNT1 AAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)

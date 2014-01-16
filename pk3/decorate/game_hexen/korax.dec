@@ -267,6 +267,20 @@ actor Korax2 : Korax replaces Korax
         KORX TU 5
         KORX V -1
         Stop
+		
+      DeathNashgore:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood_HexGreen",random(-20,20),random(-20,20),random(12,80),random(-350,350)/100.00,random(-350,350)/100.00,random(500,1000)/100.00,random(-180,180),160)
+        KORX I 5
+        KORX J 5 A_FaceTarget
+        KORX K 5 A_Scream
+        KORX LMNOP 5
+        KORX Q 10
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("Switchable_FlyingBlood_HexGreen",random(-20,20),random(-20,20),random(12,80),random(-700,700)/100.00,random(-700,700)/100.00,random(600,1400)/100.00,random(-180,180),160)
+        KORX R 5 A_KoraxBonePop
+        KORX S 5 A_NoBlocking
+        KORX TU 5
+        KORX V -1
+        Stop
 
       DeathHappyfun:
         TNT1 A 0
