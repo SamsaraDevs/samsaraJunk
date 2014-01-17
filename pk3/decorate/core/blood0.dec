@@ -5,11 +5,11 @@ actor RainbowSparkles : GenericGoreActor
 {
     RenderStyle Add
     Alpha 0.95
-	+NOINTERACTION
-	+BRIGHT
-	+RANDOMIZE
-	States
-	{
+    +NOINTERACTION
+    +BRIGHT
+    +RANDOMIZE
+    States
+    {
       Spawn:
         TNT1 A 0
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
@@ -32,21 +32,21 @@ actor RainbowSparkles : GenericGoreActor
       Spawn6:
         RPK6 ABCDE 4
         stop
-	}
+    }
 }
 
 actor RainbowSparkleSound : RainbowSparkles
 {
     States
-	{
-	Spawn:
-	    TNT1 A 0
-		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_PlaySound("happy/sparkle")
-		TNT1 A 0
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(128,2)
+        TNT1 A 0 A_PlaySound("happy/sparkle")
+        TNT1 A 0
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
         stop
-	}
+    }
 }
 
 actor WhiteSpark : GenericGoreActor
@@ -64,9 +64,9 @@ actor WhiteSpark : GenericGoreActor
       Spawn:
         TNT1 A 0
         PTCL ABCABC 3
-	  Spawn2:
-		PTCL ABC 3 A_FadeOut(0.075)
-		loop
+      Spawn2:
+        PTCL ABC 3 A_FadeOut(0.075)
+        loop
     }
 }
 
@@ -87,53 +87,53 @@ actor RainbowSpark : GenericGoreActor
         TNT1 A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5", "Spawn6", "Spawn7", "Spawn8", "Spawn9", "Spawn10")
         stop
       Spawn1:
-	    RNBW B 12
-	  Spawn1b:
+        RNBW B 12
+      Spawn1b:
         RNBW B 2 A_FadeOut(0.075)
         loop
       Spawn2:
-	    RNBW C 12
-	  Spawn2b:
+        RNBW C 12
+      Spawn2b:
         RNBW C 2 A_FadeOut(0.075)
         loop
       Spawn3:
-	    RNBW D 12
-	  Spawn3b:
+        RNBW D 12
+      Spawn3b:
         RNBW D 2 A_FadeOut(0.075)
         loop
       Spawn4:
-	    RNBW E 12
-	  Spawn4b:
+        RNBW E 12
+      Spawn4b:
         RNBW E 2 A_FadeOut(0.075)
         loop
       Spawn5:
-	    RNBW F 12
-	  Spawn5b:
+        RNBW F 12
+      Spawn5b:
         RNBW F 2 A_FadeOut(0.075)
         loop
       Spawn6:
-	    RNBW G 12
-	  Spawn6b:
+        RNBW G 12
+      Spawn6b:
         RNBW G 2 A_FadeOut(0.075)
         loop
       Spawn7:
-	    RNBW H 12
-	  Spawn7b:
+        RNBW H 12
+      Spawn7b:
         RNBW H 2 A_FadeOut(0.075)
         loop
       Spawn8:
-	    RNBW I 12
-	  Spawn8b:
+        RNBW I 12
+      Spawn8b:
         RNBW I 2 A_FadeOut(0.075)
         loop
       Spawn9:
-	    RNBW J 12
-	  Spawn9b:
+        RNBW J 12
+      Spawn9b:
         RNBW J 2 A_FadeOut(0.075)
         loop
       Spawn10:
-	    RNBW K 12
-	  Spawn10b:
+        RNBW K 12
+      Spawn10b:
         RNBW K 2 A_FadeOut(0.075)
         loop
     }
@@ -156,75 +156,75 @@ actor RainbowSparkHuge : GenericGoreActor
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
         stop
       Spawn1:
-	    RNB1 ABCDEFGH 2
-		stop
+        RNB1 ABCDEFGH 2
+        stop
       Spawn2:
-	    RNB2 ABCDEFGH 2
-		stop
+        RNB2 ABCDEFGH 2
+        stop
       Spawn3:
-	    RNB3 ABCDEFGH 2
-		stop
+        RNB3 ABCDEFGH 2
+        stop
       Spawn4:
-	    RNB4 ABCDEFGH 2
-		stop
+        RNB4 ABCDEFGH 2
+        stop
       Spawn5:
-	    RNB5 ABCDEFGH 2
-		stop
+        RNB5 ABCDEFGH 2
+        stop
       Spawn6:
-	    RNB6 ABCDEFGH 2
-		stop
+        RNB6 ABCDEFGH 2
+        stop
     }
 }
 
 actor RainbowSparkTiny : GenericGoreActor
 {
-	Scale 0.65
-	Damage 0
-	Speed 5
-	RenderStyle Add
-	Alpha 0.9
-	BounceCount 6
-	BounceFactor 0.45
-	Projectile
-	+MISSILE
-	+NOGRAVITY
-	+DOOMBOUNCE
-	+BOUNCEONACTORS
-	+CANBOUNCEWATER
+    Scale 0.65
+    Damage 0
+    Speed 5
+    RenderStyle Add
+    Alpha 0.9
+    BounceCount 6
+    BounceFactor 0.45
+    Projectile
+    +MISSILE
+    +NOGRAVITY
+    +DOOMBOUNCE
+    +BOUNCEONACTORS
+    +CANBOUNCEWATER
     States
     {
       Spawn:
         TNT1 A 0
         TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
-		
-	  Spawn1:
+        
+      Spawn1:
         RSP1 ABCDE 4 BRIGHT
-	  Spawn1b:
+      Spawn1b:
         RSP1 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
-	  Spawn2:
+      Spawn2:
         RSP2 ABCDE 4 BRIGHT
-	  Spawn2b:
+      Spawn2b:
         RSP2 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
-	  Spawn3:
+      Spawn3:
         RSP3 ABCDE 4 BRIGHT
-	  Spawn3b:
+      Spawn3b:
         RSP3 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
-	  Spawn4:
+      Spawn4:
         RSP4 ABCDE 4 BRIGHT
-	  Spawn4b:
+      Spawn4b:
         RSP4 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
-	  Spawn5:
+      Spawn5:
         RSP5 ABCDE 4 BRIGHT
-	  Spawn5b:
+      Spawn5b:
         RSP5 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
-	  Spawn6:
+      Spawn6:
         RSP6 ABCDE 4 BRIGHT
-	  Spawn6b:
+      Spawn6b:
         RSP6 ABCDE 4 BRIGHT A_FadeOut(0.05)
         loop
     }
@@ -232,17 +232,17 @@ actor RainbowSparkTiny : GenericGoreActor
 
 actor HappyOnlineSound
 {
-	+NOCLIP
-	-SOLID
-	+CLIENTSIDEONLY
+    +NOCLIP
+    -SOLID
+    +CLIENTSIDEONLY
     +NOINTERACTION
-	States
-	{
-	Spawn:
-	    TNT1 A 0
-		TNT1 A 1 A_PlaySoundEx("happy/gib","soundslot5",0,0)
-		stop
-	}
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1 A_PlaySoundEx("happy/gib","soundslot5",0,0)
+        stop
+    }
 }
 
 ACTOR FancyWhiteSmoke : GenericGoreActor
@@ -250,37 +250,37 @@ ACTOR FancyWhiteSmoke : GenericGoreActor
     RenderStyle Add
     Scale 0.55
     Alpha 0.9
-	Speed 1
+    Speed 1
     +NOINTERACTION
     States
     {
     Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_FadeOut(0.1)
-		TNT1 A 0 A_Jump(255,"SmokeA","SmokeB","SmokeC","SmokeD","SmokeE","SmokeF","SmokeG","SmokeH","SmokeI","SmokeJ","SmokeK")
+        TNT1 A 0
+        TNT1 A 0 A_FadeOut(0.1)
+        TNT1 A 0 A_Jump(255,"SmokeA","SmokeB","SmokeC","SmokeD","SmokeE","SmokeF","SmokeG","SmokeH","SmokeI","SmokeJ","SmokeK")
     SmokeA:
-		SMK2 A 2 A_FadeOut(0.025)
+        SMK2 A 2 A_FadeOut(0.025)
     SmokeB:
-		SMK2 B 2 A_FadeOut(0.025)
+        SMK2 B 2 A_FadeOut(0.025)
     SmokeC:
-		SMK2 C 2 A_FadeOut(0.025)
+        SMK2 C 2 A_FadeOut(0.025)
     SmokeD:
-		SMK2 D 2 A_FadeOut(0.025)
+        SMK2 D 2 A_FadeOut(0.025)
     SmokeE:
-		SMK2 E 2 A_FadeOut(0.025)
+        SMK2 E 2 A_FadeOut(0.025)
     SmokeF:
-		SMK2 F 2 A_FadeOut(0.025)
+        SMK2 F 2 A_FadeOut(0.025)
     SmokeG:
-		SMK2 G 2 A_FadeOut(0.025)
+        SMK2 G 2 A_FadeOut(0.025)
     SmokeH:
-		SMK2 H 2 A_FadeOut(0.025)
+        SMK2 H 2 A_FadeOut(0.025)
     SmokeI:
-		SMK2 I 2 A_FadeOut(0.025)
+        SMK2 I 2 A_FadeOut(0.025)
     SmokeJ:
-		SMK2 J 2 A_FadeOut(0.025)
+        SMK2 J 2 A_FadeOut(0.025)
     SmokeK:
-		SMK2 K 2 A_FadeOut(0.025)
-		goto SmokeA
+        SMK2 K 2 A_FadeOut(0.025)
+        goto SmokeA
     }
 }
 

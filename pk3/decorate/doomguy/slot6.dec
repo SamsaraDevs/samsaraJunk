@@ -55,12 +55,12 @@ actor "Plasma Rifle" : PlasmaRifle
      
       FireEnd:
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaCooldown")
-	    DPLS A 1
+        DPLS A 1
         DPLS D 0 A_JumpIfInventory("RuneDoubleFiringSpeed", 1, "RageEnd")
         DPLS DEF 1
         DPLS GF 3
         DPLS EDCB 2
-		DPLS A 1
+        DPLS A 1
         goto Ready
       
       RageEnd:

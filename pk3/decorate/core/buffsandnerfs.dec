@@ -12,8 +12,8 @@ actor PowerDefenseBuffBase : PowerProtection
     DamageFactor "Normal", 1.0
     DamageFactor "Kamikaze", 1.0
     DamageFactor "EnemyInfightDamage", 0.0
-	DamageFactor "Telefrag", 2.0
-	DamageFactor "MarathonStun", 1.0
+    DamageFactor "Telefrag", 2.0
+    DamageFactor "MarathonStun", 1.0
 }
 
 actor PowerDamageBuff-10 : PowerDamageBuffBase { DamageFactor "Normal", 0.01 }

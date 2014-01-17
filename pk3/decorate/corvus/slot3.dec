@@ -73,7 +73,7 @@ actor "Ethereal Crossbow" : Weapon
         Goto Ready
 
       CoopFireTomed:
-	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"TomedFireSpectral")
+    TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"TomedFireSpectral")
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",0,1)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",-4.5,0)
@@ -140,7 +140,6 @@ actor CrossbowFX5 : CrossbowFX4 replaces CrossbowFX4
     +CLIENTSIDEONLY
     Alpha 0.75
     Gravity 0.095//Gravity 0.85//+LOWGRAVITY//+NOGRAVITY
-    +BLOODSPLATTER
 }
 
 actor CrossbowFX12 : CrossbowFX1

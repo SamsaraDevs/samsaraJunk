@@ -94,7 +94,7 @@ actor "Dragon Claw" : Weapon
         Goto Ready
 
       CoopFireTomed:
-	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
+    TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"FireTomedSpectral")
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
         BLSR D 3 A_FireCustomMissile("BlasterFX1C")
         BLSR CB 4 A_ClearRefire
@@ -102,7 +102,7 @@ actor "Dragon Claw" : Weapon
 
       FireTomedSpectral:
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
-	TNT1 A 0  ACS_ExecuteAlways(317, 0, 10)
+    TNT1 A 0  ACS_ExecuteAlways(317, 0, 10)
         BLSR D 3 A_FireCustomMissile("BlasterFX1D",0,0)
         BLSR CB 4 A_ClearRefire
         Goto Ready

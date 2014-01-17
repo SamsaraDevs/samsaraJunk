@@ -9,27 +9,27 @@ Actor SuperCoopChicken
     Mass 40
     Speed 15
     PainChance 200
-	MeleeRange 64
-	Gravity 0.1
+    MeleeRange 64
+    Gravity 0.1
     Monster
     -COUNTKILL
     +WINDTHRUST
     +DONTMORPH
     +FLOORCLIP
-	+THRUSPECIES
-	DropItem "HealPack0", 64
-	DropItem "ArmorScrap", 64
-	DropItem "HealPack0", 32
-	DropItem "ArmorScrap", 32
-	DropItem "HealPack1", 32
-	DropItem "HealPack1", 16
-	DropItem "ArmorScrap", 16
-	DropItem "Ammo1Small", 16
-	DropItem "Ammo2Small", 16
-	DropItem "Ammo3Small", 16
-	DropItem "Ammo4Small", 16
-	DropItem "ArmorScrap", 8
-	Species "Chicken"
+    +THRUSPECIES
+    DropItem "HealPack0", 64
+    DropItem "ArmorScrap", 64
+    DropItem "HealPack0", 32
+    DropItem "ArmorScrap", 32
+    DropItem "HealPack1", 32
+    DropItem "HealPack1", 16
+    DropItem "ArmorScrap", 16
+    DropItem "Ammo1Small", 16
+    DropItem "Ammo2Small", 16
+    DropItem "Ammo3Small", 16
+    DropItem "Ammo4Small", 16
+    DropItem "ArmorScrap", 8
+    Species "Chicken"
     SeeSound "chicken/pain"
     AttackSound "chicken/attack"
     PainSound "chicken/pain"
@@ -41,35 +41,35 @@ Actor SuperCoopChicken
     Spawn:
         CHKN AB 5 A_Look
         goto See
-		
+        
     Idle:
-	    TNT1 A 0 A_Look
+        TNT1 A 0 A_Look
         CHKN AB 3 A_Wander
         Loop
-		
+        
     See:
         CHKN AB 2 A_Chase
         CHKN AB 2 A_Chase
         CHKN AB 2 A_FastChase
         Loop
-		
+        
     Pain:
-	    TNT1 AAAAA 0 A_Feathers
+        TNT1 AAAAA 0 A_Feathers
         CHKN D 5 A_Feathers
         CHKN C 5 A_Pain
         Goto See
-	
+    
     Pain.PoisonCloud:
     Pain.Poison:
         CHKN D 5
         CHKN C 5 A_Pain
         Goto See
-		
+        
     Melee:
         CHKN A 3 A_FaceTarget
         CHKN C 3 A_CustomMeleeAttack(random(1,5))
         Goto See
-		
+        
     Death.DukeDamage:
 
     Death.DukePistol:
@@ -106,7 +106,7 @@ Actor SuperCoopChicken
         TNT1 A 0 ACS_ExecuteAlways(SAMSARA_CLIENT_DECORATE,0,11)
     Death2:
         CHKN E 6 A_Scream
-	    TNT1 AAAAA 0 A_Feathers
+        TNT1 AAAAA 0 A_Feathers
         CHKN F 6 A_Feathers
         CHKN G 6
         CHKN H 6 A_NoBlocking
@@ -161,13 +161,13 @@ Actor SuperCoopChicken
         TNT1 A 0 A_Recoil(14)
         CHKN D 16 A_Pain
         Goto See
-		
-	Pain.MarathonStun:
+        
+    Pain.MarathonStun:
         TNT1 A 0 A_Stop
-		TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
         TNT1 A 0 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
         CHKN D 5 A_FaceTarget
-		TNT1 A 0 A_Gravity
+        TNT1 A 0 A_Gravity
         CHKN D 30 A_Pain
         CHKN D 70
         Goto See
@@ -182,7 +182,7 @@ Actor SuperCoopChicken
         TNT1 AA 0 A_SpawnItemEx("Switchable_FlyingBlood",random(-10,10),random(-10,10),random(12,40),random(-350,350)/100.00,random(-350,350)/100.00,random(300,700)/100.00,random(-180,180),160)
         TNT1 A 0 A_SpawnItemEx("BrutalOnlineSound2",0,0,0,0,0,0,0,160) // Apparently A_PlaySound doesn't work, so I have to spawn the item. Weird!
         goto Death2
-		
+        
       DeathHappyfun:
         TNT1 A 0
         TNT1 AAA 0 A_SpawnItemEx("RainbowSparkleSound",random(-10,10),random(-10,10),random(32,40),0,0,0,0,32)
@@ -199,7 +199,7 @@ actor SuperDMChicken : SuperCoopChicken
     Health 40
     Radius 24
     Height 24
-	+FRIGHTENED
+    +FRIGHTENED
 }
 
 actor SuperFriendlyChicken : SuperCoopChicken
@@ -207,42 +207,42 @@ actor SuperFriendlyChicken : SuperCoopChicken
     Health 40
     Radius 24
     Height 24
-	+FRIENDLY
-	-ISMONSTER
-	Species "Player"
-	DropItem "BulletPuff"
-	DamageFactor "DukeExplosive", 0.0
-	DamageFactor "Explosive", 0.0
-	DamageFactor "BFGSplash", 0.0
-	DamageFactor "Zorch", 0.0
-	DamageFactor "BJSpear", 0.0
-	DamageFactor "HexenIce", 0.0
-	DamageFactor "Poison", 0.0
-	DamageFactor "PoisonCloud", 0.0
-	DamageFactor "FireExplosive", 0.0
-	DamageFactor "Wraithverge", 0.0
-	DamageFactor "MightyBoot", 0.0
-	DamageFactor "DukeFreezethrower", 0.0
-	DamageFactor "WMCBeam", 0.0
-	DamageFactor "WMCNade", 0.0
-	DamageFactor "Chainsaw", 0.0
-	DamageFactor "TimonsAxe", 0.0
-	DamageFactor "NotQuadded", 0.0
-	DamageFactor "VillainTeam", 0.0
-	DamageFactor "Pistol", 0.0
-	DamageFactor "ZorchPistol", 0.0
-	DamageFactor "Telefrag", 0.0
-	DamageFactor "CorvusHellstaff", 0.0
-	DamageFactor "VillainTeamFire", 0.0
+    +FRIENDLY
+    -ISMONSTER
+    Species "Player"
+    DropItem "BulletPuff"
+    DamageFactor "DukeExplosive", 0.0
+    DamageFactor "Explosive", 0.0
+    DamageFactor "BFGSplash", 0.0
+    DamageFactor "Zorch", 0.0
+    DamageFactor "BJSpear", 0.0
+    DamageFactor "HexenIce", 0.0
+    DamageFactor "Poison", 0.0
+    DamageFactor "PoisonCloud", 0.0
+    DamageFactor "FireExplosive", 0.0
+    DamageFactor "Wraithverge", 0.0
+    DamageFactor "MightyBoot", 0.0
+    DamageFactor "DukeFreezethrower", 0.0
+    DamageFactor "WMCBeam", 0.0
+    DamageFactor "WMCNade", 0.0
+    DamageFactor "Chainsaw", 0.0
+    DamageFactor "TimonsAxe", 0.0
+    DamageFactor "NotQuadded", 0.0
+    DamageFactor "VillainTeam", 0.0
+    DamageFactor "Pistol", 0.0
+    DamageFactor "ZorchPistol", 0.0
+    DamageFactor "Telefrag", 0.0
+    DamageFactor "CorvusHellstaff", 0.0
+    DamageFactor "VillainTeamFire", 0.0
 }
 
 actor ChickodemonBall : CacodemonBall
 {
     Scale 0.5
     Speed 30
-	Damage 4
+    Damage 4
     DamageType "DoomCacodemon"
-	+STRIFEDAMAGE
+    +STRIFEDAMAGE
     +THRUGHOST
 }
 
@@ -252,26 +252,26 @@ actor AssaultChicken : SuperCoopChicken
     Health 50
     +FLOAT
     +NOGRAVITY
-	+MISSILEMORE
-	+MISSILEEVENMORE
-	Translation "80:111=16:47", "3:3=42:42"
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    Translation "80:111=16:47", "3:3=42:42"
     Speed 20
-	Obituary "$SAMSARA_STTP3K_OB_CHICKEN2"
-	Species "Chicken"
-	DropItem "BulletPuff"
-	States
-	{
+    Obituary "$SAMSARA_STTP3K_OB_CHICKEN2"
+    Species "Chicken"
+    DropItem "BulletPuff"
+    States
+    {
     Missile:
         CHKN A 2 A_FaceTarget
         CHKN C 2 A_CustomMissile("ChickodemonBall")
         Goto See
-		
-	Death:
-	    TNT1 A 0 A_Gravity
+        
+    Death:
+        TNT1 A 0 A_Gravity
         TNT1 A 0 A_GiveToTarget("ChickenKillCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         CHKN E 6 A_Scream
-	    TNT1 AAAAA 0 A_Feathers
+        TNT1 AAAAA 0 A_Feathers
         CHKN F 6 A_Feathers
         CHKN G 6
         CHKN H 6 A_NoBlocking
@@ -282,7 +282,7 @@ actor AssaultChicken : SuperCoopChicken
     Ice:
     Freeze:
     Death.Ice:
-	    TNT1 A 0 A_Gravity
+        TNT1 A 0 A_Gravity
         TNT1 A 0 A_GiveToTarget("ChickenKillCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
         TNT1 A 0 A_NoBlocking
@@ -292,127 +292,127 @@ actor AssaultChicken : SuperCoopChicken
         CHKN D 1 A_IceGuyDie
         TNT1 A -1
         stop
-	}
+    }
 }
 
 actor AssaultFriendlyChicken : AssaultChicken
 {
     +FRIENDLY
-	-ISMONSTER
-	Species "Player"
-	DamageFactor "DukeExplosive", 0.0
-	DamageFactor "Explosive", 0.0
-	DamageFactor "BFGSplash", 0.0
-	DamageFactor "Zorch", 0.0
-	DamageFactor "BJSpear", 0.0
-	DamageFactor "HexenIce", 0.0
-	DamageFactor "Poison", 0.0
-	DamageFactor "PoisonCloud", 0.0
-	DamageFactor "FireExplosive", 0.0
-	DamageFactor "Wraithverge", 0.0
-	DamageFactor "MightyBoot", 0.0
-	DamageFactor "DukeFreezethrower", 0.0
-	DamageFactor "WMCBeam", 0.0
-	DamageFactor "WMCNade", 0.0
-	DamageFactor "Chainsaw", 0.0
-	DamageFactor "TimonsAxe", 0.0
-	DamageFactor "NotQuadded", 0.0
-	DamageFactor "VillainTeam", 0.0
-	DamageFactor "Pistol", 0.0
-	DamageFactor "ZorchPistol", 0.0
-	DamageFactor "Telefrag", 0.0
-	DamageFactor "CorvusHellstaff", 0.0
-	DamageFactor "VillainTeamFire", 0.0
+    -ISMONSTER
+    Species "Player"
+    DamageFactor "DukeExplosive", 0.0
+    DamageFactor "Explosive", 0.0
+    DamageFactor "BFGSplash", 0.0
+    DamageFactor "Zorch", 0.0
+    DamageFactor "BJSpear", 0.0
+    DamageFactor "HexenIce", 0.0
+    DamageFactor "Poison", 0.0
+    DamageFactor "PoisonCloud", 0.0
+    DamageFactor "FireExplosive", 0.0
+    DamageFactor "Wraithverge", 0.0
+    DamageFactor "MightyBoot", 0.0
+    DamageFactor "DukeFreezethrower", 0.0
+    DamageFactor "WMCBeam", 0.0
+    DamageFactor "WMCNade", 0.0
+    DamageFactor "Chainsaw", 0.0
+    DamageFactor "TimonsAxe", 0.0
+    DamageFactor "NotQuadded", 0.0
+    DamageFactor "VillainTeam", 0.0
+    DamageFactor "Pistol", 0.0
+    DamageFactor "ZorchPistol", 0.0
+    DamageFactor "Telefrag", 0.0
+    DamageFactor "CorvusHellstaff", 0.0
+    DamageFactor "VillainTeamFire", 0.0
 }
 
 actor ExplosiveChicken : SuperCoopChicken
 {
     Health 40
     Scale 1.75
-	Speed 30
-	Translation "80:103=5:8", "104:111=0:0", "3:3=8:8"
-	MeleeRange 128
-	Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
-	+THRUSPECIES
+    Speed 30
+    Translation "80:103=5:8", "104:111=0:0", "3:3=8:8"
+    MeleeRange 128
+    Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
+    +THRUSPECIES
     +NOTARGET
-	Species "Chicken"
-	DropItem "BulletPuff"
-	States
-	{
-	Melee:
+    Species "Chicken"
+    DropItem "BulletPuff"
+    States
+    {
+    Melee:
         CHKN A 3 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("DoomguyDiesWhenHeIsKilled",0,0,16,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("DoomguyDiesWhenHeIsKilled",0,0,16,0,0,0,0,32)
         CHKN E 1 A_SpawnItemEx("ChickenExplode",0,0,16,0,0,0,0,32)
-		CHKN E 1
-		goto Death
+        CHKN E 1
+        goto Death
     Death:
-	    TNT1 A 0
-	    TNT1 A 0 A_NoBlocking
+        TNT1 A 0
+        TNT1 A 0 A_NoBlocking
         CHKN E 3 A_Scream
-	    TNT1 AAAAA 0 A_Feathers
+        TNT1 AAAAA 0 A_Feathers
         CHKN F 6 A_Feathers
         CHKN G 6
         CHKN H 6
         CHKN IJK 6
         CHKN L -1
         Stop
-	}
+    }
 }
 
 actor ExplosiveFriendlyChicken : ExplosiveChicken
 {
     +FRIENDLY
-	-ISMONSTER
-	Species "Player"
-	DamageFactor "DukeExplosive", 0.0
-	DamageFactor "Explosive", 0.0
-	DamageFactor "BFGSplash", 0.0
-	DamageFactor "Zorch", 0.0
-	DamageFactor "BJSpear", 0.0
-	DamageFactor "HexenIce", 0.0
-	DamageFactor "Poison", 0.0
-	DamageFactor "PoisonCloud", 0.0
-	DamageFactor "FireExplosive", 0.0
-	DamageFactor "Wraithverge", 0.0
-	DamageFactor "MightyBoot", 0.0
-	DamageFactor "DukeFreezethrower", 0.0
-	DamageFactor "WMCBeam", 0.0
-	DamageFactor "WMCNade", 0.0
-	DamageFactor "Chainsaw", 0.0
-	DamageFactor "TimonsAxe", 0.0
-	DamageFactor "NotQuadded", 0.0
-	DamageFactor "VillainTeam", 0.0
-	DamageFactor "Pistol", 0.0
-	DamageFactor "ZorchPistol", 0.0
-	DamageFactor "Telefrag", 0.0
-	DamageFactor "CorvusHellstaff", 0.0
-	DamageFactor "VillainTeamFire", 0.0
+    -ISMONSTER
+    Species "Player"
+    DamageFactor "DukeExplosive", 0.0
+    DamageFactor "Explosive", 0.0
+    DamageFactor "BFGSplash", 0.0
+    DamageFactor "Zorch", 0.0
+    DamageFactor "BJSpear", 0.0
+    DamageFactor "HexenIce", 0.0
+    DamageFactor "Poison", 0.0
+    DamageFactor "PoisonCloud", 0.0
+    DamageFactor "FireExplosive", 0.0
+    DamageFactor "Wraithverge", 0.0
+    DamageFactor "MightyBoot", 0.0
+    DamageFactor "DukeFreezethrower", 0.0
+    DamageFactor "WMCBeam", 0.0
+    DamageFactor "WMCNade", 0.0
+    DamageFactor "Chainsaw", 0.0
+    DamageFactor "TimonsAxe", 0.0
+    DamageFactor "NotQuadded", 0.0
+    DamageFactor "VillainTeam", 0.0
+    DamageFactor "Pistol", 0.0
+    DamageFactor "ZorchPistol", 0.0
+    DamageFactor "Telefrag", 0.0
+    DamageFactor "CorvusHellstaff", 0.0
+    DamageFactor "VillainTeamFire", 0.0
     DamageType "EnemyInfightDamage"
-	States
-	{
-	Melee:
+    States
+    {
+    Melee:
         CHKN A 3 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("DoomguyDiesWhenHeIsKilled",0,0,16,0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("DoomguyDiesWhenHeIsKilled",0,0,16,0,0,0,0,32)
         CHKN E 1 A_Explode(128,192,0)
-		CHKN E 1
-		goto Death
-	}
+        CHKN E 1
+        goto Death
+    }
 }
 
 actor ChickenExplode
 {
     Radius 1
     Height 1
-	Speed 0
+    Speed 0
     +NOCLIP
-	+FORCERADIUSDMG
+    +FORCERADIUSDMG
     -SOLID
-	Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
+    Obituary "$SAMSARA_STTP3K_OB_CHICKEN3"
     States
     {
       Spawn:
-		TNT1 A 0
-		TNT1 A 1 A_Explode(128,192,0)
+        TNT1 A 0
+        TNT1 A 1 A_Explode(128,192,0)
         Stop
     }
 }

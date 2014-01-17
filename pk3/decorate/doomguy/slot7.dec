@@ -4,7 +4,7 @@ Actor "B.F.G. 9000" : BFG9000
     DamageType "BFG"
     Obituary "$SAMSARA_DOOMGUY_OB_SLOT7_1"
     +INVENTORY.UNDROPPABLE
-	
+    
     Weapon.SisterWeapon "Spectral B.F.G. 9000"
     States
     {
@@ -247,46 +247,46 @@ States
 {
 Pickup:
 Use:
-	TNT1 A 1
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-40,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-37.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-35.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-33.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-31,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-28.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-26.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-24.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-22,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-19.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-17.55,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-15.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-13,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-10.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-8.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-6.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-4,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",-1.75,0,0,32)
-	//TNT1 A 0 A_CustomMissile("BFGSpittle",32,0,0,8)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",1.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",4,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",6.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",8.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",10.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",13,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",15.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",17.55,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",19.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",22,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",24.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",26.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",28.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",31,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",33.25,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",35.5,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",37.75,0,0,32)
-	TNT1 A 0 A_FireCustomMissile("BFGSpittle",40,0,0,32)
-	TNT1 A 1
-	stop
+    TNT1 A 1
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-40,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-37.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-35.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-33.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-31,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-28.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-26.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-24.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-22,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-19.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-17.55,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-15.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-13,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-10.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-8.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-6.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-4,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",-1.75,0,0,32)
+    //TNT1 A 0 A_CustomMissile("BFGSpittle",32,0,0,8)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",1.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",4,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",6.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",8.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",10.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",13,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",15.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",17.55,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",19.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",22,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",24.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",26.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",28.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",31,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",33.25,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",35.5,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",37.75,0,0,32)
+    TNT1 A 0 A_FireCustomMissile("BFGSpittle",40,0,0,32)
+    TNT1 A 1
+    stop
 }
 }
 
@@ -309,29 +309,29 @@ actor DoomBFGSplash
 
 actor BFGSpittle : FastProjectile
 {
-	Radius 8
-	Height 6
+    Radius 8
+    Height 6
     +NOBLOCKMAP
     +NOGRAVITY
-	+THRUSPECIES
-	Damage (random(1,8)*15)
-	Species "Player"
-	Speed 500
-	DamageType "Spectral"
+    +THRUSPECIES
+    Damage (random(1,8)*15)
+    Species "Player"
+    Speed 500
+    DamageType "Spectral"
     RenderStyle Add
     Alpha 0.75
     States
     {
       Spawn:
-		ACLO E 1
-		ACLO E 1 
+        ACLO E 1
+        ACLO E 1 
         loop
-	  Death:
-		ACLO E 1
-		stop
-	  Crash:
-	  XDeath:
-		DBFP A 8
+      Death:
+        ACLO E 1
+        stop
+      Crash:
+      XDeath:
+        DBFP A 8
         DBFP BCD 8 bright
         stop
     }
