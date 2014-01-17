@@ -11,15 +11,12 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
     Weapon.SelectionOrder 1900
     Decal BulletChip
     Inventory.PickupMessage "You picked up a .44 Magnum Mega Class A1!"
-    Weapon.AmmoType		"MagnumBullet"
-    Weapon.AmmoGive		0
-    Weapon.AmmoUse		1
-    Scale 0.35
+    Weapon.AmmoType "MagnumBullet"
+    Weapon.AmmoGive 0
+    Weapon.AmmoUse 1
     +AMMO_OPTIONAL
     +NOALERT
     +INVENTORY.UNDROPPABLE
-    Radius				12
-    Height				12
     States
     {
       Spawn:
@@ -33,28 +30,28 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         LOOP
 
       SingleReload:
-	    TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"SingleReloadCheck")
-	  SingleReload2:
+        TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"SingleReloadCheck")
+      SingleReload2:
         PIST F 11 A_PlaySound("marathon/pistol/reload")
         PIST G 11
         PIST H 11
-		TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"SingleReloadAmmo")
+        TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"SingleReloadAmmo")
         TNT1 A 0 A_GiveInventory("MagnumBullet",8)
         Goto Ready
-		
-	  SingleReloadAmmo:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,1)
-		goto Ready
+        
+      SingleReloadAmmo:
+        TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+        goto Ready
       SingleReloadAmmo2:
         TNT1 A 0 A_TakeInventory("Clip",1)
         TNT1 A 0 A_GiveInventory("MagnumBullet",1)
         TNT1 A 0 A_JumpIfInventory("MagnumBullet",0,"Ready")
         TNT1 A 0 A_JumpIfInventory("Clip",1,"SingleReloadAmmo2")
         goto Ready
-	    
+        
       SingleReloadCheck:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,"SingleReload2")
-		goto Ready
+        TNT1 A 0 A_JumpIfInventory("Clip",1,"SingleReload2")
+        goto Ready
 
       Deselect:
         TNT1 A 0 A_JumpIfInventory("SynthFireActive",1,"Deselect2")
@@ -160,32 +157,32 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
 
       LReload:
         TNT1 A 0 A_JumpIfInventory("RightReload",1,"LInvisible")
-	    TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"LReloadCheck")
-		//goto LIdle
-	  LReload2:
+        TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"LReloadCheck")
+        //goto LIdle
+      LReload2:
         TNT1 A 0
         TNT1 A 0 A_Light0
         TNT1 A 0 A_GiveInventory("LeftReload",1)
         PIS1 F 11 A_PlayWeaponSound("marathon/pistol/reload")
         PIS1 G 11
         PIS1 H 11
-	    TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"LReloadAmmo")
+        TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"LReloadAmmo")
         TNT1 A 0 A_GiveInventory("MagnumBullet",8)
         Goto LIdle
-		
-	  LReloadAmmo:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,1)
-		goto LIdle
+        
+      LReloadAmmo:
+        TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+        goto LIdle
       LReloadAmmo2:
         TNT1 A 0 A_TakeInventory("Clip",1)
         TNT1 A 0 A_GiveInventory("MagnumBullet",1)
         TNT1 A 0 A_JumpIfInventory("MagnumBullet",0,"LIdle")
         TNT1 A 0 A_JumpIfInventory("Clip",1,"LReloadAmmo2")
         goto LIdle
-	    
+        
       LReloadCheck:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,"LReload2")
-		goto LIdle
+        TNT1 A 0 A_JumpIfInventory("Clip",1,"LReload2")
+        goto LIdle
 
       LFire:
         TNT1 A 0 A_JumpIfInventory("RightReload",1,"LInvisible")
@@ -249,8 +246,8 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
       RReload:
         TNT1 A 0 A_JumpIfInventory("LeftReload",1,"RInvisible")
         TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"RReloadCheck")
-		//goto RIdle
-	  RReload2:
+        //goto RIdle
+      RReload2:
         TNT1 A 0 A_Light0
         TNT1 A 0 A_GiveInventory("RightReload",1)
         PIS2 F 11 A_PlayWeaponSound("marathon/pistol/reload")
@@ -258,23 +255,23 @@ actor ".44 Magnum Mega Class A1" : Weapon// replaces Pistol
         PIS2 H 11
         TNT1 A 0 //A_TakeInventory("MagnumBulletRight",8)
         TNT1 A 0 //A_TakeInventory("MagnumClip",1)
-		TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"RReloadAmmo")
+        TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"RReloadAmmo")
         TNT1 A 0 A_GiveInventory("MagnumBulletRight",8)
         Goto RIdle
-		
-	  RReloadAmmo:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,1)
-		goto RIdle
+        
+      RReloadAmmo:
+        TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+        goto RIdle
       RReloadAmmo2:
         TNT1 A 0 A_TakeInventory("Clip",1)
         TNT1 A 0 A_GiveInventory("MagnumBulletRight",1)
         TNT1 A 0 A_JumpIfInventory("MagnumBulletRight",0,"RIdle")
         TNT1 A 0 A_JumpIfInventory("Clip",1,"RReloadAmmo2")
         goto RIdle
-	    
+        
       RReloadCheck:
-	    TNT1 A 0 A_JumpIfInventory("Clip",1,"RReload2")
-		goto RIdle
+        TNT1 A 0 A_JumpIfInventory("Clip",1,"RReload2")
+        goto RIdle
 
       RFire:
         TNT1 A 0 A_JumpIfInventory("LeftReload",1,"RInvisible")
@@ -381,13 +378,13 @@ actor 44mmCasing
 actor MagnumBullet : Ammo
 {
     Inventory.MaxAmount 8
-	+INVENTORY.IGNORESKILL
+    +INVENTORY.IGNORESKILL
 }
 
 actor MagnumBulletRight : Ammo
 {
     Inventory.MaxAmount 8
-	+INVENTORY.IGNORESKILL
+    +INVENTORY.IGNORESKILL
 }
 
 

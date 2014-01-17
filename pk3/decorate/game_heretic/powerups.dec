@@ -101,7 +101,7 @@ actor HereticTeleportPickup : CustomInventory replaces ArtiTeleport
     }
 }
 
-// actor HereticAutomap : Automap replaces Supermap	// Can't be done until the automap gets a replacement!
+// actor HereticAutomap : Automap replaces Supermap    // Can't be done until the automap gets a replacement!
 actor HereticLesserTome : PowerupGiver replaces ArtiTomeOfPower
 {
     +COUNTITEM

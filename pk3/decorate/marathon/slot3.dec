@@ -10,15 +10,12 @@ actor "Fusion Pistol" : Weapon
     Weapon.SelectionOrder 1300
     Weapon.SlotNumber 3
     Inventory.PickupMessage "You picked up a Zeus Class Fusion Pistol!"
-    Weapon.AmmoType		"FusionBullet"
-    Weapon.AmmoGive		0
-    Weapon.AmmoUse		1
-    Scale 0.35
+    Weapon.AmmoType "FusionBullet"
+    Weapon.AmmoGive 0
+    Weapon.AmmoUse 1
     +AMMO_OPTIONAL
     +NOALERT
     +INVENTORY.UNDROPPABLE
-    Radius				12
-    Height				12
     States
     {
       Spawn:

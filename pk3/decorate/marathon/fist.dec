@@ -15,9 +15,9 @@ actor "Talon Ceramic Combat Blade" : Weapon
     Weapon.PreferredSkin "SOFistSkin"
     Weapon.SelectionOrder 3700
     Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKB_1"
-    Weapon.AmmoType		"KnifeAmmo"
-    Weapon.AmmoGive		1
-    Weapon.AmmoUse		0
+    Weapon.AmmoType "KnifeAmmo"
+    Weapon.AmmoGive 1
+    Weapon.AmmoUse 0
     Weapon.Kickback 300
     +MELEEWEAPON
     +NOALERT
@@ -70,15 +70,15 @@ actor "Talon Ceramic Combat Blade" : Weapon
         TNT1 A 0 A_PlayWeaponSound("marathon/knife/throw")
         MRNT CDE 1
         MRNT F 1 A_FireCustomMissile("TCCBThrown",0,0,0,2)//(random(100,120),1,0,"MarathonKnifePuff",96)
-		TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"TakeAmmo")
+        TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"TakeAmmo")
         MRNT GHI 1
-		TNT1 A 5 A_TakeInventory("Talon Ceramic Combat Blade")
+        TNT1 A 5 A_TakeInventory("Talon Ceramic Combat Blade")
         TNT1 A 5 A_SelectWeapon("Steel Knuckles")
         TNT1 AAAAAAAAAAA 0 A_Lower
         Goto Select
-		
-	  TakeAmmo:
-	    TNT1 A 0 A_TakeInventory("KnifeAmmo",1)
+        
+      TakeAmmo:
+        TNT1 A 0 A_TakeInventory("KnifeAmmo",1)
         MRNT GHI 1 
         TNT1 A 10
         TNT1 AAAAAAAAAAA 0 A_Lower
@@ -104,7 +104,7 @@ ACTOR TCCBThrown
     WallBounceFactor 1.0
     DeathSound "marathon/knife/wall"
     SeeSound "marathon/knife/bounce"
-	Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKB_2"
+    Obituary "$SAMSARA_MARATHON_OB_PUNCHDRUNKB_2"
     DropItem TCCBPickup
     States
     {
@@ -149,18 +149,18 @@ actor TCCBPickup : CustomInventory
         TNT1 A 0 A_JumpIfInventory("Talon Ceramic Combat Blade",1,"PickupCheck2")
         TNT1 A 0 A_SetBlend("Green", 0.4, 5)
         TNT1 A 1 A_GiveInventory("Talon Ceramic Combat Blade",1)
-		TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"GrossHack")
+        TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"GrossHack")
         stop
-		
-	  PickupCheck2:
-	    TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"PickupFail")
+        
+      PickupCheck2:
+        TNT1 A 0 A_JumpIfInventory("KnifeAmmo",2,"PickupFail")
         TNT1 A 0 A_SetBlend("Green", 0.4, 5)
         TNT1 A 1 A_GiveInventory("KnifeAmmo",1)
         stop
-		
-	  GrossHack:
-	    TNT1 A 0 A_TakeInventory("KnifeAmmo",1)
-		stop
+        
+      GrossHack:
+        TNT1 A 0 A_TakeInventory("KnifeAmmo",1)
+        stop
         
       PickupFail:
         MRNF Z 1
@@ -186,13 +186,13 @@ actor "Tech.50 Pacifier" : Weapon
 
       Ready:
         MRTK A 1 A_WeaponReady
-		loop
-		
-	  Select:
+        loop
+        
+      Select:
         MRTK A 1 A_Raise
         loop
-		
-	  Deselect:
+        
+      Deselect:
         MRTK A 1 A_Lower
         loop
 
@@ -221,8 +221,8 @@ actor "Tech.50 Pacifier" : Weapon
         MRTK D 2 A_Light0
         MRTK C 3
         MRTK A 10
-		
-	  Reload:
+        
+      Reload:
         MRTK A 0 Offset(0,32)
         MRTK A 1 Offset(0,35)
         MRTK A 1 Offset(0,40)
@@ -247,8 +247,8 @@ actor "Tech.50 Pacifier" : Weapon
         MRTK A 1 Offset(0,135)
         MRTK A 1 Offset(0,140)
         MRTK A 10
-		goto Select
-	}
+        goto Select
+    }
 }
 
 actor Tech50Shot
@@ -258,7 +258,7 @@ actor Tech50Shot
     Height 10
     Speed 50
     Damage (5)
-	RenderStyle Add
+    RenderStyle Add
     DamageType "MarathonStun"
     Scale 0.075
     //DeathSound "marathon/tech50/stun"
@@ -270,17 +270,17 @@ actor Tech50Shot
     States
     {
       Spawn:
-		TNT1 A 1
-	    MRTK E 1 BRIGHT
-		TNT1 A 1
-		MRTK F 1 BRIGHT
-		TNT1 A 1
-		MRTK G 1 BRIGHT
+        TNT1 A 1
+        MRTK E 1 BRIGHT
+        TNT1 A 1
+        MRTK F 1 BRIGHT
+        TNT1 A 1
+        MRTK G 1 BRIGHT
         stop
 
       Death:
         TNT1 A 1
-		stop
+        stop
     }
 }
 
@@ -289,10 +289,10 @@ actor Tech50ShotUnderwater : Tech50Shot
     States
     {
       Spawn:
-	    DPLE B 1
+        DPLE B 1
       Death:
         TNT1 A 1 A_Explode(64,96)
-		stop
+        stop
     }
 }
 

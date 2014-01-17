@@ -132,46 +132,46 @@ actor AlienSpectre1B : AlienSpectre1 replaces AlienSpectre1
         stop
 
       Missile:
-	ALN1 J 3 Bright A_FaceTarget
-	ALN1 I 3 Bright A_SpotLightning
-	ALN1 H 3 Bright
-	Goto See2
+    ALN1 J 3 Bright A_FaceTarget
+    ALN1 I 3 Bright A_SpotLightning
+    ALN1 H 3 Bright
+    Goto See2
 
       Pain:
-	TNT1 A 0 A_SpectreChunkSmall
-	ALN1 J 1 A_Pain
-	ALN1 J 1 A_Explode(64,64)
-	TNT1 A 0 A_Jump(128,"Vanish")
-	Goto See+6
+    TNT1 A 0 A_SpectreChunkSmall
+    ALN1 J 1 A_Pain
+    ALN1 J 1 A_Explode(64,64)
+    TNT1 A 0 A_Jump(128,"Vanish")
+    Goto See+6
 
       Vanish:
-	TNT1 AAAAA 0 A_SpectreChunkSmall
-	TNT1 A 0 A_UnsetShootable
-	ALN1 J 1 A_SetTranslucent(0.5,1)
-	ALN1 J 1 A_SetTranslucent(0.4,1)
-	ALN1 J 1 A_SetTranslucent(0.3,1)
-	ALN1 J 1 A_SetTranslucent(0.2,1)
-	ALN1 J 1 A_SetTranslucent(0.1,1)
-	TNT1 A 1
+    TNT1 AAAAA 0 A_SpectreChunkSmall
+    TNT1 A 0 A_UnsetShootable
+    ALN1 J 1 A_SetTranslucent(0.5,1)
+    ALN1 J 1 A_SetTranslucent(0.4,1)
+    ALN1 J 1 A_SetTranslucent(0.3,1)
+    ALN1 J 1 A_SetTranslucent(0.2,1)
+    ALN1 J 1 A_SetTranslucent(0.1,1)
+    TNT1 A 1
 
       Wandering:
-	TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Wander
-	TNT1 A 1 A_Pain
-	TNT1 A 0 A_Jump(64,"SpawnFake")
-	TNT1 A 0 A_Jump(128,"Wandering")
-	ALN1 J 1 A_Explode(64,64)
-	ALN1 J 1 A_SetTranslucent(0.1,1)
-	ALN1 J 1 A_SetTranslucent(0.2,1)
-	ALN1 J 1 A_SetTranslucent(0.3,1)
-	ALN1 J 1 A_SetTranslucent(0.4,1)
-	ALN1 J 1 A_SetTranslucent(0.5,1)
-	ALN1 J 1 A_SetTranslucent(0.666,1)
-	ALN1 A 1 A_SetShootable
-	goto See2
+    TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Wander
+    TNT1 A 1 A_Pain
+    TNT1 A 0 A_Jump(64,"SpawnFake")
+    TNT1 A 0 A_Jump(128,"Wandering")
+    ALN1 J 1 A_Explode(64,64)
+    ALN1 J 1 A_SetTranslucent(0.1,1)
+    ALN1 J 1 A_SetTranslucent(0.2,1)
+    ALN1 J 1 A_SetTranslucent(0.3,1)
+    ALN1 J 1 A_SetTranslucent(0.4,1)
+    ALN1 J 1 A_SetTranslucent(0.5,1)
+    ALN1 J 1 A_SetTranslucent(0.666,1)
+    ALN1 A 1 A_SetShootable
+    goto See2
 
       SpawnFake:
-	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
-	goto Wandering
+    TNT1 A 1 A_SpawnItemEx("AlienSpectreFake",0,0,0,0,0,0,0,48)
+    goto Wandering
     }
 }
 
@@ -229,19 +229,19 @@ DamageFactor "NotQuadded", 0.85
 States
 {
       See:
-	ALN1 A 1
-	goto See2
+    ALN1 A 1
+    goto See2
 
       Melee:
       Missile:
-	ALN1 J 3 Bright A_FaceTarget
-	ALN1 I 3 Bright A_SkullAttack
-	ALN1 HK 3 Bright
-	Goto Missile+2
+    ALN1 J 3 Bright A_FaceTarget
+    ALN1 I 3 Bright A_SkullAttack
+    ALN1 HK 3 Bright
+    Goto Missile+2
 
       Pain:
-	ALN1 J 2 A_Pain
-	Goto See2
+    ALN1 J 2 A_Pain
+    Goto See2
         
         
       Death.DukeDamage:
@@ -586,9 +586,9 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         MNAM A 1 A_Look
         wait
-		
-	  Idle:
-	    TNT1 A 0 A_SetTranslucent(0.5,0)
+        
+      Idle:
+        TNT1 A 0 A_SetTranslucent(0.5,0)
         TNT1 A 0 A_ChangeFlag("NODAMAGE",0)
         TNT1 A 0 A_ChangeFlag("NOPAIN",0)
         MNAM A 1 A_Look
@@ -618,8 +618,8 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         MNAL F 3 Bright A_FaceTarget
         MNAL I 3 Bright A_EntityAttack
         MNAL E 3 Bright A_FastChase
-	TNT1 A 0 A_ChangeFlag("REFLECTIVE",0)
-	MNAL A 0 A_SentinelRefire
+    TNT1 A 0 A_ChangeFlag("REFLECTIVE",0)
+    MNAL A 0 A_SentinelRefire
         Goto See2+10
         
       Death:
@@ -674,50 +674,50 @@ actor EntityBoss2 : EntityBoss replaces EntityBoss
         stop
 
       Pain:
-	TNT1 A 0 A_SpectreChunkSmall
-	MNAL J 1 A_Pain
-	MNAL J 1 A_Explode(64,64)
-	TNT1 A 0 A_ChangeFlag("REFLECTIVE",1)
-	TNT1 A 0 A_Jump(128,"Vanish")
-	Goto See+6
+    TNT1 A 0 A_SpectreChunkSmall
+    MNAL J 1 A_Pain
+    MNAL J 1 A_Explode(64,64)
+    TNT1 A 0 A_ChangeFlag("REFLECTIVE",1)
+    TNT1 A 0 A_Jump(128,"Vanish")
+    Goto See+6
 
       Vanish:
-	TNT1 AAAAA 0 A_SpectreChunkSmall
-	TNT1 A 0 A_UnsetShootable
-	//MNAL J 1 A_SetTranslucent(0.5,1)
-	MNAL J 1 A_SetTranslucent(0.4,1)
-	MNAL J 1 A_SetTranslucent(0.3,1)
-	MNAL J 1 A_SetTranslucent(0.2,1)
-	MNAL J 1 A_SetTranslucent(0.1,1)
-	TNT1 A 1
+    TNT1 AAAAA 0 A_SpectreChunkSmall
+    TNT1 A 0 A_UnsetShootable
+    //MNAL J 1 A_SetTranslucent(0.5,1)
+    MNAL J 1 A_SetTranslucent(0.4,1)
+    MNAL J 1 A_SetTranslucent(0.3,1)
+    MNAL J 1 A_SetTranslucent(0.2,1)
+    MNAL J 1 A_SetTranslucent(0.1,1)
+    TNT1 A 1
 
       Wandering:
-	TNT1 AAAAAAAAAA 1 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 A 0 A_Jump(128,"SpawnFake")
-	TNT1 A 0 A_Jump(128,"Wandering")
-	ALN1 J 1 A_Explode(64,64)
-	ALN1 J 1 A_SetTranslucent(0.1,1)
-	ALN1 J 1 A_SetTranslucent(0.2,1)
-	ALN1 J 1 A_SetTranslucent(0.3,1)
-	ALN1 J 1 A_SetTranslucent(0.4,1)
-	ALN1 J 1 A_SetTranslucent(0.5,1)
-	//ALN1 J 1 A_SetTranslucent(0.666,1)
-	ALN1 A 1 A_SetShootable
-	goto See2
+    TNT1 AAAAAAAAAA 1 A_Wander
+    TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+    TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+    TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+    TNT1 A 0 A_Jump(128,"SpawnFake")
+    TNT1 A 0 A_Jump(128,"Wandering")
+    ALN1 J 1 A_Explode(64,64)
+    ALN1 J 1 A_SetTranslucent(0.1,1)
+    ALN1 J 1 A_SetTranslucent(0.2,1)
+    ALN1 J 1 A_SetTranslucent(0.3,1)
+    ALN1 J 1 A_SetTranslucent(0.4,1)
+    ALN1 J 1 A_SetTranslucent(0.5,1)
+    //ALN1 J 1 A_SetTranslucent(0.666,1)
+    ALN1 A 1 A_SetShootable
+    goto See2
 
       SpawnFake:
-	TNT1 A 1 A_SpawnItemEx("AlienSpectreFake2",0,0,0,0,0,0,0,48)
-	goto Wandering
+    TNT1 A 1 A_SpawnItemEx("AlienSpectreFake2",0,0,0,0,0,0,0,48)
+    goto Wandering
     }
 }
 
 actor EntitySecond2 : EntitySecond replaces EntitySecond
 {
   ConversationID 75, -1, -1
-	-SPECTRAL
+    -SPECTRAL
     DamageFactor "PoisonCloud", 0.2
     DamageFactor "TimonsAxe", 0.2
     DamageFactor "Mace", 0.2

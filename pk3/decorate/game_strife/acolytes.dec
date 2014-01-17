@@ -132,7 +132,7 @@ actor Acolyte2: Acolyte replaces Acolyte
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         //TNT1 A 0 A_NoBlocking
         //TNT1 A 0 A_SpawnItem("NaziFrozen")
-	TNT1 A 0 A_SetTranslucent(1,0)
+    TNT1 A 0 A_SetTranslucent(1,0)
         AGRD O 0 A_GenericFreezeDeath
         AGRD O 70 A_UnsetSolid
         AGRD O 0 A_IceGuyDie
@@ -208,7 +208,7 @@ actor AcolyteShadow2: Acolyte2 replaces AcolyteShadow
     {
       See:
         AGRD A 6 A_BeShadowyFoe
-	AGRD A 0 A_SetTranslucent(0.75, 2)
+    AGRD A 0 A_SetTranslucent(0.75, 2)
         Goto Super::See+1
 
       Pain:
@@ -268,10 +268,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         goto Death
 
       Death:
-		TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
+        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItem")
-	  DeathFinish:
+        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItem")
+      DeathFinish:
         AGRD G 4
         AGRD H 4 A_Scream
         AGRD I 4
@@ -281,26 +281,26 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         AGRD M 3 A_AcolyteDie
         AGRD N -1
         Stop
-		
-	GiveQuestItem:
-		TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1) // Damn. Doesn't play the sound.
-		AGRD G 1 A_GiveToTarget("QuestItem7",1)
-		goto DeathFinish
-		
-	GiveQuestItemXDeath:
-		TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-		AGRD G 1 A_GiveToTarget("QuestItem7",1)
-		goto XDeathFinish
-		
-	GiveQuestItemZorch:
-		TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-		AGRD O 1 A_GiveToTarget("QuestItem7",1)
-		goto ZorchFinish
-		
-	GiveQuestItemFreeze:
-		TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
-		AGRD O 1 A_GiveToTarget("QuestItem7",1)
-		goto IceFinish
+        
+    GiveQuestItem:
+        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1) // Damn. Doesn't play the sound.
+        AGRD G 1 A_GiveToTarget("QuestItem7",1)
+        goto DeathFinish
+        
+    GiveQuestItemXDeath:
+        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
+        AGRD G 1 A_GiveToTarget("QuestItem7",1)
+        goto XDeathFinish
+        
+    GiveQuestItemZorch:
+        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
+        AGRD O 1 A_GiveToTarget("QuestItem7",1)
+        goto ZorchFinish
+        
+    GiveQuestItemFreeze:
+        TNT1 A 0 A_PlaySoundEx("blackbirdtrustnoone","soundslot7",0,1)
+        AGRD O 1 A_GiveToTarget("QuestItem7",1)
+        goto IceFinish
 
       Death.DukeExplosive:
       Death.DukeSpectral:
@@ -320,10 +320,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
         TNT1 A 0 A_GiveToTarget("DukeGibTaunt",1)
 
       XDeath:
-		TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
+        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemXDeath")
-	  XDeathFinish:
+        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemXDeath")
+      XDeathFinish:
         GIBS A 5 A_NoBlocking
         GIBS BC 5 A_TossGib
         GIBS D 4 A_TossGib
@@ -357,10 +357,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.ZorchKamikaze:
       Death.PhasingZorch:
       Death.ZorchSpectral:
-		TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
+        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemZorch")
-	  ZorchFinish:
+        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemZorch")
+      ZorchFinish:
         AGRD O 0 A_Stop
         TNT1 A 0 A_ChangeFlag("DONTGIB",1)
         TNT1 A 0 A_PlaySoundEx("chex/zorch","soundslot5",0,0)
@@ -391,10 +391,10 @@ actor AcolyteBlue2: AcolyteBlue replaces AcolyteBlue// - Gives QuestItem7 when a
       Death.HexenIce:
 
       Death.Ice:
-		TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
+        TNT1 A 0 A_GiveToTarget("AcolyteBlueDeathCount",1)
         TNT1 A 0 A_GiveToTarget("KillCount",1)
-		TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemFreeze")
-	  IceFinish:
+        TNT1 A 0 A_JumpIfInTargetInventory("AcolyteBlueDeathCount",5,"GiveQuestItemFreeze")
+      IceFinish:
         TNT1 A 0 A_GiveInventory("EnemyZorched",1)
         AGRD O 0 A_GenericFreezeDeath
         AGRD O 70 A_UnsetSolid
