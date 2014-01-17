@@ -16,7 +16,7 @@ StatusBar Fullscreen
         InInventory MarathonClass, 1 { drawimage translatable "HUDBARD", 10, 176; }
     }
     
-	DrawImage "HUDBAR", 13, 185;
+    DrawImage "HUDBAR", 13, 185;
     //Armor
      DrawBar "HARMOR", "HEMPTY", Armor, Horizontal, /*Reverse, */ 14, 186;
      DrawImage "ARMRICON", 8, 191;
@@ -28,7 +28,7 @@ StatusBar Fullscreen
      DrawImage "HLTHICON", 40, 191;
      DrawNumber 3, INDEXFON, Gold, Health, 60, 191, Red, 25, White, 50;
     //Ammo
-	InInventory PistolModeOn, 1 {
+    InInventory PistolModeOn, 1 {
     IsSelected " Pistol " {
             DrawImage "HUDBAR", 250, 180;
             DrawBar "HAMBAR", "HEMPTY", Ammo Clip, Horizontal, Reverse, 251, 181;
@@ -54,7 +54,7 @@ StatusBar Fullscreen
             DrawBar "HAMBAR", "HEMPTY", Ammo Shell, Horizontal, Reverse, 251, 181;
             DrawNumber 3, INDEXFON, White, Ammo Shell, 298, 185;
             DrawImage "AMSMB0", 238, 185, Center; }
-	}
+    }
      UsesAmmo
     {
         DrawImage AmmoIcon1, 238, 185, Center;
@@ -236,8 +236,8 @@ StatusBar Fullscreen
     //RuneIcon
     DrawImage RuneIcon, 20, 163, Center;
     //Frags
-	InInventory not ChickenModeOn, 1
-	{
+    InInventory not ChickenModeOn, 1
+    {
     GameMode Deathmatch, Possession, Teamplay, TeamGame { DrawNumber 3, INDEXFON, White, Frags, 70, 170; }
     GameMode OneFlagCTF, CTF, Skulltag, TeamPossession, TeamLMS
     {
@@ -254,8 +254,8 @@ StatusBar Fullscreen
         InInventory KeyGreen, 1 { drawimage "GKEYICON", 255, 169; }
         InInventory KeyBlue, 1 { drawimage "BKEYICON", 270, 169; }
     }
-	}
-	InInventory ChickenModeOn, 1 { DrawNumber 3, INDEXFON, White, ChickenKillCount, 70, 170; }
+    }
+    InInventory ChickenModeOn, 1 { DrawNumber 3, INDEXFON, White, ChickenKillCount, 70, 170; }
     //MugShot
     //DrawMugShot "STF", 5, 73, 168;
     //DrawSelectedInventory alwaysshowcounter, HUDFONT_DOOM, 287, 153, 286, 163, untranslated;
@@ -273,7 +273,7 @@ StatusBar normal, forcescaled
     {
         drawimage "DOOMBAR", 0, 168;
         //drawimage "DOOMBART", 0, 0;
-		IsSelected " Pistol " { InInventory PistolModeOn, 1 { drawnumber 3, DOOMHUDF, gold, ammo Clip, 44, 171, 0, untranslated, 0, untranslated, 20; } }
+        IsSelected " Pistol " { InInventory PistolModeOn, 1 { drawnumber 3, DOOMHUDF, gold, ammo Clip, 44, 171, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, DOOMHUDF, gold, ammo1, 44, 171, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, DOOMHUDF, gold, health, 94, 171, white, 25, untranslated, 50;
         drawnumber 3, DOOMHUDF, gold, armor, 219, 171, 0, untranslated, 0, untranslated, 50;
@@ -343,7 +343,7 @@ StatusBar normal, forcescaled
          drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
          drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
          drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
-		 InInventory not ChickenModeOn, 1 {
+         InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 3, DOOMHUDF, untranslated, frags, 142, 171; }
         gamemode cooperative, singleplayer
         {
@@ -358,7 +358,7 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "DOMNOTCH", 134, 167; }
             InInventory KillCountNotch, 9 { drawimage "DOMNOTCH", 139, 167; }
         }}
-		InInventory ChickenModeOn, 1 { drawnumber 3, DOOMHUDF, untranslated, ChickenKillCount, 142, 171; }
+        InInventory ChickenModeOn, 1 { drawnumber 3, DOOMHUDF, untranslated, ChickenKillCount, 142, 171; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, DOOMHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDOOM", 145, 169; }
@@ -407,7 +407,7 @@ StatusBar normal, forcescaled
     Playerclass ChexWarrior
     {
         drawimage "CHEXBAR", 0, 168;
-		IsSelected "Mini-Zorcher" { InInventory PistolModeOn, 1 { drawnumber 3, CHEXHUDF, yellow, ammo Clip, 45, 172, 0, untranslated, 0, untranslated, 20; } }
+        IsSelected "Mini-Zorcher" { InInventory PistolModeOn, 1 { drawnumber 3, CHEXHUDF, yellow, ammo Clip, 45, 172, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, CHEXHUDF, yellow, ammo1, 45, 172, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, CHEXHUDF, yellow, health, 94, 172, white, 25, untranslated, 50;
         drawnumber 3, CHEXHUDF, yellow, armor, 220, 172, 0, untranslated, 0, untranslated, 50;
@@ -477,7 +477,7 @@ StatusBar normal, forcescaled
          drawnumber 3, INDEXFON, gold, ammocapacity Shell, 315, 179;
          drawnumber 3, INDEXFON, gold, ammocapacity RocketAmmo, 315, 185;
          drawnumber 3, INDEXFON, gold, ammocapacity Cell, 315, 191;
-		 InInventory not ChickenModeOn, 1 {
+         InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 3, CHEXHUDF, untranslated, frags, 143, 172; }
         gamemode cooperative, singleplayer
         {
@@ -492,8 +492,8 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "CHXNOTCH", 135, 167; }
             InInventory KillCountNotch, 9 { drawimage "CHXNOTCH", 140, 167; }
         }
-		}
-		InInventory ChickenModeOn, 1 { drawnumber 3, CHEXHUDF, untranslated, ChickenKillCount, 143, 172; }
+        }
+        InInventory ChickenModeOn, 1 { drawnumber 3, CHEXHUDF, untranslated, ChickenKillCount, 143, 172; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, CHEXHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRCHEX", 145, 169; }
@@ -544,7 +544,7 @@ StatusBar normal, forcescaled
         drawimage "HRTCBAR", 0, 151;
         InInventory PowerFakeInvulnerable, 1 { drawimage "HEREGOD1", 6, 167; }
         InInventory PowerFakeInvulnerable, 1 { drawimage "HEREGOD2", 297, 167; }
-		IsSelected "Elven Wand" { InInventory PistolModeOn, 1 { 
+        IsSelected "Elven Wand" { InInventory PistolModeOn, 1 { 
         drawnumber 3, HEREHUDF, gold, ammo Clip, 58, 171, 0, untranslated, 0, untranslated, 20;
         drawimage "AMSMA0", 47, 189, center; }}
         drawnumber 3, HEREHUDF, gold, ammo1, 58, 171, 0, untranslated, 0, untranslated, 20;
@@ -612,7 +612,7 @@ StatusBar normal, forcescaled
          drawnumber 3, INDEXFON, yellow, ammo Shell, 285, 179;
          drawnumber 3, INDEXFON, yellow, ammo RocketAmmo, 285, 185;
          drawnumber 3, INDEXFON, yellow, ammo Cell, 285, 191;
-		 InInventory not ChickenModeOn, 1 {
+         InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 3, HEREHUDF, untranslated, frags, 136, 180; }
         gamemode cooperative, singleplayer
         {
@@ -627,8 +627,8 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "RVNNOTCH", 136, 169; }
             InInventory KillCountNotch, 9 { drawimage "RVNNOTCH", 140, 169; }
         }
-		}
-		InInventory ChickenModeOn, 1 { drawnumber 3, HEREHUDF, untranslated, KillCountAmount, 136, 180; }
+        }
+        InInventory ChickenModeOn, 1 { drawnumber 3, HEREHUDF, untranslated, KillCountAmount, 136, 180; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, HEREHUDF2, 290, 22, 293, 30, yellow;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRHERTC", 10, 168; }
@@ -683,7 +683,7 @@ StatusBar normal, forcescaled
     Playerclass Blazkowicz
     {
         drawimage "WOLFBAR", 0, 168;
-		IsSelected "Luger" { InInventory PistolModeOn, 1 { drawnumber 3, WOLFHUDF, gold, ammo Clip, 37, 181, 0, untranslated, 0, untranslated, 20; } }
+        IsSelected "Luger" { InInventory PistolModeOn, 1 { drawnumber 3, WOLFHUDF, gold, ammo Clip, 37, 181, 0, untranslated, 0, untranslated, 20; } }
         drawnumber 3, WOLFHUDF, gold, ammo1, 37, 181, 0, untranslated, 0, untranslated, 20;
         drawnumber 3, WOLFHUDF, gold, health, 90, 181, red, 25, untranslated, 50;
         drawnumber 3, WOLFHUDF, gold, armor, 212, 181, 0, untranslated, 0, untranslated, 50;
@@ -755,7 +755,7 @@ StatusBar normal, forcescaled
         drawstring SMALLFONT, lightblue, "x", 315, 178;
          drawnumber 3, INDEXFON, lightblue, ammocapacity RocketAmmo, 315, 185;
          drawnumber 3, INDEXFON, lightblue, ammocapacity Cell, 315, 191;
-		 InInventory not ChickenModeOn, 1 {
+         InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 3, WOLFHUDF, untranslated, frags, 138, 181; }
         gamemode cooperative, singleplayer
         {
@@ -770,7 +770,7 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "WOLFNTCH", 135, 167; }
             InInventory KillCountNotch, 9 { drawimage "WOLFNTCH", 139, 167; }
         }}
-		InInventory ChickenModeOn, 1 { drawnumber 3, WOLFHUDF, untranslated, ChickenKillCount, 138, 181; }
+        InInventory ChickenModeOn, 1 { drawnumber 3, WOLFHUDF, untranslated, ChickenKillCount, 138, 181; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, WOLFHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRWOLFN", 145, 169; }
@@ -919,7 +919,7 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "RVNNOTCH", 118, 168; }
             InInventory KillCountNotch, 9 { drawimage "RVNNOTCH", 121, 168; }
         }}
-		InInventory ChickenModeOn, 1 { drawnumber 3, HEREHUDF, untranslated, ChickenKillCount, 124, 181; }
+        InInventory ChickenModeOn, 1 { drawnumber 3, HEREHUDF, untranslated, ChickenKillCount, 124, 181; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, HEREHUDF2, 290, 22, 293, 30, red;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRHEXEN", 146, 163; }
@@ -1037,7 +1037,7 @@ StatusBar normal, forcescaled
          drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 180;
          drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 186;
          drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 192;
-		 InInventory not ChickenModeOn, 1 {
+         InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 3, DUKEHUDF, untranslated, frags, 133, 183; }
         gamemode cooperative, singleplayer
         {
@@ -1052,7 +1052,7 @@ StatusBar normal, forcescaled
             InInventory KillCountNotch, 8 { drawimage "DUKENTCH", 135, 169; }
             InInventory KillCountNotch, 9 { drawimage "DUKENTCH", 139, 169; }
         }}
-		InInventory ChickenModeOn, 1 { drawnumber 3, DUKEHUDF, untranslated, ChickenKillCount, 133, 183; }
+        InInventory ChickenModeOn, 1 { drawnumber 3, DUKEHUDF, untranslated, ChickenKillCount, 133, 183; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, DUKEHUDF, 290, 22, 293, 30, untranslated;
         InInventory DukeFlying, 1 { drawnumber 3, INDEXFON, yellow, DukeJetpackFuel, 293, 48; }
@@ -1107,8 +1107,8 @@ StatusBar normal, forcescaled
 
         IsSelected ".44 Magnum Mega Class A1"
         {
-		    InInventory not UsingDualPistols, 1
-			{
+            InInventory not UsingDualPistols, 1
+            {
             DrawImage "MARPISEM", 5, 178;
             DrawImage "MARPISEM", 10, 178;
             DrawImage "MARPISEM", 15, 178;
@@ -1125,7 +1125,7 @@ StatusBar normal, forcescaled
             InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 178; }
             InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 178; }
             InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 178; }
-			}
+            }
             InInventory SynthFireActive, 1
             {
                 DrawImage "MARPISEM", 5, 173;
@@ -1144,7 +1144,7 @@ StatusBar normal, forcescaled
                 InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
                 InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
                 InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
-			
+            
                 DrawImage "MARPISEM", 5, 185;
                 DrawImage "MARPISEM", 10, 185;
                 DrawImage "MARPISEM", 15, 185;
@@ -1519,7 +1519,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
                 }
             }
         }
-	}
+    }
 }
 
         DrawBar "MBARH100", "MBARMPTY", Health, Horizontal, 51, 170;
@@ -1597,10 +1597,10 @@ IsSelected not "Spnkr-25 Auto Cannon"
         drawnumber 3, INDEXFON, green, ammocapacity Shell, 315, 179;
         drawnumber 3, INDEXFON, green, ammocapacity RocketAmmo, 315, 185;
         drawnumber 3, INDEXFON, green, ammocapacity Cell, 315, 191;
-		InInventory not ChickenModeOn, 1 {
+        InInventory not ChickenModeOn, 1 {
         gamemode deathmatch, teamplay, teamgame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawnumber 4, MARAHUDF, white, frags, 213, 179; }
         gamemode cooperative, singleplayer { drawnumber 4, MARAHUDF, white, KillCountAmountTrue, 213, 179; }}
-		InInventory ChickenModeOn, 1 { drawnumber 4, MARAHUDF, white, ChickenKillCount, 213, 179; }
+        InInventory ChickenModeOn, 1 { drawnumber 4, MARAHUDF, white, ChickenKillCount, 213, 179; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, MARAHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRMARA", 145, 169; }
@@ -1649,8 +1649,8 @@ IsSelected not "Spnkr-25 Auto Cannon"
     playerclass Ranger
     {
         drawimage "QUAKBAR", 0, 168;
-		
-		IsSelected "Single Shotgun" { InInventory PistolModeOn, 1 { drawnumber 3, QUAKHUDF, gold, ammo Shell, 42, 181, 0, untranslated, 0, untranslated, 20; } }
+        
+        IsSelected "Single Shotgun" { InInventory PistolModeOn, 1 { drawnumber 3, QUAKHUDF, gold, ammo Shell, 42, 181, 0, untranslated, 0, untranslated, 20; } }
 
         InInventory not UsingDoEAmmo
         {
@@ -1673,7 +1673,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
             drawnumber 3, INDEXFON, red, ammocapacity LavaNails, 315, 173;
             drawnumber 3, INDEXFON, red, ammocapacity MultiRocketAmmo, 315, 185;
         }
-		
+        
         InInventory not UsingDoEAmmo { drawnumber 3, QUAKHUDF, gold, ammo1, 42, 181, 0, untranslated, 0, untranslated, 20; }
         InInventory UsingDoEAmmo { drawnumber 3, QUAKHUDF, red, ammo2, 42, 181, 0, red, 0, red, 20; }
 
@@ -1758,7 +1758,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
             InInventory KillCountNotch, 8 { drawimage "DOMNOTCH", 135, 176; }
             InInventory KillCountNotch, 9 { drawimage "DOMNOTCH", 140, 176; }
         }}
-		InInventory ChickenModeOn, 1 { drawnumber 3, QUAKHUDF, untranslated, ChickenKillCount, 140, 181; }
+        InInventory ChickenModeOn, 1 { drawnumber 3, QUAKHUDF, untranslated, ChickenKillCount, 140, 181; }
         DrawImage RuneIcon, 20, 40, Center;
         drawselectedinventory alwaysshowcounter, QUAKHUDF, 290, 22, 293, 30, untranslated;
         GameMode Teamplay, TeamGame, OneFlagCTF, CTF, Skulltag, TeamLMS, TeamPossession { drawimage translatable "CLRDOOM", 145, 169; }
@@ -2472,8 +2472,8 @@ statusbar Automap
 
         IsSelected ".44 Magnum Mega Class A1"
         {
-		    InInventory not UsingDualPistols, 1
-			{
+            InInventory not UsingDualPistols, 1
+            {
             DrawImage "MARPISEM", 5, 178;
             DrawImage "MARPISEM", 10, 178;
             DrawImage "MARPISEM", 15, 178;
@@ -2490,7 +2490,7 @@ statusbar Automap
             InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 178; }
             InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 178; }
             InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 178; }
-			}
+            }
             InInventory SynthFireActive, 1
             {
                 DrawImage "MARPISEM", 5, 173;
@@ -2509,7 +2509,7 @@ statusbar Automap
                 InInventory MagnumBullet, 6 { DrawImage "MARPISAM", 30, 173; }
                 InInventory MagnumBullet, 7 { DrawImage "MARPISAM", 35, 173; }
                 InInventory MagnumBullet, 8 { DrawImage "MARPISAM", 40, 173; }
-			
+            
                 DrawImage "MARPISEM", 5, 185;
                 DrawImage "MARPISEM", 10, 185;
                 DrawImage "MARPISEM", 15, 185;
@@ -2609,22 +2609,22 @@ statusbar Automap
         IsSelected "WSTE-M5 Combat Shotgun"
         {
             drawimage "STY2NUM2", 268, 179;
-		InInventory not UsingDualShotguns, 1 {
+        InInventory not UsingDualShotguns, 1 {
             DrawImage "MARSHTAM", 7, 179;
             DrawImage "MARSHTAM", 14, 179;
-			InInventory WastemUnloaded, 1 { 
+            InInventory WastemUnloaded, 1 { 
             DrawImage "MARSHTEM", 7, 179;
             DrawImage "MARSHTEM", 14, 179; }}
-		InInventory UsingDualShotguns, 1 {
+        InInventory UsingDualShotguns, 1 {
             DrawImage "MARSHTAM", 7, 186;
             DrawImage "MARSHTAM", 14, 186;
             DrawImage "MARSHTAM", 7, 175;
             DrawImage "MARSHTAM", 14, 175;
-			
-			InInventory RWastemUnloaded, 1 { 
+            
+            InInventory RWastemUnloaded, 1 { 
             DrawImage "MARSHTEM", 7, 186;
             DrawImage "MARSHTEM", 14, 186; }
-			InInventory LWastemUnloaded, 1 { 
+            InInventory LWastemUnloaded, 1 { 
             DrawImage "MARSHTEM", 7, 175;
             DrawImage "MARSHTEM", 14, 175; }}
             drawnumber 3, MARAHUDF, untranslated, ammo1, 42, 180;
@@ -2855,7 +2855,7 @@ IsSelected not "Spnkr-25 Auto Cannon"
                 }
             }
         }
-	}
+    }
 }
 
         DrawBar "MBARH100", "MBARMPTY", Health, Horizontal, 51, 170;
