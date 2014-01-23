@@ -38,8 +38,8 @@ actor "ONI-71 Wave Motion Cannon": Weapon// replaces RocketLauncher
         goto AltReload
       Ready2:
         MWMC A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfNoAmmo("Reload")
-        goto Ready
+        TNT1 A 0 A_JumpIfInventory("WMCAmmo",1,"Ready")
+        goto Reload
         
       Deselect:
         RCKT A 0 A_JumpIfInventory("WMCVerticalShit",7,"Deselect7")

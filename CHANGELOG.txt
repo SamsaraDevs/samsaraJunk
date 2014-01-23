@@ -29,6 +29,8 @@ BUGFIXES:
 - The Nailguns no longer think Ranger's Grenade/Rocket Launcher run off Shells.
 - Shell ammo no longer infinitely regenerates when LMSRules is on, at the cost of the weapon converter no longer working when LMSRules is on.
 - When Ranger has only one of Ammo 1 left, he no longer has an infinite switch loop between the Rocket Launcher and the Super Nailgun.
+- The Fusion Pistol reloads on select when alt-fire was last used.
+- The Wave Motion Cannon no longer has an infinite reload loop.
 
 POLISH:
 - samsara_ban[class], samsara_[class]damage, and samsara_[class]defense has been reworked under-the-hood to be pure ACS.
@@ -46,6 +48,7 @@ POLISH:
 - Previously, Duke's sound clips all suffered from wildly varying quality, being from different games such as Manhattan Project, Time to Kill, Forever, Zero Hour, and 3D--BouncyTEM has converted every single soundclip to be the same frequency as Duke Nukem 3D's! While there's still a disconnect, it's no longer as wild as before.
 - Marathon had more than one metal ding sound! Whoops.
 - Corvus' and Parias' projectiles now splatter blood.
+- All code has been properly formatted and aligned, for cleaner editing and viewing.
 
 
 FROM 0.29b TO 0.3
