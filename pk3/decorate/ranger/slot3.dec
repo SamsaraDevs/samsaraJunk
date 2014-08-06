@@ -417,7 +417,7 @@ actor QuakeGrenadeCoop: QuakeGrenade
 {
     +THRUSPECIES
     Species "Player"
-	Damage (25)
+	Damage (30)
 }
 
 actor QuakeGrenadeQuad: QuakeGrenade
@@ -442,7 +442,7 @@ actor QuakeGrenadeCoopQuad: QuakeGrenadeQuad
     
     Radius 4
     Height 4
-	Damage (100)
+	Damage (120)
 }
 
 actor SpectralGrenade: QuakeGrenadeCoopQuad { +FORCERADIUSDMG DamageType "SpectralNoQuad" }
