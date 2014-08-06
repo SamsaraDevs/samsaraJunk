@@ -25,7 +25,7 @@ function int _giveclassweapon(int class, int slot, int ammoMode, int dropped, in
     if (!StrLen(weapon)) { return 0; }
 
     if (!CheckInventory(weapon)) { giveWep = 1; }
-    if (ClassWeapons[class][slot][S_CHECKITEM] == "ForceCheck"
+    if (!strcmp(ClassWeapons[class][slot][S_CHECKITEM], "ForceCheck")
      || !CheckInventory(ClassWeapons[class][slot][S_CHECKITEM])) { giveWep = 1; }
 
     if (StrLen(ammo1)) { hasAmmo |= 1; }
@@ -232,7 +232,7 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
         for (i = 0; i < UNIQUECOUNT; i++)
         {
             j = ClassUniques[cnum][i];
-            if (j == "") { continue; }
+            if (!strcmp(j, "")) { continue; }
 
             TempUniques[tmpcount++] = i;
         }
@@ -269,7 +269,7 @@ function int _giveunique(int cnum, int unum, int ignoreinv, int nopd)
     //  - You can have multiple duplicates of the unique, and you're not full
 
     if (unique != "" && ((!CheckInventory(unique) || ignoreinv) || 
-                         (uniqueMax <= 1 && (unammo == "" || unammoMax == 0)) ||
+                         (uniqueMax <= 1 && (!strcmp(unammo, "") || unammoMax == 0)) ||
                          (unammoMax != 0 && (CheckInventory(unammo) != unammoMax || ignoreinv)) ||
                          (uniqueMax > 1 && (CheckInventory(unique) != uniqueMax || ignoreinv))
                         )

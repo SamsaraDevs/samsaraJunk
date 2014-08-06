@@ -65,7 +65,7 @@ script SAMSARA_TIPBOX_CLIENT (int tipon, int mode) clientside
 
             j = "";
             if (isDM) { j = DMTipboxes[modc][modn]; }
-            if (j == "") { j = Tipboxes[modc][modn]; }
+            if (!strcmp(j, "")) { j = Tipboxes[modc][modn]; }
 
             SetFont(j);
             HudMessage(s:"A"; HUDMSG_FADEOUT, -6281 + i, CR_UNTRANSLATED, modx, 384.0, 1.0, 0.5);
