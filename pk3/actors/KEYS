@@ -25,7 +25,7 @@ actor RedCard2 : CustomInventory replaces RedCard
     //inventory.icon "STKEYS2"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -46,7 +46,7 @@ actor YellowCard2 : CustomInventory replaces YellowCard
     //inventory.icon "STKEYS1"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -67,7 +67,7 @@ actor BlueCard2 : CustomInventory replaces BlueCard
     //inventory.icon "STKEYS0"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -84,57 +84,57 @@ actor BlueCard2 : CustomInventory replaces BlueCard
 
 actor STRedSkull: RedSkull//ST replaces RedSkullST
 {
-	Scale 0.35
-	Inventory.PickupMessage "You got the Red Skull!"
-	States
+    Scale 0.35
+    Inventory.PickupMessage "You got the Red Skull!"
+    States
         {
         Spawn:
                 SICN A 10 BRIGHT
-				SICN A 10
+                SICN A 10
                 loop
         }
 }
 
 actor RedSkullSpawner : CustomInventory// replaces RedSkull
 {
-	Scale 2.0
-	States
-	{
-	Spawn:
-		PUFF A 5
+    Scale 2.0
+    States
+    {
+    Spawn:
+        PUFF A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6) != 1, "SpawnCoopKey")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6), "SpawnSTKey")
-		loop
-	
-	SpawnSTKey:
+        loop
+    
+    SpawnSTKey:
         PUFF A 5 A_SpawnItemEx("STRedSkull")
         stop
-	
-	SpawnCoopKey:
+    
+    SpawnCoopKey:
         PUFF A 5 A_SpawnItemEx("RedSkull2")
         stop
-	}
+    }
 }
 
 actor BlueSkullSpawner : CustomInventory// replaces BlueSkull
 {
-	Scale 2.0
-	States
-	{
-	Spawn:
-		PUFF A 5
+    Scale 2.0
+    States
+    {
+    Spawn:
+        PUFF A 5
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6) != 1, "SpawnCoopKey")
         TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(215, 6), "SpawnSTKey")
-		loop
-	
-	SpawnSTKey:
+        loop
+    
+    SpawnSTKey:
         PUFF A 5 A_SpawnItemEx("STBlueSkull")
         stop
-	
-	SpawnCoopKey:
+    
+    SpawnCoopKey:
         PUFF A 5 A_SpawnItemEx("BlueSkull2")
         stop
-	}
+    }
 }
 
 actor RedSkull2: CustomInventory replaces RedSkull
@@ -144,7 +144,7 @@ actor RedSkull2: CustomInventory replaces RedSkull
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
     -DROPPED
-	+DONTGIB
+    +DONTGIB
 
     States
     {
@@ -170,7 +170,7 @@ actor YellowSkull2: CustomInventory replaces YellowSkull
     //inventory.icon "STKEYS4"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -187,13 +187,13 @@ actor YellowSkull2: CustomInventory replaces YellowSkull
 
 actor STBlueSkull: BlueSkull//ST replaces BlueSkullST
 {
-	Scale 0.35
-	Inventory.PickupMessage "You got the Blue Skull!"
-	States
+    Scale 0.35
+    Inventory.PickupMessage "You got the Blue Skull!"
+    States
         {
         Spawn:
                 SICN B 10 BRIGHT
-				SICN B 10
+                SICN B 10
                 loop
         }
 }
@@ -204,8 +204,8 @@ actor BlueSkull2: CustomInventory replaces BlueSkull
     //inventory.icon "STKEYS3"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	-DROPPED
-	+DONTGIB
+    -DROPPED
+    +DONTGIB
     States
     {
       Spawn:
@@ -231,7 +231,7 @@ actor KeyBlue2 : CustomInventory replaces KeyBlue
     //Inventory.Icon "BKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -251,7 +251,7 @@ actor KeyGreen2 : CustomInventory replaces KeyGreen
     //Inventory.Icon "GKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -271,7 +271,7 @@ actor KeyYellow2 : CustomInventory replaces KeyYellow
     //Inventory.Icon "YKEYICON"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -292,7 +292,7 @@ actor ChexRedCard2 : CustomInventory replaces ChexRedCard
     //inventory.icon "STKEYS2"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -313,7 +313,7 @@ actor ChexYellowCard2 : CustomInventory replaces ChexYellowCard
     //inventory.icon "STKEYS1"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -334,7 +334,7 @@ actor ChexBlueCard2 : CustomInventory replaces ChexBlueCard
     //inventory.icon "STKEYS0"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -355,7 +355,7 @@ actor RedFlemKey2 : CustomInventory replaces RedFlemKey
     //inventory.icon "STKEYS5"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -376,7 +376,7 @@ actor YellowFlemKey2 : CustomInventory replaces YellowFlemKey
     //inventory.icon "STKEYS4"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -397,7 +397,7 @@ actor BlueFlemKey2 : CustomInventory replaces BlueFlemKey
     //inventory.icon "STKEYS3"
     inventory.pickupsound "misc/k_pkup"
     +NOTDMATCH
-	+DONTGIB
+    +DONTGIB
     States
     {
       Spawn:
@@ -417,7 +417,7 @@ actor HexenSharedKey: CustomInventory
 {
     Radius 8
     Height 20
-	+DONTGIB
+    +DONTGIB
 
     Inventory.PickupSound "misc/k_pkup"
 }

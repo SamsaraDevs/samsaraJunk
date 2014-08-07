@@ -1,7 +1,5 @@
 actor UsingSMG: Boolean {}
 
-// MarathonCasingSound located in slot4.dec
-
 actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 {
     //Weapon.BobRangeX 0
@@ -11,15 +9,12 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
     Weapon.SlotNumber 1
     Decal BulletChip
     Inventory.PickupMessage "You picked up a KKV-7 SMG Flechette!"
-    Weapon.AmmoType		"SmgBullet"
-    Weapon.AmmoGive		0
-    Weapon.AmmoUse		1
-    Scale 0.35
+    Weapon.AmmoType "SmgBullet"
+    Weapon.AmmoGive 0
+    Weapon.AmmoUse 1
     +AMMO_OPTIONAL
     +NOALERT
     +INVENTORY.UNDROPPABLE
-    Radius				12
-    Height				12
     States
     {
       Spawn:
@@ -28,12 +23,10 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 
       Ready:
         HSMG A 1 A_WeaponReady
-        TNT1 A 0 A_JumpIfInventory("MarathonCasingSound", 0, "CasingSound")
-		TNT1 A 0 A_JumpIfNoAmmo("Reload")
+        TNT1 A 0 A_JumpIfNoAmmo("Reload")
         LOOP
 
       Deselect:
-        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
         TNT1 A 0 A_Lower
         HSMG A 1 A_Lower
         LOOP
@@ -54,10 +47,10 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         TNT1 A 0 A_TakeInventory("UsingDualShotguns",1)
         
         TNT1 A 0 A_GiveInventory("UsingSMG",1)
-		TNT1 A 0 A_JumpIfNoAmmo("SelectReload")
+        TNT1 A 0 A_JumpIfNoAmmo("SelectReload")
         goto Select2
-		
-	  SelectReload:
+        
+      SelectReload:
         TNT1 A 0 A_JumpIfInventory("SmgBullet",0,"Select2")
         TNT1 A 0 A_JumpIfInventory("Clip",1,1)
         goto Select2
@@ -72,7 +65,6 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
 
       Fire:
         TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-        TNT1 A 0 A_GiveInventory("MarathonCasingSound", 1)
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
         TNT1 A 0 A_AlertMonsters//,0,0,0,0)
@@ -123,20 +115,13 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         TNT1 A 0 A_Refire
         Goto Ready
 
-     CasingSound:
-        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
-        TNT1 A 0 A_PlaySound("marathon/casings")
-        goto Ready
-
       DryFire:
-        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
         TNT1 A 0 A_JumpIfInventory("Clip",1,"Reload")
         HSMG A 3 A_PlaySound("marathon/rifle/dryfire")
         Goto Ready
         TNT1 A 0
 
       Reload:
-        TNT1 A 0 A_TakeInventory("MarathonCasingSound", 8)
         TNT1 A 0 A_JumpIfInventory("Clip",1,1)
         Goto Ready
         HSMG C 5
@@ -144,8 +129,8 @@ actor "KKV-7 SMG Flechette" : Weapon// replaces SuperShotgun
         HSMG D 11
         HSMG E 11
         goto Reload2
-		
-	  Reload2:
+        
+      Reload2:
         TNT1 A 0 A_JumpIfInventory("SmgBullet",0,"Ready")
         TNT1 A 0 A_JumpIfInventory("Clip",1,1)
         goto Ready

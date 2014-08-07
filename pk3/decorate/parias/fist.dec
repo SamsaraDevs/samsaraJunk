@@ -73,8 +73,8 @@ actor "Spiked Gauntlet" : FWeapFist
         Loop
 
       Fire:
-		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
         FPCH B 5 Offset(5, 40)
         FPCH C 4 Offset(5, 40)
         TNT1 A 0 A_FPunchAttack
@@ -82,8 +82,8 @@ actor "Spiked Gauntlet" : FWeapFist
         FPCH C 4 Offset(5, 40)
         FPCH B 5 Offset(5, 40) A_ReFire
         Goto Ready
-		
-	  CoopFire:
+        
+      CoopFire:
         FPCH B 5 Offset(5, 40)
         FPCH C 4 Offset(5, 40)
         TNT1 A 0 A_FPunchAttack
@@ -93,8 +93,8 @@ actor "Spiked Gauntlet" : FWeapFist
         Goto Ready
 
       Fire2:
-	    TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire2")
-	    TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire2")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire2")
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire2")
         TNT1 A 0 A_CustomPunch(random(40,50),1,0,"BlankPuff4",96)
         FPCH DE 4 Offset(5, 40)
         FPCH E 1 Offset(15, 50)
@@ -105,8 +105,8 @@ actor "Spiked Gauntlet" : FWeapFist
         FPCH E 1 Offset(65, 90)
         FPCH E 10 Offset(0, 150)
         Goto Ready
-		
-	  CoopFire2:
+        
+      CoopFire2:
         TNT1 A 0 A_CustomPunch(random(80,110),1,0,"BlankPuff4",96)
         FPCH DE 4 Offset(5, 40)
         FPCH E 1 Offset(15, 50)

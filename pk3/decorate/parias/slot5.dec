@@ -56,7 +56,7 @@ actor "Hammer of Retribution" : FWeapHammer
         FHMR C 3 Offset (5, 0) A_CustomPunch(random(60,113),1,0,"HammerPuff",96)// A_FHammerAttack - Deals 60-123 damage.
         FHMR D 3 Offset (5, 0)
         FHMR E 2 Offset (5, 0)
-	  HammerMelee2:
+      HammerMelee2:
         FHMR E 10 Offset (5, 150) //A_FHammerThrow
         FHMR A 1 Offset (0, 60)
         FHMR A 1 Offset (0, 55)
@@ -68,7 +68,7 @@ actor "Hammer of Retribution" : FWeapHammer
         Goto Ready
 
       FireHammer:
-	    TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"FireHammerRJ")
+        TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"FireHammerRJ")
         FHMR E 10 Offset (5, 150) A_FireCustomMissile("HammerMissileDM") //A_FHammerThrow
         FHMR A 1 Offset (0, 60)
         FHMR A 1 Offset (0, 55)
@@ -78,8 +78,8 @@ actor "Hammer of Retribution" : FWeapHammer
         FHMR A 1 Offset (0, 35)
         FHMR A 1
         Goto Ready
-		
-	  FireHammerRJ:
+        
+      FireHammerRJ:
         FHMR E 10 Offset (5, 150) A_FireCustomMissile("HammerMissileDMRJ")
         FHMR A 1 Offset (0, 60)
         FHMR A 1 Offset (0, 55)
@@ -91,7 +91,7 @@ actor "Hammer of Retribution" : FWeapHammer
         Goto Ready
 
       CoopFire:
-	    TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"CoopFireRJ")
+        TNT1 A 0 A_JumpIfInventory("RJingModeOn",1,"CoopFireRJ")
         FHMR B 6 Offset (5, 0)
         FHMR C 3 Offset (5, 0) A_FHammerAttack
         TNT1 A 0 A_CustomPunch(3,0,0,"BlankPuff4",84)
@@ -106,17 +106,17 @@ actor "Hammer of Retribution" : FWeapHammer
         FHMR A 1 Offset (0, 35)
         FHMR A 1
         Goto Ready
-		
-	  CoopFireRJ:
+        
+      CoopFireRJ:
         FHMR B 6 Offset (5, 0)
         TNT1 A 0 A_JumpIfCloser(96,"HammerMelee")
         TNT1 A 0 A_PlayWeaponSound("FighterHammerMiss")
         FHMR C 3 Offset (5, 0)
         FHMR D 3 Offset (5, 0)
         FHMR E 2 Offset (5, 0)
-	    TNT1 A 0 A_JumpIfInventory("Cell",1,1)
-		goto HammerMelee2
-		TNT1 A 0
+        TNT1 A 0 A_JumpIfInventory("Cell",1,1)
+        goto HammerMelee2
+        TNT1 A 0
         FHMR E 10 Offset (5, 150) A_FireCustomMissile("HammerMissile2RJ")
         FHMR A 1 Offset (0, 60)
         FHMR A 1 Offset (0, 55)
@@ -139,13 +139,13 @@ actor HammerMissile2 : HammerMissile replaces HammerMissile
     +SKYEXPLODE
     Species "Player"
     +THRUSPECIES
-	DamageType "FireExplosive"
+    DamageType "FireExplosive"
 }
 
 actor HammerMissile2RJ : HammerMissile2
 {
     States
-	{
+    {
       Death:
         FHFX I 3 Bright A_SetTranslucent(1, 1)
         FHFX J 3 Bright
@@ -154,7 +154,7 @@ actor HammerMissile2RJ : HammerMissile2
         FHFX N 3
         FHFX OPQR 3 Bright
         Stop
-	}
+    }
 }
 
 actor HammerMissileDM : HammerMissile
@@ -164,7 +164,7 @@ actor HammerMissileDM : HammerMissile
     Damage 10
     +THRUGHOST
     +SKYEXPLODE
-	DamageType "FireExplosive"
+    DamageType "FireExplosive"
     States
     {
       Death:
@@ -181,7 +181,7 @@ actor HammerMissileDM : HammerMissile
 actor HammerMissileDMRJ : HammerMissileDM
 {
     States
-	{
+    {
       Death:
         FHFX I 3 Bright A_SetTranslucent(1, 1)
         FHFX J 3 Bright
@@ -190,6 +190,6 @@ actor HammerMissileDMRJ : HammerMissileDM
         FHFX N 3
         FHFX OPQR 3 Bright
         Stop
-	}
+    }
 }
 

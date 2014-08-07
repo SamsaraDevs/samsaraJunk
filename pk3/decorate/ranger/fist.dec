@@ -81,18 +81,18 @@ actor QuakeAxePuff: QuakeBulletPuff
 
     DamageType "QuakePistol"
     AttackSound "quakeweps/axewall"
-	SeeSound "quakeweps/axehit"
-	MeleeSound "quakeweps/axehit"
-	States
+    SeeSound "quakeweps/axehit"
+    MeleeSound "quakeweps/axehit"
+    States
     {
       Spawn:
-	  Crash:
+      Crash:
         TNT1 A 0
-		TNT1 A 0 A_PlaySound("quakeweps/axewall")
+        TNT1 A 0 A_PlaySound("quakeweps/axewall")
         goto Super::Spawn
 
-	  Melee:
-	    TNT1 A 1 A_PlaySound("quakeweps/axehit")
+      Melee:
+        TNT1 A 1 A_PlaySound("quakeweps/axehit")
         stop
     }
 }

@@ -31,15 +31,9 @@ actor "Alien Weapon" : Weapon
     Weapon.AmmoType "UnknownResonator1"
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
-
-    Scale 0.35
-    Radius 12
-    Height 12
-
     +NOALERT
     +AMMO_OPTIONAL
-	+UNDROPPABLE
-
+    +UNDROPPABLE
     States
     {
       Spawn:
@@ -173,24 +167,15 @@ actor "Alien Weapon" : Weapon
 
 actor " Alien Weapon " : Weapon
 {
-    Radius 12
-    Height 12
-
     Weapon.AmmoType "UnknownResonator2"
     Weapon.AmmoGive 0
     Weapon.AmmoUse 0
-
     +UNDROPPABLE
     +AMMO_OPTIONAL
-
     Weapon.SelectionOrder 500
     Weapon.SlotNumber 8
     Weapon.PreferredSkin "SOM1AWSkin"
-
-    //Weapon.BobRangeX 0
-    //Weapon.BobStyle Smooth
     Inventory.PickupMessage "system error 0xfded"
-    Scale 0.35
 
     States
     {

@@ -128,32 +128,32 @@ Actor PowerQuackQuarterDamage : PowerDamage
   DamageFactor "MightyBoot", 1.25
   
   DamageFactor "DukePistol", 1.25
-	DamageFactor "MarathonPistol", 1.25
-	DamageFactor "Explosive", 1.25
-	DamageFactor "MarathonFusion", 1.25
-	DamageFactor "DoomPlasma", 1.25
-	DamageFactor "CorvusCrossbow", 1.25
-	DamageFactor "CorvusHellstaff", 1.25
-	DamageFactor "CorvusHellstaffTomed", 1.25
-	DamageFactor "MarathonPlasma", 1.25
-	DamageFactor "BJSpear", 1.25
-	DamageFactor "WMCBeam", 1.25
-	DamageFactor "WMCNade", 1.25
-	DamageFactor "QuakePistol", 1.25
-	DamageFactor "NotQuadded", 1.25
+    DamageFactor "MarathonPistol", 1.25
+    DamageFactor "Explosive", 1.25
+    DamageFactor "MarathonFusion", 1.25
+    DamageFactor "DoomPlasma", 1.25
+    DamageFactor "CorvusCrossbow", 1.25
+    DamageFactor "CorvusHellstaff", 1.25
+    DamageFactor "CorvusHellstaffTomed", 1.25
+    DamageFactor "MarathonPlasma", 1.25
+    DamageFactor "BJSpear", 1.25
+    DamageFactor "WMCBeam", 1.25
+    DamageFactor "WMCNade", 1.25
+    DamageFactor "QuakePistol", 1.25
+    DamageFactor "NotQuadded", 1.25
 }
 
 actor HeXenBeaconItem: CustomInventory replaces ArtiDarkServant
 {
     Radius 16
     Height 16
-	Scale 0.3
+    Scale 0.3
     Inventory.MaxAmount 5
     Inventory.PickupMessage "$SAMSARA_BEACON_HEXEN"
 
     Inventory.Icon "ARTICPRT"
     +INVBAR
-	+FLOATBOB
+    +FLOATBOB
 
     States
     {

@@ -28,10 +28,10 @@ actor " Chaingun " : Weapon// : Chaingun
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopFire")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaFire")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaFire")
         TNT1 A 0 A_GunFlash
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG A 2 BRIGHT A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff")
         DCHG B 2 BRIGHT
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG C 2 BRIGHT A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff")
         DCHG D 2 BRIGHT
         DCHG N 1 A_ReFire
@@ -41,10 +41,10 @@ actor " Chaingun " : Weapon// : Chaingun
         TNT1 A 0 A_JumpIfInventory("CoopModeOn", 1, "CoopHold")
         TNT1 A 0 A_JumpIfInventory("VanillaDoom", 1, "VanillaHold")//A_JumpIf(ACS_ExecuteWithResult(219, 0, 0, 0)==1, "VanillaHold")
         TNT1 A 0 A_GunFlash
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG A 2 BRIGHT A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff")
         DCHG B 2 BRIGHT
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG C 2 BRIGHT A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff")
         DCHG D 2 BRIGHT
         TNT1 A 0 A_ReFire
@@ -52,20 +52,20 @@ actor " Chaingun " : Weapon// : Chaingun
         Goto Ready
         
       VanillaFire:
-	    TNT1 A 0 A_GunFlash
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG E 4 BRIGHT A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff")
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
-		DCHG F 4 BRIGHT A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        DCHG F 4 BRIGHT A_FireBullets (5.6, 0, 1, 5, "DoomBulletPuff")
         DCHG N 1 A_ReFire
         Goto Ready
 
       VanillaHold:
-	    TNT1 A 0 A_GunFlash
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        TNT1 A 0 A_GunFlash
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG E 4 BRIGHT A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff")
-		TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
-		DCHG F 4 BRIGHT A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff")
+        TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
+        DCHG F 4 BRIGHT A_FireBullets (5.6, 0, -1, 5, "DoomBulletPuff")
         DCHG N 0 A_ReFire
         DCHG N 1 A_ClearRefire
         Goto Ready
@@ -96,8 +96,8 @@ actor " Chaingun " : Weapon// : Chaingun
         Goto Ready
         
       VanillaCoopFire:
-	    TNT1 A 0
-	    TNT1 A 0 A_GunFlash
+        TNT1 A 0
+        TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG E 4 BRIGHT A_FireCustomMissile("DoomBullet", 0, 1, 0, 1)
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
@@ -106,8 +106,8 @@ actor " Chaingun " : Weapon// : Chaingun
         Goto Ready
 
       VanillaCoopHold:
-	    TNT1 A 0
-	    TNT1 A 0 A_GunFlash
+        TNT1 A 0
+        TNT1 A 0 A_GunFlash
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
         DCHG E 4 BRIGHT A_FireCustomMissile("DoomBullet", random(-560, 560)/100.00, 1, 0, 1)
         TNT1 A 0 A_PlayWeaponSound("doomguy/pistol")
@@ -118,7 +118,7 @@ actor " Chaingun " : Weapon// : Chaingun
         
       Flash:
         TNT1 A 5 BRIGHT A_Light1
-		TNT1 A 4 A_Light0
+        TNT1 A 4 A_Light0
         Goto LightDone
 
       Spawn:

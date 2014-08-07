@@ -40,24 +40,24 @@ actor Wraithverge : CWeapWraithverge
         CHLY AB 1 bright offset(0, 40)
         CHLY CD 2 bright offset(0, 43)
         CHLY E 2 bright offset(0, 45)
-		TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
-		TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
-		TNT1 A 0 A_SetBlend("4F 4F 4F",0.75,1)
-		TNT1 A 0 A_PlayWeaponSound("HolySymbolFire")
-		TNT1 A 0 A_FireCustomMissile("HolySpiritDM")
-		TNT1 A 0 A_FireCustomMissile("HolySpiritDM2",0,0)
-		TNT1 A 0 A_FireCustomMissile("HolySpiritDM3",0,0)
-		TNT1 A 0 A_FireCustomMissile("HolySpiritDM4",0,0)
+        TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"CoopFire")
+        TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"CoopFire")
+        TNT1 A 0 A_SetBlend("4F 4F 4F",0.75,1)
+        TNT1 A 0 A_PlayWeaponSound("HolySymbolFire")
+        TNT1 A 0 A_FireCustomMissile("HolySpiritDM")
+        TNT1 A 0 A_FireCustomMissile("HolySpiritDM2",0,0)
+        TNT1 A 0 A_FireCustomMissile("HolySpiritDM3",0,0)
+        TNT1 A 0 A_FireCustomMissile("HolySpiritDM4",0,0)
         CHLY FFFFFF 1 bright offset(0, 48) A_SetBlend("4F 4F 4F",0.6,1)
         CHLY GG 2 bright offset(0, 40) A_SetBlend("4F 4F 4F",0.55,6) //A_CHolyPalette
         CHLY G 2 offset(0, 36) //A_CHolyPalette
         goto FireEnd
-		
-	  CoopFire:
-		TNT1 A 0 A_SetBlend("4F 4F 4F",0.75,1)
-		TNT1 A 0 A_PlayWeaponSound("HolySymbolFire")
+        
+      CoopFire:
+        TNT1 A 0 A_SetBlend("4F 4F 4F",0.75,1)
+        TNT1 A 0 A_PlayWeaponSound("HolySymbolFire")
         TNT1 A 0 A_CHolyAttack
-		TNT1 AAA 0 A_CHolyPalette
+        TNT1 AAA 0 A_CHolyPalette
         CHLY FFFFFF 1 bright offset(0, 48) A_SetBlend("4F 4F 4F",0.6,1)
         CHLY GG 2 bright offset(0, 40) A_SetBlend("4F 4F 4F",0.55,6)
         CHLY G 2 offset(0, 36)
@@ -103,27 +103,27 @@ actor HolySpirit2 : HolySpirit replaces HolySpirit
 {
     Speed 15 // Previously 12
     Alpha 0.5
-	PROJECTILE
+    PROJECTILE
     +BRIGHT
-	+FORCERADIUSDMG
-	+THRUSPECIES
-	Species "Player"
+    +FORCERADIUSDMG
+    +THRUSPECIES
+    Species "Player"
     DamageType "Wraithverge"
-	States
-	{
+    States
+    {
     Spawn:
       SPIR A 2 A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8), 64, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  SPIR A 2 A_CHolySeek
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      SPIR A 2 A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8), 64, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  SPIR B 2 A_CHolySeek
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      SPIR B 2 A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8), 64, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
       SPIR B 2 A_CHolyCheckScream
       TNT1 A 0 A_Explode(random(1,8), 64, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
       goto Spawn
     Death:
       SPIR D 4
@@ -141,8 +141,8 @@ actor HolySpiritDM : MageStaffFX2//HolySpirit
     //Alpha 0.5
     Radius 10
     Height 6
-	Damage 5
-	PROJECTILE
+    Damage 5
+    PROJECTILE
     +RIPPER
     +SEEKERMISSILE
     +FOILINVUL
@@ -151,101 +151,101 @@ actor HolySpiritDM : MageStaffFX2//HolySpirit
     +CANBLAST
     +EXTREMEDEATH
     +BRIGHT
-	//+SKULLFLY
-	+HEXENBOUNCE
-	+LOOKALLAROUND
-	BounceFactor 0.9
-	WallBounceFactor 0.9
+    //+SKULLFLY
+    +HEXENBOUNCE
+    +LOOKALLAROUND
+    BounceFactor 0.9
+    WallBounceFactor 0.9
     DeathSound "SpiritDie"
-	//+MISSILE
+    //+MISSILE
     DamageType "Wraithverge"
-	States
-	{
+    States
+    {
     Spawn:
       SPIR PPPP 3 bright A_SpawnItemEx("HolyMissilePuff")
-	  TNT1 A 0 A_Explode(128,128,0)
+      TNT1 A 0 A_Explode(128,128,0)
     Spawn2:
-	  TNT1 A 0 A_SetTranslucent(0.5,0)
+      TNT1 A 0 A_SetTranslucent(0.5,0)
       SPIR A 1 A_SetAngle(-67.5)
-	  TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
+      TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
     Spawn3:
-	  TNT1 A 0 A_Jump(20,"Scream")
-	Idle:
-	  TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
-	  TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
-	  TNT1 A 0 A_CStaffMissileSlither
+      TNT1 A 0 A_Jump(20,"Scream")
+    Idle:
+      TNT1 A 0 A_JumpIfInventory("WraithvergeGhostCount",26,"Death")
+      TNT1 A 0 A_GiveInventory("WraithvergeGhostCount",1)
+      TNT1 A 0 A_CStaffMissileSlither
       SPIR A 2 A_MStaffTrack//A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8)*random(1,2), 32, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  TNT1 A 0 A_CStaffMissileSlither
-	  SPIR A 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_CStaffMissileSlither
+      SPIR A 2 A_MStaffTrack//A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8), 32, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  TNT1 A 0 A_CStaffMissileSlither
-	  SPIR B 2 A_MStaffTrack//A_CHolySeek
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_CStaffMissileSlither
+      SPIR B 2 A_MStaffTrack//A_CHolySeek
       TNT1 A 0 A_Explode(random(1,8)*random(1,2), 32, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  TNT1 A 0 A_CStaffMissileSlither
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_CStaffMissileSlither
       SPIR B 2 A_MStaffTrack//A_CHolyCheckScream
       TNT1 A 0 A_Explode(random(1,8), 32, 0)
-	  TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
-	  TNT1 A 0 A_JumpIfTargetInLos("SetNoclip",180)
-	  TNT1 A 0 A_ChangeFlag("NOCLIP",0)
+      TNT1 A 0 A_SpawnItemEx("HolyMissilePuff2",0,0,-6,0,0,0,0,128) //ThrustThing(angle*256/360, 4, 0, 0)
+      TNT1 A 0 A_JumpIfTargetInLos("SetNoclip",180)
+      TNT1 A 0 A_ChangeFlag("NOCLIP",0)
       goto Spawn3
     Death:
       SPIR D 4 A_Stop
       SPIR E 4 A_Scream
       SPIR FGHI 4
       Stop
-	Scream:
-	  TNT1 A 0 A_PlaySoundEx("SpiritActive",Voice,0,0)
-	  goto Idle
-	SetNoclip:
-	  TNT1 A 0 A_ChangeFlag("NOCLIP",1)
-	  goto Idle
+    Scream:
+      TNT1 A 0 A_PlaySoundEx("SpiritActive",Voice,0,0)
+      goto Idle
+    SetNoclip:
+      TNT1 A 0 A_ChangeFlag("NOCLIP",1)
+      goto Idle
     }
 }
 
 actor HolySpiritDM2 : HolySpiritDM
 {
     States
-	{
+    {
     Spawn:
       TNT1 A 12 //Bright A_SpawnItemEx("HolyMissilePuff")
     Spawn2:
-	  TNT1 A 0 A_SetTranslucent(0.5,0)
+      TNT1 A 0 A_SetTranslucent(0.5,0)
       SPIR A 1 A_SetAngle(67.5)
-	  TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
-	  goto Spawn3
-	}
+      TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
+      goto Spawn3
+    }
 }
 
 actor HolySpiritDM3 : HolySpiritDM
 {
     States
-	{
+    {
     Spawn:
       TNT1 A 12 //Bright A_SpawnItemEx("HolyMissilePuff")
     Spawn2:
-	  TNT1 A 0 A_SetTranslucent(0.5,0)
+      TNT1 A 0 A_SetTranslucent(0.5,0)
       SPIR A 1 A_SetAngle(-135)
-	  TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
-	  goto Spawn3
-	}
+      TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
+      goto Spawn3
+    }
 }
 
 actor HolySpiritDM4 : HolySpiritDM
 {
     States
-	{
+    {
     Spawn:
       TNT1 A 12 //Bright A_SpawnItemEx("HolyMissilePuff")
     Spawn2:
-	  TNT1 A 0 A_SetTranslucent(0.5,0)
+      TNT1 A 0 A_SetTranslucent(0.5,0)
       SPIR A 1 A_SetAngle(135)
-	  TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
-	  goto Spawn3
-	}
+      TNT1 A 0 ThrustThing(angle*256/360, 6, 0, 0)
+      goto Spawn3
+    }
 }
 
 actor HolyMissilePuff2: HolyMissilePuff replaces HolyMissilePuff

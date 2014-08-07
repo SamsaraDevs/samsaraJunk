@@ -5,7 +5,7 @@ ACTOR Bloodscourge : Weapon
     Weapon.Kickback 100
     Weapon.SlotNumber 0
     +INVENTORY.UNDROPPABLE
-	+WEAPON.NOAUTOAIM
+    +WEAPON.NOAUTOAIM
     Inventory.PickupMessage "BLOODSCOURGE"
     States
     {
@@ -20,34 +20,34 @@ ACTOR Bloodscourge : Weapon
         Loop
     Fire:
         MSTF G 4 Offset(0, 40)
-		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",-3,0,0,8)
-		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",0,0,0,8)
-		TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",3,0,0,8)
-		TNT1 A 0 A_PlayWeaponSound("MageStaffFire")
-		TNT1 A 0 A_SetBlend("Gold",0.3,10)
+        TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",-3,0,0,8)
+        TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",0,0,0,8)
+        TNT1 A 0 A_FireCustomMissile("MageStaffFXInstagib",3,0,0,8)
+        TNT1 A 0 A_PlayWeaponSound("MageStaffFire")
+        TNT1 A 0 A_SetBlend("Gold",0.3,10)
         MSTF H 4 Bright Offset(0, 48)
         MSTF H 2 Bright Offset(0, 48)
         MSTF II 2 Offset(0, 48)
         MSTF I 3 Offset(0, 40)
         MSTF J 5 Offset(0, 36)
-	    MSTF A 15
+        MSTF A 15
         Goto Ready
-	}
+    }
 }
 
 actor MageStaffFXInstagib : FastProjectile
 {
-	Height 2
-	Radius 2
+    Height 2
+    Radius 2
     Damage (10000)
-	Speed 60
-	+EXTREMEDEATH
-	Decal Scorch
+    Speed 60
+    +EXTREMEDEATH
+    Decal Scorch
     DeathSound "MageStaffExplode"
-	DamageType "Fire"
+    DamageType "Fire"
     Obituary "$SAMSARA_HEXEN_OB_INSTAGIB"
-	States
-	{
+    States
+    {
     Spawn:
         MSP2 ABCD 2 Bright
         Loop
@@ -57,5 +57,5 @@ actor MageStaffFXInstagib : FastProjectile
         MSP2 GH 5 Bright
         MSP2 I 4 Bright
         Stop
-	}
+    }
 }

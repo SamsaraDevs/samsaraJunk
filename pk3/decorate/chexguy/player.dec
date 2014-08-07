@@ -47,7 +47,7 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "DoomPlasma", 0.8
     DamageFactor "CorvusCrossbow", 0.8
     DamageFactor "CorvusHellstaff", 0.8
-	DamageFactor "CorvusHellstaffTomed", 0.8
+    DamageFactor "CorvusHellstaffTomed", 0.8
     DamageFactor "MarathonPlasma", 0.8
     DamageFactor "BJSpear", 0.8
     DamageFactor "DoomCacodemon", 0.8
@@ -70,14 +70,14 @@ actor ChexWarrior : PlayerPawn
     DamageFactor "QuakePistol", 0.8
     DamageFactor "NotQuadded", 0.8
     DamageFactor "SpectralNoQuad", 0.8
-	
-	DamageFactor "MarathonStun", 1.0
+    
+    DamageFactor "MarathonStun", 1.0
     DamageFactor "QuakeFire", 0.8 
-	DamageFactor "FireExplosive", 0.8
+    DamageFactor "FireExplosive", 0.8
 
     DamageFactor "Kamikaze", 1.33333333333
     DamageFactor "ZorchKamikaze", 1.33333333333
-	DamageFactor "EnemyInfightDamage", 0.0
+    DamageFactor "EnemyInfightDamage", 0.0
     
     RadiusDamageFactor 0.75
     Player.DamageScreenColor "Yellow"
@@ -104,12 +104,12 @@ actor ChexWarrior : PlayerPawn
         CHEX G 4 
         CHEX G 4 A_Pain
         Goto Spawn
-		
-	  Pain.Flem:
-	  Pain.Slime:
-	    CHEX G 4 A_SetBlend("60 b0 58",0.9,10)
-		CHEX G 4 A_Pain
-		goto Spawn
+        
+      Pain.Flem:
+      Pain.Slime:
+        CHEX G 4 A_SetBlend("60 b0 58",0.9,10)
+        CHEX G 4 A_Pain
+        goto Spawn
 
       Pain.Chickenator:
         CHEX G 1
@@ -192,7 +192,7 @@ actor ChexWarrior : PlayerPawn
       Death.HexenIce:
 
       Death.Ice:
-	    TNT1 A 0 A_PlayWeaponSound("misc/freeze")
+        TNT1 A 0 A_PlayWeaponSound("misc/freeze")
         CHEX Z 70 A_NoBlocking//A_GenericFreezeDeath
         CHEX Z 0 A_SetTranslucent(0,0)
         TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("IceChunk2",random(-1,1),random(-1,1),random(8,48),random(-2,2),random(-2,2),random(1,6))
@@ -204,17 +204,17 @@ actor ChexWarrior : PlayerPawn
         //Wait
 
       Pain.MightyBoot:
-	    CHEX G 1 ACS_ExecuteAlways(312, 0, 25, 5, 24)
+        CHEX G 1 ACS_ExecuteAlways(312, 0, 25, 5, 24)
         CHEX G 1 A_PlaySoundEx("duke/kickhit","body",0,0)
         TNT1 A 0 A_Recoil(12)
         CHEX G 6 A_Pain
         Goto See
-		
-	  Pain.MarathonStun:
+        
+      Pain.MarathonStun:
         TNT1 A 0 A_Stop
-	    CHEX G 1 ACS_ExecuteAlways(312, 0, 25, 5, 100)
-		TNT1 A 0 A_GiveInventory("NothingSpeed")
-		TNT1 A 0 A_SetBlend("White",0.9,105)
+        CHEX G 1 ACS_ExecuteAlways(312, 0, 25, 5, 100)
+        TNT1 A 0 A_GiveInventory("NothingSpeed")
+        TNT1 A 0 A_SetBlend("White",0.9,105)
         CHEX G 1 A_PlaySoundEx("marathon/tech50/stun","body",0,0)
         CHEX G 6 A_Pain
         Goto See
@@ -228,7 +228,7 @@ actor ChexPuff : BulletPuff
     +PUFFONACTORS
     +BLOODLESSIMPACT
     +CLIENTSIDEONLY
-	+THRUGHOST
+    +THRUGHOST
     DamageType "Zorch"
     RenderStyle Add
     Alpha 0.4
@@ -256,7 +256,7 @@ actor ChexBullet : FastProjectile
     +BLOODLESSIMPACT
     +THRUSPECIES
     +NOTIMEFREEZE
-	+THRUGHOST
+    +THRUGHOST
     Alpha 1.0
     States
     {

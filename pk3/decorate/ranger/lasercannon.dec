@@ -146,15 +146,15 @@ actor LaserCannonBolt
     States
     {
       Spawn:
-	    TNT1 A 0
-	    TNT1 A 0 A_Jump(16,"Spawn2")
+        TNT1 A 0
+        TNT1 A 0 A_Jump(16,"Spawn2")
         LSCL A 1 bright A_Explode(2, 1, 1)
         loop
-		
-	  Spawn2:
-	    TNT1 A 0
-		TNT1 A 0 A_ChangeFlag("HexenBounce",0)
-	  Spawn3:
+        
+      Spawn2:
+        TNT1 A 0
+        TNT1 A 0 A_ChangeFlag("HexenBounce",0)
+      Spawn3:
         LSCL A 1 bright A_Explode(2, 1, 1)
         loop
         

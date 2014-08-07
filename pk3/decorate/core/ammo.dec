@@ -12,9 +12,9 @@ actor Ammo1Small : CustomInventory replaces Clip// replaces Clip
       Pickup:
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_GiveInventory("Clip", 10)
-		TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 0, "PickupQuake")
-		TNT1 A 0
+        TNT1 A 0
         stop
 
       PickupFail:
@@ -47,9 +47,9 @@ actor Ammo1Big : CustomInventory replaces ClipBox// replaces ClipBox
       Pickup:
         TNT1 A 0 A_JumpIfInventory("MarathonClass", 0, "PickupMarathon")
         TNT1 A 0 A_GiveInventory("Clip", 50)
-		TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
         TNT1 A 0 A_JumpIfInventory("QuakeClass", 0, "PickupQuake")
-		TNT1 A 0
+        TNT1 A 0
         stop
 
       PickupFail:
@@ -181,9 +181,9 @@ actor Ammo3Small : CustomInventory replaces RocketAmmo// replaces RocketAmmo
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 3)
-		TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
         TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 1)
-		TNT1 A 0
+        TNT1 A 0
         stop
 
       PickupFail:
@@ -223,9 +223,9 @@ actor Ammo3Big : CustomInventory replaces RocketBox// replaces RocketBox
 
       PickupQuake:
         TNT1 A 0 A_GiveInventory("RocketAmmo", 8)
-		TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
+        TNT1 A 0 A_JumpIfInventory("QuakeModeOn",1,2)
         TNT1 A 0 A_GiveInventory("MultiRocketAmmo", 3)
-		TNT1 A 0
+        TNT1 A 0
         stop
 
       PickupFail:

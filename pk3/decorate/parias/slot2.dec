@@ -144,6 +144,7 @@ actor FrostMissileDM : FrostMissile
     -ICEDAMAGE
     DamageType "HexenIce"
     +THRUGHOST
+    +BLOODSPLATTER
 }
 
 actor FrostMissileDM2 : FrostMissileDM
@@ -168,6 +169,7 @@ actor FrostMissile2 : FrostMissile replaces FrostMissile
     DamageType "HexenIce"
     +THRUGHOST
     +THRUSPECIES
+    +BLOODSPLATTER
     Species "Player"
 }
 

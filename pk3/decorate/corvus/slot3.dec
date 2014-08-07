@@ -73,7 +73,7 @@ actor "Ethereal Crossbow" : Weapon
         Goto Ready
 
       CoopFireTomed:
-	TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"TomedFireSpectral")
+    TNT1 A 0 A_JumpIfInventory("SpectralFiring",1,"TomedFireSpectral")
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",0,1)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",4.5,0)
         CRBW A 0 A_FireCustomMissile("CrossbowFX22",-4.5,0)
@@ -113,6 +113,7 @@ actor CrossbowFX1B : CrossbowFX1
     Damage 12 // Originally 10
     Speed 40
     Decal CrossbowScorch
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX3B : CrossbowFX3
@@ -121,6 +122,7 @@ actor CrossbowFX3B : CrossbowFX3
     Damage 3 // Originally 2
     Speed 35
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX2B : CrossbowFX2
@@ -129,6 +131,7 @@ actor CrossbowFX2B : CrossbowFX2
     Damage 8 // Originally 6
     Speed 42
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX5 : CrossbowFX4 replaces CrossbowFX4
@@ -146,6 +149,7 @@ actor CrossbowFX12 : CrossbowFX1
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX22 : CrossbowFX2
@@ -155,6 +159,7 @@ actor CrossbowFX22 : CrossbowFX2
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX32 : CrossbowFX3
@@ -164,6 +169,7 @@ actor CrossbowFX32 : CrossbowFX3
     +THRUSPECIES
     Species "Player"
     Decal CrossbowScorch2
+    +BLOODSPLATTER
 }
 
 actor CrossbowFX23 : CrossbowFX2 { DamageType "Spectral" }
