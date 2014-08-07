@@ -17,6 +17,7 @@ actor Mjolnir: InstantSwitchWeapon
     Obituary "$SAMSARA_RANGER_OB_SLOT1_1"
 
     Weapon.SisterWeapon "Spectral Mjolnir"
+    Weapon.YAdjust 24
 
     States
     {
