@@ -1,3 +1,5 @@
+actor QSG_FiredOnce: Boolean {}
+
 actor "Single Shotgun": InstantSwitchWeapon
 {
     //Weapon.BobRangeX 0
@@ -46,7 +48,7 @@ actor "Single Shotgun": InstantSwitchWeapon
         goto Fire2
         
       Fire2:
-	    TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"TakeAmmo")
+	    TNT1 A 0 A_JumpIfInventory("PistolModeOn",1,"AmmoCheck")
 	  Fire2B:
         QSGN B 2 bright
         QSGN C 2 bright
@@ -58,7 +60,13 @@ actor "Single Shotgun": InstantSwitchWeapon
         QSGN A 0 A_ReFire
         Goto Ready
 		
-	  TakeAmmo:
+	  AmmoCheck:
+        TNT1 A 0 A_JumpIfInventory("QSG_FiredOnce", 1, "TakeAmmo")
+        TNT1 A 0 A_GiveInventory("QSG_FiredOnce")
+		goto Fire2B
+
+      TakeAmmo:
+        TNT1 A 0 A_TakeInventory("QSG_FiredOnce")
 	    TNT1 A 0 A_TakeInventory("Shell",1)
 		goto Fire2B
         
