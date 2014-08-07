@@ -30,9 +30,7 @@ actor Mjolnir: InstantSwitchWeapon
         QMJL C 2 A_TakeInventory("MjolnirCrash")
         QMJL B 4
         QMJL C 2
-        QMJL D 1
-        QMJL D 0 A_FireBullets(0, 0, 1, 0, "MjolnirCheckPuff", 0, 112)
-        QMJL D 1
+        QMJL D 2 A_FireBullets(0, 0, 1, 0, "MjolnirCheckPuff", 0, 112)
         QMJL D 0 A_JumpIfInventory("MjolnirCrash", 1, "FireSlam")
         QMJL D 0 A_CustomPunch(75, 1, 0, "MjolnirPuff")
         QMJL E 12
@@ -72,7 +70,7 @@ actor Mjolnir: InstantSwitchWeapon
         GMJL A 0 A_AlertMonsters
         GMJL A 0 A_PlaySound("quakeweps/lightningdischarge", 6, 1, 0, ATTN_NONE)
         GMJL A 1 A_FireCustomMissile("LGDischarge")
-        goto Ready  // you're probably dead now
+        goto FireSlam2 // you're probably dead now
     }
 }
 
@@ -125,6 +123,8 @@ actor MjolnirCheckPuff: BulletPuff
     States
     {
       Spawn:
+      Crash:
+      XDeath:
         TNT1 A 1
         TNT1 A 35 A_GiveToTarget("MjolnirCrash")
         stop
@@ -147,6 +147,8 @@ actor MjolnirPuff: BulletPuff
     States
     {
       Spawn:
+      Crash:
+      XDeath:
         TNT1 A 1
         stop
     }
