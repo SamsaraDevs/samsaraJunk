@@ -622,9 +622,10 @@ script 677 ENTER
             HudMessageBold(n:0,s:" \cjhit the kill limit!";
             HUDMSG_PLAIN, 0, CR_WHITE, 0.5, 0.2, 5.0);
             if(CheckInventory("ChickenKillCount") < (GetCvar("samsara_superturboturkeylimit")))
-            { TakeInventory("ChickenKillCount",999); }
-            Delay(35*5);
-            ConsoleCommand("nextmap");
+            {
+                TakeInventory("ChickenKillCount",999); }
+                Delay(35*5);
+                Exit_Normal(0);
             }       
         }
         

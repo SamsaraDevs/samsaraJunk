@@ -7,7 +7,7 @@ actor "  Rocket Launcher  ": InstantSwitchWeapon
     Weapon.SelectionOrder 2
     
     Weapon.AmmoUse 1
-    Weapon.AmmoGive 10
+    Weapon.AmmoGive 5
     Weapon.AmmoType "RocketAmmo"
     
     Weapon.AmmoUse2 1
@@ -351,14 +351,14 @@ actor QuakeRocketCoop: QuakeRocket
 {
     +THRUSPECIES
     Species "Player"
-    Damage (25)
+	Damage (30) // [ijon] used to be 25, but demons were surviving with *one health*
 }
 
 actor QuakeRocketCoopQuad: QuakeRocketQuad
 {
     +THRUSPECIES
     Species "Player"
-    Damage (100)
+	Damage (120)
 }
 
 actor QuakeClusterRocket: QuakeRocket

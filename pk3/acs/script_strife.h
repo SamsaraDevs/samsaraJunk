@@ -11,7 +11,7 @@ script SAMSARA_STRIFEACCURACY (int which)
     int pclass = samsaraClassNum();
     int unique = "";
 
-    while (unique == "")
+    while (!strcmp(unique, ""))
     {
         unique = AccuracyUniques[pclass][which];
         which--;
