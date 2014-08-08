@@ -962,7 +962,7 @@ int ClassPickupMessages[CLASSCOUNT][SLOTCOUNT][MSGCOUNT] =
             "For a last ditch effort, you can stab people with the nail.",
             "You can't spell Genocide with a Q, silly.",
             "You're like King Midas. But with gibs instead of gold.",
-            "omg op gay hax nerf masterban",
+            "Atop the tallest of earth's peaks dwell the gods of earth, and suffer not man to tell that he hath looked upon them.",
             "Guaranteed to make balancing efforts fall apart, or your money back.",
         },
         {
@@ -1070,14 +1070,14 @@ int ClassUniqueMessages[CLASSCOUNT][MSGCOUNT] =
     {
         "You got the laser cannon!",
         "This sounds like a weapon for soldiers who can't shoot straight.", // stormtroopers!
+        "If this were in vanilla Quake, it would be slot 6. \ckbut alas",
         "This makes, what, five or six rapid fire weapons for Ranger?",
+        "Are any of the weapon designs in Quake even practical?",
+        "Do not aim at face. Not that it'll help.",
+        "Does it come in blueberry?",
+        "What is this, Star Wars?",
         "Bouncy red death!",
         "Pewpewlasers!",
-        "What is this, Star Wars?",
-        "",
-        "",
-        "",
-        "",
     },
 };
 
