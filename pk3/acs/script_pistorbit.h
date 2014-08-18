@@ -37,7 +37,8 @@ script SAMSARA_SPACEFLIGHT (void)
     }
 
     GiveInventory(SpaceflightBlasts[class], 1);
-    SetActorProperty(0, APROP_Health, 1);
+
+    if (GetActorProperty(0, APROP_Health) > 0) { SetActorProperty(0, APROP_Health, 1); }
 
     i = random(0, 1.0);
     j = random(0, 1.0);
