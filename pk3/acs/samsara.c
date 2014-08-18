@@ -45,6 +45,7 @@ global int 0:SamsaraGlobal[];
 #include "script_strife.h"
 #include "script_scheduled.h"
 #include "script_pdwtak.h"
+#include "script_pistorbit.h"
 
 script SAMSARA_DECORATE (int choice, int arg1, int arg2)
 {

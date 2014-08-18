@@ -1,0 +1,130 @@
+actor SamsaraSpaceReady: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_ChangeFlag("NOINTERACTION", 1)
+        stop
+    }
+}
+
+actor SamsaraSpaceRelease: Trigger
+{
+    States
+    {
+      Pickup:
+      TNT1 A 0 A_ChangeFlag("NOINTERACTION", 0)
+      stop
+    }
+}
+
+actor SamsaraSpaceTrail: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("SamsaraSpaceExhaust",0,0,0, random(0,4),0,random(-4,0), random(0,360))
+        stop
+    }
+}
+
+actor SpaceMalfunction_Quietguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("DoomguyDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Waffleguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("ChexguyDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Elfguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("CorvusDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Wolfguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("BlazkoDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Priestguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("PariasDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Cheekyguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("DukeDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Sadguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("ManathorDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+actor SpaceMalfunction_Angryguy: Trigger
+{
+    States
+    {
+      Pickup:
+        TNT1 A 0 A_SpawnItemEx("RangerDiesWhenHeIsKilled")
+        stop
+    }
+}
+
+
+actor SamsaraSpaceExhaust
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
+    
+    RenderStyle Translucent
+    Alpha 0.75
+
+    Height 0
+    Radius 0
+    
+    States
+    {
+      Spawn:
+        MSMK ABECFDG 1 bright
+        stop
+    }
+}
