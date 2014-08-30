@@ -91,7 +91,7 @@ actor HellstaffShot
     Radius 12
     Height 8
     Speed 22
-    Damage (random(3,35))
+    Damage (random(300,3500))
     Projectile
     +WINDTHRUST
     -NOBLOCKMAP
@@ -119,7 +119,8 @@ actor HellstaffShot
     }
 }
 
-actor HellstaffShot2 : HellstaffShot { +THRUSPECIES Species "Player" }
+actor HellstaffShot2 : HellstaffShot { +THRUSPECIES Species "Player"
+    Damage (random(3,35)) }
 
 actor HornRodFX2A : HornRodFX2
 {

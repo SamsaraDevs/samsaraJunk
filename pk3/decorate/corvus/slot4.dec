@@ -40,7 +40,7 @@ actor "Dragon Claw" : Weapon
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
         BLSR BC 3
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
-        BLSR D 0 A_FireBullets(0,0,1,random(3,9),"BlasterPuff2") // Damage is 4d8. Previously 4-32, which is too flat a probability. Gonna have to think about this.
+        BLSR D 0 A_FireBullets(0,0,1,random(300,900),"BlasterPuff2") // Damage is 4d8. Previously 4-32, which is too flat a probability. Gonna have to think about this.
         BLSR D 2
         BLSR CB 2
         BLSR A 0 A_ReFire
@@ -53,7 +53,7 @@ actor "Dragon Claw" : Weapon
         TNT1 A 0 A_JumpIfNoAmmo("Finish")
         TNT1 A 0 A_JumpIfInventory("PowerHereticTome",1,"FireTomed")
         BLSR D 0 A_PlayWeaponSound("heretic/dragonclaw")
-        BLSR D 0 A_FireBullets(5.6,0,-1,random(3,9),"BlasterPuff2")
+        BLSR D 0 A_FireBullets(5.6,0,-1,random(300,900),"BlasterPuff2")
         BLSR D 2
         BLSR CB 2
         BLSR A 0 A_ReFire

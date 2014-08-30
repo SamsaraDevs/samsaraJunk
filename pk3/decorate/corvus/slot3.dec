@@ -110,7 +110,7 @@ actor "Ethereal Crossbow" : Weapon
 actor CrossbowFX1B : CrossbowFX1
 {
     DamageType "CorvusCrossbow"
-    Damage 12 // Originally 10
+    Damage 1200 // Originally 10
     Speed 40
     Decal CrossbowScorch
     +BLOODSPLATTER
@@ -119,7 +119,7 @@ actor CrossbowFX1B : CrossbowFX1
 actor CrossbowFX3B : CrossbowFX3
 {
     DamageType "CorvusCrossbow"
-    Damage 3 // Originally 2
+    Damage 300 // Originally 2
     Speed 35
     Decal CrossbowScorch2
     +BLOODSPLATTER
@@ -128,7 +128,7 @@ actor CrossbowFX3B : CrossbowFX3
 actor CrossbowFX2B : CrossbowFX2
 {
     DamageType "CorvusCrossbow"
-    Damage 8 // Originally 6
+    Damage 800 // Originally 6
     Speed 42
     Decal CrossbowScorch2
     +BLOODSPLATTER

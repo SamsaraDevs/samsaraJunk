@@ -135,6 +135,7 @@ actor PhoenixShot : PhoenixFX1
     DamageType "FireExplosive"
     Decal Scorch
     Obituary "$SAMSARA_CORVUS_OB_SLOT5"
+    Damage 100
 }
 
 actor PhoenixShot2 : PhoenixShot { +THRUSPECIES Species "Player" }
