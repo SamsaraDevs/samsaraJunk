@@ -297,7 +297,7 @@ actor MaceFX12 : MaceFX1 replaces MaceFX1
     Gravity 0.125
     VSpeed 0.5
     DamageType "Mace"
-    Damage 2 // Originally 2
+    Damage 200 // Originally 2
     Decal BaronScorch
     //+STRIFEDAMAGE
     Obituary "$SAMSARA_CORVUS_OB_SLOT2_1"
@@ -310,6 +310,7 @@ actor MaceFX1Coop : MaceFX12
     Gravity 0.125
     VSpeed 0.5
     Species "Player"
+    Damage 2 // Originally 2
 }
 
 actor MaceFX22 : MaceFX2 replaces MaceFX2
@@ -318,7 +319,7 @@ actor MaceFX22 : MaceFX2 replaces MaceFX2
     Gravity 0.125
     VSpeed 0.5
     DamageType "Mace"
-    Damage 4 // Originally 6
+    Damage 400 // Originally 6
     SeeSound "weapons/maceshoot"
     Decal BaronScorch
     //+STRIFEDAMAGE
@@ -332,6 +333,7 @@ actor MaceFX2Coop : MaceFX22
     Gravity 0.125
     VSpeed 0.5
     Species "Player"
+    Damage 4 // Originally 6
 }
 
 actor MaceFX32 : MaceFX3 replaces MaceFX3
