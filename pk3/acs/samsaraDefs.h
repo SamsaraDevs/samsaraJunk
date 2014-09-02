@@ -161,8 +161,7 @@ int PickupStates[CLASSCOUNT][8] =
     {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePunchdrunk",     "QuakePDFull",      "QuakePDEmpty",     "QuakePDSpecial"},   
 };
 
-int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
-int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7, -1};
+int ItoSArray[9] = {1, 3, 4, 5, 6, 7, 8, 0, 2};
 
 int ClassFades[CLASSCOUNT][5] =
 {

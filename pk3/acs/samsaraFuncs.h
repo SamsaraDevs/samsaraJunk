@@ -178,13 +178,6 @@ function int samsaraClassNum(void)
     return -1;
 }
 
-function int slotToItem(int i)
-{
-    i--;
-    if (i < 0 || i >= SLOTCOUNT) { return -1; }
-    return StoIArray[i];
-}
-
 function int itemToSlot(int i)
 {
     i--;
