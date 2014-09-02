@@ -1,3 +1,5 @@
+actor StopBreakingEverything_Bomb: Counter {}
+
 actor PermaRemoteBomb : CustomInventory
 {
     //tag "Mine of the Ancients"
@@ -17,7 +19,11 @@ actor PermaRemoteBomb : CustomInventory
         Loop
 
       Use:
+        TNT1 A 0 A_JumpIfInventory("StopBreakingEverything_Bomb", 2, "UseFail")
+        TNT1 A 0 A_JumpIfInventory("StopBreakingEverything_Bomb", 1, "Cheater")
+
         TNT1 A 1 A_TakeInventory("CorvusRemoteDetonate",1)
+        TNT1 A 0 A_GiveInventory("StopBreakingEverything_Bomb")
         TNT1 A 0 A_JumpIfInventory("CorvusRemoteActive",1,"Use2")
         TNT1 A 0 A_PlaySound("heretic/artiuse")
         TNT1 A 0 A_FireCustomMissile("RemoteOfTheAncients",0,0,0,-24,0,0)//A_SpawnItemEx("RemoteOfTheAncients",0,24,-6,0,0,0,0,0,0)//
@@ -28,6 +34,16 @@ actor PermaRemoteBomb : CustomInventory
         TNT1 A 1 A_GiveInventory("CorvusRemoteDetonate",1)
         TNT1 A 1 A_PlaySound("heretic/remoteancient")
         TNT1 A 1 A_TakeInventory("CorvusRemoteActive",1)
+        fail
+      
+      UseFail:
+        TNT1 A 0
+        fail
+
+      Cheater:
+        TNT1 A 0 A_GiveInventory("StopBreakingEverything_Bomb")
+        TNT1 A 0 ACS_ExecuteWithResult(681)
+        TNT1 A 0 A_Print("Cheater!")
         fail
     }
 }

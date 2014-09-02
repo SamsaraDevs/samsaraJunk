@@ -9,6 +9,7 @@
 #define SAMSARA_SCHEDULED           674
 #define SAMSARA_PDWTAK              675
 #define SAMSARA_GETSETTINGS         676
+#define SAMSARA_SPACEFLIGHT         681
 
 #define SAMSARA_CONFIRMCLASS        206
 #define SAMSARA_DECORATE            215
@@ -160,8 +161,7 @@ int PickupStates[CLASSCOUNT][8] =
     {"Quake",   "QuakeFull",    "QuakeEmpty",       "QuakeSpecial",     "QuakePunchdrunk",     "QuakePDFull",      "QuakePDEmpty",     "QuakePDSpecial"},   
 };
 
-int ItoSArray[7] = {1, 3, 4, 5, 6, 7, 8};
-int StoIArray[SLOTCOUNT] = {-1, 1, -1, 2, 3, 4, 5, 6, 7, -1};
+int ItoSArray[9] = {1, 3, 4, 5, 6, 7, 8, 0, 2};
 
 int ClassFades[CLASSCOUNT][5] =
 {
@@ -313,6 +313,18 @@ int PDWTAKItems[PDWTAKCOUNT][2] =
     {"InvPeopleDie",  "InvPeopleZorch"},
     {"InvPeopleDie2", "InvPeopleZorch2"},
     {"InvPeopleDie3", "InvPeopleZorch3"},
+};
+
+int SpaceflightBlasts[CLASSCOUNT] = 
+{
+    "SpaceMalfunction_Quietguy",
+    "SpaceMalfunction_Waffleguy",
+    "SpaceMalfunction_Elfguy",
+    "SpaceMalfunction_Wolfguy",
+    "SpaceMalfunction_Priestguy",
+    "SpaceMalfunction_Cheekyguy",
+    "SpaceMalfunction_Sadguy",
+    "SpaceMalfunction_Angryguy",
 };
 
 #define ARMORCOUNT  6

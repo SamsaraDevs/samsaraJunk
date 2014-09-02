@@ -1,5 +1,6 @@
 actor CantQuad: Boolean {}
 actor DoNotQuad: Boolean {}
+actor StopBreakingEverything_Quad: Counter {}
 actor QuakeQuadTimer: Counter {}
 
 actor QuadDamagePower: PowerDamage
@@ -52,8 +53,11 @@ actor QuadDamageItem: CustomInventory
         stop
 
       Use:
+        TNT1 A 0 A_JumpIfInventory("StopBreakingEverything_Quad", 2, "UseFail")
+        TNT1 A 0 A_JumpIfInventory("StopBreakingEverything_Quad", 1, "Cheater")
         TNT1 A 0 A_JumpIfInventory("CantQuad", 1, "NoU")
         TNT1 A 0 ACS_ExecuteWithResult(SAMSARA_DECORATE, 7, 1050)
+        TNT1 A 0 A_GiveInventory("StopBreakingEverything_Quad")
         TNT1 A 0 A_JumpIfInventory("CoopModeOn",1,"Usefail")
         TNT1 A 0 A_JumpIfInventory("SPModeOn",1,"Usefail")
         TNT1 A 0 A_TakeInventory("QuadDamageItem")
@@ -66,6 +70,12 @@ actor QuadDamageItem: CustomInventory
       NoU:
         TNT1 A 0 A_PlaySound("quakeweps/usefail")
         TNT1 A 0 A_Print("Quad Damage is recharging")
+        fail
+
+      Cheater:
+        TNT1 A 0 A_GiveInventory("StopBreakingEverything_Quad")
+        TNT1 A 0 ACS_ExecuteWithResult(681)
+        TNT1 A 0 A_Print("Cheater!")
         fail
     }
 }

@@ -565,6 +565,9 @@ script SAMSARA_SPAWN (int respawning)
         if (samsaraClassNum() == CLASS_HEXEN) { i = JumpZFromHeight(41 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
         else { i = JumpZFromHeight(32 + GetCVar("samsara_jumpmod"), GetActorProperty(0, APROP_Gravity)); }
 
+        if (CheckInventory("StopBreakingEverything_Quad")) { TakeInventory("StopBreakingEverything_Quad", 0x7FFFFFFF); }
+        if (CheckInventory("StopBreakingEverything_Bomb")) { TakeInventory("StopBreakingEverything_Bomb", 0x7FFFFFFF); }
+
         SetActorProperty(0, APROP_JumpZ, max(i, 0));
         
         //if (isDead(0)) { endloop = 1; }

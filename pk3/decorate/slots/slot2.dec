@@ -9,7 +9,7 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
         stop
         
       SpawnLoop:      
-        "----" A 35 bright ACS_ExecuteAlways(228, 0, 2)
+        "----" A 35 bright ACS_ExecuteAlways(228, 0, 3)
         loop
         
         NoGuy:    WEPG B 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
@@ -42,7 +42,7 @@ actor SamsaraSlotTwoPickup: SamsaraSlotPickup replaces Shotgun
         QuakeEmpty:    PQSG A 35 bright A_ChangeFlag("FLOATBOB", 0)   goto SpawnLoop
         
       Pickup:
-        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 2) & 3) == 1, "PickupSuccess")
+        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 3) & 3) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
@@ -68,7 +68,7 @@ actor SamsaraSlotTwoDrop: SamsaraSlotTwoPickup
         goto SpawnLoop
         
       Pickup:
-        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 2, 1) & 1) == 1, "PickupSuccess")
+        TNT1 A 0 A_JumpIf((ACS_ExecuteWithResult(229, 3, 1) & 1) == 1, "PickupSuccess")
         goto PickupFailure
     }
 }
